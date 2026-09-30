@@ -41,7 +41,7 @@ def tool_environment():
 def main(argv=None):
     args = list(sys.argv[1:] if argv is None else argv)
     if not args:
-        print("usage: make build|load|run|compare|test [PROFILE] [PORT]", file=sys.stderr)
+        print("usage: make build|load|run|compare|test|benchmark-build|benchmark-run|benchmark-report [PROFILE] [PORT]", file=sys.stderr)
         return 2
     command, *values = args
     targets = {
@@ -50,6 +50,9 @@ def main(argv=None):
         "run": ("scripts/run.py", values),
         "compare": ("scripts/compare.py", []),
         "test": ("scripts/validate.py", []),
+        "benchmark-build": ("scripts/benchmark_build.py", []),
+        "benchmark-run": ("scripts/benchmark_run.py", values),
+        "benchmark-report": ("scripts/benchmark_report.py", []),
     }
     if command not in targets:
         print(f"unknown command {command!r}", file=sys.stderr)
@@ -74,6 +77,10 @@ def main(argv=None):
         )
         if build_result.returncode != 0:
             return build_result.returncode
+    if command == "benchmark-run":
+        if len(script_args) != 2 or not script_args[1]:
+            print("make benchmark-run requires an explicit PORT; set PROFILE=standard (or another profile)", file=sys.stderr)
+            return 2
     return subprocess.run([str(VENV_PYTHON), str(ROOT / script), *script_args], cwd=ROOT, env=env).returncode
 
 

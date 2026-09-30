@@ -1,0 +1,18 @@
+[LITEX-TERM] Received firmware download request from the device.
+[LITEX-TERM] Uploading /home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/benchmark/validation/benchmark.bin to 0x40000000 (21312 bytes)...
+|>                    | 0%|>                    | 3%|=>                   | 7%|==>                  | 12%|===>                 | 16%|====>                | 20%|====>                | 24%|=====>               | 28%|======>              | 33%|=======>             | 37%|========>            | 41%|=========>           | 45%|=========>           | 49%|==========>          | 54%|===========>         | 58%|============>        | 62%|=============>       | 66%|==============>      | 70%|===============>     | 75%|===============>     | 79%|================>    | 83%|=================>   | 87%|==================>  | 91%|===================> | 96%[LITEX-TERM] Upload complete (8.2KB/s).
+[LITEX-TERM] Booting the device.
+[LITEX-TERM] Done.
+DIAGNOSTIC_START False
+
+
+Command not found
+[92;1mlitex[0m> serialboot
+
+Booting from serial...
+Press Q or ESC to abort boot completely.
+sL5DdSMmkekro
+CCKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKExecuting booted program at 0x40000000
+
+--============== [1mLiftoff![0m ==============--
+BENCHMARK_START profile=standard build_id=30bdc72be3b0d411 mode=validation clock_hz=48000000 data_size=2000 context

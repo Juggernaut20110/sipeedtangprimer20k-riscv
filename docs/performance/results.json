@@ -1,0 +1,3797 @@
+{
+  "schema_version": 1,
+  "sessions": [
+    {
+      "schema_version": 1,
+      "session_id": "20260930T032306.100878Z-standard",
+      "status": "failed",
+      "created_utc": "2026-09-30T03:23:06.101028+00:00",
+      "profile": "standard",
+      "board": "Sipeed Tang Primer 20K with standard Dock",
+      "clock_hz": 48000000,
+      "uart_candidates_at_start": [],
+      "programming_status": "not_attempted",
+      "trials": [],
+      "error": "KeyError: 'core_list_join'",
+      "finished_utc": "2026-09-30T03:23:06.122581+00:00",
+      "evidence": "build/benchmarks/20260930T032306.100878Z-standard/session.json"
+    },
+    {
+      "schema_version": 1,
+      "session_id": "20260930T032325.590632Z-standard",
+      "status": "failed",
+      "created_utc": "2026-09-30T03:23:25.590791+00:00",
+      "profile": "standard",
+      "board": "Sipeed Tang Primer 20K with standard Dock",
+      "clock_hz": 48000000,
+      "uart_candidates_at_start": [],
+      "programming_status": "not_attempted",
+      "trials": [
+        {
+          "mode": "validation",
+          "attempt": 0,
+          "status": "failed",
+          "uart_device": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+          "programming_status": "not_attempted",
+          "firmware_sha256": "0d2b8dfcaafe7680be7ff4a90d1a8ea749508ccf82113454d04b7cd43a2ddcf9",
+          "raw_uart_log": "docs/performance/20260930T032325.590632Z-standard-validation.uart.bin",
+          "text_uart_log": "docs/performance/20260930T032325.590632Z-standard-validation.uart.log",
+          "started_utc": "2026-09-30T03:23:25.617337+00:00",
+          "error": "FileNotFoundError: explicit UART path does not exist: /dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+          "raw_uart_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_uart_bytes": 0,
+          "decode_errors_present": false,
+          "session_raw_uart_log": "build/benchmarks/20260930T032325.590632Z-standard/validation.uart.bin",
+          "session_text_uart_log": "build/benchmarks/20260930T032325.590632Z-standard/validation.uart.log",
+          "finished_utc": "2026-09-30T03:23:25.617870+00:00"
+        },
+        {
+          "mode": "performance",
+          "attempt": 1,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        },
+        {
+          "mode": "performance",
+          "attempt": 2,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        },
+        {
+          "mode": "performance",
+          "attempt": 3,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        }
+      ],
+      "identity": {
+        "repository_revision": "20c21ca2d9d0e51679e93d1427bafc3bc31f2565",
+        "repository_dirty": true,
+        "source_fingerprint": "30bdc72be3b0d411868b715bef0366e11897e05411a3258a5a1a8d235bca17b3",
+        "profile": "standard",
+        "clock_hz": 48000000,
+        "coremark": {
+          "repository": "https://github.com/eembc/coremark.git",
+          "commit": "1f483d5b8316753a742cbf5590caf5bd0a4e4777"
+        },
+        "compiler": "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-gcc",
+        "compiler_version": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+        "compiler_flags": [
+          "-std=gnu99",
+          "-O2",
+          "-march=rv32i2p0_m",
+          "-mabi=ilp32",
+          "-D__vexriscv__",
+          "-g3",
+          "-no-pie",
+          "-fomit-frame-pointer",
+          "-Wall",
+          "-fno-builtin",
+          "-fno-stack-protector",
+          "-U_FORTIFY_SOURCE",
+          "-D_FORTIFY_SOURCE=0",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-fno-lto"
+        ],
+        "compiler_flags_complete": [
+          "-std=gnu99",
+          "-O2",
+          "-march=rv32i2p0_m",
+          "-mabi=ilp32",
+          "-D__vexriscv__",
+          "-g3",
+          "-no-pie",
+          "-fomit-frame-pointer",
+          "-Wall",
+          "-fno-builtin",
+          "-fno-stack-protector",
+          "-U_FORTIFY_SOURCE",
+          "-D_FORTIFY_SOURCE=0",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-fno-lto",
+          "-DITERATIONS=0",
+          "-DTOTAL_DATA_SIZE=2000",
+          "-DMEM_METHOD=MEM_STATIC",
+          "-DMULTITHREAD=1",
+          "-DPERFORMANCE_RUN=1",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/software/libc",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/benchmark/performance"
+        ],
+        "tool_versions": {
+          "python": "3.12.14",
+          "riscv_gcc": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+          "gowin": "V1.9.12.04",
+          "openfpgaloader": "openFPGALoader v0.13.1"
+        },
+        "cache": {
+          "instruction_cache": "enabled",
+          "data_cache": "enabled",
+          "configuration_source": "build/standard/software/include/generated/soc.h"
+        },
+        "memory": {
+          "main_ram": "0x40000000",
+          "main_ram_bytes": 32768,
+          "sram": "0x10000000",
+          "sram_bytes": 8192
+        },
+        "uart_device_requested": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+        "uart_device_selected": null,
+        "bitstream": {
+          "path": "build/standard/bitstream.fs",
+          "sha256": "e6672689c60d2afccb1d50d48ce0d710c3f4a68bffb4d312dc2403475e01f7d7"
+        },
+        "firmware": {
+          "performance": {
+            "path": "build/standard/benchmark/performance/benchmark.bin",
+            "sha256": "91790f0650abe4236ebcc8a5360dea9d48b8815f3a2b56257d2cca7c1d6ab9c9"
+          },
+          "validation": {
+            "path": "build/standard/benchmark/validation/benchmark.bin",
+            "sha256": "0d2b8dfcaafe7680be7ff4a90d1a8ea749508ccf82113454d04b7cd43a2ddcf9"
+          }
+        }
+      },
+      "aggregate": null,
+      "finished_utc": "2026-09-30T03:23:25.618181+00:00",
+      "evidence": "build/benchmarks/20260930T032325.590632Z-standard/session.json"
+    },
+    {
+      "schema_version": 1,
+      "session_id": "20260930T032726.031253Z-standard",
+      "status": "failed",
+      "created_utc": "2026-09-30T03:27:26.031437+00:00",
+      "profile": "standard",
+      "board": "Sipeed Tang Primer 20K with standard Dock",
+      "clock_hz": 48000000,
+      "uart_candidates_at_start": [],
+      "usb_device_nodes_at_start": [],
+      "programming_status": "not_attempted",
+      "trials": [
+        {
+          "mode": "validation",
+          "attempt": 0,
+          "status": "failed",
+          "uart_device": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+          "programming_status": "not_attempted",
+          "firmware_sha256": "0d2b8dfcaafe7680be7ff4a90d1a8ea749508ccf82113454d04b7cd43a2ddcf9",
+          "raw_uart_log": "docs/performance/20260930T032726.031253Z-standard-validation.uart.bin",
+          "text_uart_log": "docs/performance/20260930T032726.031253Z-standard-validation.uart.log",
+          "started_utc": "2026-09-30T03:27:26.057455+00:00",
+          "error": "FileNotFoundError: explicit UART path does not exist: /dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+          "raw_uart_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_uart_bytes": 0,
+          "decode_errors_present": false,
+          "session_raw_uart_log": "build/benchmarks/20260930T032726.031253Z-standard/validation.uart.bin",
+          "session_text_uart_log": "build/benchmarks/20260930T032726.031253Z-standard/validation.uart.log",
+          "finished_utc": "2026-09-30T03:27:26.057865+00:00"
+        },
+        {
+          "mode": "performance",
+          "attempt": 1,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        },
+        {
+          "mode": "performance",
+          "attempt": 2,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        },
+        {
+          "mode": "performance",
+          "attempt": 3,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        }
+      ],
+      "identity": {
+        "repository_revision": "20c21ca2d9d0e51679e93d1427bafc3bc31f2565",
+        "repository_dirty": true,
+        "source_fingerprint": "30bdc72be3b0d411868b715bef0366e11897e05411a3258a5a1a8d235bca17b3",
+        "profile": "standard",
+        "clock_hz": 48000000,
+        "coremark": {
+          "repository": "https://github.com/eembc/coremark.git",
+          "commit": "1f483d5b8316753a742cbf5590caf5bd0a4e4777"
+        },
+        "compiler": "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-gcc",
+        "compiler_version": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+        "compiler_flags": [
+          "-std=gnu99",
+          "-O2",
+          "-march=rv32i2p0_m",
+          "-mabi=ilp32",
+          "-D__vexriscv__",
+          "-g3",
+          "-no-pie",
+          "-fomit-frame-pointer",
+          "-Wall",
+          "-fno-builtin",
+          "-fno-stack-protector",
+          "-U_FORTIFY_SOURCE",
+          "-D_FORTIFY_SOURCE=0",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-fno-lto"
+        ],
+        "compiler_flags_complete": [
+          "-std=gnu99",
+          "-O2",
+          "-march=rv32i2p0_m",
+          "-mabi=ilp32",
+          "-D__vexriscv__",
+          "-g3",
+          "-no-pie",
+          "-fomit-frame-pointer",
+          "-Wall",
+          "-fno-builtin",
+          "-fno-stack-protector",
+          "-U_FORTIFY_SOURCE",
+          "-D_FORTIFY_SOURCE=0",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-fno-lto",
+          "-DITERATIONS=0",
+          "-DTOTAL_DATA_SIZE=2000",
+          "-DMEM_METHOD=MEM_STATIC",
+          "-DMULTITHREAD=1",
+          "-DPERFORMANCE_RUN=1",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/software/libc",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/benchmark/performance"
+        ],
+        "tool_versions": {
+          "python": "3.12.14",
+          "riscv_gcc": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+          "gowin": "V1.9.12.04",
+          "openfpgaloader": "openFPGALoader v0.13.1"
+        },
+        "cache": {
+          "instruction_cache": "enabled",
+          "data_cache": "enabled",
+          "configuration_source": "build/standard/software/include/generated/soc.h"
+        },
+        "memory": {
+          "main_ram": "0x40000000",
+          "main_ram_bytes": 32768,
+          "sram": "0x10000000",
+          "sram_bytes": 8192
+        },
+        "uart_device_requested": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+        "uart_device_selected": null,
+        "bitstream": {
+          "path": "build/standard/bitstream.fs",
+          "sha256": "e6672689c60d2afccb1d50d48ce0d710c3f4a68bffb4d312dc2403475e01f7d7"
+        },
+        "firmware": {
+          "performance": {
+            "path": "build/standard/benchmark/performance/benchmark.bin",
+            "sha256": "91790f0650abe4236ebcc8a5360dea9d48b8815f3a2b56257d2cca7c1d6ab9c9"
+          },
+          "validation": {
+            "path": "build/standard/benchmark/validation/benchmark.bin",
+            "sha256": "0d2b8dfcaafe7680be7ff4a90d1a8ea749508ccf82113454d04b7cd43a2ddcf9"
+          }
+        }
+      },
+      "aggregate": null,
+      "finished_utc": "2026-09-30T03:27:26.058083+00:00",
+      "evidence": "build/benchmarks/20260930T032726.031253Z-standard/session.json"
+    },
+    {
+      "schema_version": 1,
+      "session_id": "20260930T034118.329558Z-standard",
+      "status": "failed",
+      "created_utc": "2026-09-30T03:41:18.329823+00:00",
+      "profile": "standard",
+      "board": "Sipeed Tang Primer 20K with standard Dock",
+      "clock_hz": 48000000,
+      "uart_candidates_at_start": [
+        "/dev/serial/by-id/usb-1a86_USB_Single_Serial_599D114570-if00",
+        "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if00-port0",
+        "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0"
+      ],
+      "usb_device_nodes_at_start": [
+        "/dev/bus/usb/001/001",
+        "/dev/bus/usb/001/003",
+        "/dev/bus/usb/001/037",
+        "/dev/bus/usb/001/044",
+        "/dev/bus/usb/001/045",
+        "/dev/bus/usb/001/046",
+        "/dev/bus/usb/002/001"
+      ],
+      "programming_status": "completed",
+      "trials": [
+        {
+          "mode": "validation",
+          "attempt": 0,
+          "status": "failed",
+          "uart_device": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+          "programming_status": "completed",
+          "firmware_sha256": "0d2b8dfcaafe7680be7ff4a90d1a8ea749508ccf82113454d04b7cd43a2ddcf9",
+          "raw_uart_log": "docs/performance/20260930T034118.329558Z-standard-validation.uart.bin",
+          "text_uart_log": "docs/performance/20260930T034118.329558Z-standard-validation.uart.log",
+          "started_utc": "2026-09-30T03:41:18.357694+00:00",
+          "error": "TimeoutError: no benchmark start marker within 45.0 seconds",
+          "raw_uart_sha256": "e60ee5b1a0b3c9f42f2ca73ac362f8ff2ec0e6087265af512503ad24b1c5bd94",
+          "raw_uart_bytes": 1200,
+          "decode_errors_present": false,
+          "session_raw_uart_log": "build/benchmarks/20260930T034118.329558Z-standard/validation.uart.bin",
+          "session_text_uart_log": "build/benchmarks/20260930T034118.329558Z-standard/validation.uart.log",
+          "finished_utc": "2026-09-30T03:42:07.413397+00:00"
+        },
+        {
+          "mode": "performance",
+          "attempt": 1,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        },
+        {
+          "mode": "performance",
+          "attempt": 2,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        },
+        {
+          "mode": "performance",
+          "attempt": 3,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        }
+      ],
+      "identity": {
+        "repository_revision": "20c21ca2d9d0e51679e93d1427bafc3bc31f2565",
+        "repository_dirty": true,
+        "source_fingerprint": "30bdc72be3b0d411868b715bef0366e11897e05411a3258a5a1a8d235bca17b3",
+        "profile": "standard",
+        "clock_hz": 48000000,
+        "coremark": {
+          "repository": "https://github.com/eembc/coremark.git",
+          "commit": "1f483d5b8316753a742cbf5590caf5bd0a4e4777"
+        },
+        "compiler": "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-gcc",
+        "compiler_version": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+        "compiler_flags": [
+          "-std=gnu99",
+          "-O2",
+          "-march=rv32i2p0_m",
+          "-mabi=ilp32",
+          "-D__vexriscv__",
+          "-g3",
+          "-no-pie",
+          "-fomit-frame-pointer",
+          "-Wall",
+          "-fno-builtin",
+          "-fno-stack-protector",
+          "-U_FORTIFY_SOURCE",
+          "-D_FORTIFY_SOURCE=0",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-fno-lto"
+        ],
+        "compiler_flags_complete": [
+          "-std=gnu99",
+          "-O2",
+          "-march=rv32i2p0_m",
+          "-mabi=ilp32",
+          "-D__vexriscv__",
+          "-g3",
+          "-no-pie",
+          "-fomit-frame-pointer",
+          "-Wall",
+          "-fno-builtin",
+          "-fno-stack-protector",
+          "-U_FORTIFY_SOURCE",
+          "-D_FORTIFY_SOURCE=0",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-fno-lto",
+          "-DITERATIONS=0",
+          "-DTOTAL_DATA_SIZE=2000",
+          "-DMEM_METHOD=MEM_STATIC",
+          "-DMULTITHREAD=1",
+          "-DPERFORMANCE_RUN=1",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/software/libc",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/benchmark/performance"
+        ],
+        "tool_versions": {
+          "python": "3.12.14",
+          "riscv_gcc": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+          "gowin": "V1.9.12.04",
+          "openfpgaloader": "openFPGALoader v0.13.1"
+        },
+        "cache": {
+          "instruction_cache": "enabled",
+          "data_cache": "enabled",
+          "configuration_source": "build/standard/software/include/generated/soc.h"
+        },
+        "memory": {
+          "main_ram": "0x40000000",
+          "main_ram_bytes": 32768,
+          "sram": "0x10000000",
+          "sram_bytes": 8192
+        },
+        "uart_device_requested": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+        "uart_device_selected": "/dev/ttyUSB1",
+        "bitstream": {
+          "path": "build/standard/bitstream.fs",
+          "sha256": "e6672689c60d2afccb1d50d48ce0d710c3f4a68bffb4d312dc2403475e01f7d7"
+        },
+        "firmware": {
+          "performance": {
+            "path": "build/standard/benchmark/performance/benchmark.bin",
+            "sha256": "91790f0650abe4236ebcc8a5360dea9d48b8815f3a2b56257d2cca7c1d6ab9c9"
+          },
+          "validation": {
+            "path": "build/standard/benchmark/validation/benchmark.bin",
+            "sha256": "0d2b8dfcaafe7680be7ff4a90d1a8ea749508ccf82113454d04b7cd43a2ddcf9"
+          }
+        }
+      },
+      "aggregate": null,
+      "finished_utc": "2026-09-30T03:42:07.413641+00:00",
+      "evidence": "build/benchmarks/20260930T034118.329558Z-standard/session.json"
+    },
+    {
+      "schema_version": 1,
+      "session_id": "20260930T034509.740211Z-standard",
+      "status": "failed",
+      "created_utc": "2026-09-30T03:45:09.740420+00:00",
+      "profile": "standard",
+      "board": "Sipeed Tang Primer 20K with standard Dock",
+      "clock_hz": 48000000,
+      "uart_candidates_at_start": [
+        "/dev/serial/by-id/usb-1a86_USB_Single_Serial_599D114570-if00",
+        "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if00-port0",
+        "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0"
+      ],
+      "usb_device_nodes_at_start": [
+        "/dev/bus/usb/001/001",
+        "/dev/bus/usb/001/003",
+        "/dev/bus/usb/001/037",
+        "/dev/bus/usb/001/044",
+        "/dev/bus/usb/001/045",
+        "/dev/bus/usb/001/046",
+        "/dev/bus/usb/002/001"
+      ],
+      "programming_status": "completed",
+      "trials": [
+        {
+          "mode": "validation",
+          "attempt": 0,
+          "status": "failed",
+          "uart_device": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+          "programming_status": "completed",
+          "firmware_sha256": "0d2b8dfcaafe7680be7ff4a90d1a8ea749508ccf82113454d04b7cd43a2ddcf9",
+          "raw_uart_log": "docs/performance/20260930T034509.740211Z-standard-validation.uart.bin",
+          "text_uart_log": "docs/performance/20260930T034509.740211Z-standard-validation.uart.log",
+          "started_utc": "2026-09-30T03:45:09.765853+00:00",
+          "error": "TimeoutError: no benchmark start marker within 45.0 seconds",
+          "raw_uart_sha256": "e60ee5b1a0b3c9f42f2ca73ac362f8ff2ec0e6087265af512503ad24b1c5bd94",
+          "raw_uart_bytes": 1200,
+          "decode_errors_present": false,
+          "session_raw_uart_log": "build/benchmarks/20260930T034509.740211Z-standard/validation.uart.bin",
+          "session_text_uart_log": "build/benchmarks/20260930T034509.740211Z-standard/validation.uart.log",
+          "finished_utc": "2026-09-30T03:45:58.822572+00:00"
+        },
+        {
+          "mode": "performance",
+          "attempt": 1,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        },
+        {
+          "mode": "performance",
+          "attempt": 2,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        },
+        {
+          "mode": "performance",
+          "attempt": 3,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        }
+      ],
+      "identity": {
+        "repository_revision": "20c21ca2d9d0e51679e93d1427bafc3bc31f2565",
+        "repository_dirty": true,
+        "source_fingerprint": "30bdc72be3b0d411868b715bef0366e11897e05411a3258a5a1a8d235bca17b3",
+        "profile": "standard",
+        "clock_hz": 48000000,
+        "coremark": {
+          "repository": "https://github.com/eembc/coremark.git",
+          "commit": "1f483d5b8316753a742cbf5590caf5bd0a4e4777"
+        },
+        "compiler": "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-gcc",
+        "compiler_version": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+        "compiler_flags": [
+          "-std=gnu99",
+          "-O2",
+          "-march=rv32i2p0_m",
+          "-mabi=ilp32",
+          "-D__vexriscv__",
+          "-g3",
+          "-no-pie",
+          "-fomit-frame-pointer",
+          "-Wall",
+          "-fno-builtin",
+          "-fno-stack-protector",
+          "-U_FORTIFY_SOURCE",
+          "-D_FORTIFY_SOURCE=0",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-fno-lto"
+        ],
+        "compiler_flags_complete": [
+          "-std=gnu99",
+          "-O2",
+          "-march=rv32i2p0_m",
+          "-mabi=ilp32",
+          "-D__vexriscv__",
+          "-g3",
+          "-no-pie",
+          "-fomit-frame-pointer",
+          "-Wall",
+          "-fno-builtin",
+          "-fno-stack-protector",
+          "-U_FORTIFY_SOURCE",
+          "-D_FORTIFY_SOURCE=0",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-fno-lto",
+          "-DITERATIONS=0",
+          "-DTOTAL_DATA_SIZE=2000",
+          "-DMEM_METHOD=MEM_STATIC",
+          "-DMULTITHREAD=1",
+          "-DPERFORMANCE_RUN=1",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/software/libc",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/benchmark/performance"
+        ],
+        "tool_versions": {
+          "python": "3.12.14",
+          "riscv_gcc": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+          "gowin": "V1.9.12.04",
+          "openfpgaloader": "openFPGALoader v0.13.1"
+        },
+        "cache": {
+          "instruction_cache": "enabled",
+          "data_cache": "enabled",
+          "configuration_source": "build/standard/software/include/generated/soc.h"
+        },
+        "memory": {
+          "main_ram": "0x40000000",
+          "main_ram_bytes": 32768,
+          "sram": "0x10000000",
+          "sram_bytes": 8192
+        },
+        "uart_device_requested": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+        "uart_device_selected": "/dev/ttyUSB1",
+        "bitstream": {
+          "path": "build/standard/bitstream.fs",
+          "sha256": "e6672689c60d2afccb1d50d48ce0d710c3f4a68bffb4d312dc2403475e01f7d7"
+        },
+        "firmware": {
+          "performance": {
+            "path": "build/standard/benchmark/performance/benchmark.bin",
+            "sha256": "91790f0650abe4236ebcc8a5360dea9d48b8815f3a2b56257d2cca7c1d6ab9c9"
+          },
+          "validation": {
+            "path": "build/standard/benchmark/validation/benchmark.bin",
+            "sha256": "0d2b8dfcaafe7680be7ff4a90d1a8ea749508ccf82113454d04b7cd43a2ddcf9"
+          }
+        }
+      },
+      "aggregate": null,
+      "finished_utc": "2026-09-30T03:45:58.822839+00:00",
+      "evidence": "build/benchmarks/20260930T034509.740211Z-standard/session.json"
+    },
+    {
+      "schema_version": 1,
+      "session_id": "20260930T034854.782554Z-standard",
+      "status": "failed",
+      "created_utc": "2026-09-30T03:48:54.782891+00:00",
+      "profile": "standard",
+      "board": "Sipeed Tang Primer 20K with standard Dock",
+      "clock_hz": 48000000,
+      "uart_candidates_at_start": [
+        "/dev/serial/by-id/usb-1a86_USB_Single_Serial_599D114570-if00",
+        "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if00-port0",
+        "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0"
+      ],
+      "usb_device_nodes_at_start": [
+        "/dev/bus/usb/001/001",
+        "/dev/bus/usb/001/003",
+        "/dev/bus/usb/001/037",
+        "/dev/bus/usb/001/044",
+        "/dev/bus/usb/001/045",
+        "/dev/bus/usb/001/046",
+        "/dev/bus/usb/002/001"
+      ],
+      "programming_status": "completed",
+      "trials": [
+        {
+          "mode": "validation",
+          "attempt": 0,
+          "status": "failed",
+          "uart_device": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+          "programming_status": "completed",
+          "firmware_sha256": "0d2b8dfcaafe7680be7ff4a90d1a8ea749508ccf82113454d04b7cd43a2ddcf9",
+          "raw_uart_log": "docs/performance/20260930T034854.782554Z-standard-validation.uart.bin",
+          "text_uart_log": "docs/performance/20260930T034854.782554Z-standard-validation.uart.log",
+          "transmitted_uart_log": "docs/performance/20260930T034854.782554Z-standard-validation.uart.tx.bin",
+          "started_utc": "2026-09-30T03:48:54.814418+00:00",
+          "error": "TimeoutError: no benchmark start marker within 45.0 seconds",
+          "raw_uart_sha256": "e60ee5b1a0b3c9f42f2ca73ac362f8ff2ec0e6087265af512503ad24b1c5bd94",
+          "raw_uart_bytes": 1200,
+          "transmitted_uart_sha256": "30a007545d3671fca89c7b79ac1000519405f064ddcbd268e520288a13639480",
+          "transmitted_uart_bytes": 162,
+          "decode_errors_present": false,
+          "session_raw_uart_log": "build/benchmarks/20260930T034854.782554Z-standard/validation.uart.bin",
+          "session_text_uart_log": "build/benchmarks/20260930T034854.782554Z-standard/validation.uart.log",
+          "session_transmitted_uart_log": "build/benchmarks/20260930T034854.782554Z-standard/validation.uart.tx.bin",
+          "finished_utc": "2026-09-30T03:49:43.843265+00:00"
+        },
+        {
+          "mode": "performance",
+          "attempt": 1,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        },
+        {
+          "mode": "performance",
+          "attempt": 2,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        },
+        {
+          "mode": "performance",
+          "attempt": 3,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        }
+      ],
+      "identity": {
+        "repository_revision": "20c21ca2d9d0e51679e93d1427bafc3bc31f2565",
+        "repository_dirty": true,
+        "source_fingerprint": "30bdc72be3b0d411868b715bef0366e11897e05411a3258a5a1a8d235bca17b3",
+        "profile": "standard",
+        "clock_hz": 48000000,
+        "coremark": {
+          "repository": "https://github.com/eembc/coremark.git",
+          "commit": "1f483d5b8316753a742cbf5590caf5bd0a4e4777"
+        },
+        "compiler": "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-gcc",
+        "compiler_version": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+        "compiler_flags": [
+          "-std=gnu99",
+          "-O2",
+          "-march=rv32i2p0_m",
+          "-mabi=ilp32",
+          "-D__vexriscv__",
+          "-g3",
+          "-no-pie",
+          "-fomit-frame-pointer",
+          "-Wall",
+          "-fno-builtin",
+          "-fno-stack-protector",
+          "-U_FORTIFY_SOURCE",
+          "-D_FORTIFY_SOURCE=0",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-fno-lto"
+        ],
+        "compiler_flags_complete": [
+          "-std=gnu99",
+          "-O2",
+          "-march=rv32i2p0_m",
+          "-mabi=ilp32",
+          "-D__vexriscv__",
+          "-g3",
+          "-no-pie",
+          "-fomit-frame-pointer",
+          "-Wall",
+          "-fno-builtin",
+          "-fno-stack-protector",
+          "-U_FORTIFY_SOURCE",
+          "-D_FORTIFY_SOURCE=0",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-fno-lto",
+          "-DITERATIONS=0",
+          "-DTOTAL_DATA_SIZE=2000",
+          "-DMEM_METHOD=MEM_STATIC",
+          "-DMULTITHREAD=1",
+          "-DPERFORMANCE_RUN=1",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/software/libc",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/benchmark/performance"
+        ],
+        "tool_versions": {
+          "python": "3.12.14",
+          "riscv_gcc": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+          "gowin": "V1.9.12.04",
+          "openfpgaloader": "openFPGALoader v0.13.1"
+        },
+        "cache": {
+          "instruction_cache": "enabled",
+          "data_cache": "enabled",
+          "configuration_source": "build/standard/software/include/generated/soc.h"
+        },
+        "memory": {
+          "main_ram": "0x40000000",
+          "main_ram_bytes": 32768,
+          "sram": "0x10000000",
+          "sram_bytes": 8192
+        },
+        "uart_device_requested": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+        "uart_device_selected": "/dev/ttyUSB1",
+        "bitstream": {
+          "path": "build/standard/bitstream.fs",
+          "sha256": "e6672689c60d2afccb1d50d48ce0d710c3f4a68bffb4d312dc2403475e01f7d7"
+        },
+        "firmware": {
+          "performance": {
+            "path": "build/standard/benchmark/performance/benchmark.bin",
+            "sha256": "91790f0650abe4236ebcc8a5360dea9d48b8815f3a2b56257d2cca7c1d6ab9c9"
+          },
+          "validation": {
+            "path": "build/standard/benchmark/validation/benchmark.bin",
+            "sha256": "0d2b8dfcaafe7680be7ff4a90d1a8ea749508ccf82113454d04b7cd43a2ddcf9"
+          }
+        }
+      },
+      "aggregate": null,
+      "finished_utc": "2026-09-30T03:49:43.843564+00:00",
+      "evidence": "build/benchmarks/20260930T034854.782554Z-standard/session.json"
+    },
+    {
+      "schema_version": 1,
+      "session_id": "20260930T040116.097376Z-standard",
+      "status": "failed",
+      "created_utc": "2026-09-30T04:01:16.097549+00:00",
+      "profile": "standard",
+      "board": "Sipeed Tang Primer 20K with standard Dock",
+      "clock_hz": 48000000,
+      "uart_candidates_at_start": [
+        "/dev/serial/by-id/usb-1a86_USB_Single_Serial_599D114570-if00",
+        "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if00-port0",
+        "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0"
+      ],
+      "usb_device_nodes_at_start": [
+        "/dev/bus/usb/001/001",
+        "/dev/bus/usb/001/002",
+        "/dev/bus/usb/001/003",
+        "/dev/bus/usb/001/007",
+        "/dev/bus/usb/001/008",
+        "/dev/bus/usb/001/009",
+        "/dev/bus/usb/002/001"
+      ],
+      "programming_status": "completed",
+      "trials": [
+        {
+          "mode": "validation",
+          "attempt": 0,
+          "status": "failed",
+          "uart_device": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+          "programming_status": "completed",
+          "firmware_sha256": "0d2b8dfcaafe7680be7ff4a90d1a8ea749508ccf82113454d04b7cd43a2ddcf9",
+          "raw_uart_log": "docs/performance/20260930T040116.097376Z-standard-validation.uart.bin",
+          "text_uart_log": "docs/performance/20260930T040116.097376Z-standard-validation.uart.log",
+          "transmitted_uart_log": "docs/performance/20260930T040116.097376Z-standard-validation.uart.tx.bin",
+          "started_utc": "2026-09-30T04:01:16.133737+00:00",
+          "error": "TimeoutError: no benchmark start marker within 45.0 seconds",
+          "raw_uart_sha256": "e60ee5b1a0b3c9f42f2ca73ac362f8ff2ec0e6087265af512503ad24b1c5bd94",
+          "raw_uart_bytes": 1200,
+          "transmitted_uart_sha256": "30a007545d3671fca89c7b79ac1000519405f064ddcbd268e520288a13639480",
+          "transmitted_uart_bytes": 162,
+          "decode_errors_present": false,
+          "session_raw_uart_log": "build/benchmarks/20260930T040116.097376Z-standard/validation.uart.bin",
+          "session_text_uart_log": "build/benchmarks/20260930T040116.097376Z-standard/validation.uart.log",
+          "session_transmitted_uart_log": "build/benchmarks/20260930T040116.097376Z-standard/validation.uart.tx.bin",
+          "finished_utc": "2026-09-30T04:02:05.232501+00:00"
+        },
+        {
+          "mode": "performance",
+          "attempt": 1,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        },
+        {
+          "mode": "performance",
+          "attempt": 2,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        },
+        {
+          "mode": "performance",
+          "attempt": 3,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        }
+      ],
+      "identity": {
+        "repository_revision": "20c21ca2d9d0e51679e93d1427bafc3bc31f2565",
+        "repository_dirty": true,
+        "source_fingerprint": "30bdc72be3b0d411868b715bef0366e11897e05411a3258a5a1a8d235bca17b3",
+        "profile": "standard",
+        "clock_hz": 48000000,
+        "coremark": {
+          "repository": "https://github.com/eembc/coremark.git",
+          "commit": "1f483d5b8316753a742cbf5590caf5bd0a4e4777"
+        },
+        "compiler": "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-gcc",
+        "compiler_version": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+        "compiler_flags": [
+          "-std=gnu99",
+          "-O2",
+          "-march=rv32i2p0_m",
+          "-mabi=ilp32",
+          "-D__vexriscv__",
+          "-g3",
+          "-no-pie",
+          "-fomit-frame-pointer",
+          "-Wall",
+          "-fno-builtin",
+          "-fno-stack-protector",
+          "-U_FORTIFY_SOURCE",
+          "-D_FORTIFY_SOURCE=0",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-fno-lto"
+        ],
+        "compiler_flags_complete": [
+          "-std=gnu99",
+          "-O2",
+          "-march=rv32i2p0_m",
+          "-mabi=ilp32",
+          "-D__vexriscv__",
+          "-g3",
+          "-no-pie",
+          "-fomit-frame-pointer",
+          "-Wall",
+          "-fno-builtin",
+          "-fno-stack-protector",
+          "-U_FORTIFY_SOURCE",
+          "-D_FORTIFY_SOURCE=0",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-fno-lto",
+          "-DITERATIONS=0",
+          "-DTOTAL_DATA_SIZE=2000",
+          "-DMEM_METHOD=MEM_STATIC",
+          "-DMULTITHREAD=1",
+          "-DPERFORMANCE_RUN=1",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/software/libc",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/benchmark/performance"
+        ],
+        "tool_versions": {
+          "python": "3.12.14",
+          "riscv_gcc": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+          "gowin": "V1.9.12.04",
+          "openfpgaloader": "openFPGALoader v0.13.1"
+        },
+        "cache": {
+          "instruction_cache": "enabled",
+          "data_cache": "enabled",
+          "configuration_source": "build/standard/software/include/generated/soc.h"
+        },
+        "memory": {
+          "main_ram": "0x40000000",
+          "main_ram_bytes": 32768,
+          "sram": "0x10000000",
+          "sram_bytes": 8192
+        },
+        "uart_device_requested": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+        "uart_device_selected": "/dev/ttyUSB1",
+        "bitstream": {
+          "path": "build/standard/bitstream.fs",
+          "sha256": "e6672689c60d2afccb1d50d48ce0d710c3f4a68bffb4d312dc2403475e01f7d7"
+        },
+        "firmware": {
+          "performance": {
+            "path": "build/standard/benchmark/performance/benchmark.bin",
+            "sha256": "91790f0650abe4236ebcc8a5360dea9d48b8815f3a2b56257d2cca7c1d6ab9c9"
+          },
+          "validation": {
+            "path": "build/standard/benchmark/validation/benchmark.bin",
+            "sha256": "0d2b8dfcaafe7680be7ff4a90d1a8ea749508ccf82113454d04b7cd43a2ddcf9"
+          }
+        }
+      },
+      "aggregate": null,
+      "finished_utc": "2026-09-30T04:02:05.232750+00:00",
+      "evidence": "build/benchmarks/20260930T040116.097376Z-standard/session.json"
+    },
+    {
+      "schema_version": 1,
+      "session_id": "20260930T041332.658437Z-standard",
+      "status": "failed",
+      "created_utc": "2026-09-30T04:13:32.658617+00:00",
+      "profile": "standard",
+      "board": "Sipeed Tang Primer 20K with standard Dock",
+      "clock_hz": 48000000,
+      "uart_candidates_at_start": [
+        "/dev/serial/by-id/usb-1a86_USB_Single_Serial_599D114570-if00",
+        "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if00-port0",
+        "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0"
+      ],
+      "usb_device_nodes_at_start": [
+        "/dev/bus/usb/001/001",
+        "/dev/bus/usb/001/002",
+        "/dev/bus/usb/001/003",
+        "/dev/bus/usb/001/007",
+        "/dev/bus/usb/001/008",
+        "/dev/bus/usb/001/009",
+        "/dev/bus/usb/002/001"
+      ],
+      "programming_status": "completed",
+      "trials": [
+        {
+          "mode": "validation",
+          "attempt": 0,
+          "status": "failed",
+          "uart_device": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+          "programming_status": "completed",
+          "firmware_sha256": "6530144e689e5657d6d63124d501e72466ad245fbd3206535b091ee8b6b842a7",
+          "raw_uart_log": "docs/performance/20260930T041332.658437Z-standard-validation.uart.bin",
+          "text_uart_log": "docs/performance/20260930T041332.658437Z-standard-validation.uart.log",
+          "transmitted_uart_log": "docs/performance/20260930T041332.658437Z-standard-validation.uart.tx.bin",
+          "started_utc": "2026-09-30T04:13:32.682579+00:00",
+          "startup_recovery": {
+            "status": "completed",
+            "trigger": "bios_console_after_missed_initial_sfl_ack",
+            "uart_device": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+            "port_reopened": true,
+            "firmware_upload_mode": "LiteXTerm safe mode (64-byte frames, one outstanding)",
+            "console_command": "\\nserialboot\\n",
+            "fpga_reprogrammed": false
+          },
+          "raw_uart_sha256": "7e1ba3a8802d9ddb2806d0b9524afcf1b332d2638ef8b5b191adb00a4853d7e8",
+          "raw_uart_bytes": 3707,
+          "transmitted_uart_sha256": "4e6a0143767f97eb7d1038884c3204078a705dbf689abcd21d718f970011ec58",
+          "transmitted_uart_bytes": 23500,
+          "decode_errors_present": false,
+          "session_raw_uart_log": "build/benchmarks/20260930T041332.658437Z-standard/validation.uart.bin",
+          "session_text_uart_log": "build/benchmarks/20260930T041332.658437Z-standard/validation.uart.log",
+          "session_transmitted_uart_log": "build/benchmarks/20260930T041332.658437Z-standard/validation.uart.tx.bin",
+          "error": "capture validation failed: firmware reported a CoreMark error",
+          "finished_utc": "2026-09-30T04:14:10.178515+00:00"
+        },
+        {
+          "mode": "performance",
+          "attempt": 1,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        },
+        {
+          "mode": "performance",
+          "attempt": 2,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        },
+        {
+          "mode": "performance",
+          "attempt": 3,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        }
+      ],
+      "identity": {
+        "repository_revision": "20c21ca2d9d0e51679e93d1427bafc3bc31f2565",
+        "repository_dirty": true,
+        "source_fingerprint": "f0b3b26bbd88f765d6d145f90a49250463aa85c2c2f9091a2b38840bb0d22e96",
+        "profile": "standard",
+        "clock_hz": 48000000,
+        "coremark": {
+          "repository": "https://github.com/eembc/coremark.git",
+          "commit": "1f483d5b8316753a742cbf5590caf5bd0a4e4777"
+        },
+        "compiler": "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-gcc",
+        "compiler_version": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+        "compiler_flags": [
+          "-std=gnu99",
+          "-O2",
+          "-march=rv32i2p0_m",
+          "-mabi=ilp32",
+          "-D__vexriscv__",
+          "-g3",
+          "-no-pie",
+          "-fomit-frame-pointer",
+          "-Wall",
+          "-fno-builtin",
+          "-fno-stack-protector",
+          "-U_FORTIFY_SOURCE",
+          "-D_FORTIFY_SOURCE=0",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-fno-lto"
+        ],
+        "compiler_flags_complete": [
+          "-std=gnu99",
+          "-O2",
+          "-march=rv32i2p0_m",
+          "-mabi=ilp32",
+          "-D__vexriscv__",
+          "-g3",
+          "-no-pie",
+          "-fomit-frame-pointer",
+          "-Wall",
+          "-fno-builtin",
+          "-fno-stack-protector",
+          "-U_FORTIFY_SOURCE",
+          "-D_FORTIFY_SOURCE=0",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-fno-lto",
+          "-DITERATIONS=0",
+          "-DTOTAL_DATA_SIZE=2000",
+          "-DMEM_METHOD=MEM_STATIC",
+          "-DMULTITHREAD=1",
+          "-DPERFORMANCE_RUN=1",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/software/libc",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/benchmark/performance"
+        ],
+        "tool_versions": {
+          "python": "3.12.14",
+          "riscv_gcc": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+          "gowin": "V1.9.12.04",
+          "openfpgaloader": "openFPGALoader v0.13.1"
+        },
+        "cache": {
+          "instruction_cache": "enabled",
+          "data_cache": "enabled",
+          "configuration_source": "build/standard/software/include/generated/soc.h"
+        },
+        "memory": {
+          "main_ram": "0x40000000",
+          "main_ram_bytes": 32768,
+          "sram": "0x10000000",
+          "sram_bytes": 8192
+        },
+        "uart_device_requested": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+        "uart_device_selected": "/dev/ttyUSB1",
+        "bitstream": {
+          "path": "build/standard/bitstream.fs",
+          "sha256": "e6672689c60d2afccb1d50d48ce0d710c3f4a68bffb4d312dc2403475e01f7d7"
+        },
+        "firmware": {
+          "performance": {
+            "path": "build/standard/benchmark/performance/benchmark.bin",
+            "sha256": "feb7694a14a89829a6f4a6bc31f05af3c87b79e50c6bb84d76b6ba7165fc2c1b"
+          },
+          "validation": {
+            "path": "build/standard/benchmark/validation/benchmark.bin",
+            "sha256": "6530144e689e5657d6d63124d501e72466ad245fbd3206535b091ee8b6b842a7"
+          }
+        }
+      },
+      "aggregate": null,
+      "finished_utc": "2026-09-30T04:14:10.178759+00:00",
+      "evidence": "build/benchmarks/20260930T041332.658437Z-standard/session.json"
+    },
+    {
+      "schema_version": 1,
+      "session_id": "20260930T042209.107576Z-standard",
+      "status": "failed",
+      "created_utc": "2026-09-30T04:22:09.107802+00:00",
+      "profile": "standard",
+      "board": "Sipeed Tang Primer 20K with standard Dock",
+      "clock_hz": 48000000,
+      "uart_candidates_at_start": [
+        "/dev/serial/by-id/usb-1a86_USB_Single_Serial_599D114570-if00",
+        "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if00-port0",
+        "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0"
+      ],
+      "usb_device_nodes_at_start": [
+        "/dev/bus/usb/001/001",
+        "/dev/bus/usb/001/002",
+        "/dev/bus/usb/001/003",
+        "/dev/bus/usb/001/013",
+        "/dev/bus/usb/001/014",
+        "/dev/bus/usb/001/015",
+        "/dev/bus/usb/002/001"
+      ],
+      "programming_status": "completed",
+      "trials": [
+        {
+          "mode": "validation",
+          "attempt": 0,
+          "status": "failed",
+          "uart_device": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+          "programming_status": "completed",
+          "firmware_sha256": "574ab3fe3697c04d15a994162b30da5d7a7ddf9bf806fbe4d246615fb5e32eab",
+          "raw_uart_log": "docs/performance/20260930T042209.107576Z-standard-validation.uart.bin",
+          "text_uart_log": "docs/performance/20260930T042209.107576Z-standard-validation.uart.log",
+          "transmitted_uart_log": "docs/performance/20260930T042209.107576Z-standard-validation.uart.tx.bin",
+          "started_utc": "2026-09-30T04:22:09.132014+00:00",
+          "startup_recovery": {
+            "status": "completed",
+            "trigger": "bios_console_after_missed_initial_sfl_ack",
+            "uart_device": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+            "port_reopened": true,
+            "firmware_upload_mode": "LiteXTerm safe mode (64-byte frames, one outstanding)",
+            "console_command": "\\nserialboot\\n",
+            "fpga_reprogrammed": false
+          },
+          "raw_uart_sha256": "c1d87bba50d3de03b3dd624fd451630a4e888303cf1ec250dd0a74cc53946635",
+          "raw_uart_bytes": 3184,
+          "transmitted_uart_sha256": "83fd198810a0e8950b2c8703f8d085ad67d18225b49f2a975be6064d0037c7ab",
+          "transmitted_uart_bytes": 23540,
+          "decode_errors_present": false,
+          "session_raw_uart_log": "build/benchmarks/20260930T042209.107576Z-standard/validation.uart.bin",
+          "session_text_uart_log": "build/benchmarks/20260930T042209.107576Z-standard/validation.uart.log",
+          "session_transmitted_uart_log": "build/benchmarks/20260930T042209.107576Z-standard/validation.uart.tx.bin",
+          "error": "capture validation failed: firmware reported a CoreMark error",
+          "finished_utc": "2026-09-30T04:22:47.032180+00:00"
+        },
+        {
+          "mode": "performance",
+          "attempt": 1,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        },
+        {
+          "mode": "performance",
+          "attempt": 2,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        },
+        {
+          "mode": "performance",
+          "attempt": 3,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        }
+      ],
+      "identity": {
+        "repository_revision": "20c21ca2d9d0e51679e93d1427bafc3bc31f2565",
+        "repository_dirty": true,
+        "source_fingerprint": "fded6c686ae9989250d553ca46fcc9525ab0ae0775433e8d62dff90672f7e8c9",
+        "profile": "standard",
+        "clock_hz": 48000000,
+        "coremark": {
+          "repository": "https://github.com/eembc/coremark.git",
+          "commit": "1f483d5b8316753a742cbf5590caf5bd0a4e4777"
+        },
+        "compiler": "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-gcc",
+        "compiler_version": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+        "compiler_flags": [
+          "-std=gnu99",
+          "-O2",
+          "-fno-strict-aliasing",
+          "-march=rv32i2p0_m",
+          "-mabi=ilp32",
+          "-D__vexriscv__",
+          "-g3",
+          "-no-pie",
+          "-fomit-frame-pointer",
+          "-Wall",
+          "-fno-builtin",
+          "-fno-stack-protector",
+          "-U_FORTIFY_SOURCE",
+          "-D_FORTIFY_SOURCE=0",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-fno-lto"
+        ],
+        "compiler_flags_complete": [
+          "-std=gnu99",
+          "-O2",
+          "-fno-strict-aliasing",
+          "-march=rv32i2p0_m",
+          "-mabi=ilp32",
+          "-D__vexriscv__",
+          "-g3",
+          "-no-pie",
+          "-fomit-frame-pointer",
+          "-Wall",
+          "-fno-builtin",
+          "-fno-stack-protector",
+          "-U_FORTIFY_SOURCE",
+          "-D_FORTIFY_SOURCE=0",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-fno-lto",
+          "-DITERATIONS=0",
+          "-DTOTAL_DATA_SIZE=2000",
+          "-DMEM_METHOD=MEM_STATIC",
+          "-DMULTITHREAD=1",
+          "-DPERFORMANCE_RUN=1",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/software/libc",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/benchmark/performance"
+        ],
+        "tool_versions": {
+          "python": "3.12.14",
+          "riscv_gcc": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+          "gowin": "V1.9.12.04",
+          "openfpgaloader": "openFPGALoader v0.13.1"
+        },
+        "cache": {
+          "instruction_cache": "enabled",
+          "data_cache": "enabled",
+          "configuration_source": "build/standard/software/include/generated/soc.h"
+        },
+        "memory": {
+          "main_ram": "0x40000000",
+          "main_ram_bytes": 32768,
+          "sram": "0x10000000",
+          "sram_bytes": 8192
+        },
+        "uart_device_requested": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+        "uart_device_selected": "/dev/ttyUSB1",
+        "bitstream": {
+          "path": "build/standard/bitstream.fs",
+          "sha256": "e6672689c60d2afccb1d50d48ce0d710c3f4a68bffb4d312dc2403475e01f7d7"
+        },
+        "firmware": {
+          "performance": {
+            "path": "build/standard/benchmark/performance/benchmark.bin",
+            "sha256": "24636848062e7804f71788c28cadf371fe0d78e34c16fcb716020aedd3aa961d"
+          },
+          "validation": {
+            "path": "build/standard/benchmark/validation/benchmark.bin",
+            "sha256": "574ab3fe3697c04d15a994162b30da5d7a7ddf9bf806fbe4d246615fb5e32eab"
+          }
+        }
+      },
+      "aggregate": null,
+      "finished_utc": "2026-09-30T04:22:47.032416+00:00",
+      "evidence": "build/benchmarks/20260930T042209.107576Z-standard/session.json"
+    },
+    {
+      "schema_version": 1,
+      "session_id": "20260930T043635.083478Z-standard",
+      "status": "failed",
+      "created_utc": "2026-09-30T04:36:35.083657+00:00",
+      "profile": "standard",
+      "board": "Sipeed Tang Primer 20K with standard Dock",
+      "clock_hz": 48000000,
+      "uart_candidates_at_start": [
+        "/dev/serial/by-id/usb-1a86_USB_Single_Serial_599D114570-if00",
+        "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if00-port0",
+        "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0"
+      ],
+      "usb_device_nodes_at_start": [
+        "/dev/bus/usb/001/001",
+        "/dev/bus/usb/001/002",
+        "/dev/bus/usb/001/003",
+        "/dev/bus/usb/001/013",
+        "/dev/bus/usb/001/014",
+        "/dev/bus/usb/001/015",
+        "/dev/bus/usb/002/001"
+      ],
+      "programming_status": "completed",
+      "trials": [
+        {
+          "mode": "validation",
+          "attempt": 0,
+          "status": "failed",
+          "uart_device": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+          "programming_status": "completed",
+          "firmware_sha256": "07c3bdbe333ce7e0d51df0bf188898a533b0acbf0db24c69303b1f2f8ce5f2ed",
+          "raw_uart_log": "docs/performance/20260930T043635.083478Z-standard-validation.uart.bin",
+          "text_uart_log": "docs/performance/20260930T043635.083478Z-standard-validation.uart.log",
+          "transmitted_uart_log": "docs/performance/20260930T043635.083478Z-standard-validation.uart.tx.bin",
+          "started_utc": "2026-09-30T04:36:35.108505+00:00",
+          "startup_recovery": {
+            "status": "completed",
+            "trigger": "bios_console_after_missed_initial_sfl_ack",
+            "uart_device": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+            "port_reopened": true,
+            "firmware_upload_mode": "LiteXTerm safe mode (64-byte frames, one outstanding)",
+            "console_command": "\\nserialboot\\n",
+            "fpga_reprogrammed": false
+          },
+          "raw_uart_sha256": "2d2b95a1d4f2f07b4b9f260fa89c4a2752376f9cff1682950a156e05939f4772",
+          "raw_uart_bytes": 4466,
+          "transmitted_uart_sha256": "d296a2517b6350fbc9a50c1e2df0564a8934b81daffdd0b248754b1c45edc04a",
+          "transmitted_uart_bytes": 24956,
+          "decode_errors_present": false,
+          "session_raw_uart_log": "build/benchmarks/20260930T043635.083478Z-standard/validation.uart.bin",
+          "session_text_uart_log": "build/benchmarks/20260930T043635.083478Z-standard/validation.uart.log",
+          "session_transmitted_uart_log": "build/benchmarks/20260930T043635.083478Z-standard/validation.uart.tx.bin",
+          "error": "capture validation failed: firmware reported a CoreMark error",
+          "finished_utc": "2026-09-30T04:37:16.358257+00:00"
+        },
+        {
+          "mode": "performance",
+          "attempt": 1,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        },
+        {
+          "mode": "performance",
+          "attempt": 2,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        },
+        {
+          "mode": "performance",
+          "attempt": 3,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        }
+      ],
+      "identity": {
+        "repository_revision": "20c21ca2d9d0e51679e93d1427bafc3bc31f2565",
+        "repository_dirty": true,
+        "source_fingerprint": "39240d93213647a822c36f44eaf4c981a7b2f1b63d6a21aabc7c803034f4cd4f",
+        "profile": "standard",
+        "clock_hz": 48000000,
+        "coremark": {
+          "repository": "https://github.com/eembc/coremark.git",
+          "commit": "1f483d5b8316753a742cbf5590caf5bd0a4e4777"
+        },
+        "compiler": "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-gcc",
+        "compiler_version": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+        "compiler_flags": [
+          "-std=gnu99",
+          "-O2",
+          "-march=rv32i2p0_m",
+          "-mabi=ilp32",
+          "-D__vexriscv__",
+          "-g3",
+          "-no-pie",
+          "-fomit-frame-pointer",
+          "-Wall",
+          "-fno-builtin",
+          "-fno-stack-protector",
+          "-U_FORTIFY_SOURCE",
+          "-D_FORTIFY_SOURCE=0",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-fno-lto"
+        ],
+        "compiler_flags_complete": [
+          "-std=gnu99",
+          "-O2",
+          "-march=rv32i2p0_m",
+          "-mabi=ilp32",
+          "-D__vexriscv__",
+          "-g3",
+          "-no-pie",
+          "-fomit-frame-pointer",
+          "-Wall",
+          "-fno-builtin",
+          "-fno-stack-protector",
+          "-U_FORTIFY_SOURCE",
+          "-D_FORTIFY_SOURCE=0",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-fno-lto",
+          "-DITERATIONS=1000",
+          "-DTOTAL_DATA_SIZE=2000",
+          "-DMEM_METHOD=MEM_STATIC",
+          "-DMULTITHREAD=1",
+          "-DPERFORMANCE_RUN=1",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/software/libc",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/benchmark/performance"
+        ],
+        "tool_versions": {
+          "python": "3.12.14",
+          "riscv_gcc": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+          "gowin": "V1.9.12.04",
+          "openfpgaloader": "openFPGALoader v0.13.1"
+        },
+        "cache": {
+          "instruction_cache": "enabled",
+          "data_cache": "enabled",
+          "configuration_source": "build/standard/software/include/generated/soc.h"
+        },
+        "iteration_calibration": {
+          "method": "fixed_iteration_port_calibration_with_fresh_upstream_initialization",
+          "calibration_iterations": 1000,
+          "target_seconds": 20,
+          "formula": "ceil(calibration_iterations * target_seconds * clock_hz / calibration_ticks)",
+          "scored_pass_reinitializes_static_algorithm_data": true,
+          "scored_interval_index": 2
+        },
+        "memory": {
+          "main_ram": "0x40000000",
+          "main_ram_bytes": 32768,
+          "sram": "0x10000000",
+          "sram_bytes": 8192
+        },
+        "uart_device_requested": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+        "uart_device_selected": "/dev/ttyUSB1",
+        "bitstream": {
+          "path": "build/standard/bitstream.fs",
+          "sha256": "e6672689c60d2afccb1d50d48ce0d710c3f4a68bffb4d312dc2403475e01f7d7"
+        },
+        "firmware": {
+          "performance": {
+            "path": "build/standard/benchmark/performance/benchmark.bin",
+            "sha256": "479a037112fd2f996ed7552fb129b89d4fafccf2e2cfbe494cf680faba6903e1"
+          },
+          "validation": {
+            "path": "build/standard/benchmark/validation/benchmark.bin",
+            "sha256": "07c3bdbe333ce7e0d51df0bf188898a533b0acbf0db24c69303b1f2f8ce5f2ed"
+          }
+        }
+      },
+      "aggregate": null,
+      "finished_utc": "2026-09-30T04:37:16.358510+00:00",
+      "evidence": "build/benchmarks/20260930T043635.083478Z-standard/session.json"
+    },
+    {
+      "schema_version": 1,
+      "session_id": "20260930T044516.988690Z-standard",
+      "status": "failed",
+      "created_utc": "2026-09-30T04:45:16.988873+00:00",
+      "profile": "standard",
+      "board": "Sipeed Tang Primer 20K with standard Dock",
+      "clock_hz": 48000000,
+      "uart_candidates_at_start": [
+        "/dev/serial/by-id/usb-1a86_USB_Single_Serial_599D114570-if00",
+        "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if00-port0",
+        "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0"
+      ],
+      "usb_device_nodes_at_start": [
+        "/dev/bus/usb/001/001",
+        "/dev/bus/usb/001/002",
+        "/dev/bus/usb/001/003",
+        "/dev/bus/usb/001/013",
+        "/dev/bus/usb/001/014",
+        "/dev/bus/usb/001/015",
+        "/dev/bus/usb/002/001"
+      ],
+      "programming_status": "completed",
+      "trials": [
+        {
+          "mode": "validation",
+          "attempt": 0,
+          "status": "failed",
+          "uart_device": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+          "programming_status": "completed",
+          "firmware_sha256": "b9ac494ea7d161f7ffa958ae5de692b0467f95d74ca8ea3f0a9551f4f176d7e5",
+          "raw_uart_log": "docs/performance/20260930T044516.988690Z-standard-validation.uart.bin",
+          "text_uart_log": "docs/performance/20260930T044516.988690Z-standard-validation.uart.log",
+          "transmitted_uart_log": "docs/performance/20260930T044516.988690Z-standard-validation.uart.tx.bin",
+          "started_utc": "2026-09-30T04:45:17.013693+00:00",
+          "startup_recovery": {
+            "status": "completed",
+            "trigger": "bios_console_after_missed_initial_sfl_ack",
+            "uart_device": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+            "port_reopened": true,
+            "firmware_upload_mode": "LiteXTerm safe mode (64-byte frames, one outstanding)",
+            "console_command": "\\nserialboot\\n",
+            "fpga_reprogrammed": false
+          },
+          "raw_uart_sha256": "0dec16a0445dbc026eae0429f91e46f6b15c7a61b529d539fe742197590c9e9e",
+          "raw_uart_bytes": 4649,
+          "transmitted_uart_sha256": "50e130cf6507577085e6bf4d0771e79ca272359f44954d8ddef6c4a56c919460",
+          "transmitted_uart_bytes": 25212,
+          "decode_errors_present": true,
+          "session_raw_uart_log": "build/benchmarks/20260930T044516.988690Z-standard/validation.uart.bin",
+          "session_text_uart_log": "build/benchmarks/20260930T044516.988690Z-standard/validation.uart.log",
+          "session_transmitted_uart_log": "build/benchmarks/20260930T044516.988690Z-standard/validation.uart.tx.bin",
+          "error": "capture validation failed: firmware reported a CoreMark error",
+          "finished_utc": "2026-09-30T04:45:56.748813+00:00"
+        },
+        {
+          "mode": "performance",
+          "attempt": 1,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        },
+        {
+          "mode": "performance",
+          "attempt": 2,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        },
+        {
+          "mode": "performance",
+          "attempt": 3,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        }
+      ],
+      "identity": {
+        "repository_revision": "20c21ca2d9d0e51679e93d1427bafc3bc31f2565",
+        "repository_dirty": true,
+        "source_fingerprint": "e4bdb241d0ed4ce247eaef18254dcde2541d29717201c0f3f6c280a43fbdfa15",
+        "profile": "standard",
+        "clock_hz": 48000000,
+        "coremark": {
+          "repository": "https://github.com/eembc/coremark.git",
+          "commit": "1f483d5b8316753a742cbf5590caf5bd0a4e4777"
+        },
+        "compiler": "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-gcc",
+        "compiler_version": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+        "compiler_flags": [
+          "-std=gnu99",
+          "-O2",
+          "-march=rv32i2p0_m",
+          "-mabi=ilp32",
+          "-D__vexriscv__",
+          "-g3",
+          "-no-pie",
+          "-fomit-frame-pointer",
+          "-Wall",
+          "-fno-builtin",
+          "-fno-stack-protector",
+          "-U_FORTIFY_SOURCE",
+          "-D_FORTIFY_SOURCE=0",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-fno-lto"
+        ],
+        "compiler_flags_complete": [
+          "-std=gnu99",
+          "-O2",
+          "-march=rv32i2p0_m",
+          "-mabi=ilp32",
+          "-D__vexriscv__",
+          "-g3",
+          "-no-pie",
+          "-fomit-frame-pointer",
+          "-Wall",
+          "-fno-builtin",
+          "-fno-stack-protector",
+          "-U_FORTIFY_SOURCE",
+          "-D_FORTIFY_SOURCE=0",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-fno-lto",
+          "-DITERATIONS=1000",
+          "-DTOTAL_DATA_SIZE=2000",
+          "-DMEM_METHOD=MEM_STATIC",
+          "-DMULTITHREAD=1",
+          "-DPERFORMANCE_RUN=1",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/software/libc",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/benchmark/performance"
+        ],
+        "tool_versions": {
+          "python": "3.12.14",
+          "riscv_gcc": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+          "gowin": "V1.9.12.04",
+          "openfpgaloader": "openFPGALoader v0.13.1"
+        },
+        "cache": {
+          "instruction_cache": "enabled",
+          "data_cache": "enabled",
+          "configuration_source": "build/standard/software/include/generated/soc.h"
+        },
+        "iteration_calibration": {
+          "method": "fixed_iteration_port_calibration_with_fresh_upstream_initialization",
+          "calibration_iterations": 1000,
+          "target_seconds": 20,
+          "formula": "ceil(calibration_iterations * target_seconds * clock_hz / calibration_ticks)",
+          "scored_pass_reinitializes_static_algorithm_data": true,
+          "scored_interval_index": 2
+        },
+        "memory": {
+          "main_ram": "0x40000000",
+          "main_ram_bytes": 32768,
+          "sram": "0x10000000",
+          "sram_bytes": 8192
+        },
+        "uart_device_requested": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+        "uart_device_selected": "/dev/ttyUSB1",
+        "bitstream": {
+          "path": "build/standard/bitstream.fs",
+          "sha256": "e6672689c60d2afccb1d50d48ce0d710c3f4a68bffb4d312dc2403475e01f7d7"
+        },
+        "firmware": {
+          "performance": {
+            "path": "build/standard/benchmark/performance/benchmark.bin",
+            "sha256": "ccb38b50d89a2dc16f5ea01e4aa96f2490cdcbc923daa07f2f2a0a22ede4fddd",
+            "crc32": "3437c214",
+            "bytes": 22096
+          },
+          "validation": {
+            "path": "build/standard/benchmark/validation/benchmark.bin",
+            "sha256": "b9ac494ea7d161f7ffa958ae5de692b0467f95d74ca8ea3f0a9551f4f176d7e5",
+            "crc32": "cc7f9719",
+            "bytes": 22104
+          }
+        }
+      },
+      "aggregate": null,
+      "finished_utc": "2026-09-30T04:45:56.749112+00:00",
+      "evidence": "build/benchmarks/20260930T044516.988690Z-standard/session.json"
+    },
+    {
+      "schema_version": 1,
+      "session_id": "20260930T044944.090370Z-standard",
+      "status": "failed",
+      "created_utc": "2026-09-30T04:49:44.090538+00:00",
+      "profile": "standard",
+      "board": "Sipeed Tang Primer 20K with standard Dock",
+      "clock_hz": 48000000,
+      "uart_candidates_at_start": [
+        "/dev/serial/by-id/usb-1a86_USB_Single_Serial_599D114570-if00",
+        "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if00-port0",
+        "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0"
+      ],
+      "usb_device_nodes_at_start": [
+        "/dev/bus/usb/001/001",
+        "/dev/bus/usb/001/002",
+        "/dev/bus/usb/001/003",
+        "/dev/bus/usb/001/013",
+        "/dev/bus/usb/001/014",
+        "/dev/bus/usb/001/015",
+        "/dev/bus/usb/002/001"
+      ],
+      "programming_status": "completed",
+      "trials": [
+        {
+          "mode": "validation",
+          "attempt": 0,
+          "status": "failed",
+          "uart_device": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+          "programming_status": "completed",
+          "firmware_sha256": "125cc249a69b286e88a4dcf016802fd0a46bf17eb6d0625f56d3bca6783df983",
+          "raw_uart_log": "docs/performance/20260930T044944.090370Z-standard-validation.uart.bin",
+          "text_uart_log": "docs/performance/20260930T044944.090370Z-standard-validation.uart.log",
+          "transmitted_uart_log": "docs/performance/20260930T044944.090370Z-standard-validation.uart.tx.bin",
+          "started_utc": "2026-09-30T04:49:44.114979+00:00",
+          "startup_recovery": {
+            "status": "completed",
+            "trigger": "bios_console_after_missed_initial_sfl_ack",
+            "uart_device": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+            "port_reopened": true,
+            "firmware_upload_mode": "LiteXTerm safe mode (64-byte frames, one outstanding)",
+            "console_command": "\\nserialboot\\n",
+            "fpga_reprogrammed": false
+          },
+          "raw_uart_sha256": "9bb5335d6c87eafb5f310a44fa1ebfb40b97543e6b582506ba10d253298b3e1c",
+          "raw_uart_bytes": 4621,
+          "transmitted_uart_sha256": "fc061f3cc0a9b3d1f95b7c6c97b618198d002e0a5e95a1863f9a47eaba2effe6",
+          "transmitted_uart_bytes": 25252,
+          "decode_errors_present": true,
+          "session_raw_uart_log": "build/benchmarks/20260930T044944.090370Z-standard/validation.uart.bin",
+          "session_text_uart_log": "build/benchmarks/20260930T044944.090370Z-standard/validation.uart.log",
+          "session_transmitted_uart_log": "build/benchmarks/20260930T044944.090370Z-standard/validation.uart.tx.bin",
+          "error": "capture validation failed: firmware reported a CoreMark error",
+          "finished_utc": "2026-09-30T04:50:22.393467+00:00"
+        },
+        {
+          "mode": "performance",
+          "attempt": 1,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        },
+        {
+          "mode": "performance",
+          "attempt": 2,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        },
+        {
+          "mode": "performance",
+          "attempt": 3,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        }
+      ],
+      "identity": {
+        "repository_revision": "20c21ca2d9d0e51679e93d1427bafc3bc31f2565",
+        "repository_dirty": true,
+        "source_fingerprint": "289b4f26d0023d956efdacd20541a002e7d37508a57cf990b41f4ca3220f86f4",
+        "profile": "standard",
+        "clock_hz": 48000000,
+        "coremark": {
+          "repository": "https://github.com/eembc/coremark.git",
+          "commit": "1f483d5b8316753a742cbf5590caf5bd0a4e4777"
+        },
+        "compiler": "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-gcc",
+        "compiler_version": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+        "compiler_flags": [
+          "-std=gnu99",
+          "-O2",
+          "-march=rv32i2p0_m",
+          "-mabi=ilp32",
+          "-D__vexriscv__",
+          "-g3",
+          "-no-pie",
+          "-fomit-frame-pointer",
+          "-Wall",
+          "-fno-builtin",
+          "-fno-stack-protector",
+          "-U_FORTIFY_SOURCE",
+          "-D_FORTIFY_SOURCE=0",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-fno-lto"
+        ],
+        "compiler_flags_complete": [
+          "-std=gnu99",
+          "-O2",
+          "-march=rv32i2p0_m",
+          "-mabi=ilp32",
+          "-D__vexriscv__",
+          "-g3",
+          "-no-pie",
+          "-fomit-frame-pointer",
+          "-Wall",
+          "-fno-builtin",
+          "-fno-stack-protector",
+          "-U_FORTIFY_SOURCE",
+          "-D_FORTIFY_SOURCE=0",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-fno-lto",
+          "-DITERATIONS=1000",
+          "-DTOTAL_DATA_SIZE=2000",
+          "-DMEM_METHOD=MEM_STATIC",
+          "-DMULTITHREAD=1",
+          "-DPERFORMANCE_RUN=1",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/software/libc",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/benchmark/performance"
+        ],
+        "tool_versions": {
+          "python": "3.12.14",
+          "riscv_gcc": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+          "gowin": "V1.9.12.04",
+          "openfpgaloader": "openFPGALoader v0.13.1"
+        },
+        "cache": {
+          "instruction_cache": "enabled",
+          "data_cache": "enabled",
+          "configuration_source": "build/standard/software/include/generated/soc.h"
+        },
+        "iteration_calibration": {
+          "method": "fixed_iteration_port_calibration_with_fresh_upstream_initialization",
+          "calibration_iterations": 1000,
+          "target_seconds": 20,
+          "formula": "ceil(calibration_iterations * target_seconds * clock_hz / calibration_ticks)",
+          "scored_pass_reinitializes_static_algorithm_data": true,
+          "scored_interval_index": 2
+        },
+        "memory": {
+          "main_ram": "0x40000000",
+          "main_ram_bytes": 32768,
+          "sram": "0x10000000",
+          "sram_bytes": 8192
+        },
+        "uart_device_requested": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+        "uart_device_selected": "/dev/ttyUSB1",
+        "bitstream": {
+          "path": "build/standard/bitstream.fs",
+          "sha256": "e6672689c60d2afccb1d50d48ce0d710c3f4a68bffb4d312dc2403475e01f7d7"
+        },
+        "firmware": {
+          "performance": {
+            "path": "build/standard/benchmark/performance/benchmark.bin",
+            "sha256": "f536d61f8716b0e7b7aa682eccd54f4d5e54d243472f7707e29f5c8504d93abd",
+            "crc32": "3d41eabd",
+            "bytes": 22136
+          },
+          "validation": {
+            "path": "build/standard/benchmark/validation/benchmark.bin",
+            "sha256": "125cc249a69b286e88a4dcf016802fd0a46bf17eb6d0625f56d3bca6783df983",
+            "crc32": "83c0a4d8",
+            "bytes": 22144
+          }
+        }
+      },
+      "aggregate": null,
+      "finished_utc": "2026-09-30T04:50:22.393778+00:00",
+      "evidence": "build/benchmarks/20260930T044944.090370Z-standard/session.json"
+    },
+    {
+      "schema_version": 1,
+      "session_id": "20260930T100707.977409Z-standard",
+      "status": "failed",
+      "created_utc": "2026-09-30T10:07:07.977605+00:00",
+      "profile": "standard",
+      "board": "Sipeed Tang Primer 20K with standard Dock",
+      "clock_hz": 48000000,
+      "uart_candidates_at_start": [
+        "/dev/serial/by-id/usb-1a86_USB_Single_Serial_599D114570-if00",
+        "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if00-port0",
+        "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0"
+      ],
+      "usb_device_nodes_at_start": [
+        "/dev/bus/usb/001/001",
+        "/dev/bus/usb/001/002",
+        "/dev/bus/usb/001/003",
+        "/dev/bus/usb/001/013",
+        "/dev/bus/usb/001/014",
+        "/dev/bus/usb/001/015",
+        "/dev/bus/usb/002/001"
+      ],
+      "programming_status": "completed",
+      "trials": [
+        {
+          "mode": "validation",
+          "attempt": 0,
+          "status": "failed",
+          "uart_device": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+          "programming_status": "completed",
+          "firmware_sha256": "d8fa159f247fc1992d11865623700122b5c3c79b3a05a1182d1266b2d31711ba",
+          "raw_uart_log": "docs/performance/20260930T100707.977409Z-standard-validation.uart.bin",
+          "text_uart_log": "docs/performance/20260930T100707.977409Z-standard-validation.uart.log",
+          "transmitted_uart_log": "docs/performance/20260930T100707.977409Z-standard-validation.uart.tx.bin",
+          "started_utc": "2026-09-30T10:07:08.002272+00:00",
+          "startup_recovery": {
+            "status": "completed",
+            "trigger": "bios_console_after_missed_initial_sfl_ack",
+            "uart_device": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+            "port_reopened": true,
+            "firmware_upload_mode": "LiteXTerm safe mode (64-byte frames, one outstanding)",
+            "console_command": "\\nserialboot\\n",
+            "fpga_reprogrammed": false
+          },
+          "raw_uart_sha256": "687f0718ef6578daa1cf5d2bba18325b7d610248b7e026f94c454578f7e3cfbf",
+          "raw_uart_bytes": 5036,
+          "transmitted_uart_sha256": "da27993d0aca33914cf0ccd368c9022251a4a934ecf1757857fe722c45fb2eb6",
+          "transmitted_uart_bytes": 27524,
+          "decode_errors_present": true,
+          "session_raw_uart_log": "build/benchmarks/20260930T100707.977409Z-standard/validation.uart.bin",
+          "session_text_uart_log": "build/benchmarks/20260930T100707.977409Z-standard/validation.uart.log",
+          "session_transmitted_uart_log": "build/benchmarks/20260930T100707.977409Z-standard/validation.uart.tx.bin",
+          "error": "capture validation failed: firmware reported a CoreMark error",
+          "finished_utc": "2026-09-30T10:07:46.551985+00:00"
+        },
+        {
+          "mode": "performance",
+          "attempt": 1,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        },
+        {
+          "mode": "performance",
+          "attempt": 2,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        },
+        {
+          "mode": "performance",
+          "attempt": 3,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        }
+      ],
+      "identity": {
+        "repository_revision": "20c21ca2d9d0e51679e93d1427bafc3bc31f2565",
+        "repository_dirty": true,
+        "source_fingerprint": "f7e4b7cfcbca783d990b4aad7bf9848639176d586eaf5feb149b7c6de8b6cae8",
+        "profile": "standard",
+        "clock_hz": 48000000,
+        "coremark": {
+          "repository": "https://github.com/eembc/coremark.git",
+          "commit": "1f483d5b8316753a742cbf5590caf5bd0a4e4777"
+        },
+        "compiler": "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-gcc",
+        "compiler_version": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+        "compiler_flags": [
+          "-std=gnu99",
+          "-O2",
+          "-march=rv32i2p0_m",
+          "-mabi=ilp32",
+          "-D__vexriscv__",
+          "-g3",
+          "-no-pie",
+          "-fomit-frame-pointer",
+          "-Wall",
+          "-fno-builtin",
+          "-fno-stack-protector",
+          "-U_FORTIFY_SOURCE",
+          "-D_FORTIFY_SOURCE=0",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-fno-lto"
+        ],
+        "compiler_flags_complete": [
+          "-std=gnu99",
+          "-O2",
+          "-march=rv32i2p0_m",
+          "-mabi=ilp32",
+          "-D__vexriscv__",
+          "-g3",
+          "-no-pie",
+          "-fomit-frame-pointer",
+          "-Wall",
+          "-fno-builtin",
+          "-fno-stack-protector",
+          "-U_FORTIFY_SOURCE",
+          "-D_FORTIFY_SOURCE=0",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-fno-lto",
+          "-DITERATIONS=1000",
+          "-DTOTAL_DATA_SIZE=2000",
+          "-DMEM_METHOD=MEM_STATIC",
+          "-DMULTITHREAD=1",
+          "-DPERFORMANCE_RUN=1",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/software/libc",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/benchmark/performance"
+        ],
+        "tool_versions": {
+          "python": "3.12.14",
+          "riscv_gcc": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+          "gowin": "V1.9.12.04",
+          "openfpgaloader": "openFPGALoader v0.13.1"
+        },
+        "cache": {
+          "instruction_cache": "enabled",
+          "data_cache": "enabled",
+          "configuration_source": "build/standard/software/include/generated/soc.h"
+        },
+        "iteration_calibration": {
+          "method": "fixed_iteration_port_calibration_with_fresh_upstream_initialization",
+          "calibration_iterations": 1000,
+          "target_seconds": 20,
+          "formula": "ceil(calibration_iterations * target_seconds * clock_hz / calibration_ticks)",
+          "scored_pass_reinitializes_static_algorithm_data": true,
+          "scored_interval_index": 2
+        },
+        "memory": {
+          "main_ram": "0x40000000",
+          "main_ram_bytes": 32768,
+          "sram": "0x10000000",
+          "sram_bytes": 8192
+        },
+        "uart_device_requested": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+        "uart_device_selected": "/dev/ttyUSB1",
+        "bitstream": {
+          "path": "build/standard/bitstream.fs",
+          "sha256": "e6672689c60d2afccb1d50d48ce0d710c3f4a68bffb4d312dc2403475e01f7d7"
+        },
+        "firmware": {
+          "performance": {
+            "path": "build/standard/benchmark/performance/benchmark.bin",
+            "sha256": "b662c0899199e7b6d8f4efbbaabfa0d495b7a601abed07999b079609a0211c6c",
+            "crc32": "d3442421",
+            "bytes": 24136
+          },
+          "validation": {
+            "path": "build/standard/benchmark/validation/benchmark.bin",
+            "sha256": "d8fa159f247fc1992d11865623700122b5c3c79b3a05a1182d1266b2d31711ba",
+            "crc32": "71259735",
+            "bytes": 24160
+          }
+        }
+      },
+      "aggregate": null,
+      "finished_utc": "2026-09-30T10:07:46.552266+00:00",
+      "evidence": "build/benchmarks/20260930T100707.977409Z-standard/session.json"
+    },
+    {
+      "schema_version": 1,
+      "session_id": "20260930T101743.702711Z-standard",
+      "status": "failed",
+      "created_utc": "2026-09-30T10:17:43.702898+00:00",
+      "profile": "standard",
+      "board": "Sipeed Tang Primer 20K with standard Dock",
+      "clock_hz": 48000000,
+      "uart_candidates_at_start": [
+        "/dev/serial/by-id/usb-1a86_USB_Single_Serial_599D114570-if00",
+        "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if00-port0",
+        "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0"
+      ],
+      "usb_device_nodes_at_start": [
+        "/dev/bus/usb/001/001",
+        "/dev/bus/usb/001/002",
+        "/dev/bus/usb/001/003",
+        "/dev/bus/usb/001/013",
+        "/dev/bus/usb/001/014",
+        "/dev/bus/usb/001/015",
+        "/dev/bus/usb/002/001"
+      ],
+      "programming_status": "completed",
+      "trials": [
+        {
+          "mode": "validation",
+          "attempt": 0,
+          "status": "failed",
+          "uart_device": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+          "programming_status": "completed",
+          "firmware_sha256": "f351722054f591a83d9afc1e2cf4a2e42c33ef4f61cb812b9ddba8392d0915f2",
+          "raw_uart_log": "docs/performance/20260930T101743.702711Z-standard-validation.uart.bin",
+          "text_uart_log": "docs/performance/20260930T101743.702711Z-standard-validation.uart.log",
+          "transmitted_uart_log": "docs/performance/20260930T101743.702711Z-standard-validation.uart.tx.bin",
+          "started_utc": "2026-09-30T10:17:43.727212+00:00",
+          "startup_recovery": {
+            "status": "completed",
+            "trigger": "bios_console_after_missed_initial_sfl_ack",
+            "uart_device": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+            "port_reopened": true,
+            "firmware_upload_mode": "LiteXTerm safe mode (64-byte frames, one outstanding)",
+            "console_command": "\\nserialboot\\n",
+            "fpga_reprogrammed": false
+          },
+          "raw_uart_sha256": "7c7d584b82a5d9bfe225e6ffec9093582b275c72f975d0fd72c8a379d1e6b151",
+          "raw_uart_bytes": 5069,
+          "transmitted_uart_sha256": "97884e1c173b1f94c9891cf4538dbb510e3f6c4c4db5cb8716de22d0dcb51392",
+          "transmitted_uart_bytes": 30348,
+          "decode_errors_present": true,
+          "session_raw_uart_log": "build/benchmarks/20260930T101743.702711Z-standard/validation.uart.bin",
+          "session_text_uart_log": "build/benchmarks/20260930T101743.702711Z-standard/validation.uart.log",
+          "session_transmitted_uart_log": "build/benchmarks/20260930T101743.702711Z-standard/validation.uart.tx.bin",
+          "error": "capture validation failed: firmware reported a CoreMark error",
+          "finished_utc": "2026-09-30T10:18:22.607220+00:00"
+        },
+        {
+          "mode": "performance",
+          "attempt": 1,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        },
+        {
+          "mode": "performance",
+          "attempt": 2,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        },
+        {
+          "mode": "performance",
+          "attempt": 3,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        }
+      ],
+      "identity": {
+        "repository_revision": "20c21ca2d9d0e51679e93d1427bafc3bc31f2565",
+        "repository_dirty": true,
+        "source_fingerprint": "44fe1179f11a8cfb292061a6e4418070cefbb88b8894e1af153a6f6fae97eee8",
+        "profile": "standard",
+        "clock_hz": 48000000,
+        "coremark": {
+          "repository": "https://github.com/eembc/coremark.git",
+          "commit": "1f483d5b8316753a742cbf5590caf5bd0a4e4777"
+        },
+        "compiler": "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-gcc",
+        "compiler_version": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+        "compiler_flags": [
+          "-std=gnu99",
+          "-O2",
+          "-march=rv32i2p0_m",
+          "-mabi=ilp32",
+          "-D__vexriscv__",
+          "-g3",
+          "-no-pie",
+          "-fomit-frame-pointer",
+          "-Wall",
+          "-fno-builtin",
+          "-fno-stack-protector",
+          "-U_FORTIFY_SOURCE",
+          "-D_FORTIFY_SOURCE=0",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-fno-lto"
+        ],
+        "compiler_flags_complete": [
+          "-std=gnu99",
+          "-O2",
+          "-march=rv32i2p0_m",
+          "-mabi=ilp32",
+          "-D__vexriscv__",
+          "-g3",
+          "-no-pie",
+          "-fomit-frame-pointer",
+          "-Wall",
+          "-fno-builtin",
+          "-fno-stack-protector",
+          "-U_FORTIFY_SOURCE",
+          "-D_FORTIFY_SOURCE=0",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-fno-lto",
+          "-DITERATIONS=1000",
+          "-DTOTAL_DATA_SIZE=2000",
+          "-DMEM_METHOD=MEM_STATIC",
+          "-DMULTITHREAD=1",
+          "-DPERFORMANCE_RUN=1",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/software/libc",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/benchmark/performance"
+        ],
+        "tool_versions": {
+          "python": "3.12.14",
+          "riscv_gcc": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+          "gowin": "V1.9.12.04",
+          "openfpgaloader": "openFPGALoader v0.13.1"
+        },
+        "cache": {
+          "instruction_cache": "enabled",
+          "data_cache": "enabled",
+          "configuration_source": "build/standard/software/include/generated/soc.h"
+        },
+        "iteration_calibration": {
+          "method": "fixed_iteration_port_calibration_with_fresh_upstream_initialization",
+          "calibration_iterations": 1000,
+          "target_seconds": 20,
+          "formula": "ceil(calibration_iterations * target_seconds * clock_hz / calibration_ticks)",
+          "scored_pass_reinitializes_static_algorithm_data": true,
+          "scored_interval_index": 2
+        },
+        "memory": {
+          "main_ram": "0x40000000",
+          "main_ram_bytes": 32768,
+          "sram": "0x10000000",
+          "sram_bytes": 8192
+        },
+        "uart_device_requested": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+        "uart_device_selected": "/dev/ttyUSB1",
+        "bitstream": {
+          "path": "build/standard/bitstream.fs",
+          "sha256": "e6672689c60d2afccb1d50d48ce0d710c3f4a68bffb4d312dc2403475e01f7d7"
+        },
+        "firmware": {
+          "performance": {
+            "path": "build/standard/benchmark/performance/benchmark.bin",
+            "sha256": "c758068eb55cf58fc677b897f96539745d50f6f22b3ce11b2b68068b9ae2e2f8",
+            "crc32": "b461bc60",
+            "bytes": 26648
+          },
+          "validation": {
+            "path": "build/standard/benchmark/validation/benchmark.bin",
+            "sha256": "f351722054f591a83d9afc1e2cf4a2e42c33ef4f61cb812b9ddba8392d0915f2",
+            "crc32": "d0bf011a",
+            "bytes": 26672
+          }
+        }
+      },
+      "aggregate": null,
+      "finished_utc": "2026-09-30T10:18:22.607471+00:00",
+      "evidence": "build/benchmarks/20260930T101743.702711Z-standard/session.json"
+    },
+    {
+      "schema_version": 1,
+      "session_id": "20260930T103049.442873Z-standard",
+      "status": "failed",
+      "created_utc": "2026-09-30T10:30:49.443054+00:00",
+      "profile": "standard",
+      "board": "Sipeed Tang Primer 20K with standard Dock",
+      "clock_hz": 48000000,
+      "uart_candidates_at_start": [
+        "/dev/serial/by-id/usb-1a86_USB_Single_Serial_599D114570-if00",
+        "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if00-port0",
+        "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0"
+      ],
+      "usb_device_nodes_at_start": [
+        "/dev/bus/usb/001/001",
+        "/dev/bus/usb/001/002",
+        "/dev/bus/usb/001/003",
+        "/dev/bus/usb/001/013",
+        "/dev/bus/usb/001/014",
+        "/dev/bus/usb/001/015",
+        "/dev/bus/usb/002/001"
+      ],
+      "programming_status": "completed",
+      "trials": [
+        {
+          "mode": "validation",
+          "attempt": 0,
+          "status": "failed",
+          "uart_device": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+          "programming_status": "completed",
+          "firmware_sha256": "da9aa928fbfbb6934bfa68a56088b3645103596f2a5793404f3e07b4f67a2e1c",
+          "raw_uart_log": "docs/performance/20260930T103049.442873Z-standard-validation.uart.bin",
+          "text_uart_log": "docs/performance/20260930T103049.442873Z-standard-validation.uart.log",
+          "transmitted_uart_log": "docs/performance/20260930T103049.442873Z-standard-validation.uart.tx.bin",
+          "started_utc": "2026-09-30T10:30:49.470885+00:00",
+          "startup_recovery": {
+            "status": "in_progress",
+            "trigger": "bios_console_after_missed_initial_sfl_ack",
+            "uart_device": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+            "port_reopened": true,
+            "firmware_upload_mode": "LiteXTerm safe mode (64-byte frames, one outstanding)",
+            "console_command": "\\nserialboot\\n",
+            "fpga_reprogrammed": false
+          },
+          "error": "RuntimeError: UART reader failed while waiting for firmware startup after BIOS recovery: BENCHMARK_PORT_ERROR on-chip SRAM preflight failed",
+          "raw_uart_sha256": "af091ec607f89725e834f76ccaadfa2786804cefe7c305f5a497b7b78784945a",
+          "raw_uart_bytes": 2159,
+          "transmitted_uart_sha256": "ada44ab51be4dacecd8591cfbb81373b77d64e530eb6f2a4e517c7c68a15f9e8",
+          "transmitted_uart_bytes": 32292,
+          "decode_errors_present": false,
+          "session_raw_uart_log": "build/benchmarks/20260930T103049.442873Z-standard/validation.uart.bin",
+          "session_text_uart_log": "build/benchmarks/20260930T103049.442873Z-standard/validation.uart.log",
+          "session_transmitted_uart_log": "build/benchmarks/20260930T103049.442873Z-standard/validation.uart.tx.bin",
+          "finished_utc": "2026-09-30T10:30:59.221154+00:00"
+        },
+        {
+          "mode": "performance",
+          "attempt": 1,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        },
+        {
+          "mode": "performance",
+          "attempt": 2,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        },
+        {
+          "mode": "performance",
+          "attempt": 3,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        }
+      ],
+      "identity": {
+        "repository_revision": "20c21ca2d9d0e51679e93d1427bafc3bc31f2565",
+        "repository_dirty": true,
+        "source_fingerprint": "f57b200e68cb68b5629db5ab1202c378a82c3d3894fa2781cc76f11940308ea5",
+        "profile": "standard",
+        "clock_hz": 48000000,
+        "coremark": {
+          "repository": "https://github.com/eembc/coremark.git",
+          "commit": "1f483d5b8316753a742cbf5590caf5bd0a4e4777"
+        },
+        "compiler": "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-gcc",
+        "compiler_version": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+        "compiler_flags": [
+          "-std=gnu99",
+          "-O2",
+          "-march=rv32i2p0_m",
+          "-mabi=ilp32",
+          "-D__vexriscv__",
+          "-g3",
+          "-no-pie",
+          "-fomit-frame-pointer",
+          "-Wall",
+          "-fno-builtin",
+          "-fno-stack-protector",
+          "-U_FORTIFY_SOURCE",
+          "-D_FORTIFY_SOURCE=0",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-fno-lto"
+        ],
+        "compiler_flags_complete": [
+          "-std=gnu99",
+          "-O2",
+          "-march=rv32i2p0_m",
+          "-mabi=ilp32",
+          "-D__vexriscv__",
+          "-g3",
+          "-no-pie",
+          "-fomit-frame-pointer",
+          "-Wall",
+          "-fno-builtin",
+          "-fno-stack-protector",
+          "-U_FORTIFY_SOURCE",
+          "-D_FORTIFY_SOURCE=0",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-fno-lto",
+          "-DITERATIONS=1000",
+          "-DTOTAL_DATA_SIZE=2000",
+          "-DMEM_METHOD=MEM_STATIC",
+          "-DMULTITHREAD=1",
+          "-DPERFORMANCE_RUN=1",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/software/libc",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/benchmark/performance"
+        ],
+        "tool_versions": {
+          "python": "3.12.14",
+          "riscv_gcc": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+          "gowin": "V1.9.12.04",
+          "openfpgaloader": "openFPGALoader v0.13.1"
+        },
+        "cache": {
+          "instruction_cache": "enabled",
+          "data_cache": "enabled",
+          "configuration_source": "build/standard/software/include/generated/soc.h"
+        },
+        "iteration_calibration": {
+          "method": "fixed_iteration_port_calibration_with_fresh_upstream_initialization",
+          "calibration_iterations": 1000,
+          "target_seconds": 20,
+          "formula": "ceil(calibration_iterations * target_seconds * clock_hz / calibration_ticks)",
+          "scored_pass_reinitializes_static_algorithm_data": true,
+          "scored_interval_index": 2
+        },
+        "cache_maintenance": {
+          "function": "portable_init",
+          "sequence": [
+            "compiler_and_memory_fence",
+            "flush_cpu_dcache",
+            "compiler_and_memory_fence",
+            "flush_cpu_icache",
+            "compiler_and_memory_fence"
+          ],
+          "timing": "before_each_upstream_invocation_and_outside_timed_workload",
+          "api_headers": [
+            ".deps/litex/litex/soc/software/include/system.h",
+            ".deps/litex/litex/soc/cores/cpu/vexriscv/system.h"
+          ]
+        },
+        "runtime_preflight": {
+          "ram_probe": {
+            "storage": "volatile BSS array of 64 union words",
+            "bytes": 256,
+            "alignment_bytes": 32,
+            "phases": [
+              "two 32-bit write/read patterns cached and after cache maintenance",
+              "low/high halfword writes checking neighboring-half preservation and unsigned/signed reads",
+              "four byte-lane writes checking neighboring-byte preservation and unsigned/signed reads",
+              "halfword patterns include 0x0000, 0x7fff, 0x8000, 0xffff; byte patterns include 0x00, 0x7f, 0x80, 0xff",
+              "tight volatile back-to-back SH/LH and SB/LB sequences with same-location load-modify-store checks and neighbor preservation",
+              "alternating volatile SRAM stores and read-only linked-image loads at matching low-12 address bits (a D-cache index conflict when that cache is enabled), followed by SRAM/code checks"
+            ],
+            "cache_maintenance_after_patterns": "fence, flush_cpu_dcache, fence, flush_cpu_icache, fence",
+            "storage_limit": "existing 64-word array; 256 bytes total"
+          },
+          "image_integrity_rechecks": {
+            "phases": [
+              "calibration",
+              "scored"
+            ],
+            "sequence": [
+              "CRC32 linked image through cached reads",
+              "fence, flush_cpu_dcache, fence, flush_cpu_icache, fence",
+              "CRC32 linked image after cache maintenance"
+            ],
+            "comparison": "both values and image sizes must match initial preflight values",
+            "failure": "BENCHMARK_PORT_ERROR and halt",
+            "timing": "after_each_upstream_invocation_and_outside_timed_workload"
+          },
+          "runtime_seed_checks": {
+            "inputs": [
+              "seed1_volatile",
+              "seed2_volatile",
+              "seed3_volatile",
+              "seed4_volatile"
+            ],
+            "expected_seed_values": "mode constants and fixed or derived iteration count",
+            "emits": "BENCHMARK_RUNTIME_SEEDS",
+            "failure": "BENCHMARK_PORT_ERROR and halt before upstream invocation"
+          },
+          "wrapper_optimization": "benchmark_main.c is compiled with -Os to fit untimed diagnostics in 32-KiB main RAM; CoreMark sources retain the profile-wide -O2 flag",
+          "timing": "initial image, SRAM, and seed checks run before timed CoreMark work; image rechecks run after each interval"
+        },
+        "memory": {
+          "main_ram": "0x40000000",
+          "main_ram_bytes": 32768,
+          "sram": "0x10000000",
+          "sram_bytes": 8192
+        },
+        "uart_device_requested": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+        "uart_device_selected": "/dev/ttyUSB1",
+        "bitstream": {
+          "path": "build/standard/bitstream.fs",
+          "sha256": "e6672689c60d2afccb1d50d48ce0d710c3f4a68bffb4d312dc2403475e01f7d7"
+        },
+        "firmware": {
+          "performance": {
+            "path": "build/standard/benchmark/performance/benchmark.bin",
+            "sha256": "aed54d18899e9508e930ce6aeb3e00d01542b9fa2881660085d0b5275bbf57c8",
+            "crc32": "768a51d6",
+            "bytes": 28376
+          },
+          "validation": {
+            "path": "build/standard/benchmark/validation/benchmark.bin",
+            "sha256": "da9aa928fbfbb6934bfa68a56088b3645103596f2a5793404f3e07b4f67a2e1c",
+            "crc32": "5e522551",
+            "bytes": 28400
+          }
+        }
+      },
+      "aggregate": null,
+      "finished_utc": "2026-09-30T10:30:59.221462+00:00",
+      "evidence": "build/benchmarks/20260930T103049.442873Z-standard/session.json",
+      "diagnostic_note": "This extended-probe revision had an expected-value bookkeeping bug after its four-byte overwrite. Software emulation reproduces 11904 errors with failmask 0x1400; hardware additionally reports 256 errors for the SRAM/code cache-conflict check (0x80000). The defective probe result is unscored and must be reassessed using the corrected firmware."
+    },
+    {
+      "schema_version": 1,
+      "session_id": "20260930T103514.549238Z-standard",
+      "status": "failed",
+      "created_utc": "2026-09-30T10:35:14.549413+00:00",
+      "profile": "standard",
+      "board": "Sipeed Tang Primer 20K with standard Dock",
+      "clock_hz": 48000000,
+      "uart_candidates_at_start": [
+        "/dev/serial/by-id/usb-1a86_USB_Single_Serial_599D114570-if00",
+        "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if00-port0",
+        "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0"
+      ],
+      "usb_device_nodes_at_start": [
+        "/dev/bus/usb/001/001",
+        "/dev/bus/usb/001/002",
+        "/dev/bus/usb/001/003",
+        "/dev/bus/usb/001/013",
+        "/dev/bus/usb/001/014",
+        "/dev/bus/usb/001/015",
+        "/dev/bus/usb/002/001"
+      ],
+      "programming_status": "completed",
+      "trials": [
+        {
+          "mode": "validation",
+          "attempt": 0,
+          "status": "failed",
+          "uart_device": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+          "programming_status": "completed",
+          "firmware_sha256": "1c2ca12491d8fa031f9242dd6506ee009da1644e3c6316394c951ef7b4671207",
+          "raw_uart_log": "docs/performance/20260930T103514.549238Z-standard-validation.uart.bin",
+          "text_uart_log": "docs/performance/20260930T103514.549238Z-standard-validation.uart.log",
+          "transmitted_uart_log": "docs/performance/20260930T103514.549238Z-standard-validation.uart.tx.bin",
+          "started_utc": "2026-09-30T10:35:14.577591+00:00",
+          "startup_recovery": {
+            "status": "in_progress",
+            "trigger": "bios_console_after_missed_initial_sfl_ack",
+            "uart_device": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+            "port_reopened": true,
+            "firmware_upload_mode": "LiteXTerm safe mode (64-byte frames, one outstanding)",
+            "console_command": "\\nserialboot\\n",
+            "fpga_reprogrammed": false
+          },
+          "error": "RuntimeError: UART reader failed while waiting for firmware startup after BIOS recovery: BENCHMARK_PORT_ERROR on-chip SRAM preflight failed",
+          "raw_uart_sha256": "96bcf80cf8e847a59a9cb9679718547abf2ecd12d1c913fd475ea5e07cc5cbbd",
+          "raw_uart_bytes": 2156,
+          "transmitted_uart_sha256": "5b1f57713c4aefe6ef55e750086679cf11c7d54a0ce9c614fd7448f8d4e11511",
+          "transmitted_uart_bytes": 32292,
+          "decode_errors_present": false,
+          "session_raw_uart_log": "build/benchmarks/20260930T103514.549238Z-standard/validation.uart.bin",
+          "session_text_uart_log": "build/benchmarks/20260930T103514.549238Z-standard/validation.uart.log",
+          "session_transmitted_uart_log": "build/benchmarks/20260930T103514.549238Z-standard/validation.uart.tx.bin",
+          "finished_utc": "2026-09-30T10:35:24.161373+00:00"
+        },
+        {
+          "mode": "performance",
+          "attempt": 1,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        },
+        {
+          "mode": "performance",
+          "attempt": 2,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        },
+        {
+          "mode": "performance",
+          "attempt": 3,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        }
+      ],
+      "identity": {
+        "repository_revision": "20c21ca2d9d0e51679e93d1427bafc3bc31f2565",
+        "repository_dirty": true,
+        "source_fingerprint": "e721c701c8f55ebf8576691e43ede9fee957e7dac3ddb91b19faa64a3e2fd2e5",
+        "profile": "standard",
+        "clock_hz": 48000000,
+        "coremark": {
+          "repository": "https://github.com/eembc/coremark.git",
+          "commit": "1f483d5b8316753a742cbf5590caf5bd0a4e4777"
+        },
+        "compiler": "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-gcc",
+        "compiler_version": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+        "compiler_flags": [
+          "-std=gnu99",
+          "-O2",
+          "-march=rv32i2p0_m",
+          "-mabi=ilp32",
+          "-D__vexriscv__",
+          "-g3",
+          "-no-pie",
+          "-fomit-frame-pointer",
+          "-Wall",
+          "-fno-builtin",
+          "-fno-stack-protector",
+          "-U_FORTIFY_SOURCE",
+          "-D_FORTIFY_SOURCE=0",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-fno-lto"
+        ],
+        "compiler_flags_complete": [
+          "-std=gnu99",
+          "-O2",
+          "-march=rv32i2p0_m",
+          "-mabi=ilp32",
+          "-D__vexriscv__",
+          "-g3",
+          "-no-pie",
+          "-fomit-frame-pointer",
+          "-Wall",
+          "-fno-builtin",
+          "-fno-stack-protector",
+          "-U_FORTIFY_SOURCE",
+          "-D_FORTIFY_SOURCE=0",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-fno-lto",
+          "-DITERATIONS=1000",
+          "-DTOTAL_DATA_SIZE=2000",
+          "-DMEM_METHOD=MEM_STATIC",
+          "-DMULTITHREAD=1",
+          "-DPERFORMANCE_RUN=1",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/software/libc",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/benchmark/performance"
+        ],
+        "tool_versions": {
+          "python": "3.12.14",
+          "riscv_gcc": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+          "gowin": "V1.9.12.04",
+          "openfpgaloader": "openFPGALoader v0.13.1"
+        },
+        "cache": {
+          "instruction_cache": "enabled",
+          "data_cache": "enabled",
+          "configuration_source": "build/standard/software/include/generated/soc.h"
+        },
+        "iteration_calibration": {
+          "method": "fixed_iteration_port_calibration_with_fresh_upstream_initialization",
+          "calibration_iterations": 1000,
+          "target_seconds": 20,
+          "formula": "ceil(calibration_iterations * target_seconds * clock_hz / calibration_ticks)",
+          "scored_pass_reinitializes_static_algorithm_data": true,
+          "scored_interval_index": 2
+        },
+        "cache_maintenance": {
+          "function": "portable_init",
+          "sequence": [
+            "compiler_and_memory_fence",
+            "flush_cpu_dcache",
+            "compiler_and_memory_fence",
+            "flush_cpu_icache",
+            "compiler_and_memory_fence"
+          ],
+          "timing": "before_each_upstream_invocation_and_outside_timed_workload",
+          "api_headers": [
+            ".deps/litex/litex/soc/software/include/system.h",
+            ".deps/litex/litex/soc/cores/cpu/vexriscv/system.h"
+          ]
+        },
+        "runtime_preflight": {
+          "ram_probe": {
+            "storage": "volatile BSS array of 64 union words",
+            "bytes": 256,
+            "alignment_bytes": 32,
+            "phases": [
+              "two 32-bit write/read patterns cached and after cache maintenance",
+              "low/high halfword writes checking neighboring-half preservation and unsigned/signed reads",
+              "four byte-lane writes checking neighboring-byte preservation and unsigned/signed reads",
+              "halfword patterns include 0x0000, 0x7fff, 0x8000, 0xffff; byte patterns include 0x00, 0x7f, 0x80, 0xff",
+              "tight volatile back-to-back SH/LH and SB/LB sequences with same-location load-modify-store checks and neighbor preservation",
+              "alternating volatile SRAM stores and read-only linked-image loads at matching low-12 address bits (a D-cache index conflict when that cache is enabled), followed by SRAM/code checks"
+            ],
+            "cache_maintenance_after_patterns": "fence, flush_cpu_dcache, fence, flush_cpu_icache, fence",
+            "storage_limit": "existing 64-word array; 256 bytes total"
+          },
+          "image_integrity_rechecks": {
+            "phases": [
+              "calibration",
+              "scored"
+            ],
+            "sequence": [
+              "CRC32 linked image through cached reads",
+              "fence, flush_cpu_dcache, fence, flush_cpu_icache, fence",
+              "CRC32 linked image after cache maintenance"
+            ],
+            "comparison": "both values and image sizes must match initial preflight values",
+            "failure": "BENCHMARK_PORT_ERROR and halt",
+            "timing": "after_each_upstream_invocation_and_outside_timed_workload"
+          },
+          "runtime_seed_checks": {
+            "inputs": [
+              "seed1_volatile",
+              "seed2_volatile",
+              "seed3_volatile",
+              "seed4_volatile"
+            ],
+            "expected_seed_values": "mode constants and fixed or derived iteration count",
+            "emits": "BENCHMARK_RUNTIME_SEEDS",
+            "failure": "BENCHMARK_PORT_ERROR and halt before upstream invocation"
+          },
+          "wrapper_optimization": "benchmark_main.c is compiled with -Os to fit untimed diagnostics in 32-KiB main RAM; CoreMark sources retain the profile-wide -O2 flag",
+          "timing": "initial image, SRAM, and seed checks run before timed CoreMark work; image rechecks run after each interval"
+        },
+        "memory": {
+          "main_ram": "0x40000000",
+          "main_ram_bytes": 32768,
+          "sram": "0x10000000",
+          "sram_bytes": 8192
+        },
+        "uart_device_requested": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+        "uart_device_selected": "/dev/ttyUSB1",
+        "bitstream": {
+          "path": "build/standard/bitstream.fs",
+          "sha256": "e6672689c60d2afccb1d50d48ce0d710c3f4a68bffb4d312dc2403475e01f7d7"
+        },
+        "firmware": {
+          "performance": {
+            "path": "build/standard/benchmark/performance/benchmark.bin",
+            "sha256": "06f4e2ffa5253192a569aa394aec2a78c8af235dc8f817980e163c5a2d29f348",
+            "crc32": "da60955e",
+            "bytes": 28376
+          },
+          "validation": {
+            "path": "build/standard/benchmark/validation/benchmark.bin",
+            "sha256": "1c2ca12491d8fa031f9242dd6506ee009da1644e3c6316394c951ef7b4671207",
+            "crc32": "4e15b3a5",
+            "bytes": 28400
+          }
+        }
+      },
+      "aggregate": null,
+      "finished_utc": "2026-09-30T10:35:24.161670+00:00",
+      "evidence": "build/benchmarks/20260930T103514.549238Z-standard/session.json"
+    },
+    {
+      "schema_version": 1,
+      "session_id": "20260930T104344.217514Z-standard",
+      "status": "failed",
+      "created_utc": "2026-09-30T10:43:44.217695+00:00",
+      "profile": "standard",
+      "board": "Sipeed Tang Primer 20K with standard Dock",
+      "clock_hz": 48000000,
+      "uart_candidates_at_start": [
+        "/dev/serial/by-id/usb-1a86_USB_Single_Serial_599D114570-if00",
+        "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if00-port0",
+        "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0"
+      ],
+      "usb_device_nodes_at_start": [
+        "/dev/bus/usb/001/001",
+        "/dev/bus/usb/001/002",
+        "/dev/bus/usb/001/003",
+        "/dev/bus/usb/001/013",
+        "/dev/bus/usb/001/014",
+        "/dev/bus/usb/001/015",
+        "/dev/bus/usb/002/001"
+      ],
+      "programming_status": "completed",
+      "trials": [
+        {
+          "mode": "validation",
+          "attempt": 0,
+          "status": "failed",
+          "uart_device": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+          "programming_status": "completed",
+          "firmware_sha256": "66832111066e231800de57b51f963405d9d98f91dcfa6eb0834fdc1eb1e2f57d",
+          "raw_uart_log": "docs/performance/20260930T104344.217514Z-standard-validation.uart.bin",
+          "text_uart_log": "docs/performance/20260930T104344.217514Z-standard-validation.uart.log",
+          "transmitted_uart_log": "docs/performance/20260930T104344.217514Z-standard-validation.uart.tx.bin",
+          "started_utc": "2026-09-30T10:43:44.246562+00:00",
+          "startup_recovery": {
+            "status": "in_progress",
+            "trigger": "bios_console_after_missed_initial_sfl_ack",
+            "uart_device": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+            "port_reopened": true,
+            "firmware_upload_mode": "LiteXTerm safe mode (64-byte frames, one outstanding)",
+            "console_command": "\\nserialboot\\n",
+            "fpga_reprogrammed": false
+          },
+          "error": "RuntimeError: UART reader failed while waiting for firmware startup after BIOS recovery: BENCHMARK_PORT_ERROR on-chip SRAM preflight failed",
+          "raw_uart_sha256": "bd73c4a3c33863a835832f8ba253510538be34bd5fa8a1155f4013c5f354f477",
+          "raw_uart_bytes": 2156,
+          "transmitted_uart_sha256": "7f36f479eb8efa5f1a7adfca246633ce1aedddf05c3a0b7f9b4b2da5748ad615",
+          "transmitted_uart_bytes": 32292,
+          "decode_errors_present": false,
+          "session_raw_uart_log": "build/benchmarks/20260930T104344.217514Z-standard/validation.uart.bin",
+          "session_text_uart_log": "build/benchmarks/20260930T104344.217514Z-standard/validation.uart.log",
+          "session_transmitted_uart_log": "build/benchmarks/20260930T104344.217514Z-standard/validation.uart.tx.bin",
+          "finished_utc": "2026-09-30T10:43:53.859460+00:00"
+        },
+        {
+          "mode": "performance",
+          "attempt": 1,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        },
+        {
+          "mode": "performance",
+          "attempt": 2,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        },
+        {
+          "mode": "performance",
+          "attempt": 3,
+          "status": "not_run",
+          "error": "prior validation failed or the run was interrupted"
+        }
+      ],
+      "identity": {
+        "repository_revision": "20c21ca2d9d0e51679e93d1427bafc3bc31f2565",
+        "repository_dirty": true,
+        "source_fingerprint": "3670ebea898d97de64b97936a6fb413294c48787ee091b5a95002108dc8185da",
+        "profile": "standard",
+        "clock_hz": 48000000,
+        "coremark": {
+          "repository": "https://github.com/eembc/coremark.git",
+          "commit": "1f483d5b8316753a742cbf5590caf5bd0a4e4777"
+        },
+        "compiler": "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-gcc",
+        "compiler_version": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+        "compiler_flags": [
+          "-std=gnu99",
+          "-O2",
+          "-march=rv32i2p0_m",
+          "-mabi=ilp32",
+          "-D__vexriscv__",
+          "-g3",
+          "-no-pie",
+          "-fomit-frame-pointer",
+          "-Wall",
+          "-fno-builtin",
+          "-fno-stack-protector",
+          "-U_FORTIFY_SOURCE",
+          "-D_FORTIFY_SOURCE=0",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-fno-lto"
+        ],
+        "compiler_flags_complete": [
+          "-std=gnu99",
+          "-O2",
+          "-march=rv32i2p0_m",
+          "-mabi=ilp32",
+          "-D__vexriscv__",
+          "-g3",
+          "-no-pie",
+          "-fomit-frame-pointer",
+          "-Wall",
+          "-fno-builtin",
+          "-fno-stack-protector",
+          "-U_FORTIFY_SOURCE",
+          "-D_FORTIFY_SOURCE=0",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-fno-lto",
+          "-DITERATIONS=1000",
+          "-DTOTAL_DATA_SIZE=2000",
+          "-DMEM_METHOD=MEM_STATIC",
+          "-DMULTITHREAD=1",
+          "-DPERFORMANCE_RUN=1",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/software/libc",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/benchmark/performance"
+        ],
+        "tool_versions": {
+          "python": "3.12.14",
+          "riscv_gcc": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+          "gowin": "V1.9.12.04",
+          "openfpgaloader": "openFPGALoader v0.13.1"
+        },
+        "cache": {
+          "instruction_cache": "enabled",
+          "data_cache": "enabled",
+          "configuration_source": "build/standard/software/include/generated/soc.h"
+        },
+        "iteration_calibration": {
+          "method": "fixed_iteration_port_calibration_with_fresh_upstream_initialization",
+          "calibration_iterations": 1000,
+          "target_seconds": 20,
+          "formula": "ceil(calibration_iterations * target_seconds * clock_hz / calibration_ticks)",
+          "scored_pass_reinitializes_static_algorithm_data": true,
+          "scored_interval_index": 2
+        },
+        "cache_maintenance": {
+          "function": "portable_init",
+          "sequence": [
+            "compiler_and_memory_fence",
+            "flush_cpu_dcache",
+            "compiler_and_memory_fence",
+            "flush_cpu_icache",
+            "compiler_and_memory_fence"
+          ],
+          "timing": "before_each_upstream_invocation_and_outside_timed_workload",
+          "api_headers": [
+            ".deps/litex/litex/soc/software/include/system.h",
+            ".deps/litex/litex/soc/cores/cpu/vexriscv/system.h"
+          ]
+        },
+        "runtime_preflight": {
+          "ram_probe": {
+            "storage": "volatile BSS array of 64 union words",
+            "bytes": 256,
+            "alignment_bytes": 32,
+            "phases": [
+              "two 32-bit write/read patterns cached and after cache maintenance",
+              "low/high halfword writes checking neighboring-half preservation and unsigned/signed reads",
+              "four byte-lane writes checking neighboring-byte preservation and unsigned/signed reads",
+              "halfword patterns include 0x0000, 0x7fff, 0x8000, 0xffff; byte patterns include 0x00, 0x7f, 0x80, 0xff",
+              "tight volatile back-to-back SH/LH and SB/LB sequences with same-location load-modify-store checks and neighbor preservation",
+              "alternating volatile SRAM stores and read-only linked-image loads at matching low-12 address bits (a D-cache index conflict when that cache is enabled), followed by SRAM/code checks"
+            ],
+            "cache_maintenance_after_patterns": "fence, flush_cpu_dcache, fence, flush_cpu_icache, fence",
+            "storage_limit": "existing 64-word array; 256 bytes total"
+          },
+          "image_integrity_rechecks": {
+            "phases": [
+              "calibration",
+              "scored"
+            ],
+            "sequence": [
+              "CRC32 linked image through cached reads",
+              "fence, flush_cpu_dcache, fence, flush_cpu_icache, fence",
+              "CRC32 linked image after cache maintenance"
+            ],
+            "comparison": "both values and image sizes must match initial preflight values",
+            "failure": "BENCHMARK_PORT_ERROR and halt",
+            "timing": "after_each_upstream_invocation_and_outside_timed_workload"
+          },
+          "runtime_seed_checks": {
+            "inputs": [
+              "seed1_volatile",
+              "seed2_volatile",
+              "seed3_volatile",
+              "seed4_volatile"
+            ],
+            "expected_seed_values": "mode constants and fixed or derived iteration count",
+            "emits": "BENCHMARK_RUNTIME_SEEDS",
+            "failure": "BENCHMARK_PORT_ERROR and halt before upstream invocation"
+          },
+          "wrapper_optimization": "benchmark_main.c is compiled with -Os to fit untimed diagnostics in 32-KiB main RAM; CoreMark sources retain the profile-wide -O2 flag",
+          "timing": "initial image, SRAM, and seed checks run before timed CoreMark work; image rechecks run after each interval"
+        },
+        "memory": {
+          "main_ram": "0x40000000",
+          "main_ram_bytes": 32768,
+          "sram": "0x10000000",
+          "sram_bytes": 8192
+        },
+        "uart_device_requested": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+        "uart_device_selected": "/dev/ttyUSB1",
+        "bitstream": {
+          "path": "build/standard/bitstream.fs",
+          "sha256": "e6672689c60d2afccb1d50d48ce0d710c3f4a68bffb4d312dc2403475e01f7d7"
+        },
+        "firmware": {
+          "performance": {
+            "path": "build/standard/benchmark/performance/benchmark.bin",
+            "sha256": "093457def6cc6e16dcf0b7fc1cd910e8e48322367043aa5e221d8fdd3b3a67c3",
+            "crc32": "83f3d45e",
+            "bytes": 28376
+          },
+          "validation": {
+            "path": "build/standard/benchmark/validation/benchmark.bin",
+            "sha256": "66832111066e231800de57b51f963405d9d98f91dcfa6eb0834fdc1eb1e2f57d",
+            "crc32": "779664db",
+            "bytes": 28400
+          }
+        }
+      },
+      "aggregate": null,
+      "finished_utc": "2026-09-30T10:43:53.859795+00:00",
+      "evidence": "build/benchmarks/20260930T104344.217514Z-standard/session.json"
+    }
+  ],
+  "latest_session_id": "20260930T104344.217514Z-standard",
+  "report_generated_utc": "2026-09-30T10:49:05.486455+00:00",
+  "build_profiles": {
+    "minimal": {
+      "build_status": "passed",
+      "resources": {
+        "profile": "minimal",
+        "device": "GW2A-LV18PG256C8/I7",
+        "resources": {
+          "logic": {
+            "used": 2954,
+            "capacity": 20736
+          },
+          "lut": {
+            "used": 2632,
+            "source": "build/minimal/gateware/impl/pnr/project.rpt.txt"
+          },
+          "alu": {
+            "used": 298,
+            "source": "build/minimal/gateware/impl/pnr/project.rpt.txt"
+          },
+          "registers": {
+            "used": 1382,
+            "capacity": 16173
+          },
+          "bsram": {
+            "used": 38,
+            "capacity": 46
+          },
+          "dsp": {
+            "used": null,
+            "status": "unavailable",
+            "detail": "Gowin synthesis resource report lists '-' for DSP NUMBER",
+            "source": "build/minimal/gateware/impl/gwsynthesis/project_syn_resource.html"
+          }
+        },
+        "timing": {
+          "constraint_mhz": 48.0,
+          "actual_fmax_mhz": 70.002,
+          "worst_setup_slack_ns": 6.548,
+          "setup_violated_endpoints": 0,
+          "analyzed_paths": 8757,
+          "analyzed_endpoints": 4458,
+          "no_timing_path_messages": [
+            "No timing paths to get frequency of rPLL/CLKOUTP.default_gen_clk!",
+            "No timing paths to get frequency of rPLL/CLKOUTD.default_gen_clk!",
+            "No timing paths to get frequency of rPLL/CLKOUTD3.default_gen_clk!"
+          ]
+        },
+        "evidence": {
+          "pnr_resource_report": "build/minimal/gateware/impl/pnr/project.rpt.txt",
+          "timing_report": "build/minimal/gateware/impl/pnr/project.tr",
+          "synthesis_resource_report": "build/minimal/gateware/impl/gwsynthesis/project_syn_resource.html"
+        }
+      },
+      "performance_firmware_bytes": 29928,
+      "validation_firmware_bytes": 29952,
+      "source_fingerprint": "6c0d2788dc036955e1341e6946dfcda3ae8d6119707a11ecc4cf69b6660efb4b",
+      "bitstream_sha256": "680b057aa1e1c3a6d2467896b611e12201021b3a288b25a51732fd16e6766ea4",
+      "firmware_sha256": {
+        "performance": "db6d5dbe2e8b7169c97cce93a13adb185d29bf7bace3c0cb4ecce3719cbb726e",
+        "validation": "1db2c96dc7a9425f9f497118736cc1e5c4805d6e22fd4ea850ef9b2b29305bab"
+      },
+      "compiler_flags": [
+        "-std=gnu99",
+        "-O2",
+        "-march=rv32i2p0",
+        "-mabi=ilp32",
+        "-D__vexriscv__",
+        "-g3",
+        "-no-pie",
+        "-fomit-frame-pointer",
+        "-Wall",
+        "-fno-builtin",
+        "-fno-stack-protector",
+        "-U_FORTIFY_SOURCE",
+        "-D_FORTIFY_SOURCE=0",
+        "-ffunction-sections",
+        "-fdata-sections",
+        "-fno-lto"
+      ],
+      "cache": {
+        "instruction_cache": "disabled",
+        "data_cache": "disabled",
+        "configuration_source": "build/minimal/software/include/generated/soc.h"
+      },
+      "iteration_calibration": {
+        "method": "fixed_iteration_port_calibration_with_fresh_upstream_initialization",
+        "calibration_iterations": 1000,
+        "target_seconds": 20,
+        "formula": "ceil(calibration_iterations * target_seconds * clock_hz / calibration_ticks)",
+        "scored_pass_reinitializes_static_algorithm_data": true,
+        "scored_interval_index": 2
+      },
+      "cache_maintenance": {
+        "function": "portable_init",
+        "sequence": [
+          "compiler_and_memory_fence",
+          "flush_cpu_dcache",
+          "compiler_and_memory_fence",
+          "flush_cpu_icache",
+          "compiler_and_memory_fence"
+        ],
+        "timing": "before_each_upstream_invocation_and_outside_timed_workload",
+        "api_headers": [
+          ".deps/litex/litex/soc/software/include/system.h",
+          ".deps/litex/litex/soc/cores/cpu/vexriscv/system.h"
+        ]
+      },
+      "runtime_preflight": {
+        "ram_probe": {
+          "storage": "volatile BSS array of 64 union words",
+          "bytes": 256,
+          "alignment_bytes": 32,
+          "phases": [
+            "two 32-bit write/read patterns cached and after cache maintenance",
+            "low/high halfword writes checking neighboring-half preservation and unsigned/signed reads",
+            "four byte-lane writes checking neighboring-byte preservation and unsigned/signed reads",
+            "halfword patterns include 0x0000, 0x7fff, 0x8000, 0xffff; byte patterns include 0x00, 0x7f, 0x80, 0xff",
+            "tight volatile back-to-back SH/LH and SB/LB sequences with same-location load-modify-store checks and neighbor preservation",
+            "alternating volatile SRAM stores and read-only linked-image loads at matching low-12 address bits (a D-cache index conflict when that cache is enabled), followed by SRAM/code checks"
+          ],
+          "cache_maintenance_after_patterns": "fence, flush_cpu_dcache, fence, flush_cpu_icache, fence",
+          "storage_limit": "existing 64-word array; 256 bytes total"
+        },
+        "image_integrity_rechecks": {
+          "phases": [
+            "calibration",
+            "scored"
+          ],
+          "sequence": [
+            "CRC32 linked image through cached reads",
+            "fence, flush_cpu_dcache, fence, flush_cpu_icache, fence",
+            "CRC32 linked image after cache maintenance"
+          ],
+          "comparison": "both values and image sizes must match initial preflight values",
+          "failure": "BENCHMARK_PORT_ERROR and halt",
+          "timing": "after_each_upstream_invocation_and_outside_timed_workload"
+        },
+        "runtime_seed_checks": {
+          "inputs": [
+            "seed1_volatile",
+            "seed2_volatile",
+            "seed3_volatile",
+            "seed4_volatile"
+          ],
+          "expected_seed_values": "mode constants and fixed or derived iteration count",
+          "emits": "BENCHMARK_RUNTIME_SEEDS",
+          "failure": "BENCHMARK_PORT_ERROR and halt before upstream invocation"
+        },
+        "wrapper_optimization": "benchmark_main.c is compiled with -Os to fit untimed diagnostics in 32-KiB main RAM; CoreMark sources retain the profile-wide -O2 flag",
+        "timing": "initial image, SRAM, and seed checks run before timed CoreMark work; image rechecks run after each interval"
+      },
+      "memory": {
+        "main_ram": "0x40000000",
+        "main_ram_bytes": 32768,
+        "sram": "0x10000000",
+        "sram_bytes": 8192
+      },
+      "hardware_status": "not_measured"
+    },
+    "lite": {
+      "build_status": "passed",
+      "resources": {
+        "profile": "lite",
+        "device": "GW2A-LV18PG256C8/I7",
+        "resources": {
+          "logic": {
+            "used": 3852,
+            "capacity": 20736
+          },
+          "lut": {
+            "used": 3385,
+            "source": "build/lite/gateware/impl/pnr/project.rpt.txt"
+          },
+          "alu": {
+            "used": 443,
+            "source": "build/lite/gateware/impl/pnr/project.rpt.txt"
+          },
+          "registers": {
+            "used": 1639,
+            "capacity": 16173
+          },
+          "bsram": {
+            "used": 40,
+            "capacity": 46
+          },
+          "dsp": {
+            "used": null,
+            "status": "unavailable",
+            "detail": "Gowin synthesis resource report lists '-' for DSP NUMBER",
+            "source": "build/lite/gateware/impl/gwsynthesis/project_syn_resource.html"
+          }
+        },
+        "timing": {
+          "constraint_mhz": 48.0,
+          "actual_fmax_mhz": 55.471,
+          "worst_setup_slack_ns": 2.806,
+          "setup_violated_endpoints": 0,
+          "analyzed_paths": 9999,
+          "analyzed_endpoints": 5074,
+          "no_timing_path_messages": [
+            "No timing paths to get frequency of rPLL/CLKOUTP.default_gen_clk!",
+            "No timing paths to get frequency of rPLL/CLKOUTD.default_gen_clk!",
+            "No timing paths to get frequency of rPLL/CLKOUTD3.default_gen_clk!"
+          ]
+        },
+        "evidence": {
+          "pnr_resource_report": "build/lite/gateware/impl/pnr/project.rpt.txt",
+          "timing_report": "build/lite/gateware/impl/pnr/project.tr",
+          "synthesis_resource_report": "build/lite/gateware/impl/gwsynthesis/project_syn_resource.html"
+        }
+      },
+      "performance_firmware_bytes": 28360,
+      "validation_firmware_bytes": 28392,
+      "source_fingerprint": "d40cced7aac9de0963b7828d3820f09d639a3e569ca64df00dfaacb16a329f10",
+      "bitstream_sha256": "49f535e8cf8ebe42265eac355d9d463eb49adb10b0f7d390c343336a16b0fd4e",
+      "firmware_sha256": {
+        "performance": "18baac49a5711eb169f23e9862035af054ba703fbaf515739a1785f44874b6b6",
+        "validation": "fbb61bf128f11958107ece5d13d137e07755e18f5462f9b2671b123892649019"
+      },
+      "compiler_flags": [
+        "-std=gnu99",
+        "-O2",
+        "-march=rv32i2p0_m",
+        "-mabi=ilp32",
+        "-D__vexriscv__",
+        "-g3",
+        "-no-pie",
+        "-fomit-frame-pointer",
+        "-Wall",
+        "-fno-builtin",
+        "-fno-stack-protector",
+        "-U_FORTIFY_SOURCE",
+        "-D_FORTIFY_SOURCE=0",
+        "-ffunction-sections",
+        "-fdata-sections",
+        "-fno-lto"
+      ],
+      "cache": {
+        "instruction_cache": "enabled",
+        "data_cache": "disabled",
+        "configuration_source": "build/lite/software/include/generated/soc.h"
+      },
+      "iteration_calibration": {
+        "method": "fixed_iteration_port_calibration_with_fresh_upstream_initialization",
+        "calibration_iterations": 1000,
+        "target_seconds": 20,
+        "formula": "ceil(calibration_iterations * target_seconds * clock_hz / calibration_ticks)",
+        "scored_pass_reinitializes_static_algorithm_data": true,
+        "scored_interval_index": 2
+      },
+      "cache_maintenance": {
+        "function": "portable_init",
+        "sequence": [
+          "compiler_and_memory_fence",
+          "flush_cpu_dcache",
+          "compiler_and_memory_fence",
+          "flush_cpu_icache",
+          "compiler_and_memory_fence"
+        ],
+        "timing": "before_each_upstream_invocation_and_outside_timed_workload",
+        "api_headers": [
+          ".deps/litex/litex/soc/software/include/system.h",
+          ".deps/litex/litex/soc/cores/cpu/vexriscv/system.h"
+        ]
+      },
+      "runtime_preflight": {
+        "ram_probe": {
+          "storage": "volatile BSS array of 64 union words",
+          "bytes": 256,
+          "alignment_bytes": 32,
+          "phases": [
+            "two 32-bit write/read patterns cached and after cache maintenance",
+            "low/high halfword writes checking neighboring-half preservation and unsigned/signed reads",
+            "four byte-lane writes checking neighboring-byte preservation and unsigned/signed reads",
+            "halfword patterns include 0x0000, 0x7fff, 0x8000, 0xffff; byte patterns include 0x00, 0x7f, 0x80, 0xff",
+            "tight volatile back-to-back SH/LH and SB/LB sequences with same-location load-modify-store checks and neighbor preservation",
+            "alternating volatile SRAM stores and read-only linked-image loads at matching low-12 address bits (a D-cache index conflict when that cache is enabled), followed by SRAM/code checks"
+          ],
+          "cache_maintenance_after_patterns": "fence, flush_cpu_dcache, fence, flush_cpu_icache, fence",
+          "storage_limit": "existing 64-word array; 256 bytes total"
+        },
+        "image_integrity_rechecks": {
+          "phases": [
+            "calibration",
+            "scored"
+          ],
+          "sequence": [
+            "CRC32 linked image through cached reads",
+            "fence, flush_cpu_dcache, fence, flush_cpu_icache, fence",
+            "CRC32 linked image after cache maintenance"
+          ],
+          "comparison": "both values and image sizes must match initial preflight values",
+          "failure": "BENCHMARK_PORT_ERROR and halt",
+          "timing": "after_each_upstream_invocation_and_outside_timed_workload"
+        },
+        "runtime_seed_checks": {
+          "inputs": [
+            "seed1_volatile",
+            "seed2_volatile",
+            "seed3_volatile",
+            "seed4_volatile"
+          ],
+          "expected_seed_values": "mode constants and fixed or derived iteration count",
+          "emits": "BENCHMARK_RUNTIME_SEEDS",
+          "failure": "BENCHMARK_PORT_ERROR and halt before upstream invocation"
+        },
+        "wrapper_optimization": "benchmark_main.c is compiled with -Os to fit untimed diagnostics in 32-KiB main RAM; CoreMark sources retain the profile-wide -O2 flag",
+        "timing": "initial image, SRAM, and seed checks run before timed CoreMark work; image rechecks run after each interval"
+      },
+      "memory": {
+        "main_ram": "0x40000000",
+        "main_ram_bytes": 32768,
+        "sram": "0x10000000",
+        "sram_bytes": 8192
+      },
+      "hardware_status": "not_measured"
+    },
+    "standard": {
+      "build_status": "passed",
+      "resources": {
+        "profile": "standard",
+        "device": "GW2A-LV18PG256C8/I7",
+        "resources": {
+          "logic": {
+            "used": 4296,
+            "capacity": 20736
+          },
+          "lut": {
+            "used": 3793,
+            "source": "build/standard/gateware/impl/pnr/project.rpt.txt"
+          },
+          "alu": {
+            "used": 479,
+            "source": "build/standard/gateware/impl/pnr/project.rpt.txt"
+          },
+          "registers": {
+            "used": 1889,
+            "capacity": 16173
+          },
+          "bsram": {
+            "used": 46,
+            "capacity": 46
+          },
+          "dsp": {
+            "used": null,
+            "status": "unavailable",
+            "detail": "Gowin synthesis resource report lists '-' for DSP NUMBER",
+            "source": "build/standard/gateware/impl/gwsynthesis/project_syn_resource.html"
+          }
+        },
+        "timing": {
+          "constraint_mhz": 48.0,
+          "actual_fmax_mhz": 63.286,
+          "worst_setup_slack_ns": 5.032,
+          "setup_violated_endpoints": 0,
+          "analyzed_paths": 12021,
+          "analyzed_endpoints": 6165,
+          "no_timing_path_messages": [
+            "No timing paths to get frequency of rPLL/CLKOUTP.default_gen_clk!",
+            "No timing paths to get frequency of rPLL/CLKOUTD.default_gen_clk!",
+            "No timing paths to get frequency of rPLL/CLKOUTD3.default_gen_clk!"
+          ]
+        },
+        "evidence": {
+          "pnr_resource_report": "build/standard/gateware/impl/pnr/project.rpt.txt",
+          "timing_report": "build/standard/gateware/impl/pnr/project.tr",
+          "synthesis_resource_report": "build/standard/gateware/impl/gwsynthesis/project_syn_resource.html"
+        }
+      },
+      "performance_firmware_bytes": 28376,
+      "validation_firmware_bytes": 28400,
+      "source_fingerprint": "3670ebea898d97de64b97936a6fb413294c48787ee091b5a95002108dc8185da",
+      "bitstream_sha256": "e6672689c60d2afccb1d50d48ce0d710c3f4a68bffb4d312dc2403475e01f7d7",
+      "firmware_sha256": {
+        "performance": "093457def6cc6e16dcf0b7fc1cd910e8e48322367043aa5e221d8fdd3b3a67c3",
+        "validation": "66832111066e231800de57b51f963405d9d98f91dcfa6eb0834fdc1eb1e2f57d"
+      },
+      "compiler_flags": [
+        "-std=gnu99",
+        "-O2",
+        "-march=rv32i2p0_m",
+        "-mabi=ilp32",
+        "-D__vexriscv__",
+        "-g3",
+        "-no-pie",
+        "-fomit-frame-pointer",
+        "-Wall",
+        "-fno-builtin",
+        "-fno-stack-protector",
+        "-U_FORTIFY_SOURCE",
+        "-D_FORTIFY_SOURCE=0",
+        "-ffunction-sections",
+        "-fdata-sections",
+        "-fno-lto"
+      ],
+      "cache": {
+        "instruction_cache": "enabled",
+        "data_cache": "enabled",
+        "configuration_source": "build/standard/software/include/generated/soc.h"
+      },
+      "iteration_calibration": {
+        "method": "fixed_iteration_port_calibration_with_fresh_upstream_initialization",
+        "calibration_iterations": 1000,
+        "target_seconds": 20,
+        "formula": "ceil(calibration_iterations * target_seconds * clock_hz / calibration_ticks)",
+        "scored_pass_reinitializes_static_algorithm_data": true,
+        "scored_interval_index": 2
+      },
+      "cache_maintenance": {
+        "function": "portable_init",
+        "sequence": [
+          "compiler_and_memory_fence",
+          "flush_cpu_dcache",
+          "compiler_and_memory_fence",
+          "flush_cpu_icache",
+          "compiler_and_memory_fence"
+        ],
+        "timing": "before_each_upstream_invocation_and_outside_timed_workload",
+        "api_headers": [
+          ".deps/litex/litex/soc/software/include/system.h",
+          ".deps/litex/litex/soc/cores/cpu/vexriscv/system.h"
+        ]
+      },
+      "runtime_preflight": {
+        "ram_probe": {
+          "storage": "volatile BSS array of 64 union words",
+          "bytes": 256,
+          "alignment_bytes": 32,
+          "phases": [
+            "two 32-bit write/read patterns cached and after cache maintenance",
+            "low/high halfword writes checking neighboring-half preservation and unsigned/signed reads",
+            "four byte-lane writes checking neighboring-byte preservation and unsigned/signed reads",
+            "halfword patterns include 0x0000, 0x7fff, 0x8000, 0xffff; byte patterns include 0x00, 0x7f, 0x80, 0xff",
+            "tight volatile back-to-back SH/LH and SB/LB sequences with same-location load-modify-store checks and neighbor preservation",
+            "alternating volatile SRAM stores and read-only linked-image loads at matching low-12 address bits (a D-cache index conflict when that cache is enabled), followed by SRAM/code checks"
+          ],
+          "cache_maintenance_after_patterns": "fence, flush_cpu_dcache, fence, flush_cpu_icache, fence",
+          "storage_limit": "existing 64-word array; 256 bytes total"
+        },
+        "image_integrity_rechecks": {
+          "phases": [
+            "calibration",
+            "scored"
+          ],
+          "sequence": [
+            "CRC32 linked image through cached reads",
+            "fence, flush_cpu_dcache, fence, flush_cpu_icache, fence",
+            "CRC32 linked image after cache maintenance"
+          ],
+          "comparison": "both values and image sizes must match initial preflight values",
+          "failure": "BENCHMARK_PORT_ERROR and halt",
+          "timing": "after_each_upstream_invocation_and_outside_timed_workload"
+        },
+        "runtime_seed_checks": {
+          "inputs": [
+            "seed1_volatile",
+            "seed2_volatile",
+            "seed3_volatile",
+            "seed4_volatile"
+          ],
+          "expected_seed_values": "mode constants and fixed or derived iteration count",
+          "emits": "BENCHMARK_RUNTIME_SEEDS",
+          "failure": "BENCHMARK_PORT_ERROR and halt before upstream invocation"
+        },
+        "wrapper_optimization": "benchmark_main.c is compiled with -Os to fit untimed diagnostics in 32-KiB main RAM; CoreMark sources retain the profile-wide -O2 flag",
+        "timing": "initial image, SRAM, and seed checks run before timed CoreMark work; image rechecks run after each interval"
+      },
+      "memory": {
+        "main_ram": "0x40000000",
+        "main_ram_bytes": 32768,
+        "sram": "0x10000000",
+        "sram_bytes": 8192
+      },
+      "hardware_status": "failed"
+    }
+  },
+  "latest_session_aggregate": null,
+  "latest_session_status": "failed",
+  "diagnostics": [
+    {
+      "diagnostic_id": "20260930-serialboot-diagnostic",
+      "profile": "standard",
+      "mode": "validation",
+      "status": "failed",
+      "scored": false,
+      "error": "Official safe SFL uploaded the validation image; application UART output stalled during BENCHMARK_START before any complete workload result.",
+      "reset_strategy": "Already programmed standard FPGA; explicit UART reopened, safe LiteX SFL invoked through BIOS serialboot command.",
+      "build_id": "30bdc72be3b0d411",
+      "uart_device": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+      "raw_uart_log": "docs/performance/20260930-serialboot-diagnostic.uart.bin",
+      "raw_uart_log_sha256": "fe8654bb1ab92a082f7604dd60c1bcb65667ac6dd0099394614128cc0c69473a",
+      "transmitted_uart_log": "docs/performance/20260930-serialboot-diagnostic.uart.tx.bin",
+      "transmitted_uart_log_sha256": "19b90613f0ecad51662ad456f24b356ce152f1aa7d4bd4b18d11a677fd25ae5b",
+      "diagnostic_console_log": "docs/performance/20260930-serialboot-diagnostic.console.log",
+      "diagnostic_console_log_sha256": "ea56b7e9434bf359e848e0a5fbeea4823e8964d49d1f059dd9072a98589d716e",
+      "text_uart_log": "docs/performance/20260930-serialboot-diagnostic.uart.log"
+    },
+    {
+      "mode": "validation",
+      "attempt": 0,
+      "status": "failed",
+      "uart_device": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+      "programming_status": "completed",
+      "firmware_sha256": "6443041f48d80b56c48cff10b5e57fda24e85f4a370b4a2dfd080fac4104a392",
+      "raw_uart_log": "docs/performance/20260930T042523.170799Z-diagnostic-one-validation.uart.bin",
+      "text_uart_log": "docs/performance/20260930T042523.170799Z-diagnostic-one-validation.uart.log",
+      "transmitted_uart_log": "docs/performance/20260930T042523.170799Z-diagnostic-one-validation.uart.tx.bin",
+      "started_utc": "2026-09-30T04:25:23.173783+00:00",
+      "startup_recovery": {
+        "status": "completed",
+        "trigger": "bios_console_after_missed_initial_sfl_ack",
+        "uart_device": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+        "port_reopened": true,
+        "firmware_upload_mode": "LiteXTerm safe mode (64-byte frames, one outstanding)",
+        "console_command": "\\nserialboot\\n",
+        "fpga_reprogrammed": false
+      },
+      "raw_uart_sha256": "1d11deee3ff459de1d741be8914f1d2cf75e702e8a583086d55fbdcca13e6f74",
+      "raw_uart_bytes": 2986,
+      "transmitted_uart_sha256": "d7f5d845dfe64a322f07c4d079cd5423baf807330bd7ecb096c7c57108398a9c",
+      "transmitted_uart_bytes": 23548,
+      "decode_errors_present": false,
+      "session_raw_uart_log": "build/benchmarks/20260930T042523.170799Z-diagnostic-one/validation.uart.bin",
+      "session_text_uart_log": "build/benchmarks/20260930T042523.170799Z-diagnostic-one/validation.uart.log",
+      "session_transmitted_uart_log": "build/benchmarks/20260930T042523.170799Z-diagnostic-one/validation.uart.tx.bin",
+      "error": "capture validation failed: firmware reported a CoreMark error",
+      "finished_utc": "2026-09-30T04:25:31.848251+00:00",
+      "diagnostic_id": "20260930T042523.170799Z-diagnostic-one",
+      "scored": false,
+      "purpose": "One iteration with validation seeds, bypassing automatic calibration to isolate initial list CRC; intentionally ineligible for scores."
+    },
+    {
+      "diagnostic_id": "20260930T1028Z-rv32-diagnostic",
+      "scored": false,
+      "hardware": false,
+      "status": "software_diagnostic_passed",
+      "purpose": "Execute the previously captured standard validation ELF for 1000 iterations in a scratch RV32IM interpreter; no hardware caches or real timing are modeled. This cannot establish board correctness or a score.",
+      "build_id": "44fe1179f11a8cfb",
+      "elf_sha256": "fdf9f1829663a27b52240e65760f415922e56ce693fd4034505c81f53a8b110f",
+      "iterations": 1000,
+      "crcs": {
+        "crclist": 58305,
+        "crcmatrix": 1863,
+        "crcstate": 36228
+      },
+      "instructions_executed": 290125191,
+      "text_log": "docs/performance/20260930T1028Z-rv32-diagnostic.log",
+      "text_log_sha256": "2f99ea3ade2d2f0314380f770bfbfe2d5b6c2637288936e764feffe79a2e3519",
+      "interpreter_source": "build/benchmarks/20260930T1028Z-rv32-diagnostic/rv32_fast.cpp",
+      "interpreter_sha256": "73b9739e93bd69bfb406f305669920b3ef8b95daf52c22bedfe9b8fd4e872680"
+    },
+    {
+      "diagnostic_id": "20260930T1035Z-corrected-rv32-diagnostic",
+      "scored": false,
+      "hardware": false,
+      "status": "software_diagnostic_passed",
+      "purpose": "Corrected standard validation ELF passes RAM/cache-index probe and 1000 iterations in scratch RV32IM interpreter. Real hardware caches and timing are not modeled; this result cannot establish hardware correctness or a score.",
+      "build_id": "e721c701c8f55ebf",
+      "elf_sha256": "f87e27089f910093285074735e12eb8104413cfc173bdbc37d6a6d549594b8fa",
+      "iterations": 1000,
+      "crcs": {
+        "crclist": 58305,
+        "crcmatrix": 1863,
+        "crcstate": 36228
+      },
+      "instructions_executed": 290762450,
+      "text_log": "docs/performance/20260930T1035Z-corrected-rv32-diagnostic.log",
+      "text_log_sha256": "99676b44ff17a0aeb18ab7ac38b7ec6e0f3f87aef3d56ffae367acd1e5beec69",
+      "interpreter_source": "build/benchmarks/20260930T1028Z-rv32-diagnostic/rv32_fast.cpp",
+      "interpreter_sha256": "73b9739e93bd69bfb406f305669920b3ef8b95daf52c22bedfe9b8fd4e872680"
+    }
+  ],
+  "latest_runner_status": "failed",
+  "latest_session_validation": {
+    "status": "failed",
+    "errors": [
+      "validation 0: runner recorded failed: RuntimeError: UART reader failed while waiting for firmware startup after BIOS recovery: BENCHMARK_PORT_ERROR on-chip SRAM preflight failed",
+      "runner session status is failed: no detail",
+      "no revalidated validation-seed trial is available",
+      "three revalidated performance repetitions are not available"
+    ]
+  },
+  "latest_session_methodology": {
+    "iteration_calibration": {
+      "method": "fixed_iteration_port_calibration_with_fresh_upstream_initialization",
+      "calibration_iterations": 1000,
+      "target_seconds": 20,
+      "formula": "ceil(calibration_iterations * target_seconds * clock_hz / calibration_ticks)",
+      "scored_pass_reinitializes_static_algorithm_data": true,
+      "scored_interval_index": 2
+    },
+    "cache_maintenance": {
+      "function": "portable_init",
+      "sequence": [
+        "compiler_and_memory_fence",
+        "flush_cpu_dcache",
+        "compiler_and_memory_fence",
+        "flush_cpu_icache",
+        "compiler_and_memory_fence"
+      ],
+      "timing": "before_each_upstream_invocation_and_outside_timed_workload",
+      "api_headers": [
+        ".deps/litex/litex/soc/software/include/system.h",
+        ".deps/litex/litex/soc/cores/cpu/vexriscv/system.h"
+      ]
+    },
+    "runtime_preflight": {
+      "ram_probe": {
+        "storage": "volatile BSS array of 64 union words",
+        "bytes": 256,
+        "alignment_bytes": 32,
+        "phases": [
+          "two 32-bit write/read patterns cached and after cache maintenance",
+          "low/high halfword writes checking neighboring-half preservation and unsigned/signed reads",
+          "four byte-lane writes checking neighboring-byte preservation and unsigned/signed reads",
+          "halfword patterns include 0x0000, 0x7fff, 0x8000, 0xffff; byte patterns include 0x00, 0x7f, 0x80, 0xff",
+          "tight volatile back-to-back SH/LH and SB/LB sequences with same-location load-modify-store checks and neighbor preservation",
+          "alternating volatile SRAM stores and read-only linked-image loads at matching low-12 address bits (a D-cache index conflict when that cache is enabled), followed by SRAM/code checks"
+        ],
+        "cache_maintenance_after_patterns": "fence, flush_cpu_dcache, fence, flush_cpu_icache, fence",
+        "storage_limit": "existing 64-word array; 256 bytes total"
+      },
+      "image_integrity_rechecks": {
+        "phases": [
+          "calibration",
+          "scored"
+        ],
+        "sequence": [
+          "CRC32 linked image through cached reads",
+          "fence, flush_cpu_dcache, fence, flush_cpu_icache, fence",
+          "CRC32 linked image after cache maintenance"
+        ],
+        "comparison": "both values and image sizes must match initial preflight values",
+        "failure": "BENCHMARK_PORT_ERROR and halt",
+        "timing": "after_each_upstream_invocation_and_outside_timed_workload"
+      },
+      "runtime_seed_checks": {
+        "inputs": [
+          "seed1_volatile",
+          "seed2_volatile",
+          "seed3_volatile",
+          "seed4_volatile"
+        ],
+        "expected_seed_values": "mode constants and fixed or derived iteration count",
+        "emits": "BENCHMARK_RUNTIME_SEEDS",
+        "failure": "BENCHMARK_PORT_ERROR and halt before upstream invocation"
+      },
+      "wrapper_optimization": "benchmark_main.c is compiled with -Os to fit untimed diagnostics in 32-KiB main RAM; CoreMark sources retain the profile-wide -O2 flag",
+      "timing": "initial image, SRAM, and seed checks run before timed CoreMark work; image rechecks run after each interval"
+    }
+  },
+  "latest_observed_diagnostics": {
+    "session_id": "20260930T104344.217514Z-standard",
+    "profile": "standard",
+    "mode": "validation",
+    "trial_status": "failed",
+    "programming_status": "completed",
+    "raw_uart_log": "docs/performance/20260930T104344.217514Z-standard-validation.uart.bin",
+    "raw_uart_sha256": "bd73c4a3c33863a835832f8ba253510538be34bd5fa8a1155f4013c5f354f477",
+    "raw_uart_hash_verified": true,
+    "raw_uart_bytes": 2156,
+    "lines": [
+      "BENCHMARK_IMAGE_CRC32 build_id=3670ebea898d97de value=779664db size=28400",
+      "BENCHMARK_RAM_CHECK status=failed phase=tight_sram_conflict_lh firstaddr=10000940 expected=00008a01 actual=00000000 errors=256 failmask=00080000 bytes=256",
+      "BENCHMARK_PORT_ERROR on-chip SRAM preflight failed"
+    ],
+    "host_image": {
+      "matches_host_artifact": true,
+      "host_artifact_verified": true,
+      "host_sha256": "66832111066e231800de57b51f963405d9d98f91dcfa6eb0834fdc1eb1e2f57d",
+      "reported_build_id": "3670ebea898d97de",
+      "expected_build_id": "3670ebea898d97de",
+      "host_crc32": "779664db",
+      "host_bytes": 28400,
+      "reported_crc32": "779664db",
+      "reported_bytes": 28400
+    },
+    "ram_check_line": "BENCHMARK_RAM_CHECK status=failed phase=tight_sram_conflict_lh firstaddr=10000940 expected=00008a01 actual=00000000 errors=256 failmask=00080000 bytes=256"
+  },
+  "historical_coremark_crc_failures": [
+    {
+      "session_id": "20260930T041332.658437Z-standard",
+      "mode": "validation",
+      "raw_uart_log": "docs/performance/20260930T041332.658437Z-standard-validation.uart.bin",
+      "raw_uart_sha256": "7e1ba3a8802d9ddb2806d0b9524afcf1b332d2638ef8b5b191adb00a4853d7e8",
+      "raw_uart_hash_verified": true,
+      "crc_error_labels": [
+        "list"
+      ],
+      "lines": [
+        "[0]ERROR! list crc 0x763a - should be 0xe3c1"
+      ]
+    },
+    {
+      "session_id": "20260930T042209.107576Z-standard",
+      "mode": "validation",
+      "raw_uart_log": "docs/performance/20260930T042209.107576Z-standard-validation.uart.bin",
+      "raw_uart_sha256": "c1d87bba50d3de03b3dd624fd451630a4e888303cf1ec250dd0a74cc53946635",
+      "raw_uart_hash_verified": true,
+      "crc_error_labels": [
+        "list"
+      ],
+      "lines": [
+        "[0]ERROR! list crc 0x763a - should be 0xe3c1"
+      ]
+    },
+    {
+      "session_id": "20260930T043635.083478Z-standard",
+      "mode": "validation",
+      "raw_uart_log": "docs/performance/20260930T043635.083478Z-standard-validation.uart.bin",
+      "raw_uart_sha256": "2d2b95a1d4f2f07b4b9f260fa89c4a2752376f9cff1682950a156e05939f4772",
+      "raw_uart_hash_verified": true,
+      "crc_error_labels": [
+        "list"
+      ],
+      "lines": [
+        "[0]ERROR! list crc 0xb819 - should be 0xe3c1"
+      ]
+    },
+    {
+      "session_id": "20260930T044516.988690Z-standard",
+      "mode": "validation",
+      "raw_uart_log": "docs/performance/20260930T044516.988690Z-standard-validation.uart.bin",
+      "raw_uart_sha256": "0dec16a0445dbc026eae0429f91e46f6b15c7a61b529d539fe742197590c9e9e",
+      "raw_uart_hash_verified": true,
+      "crc_error_labels": [
+        "list",
+        "matrix",
+        "state"
+      ],
+      "lines": [
+        "[0]ERROR! list crc 0x1360 - should be 0xe3c1",
+        "[0]ERROR! matrix crc 0xa488 - should be 0x0747",
+        "[0]ERROR! state crc 0x1433 - should be 0x8d84"
+      ]
+    },
+    {
+      "session_id": "20260930T044944.090370Z-standard",
+      "mode": "validation",
+      "raw_uart_log": "docs/performance/20260930T044944.090370Z-standard-validation.uart.bin",
+      "raw_uart_sha256": "9bb5335d6c87eafb5f310a44fa1ebfb40b97543e6b582506ba10d253298b3e1c",
+      "raw_uart_hash_verified": true,
+      "crc_error_labels": [
+        "list",
+        "matrix"
+      ],
+      "lines": [
+        "[0]ERROR! list crc 0x4a73 - should be 0xe3c1",
+        "[0]ERROR! matrix crc 0xf052 - should be 0x0747"
+      ]
+    },
+    {
+      "session_id": "20260930T100707.977409Z-standard",
+      "mode": "validation",
+      "raw_uart_log": "docs/performance/20260930T100707.977409Z-standard-validation.uart.bin",
+      "raw_uart_sha256": "687f0718ef6578daa1cf5d2bba18325b7d610248b7e026f94c454578f7e3cfbf",
+      "raw_uart_hash_verified": true,
+      "crc_error_labels": [
+        "list",
+        "matrix"
+      ],
+      "lines": [
+        "[0]ERROR! list crc 0xd8ed - should be 0xe3c1",
+        "[0]ERROR! matrix crc 0xf052 - should be 0x0747"
+      ]
+    },
+    {
+      "session_id": "20260930T101743.702711Z-standard",
+      "mode": "validation",
+      "raw_uart_log": "docs/performance/20260930T101743.702711Z-standard-validation.uart.bin",
+      "raw_uart_sha256": "7c7d584b82a5d9bfe225e6ffec9093582b275c72f975d0fd72c8a379d1e6b151",
+      "raw_uart_hash_verified": true,
+      "crc_error_labels": [
+        "list",
+        "matrix"
+      ],
+      "lines": [
+        "[0]ERROR! list crc 0xd8ed - should be 0xe3c1",
+        "[0]ERROR! matrix crc 0xf052 - should be 0x0747"
+      ]
+    }
+  ]
+}

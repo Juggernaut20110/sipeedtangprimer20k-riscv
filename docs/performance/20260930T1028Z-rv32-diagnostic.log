@@ -1,0 +1,5 @@
+BENCHMARK_IMAGE_CRC32 build_id=44fe1179f11a8cfb value=d0bf011a size=26672
+BENCHMARK_RAM_CHECK status=passed words=64 bytes=256 alignment=32 phases=word,halfword_u16_s16,byte_u8_s8,cache_flushed errors=0
+BENCHMARK_CALIBRATION_START profile=standard build_id=44fe1179f11a8cfb mode=validation method=fixed_iterations iterations=1000 target_seconds=20 clock_hz=48000000 data_size=2000 contexts=1 seed1=13333 seed2=13333 seed3=0x66
+BENCHMARK_RUNTIME_SEEDS phase=calibration seed1=13333 seed2=13333 seed3=102 seed4=1000
+first_iterate iterations=1000 crc=0x26c2 list=0xe3c1 matrix=0x747 state=0x8d84 err=0x0 instructions=290125191

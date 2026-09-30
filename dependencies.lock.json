@@ -9,7 +9,8 @@
     {"name": "liteiclink", "url": "https://github.com/enjoy-digital/liteiclink.git", "commit": "ad793817302490b04b3abc5c4de669594d3958e8"},
     {"name": "pythondata-cpu-vexriscv", "url": "https://github.com/litex-hub/pythondata-cpu-vexriscv.git", "commit": "642ecfed1c84460555d6d803d660cc60cfc1ecb6"},
     {"name": "pythondata-software-picolibc", "url": "https://github.com/litex-hub/pythondata-software-picolibc.git", "commit": "6a13ccce7c575b32c102dd9dc52178505b81fe39", "submodules": {"pythondata_software_picolibc/data": "16ff442da4b92e28d0753fabed18ad4a15254498"}},
-    {"name": "pythondata-software-compiler_rt", "url": "https://github.com/litex-hub/pythondata-software-compiler_rt.git", "commit": "6eb76609c9627bf26635e57c63fb22cda7115887"}
+    {"name": "pythondata-software-compiler_rt", "url": "https://github.com/litex-hub/pythondata-software-compiler_rt.git", "commit": "6eb76609c9627bf26635e57c63fb22cda7115887"},
+    {"name": "coremark", "url": "https://github.com/eembc/coremark.git", "commit": "1f483d5b8316753a742cbf5590caf5bd0a4e4777"}
   ],
   "python": {
     "version": "3.12.14",

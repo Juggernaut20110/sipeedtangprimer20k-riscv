@@ -3008,10 +3008,538 @@
       "aggregate": null,
       "finished_utc": "2026-09-30T10:43:53.859795+00:00",
       "evidence": "build/benchmarks/20260930T104344.217514Z-standard/session.json"
+    },
+    {
+      "schema_version": 1,
+      "session_id": "20260930T120813.442169Z-standard",
+      "status": "passed",
+      "created_utc": "2026-09-30T12:08:13.442358+00:00",
+      "profile": "standard",
+      "board": "Sipeed Tang Primer 20K with standard Dock",
+      "clock_hz": 48000000,
+      "uart_candidates_at_start": [
+        "/dev/serial/by-id/usb-1a86_USB_Single_Serial_599D114570-if00",
+        "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if00-port0",
+        "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0"
+      ],
+      "usb_device_nodes_at_start": [
+        "/dev/bus/usb/001/001",
+        "/dev/bus/usb/001/002",
+        "/dev/bus/usb/001/003",
+        "/dev/bus/usb/001/013",
+        "/dev/bus/usb/001/014",
+        "/dev/bus/usb/001/015",
+        "/dev/bus/usb/002/001"
+      ],
+      "programming_status": "completed",
+      "trials": [
+        {
+          "mode": "validation",
+          "attempt": 0,
+          "status": "passed",
+          "uart_device": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+          "programming_status": "completed",
+          "firmware_sha256": "9e6a0a980e4803f340ca32f6f34dfd1bd47973cc7b30bbf151431b2735fd9de2",
+          "raw_uart_log": "docs/performance/20260930T120813.442169Z-standard-validation.uart.bin",
+          "text_uart_log": "docs/performance/20260930T120813.442169Z-standard-validation.uart.log",
+          "transmitted_uart_log": "docs/performance/20260930T120813.442169Z-standard-validation.uart.tx.bin",
+          "started_utc": "2026-09-30T12:08:13.471382+00:00",
+          "raw_uart_sha256": "9f1092c13b4288125488628fd7537738f2c2033e859b008242244560a5a1941f",
+          "raw_uart_bytes": 4730,
+          "transmitted_uart_sha256": "d2a6eac89ae5829775c5f224f275c29fd9516cdc0b111926acec858a3f032dc6",
+          "transmitted_uart_bytes": 29622,
+          "decode_errors_present": false,
+          "session_raw_uart_log": "build/benchmarks/20260930T120813.442169Z-standard/validation.uart.bin",
+          "session_text_uart_log": "build/benchmarks/20260930T120813.442169Z-standard/validation.uart.log",
+          "session_transmitted_uart_log": "build/benchmarks/20260930T120813.442169Z-standard/validation.uart.tx.bin",
+          "parsed": {
+            "status": "passed",
+            "profile": "standard",
+            "build_id": "7a77d19631667ed7",
+            "image_crc32": 988932207,
+            "image_bytes": 28400,
+            "image_rechecks": [
+              {
+                "phase": "calibration",
+                "cached_crc32": 988932207,
+                "flushed_crc32": 988932207,
+                "bytes": 28400
+              },
+              {
+                "phase": "scored",
+                "cached_crc32": 988932207,
+                "flushed_crc32": 988932207,
+                "bytes": 28400
+              }
+            ],
+            "mode": "validation",
+            "clock_hz": 48000000,
+            "data_size": 2000,
+            "contexts": 1,
+            "seeds": [
+              13333,
+              13333,
+              102
+            ],
+            "iterations": 2169,
+            "elapsed_ticks": 960102710,
+            "elapsed_seconds": 20.002139791666668,
+            "coremark": 108.43839822095701,
+            "coremark_per_mhz": 2.2591332962699378,
+            "seedcrc": 6386,
+            "crcs": {
+              "crclist": 58305,
+              "crcmatrix": 1863,
+              "crcstate": 36228
+            },
+            "crcfinal": 16667,
+            "validation": "passed",
+            "upstream_iterations_per_second": 108,
+            "upstream_coremark": null,
+            "calibration": [
+              {
+                "index": 1,
+                "elapsed_ticks": 442648036,
+                "iterations": 1000
+              }
+            ],
+            "calibration_plan": {
+              "method": "fresh_invocation",
+              "initial_iterations": 1000,
+              "target_seconds": 20,
+              "scored_iterations": 2169
+            },
+            "decode_errors_present": false
+          },
+          "finished_utc": "2026-09-30T12:08:49.954782+00:00"
+        },
+        {
+          "mode": "performance",
+          "attempt": 1,
+          "status": "passed",
+          "uart_device": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+          "programming_status": "completed",
+          "firmware_sha256": "b1a38932047b3852d65b7069df8453622291df74b98593c81b924d079e5115a2",
+          "raw_uart_log": "docs/performance/20260930T120813.442169Z-standard-performance-1.uart.bin",
+          "text_uart_log": "docs/performance/20260930T120813.442169Z-standard-performance-1.uart.log",
+          "transmitted_uart_log": "docs/performance/20260930T120813.442169Z-standard-performance-1.uart.tx.bin",
+          "started_utc": "2026-09-30T12:08:49.955401+00:00",
+          "raw_uart_sha256": "b2a168c70290a7892a6bd96f1b4e12be672f661402ed8e82e99324a82a266bf1",
+          "raw_uart_bytes": 4705,
+          "transmitted_uart_sha256": "6c062673144bc1a055f801cfa6835be200a3e6f552c70a3647b1d4eab53d337a",
+          "transmitted_uart_bytes": 29598,
+          "decode_errors_present": false,
+          "session_raw_uart_log": "build/benchmarks/20260930T120813.442169Z-standard/performance-1.uart.bin",
+          "session_text_uart_log": "build/benchmarks/20260930T120813.442169Z-standard/performance-1.uart.log",
+          "session_transmitted_uart_log": "build/benchmarks/20260930T120813.442169Z-standard/performance-1.uart.tx.bin",
+          "parsed": {
+            "status": "passed",
+            "profile": "standard",
+            "build_id": "7a77d19631667ed7",
+            "image_crc32": 9543801,
+            "image_bytes": 28376,
+            "image_rechecks": [
+              {
+                "phase": "calibration",
+                "cached_crc32": 9543801,
+                "flushed_crc32": 9543801,
+                "bytes": 28376
+              },
+              {
+                "phase": "scored",
+                "cached_crc32": 9543801,
+                "flushed_crc32": 9543801,
+                "bytes": 28376
+              }
+            ],
+            "mode": "performance",
+            "clock_hz": 48000000,
+            "data_size": 2000,
+            "contexts": 1,
+            "seeds": [
+              0,
+              0,
+              102
+            ],
+            "iterations": 2183,
+            "elapsed_ticks": 960198095,
+            "elapsed_seconds": 20.004126979166667,
+            "coremark": 109.12748165783437,
+            "coremark_per_mhz": 2.2734892012048826,
+            "seedcrc": 59893,
+            "crcs": {
+              "crclist": 59156,
+              "crcmatrix": 8151,
+              "crcstate": 36410
+            },
+            "crcfinal": 5445,
+            "validation": "passed",
+            "upstream_iterations_per_second": 109,
+            "upstream_coremark": null,
+            "calibration": [
+              {
+                "index": 1,
+                "elapsed_ticks": 439853847,
+                "iterations": 1000
+              }
+            ],
+            "calibration_plan": {
+              "method": "fresh_invocation",
+              "initial_iterations": 1000,
+              "target_seconds": 20,
+              "scored_iterations": 2183
+            },
+            "decode_errors_present": false
+          },
+          "finished_utc": "2026-09-30T12:09:26.350012+00:00"
+        },
+        {
+          "mode": "performance",
+          "attempt": 2,
+          "status": "passed",
+          "uart_device": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+          "programming_status": "completed",
+          "firmware_sha256": "b1a38932047b3852d65b7069df8453622291df74b98593c81b924d079e5115a2",
+          "raw_uart_log": "docs/performance/20260930T120813.442169Z-standard-performance-2.uart.bin",
+          "text_uart_log": "docs/performance/20260930T120813.442169Z-standard-performance-2.uart.log",
+          "transmitted_uart_log": "docs/performance/20260930T120813.442169Z-standard-performance-2.uart.tx.bin",
+          "started_utc": "2026-09-30T12:09:26.350703+00:00",
+          "raw_uart_sha256": "b2a168c70290a7892a6bd96f1b4e12be672f661402ed8e82e99324a82a266bf1",
+          "raw_uart_bytes": 4705,
+          "transmitted_uart_sha256": "6c062673144bc1a055f801cfa6835be200a3e6f552c70a3647b1d4eab53d337a",
+          "transmitted_uart_bytes": 29598,
+          "decode_errors_present": false,
+          "session_raw_uart_log": "build/benchmarks/20260930T120813.442169Z-standard/performance-2.uart.bin",
+          "session_text_uart_log": "build/benchmarks/20260930T120813.442169Z-standard/performance-2.uart.log",
+          "session_transmitted_uart_log": "build/benchmarks/20260930T120813.442169Z-standard/performance-2.uart.tx.bin",
+          "parsed": {
+            "status": "passed",
+            "profile": "standard",
+            "build_id": "7a77d19631667ed7",
+            "image_crc32": 9543801,
+            "image_bytes": 28376,
+            "image_rechecks": [
+              {
+                "phase": "calibration",
+                "cached_crc32": 9543801,
+                "flushed_crc32": 9543801,
+                "bytes": 28376
+              },
+              {
+                "phase": "scored",
+                "cached_crc32": 9543801,
+                "flushed_crc32": 9543801,
+                "bytes": 28376
+              }
+            ],
+            "mode": "performance",
+            "clock_hz": 48000000,
+            "data_size": 2000,
+            "contexts": 1,
+            "seeds": [
+              0,
+              0,
+              102
+            ],
+            "iterations": 2183,
+            "elapsed_ticks": 960198095,
+            "elapsed_seconds": 20.004126979166667,
+            "coremark": 109.12748165783437,
+            "coremark_per_mhz": 2.2734892012048826,
+            "seedcrc": 59893,
+            "crcs": {
+              "crclist": 59156,
+              "crcmatrix": 8151,
+              "crcstate": 36410
+            },
+            "crcfinal": 5445,
+            "validation": "passed",
+            "upstream_iterations_per_second": 109,
+            "upstream_coremark": null,
+            "calibration": [
+              {
+                "index": 1,
+                "elapsed_ticks": 439853847,
+                "iterations": 1000
+              }
+            ],
+            "calibration_plan": {
+              "method": "fresh_invocation",
+              "initial_iterations": 1000,
+              "target_seconds": 20,
+              "scored_iterations": 2183
+            },
+            "decode_errors_present": false
+          },
+          "finished_utc": "2026-09-30T12:10:02.759369+00:00"
+        },
+        {
+          "mode": "performance",
+          "attempt": 3,
+          "status": "passed",
+          "uart_device": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+          "programming_status": "completed",
+          "firmware_sha256": "b1a38932047b3852d65b7069df8453622291df74b98593c81b924d079e5115a2",
+          "raw_uart_log": "docs/performance/20260930T120813.442169Z-standard-performance-3.uart.bin",
+          "text_uart_log": "docs/performance/20260930T120813.442169Z-standard-performance-3.uart.log",
+          "transmitted_uart_log": "docs/performance/20260930T120813.442169Z-standard-performance-3.uart.tx.bin",
+          "started_utc": "2026-09-30T12:10:02.761082+00:00",
+          "raw_uart_sha256": "b2a168c70290a7892a6bd96f1b4e12be672f661402ed8e82e99324a82a266bf1",
+          "raw_uart_bytes": 4705,
+          "transmitted_uart_sha256": "6c062673144bc1a055f801cfa6835be200a3e6f552c70a3647b1d4eab53d337a",
+          "transmitted_uart_bytes": 29598,
+          "decode_errors_present": false,
+          "session_raw_uart_log": "build/benchmarks/20260930T120813.442169Z-standard/performance-3.uart.bin",
+          "session_text_uart_log": "build/benchmarks/20260930T120813.442169Z-standard/performance-3.uart.log",
+          "session_transmitted_uart_log": "build/benchmarks/20260930T120813.442169Z-standard/performance-3.uart.tx.bin",
+          "parsed": {
+            "status": "passed",
+            "profile": "standard",
+            "build_id": "7a77d19631667ed7",
+            "image_crc32": 9543801,
+            "image_bytes": 28376,
+            "image_rechecks": [
+              {
+                "phase": "calibration",
+                "cached_crc32": 9543801,
+                "flushed_crc32": 9543801,
+                "bytes": 28376
+              },
+              {
+                "phase": "scored",
+                "cached_crc32": 9543801,
+                "flushed_crc32": 9543801,
+                "bytes": 28376
+              }
+            ],
+            "mode": "performance",
+            "clock_hz": 48000000,
+            "data_size": 2000,
+            "contexts": 1,
+            "seeds": [
+              0,
+              0,
+              102
+            ],
+            "iterations": 2183,
+            "elapsed_ticks": 960198095,
+            "elapsed_seconds": 20.004126979166667,
+            "coremark": 109.12748165783437,
+            "coremark_per_mhz": 2.2734892012048826,
+            "seedcrc": 59893,
+            "crcs": {
+              "crclist": 59156,
+              "crcmatrix": 8151,
+              "crcstate": 36410
+            },
+            "crcfinal": 5445,
+            "validation": "passed",
+            "upstream_iterations_per_second": 109,
+            "upstream_coremark": null,
+            "calibration": [
+              {
+                "index": 1,
+                "elapsed_ticks": 439853847,
+                "iterations": 1000
+              }
+            ],
+            "calibration_plan": {
+              "method": "fresh_invocation",
+              "initial_iterations": 1000,
+              "target_seconds": 20,
+              "scored_iterations": 2183
+            },
+            "decode_errors_present": false
+          },
+          "finished_utc": "2026-09-30T12:10:39.181827+00:00"
+        }
+      ],
+      "identity": {
+        "repository_revision": "58a829f6dae8aa488e33cfcb7de1d4d7d567637e",
+        "repository_dirty": true,
+        "source_fingerprint": "7a77d19631667ed71eaffe0330d1d3d11c7d596d736a1b58fe0487f195950419",
+        "profile": "standard",
+        "clock_hz": 48000000,
+        "coremark": {
+          "repository": "https://github.com/eembc/coremark.git",
+          "commit": "1f483d5b8316753a742cbf5590caf5bd0a4e4777"
+        },
+        "compiler": "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-gcc",
+        "compiler_version": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+        "compiler_flags": [
+          "-std=gnu99",
+          "-O2",
+          "-march=rv32i2p0_m",
+          "-mabi=ilp32",
+          "-D__vexriscv__",
+          "-g3",
+          "-no-pie",
+          "-fomit-frame-pointer",
+          "-Wall",
+          "-fno-builtin",
+          "-fno-stack-protector",
+          "-U_FORTIFY_SOURCE",
+          "-D_FORTIFY_SOURCE=0",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-fno-lto"
+        ],
+        "compiler_flags_complete": [
+          "-std=gnu99",
+          "-O2",
+          "-march=rv32i2p0_m",
+          "-mabi=ilp32",
+          "-D__vexriscv__",
+          "-g3",
+          "-no-pie",
+          "-fomit-frame-pointer",
+          "-Wall",
+          "-fno-builtin",
+          "-fno-stack-protector",
+          "-U_FORTIFY_SOURCE",
+          "-D_FORTIFY_SOURCE=0",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-fno-lto",
+          "-DITERATIONS=1000",
+          "-DTOTAL_DATA_SIZE=2000",
+          "-DMEM_METHOD=MEM_STATIC",
+          "-DMULTITHREAD=1",
+          "-DPERFORMANCE_RUN=1",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/software/libc",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/standard/benchmark/performance"
+        ],
+        "tool_versions": {
+          "python": "3.12.14",
+          "riscv_gcc": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+          "gowin": "V1.9.12.04",
+          "openfpgaloader": "openFPGALoader v0.13.1"
+        },
+        "cache": {
+          "instruction_cache": "enabled",
+          "data_cache": "enabled",
+          "configuration_source": "build/standard/software/include/generated/soc.h"
+        },
+        "iteration_calibration": {
+          "method": "fixed_iteration_port_calibration_with_fresh_upstream_initialization",
+          "calibration_iterations": 1000,
+          "target_seconds": 20,
+          "formula": "ceil(calibration_iterations * target_seconds * clock_hz / calibration_ticks)",
+          "scored_pass_reinitializes_static_algorithm_data": true,
+          "scored_interval_index": 2
+        },
+        "cache_maintenance": {
+          "function": "portable_init",
+          "sequence": [
+            "compiler_and_memory_fence",
+            "flush_cpu_dcache",
+            "compiler_and_memory_fence",
+            "flush_cpu_icache",
+            "compiler_and_memory_fence"
+          ],
+          "timing": "before_each_upstream_invocation_and_outside_timed_workload",
+          "api_headers": [
+            ".deps/litex/litex/soc/software/include/system.h",
+            ".deps/litex/litex/soc/cores/cpu/vexriscv/system.h"
+          ]
+        },
+        "runtime_preflight": {
+          "ram_probe": {
+            "storage": "volatile BSS array of 64 union words",
+            "bytes": 256,
+            "alignment_bytes": 32,
+            "phases": [
+              "two 32-bit write/read patterns cached and after cache maintenance",
+              "low/high halfword writes checking neighboring-half preservation and unsigned/signed reads",
+              "four byte-lane writes checking neighboring-byte preservation and unsigned/signed reads",
+              "halfword patterns include 0x0000, 0x7fff, 0x8000, 0xffff; byte patterns include 0x00, 0x7f, 0x80, 0xff",
+              "tight volatile back-to-back SH/LH and SB/LB sequences with same-location load-modify-store checks and neighbor preservation",
+              "alternating volatile SRAM stores and read-only linked-image loads at matching low-12 address bits (a D-cache index conflict when that cache is enabled), followed by SRAM/code checks"
+            ],
+            "cache_maintenance_after_patterns": "fence, flush_cpu_dcache, fence, flush_cpu_icache, fence",
+            "storage_limit": "existing 64-word array; 256 bytes total"
+          },
+          "image_integrity_rechecks": {
+            "phases": [
+              "calibration",
+              "scored"
+            ],
+            "sequence": [
+              "CRC32 linked image through cached reads",
+              "fence, flush_cpu_dcache, fence, flush_cpu_icache, fence",
+              "CRC32 linked image after cache maintenance"
+            ],
+            "comparison": "both values and image sizes must match initial preflight values",
+            "failure": "BENCHMARK_PORT_ERROR and halt",
+            "timing": "after_each_upstream_invocation_and_outside_timed_workload"
+          },
+          "runtime_seed_checks": {
+            "inputs": [
+              "seed1_volatile",
+              "seed2_volatile",
+              "seed3_volatile",
+              "seed4_volatile"
+            ],
+            "expected_seed_values": "mode constants and fixed or derived iteration count",
+            "emits": "BENCHMARK_RUNTIME_SEEDS",
+            "failure": "BENCHMARK_PORT_ERROR and halt before upstream invocation"
+          },
+          "wrapper_optimization": "benchmark_main.c is compiled with -Os to fit untimed diagnostics in 32-KiB main RAM; CoreMark sources retain the profile-wide -O2 flag",
+          "timing": "initial image, SRAM, and seed checks run before timed CoreMark work; image rechecks run after each interval"
+        },
+        "memory": {
+          "main_ram": "0x40000000",
+          "main_ram_bytes": 32768,
+          "sram": "0x10000000",
+          "sram_bytes": 8192
+        },
+        "uart_device_requested": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+        "uart_device_selected": "/dev/ttyUSB1",
+        "bitstream": {
+          "path": "build/standard/bitstream.fs",
+          "sha256": "a2e93120fdcf6afd1c5a1a4b7f35ed9c8a146465e6f1a74e00839b5a8773ad44"
+        },
+        "firmware": {
+          "performance": {
+            "path": "build/standard/benchmark/performance/benchmark.bin",
+            "sha256": "b1a38932047b3852d65b7069df8453622291df74b98593c81b924d079e5115a2",
+            "crc32": "0091a079",
+            "bytes": 28376
+          },
+          "validation": {
+            "path": "build/standard/benchmark/validation/benchmark.bin",
+            "sha256": "9e6a0a980e4803f340ca32f6f34dfd1bd47973cc7b30bbf151431b2735fd9de2",
+            "crc32": "3af1e86f",
+            "bytes": 28400
+          }
+        }
+      },
+      "aggregate": {
+        "count": 3,
+        "coremark_mean": 109.12748165783437,
+        "coremark_min": 109.12748165783437,
+        "coremark_max": 109.12748165783437,
+        "coremark_spread": 0.0,
+        "coremark_per_mhz_mean": 2.2734892012048826,
+        "coremark_per_mhz_min": 2.2734892012048826,
+        "coremark_per_mhz_max": 2.2734892012048826,
+        "coremark_per_mhz_spread": 0.0
+      },
+      "finished_utc": "2026-09-30T12:10:39.182357+00:00",
+      "evidence": "build/benchmarks/20260930T120813.442169Z-standard/session.json"
     }
   ],
-  "latest_session_id": "20260930T104344.217514Z-standard",
-  "report_generated_utc": "2026-09-30T10:49:05.486455+00:00",
+  "latest_session_id": "20260930T120813.442169Z-standard",
+  "report_generated_utc": "2026-09-30T12:11:18.843248+00:00",
   "build_profiles": {
     "minimal": {
       "build_status": "passed",
@@ -3020,15 +3548,15 @@
         "device": "GW2A-LV18PG256C8/I7",
         "resources": {
           "logic": {
-            "used": 2954,
+            "used": 2571,
             "capacity": 20736
           },
           "lut": {
-            "used": 2632,
+            "used": 2247,
             "source": "build/minimal/gateware/impl/pnr/project.rpt.txt"
           },
           "alu": {
-            "used": 298,
+            "used": 300,
             "source": "build/minimal/gateware/impl/pnr/project.rpt.txt"
           },
           "registers": {
@@ -3048,10 +3576,10 @@
         },
         "timing": {
           "constraint_mhz": 48.0,
-          "actual_fmax_mhz": 70.002,
-          "worst_setup_slack_ns": 6.548,
+          "actual_fmax_mhz": 66.307,
+          "worst_setup_slack_ns": 5.752,
           "setup_violated_endpoints": 0,
-          "analyzed_paths": 8757,
+          "analyzed_paths": 8761,
           "analyzed_endpoints": 4458,
           "no_timing_path_messages": [
             "No timing paths to get frequency of rPLL/CLKOUTP.default_gen_clk!",
@@ -3067,11 +3595,11 @@
       },
       "performance_firmware_bytes": 29928,
       "validation_firmware_bytes": 29952,
-      "source_fingerprint": "6c0d2788dc036955e1341e6946dfcda3ae8d6119707a11ecc4cf69b6660efb4b",
-      "bitstream_sha256": "680b057aa1e1c3a6d2467896b611e12201021b3a288b25a51732fd16e6766ea4",
+      "source_fingerprint": "f8ed493eeb34f702ab658a8fcdf578a772cf1ef88dd5d99977378acc3827d6c9",
+      "bitstream_sha256": "ccef53f74b1cb2330dc128c900f0d1e19ece8f29ca8d6e538ab76eac73937438",
       "firmware_sha256": {
-        "performance": "db6d5dbe2e8b7169c97cce93a13adb185d29bf7bace3c0cb4ecce3719cbb726e",
-        "validation": "1db2c96dc7a9425f9f497118736cc1e5c4805d6e22fd4ea850ef9b2b29305bab"
+        "performance": "2c06bfdad4286848b94a0be15a4868bead69f2243ba80afeef738bfe409fe7a0",
+        "validation": "e72a58a98515c4b6a50462d97dc56bcd909f5f357e3f1e3c8f43a762d05f243f"
       },
       "compiler_flags": [
         "-std=gnu99",
@@ -3178,11 +3706,11 @@
         "device": "GW2A-LV18PG256C8/I7",
         "resources": {
           "logic": {
-            "used": 3852,
+            "used": 3594,
             "capacity": 20736
           },
           "lut": {
-            "used": 3385,
+            "used": 3127,
             "source": "build/lite/gateware/impl/pnr/project.rpt.txt"
           },
           "alu": {
@@ -3206,11 +3734,11 @@
         },
         "timing": {
           "constraint_mhz": 48.0,
-          "actual_fmax_mhz": 55.471,
-          "worst_setup_slack_ns": 2.806,
+          "actual_fmax_mhz": 55.823,
+          "worst_setup_slack_ns": 2.92,
           "setup_violated_endpoints": 0,
-          "analyzed_paths": 9999,
-          "analyzed_endpoints": 5074,
+          "analyzed_paths": 9987,
+          "analyzed_endpoints": 5068,
           "no_timing_path_messages": [
             "No timing paths to get frequency of rPLL/CLKOUTP.default_gen_clk!",
             "No timing paths to get frequency of rPLL/CLKOUTD.default_gen_clk!",
@@ -3225,11 +3753,11 @@
       },
       "performance_firmware_bytes": 28360,
       "validation_firmware_bytes": 28392,
-      "source_fingerprint": "d40cced7aac9de0963b7828d3820f09d639a3e569ca64df00dfaacb16a329f10",
-      "bitstream_sha256": "49f535e8cf8ebe42265eac355d9d463eb49adb10b0f7d390c343336a16b0fd4e",
+      "source_fingerprint": "8a37312434fc2fed994913353d8d7e5a05b69e38342a3235000716f927c12ae1",
+      "bitstream_sha256": "f4ce9a0558c7d785b836d8522faea7399b7b0ef8fcc469c5db35f9b625a64ce1",
       "firmware_sha256": {
-        "performance": "18baac49a5711eb169f23e9862035af054ba703fbaf515739a1785f44874b6b6",
-        "validation": "fbb61bf128f11958107ece5d13d137e07755e18f5462f9b2671b123892649019"
+        "performance": "4d2c55568019843ea96a1652c85837125d6e36ea8c8eb1d6a1f43e91d22009f5",
+        "validation": "1296b1c018c757ed1dd19ddd45f0fc8acccfff2d1baee76805c9a941168da49b"
       },
       "compiler_flags": [
         "-std=gnu99",
@@ -3336,11 +3864,11 @@
         "device": "GW2A-LV18PG256C8/I7",
         "resources": {
           "logic": {
-            "used": 4296,
+            "used": 3955,
             "capacity": 20736
           },
           "lut": {
-            "used": 3793,
+            "used": 3452,
             "source": "build/standard/gateware/impl/pnr/project.rpt.txt"
           },
           "alu": {
@@ -3364,11 +3892,11 @@
         },
         "timing": {
           "constraint_mhz": 48.0,
-          "actual_fmax_mhz": 63.286,
-          "worst_setup_slack_ns": 5.032,
+          "actual_fmax_mhz": 69.628,
+          "worst_setup_slack_ns": 6.471,
           "setup_violated_endpoints": 0,
-          "analyzed_paths": 12021,
-          "analyzed_endpoints": 6165,
+          "analyzed_paths": 12029,
+          "analyzed_endpoints": 6169,
           "no_timing_path_messages": [
             "No timing paths to get frequency of rPLL/CLKOUTP.default_gen_clk!",
             "No timing paths to get frequency of rPLL/CLKOUTD.default_gen_clk!",
@@ -3383,11 +3911,11 @@
       },
       "performance_firmware_bytes": 28376,
       "validation_firmware_bytes": 28400,
-      "source_fingerprint": "3670ebea898d97de64b97936a6fb413294c48787ee091b5a95002108dc8185da",
-      "bitstream_sha256": "e6672689c60d2afccb1d50d48ce0d710c3f4a68bffb4d312dc2403475e01f7d7",
+      "source_fingerprint": "7a77d19631667ed71eaffe0330d1d3d11c7d596d736a1b58fe0487f195950419",
+      "bitstream_sha256": "a2e93120fdcf6afd1c5a1a4b7f35ed9c8a146465e6f1a74e00839b5a8773ad44",
       "firmware_sha256": {
-        "performance": "093457def6cc6e16dcf0b7fc1cd910e8e48322367043aa5e221d8fdd3b3a67c3",
-        "validation": "66832111066e231800de57b51f963405d9d98f91dcfa6eb0834fdc1eb1e2f57d"
+        "performance": "b1a38932047b3852d65b7069df8453622291df74b98593c81b924d079e5115a2",
+        "validation": "9e6a0a980e4803f340ca32f6f34dfd1bd47973cc7b30bbf151431b2735fd9de2"
       },
       "compiler_flags": [
         "-std=gnu99",
@@ -3485,11 +4013,21 @@
         "sram": "0x10000000",
         "sram_bytes": 8192
       },
-      "hardware_status": "failed"
+      "hardware_status": "measured"
     }
   },
-  "latest_session_aggregate": null,
-  "latest_session_status": "failed",
+  "latest_session_aggregate": {
+    "count": 3,
+    "coremark_mean": 109.12748165783437,
+    "coremark_min": 109.12748165783437,
+    "coremark_max": 109.12748165783437,
+    "coremark_spread": 0.0,
+    "coremark_per_mhz_mean": 2.2734892012048826,
+    "coremark_per_mhz_min": 2.2734892012048826,
+    "coremark_per_mhz_max": 2.2734892012048826,
+    "coremark_per_mhz_spread": 0.0
+  },
+  "latest_session_status": "passed",
   "diagnostics": [
     {
       "diagnostic_id": "20260930-serialboot-diagnostic",
@@ -3584,15 +4122,10 @@
       "interpreter_sha256": "73b9739e93bd69bfb406f305669920b3ef8b95daf52c22bedfe9b8fd4e872680"
     }
   ],
-  "latest_runner_status": "failed",
+  "latest_runner_status": "passed",
   "latest_session_validation": {
-    "status": "failed",
-    "errors": [
-      "validation 0: runner recorded failed: RuntimeError: UART reader failed while waiting for firmware startup after BIOS recovery: BENCHMARK_PORT_ERROR on-chip SRAM preflight failed",
-      "runner session status is failed: no detail",
-      "no revalidated validation-seed trial is available",
-      "three revalidated performance repetitions are not available"
-    ]
+    "status": "passed",
+    "errors": []
   },
   "latest_session_methodology": {
     "iteration_calibration": {
@@ -3664,32 +4197,33 @@
     }
   },
   "latest_observed_diagnostics": {
-    "session_id": "20260930T104344.217514Z-standard",
+    "session_id": "20260930T120813.442169Z-standard",
     "profile": "standard",
-    "mode": "validation",
-    "trial_status": "failed",
+    "mode": "performance",
+    "trial_status": "passed",
     "programming_status": "completed",
-    "raw_uart_log": "docs/performance/20260930T104344.217514Z-standard-validation.uart.bin",
-    "raw_uart_sha256": "bd73c4a3c33863a835832f8ba253510538be34bd5fa8a1155f4013c5f354f477",
+    "raw_uart_log": "docs/performance/20260930T120813.442169Z-standard-performance-3.uart.bin",
+    "raw_uart_sha256": "b2a168c70290a7892a6bd96f1b4e12be672f661402ed8e82e99324a82a266bf1",
     "raw_uart_hash_verified": true,
-    "raw_uart_bytes": 2156,
+    "raw_uart_bytes": 4705,
     "lines": [
-      "BENCHMARK_IMAGE_CRC32 build_id=3670ebea898d97de value=779664db size=28400",
-      "BENCHMARK_RAM_CHECK status=failed phase=tight_sram_conflict_lh firstaddr=10000940 expected=00008a01 actual=00000000 errors=256 failmask=00080000 bytes=256",
-      "BENCHMARK_PORT_ERROR on-chip SRAM preflight failed"
+      "BENCHMARK_IMAGE_CRC32 build_id=7a77d19631667ed7 value=0091a079 size=28376",
+      "BENCHMARK_RAM_CHECK status=passed words=64 bytes=256 alignment=32 phases=word,halfword_u16_s16,byte_u8_s8,tight_sh_lh_rmw,tight_sb_lb_rmw,code_conflict,cache_flushed errors=0 code_conflict_address=40000920",
+      "BENCHMARK_IMAGE_RECHECK phase=calibration cached=0091a079 flushed=0091a079 expected=0091a079 size=28376 cached_size=28376 flushed_size=28376",
+      "BENCHMARK_IMAGE_RECHECK phase=scored cached=0091a079 flushed=0091a079 expected=0091a079 size=28376 cached_size=28376 flushed_size=28376"
     ],
     "host_image": {
       "matches_host_artifact": true,
       "host_artifact_verified": true,
-      "host_sha256": "66832111066e231800de57b51f963405d9d98f91dcfa6eb0834fdc1eb1e2f57d",
-      "reported_build_id": "3670ebea898d97de",
-      "expected_build_id": "3670ebea898d97de",
-      "host_crc32": "779664db",
-      "host_bytes": 28400,
-      "reported_crc32": "779664db",
-      "reported_bytes": 28400
+      "host_sha256": "b1a38932047b3852d65b7069df8453622291df74b98593c81b924d079e5115a2",
+      "reported_build_id": "7a77d19631667ed7",
+      "expected_build_id": "7a77d19631667ed7",
+      "host_crc32": "0091a079",
+      "host_bytes": 28376,
+      "reported_crc32": "0091a079",
+      "reported_bytes": 28376
     },
-    "ram_check_line": "BENCHMARK_RAM_CHECK status=failed phase=tight_sram_conflict_lh firstaddr=10000940 expected=00008a01 actual=00000000 errors=256 failmask=00080000 bytes=256"
+    "ram_check_line": "BENCHMARK_RAM_CHECK status=passed words=64 bytes=256 alignment=32 phases=word,halfword_u16_s16,byte_u8_s8,tight_sh_lh_rmw,tight_sb_lb_rmw,code_conflict,cache_flushed errors=0 code_conflict_address=40000920"
   },
   "historical_coremark_crc_failures": [
     {

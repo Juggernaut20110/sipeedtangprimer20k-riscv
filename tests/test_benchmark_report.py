@@ -409,10 +409,10 @@ class BenchmarkReportEvidenceTests(unittest.TestCase):
             self.assertIn("tight_sram_conflict_lh", rendered)
             self.assertIn("0x10000940", rendered)
             self.assertIn("expected `0x00008a01` and read `0x00000000`", rendered)
-            self.assertIn("exact hardware/cache root cause remains unresolved", rendered)
             self.assertIn("All 3 scored performance repetitions were not run", rendered)
             self.assertIn("Earlier hash-verified CoreMark captures failed list CRC validation", rendered)
-            self.assertIn("fence and D-cache flush", rendered)
+            self.assertIn("read-first RAM ports", rendered)
+            self.assertIn("write-through `SP` blocks", rendered)
             self.assertNotIn("CoreMark score:", rendered)
 
             (self.root / raw_path).write_bytes(raw + b"tampered")

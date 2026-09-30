@@ -1,4 +1,5 @@
 from migen import Cat, Signal
+from migen.fhdl.specials import READ_FIRST, WRITE_FIRST
 from migen.genlib.resetsync import AsyncResetSynchronizer
 
 from litex.soc.cores.gpio import GPIOIn, GPIOOut
@@ -70,6 +71,21 @@ class ProjectSoC(sipeed_tang_primer_20k.BaseSoC):
         if len(pll_syncs) != 1:
             raise RuntimeError(f"expected one redundant PLL reset synchronizer, found {len(pll_syncs)}")
         pll_specials.remove(pll_syncs[0])
+
+        # LiteX creates the writable Wishbone RAMs with write-first ports. Gowin
+        # V1.9.12.04 maps those to write-through SP block RAMs with WRE tied high
+        # and the byte enables as the only write control. On the GW2A-18C, the
+        # first bus read of a word after a byte-enabled write to it then returns
+        # wrong data on the written byte lanes until the block reads another
+        # address, although Gowin's simulation model reads back correctly. The
+        # Wishbone SRAM never reads and writes in the same cycle, so read-first
+        # ports are equivalent on the bus and infer read-before-write SP blocks
+        # that read back correctly on the board.
+        for ram in (self.sram, self.main_ram):
+            ram_ports = ram.mem.ports
+            if len(ram_ports) != 1 or ram_ports[0].mode != WRITE_FIRST:
+                raise RuntimeError("expected one write-first port on each integrated RAM")
+            ram_ports[0].mode = READ_FIRST
 
         self.profile = profile
         self.project_led_resource_order = LED_RESOURCES

@@ -645,6 +645,14 @@ def historical_coremark_crc_failures(sessions, profile, exclude_session_id=None)
     return failures
 
 
+BSRAM_ROOT_CAUSE = (
+    "SRAM probe and CoreMark CRC failures captured before the read-first RAM change were traced to Gowin inferring "
+    "LiteX's write-first byte-enable RAMs as write-through `SP` blocks with `WRE` tied high: on the GW2A-18C the first "
+    "bus read of a word after a byte-enabled write returned wrong data on the written byte lanes, and the data cache "
+    "kept that word. RTL and post-synthesis simulation of the same design read back correctly."
+)
+
+
 def diagnostics_text(observed, historical_failures, session):
     if not observed:
         return "No hash-verified hardware diagnostic UART capture is available."
@@ -682,7 +690,7 @@ def diagnostics_text(observed, historical_failures, session):
         opening = f"FPGA SRAM programming status was `{observed.get('programming_status', 'not recorded')}`. "
     if fields.get("status") == "failed":
         finding = (
-            f"{opening}{image_text} {ram_text} CoreMark did not start, the exact hardware/cache root cause remains unresolved, "
+            f"{opening}{image_text} {ram_text} CoreMark did not start "
             "and this validation attempt produced no benchmark score."
         )
     else:
@@ -703,6 +711,7 @@ def diagnostics_text(observed, historical_failures, session):
         finding += (
             " Earlier hash-verified CoreMark captures failed " + " and ".join(historical_labels)
             + " CRC validation; those failed captures remain in `results.json` and are excluded from score aggregates."
+            + " " + BSRAM_ROOT_CAUSE
         )
 
     evidence = "\n".join(observed.get("lines", []))
@@ -711,11 +720,13 @@ def diagnostics_text(observed, historical_failures, session):
         f"Raw UART evidence: {raw_link or observed.get('raw_uart_log')} (SHA256 "
         f"`{observed.get('raw_uart_sha256')}`, verified; {observed.get('raw_uart_bytes')} bytes)."
     )
-    next_step = (
-        "Next diagnostic: insert a fence and D-cache flush immediately after the conflicting SRAM store and before the "
-        "matching-index linked-image read, then repeat the same probe to isolate write visibility from cache-index conflict."
-    )
-    return f"{finding} {raw_note}\n\n```text\n{evidence}\n```\n\n{next_step}"
+    text = f"{finding} {raw_note}\n\n```text\n{evidence}\n```"
+    if fields.get("status") == "failed":
+        text += (
+            "\n\nNext diagnostic: confirm the programmed bitstream was built with the read-first RAM ports in "
+            "`gateware/soc.py` (read-before-write `SP` blocks in the Gowin netlist). " + BSRAM_ROOT_CAUSE
+        )
+    return text
 
 
 def startup_recovery_text(session):

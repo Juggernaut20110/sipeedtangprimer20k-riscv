@@ -18,6 +18,7 @@ from gateware.soc import (  # noqa: E402
     SYS_CLK_FREQ, UART_BAUDRATE,
 )
 from scripts.memory import profile_build_dir, validate_memory  # noqa: E402
+from scripts.cpu_profiles import configuration_for  # noqa: E402
 from cpu_candidates import ensure_generated  # noqa: E402
 from litex.soc.integration.builder import Builder  # noqa: E402
 
@@ -26,19 +27,25 @@ def source_fingerprint():
     digest = hashlib.sha256()
     for relative in [
         "gateware/soc.py", "firmware/main.c", "firmware/app_logic.c",
+        "gateware/profile_selection.py",
         "firmware/app_logic.h", "firmware/linker.ld", "firmware/Makefile",
         "scripts/build.py", "scripts/project.py", "scripts/memory.py",
-        "scripts/cpu_candidates.py", "dependencies.lock.json", "cpu-generator.lock.json",
+        "scripts/cpu_candidates.py", "scripts/cpu_profiles.py", "dependencies.lock.json", "cpu-generator.lock.json",
+        "scripts/maxperf_candidates.py",
         "cpu-profile-selection.json", "requirements-py312.txt",
         "patches/litex-sdram-training-status.patch",
         "patches/litex-sdram-read-capture-diagnostic.patch",
         "patches/litex-memtest-read-only-diagnostic.patch",
         "patches/litex-ddr-diagnostic-boot.patch",
+        "patches/litex-project-vexriscv-isa-variants.patch",
         "patches/litex-gowin-extra-sdc.patch",
         "patches/litedram-gw2ddrphy-cdc.patch",
         "patches/litedram-gw2ddrphy-dll-off-read.patch",
     ]:
         digest.update((ROOT / relative).read_bytes())
+    maxperf_selection = ROOT / "maxperf-profile-selection.json"
+    if maxperf_selection.is_file():
+        digest.update(maxperf_selection.read_bytes())
     return digest.hexdigest()
 
 
@@ -139,9 +146,19 @@ def apply_project_patches():
     apply_project_patch("litex", "litex-sdram-read-capture-diagnostic.patch")
     apply_project_patch("litex", "litex-memtest-read-only-diagnostic.patch")
     apply_project_patch("litex", "litex-ddr-diagnostic-boot.patch")
+    apply_project_patch("litex", "litex-project-vexriscv-isa-variants.patch")
     apply_project_patch("litex", "litex-gowin-extra-sdc.patch")
     apply_project_patch("litedram", "litedram-gw2ddrphy-cdc.patch")
     apply_project_patch("litedram", "litedram-gw2ddrphy-dll-off-read.patch")
+    # This module is imported before dependency patches are installed in the
+    # current process. Keep its registry aligned with the patched source.
+    from litex.soc.cores.cpu.vexriscv import core as vexriscv_core
+    vexriscv_core.CPU_VARIANTS.update({"projectim": "VexRiscv", "projectimc": "VexRiscv"})
+    vexriscv_core.GCC_FLAGS.update({
+        "projectim": "-march=rv32i2p0_m -mabi=ilp32",
+        "projectimc": "-march=rv32i2p0_mc -mabi=ilp32",
+    })
+    vexriscv_core.VexRiscv.variants = vexriscv_core.CPU_VARIANTS
 
 
 def read_main_ram_size(mem_header):
@@ -189,7 +206,7 @@ def compile_firmware(profile, output_dir, builder):
 
 
 def generate_soc(profile, output_dir, run_tools=False, compile_software=False, compile_gateware=False,
-                 memory="onchip", bios_size=None, cpu_rtl=None):
+                 memory="onchip", bios_size=None, cpu_rtl=None, cpu_variant=None):
     if profile not in PROFILES:
         raise ValueError(f"unknown profile {profile!r}; valid profiles: {', '.join(PROFILES)}")
     validate_memory(memory)
@@ -200,8 +217,17 @@ def generate_soc(profile, output_dir, run_tools=False, compile_software=False, c
         cpu_rtl = selected_rtl
         if memory == "onchip" and bios_size is None:
             bios_size = 24 * 1024
+    elif profile == "maxperf":
+        selection, item, generated, selected_rtl = read_maxperf_selection(memory)
+        if cpu_rtl is not None and Path(cpu_rtl).resolve() != selected_rtl.resolve():
+            raise RuntimeError("maxperf generated SoC RTL does not match its accepted memory-mode selection")
+        cpu_rtl = selected_rtl
+        cpu_variant = generated["cpu_configuration"]["cpu_variant"]
+        if bios_size is None and memory == "onchip":
+            bios_size = 24 * 1024
     output_dir = Path(output_dir).resolve()
-    soc = ProjectSoC(profile=profile, memory=memory, bios_size=bios_size, cpu_rtl=cpu_rtl)
+    soc = ProjectSoC(profile=profile, memory=memory, bios_size=bios_size, cpu_rtl=cpu_rtl,
+                     cpu_variant=cpu_variant)
     builder = builder_for(soc, output_dir, compile_software, compile_gateware)
     builder.build(run=run_tools, build_name=f"tang20k_{profile}")
     return soc, builder
@@ -258,16 +284,39 @@ def selected_performance_cpu():
     return candidate, ROOT / generated["rtl"], generated, selection
 
 
-def select_bios_size(profile, memory, output_dir, cpu_rtl=None):
+def read_maxperf_selection(memory):
+    from gateware.profile_selection import accepted_maxperf_selection
+    selection = accepted_maxperf_selection()
+    if selection is None:
+        raise RuntimeError("maxperf is not qualified in both memory modes; run make maxperf-build/maxperf-run")
+    item = selection["memory_modes"][memory]
+    manifest_path = ROOT / item["candidate_manifest"]["path"]
+    rtl_path = ROOT / item["candidate_manifest"]["rtl"]
+    if (not manifest_path.is_file()
+            or hashlib.sha256(manifest_path.read_bytes()).hexdigest() != item["candidate_manifest"]["sha256"]):
+        raise RuntimeError(f"accepted {memory}/maxperf generation manifest is missing or changed")
+    manifest = json.loads(manifest_path.read_text())
+    if (manifest.get("candidate_id") != item["candidate_id"] or not rtl_path.is_file()
+            or hashlib.sha256(rtl_path.read_bytes()).hexdigest() != manifest.get("rtl_sha256")):
+        raise RuntimeError(f"accepted {memory}/maxperf RTL identity does not match its selection")
+    result_path = ROOT / item["evaluation_evidence"]["path"]
+    if (not result_path.is_file()
+            or hashlib.sha256(result_path.read_bytes()).hexdigest() != item["evaluation_evidence"]["sha256"]):
+        raise RuntimeError(f"accepted {memory}/maxperf board evaluation evidence is missing or changed")
+    return selection, item, manifest, rtl_path
+
+
+def select_bios_size(profile, memory, output_dir, cpu_rtl=None, cpu_variant=None):
     if memory == "onchip":
-        return 24 * 1024 if profile == "performance" else 32 * 1024
+        return 24 * 1024 if profile in ("performance", "linux") or (profile == "standard" and cpu_rtl is not None) else 32 * 1024
 
     diagnostics = Path(output_dir) / "diagnostics" / "bios-probes"
     failures = []
     for size in DDR_BIOS_SIZES:
         probe_dir = diagnostics / str(size)
         try:
-            soc = ProjectSoC(profile=profile, memory=memory, bios_size=size, cpu_rtl=cpu_rtl)
+            soc = ProjectSoC(profile=profile, memory=memory, bios_size=size,
+                             cpu_rtl=cpu_rtl, cpu_variant=cpu_variant)
             builder = builder_for(soc, probe_dir, compile_software=True, compile_gateware=False)
             builder.build(run=False, build_name=f"bios_probe_{profile}_{size}")
             bios_files = list(probe_dir.glob("**/bios.bin"))
@@ -283,37 +332,91 @@ def select_bios_size(profile, memory, output_dir, cpu_rtl=None):
 
 
 def build_profile(profile, memory="onchip", force=False, output_dir=None,
-                  cpu_rtl=None, cpu_candidate=None, bios_size=None):
-    if profile not in PROFILES:
+                  cpu_rtl=None, cpu_candidate=None, bios_size=None, provisional=False):
+    if profile not in PROFILES and not (profile == "maxperf" and provisional):
         raise ValueError(f"unknown profile {profile!r}; valid profiles: {', '.join(PROFILES)}")
     validate_memory(memory)
     apply_project_patches()
     candidate_manifest = None
     candidate_rtl_hash = None
     profile_selection = None
+    cpu_generation = None
+    cpu_variant = None
     is_public_performance = profile == "performance"
-    if is_public_performance:
-        selected_candidate, selected_rtl, _, profile_selection = selected_performance_cpu()
+    if profile == "maxperf":
+        if provisional:
+            if not cpu_candidate or output_dir is None:
+                raise ValueError("internal provisional maxperf builds require an explicit candidate and private output directory")
+            output_dir = Path(output_dir).resolve()
+            verification_root = (ROOT / "build/maxperf-verification" / memory).resolve()
+            if not output_dir.is_relative_to(verification_root):
+                raise ValueError("provisional maxperf artifacts must stay under build/maxperf-verification/<memory>/")
+            manifest_path = ROOT / "build/maxperf-candidates" / memory / cpu_candidate / "candidate.json"
+            if not manifest_path.is_file():
+                raise RuntimeError(f"provisional {memory} candidate manifest is missing: {cpu_candidate}")
+            cpu_generation = json.loads(manifest_path.read_text())
+            if (cpu_generation.get("candidate_id") != cpu_candidate
+                    or cpu_generation.get("memory_mode") != memory):
+                raise RuntimeError("provisional maxperf candidate manifest has a mismatched identity")
+            cpu_rtl = ROOT / cpu_generation["rtl"]
+            if hashlib.sha256(cpu_rtl.read_bytes()).hexdigest() != cpu_generation.get("rtl_sha256"):
+                raise RuntimeError("provisional maxperf candidate RTL does not match its generation manifest")
+            cpu_variant = cpu_generation["cpu_configuration"]["cpu_variant"]
+            profile_selection = {
+                "schema_version": 1, "profile": "maxperf", "status": "provisional",
+                "clock_hz": SYS_CLK_FREQ,
+                "memory_modes": {memory: {
+                    "status": "provisional", "candidate_id": cpu_candidate,
+                }},
+            }
+        else:
+            profile_selection, maxperf_entry, cpu_generation, cpu_rtl = read_maxperf_selection(memory)
+            cpu_candidate = maxperf_entry["candidate_id"]
+            cpu_variant = cpu_generation["cpu_configuration"]["cpu_variant"]
+        if memory == "onchip":
+            bios_size = 24 * 1024 if bios_size is None else bios_size
+            if bios_size != 24 * 1024:
+                raise ValueError("the on-chip maxperf profile reserves a 24 KiB BIOS ROM")
+        output_dir = Path(output_dir) if output_dir is not None else profile_build_dir(ROOT, profile, memory)
+    elif is_public_performance:
+        selected_candidate, selected_rtl, cpu_generation, profile_selection = selected_performance_cpu()
         if cpu_candidate not in (None, selected_candidate):
             raise ValueError("public performance profile is pinned to the measured CPU winner")
         if cpu_rtl is not None and Path(cpu_rtl).resolve() != selected_rtl.resolve():
             raise ValueError("public performance profile cannot override its measured CPU RTL")
         cpu_candidate = selected_candidate
         cpu_rtl = selected_rtl
+        cpu_variant = "standard"
         if memory == "onchip":
             bios_size = 24 * 1024 if bios_size is None else bios_size
             if bios_size != 24 * 1024:
                 raise ValueError("the on-chip performance profile reserves a 24 KiB BIOS ROM")
         output_dir = Path(output_dir) if output_dir is not None else profile_build_dir(ROOT, profile, memory)
     elif cpu_candidate is not None:
-        if profile != "standard" or memory != "onchip":
-            raise ValueError("prediction candidates are standard-derived on-chip builds")
-        if cpu_candidate not in ("dynamic", "dynamic_target") or cpu_rtl is None:
-            raise ValueError("a supported candidate name and generated RTL path are required")
-        bios_size = 24 * 1024 if bios_size is None else bios_size
-        if bios_size != 24 * 1024:
-            raise ValueError("CPU candidate builds reserve the approved 24 KiB BIOS ROM")
-        output_dir = Path(output_dir or ROOT / "build/cpu-candidates" / cpu_candidate / "soc")
+        if profile != "standard" or cpu_rtl is None:
+            raise ValueError("provisional maxperf candidates use the standard integration shell and generated RTL")
+        candidate_manifest_path = Path(cpu_rtl).resolve().parent / "candidate.json"
+        if not candidate_manifest_path.is_file():
+            raise RuntimeError("generate the locked CPU candidate before building it")
+        cpu_generation = json.loads(candidate_manifest_path.read_text())
+        if cpu_generation.get("candidate_id") is None:
+            # Keep the original two prediction candidates and their evidence format valid.
+            if memory != "onchip" or cpu_candidate not in ("dynamic", "dynamic_target"):
+                raise ValueError("legacy prediction candidates only support on-chip evaluation")
+            cpu_variant = "standard"
+            bios_size = 24 * 1024 if bios_size is None else bios_size
+            if bios_size != 24 * 1024:
+                raise ValueError("legacy CPU candidates reserve the approved 24 KiB BIOS ROM")
+            output_dir = Path(output_dir or ROOT / "build/cpu-candidates" / cpu_candidate / "soc")
+        else:
+            if cpu_generation.get("candidate_id") != cpu_candidate:
+                raise RuntimeError("candidate identifier does not match its generation manifest")
+            cpu_variant = cpu_generation["cpu_configuration"]["cpu_variant"]
+            if memory == "onchip":
+                bios_size = 24 * 1024 if bios_size is None else bios_size
+                if bios_size != 24 * 1024:
+                    raise ValueError("on-chip maxperf candidates reserve a 24 KiB BIOS ROM")
+            output_dir = Path(output_dir or ROOT / "build/maxperf-candidates" / memory / cpu_candidate / "soc")
     else:
         output_dir = Path(output_dir) if output_dir is not None else profile_build_dir(ROOT, profile, memory)
     if cpu_candidate is not None:
@@ -323,7 +426,7 @@ def build_profile(profile, memory="onchip", force=False, output_dir=None,
             raise RuntimeError("generate the locked CPU candidate RTL before building it")
         candidate_manifest = json.loads(candidate_manifest_path.read_text())
         candidate_rtl_hash = hashlib.sha256(cpu_rtl.read_bytes()).hexdigest()
-        if (candidate_manifest.get("candidate") != cpu_candidate
+        if (candidate_manifest.get("candidate_id", candidate_manifest.get("candidate")) != cpu_candidate
                 or candidate_manifest.get("rtl_sha256") != candidate_rtl_hash):
             raise RuntimeError("CPU candidate RTL does not match its generation manifest")
     output_dir = output_dir.resolve()
@@ -337,6 +440,16 @@ def build_profile(profile, memory="onchip", force=False, output_dir=None,
         fingerprint = hashlib.sha256(
             (fingerprint + json.dumps(profile_selection, sort_keys=True)).encode()
         ).hexdigest()
+    cpu_configuration = configuration_for(
+        profile,
+        cpu_candidate=cpu_candidate,
+        candidate_manifest=cpu_generation,
+        selection=profile_selection,
+    )
+    fingerprint = hashlib.sha256(
+        (fingerprint + json.dumps(cpu_configuration, sort_keys=True)
+         + (cpu_variant or PROFILES[profile])).encode()
+    ).hexdigest()
     if not force and metadata_path.exists():
         try:
             previous = json.loads(metadata_path.read_text())
@@ -357,7 +470,7 @@ def build_profile(profile, memory="onchip", force=False, output_dir=None,
         "memory_mode": memory,
         "cpu_candidate": cpu_candidate,
         "cpu_profile_selection": profile_selection,
-        "liteX_variant": PROFILES[profile],
+        "liteX_variant": cpu_variant or PROFILES[profile],
         "sys_clk_hz": SYS_CLK_FREQ,
         "uart_baud": UART_BAUDRATE,
         "status": "in_progress",
@@ -375,11 +488,19 @@ def build_profile(profile, memory="onchip", force=False, output_dir=None,
     metadata_path.write_text(json.dumps(metadata, indent=2) + "\n")
     try:
         selected_bios_size = bios_size if bios_size is not None else select_bios_size(
-            profile, memory, output_dir, cpu_rtl=cpu_rtl
+            profile, memory, output_dir, cpu_rtl=cpu_rtl, cpu_variant=cpu_variant
         )
-        soc = ProjectSoC(profile=profile, memory=memory, bios_size=selected_bios_size, cpu_rtl=cpu_rtl)
+        soc = ProjectSoC(profile=profile, memory=memory, bios_size=selected_bios_size,
+                         cpu_rtl=cpu_rtl, cpu_variant=cpu_variant)
         builder = builder_for(soc, output_dir, compile_software=True, compile_gateware=True)
-        build_name = f"tang20k_{profile}" + (f"_{cpu_candidate}" if cpu_candidate else "")
+        # Candidate IDs are evidence paths and intentionally include readable
+        # separators. Gowin's Verilog parser rejects those in module names, so
+        # sanitize only the synthesized top-level identifier.
+        candidate_module_suffix = (
+            "_" + re.sub(r"[^A-Za-z0-9_]", "_", cpu_candidate)
+            if cpu_candidate else ""
+        )
+        build_name = f"tang20k_{profile}{candidate_module_suffix}"
         builder.build(run=True, build_name=build_name)
         metadata["tool_versions"]["gowin"] = gowin_report_version(
             output_dir / "gateware/impl/pnr/project.rpt.txt"
@@ -402,16 +523,9 @@ def build_profile(profile, memory="onchip", force=False, output_dir=None,
             "bios_size": selected_bios_size,
             "bitstream": str(public_bitstream.relative_to(ROOT)),
             "bitstream_bytes": public_bitstream.stat().st_size,
+            "bitstream_sha256": hashlib.sha256(public_bitstream.read_bytes()).hexdigest(),
             "cpu_variant": soc.cpu.variant,
-            "cpu_configuration": {
-                "liteX_variant": soc.cpu.variant,
-                "isa": "rv32i2p0" if profile == "minimal" else "rv32i2p0_m",
-                "instruction_cache_bytes": 0 if profile == "minimal" else (2048 if profile == "lite" else 4096),
-                "data_cache_bytes": 0 if profile in ("minimal", "lite") else 4096,
-                "prediction": cpu_candidate or ("none" if profile == "minimal" else "static"),
-                "rtl_sha256": candidate_rtl_hash,
-                "candidate_generation": candidate_manifest,
-            },
+            "cpu_configuration": {**cpu_configuration, "liteX_variant": soc.cpu.variant},
             "memory": {
                 "mode": memory,
                 "main_ram_base": firmware["main_ram_base"],
@@ -442,10 +556,13 @@ def build_profile(profile, memory="onchip", force=False, output_dir=None,
 def main(argv=None):
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument("profile", choices=PROFILES)
+    parser.add_argument("profile", choices=[*PROFILES, "maxperf"])
     parser.add_argument("--memory", choices=("onchip", "ddr3"), default="onchip")
     parser.add_argument("--force", action="store_true")
     args = parser.parse_args(argv)
+    if args.profile == "maxperf" and args.profile not in PROFILES:
+        print("maxperf is provisional; run make maxperf-build and make maxperf-run for its candidate workflow", file=sys.stderr)
+        return 1
     try:
         result = build_profile(args.profile, memory=args.memory, force=args.force)
     except (OSError, subprocess.CalledProcessError, RuntimeError, ValueError) as error:

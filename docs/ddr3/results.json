@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "report_generated_utc": "2026-10-01T18:20:25.156655+00:00",
-  "latest_batch_id": "20261001T153918.134692Z-ddr3",
+  "report_generated_utc": "2026-10-01T20:43:51.891827+00:00",
+  "latest_batch_id": "20261001T201828.617667Z-ddr3",
   "latest_batch_status": "failed",
   "batches": [
     {
@@ -1103,6 +1103,210 @@
           "full_result": null
         }
       }
+    },
+    {
+      "batch_id": "20261001T201828.617667Z-ddr3",
+      "requested_profiles": [
+        "linux"
+      ],
+      "status": "failed",
+      "missing_profiles": [],
+      "errors": [],
+      "profiles": {
+        "linux": {
+          "session": {
+            "schema_version": 1,
+            "session_id": "20261001T201828.617667Z-ddr3-linux",
+            "batch_id": "20261001T201828.617667Z-ddr3",
+            "profile": "linux",
+            "requested_profiles": [
+              "linux"
+            ],
+            "memory_mode": "ddr3",
+            "status": "failed",
+            "created_utc": "2026-10-01T20:18:28.636990+00:00",
+            "board": "Sipeed Tang Primer 20K with standard Dock",
+            "clock_hz": 48000000,
+            "uart_device_requested": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+            "uart_device_selected": "/dev/ttyUSB1",
+            "uart_candidates_at_start": [
+              "/dev/serial/by-id/usb-1a86_USB_Single_Serial_599D114570-if00",
+              "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if00-port0",
+              "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0"
+            ],
+            "usb_device_nodes_at_start": [
+              "/dev/bus/usb/001/001",
+              "/dev/bus/usb/001/003",
+              "/dev/bus/usb/001/016",
+              "/dev/bus/usb/001/023",
+              "/dev/bus/usb/001/024",
+              "/dev/bus/usb/001/025",
+              "/dev/bus/usb/002/001"
+            ],
+            "requested_training_runs": 10,
+            "actual_training_runs": 1,
+            "requested_stress_seconds": 1800,
+            "training_criteria_runs": 10,
+            "stress_criteria_seconds": 1800,
+            "build_identity": {
+              "build_metadata": "build/ddr3/linux/build-metadata.json",
+              "bitstream": "build/ddr3/linux/bitstream.fs",
+              "bitstream_sha256": "2e5b9b99d752115aab97c3dd18e94facca1c5ba81824eac59cb9f1fa181b13cc",
+              "build_fingerprint": "ea2e087523459cb35a7a665180453d5aae002e9121b505b329134bd6bbd4bf53",
+              "cpu_configuration": {
+                "liteX_variant": "linux",
+                "isa": "rv32i2p0_ma",
+                "instruction_cache_bytes": 4096,
+                "data_cache_bytes": 4096,
+                "prediction": "static",
+                "compressed": false,
+                "mmu": true,
+                "supervisor": true,
+                "atomics": true,
+                "os_boot": "deferred; shipped Linux-capable RTL used for bare-metal tests",
+                "rtl_sha256": "c19a1b07f799100869dc49646c328e83d9970a2f81076824393a677a60f61240",
+                "rtl": ".deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.v",
+                "generator_commit": "pythondata-cpu-vexriscv@642ecfed1c84460555d6d803d660cc60cfc1ecb6"
+              },
+              "bios_bytes": 32768,
+              "l2_cache_bytes": 8192,
+              "geometry_bytes": 268435456,
+              "uncached_alias": "0xc0000000",
+              "diagnostic_images": {
+                "smoke": {
+                  "binary": "build/ddr3/linux/diagnostics/smoke/ddr_test.bin",
+                  "sha256": "0efce971d35b0d3947df8205825904d1b722f4d81cef728223c61a7ad55384b0",
+                  "stress_seconds": 1800
+                },
+                "full": {
+                  "binary": "build/ddr3/linux/diagnostics/full/ddr_test.bin",
+                  "sha256": "6d5a747bcfe0506ad9e8dd57a1495b7daed3dfa2e89e4587a49b9cf930e6418a",
+                  "stress_seconds": 1800
+                }
+              }
+            },
+            "training_phy_configuration": {
+              "SDRAM_PHY_MODULES": 2,
+              "SDRAM_PHY_DQ_DQS_RATIO": 8,
+              "SDRAM_PHY_DELAYS": 256,
+              "SDRAM_PHY_BITSLIPS": 4,
+              "SDRAM_DELAY_PER_DQ": false
+            },
+            "expected_read_lanes": 2,
+            "trials": [
+              {
+                "mode": "training",
+                "diagnostic_only": false,
+                "attempt": 1,
+                "status": "failed",
+                "programming_status": "completed",
+                "image_sha256": "0efce971d35b0d3947df8205825904d1b722f4d81cef728223c61a7ad55384b0",
+                "bitstream_sha256": "2e5b9b99d752115aab97c3dd18e94facca1c5ba81824eac59cb9f1fa181b13cc",
+                "raw_uart_log": "docs/ddr3/evidence/20261001T201828.617667Z-ddr3-linux/training-01.uart.bin",
+                "text_uart_log": "docs/ddr3/evidence/20261001T201828.617667Z-ddr3-linux/training-01.uart.log",
+                "transmitted_uart_log": "docs/ddr3/evidence/20261001T201828.617667Z-ddr3-linux/training-01.uart.tx.bin",
+                "started_utc": "2026-10-01T20:18:28.674889+00:00",
+                "uart_input_buffer_cleared_before_programming": true,
+                "training": {
+                  "status": "passed",
+                  "start_records": [
+                    "SDRAM_TRAINING_START phy=GW2DDRPHY read_leveling=1 bitslips=4 delays=256"
+                  ],
+                  "result_records": [
+                    "SDRAM_TRAINING_RESULT status=passed"
+                  ],
+                  "expected_lane_count": 2,
+                  "lane_count": 2,
+                  "phy_configuration": {
+                    "SDRAM_PHY_MODULES": 2,
+                    "SDRAM_PHY_DQ_DQS_RATIO": 8,
+                    "SDRAM_PHY_DELAYS": 256,
+                    "SDRAM_PHY_BITSLIPS": 4,
+                    "SDRAM_DELAY_PER_DQ": false
+                  },
+                  "lanes": [
+                    {
+                      "module": 0,
+                      "dq_line": 0,
+                      "bitslip": 2,
+                      "status": "passed",
+                      "window_start": 0,
+                      "window_length": 214,
+                      "delay_center": 106,
+                      "delay_half_window": 106,
+                      "raw": "SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=214 delay_center=106 delay_half_window=106"
+                    },
+                    {
+                      "module": 1,
+                      "dq_line": 0,
+                      "bitslip": 2,
+                      "status": "passed",
+                      "window_start": 0,
+                      "window_length": 90,
+                      "delay_center": 44,
+                      "delay_half_window": 44,
+                      "raw": "SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=0 window_length=90 delay_center=44 delay_half_window=44"
+                    }
+                  ],
+                  "errors": []
+                },
+                "bios_memtest": {
+                  "status": "failed",
+                  "records": [
+                    "Memtest KO"
+                  ],
+                  "errors": [
+                    "BIOS memory test failed or its result is missing/ambiguous"
+                  ]
+                },
+                "bios_console_confirmed": true,
+                "error": "RuntimeError: BIOS memory test failed; acceptance firmware upload was refused",
+                "application_end_seen": false,
+                "application_failure": null,
+                "bios_training_status_seen": true,
+                "raw_uart_sha256": "dc655febcf0d3105b71d9ac070bcd1e906dccd770bf6de4cb74eb712a11834ca",
+                "raw_uart_bytes": 3020,
+                "transmitted_uart_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "transmitted_uart_bytes": 0,
+                "decode_errors_present": true,
+                "training_status_from_bios": true,
+                "finished_utc": "2026-10-01T20:18:34.149704+00:00"
+              }
+            ],
+            "batch_continuation_safe": true,
+            "error": "RuntimeError: DDR training/smoke run 1 failed: RuntimeError: BIOS memory test failed; acceptance firmware upload was refused",
+            "finished_utc": "2026-10-01T20:18:34.150136+00:00",
+            "uart_evidence_directory": "docs/ddr3/evidence/20261001T201828.617667Z-ddr3-linux",
+            "evidence": "build/ddr3/ddr-test-sessions/20261001T201828.617667Z-ddr3-linux/session.json"
+          },
+          "status": "failed",
+          "errors": [
+            "recorded 1 training trials; requested 10",
+            "one or more fresh SRAM reconfiguration/training/smoke trials failed revalidation",
+            "full destructive memory and sustained stress evidence did not pass revalidation"
+          ],
+          "trials": [
+            {
+              "mode": "training",
+              "attempt": 1,
+              "status": "failed",
+              "errors": [
+                "BIOS memory test failed or its result is missing/ambiguous",
+                "diagnostic firmware start marker is missing",
+                "training capture lacks a passing DDR_TEST_SMOKE marker",
+                "training smoke capture lacks a passing DDR_TEST_END marker"
+              ],
+              "raw_uart_sha256": "dc655febcf0d3105b71d9ac070bcd1e906dccd770bf6de4cb74eb712a11834ca",
+              "training_lane_count": 2,
+              "full_result": null
+            }
+          ],
+          "training_runs_passed": 0,
+          "training_runs_requested": 10,
+          "expected_read_lanes": 2,
+          "full_result": null
+        }
+      }
     }
   ],
   "diagnostic_probes": [
@@ -1210,5 +1414,18 @@
       "capture_validation_errors": [],
       "manifest": "docs/ddr3/evidence/20261001T003751.798780Z-latency-calibration/latency-calibration.json"
     }
-  ]
+  ],
+  "maxperf_candidate_evaluation": {
+    "memory_mode": "ddr3",
+    "candidate_build": {
+      "path": "docs/performance/maxperf-evaluation/20261001T202139.975865Z-ddr3-maxperf-build/candidate-build.json",
+      "sha256": "ac789fb2e0f32f277aeb8afff4dc7c2ac989f23744af417cedfd476eefb4310f",
+      "status": "incomplete",
+      "candidate_count": 18,
+      "board_measurement_ready_candidates": 4
+    },
+    "board_status": "not_started",
+    "reason": "DDR3 candidate measurements require a fresh accepted performance reference. Existing performance DDR attempts and the latest linux run failed BIOS Memtest after training.",
+    "scored_candidates": 0
+  }
 }

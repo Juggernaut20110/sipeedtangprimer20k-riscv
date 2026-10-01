@@ -183,15 +183,41 @@ def compile_image(profile, memory_dir, output_dir, variant, stress_seconds, *, r
     }
 
 
-def build_profile_diagnostics(profile, stress_seconds, force=False):
-    if profile not in PROFILES:
+def build_profile_diagnostics(profile, stress_seconds, force=False, candidate_id=None, build_dir=None):
+    if profile not in PROFILES and profile != "maxperf":
         raise ValueError(f"unknown CPU profile {profile!r}; choose from {', '.join(PROFILES)}")
     validate_memory("ddr3")
-    memory_dir = profile_build_dir(ROOT, profile, "ddr3")
-    build = build_module.build_profile(profile, memory="ddr3", force=force)
+    candidate_manifest = None
+    if candidate_id is not None:
+        candidate_root = ROOT / "build/maxperf-candidates/ddr3" / candidate_id
+        candidate_manifest_path = candidate_root / "candidate.json"
+        build_dir = Path(build_dir).resolve() if build_dir is not None else candidate_root / "soc"
+        memory_dir = build_dir
+        if not candidate_manifest_path.is_file():
+            raise RuntimeError(f"DDR candidate generation manifest is missing: {candidate_id}")
+        candidate_manifest = json.loads(candidate_manifest_path.read_text())
+        if (candidate_manifest.get("candidate_id") != candidate_id
+                or candidate_manifest.get("memory_mode") != "ddr3"):
+            raise RuntimeError("DDR candidate manifest identity does not match the requested diagnostic build")
+        build_path = build_dir / "build-metadata.json"
+        if not build_path.is_file():
+            raise RuntimeError(f"DDR candidate SoC build metadata is missing: {candidate_id}")
+        build = json.loads(build_path.read_text())
+        rtl_path = ROOT / candidate_manifest["rtl"]
+        if (build.get("status") != "passed" or build.get("profile") != "standard"
+                or build.get("cpu_candidate") != candidate_id
+                or build.get("memory_mode") != "ddr3"
+                or not rtl_path.is_file()
+                or sha256(rtl_path) != candidate_manifest.get("rtl_sha256")
+                or build.get("cpu_configuration", {}).get("rtl_sha256") != candidate_manifest.get("rtl_sha256")):
+            raise RuntimeError("DDR candidate SoC build no longer matches its generated CPU identity")
+    else:
+        build_dir = profile_build_dir(ROOT, profile, "ddr3")
+        memory_dir = build_dir
+        build = build_module.build_profile(profile, memory="ddr3", force=force)
     if build.get("status") != "passed" or build.get("memory_mode") != "ddr3":
         raise RuntimeError(f"{profile} DDR3 SoC build did not pass")
-    output_dir = memory_dir / "diagnostics"
+    output_dir = build_dir / "diagnostics"
     metadata_path = output_dir / "ddr-test-metadata.json"
     output_dir.mkdir(parents=True, exist_ok=True)
     source_identity = {
@@ -204,6 +230,8 @@ def build_profile_diagnostics(profile, stress_seconds, force=False):
         "patches/litedram-gw2ddrphy-cdc.patch": sha256(ROOT / "patches/litedram-gw2ddrphy-cdc.patch"),
         "bitstream": sha256(ROOT / build["bitstream"]),
     }
+    if candidate_manifest is not None:
+        source_identity["candidate_manifest"] = sha256(candidate_root / "candidate.json")
     if metadata_path.is_file() and not force:
         try:
             previous = json.loads(metadata_path.read_text())
@@ -221,6 +249,8 @@ def build_profile_diagnostics(profile, stress_seconds, force=False):
     metadata = {
         "status": "in_progress",
         "profile": profile,
+        "cpu_candidate": candidate_id,
+        "candidate_rtl_sha256": candidate_manifest.get("rtl_sha256") if candidate_manifest else None,
         "memory_mode": "ddr3",
         "clock_hz": 48_000_000,
         "ddr_geometry_bytes": DDR_SIZE_BYTES,
@@ -255,10 +285,12 @@ def build_profile_diagnostics(profile, stress_seconds, force=False):
 def main(argv=None):
     import argparse
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("profile", type=str.lower, choices=[*PROFILES, "all"], nargs="?", default="all")
+    parser.add_argument("profile", type=str.lower, choices=[*PROFILES, "maxperf", "all"], nargs="?", default="all")
     parser.add_argument("--stress-seconds", type=int, default=1800)
     parser.add_argument("--force", action="store_true")
     args = parser.parse_args(argv)
+    if args.profile == "maxperf" and args.profile not in PROFILES:
+        parser.error("maxperf is provisional until both memory modes qualify; use the maxperf candidate workflow")
     if args.stress_seconds < 1:
         parser.error("STRESS_SECONDS must be a positive integer")
     profiles = list(PROFILES) if args.profile == "all" else [args.profile]

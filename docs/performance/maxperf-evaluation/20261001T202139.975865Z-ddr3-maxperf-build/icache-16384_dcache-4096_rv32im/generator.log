@@ -1,0 +1,21 @@
+[info] welcome to sbt 1.9.7 (Temurin Java 1.8.0_432)
+[info] loading settings for project verilog-build from plugins.sbt ...
+[info] loading project definition from /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/project
+[info] loading settings for project root from build.sbt ...
+[info] loading settings for project vexriscv-build from plugins.sbt ...
+[info] loading project definition from /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/ext/VexRiscv/project
+[info] loading settings for project root from build.sbt ...
+[info] set current project to VexRiscvOnWishbone (in build file:/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/)
+[info] Executing in batch mode. For better performance use sbt's shell
+[success] Total time: 2 s, completed Oct 1, 2026 5:06:55 PM
+[info] running (fork) vexriscv.GenCoreDefault --hardwareBreakpointCount=0 --iCacheSize=16384 --dCacheSize=4096 --pmpRegions=0 --pmpGranularity=256 --pmpAddressMatchingModes=na4,napot,tor --mulDiv=true --cfu=false --singleCycleMulDiv=true --singleCycleShift=true --relaxedPcCalculation=false --bypass=true --externalInterruptArray=true --csrPluginConfig=small --atomics=false --compressedGen=false --dBusCachedRelaxedMemoryTranslationRegister=false --dBusCachedEarlyWaysHits=true --prediction=dynamic_target --outputFile=../../../../build/maxperf-candidates/ddr3/icache-16384_dcache-4096_rv32im/VexRiscv
+[info] [Runtime] SpinalHDL v1.9.4    git head : 270018552577f3bb8e5339ee2583c9c22d324215
+[info] [Runtime] JVM max memory : 7116.5MiB
+[info] [Runtime] Current date : 2026.10.01 17:06:56
+[info] [Progress] at 0.000 : Elaborate components
+[info] [Warning] This VexRiscv configuration is set without software ebreak instruction support. Some software may rely on it (ex: Rust). (This isn't related to JTAG ebreak)
+[info] [Progress] at 0.916 : Checks and transforms
+[info] [Progress] at 1.209 : Generate Verilog
+[info] [Warning] 174 signals were pruned. You can call printPruned on the backend report to get more informations.
+[info] [Done] at 1.426
+[success] Total time: 2 s, completed Oct 1, 2026 5:06:58 PM

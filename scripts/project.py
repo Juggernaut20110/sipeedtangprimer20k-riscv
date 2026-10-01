@@ -50,7 +50,7 @@ def main(argv=None):
         "run": ("scripts/run.py", values),
         "compare": ("scripts/compare.py", ["--memory", (values[:1] or ["onchip"])[0]]),
         "test": ("scripts/validate.py", []),
-        "benchmark-build": ("scripts/benchmark_build.py", ["--memory", (values[:1] or ["onchip"])[0]]),
+        "benchmark-build": ("scripts/benchmark_build.py", ["--memory", (values[:1] or ["onchip"])[0], *( ["--profile", values[1]] if len(values) > 1 else [])]),
         "benchmark-run": ("scripts/benchmark_run.py", values),
         "benchmark-report": ("scripts/benchmark_report.py", []),
         "ddr-test-build": ("scripts/ddr_test_build.py", [values[0].lower() if values else "all", "--stress-seconds", values[1] if len(values) > 1 else "1800"]),
@@ -63,6 +63,8 @@ def main(argv=None):
         "ddr-test-report": ("scripts/ddr_test_report.py", []),
         "cpu-candidate-build": ("scripts/cpu_candidate_build.py", []),
         "cpu-candidate-run": ("scripts/cpu_candidate_run.py", [values[0] if values else ""]),
+        "maxperf-build": ("scripts/maxperf_candidates.py", ["--memory", (values[:1] or ["onchip"])[0]]),
+        "maxperf-run": ("scripts/maxperf_run.py", [*(values[:1] or ["onchip"]), *(values[1:2] or [""])]),
     }
     if command not in targets:
         print(f"unknown command {command!r}", file=sys.stderr)
@@ -99,6 +101,9 @@ def main(argv=None):
         return 2
     if command == "cpu-candidate-run" and not script_args[0]:
         print("make cpu-candidate-run requires an explicit PORT", file=sys.stderr)
+        return 2
+    if command == "maxperf-run" and not script_args[1]:
+        print("make maxperf-run requires an explicit PORT", file=sys.stderr)
         return 2
     return subprocess.run([str(VENV_PYTHON), str(ROOT / script), *script_args], cwd=ROOT, env=env).returncode
 

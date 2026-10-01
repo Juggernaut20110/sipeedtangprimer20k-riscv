@@ -39,15 +39,15 @@ class BenchmarkRunnerTests(unittest.TestCase):
             with self.subTest(selection=selection), patch.object(runner, "run_profile", return_value=0) as run, patch("sys.stdout", io.StringIO()):
                 self.assertEqual(runner.main([selection, "/dev/test-dock"]), 0)
                 calls = run.call_args_list
-                self.assertEqual([call.args[0] for call in calls], ["minimal", "lite", "standard", "performance"])
+                self.assertEqual([call.args[0] for call in calls], ["minimal", "lite", "standard", "performance", "linux"])
                 self.assertEqual(len({call.args[4] for call in calls}), 1)
                 self.assertTrue(calls[0].args[4].endswith("-all"))
                 self.assertTrue(all(call.args[1:4] == ("/dev/test-dock", 45.0, 300.0) for call in calls))
 
     def test_failed_profile_does_not_skip_other_profiles_or_report_success(self):
-        with patch.object(runner, "run_profile", side_effect=[1, 0, 0, 0]) as run, patch("sys.stdout", io.StringIO()):
+        with patch.object(runner, "run_profile", side_effect=[1, 0, 0, 0, 0]) as run, patch("sys.stdout", io.StringIO()):
             self.assertEqual(runner.main(["ALL", "/dev/test-dock"]), 1)
-            self.assertEqual(run.call_count, 4)
+            self.assertEqual(run.call_count, 5)
 
     def test_interrupt_stops_batch_before_programming_another_profile(self):
         with patch.object(runner, "run_profile", side_effect=[0, 130]) as run, patch("sys.stdout", io.StringIO()):
@@ -85,7 +85,7 @@ class BenchmarkRunnerTests(unittest.TestCase):
             trial.assert_called_once()
             session = append.call_args.args[0]
             self.assertEqual(session["batch_id"], "batch-all")
-            self.assertEqual(session["requested_profiles"], ["minimal", "lite", "standard", "performance"])
+            self.assertEqual(session["requested_profiles"], ["minimal", "lite", "standard", "performance", "linux"])
             self.assertEqual([t["status"] for t in session["trials"]], ["failed", "not_run", "not_run", "not_run"])
             self.assertIsNone(session["aggregate"])
             self.assertTrue((Path(directory) / session["evidence"]).is_file())

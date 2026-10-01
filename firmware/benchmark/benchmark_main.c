@@ -11,6 +11,19 @@
 #include <system.h>
 #include <stdint.h>
 
+#ifndef BENCHMARK_DCACHE_BYTES
+#define BENCHMARK_DCACHE_BYTES 0u
+#endif
+#ifndef BENCHMARK_L2_BYTES
+#define BENCHMARK_L2_BYTES 0u
+#endif
+
+#if BENCHMARK_DCACHE_BYTES > 0
+#define BENCHMARK_CODE_CONFLICT_PHASE "code_conflict,"
+#else
+#define BENCHMARK_CODE_CONFLICT_PHASE ""
+#endif
+
 extern int coremark_main(int argc, char *argv[]);
 extern volatile ee_s32 seed4_volatile;
 extern volatile ee_s32 seed1_volatile;
@@ -43,6 +56,12 @@ static void flush_test_caches(void)
     asm volatile("fence" ::: "memory");
     flush_cpu_dcache();
     asm volatile("fence" ::: "memory");
+#if BENCHMARK_L2_BYTES > 0
+    flush_l2_cache();
+    asm volatile("fence" ::: "memory");
+    flush_cpu_dcache();
+    asm volatile("fence" ::: "memory");
+#endif
     flush_cpu_icache();
     asm volatile("fence" ::: "memory");
 }
@@ -206,22 +225,23 @@ static uintptr_t run_tight_store_checks(ram_check_failure *failure)
         }
     }
 
-    /* Force repeated D-cache conflicts between the first probe word in SRAM
-     * and a read-only word in the linked main-RAM image with matching set bits.
-     * The code word is only read; this alternation tests line eviction and
-     * refill while checking both values after each conflict. */
+    /* Force conflicts using this CPU's actual D-cache index span. The
+     * project-generated data caches are direct-mapped, so equal modulo-size
+     * addresses contend for one line for each candidate capacity. */
+#if BENCHMARK_DCACHE_BYTES > 0
     uintptr_t sram_address = (uintptr_t)&ram_check[0].word;
     uintptr_t image_start = (uintptr_t)_ftext;
     uintptr_t image_end = (uintptr_t)_edata_rom;
-    uintptr_t code_offset = (sram_address - image_start) & 0x0fffu;
+    uintptr_t cache_index_mask = (uintptr_t)BENCHMARK_DCACHE_BYTES - 1u;
+    uintptr_t code_offset = (sram_address - image_start) & cache_index_mask;
     code_conflict_address = image_start + code_offset;
     if (code_conflict_address + sizeof(uint32_t) > image_end ||
-        (((code_conflict_address ^ sram_address) & 0x0fffu) != 0u)) {
+        (((code_conflict_address ^ sram_address) & cache_index_mask) != 0u)) {
         if (errors == 0u) {
             first_phase = "tight_code_conflict_bounds";
             first_address = code_conflict_address;
-            first_expected = (uint32_t)sram_address & 0x0fffu;
-            first_actual = (uint32_t)code_conflict_address & 0x0fffu;
+            first_expected = (uint32_t)sram_address & (uint32_t)cache_index_mask;
+            first_actual = (uint32_t)code_conflict_address & (uint32_t)cache_index_mask;
         }
         failmask |= 0x00040000u;
         errors++;
@@ -256,6 +276,7 @@ static uintptr_t run_tight_store_checks(ram_check_failure *failure)
                 expected_word, sram_word_after);
         }
     }
+#endif
 
 #undef TIGHT_CHECK
     record_ram_check_batch(failure, first_phase, first_address, first_expected,
@@ -409,7 +430,7 @@ static void run_ram_preflight(void)
     }
     ee_printf("BENCHMARK_RAM_CHECK status=passed words=64 bytes=256 "
         "alignment=32 phases=word,halfword_u16_s16,byte_u8_s8,tight_sh_lh_rmw,"
-        "tight_sb_lb_rmw,code_conflict,cache_flushed errors=0 "
+        "tight_sb_lb_rmw," BENCHMARK_CODE_CONFLICT_PHASE "cache_flushed errors=0 "
         "code_conflict_address=%08lx\n", (unsigned long)code_conflict_address);
 }
 

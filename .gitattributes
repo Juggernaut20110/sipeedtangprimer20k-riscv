@@ -1,0 +1,6 @@
+*.uart.bin binary
+*.uart.tx.bin binary
+*.uart.log -whitespace
+docs/performance/maxperf-evaluation/**/*.rpt.txt -whitespace
+docs/performance/maxperf-evaluation/**/*.tr -whitespace
+docs/performance/maxperf-evaluation/**/*.log -whitespace

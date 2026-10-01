@@ -1,0 +1,22 @@
+diff --git a/litex/soc/cores/cpu/vexriscv/core.py b/litex/soc/cores/cpu/vexriscv/core.py
+index 3426d05a8..b1b14e62b 100644
+--- a/litex/soc/cores/cpu/vexriscv/core.py
++++ b/litex/soc/cores/cpu/vexriscv/core.py
+@@ -43,6 +43,8 @@ CPU_VARIANTS = {
+     "full+debug":         "VexRiscv_FullDebug",
+     "full+cfu+debug":     "VexRiscv_FullCfuDebug",
+     "linux":              "VexRiscv_Linux",
++    "projectim":          "VexRiscv",
++    "projectimc":         "VexRiscv",
+     "linux+debug":        "VexRiscv_LinuxDebug",
+     "linux+no-dsp":       "VexRiscv_LinuxNoDspFmax",
+     "secure":             "VexRiscv_Secure",
+@@ -74,6 +76,8 @@ GCC_FLAGS = {
+     "full+debug":           "-march=rv32i2p0_m     -mabi=ilp32",
+     "full+cfu+debug":       "-march=rv32i2p0_m     -mabi=ilp32",
+     "linux":                "-march=rv32i2p0_ma    -mabi=ilp32",
++    "projectim":            "-march=rv32i2p0_m     -mabi=ilp32",
++    "projectimc":           "-march=rv32i2p0_mc    -mabi=ilp32",
+     "linux+debug":          "-march=rv32i2p0_ma    -mabi=ilp32",
+     "linux+no-dsp":         "-march=rv32i2p0_ma    -mabi=ilp32",
+     "secure":               "-march=rv32i2p0_ma    -mabi=ilp32",

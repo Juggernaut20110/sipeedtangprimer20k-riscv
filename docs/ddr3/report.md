@@ -4,17 +4,17 @@
 
 The receive patch and current integrity investigation are recorded in [DDR3 training handoff](training-handoff.md), with the original experiments retained in [DDR3 failure diagnosis](diagnosis.md). Diagnostic experiments do not count as acceptance passes.
 
-Batch `20261001T153918.134692Z-ddr3` uses the configured 256 MiB DDR3 geometry at a 48 MHz system clock and 96 MHz DDR CK. Training success is based on captured BIOS status and all lane bitslip/delay-window records. Each counted training pass required a fresh SRAM reconfiguration and an uncached diagnostic smoke test. The full test executes from the 16 KiB diagnostic RAM. DDR3 CoreMark placement, when run, keeps code/read-only data in DDR and algorithm data/BSS/stack in SRAM.
+Batch `20261001T201828.617667Z-ddr3` uses the configured 256 MiB DDR3 geometry at a 48 MHz system clock and 96 MHz DDR CK. Training success is based on captured BIOS status and all lane bitslip/delay-window records. Each counted training pass required a fresh SRAM reconfiguration and an uncached diagnostic smoke test. The full test executes from the 16 KiB diagnostic RAM. DDR3 CoreMark placement, when run, keeps code/read-only data in DDR and algorithm data/BSS/stack in SRAM.
 
 ## Per-profile evidence
 
-### `performance`
+### `linux`
 
 - Session status: **failed**; training/smoke runs passed 0/10.
 - DDR configuration: 268435456 bytes; 48 MHz system, 96 MHz DDR CK; 8 KiB L2; 2 trained read lanes per configuration (revalidated from generated PHY header).
 - Stress: requested 1800 s; measured not measured s. Uncached alias bandwidth: not measured B/s read and not measured B/s write, not measured-byte transfers, not measured Hz, not measured timer ticks.
-- Resources and timing: LUT 9116, ALU 885, registers 5300, BSRAM 46; operating clock 48.0 MHz, estimated Fmax 49.252 MHz, worst setup slack 0.53 ns.
-- Evidence: [training 1 UART](evidence/20261001T153918.134692Z-ddr3-performance/training-01.uart.bin)
+- Resources and timing: LUT 8860, ALU 1066, registers 4650, BSRAM 46; operating clock 48.0 MHz, estimated Fmax 48.321 MHz, worst setup slack 0.138 ns.
+- Evidence: [training 1 UART](evidence/20261001T201828.617667Z-ddr3-linux/training-01.uart.bin)
 - Revalidation errors: recorded 1 training trials; requested 10, one or more fresh SRAM reconfiguration/training/smoke trials failed revalidation, full destructive memory and sustained stress evidence did not pass revalidation
 
 ## Standalone diagnostic probes
@@ -68,3 +68,7 @@ litex>
 Thorough status requires at least 10 successful reconfiguration/training/smoke runs and 1800 seconds of measured stress per profile, full 256 MiB coverage, passing uncached bypass tests, cached visibility checks that evict both CPU and LiteDRAM L2 caches, zero errors, and complete UART captures. Shorter runs are marked partial. These records describe SRAM reconfigurations, not power-cycle or cold-boot tests.
 
 Machine-readable results and capture identities: [results.json](results.json).
+
+## Maxperf DDR3 matrix status
+
+The complete 18-candidate DDR3 build matrix is recorded in [the maxperf build evidence](../performance/maxperf-evaluation/20261001T202139.975865Z-ddr3-maxperf-build/candidate-build.json). Four candidates passed build, placement, and timing; two missed timing, six 8 KiB I-cache candidates failed placement, and six 16 KiB I-cache candidates exceeded the FPGA logic limit. No DDR3 candidate was programmed or scored. The required fresh `performance` DDR3 reference has not passed BIOS Memtest, so the candidate hardware-evaluation gate remains closed. The candidate matrix is also indexed in [results.json](results.json).

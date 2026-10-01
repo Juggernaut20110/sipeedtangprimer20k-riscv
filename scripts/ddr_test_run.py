@@ -373,6 +373,7 @@ def run_ddr_trial(profile, mode, attempt, image, build, ddr_meta, port,
         soc = ProjectSoC(
             profile=profile, memory="ddr3", bios_size=build.get("bios_size", 32 * 1024),
             cpu_rtl=(ROOT / cpu_rtl) if cpu_rtl else None,
+            cpu_variant=build.get("cpu_variant"),
         )
         programmer = soc.platform.create_programmer(kit="openfpgaloader")
         record["programming_status"] = "started"
@@ -381,6 +382,7 @@ def run_ddr_trial(profile, mode, attempt, image, build, ddr_meta, port,
 
         startup = serial_owner.wait_for_start_or_console(handshake_timeout)
         if startup == "console":
+            record["bios_console_confirmed"] = True
             current_lines = list(serial_owner.lines)
             training = read_serial_training(current_lines, expected_lanes, phy_config)
             if training["status"] != "passed":
@@ -508,20 +510,33 @@ def discover_usb_nodes():
 
 
 def run_profile(profile, port, run_id, training_runs, stress_seconds,
-                handshake_timeout, trial_timeout, evidence_root, batch_profiles):
-    memory_dir = profile_build_dir(ROOT, profile, "ddr3")
+                handshake_timeout, trial_timeout, evidence_root, batch_profiles,
+                candidate_id=None, build_dir=None, smoke_only=False):
+    memory_dir = (Path(build_dir).resolve() if build_dir is not None
+                  else profile_build_dir(ROOT, profile, "ddr3"))
     build_path = memory_dir / "build-metadata.json"
     diag_path = memory_dir / "diagnostics/ddr-test-metadata.json"
-    if not build_path.is_file() or not diag_path.is_file():
-        raise RuntimeError(f"{profile}/ddr3 artifacts are missing; run make ddr-test-build first")
+    if not build_path.is_file():
+        raise RuntimeError(f"{profile}/ddr3 SoC build metadata is missing")
     build = json.loads(build_path.read_text())
-    ddr_meta = json.loads(diag_path.read_text())
+    if candidate_id is not None:
+        ddr_meta = build_runner.build_profile_diagnostics(
+            profile, stress_seconds, candidate_id=candidate_id, build_dir=memory_dir,
+        )
+    elif diag_path.is_file():
+        ddr_meta = json.loads(diag_path.read_text())
+    else:
+        raise RuntimeError(f"{profile}/ddr3 diagnostic images are missing; run make ddr-test-build first")
     if (build.get("status") != "passed" or build.get("memory_mode") != "ddr3"
             or ddr_meta.get("status") != "passed" or ddr_meta.get("profile") != profile
-            or ddr_meta.get("memory_mode") != "ddr3"):
+            or ddr_meta.get("memory_mode") != "ddr3"
+            or ddr_meta.get("cpu_candidate") != candidate_id
+            or build.get("cpu_candidate") != candidate_id):
         raise RuntimeError(f"{profile}/ddr3 build metadata failed identity/status checks")
     if ddr_meta.get("stress_seconds") != stress_seconds:
-        ddr_meta = build_runner.build_profile_diagnostics(profile, stress_seconds)
+        ddr_meta = build_runner.build_profile_diagnostics(
+            profile, stress_seconds, candidate_id=candidate_id, build_dir=memory_dir,
+        )
     bitstream = ROOT / build["bitstream"]
     if not bitstream.is_file() or serial_runner.sha256(bitstream) != ddr_meta["source_identity"]["bitstream"]:
         raise RuntimeError(f"{profile}/ddr3 bitstream is missing or has changed")
@@ -541,6 +556,7 @@ def run_profile(profile, port, run_id, training_runs, stress_seconds,
         "session_id": session_id,
         "batch_id": run_id,
         "profile": profile,
+        "cpu_candidate": candidate_id,
         "requested_profiles": list(batch_profiles),
         "memory_mode": "ddr3",
         "status": "in_progress",
@@ -599,26 +615,38 @@ def run_profile(profile, port, run_id, training_runs, stress_seconds,
                     failure_result = 2
                 raise RuntimeError(f"DDR training/smoke run {attempt} failed: {record.get('error')}")
 
-        print(f"DDR3 {profile}: running destructive suite and {stress_seconds}s stress", flush=True)
-        full = run_ddr_trial(
-            profile, "full", 1, ddr_meta["images"]["full"], build,
-            ddr_meta, port, run_id, evidence_dir, handshake_timeout, trial_timeout,
-            expected_lanes, phy_config,
-        )
-        session["trials"].append(full)
-        session_path.write_text(json.dumps(session, indent=2) + "\n")
-        if full["status"] != "passed":
-            session["batch_continuation_safe"] = (
-                full.get("application_end_seen") is True
-                and full.get("programming_status") == "completed"
+        if smoke_only:
+            session["acceptance"] = "candidate_smoke"
+            session["smoke_runs_passed"] = session["actual_training_runs"]
+            session["status"] = "passed"
+            failure_result = 0
+        else:
+            print(f"DDR3 {profile}: running destructive suite and {stress_seconds}s stress", flush=True)
+            full = run_ddr_trial(
+                profile, "full", 1, ddr_meta["images"]["full"], build,
+                ddr_meta, port, run_id, evidence_dir, handshake_timeout, trial_timeout,
+                expected_lanes, phy_config,
             )
-            if not session["batch_continuation_safe"]:
-                failure_result = 2
-            raise RuntimeError(f"DDR destructive test/stress failed: {full.get('error')}")
+            session["trials"].append(full)
+            session_path.write_text(json.dumps(session, indent=2) + "\n")
+            if full["status"] != "passed":
+                session["batch_continuation_safe"] = (
+                    full.get("application_end_seen") is True
+                    and full.get("programming_status") == "completed"
+                )
+                if not session["batch_continuation_safe"]:
+                    failure_result = 2
+                raise RuntimeError(f"DDR destructive test/stress failed: {full.get('error')}")
 
-        thorough = training_runs >= THOROUGH_TRAINING_RUNS and stress_seconds >= THOROUGH_STRESS_SECONDS
-        session["acceptance"] = "thorough" if thorough else "partial"
-        session["status"] = "passed" if thorough else "partial"
+            thorough = training_runs >= THOROUGH_TRAINING_RUNS and stress_seconds >= THOROUGH_STRESS_SECONDS
+            session["acceptance"] = "thorough" if thorough else "partial"
+            session["stress_seconds"] = full.get("result", {}).get("stress_seconds_actual", stress_seconds)
+            session["status"] = "passed" if thorough else "partial"
+            session["full_range_bytes"] = DDR_SIZE_BYTES
+            session["error_count"] = 0
+            session["uncached_smoke_passed"] = True
+            if candidate_id is not None:
+                session["cpu_candidate"] = candidate_id
         failure_result = 0
     except BaseException as error:
         session["status"] = "failed"

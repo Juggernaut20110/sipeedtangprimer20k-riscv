@@ -15,6 +15,7 @@ from gateware.soc import (  # noqa: E402
     DDR_DIAGNOSTIC_BASE, DDR_DIAGNOSTIC_SIZE, DDR_L2_SIZE, DDR_SIZE_BYTES,
     DDR_UNCACHED_BASE, MEMORY_MODES, PROFILES,
 )
+from cpu_profiles import configuration_for  # noqa: E402
 
 
 def check_generated_soc(profile, memory="onchip"):
@@ -37,7 +38,7 @@ def check_generated_soc(profile, memory="onchip"):
     )
     assert soc.cpu.variant == PROFILES[profile]
     assert soc.sys_clk_freq == 48_000_000
-    assert soc.integrated_rom_size == (24 * 1024 if profile == "performance" and memory == "onchip" else 32 * 1024)
+    assert soc.integrated_rom_size == (24 * 1024 if profile in ("performance", "linux") and memory == "onchip" else 32 * 1024)
     assert soc.integrated_sram_size == 8 * 1024
     if memory == "onchip":
         assert soc.integrated_main_ram_size == 32 * 1024
@@ -86,6 +87,14 @@ def check_generated_soc(profile, memory="onchip"):
     assert soc.project_led_resource_order == tuple(range(6))
     assert soc.project_led_logical_resource_order == tuple(reversed(range(6)))
     assert soc.project_button_resource_order == tuple(range(4))
+    if profile == "linux":
+        linux = configuration_for("linux")
+        assert soc.cpu.variant == "linux"
+        assert linux["isa"] == "rv32i2p0_ma" and linux["compressed"] is False
+        assert linux["instruction_cache_bytes"] == linux["data_cache_bytes"] == 4096
+        assert linux["mmu"] and linux["supervisor"] and linux["atomics"]
+        flags = (output / "software/include/generated/variables.mak").read_text()
+        assert "-march=rv32i2p0_ma" in flags and "-mabi=ilp32" in flags
 
     csr_header = (output / "software/include/generated/csr.h").read_text()
     assert "leds_out_write" in csr_header
@@ -200,6 +209,7 @@ def main():
         "gpio_simulation": "passed",
         "profiles": generated,
         "performance_cpu_profile": performance_cpu_selection,
+        "linux_cpu_profile": configuration_for("linux"),
         "vendor_synthesis": "not run by make test; use make build for each profile",
         "hardware": "pending until Dock is connected",
     }

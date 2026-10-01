@@ -19,7 +19,7 @@ make benchmark-run PROFILE=standard PORT=/dev/serial/by-id/usb-SIPEED_JTAG_Debug
 make benchmark-report
 ```
 
-`PROFILE` may be `minimal`, `lite`, `standard`, `performance`, or `ALL` (`all` also works), and defaults to `standard` for `benchmark-run`. Add `MEMORY=ddr3` to build and measure using DDR3. To validate and measure all profiles in one invocation:
+`PROFILE` may be `minimal`, `lite`, `standard`, `performance`, `linux`, or `ALL` (`all` also works), and defaults to `standard` for `benchmark-run`. Add `MEMORY=ddr3` to build and measure using DDR3. To validate and measure all registered profiles in one invocation:
 
 ```sh
 make benchmark-run PROFILE=ALL PORT=/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0
@@ -30,7 +30,18 @@ make benchmark-report
 
 Confirm the Dock UART path with `make doctor`; the runner does not guess or fall back to another serial port. Build details, captured UART evidence, scores, and any incomplete measurement status are documented in [docs/performance.md](docs/performance.md), with machine-readable results in [docs/performance/results.json](docs/performance/results.json). Scores are CoreMark iterations/second and CoreMark/MHz, calculated from 64-bit timer ticks at the 48 MHz operating clock.
 
-Profiles are `minimal` (default), `lite`, `standard`, and `performance`. `performance` uses the measured `dynamic_target` VexRiscv configuration at 48 MHz; its selection evidence is in `cpu-profile-selection.json`. On-chip outputs remain under `build/<profile>/`; DDR3 outputs use `build/ddr3/<profile>/`.
+The registered profiles are `minimal` (default), `lite`, `standard`, `performance`, and `linux`. The `performance` profile uses the measured `dynamic_target` VexRiscv configuration at 48 MHz; its selection evidence is in `cpu-profile-selection.json`. The `linux` profile uses LiteX's pinned Linux-capable VexRiscv variant (RV32IMA, MMU, supervisor, atomics) with the existing bare-metal demo, DDR diagnostics, and CoreMark flows. Linux kernel and OS boot are deferred. On-chip outputs remain under `build/<profile>/`; DDR3 outputs use `build/ddr3/<profile>/`.
+
+Maximum-performance tuning is kept outside the public profile list until both memory modes have independently qualified winners. Build and measure the bounded candidate matrix with:
+
+```sh
+make maxperf-build MEMORY=onchip
+make maxperf-run MEMORY=onchip PORT=<verified-Dock-UART>
+make maxperf-build MEMORY=ddr3
+make maxperf-run MEMORY=ddr3 PORT=<verified-Dock-UART>
+```
+
+The matrix varies cache sizes and RV32IM versus RV32IMC at a fixed 48 MHz clock. A public `maxperf` profile is enabled only when each selected candidate strictly beats a fresh `performance` baseline and its DDR evidence qualifies.
 
 Build and run the destructive DDR3 checks with `make ddr-test-build PROFILE=ALL`, then `make ddr-test-run PROFILE=ALL PORT=<verified-UART>` and `make ddr-test-report`. The defaults are ten fresh SRAM reconfigurations and 1,800 seconds of stress per profile. See [the DDR3 evidence report](docs/ddr3/report.md).
 

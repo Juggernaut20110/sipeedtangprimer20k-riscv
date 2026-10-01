@@ -196,7 +196,8 @@ def generated_main_ram_base(header):
     return int(match.group(1), 0)
 
 
-def load_selected_artifacts(profile, memory="onchip", build_dir=None, cpu_candidate=None):
+def load_selected_artifacts(profile, memory="onchip", build_dir=None, cpu_candidate=None,
+                            provisional=False):
     validate_memory(memory)
     output = Path(build_dir).resolve() if build_dir is not None else profile_build_dir(ROOT, profile, memory)
     build_path = output / "build-metadata.json"
@@ -215,12 +216,51 @@ def load_selected_artifacts(profile, memory="onchip", build_dir=None, cpu_candid
         raise RuntimeError(f"CoreMark build metadata does not verify the {profile} profile")
     if build.get("cpu_candidate") != benchmark.get("cpu_candidate"):
         raise RuntimeError("SoC and CoreMark metadata select different CPU candidates")
+    if build.get("cpu_variant") != benchmark.get("cpu_variant"):
+        raise RuntimeError("SoC and CoreMark metadata select different CPU variants")
     if profile == "performance":
         selection = build_module.read_performance_selection()
         if (build.get("cpu_candidate") != selection.get("candidate")
                 or benchmark.get("cpu_candidate") != selection.get("candidate")
                 or build.get("cpu_profile_selection") != selection):
             raise RuntimeError("performance artifacts do not match the measured public CPU selection")
+    if profile == "maxperf":
+        if provisional:
+            if not cpu_candidate:
+                raise RuntimeError("provisional maxperf verification requires an explicit CPU candidate")
+            manifest_path = ROOT / "build/maxperf-candidates" / memory / cpu_candidate / "candidate.json"
+            if not manifest_path.is_file():
+                raise RuntimeError("provisional maxperf generation manifest is missing")
+            manifest = json.loads(manifest_path.read_text())
+            selection = build.get("cpu_profile_selection", {})
+            selected_mode = selection.get("memory_modes", {}).get(memory, {})
+            verification_root = (ROOT / "build/maxperf-verification" / memory).resolve()
+            if (not output.is_relative_to(verification_root)
+                    or build.get("cpu_candidate") != cpu_candidate
+                    or benchmark.get("cpu_candidate") != cpu_candidate
+                    or benchmark.get("cpu_profile_selection") != selection
+                    or selection.get("status") != "provisional"
+                    or selected_mode.get("status") != "provisional"
+                    or selected_mode.get("candidate_id") != cpu_candidate
+                    or manifest.get("candidate_id") != cpu_candidate
+                    or manifest.get("memory_mode") != memory
+                    or build.get("cpu_configuration", {}).get("rtl_sha256") != manifest.get("rtl_sha256")):
+                raise RuntimeError("provisional maxperf artifacts do not match the private candidate verification identity")
+        else:
+            from gateware.profile_selection import accepted_maxperf_selection
+            selection = accepted_maxperf_selection()
+            if (selection is None or profile not in PROFILES
+                    or build.get("cpu_profile_selection") != selection
+                    or benchmark.get("cpu_profile_selection") != selection
+                    or build.get("cpu_candidate") != selection["memory_modes"][memory]["candidate_id"]):
+                raise RuntimeError("maxperf artifacts do not match the accepted two-mode public selection")
+    if profile == "linux":
+        cpu = build.get("cpu_configuration", {})
+        if (build.get("cpu_variant") != "linux" or cpu.get("isa") != "rv32i2p0_ma"
+                or cpu.get("instruction_cache_bytes") != 4096 or cpu.get("data_cache_bytes") != 4096
+                or cpu.get("compressed") is not False or cpu.get("mmu") is not True
+                or cpu.get("supervisor") is not True or cpu.get("atomics") is not True):
+            raise RuntimeError("Linux-capable profile artifacts do not match the pinned Linux CPU identity")
     source_hashes = benchmark.get("source_hashes")
     if not isinstance(source_hashes, dict) or not source_hashes:
         raise RuntimeError("benchmark source identity is missing; run make benchmark-build")
@@ -247,7 +287,9 @@ def load_selected_artifacts(profile, memory="onchip", build_dir=None, cpu_candid
     if "timer0_uptime_latch_write" not in csr_header or "timer0_uptime_cycles_read" not in csr_header:
         raise RuntimeError("generated CSR header lacks the 64-bit timer uptime accessors")
     benchmark["main_ram_base"] = generated_main_ram_base(output / "software/include/generated/mem.h")
+    benchmark["cpu_variant"] = build.get("cpu_variant")
     benchmark["bitstream_path"] = str(bitstream)
+    benchmark["build_dir"] = str(output)
     return build, benchmark
 
 
@@ -297,6 +339,7 @@ def selected_artifact_identity(build, benchmark, port):
         "cpu_candidate": benchmark.get("cpu_candidate"),
         "memory_mode": benchmark.get("memory_mode", "onchip"),
         "memory_placement": benchmark.get("memory", {}),
+        "cpu_rtl": benchmark.get("cpu_rtl"),
         "cpu_configuration": benchmark.get("cpu_configuration", build.get("cpu_configuration")),
         "l2_cache_bytes": benchmark.get("memory", {}).get("l2_cache_bytes", 0),
         "ddr_training_status": benchmark.get("ddr_training_status"),
@@ -395,7 +438,13 @@ def run_trial(profile, benchmark, mode, attempt, port, session_id, handshake_tim
 
         # The UART reader is already watching the BIOS handshakes before SRAM programming.
         cpu_rtl = benchmark.get("cpu_rtl")
-        soc_kwargs = {"cpu_rtl": ROOT / cpu_rtl} if cpu_rtl else {}
+        soc_kwargs = {
+            "cpu_rtl": ROOT / cpu_rtl if cpu_rtl else None,
+            "bios_size": build.get("bios_size"),
+        }
+        cpu_variant = benchmark.get("cpu_variant")
+        if cpu_variant:
+            soc_kwargs["cpu_variant"] = cpu_variant
         soc = ProjectSoC(profile=profile, memory=benchmark.get("memory_mode", "onchip"), **soc_kwargs)
         programmer = soc.platform.create_programmer(kit="openfpgaloader")
         record["programming_status"] = "started"
@@ -403,11 +452,24 @@ def run_trial(profile, benchmark, mode, attempt, port, session_id, handshake_tim
         record["programming_status"] = "completed"
         startup = serial_owner.wait_for_start_or_console(handshake_timeout)
         if startup == "console":
+            record["bios_console_confirmed"] = True
             # The BIOS's initial 250 ms SFL ACK window can expire while JTAG
             # programming reconfigures the shared FTDI device. Recover only at
             # its confirmed idle console, before any application marker began.
             if serial_owner.start_marker_started.is_set() or serial_owner.start_seen.is_set():
                 raise RuntimeError("BIOS recovery refused after benchmark startup began")
+            if benchmark.get("memory_mode") == "ddr3":
+                import ddr_test_run
+                memory_dir = Path(benchmark.get("build_dir", profile_build_dir(ROOT, profile, "ddr3")))
+                expected_lanes, phy_config = ddr_test_run.expected_read_lanes(memory_dir)
+                lines = list(serial_owner.lines)
+                training = ddr_test_run.validate_training(lines, expected_lanes, phy_config)
+                bios_memtest = ddr_test_run.validate_bios_memtest(lines)
+                record["ddr_startup_qualification"] = {
+                    "training": training, "bios_memtest": bios_memtest,
+                }
+                if training["status"] != "passed" or bios_memtest["status"] != "passed":
+                    raise RuntimeError("DDR BIOS training or Memtest did not pass; CoreMark firmware upload was refused")
             if not serial_owner.sfl_handler_idle.wait(timeout=30.0):
                 raise TimeoutError("LiteXTerm SFL handler did not finish before BIOS recovery")
             record["startup_recovery"] = {
@@ -490,6 +552,18 @@ def run_trial(profile, benchmark, mode, attempt, port, session_id, handshake_tim
         record["session_transmitted_uart_log"] = str(session_tx.relative_to(ROOT))
         if record["status"] == "passed":
             try:
+                if benchmark.get("memory_mode") == "ddr3":
+                    import ddr_test_run
+                    memory_dir = Path(benchmark.get("build_dir", profile_build_dir(ROOT, profile, "ddr3")))
+                    expected_lanes, phy_config = ddr_test_run.expected_read_lanes(memory_dir)
+                    lines = ANSI_ESCAPE.sub(b"", raw_bytes).decode("utf-8", errors="replace").splitlines()
+                    training = ddr_test_run.validate_training(lines, expected_lanes, phy_config)
+                    bios_memtest = ddr_test_run.validate_bios_memtest(lines)
+                    record["ddr_startup_qualification"] = {
+                        "training": training, "bios_memtest": bios_memtest,
+                    }
+                    if training["status"] != "passed" or bios_memtest["status"] != "passed":
+                        raise RuntimeError("DDR BIOS training or Memtest did not pass before accepting CoreMark")
                 record["parsed"] = parse_capture(
                     raw_bytes, profile=profile, build_id=benchmark["build_id"], mode=mode,
                     clock_hz=benchmark["clock_hz"], data_size=2000, contexts=1,
@@ -607,7 +681,7 @@ def run_profile(profile, port, handshake_timeout, trial_timeout, batch_id=None, 
 def main(argv=None):
     import argparse
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("profile", type=str.lower, choices=[*PROFILES, "all"],
+    parser.add_argument("profile", type=str.lower, choices=[*PROFILES, "maxperf", "all"],
                         nargs="?", default="standard",
                         help="CPU profile, or ALL to measure every registered profile sequentially")
     parser.add_argument("port", nargs="?")
@@ -615,6 +689,8 @@ def main(argv=None):
     parser.add_argument("--handshake-timeout", type=float, default=45.0)
     parser.add_argument("--trial-timeout", type=float, default=300.0)
     args = parser.parse_args(argv)
+    if args.profile == "maxperf" and args.profile not in PROFILES:
+        parser.error("maxperf is not public until both memory modes qualify; use make maxperf-run")
     if not args.port:
         parser.error("an explicit PORT is required; the runner never selects a serial device automatically")
     if args.handshake_timeout <= 0 or args.trial_timeout <= 0:

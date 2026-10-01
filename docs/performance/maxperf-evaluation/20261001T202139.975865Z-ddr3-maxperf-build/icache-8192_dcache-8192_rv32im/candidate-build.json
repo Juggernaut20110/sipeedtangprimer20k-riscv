@@ -1,0 +1,61 @@
+{
+  "candidate_id": "icache-8192_dcache-8192_rv32im",
+  "memory_mode": "ddr3",
+  "status": "rejected_or_blocked",
+  "generation": {
+    "rtl": "build/maxperf-candidates/ddr3/icache-8192_dcache-8192_rv32im/VexRiscv.v",
+    "rtl_sha256": "bdcc89c99e6929cd36cb79b47190472c9dcdb1510c1083c96c7cef363489087f",
+    "generator_command": [
+      "sbt",
+      "--no-server",
+      "compile",
+      "runMain vexriscv.GenCoreDefault --hardwareBreakpointCount=0 --iCacheSize=8192 --dCacheSize=8192 --pmpRegions=0 --pmpGranularity=256 --pmpAddressMatchingModes=na4,napot,tor --mulDiv=true --cfu=false --singleCycleMulDiv=true --singleCycleShift=true --relaxedPcCalculation=false --bypass=true --externalInterruptArray=true --csrPluginConfig=small --atomics=false --compressedGen=false --dBusCachedRelaxedMemoryTranslationRegister=false --dBusCachedEarlyWaysHits=true --prediction=dynamic_target --outputFile=../../../../build/maxperf-candidates/ddr3/icache-8192_dcache-8192_rv32im/VexRiscv"
+    ],
+    "generator_arguments": [
+      "--hardwareBreakpointCount=0",
+      "--iCacheSize=8192",
+      "--dCacheSize=8192",
+      "--pmpRegions=0",
+      "--pmpGranularity=256",
+      "--pmpAddressMatchingModes=na4,napot,tor",
+      "--mulDiv=true",
+      "--cfu=false",
+      "--singleCycleMulDiv=true",
+      "--singleCycleShift=true",
+      "--relaxedPcCalculation=false",
+      "--bypass=true",
+      "--externalInterruptArray=true",
+      "--csrPluginConfig=small",
+      "--atomics=false",
+      "--compressedGen=false",
+      "--dBusCachedRelaxedMemoryTranslationRegister=false",
+      "--dBusCachedEarlyWaysHits=true",
+      "--prediction=dynamic_target",
+      "--outputFile=../../../../build/maxperf-candidates/ddr3/icache-8192_dcache-8192_rv32im/VexRiscv"
+    ],
+    "generator_repository": {
+      "generator_commit": "642ecfed1c84460555d6d803d660cc60cfc1ecb6",
+      "submodule_commit": "b6118e5cc2a33323425df6455697139021d50c72",
+      "sbt": "1.9.7",
+      "scala": "2.11.12",
+      "spinalhdl": "1.9.4"
+    },
+    "tool_versions": {
+      "java": "1.8.0_432",
+      "java_executable": ".tools/java-8u432/jdk8u432-b06/bin/java",
+      "java_sha256": "abaaa90deadf51bd28921453baf2992b3dff6171bb7142f5bdd14ef269f7b245",
+      "sbt": "1.9.7",
+      "sbt_executable": ".tools/bin/sbt",
+      "sbt_sha256": "23543bc4597b552e8e2c27d695fe672ec235ab8a64f766b37828fb68c6d9d910",
+      "scala": "2.11.12",
+      "spinalhdl": "1.9.4"
+    },
+    "compiler_flags": [
+      "-march=rv32i2p0_m",
+      "-mabi=ilp32"
+    ]
+  },
+  "reason": "OSError: Error occured during Gowin's script execution.",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/maxperf_candidates.py\", line 132, in build_candidate\n    build = build_module.build_profile(\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/build.py\", line 478, in build_profile\n    builder.build(run=True, build_name=build_name)\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py\", line 521, in build\n    return self._build(**kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py\", line 616, in _build\n    vns = self.soc.build(build_dir=self.gateware_dir, **kwargs)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py\", line 2199, in build\n    return self.platform.build(self, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/build/gowin/platform.py\", line 48, in build\n    return self.toolchain.build(self, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/build/generic_toolchain.py\", line 126, in build\n    self.run_script(script)\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/build/gowin/gowin.py\", line 318, in run_script\n    raise OSError(\"Error occured during Gowin's script execution.\")\nOSError: Error occured during Gowin's script execution.\n",
+  "finished_utc": "2026-10-01T20:57:50.751794+00:00"
+}

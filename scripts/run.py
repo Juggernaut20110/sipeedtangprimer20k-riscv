@@ -22,10 +22,13 @@ def generated_main_ram_base(header):
 
 
 def main():
-    if len(sys.argv) not in (3, 4) or sys.argv[1] not in PROFILES or not sys.argv[2]:
+    if len(sys.argv) not in (3, 4) or sys.argv[1] not in (*PROFILES, "maxperf") or not sys.argv[2]:
         print("usage: make run PROFILE=minimal PORT=/dev/serial/by-id/<device> [MEMORY=onchip|ddr3]", file=sys.stderr)
         return 2
     profile, port = sys.argv[1:3]
+    if profile == "maxperf" and profile not in PROFILES:
+        print("maxperf is provisional until both memory modes qualify; use make maxperf-run", file=sys.stderr)
+        return 1
     memory = sys.argv[3] if len(sys.argv) == 4 else "onchip"
     if memory not in MEMORY_MODES:
         print(f"unknown memory mode {memory!r}; choose from {', '.join(MEMORY_MODES)}", file=sys.stderr)
@@ -61,10 +64,11 @@ def main():
         term.start()
         cpu_rtl = metadata.get("cpu_rtl")
         soc = ProjectSoC(
-            profile=profile, memory=memory,
-            bios_size=metadata.get("bios_size"),
-            cpu_rtl=(ROOT / cpu_rtl) if cpu_rtl else None,
-        )
+        profile=profile, memory=memory,
+        bios_size=metadata.get("bios_size"),
+        cpu_rtl=(ROOT / cpu_rtl) if cpu_rtl else None,
+        cpu_variant=metadata.get("cpu_variant"),
+    )
         programmer = soc.platform.create_programmer(kit="openfpgaloader")
         programmer.load_bitstream(str(bitstream))
         term.wait()

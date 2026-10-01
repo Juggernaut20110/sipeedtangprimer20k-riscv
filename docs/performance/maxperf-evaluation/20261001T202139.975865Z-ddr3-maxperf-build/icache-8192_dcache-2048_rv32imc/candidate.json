@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "candidate_id": "icache-8192_dcache-2048_rv32imc",
+  "memory_mode": "ddr3",
+  "cpu_configuration": {
+    "cpu_variant": "projectimc",
+    "isa": "rv32i2p0_mc",
+    "instruction_cache_bytes": 8192,
+    "data_cache_bytes": 2048,
+    "compressed": true,
+    "prediction": "dynamic_target",
+    "mul_div": true,
+    "single_cycle_mul_div": true,
+    "single_cycle_shift": true,
+    "bypass": true,
+    "csr_plugin_config": "small",
+    "atomics": false,
+    "debug": false,
+    "cfu": false,
+    "pmp_regions": 0,
+    "clock_hz": 48000000
+  },
+  "status": "generated",
+  "generator_command": [
+    "sbt",
+    "--no-server",
+    "compile",
+    "runMain vexriscv.GenCoreDefault --hardwareBreakpointCount=0 --iCacheSize=8192 --dCacheSize=2048 --pmpRegions=0 --pmpGranularity=256 --pmpAddressMatchingModes=na4,napot,tor --mulDiv=true --cfu=false --singleCycleMulDiv=true --singleCycleShift=true --relaxedPcCalculation=false --bypass=true --externalInterruptArray=true --csrPluginConfig=small --atomics=false --compressedGen=true --dBusCachedRelaxedMemoryTranslationRegister=false --dBusCachedEarlyWaysHits=true --prediction=dynamic_target --outputFile=../../../../build/maxperf-candidates/ddr3/icache-8192_dcache-2048_rv32imc/VexRiscv"
+  ],
+  "generator_arguments": [
+    "--hardwareBreakpointCount=0",
+    "--iCacheSize=8192",
+    "--dCacheSize=2048",
+    "--pmpRegions=0",
+    "--pmpGranularity=256",
+    "--pmpAddressMatchingModes=na4,napot,tor",
+    "--mulDiv=true",
+    "--cfu=false",
+    "--singleCycleMulDiv=true",
+    "--singleCycleShift=true",
+    "--relaxedPcCalculation=false",
+    "--bypass=true",
+    "--externalInterruptArray=true",
+    "--csrPluginConfig=small",
+    "--atomics=false",
+    "--compressedGen=true",
+    "--dBusCachedRelaxedMemoryTranslationRegister=false",
+    "--dBusCachedEarlyWaysHits=true",
+    "--prediction=dynamic_target",
+    "--outputFile=../../../../build/maxperf-candidates/ddr3/icache-8192_dcache-2048_rv32imc/VexRiscv"
+  ],
+  "generator_repository": {
+    "generator_commit": "642ecfed1c84460555d6d803d660cc60cfc1ecb6",
+    "submodule_commit": "b6118e5cc2a33323425df6455697139021d50c72",
+    "sbt": "1.9.7",
+    "scala": "2.11.12",
+    "spinalhdl": "1.9.4"
+  },
+  "tool_versions": {
+    "java": "1.8.0_432",
+    "java_executable": ".tools/java-8u432/jdk8u432-b06/bin/java",
+    "java_sha256": "abaaa90deadf51bd28921453baf2992b3dff6171bb7142f5bdd14ef269f7b245",
+    "sbt": "1.9.7",
+    "sbt_executable": ".tools/bin/sbt",
+    "sbt_sha256": "23543bc4597b552e8e2c27d695fe672ec235ab8a64f766b37828fb68c6d9d910",
+    "scala": "2.11.12",
+    "spinalhdl": "1.9.4"
+  },
+  "generator_lock_sha256": "751d39859ca19a72e1126c8001586fdacc9724f4cd12437290524d73146103ff",
+  "rtl": "build/maxperf-candidates/ddr3/icache-8192_dcache-2048_rv32imc/VexRiscv.v",
+  "rtl_sha256": "6544dc15fc32bdd211219b0d6b1e2b5a013bb31b0c5071ad2889417ee49a4a63",
+  "compiler_flags": [
+    "-march=rv32i2p0_mc",
+    "-mabi=ilp32"
+  ],
+  "generated_utc": "2026-10-01T20:41:56.561278+00:00"
+}

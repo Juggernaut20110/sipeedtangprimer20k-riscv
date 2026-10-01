@@ -7,6 +7,7 @@ from migen.genlib.resetsync import AsyncResetSynchronizer
 from litex.soc.cores.gpio import GPIOIn, GPIOOut
 from litex.soc.integration.soc import SoCCore, SoCRegion
 from litex_boards.targets import sipeed_tang_primer_20k
+from gateware.profile_selection import accepted_maxperf_selection
 
 
 PROFILES = {
@@ -16,7 +17,13 @@ PROFILES = {
     # Project-owned profile alias: BaseSoC is constructed with its supported
     # standard shell, then the generated dynamic_target RTL is installed below.
     "performance": "standard",
+    # LiteX's pinned linux variant ships VexRiscv_Linux.v with MMU,
+    # supervisor and LR/SC support.  The project uses it for bare-metal
+    # GPIO/diagnostic/benchmark firmware; this does not imply an OS boot.
+    "linux": "linux",
 }
+if accepted_maxperf_selection() is not None:
+    PROFILES["maxperf"] = "standard"
 SYS_CLK_FREQ = 48_000_000
 DDR_CK_FREQ = 96_000_000
 MEMORY_MODES = ("onchip", "ddr3")
@@ -39,8 +46,12 @@ BUTTON_RESOURCES = tuple(range(4))
 class ProjectSoC(sipeed_tang_primer_20k.BaseSoC):
     """Upstream board SoC with project-owned, ordered Dock GPIO CSRs."""
 
-    def __init__(self, profile="minimal", memory="onchip", bios_size=None, cpu_rtl=None, **kwargs):
-        if profile not in PROFILES:
+    def __init__(self, profile="minimal", memory="onchip", bios_size=None, cpu_rtl=None,
+                 cpu_variant=None, **kwargs):
+        provisional_maxperf = (profile == "maxperf" and profile not in PROFILES
+                               and cpu_rtl is not None
+                               and cpu_variant in ("projectim", "projectimc"))
+        if profile not in PROFILES and not provisional_maxperf:
             raise ValueError(f"unknown CPU profile {profile!r}; choose from {', '.join(PROFILES)}")
         if memory not in MEMORY_MODES:
             raise ValueError(f"unknown memory mode {memory!r}; choose from {', '.join(MEMORY_MODES)}")
@@ -49,15 +60,16 @@ class ProjectSoC(sipeed_tang_primer_20k.BaseSoC):
         if profile == "performance" and cpu_rtl is None:
             raise ValueError("the performance profile requires its selected generated VexRiscv RTL")
         if bios_size is None:
-            bios_size = 24 * 1024 if profile == "performance" and not ddr3 else 32 * 1024
+            bios_size = 24 * 1024 if profile in ("performance", "linux") and not ddr3 else 32 * 1024
         if ddr3 and bios_size not in DDR_BIOS_SIZES:
             raise ValueError(f"DDR3 BIOS size must be one of {DDR_BIOS_SIZES}")
         if not ddr3 and bios_size != 32 * 1024:
             is_standard_cpu_candidate = (
-                profile == "standard" and cpu_rtl is not None and bios_size == 24 * 1024
+                profile in ("standard", "maxperf") and cpu_rtl is not None and bios_size == 24 * 1024
             )
             is_performance_profile = profile == "performance" and cpu_rtl is not None and bios_size == 24 * 1024
-            if not (is_standard_cpu_candidate or is_performance_profile):
+            is_linux_profile = profile == "linux" and bios_size == 24 * 1024
+            if not (is_standard_cpu_candidate or is_performance_profile or is_linux_profile):
                 raise ValueError("on-chip public profiles keep their approved BIOS reservation")
 
         # An integrated main RAM size of zero is the upstream target's documented
@@ -66,7 +78,7 @@ class ProjectSoC(sipeed_tang_primer_20k.BaseSoC):
             dock="standard",
             sys_clk_freq=SYS_CLK_FREQ,
             cpu_type="vexriscv",
-            cpu_variant=PROFILES[profile],
+            cpu_variant=cpu_variant or PROFILES[profile],
             integrated_rom_size=bios_size,
             integrated_sram_size=8 * 1024,
             integrated_main_ram_size=0 if ddr3 else 32 * 1024,

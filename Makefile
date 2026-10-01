@@ -1,4 +1,4 @@
-.PHONY: setup doctor build load run compare test benchmark-build benchmark-run benchmark-report ddr-test-build ddr-test-run ddr-test-report cpu-candidate-build cpu-candidate-run clean
+.PHONY: setup doctor build load run compare test benchmark-build benchmark-run benchmark-report ddr-test-build ddr-test-run ddr-test-report cpu-candidate-build cpu-candidate-run maxperf-build maxperf-run clean
 
 setup:
 	python3 scripts/setup.py
@@ -22,7 +22,7 @@ test:
 	python3 scripts/project.py test
 
 benchmark-build:
-	python3 scripts/project.py benchmark-build $(or $(MEMORY),onchip)
+	python3 scripts/project.py benchmark-build $(or $(MEMORY),onchip) $(PROFILE)
 
 benchmark-run:
 	python3 scripts/project.py benchmark-run $(or $(PROFILE),standard) $(PORT) $(or $(MEMORY),onchip)
@@ -44,6 +44,12 @@ cpu-candidate-build:
 
 cpu-candidate-run:
 	python3 scripts/project.py cpu-candidate-run $(PORT)
+
+maxperf-build:
+	python3 scripts/project.py maxperf-build $(or $(MEMORY),onchip)
+
+maxperf-run:
+	python3 scripts/project.py maxperf-run $(or $(MEMORY),onchip) $(PORT)
 
 clean:
 	rm -rf build

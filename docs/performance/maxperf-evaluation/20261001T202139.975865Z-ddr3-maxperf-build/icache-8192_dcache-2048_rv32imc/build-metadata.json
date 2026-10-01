@@ -1,0 +1,32 @@
+{
+  "profile": "standard",
+  "memory_mode": "ddr3",
+  "cpu_candidate": "icache-8192_dcache-2048_rv32imc",
+  "cpu_profile_selection": null,
+  "liteX_variant": "projectimc",
+  "sys_clk_hz": 48000000,
+  "uart_baud": 115200,
+  "status": "failed",
+  "source_fingerprint": "c6c7fcabb153e67fea9ba9b127c318df0e54b122d81f5cba5c6a5900d8c3de2b",
+  "started_utc": "2026-10-01T20:41:56.594656+00:00",
+  "locked_repositories": {
+    "litex": "58322a1d239a9eca8b93a8497f8945855d965f4f",
+    "migen": "e19524c963a8342952840983047557707fbe0b6a",
+    "litex-boards": "c0d9cdf11e20c8b774f4ee1154fddac6e1dca03a",
+    "litedram": "4c979d195aa0c60adcaf70374a52872028aaca63",
+    "liteeth": "013a6ad38c26317ac9588acd0660922981cc2a73",
+    "liteiclink": "ad793817302490b04b3abc5c4de669594d3958e8",
+    "pythondata-cpu-vexriscv": "642ecfed1c84460555d6d803d660cc60cfc1ecb6",
+    "pythondata-software-picolibc": "6a13ccce7c575b32c102dd9dc52178505b81fe39",
+    "pythondata-software-compiler_rt": "6eb76609c9627bf26635e57c63fb22cda7115887",
+    "coremark": "1f483d5b8316753a742cbf5590caf5bd0a4e4777"
+  },
+  "tool_versions": {
+    "python": "3.12.14",
+    "riscv_gcc": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+    "gowin": "version recorded from successful Gowin PnR report",
+    "openfpgaloader": "openFPGALoader v0.13.1"
+  },
+  "error": "OSError: Error occured during Gowin's script execution.",
+  "finished_utc": "2026-10-01T20:45:06.342070+00:00"
+}

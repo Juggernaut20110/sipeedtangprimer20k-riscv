@@ -99,11 +99,14 @@ def read_make_value(path, name):
     return match.group(1).strip()
 
 
-def generated_cache_config(profile_dir):
+def generated_cache_config(profile_dir, cpu_configuration=None):
     soc = (profile_dir / "software/include/generated/soc.h").read_text()
+    cpu_configuration = cpu_configuration or {}
     return {
         "instruction_cache": "enabled" if "#define CONFIG_CPU_HAS_ICACHE" in soc else "disabled",
+        "instruction_cache_bytes": cpu_configuration.get("instruction_cache_bytes", 0),
         "data_cache": "enabled" if "#define CONFIG_CPU_HAS_DCACHE" in soc else "disabled",
+        "data_cache_bytes": cpu_configuration.get("data_cache_bytes", 0),
         "configuration_source": str((profile_dir / "software/include/generated/soc.h").relative_to(ROOT)),
     }
 
@@ -152,7 +155,8 @@ def compiler_path():
     return matches[0].resolve()
 
 
-def compile_variant(profile, mode, build_id, compiler_flags, include_flags, build_dir, out_dir):
+def compile_variant(profile, mode, build_id, compiler_flags, include_flags, build_dir, out_dir,
+                    cpu_configuration, memory_configuration):
     mode_dir = out_dir / mode
     mode_dir.mkdir(parents=True, exist_ok=True)
     mode_define = "PERFORMANCE_RUN" if mode == "performance" else "VALIDATION_RUN"
@@ -162,7 +166,7 @@ def compile_variant(profile, mode, build_id, compiler_flags, include_flags, buil
         "-DMULTITHREAD=1", f"-D{mode_define}=1",
     ]
     profile_h = mode_dir / "benchmark_profile.h"
-    cache = generated_cache_config(build_dir)
+    cache = generated_cache_config(build_dir, cpu_configuration)
     profile_h.write_text(
         "#ifndef TANG20K_BENCHMARK_PROFILE_H\n#define TANG20K_BENCHMARK_PROFILE_H\n"
         f"#define BENCHMARK_PROFILE {c_string(profile)}\n"
@@ -170,9 +174,12 @@ def compile_variant(profile, mode, build_id, compiler_flags, include_flags, buil
         f"#define BENCHMARK_MODE {c_string(mode)}\n"
         f"#define BENCHMARK_COMPILER_FLAGS {c_string(' '.join(compiler_flags + mode_defines))}\n"
         f"#define BENCHMARK_CLOCK_HZ {SYS_CLK_FREQ}u\n"
+        f"#define BENCHMARK_ICACHE_BYTES {cache['instruction_cache_bytes']}u\n"
+        f"#define BENCHMARK_DCACHE_BYTES {cache['data_cache_bytes']}u\n"
+        f"#define BENCHMARK_L2_BYTES {memory_configuration.get('l2_cache_bytes', 0)}u\n"
         f"#define BENCHMARK_SEED1 {seeds[0]}\n#define BENCHMARK_SEED2 {seeds[1]}\n"
         f"#define BENCHMARK_SEED3 {seeds[2]}\n"
-        f"#define BENCHMARK_CACHE_CONFIG {c_string('icache=' + cache['instruction_cache'] + ',dcache=' + cache['data_cache'])}\n"
+        f"#define BENCHMARK_CACHE_CONFIG {c_string('icache=' + str(cache['instruction_cache_bytes']) + ',dcache=' + str(cache['data_cache_bytes']) + ',l2=' + str(memory_configuration.get('l2_cache_bytes', 0)))}\n"
         "#endif\n"
     )
 
@@ -331,6 +338,8 @@ def build_profile_firmware(profile, build_metadata, memory="onchip", build_dir=N
     ]
     if build_metadata.get("cpu_rtl"):
         source_files.append(ROOT / build_metadata["cpu_rtl"])
+    elif build_metadata.get("cpu_configuration", {}).get("rtl"):
+        source_files.append(ROOT / build_metadata["cpu_configuration"]["rtl"])
     source_files += [PORT / name for name in (
         "core_portme.h", "core_portme.c", "benchmark_main.c", "benchmark_port.h", "ee_printf.c",
     )]
@@ -343,6 +352,7 @@ def build_profile_firmware(profile, build_metadata, memory="onchip", build_dir=N
     source_identity = {str(path.relative_to(ROOT)): sha256(path) for path in source_files + generated}
     fingerprint_values = {
         "profile": profile,
+        "cpu_variant": build_metadata.get("cpu_variant"),
         "cpu_candidate": build_metadata.get("cpu_candidate"),
         "memory_mode": memory,
         "coremark_commit": COREMARK["commit"],
@@ -356,6 +366,8 @@ def build_profile_firmware(profile, build_metadata, memory="onchip", build_dir=N
         "cpu_configuration": build_metadata.get("cpu_configuration"),
         "memory_configuration": build_metadata.get("memory"),
     }
+    if build_metadata.get("cpu_profile_selection") is not None:
+        fingerprint_values["cpu_profile_selection"] = build_metadata["cpu_profile_selection"]
     fingerprint = stable_hash(fingerprint_values)
     build_id = fingerprint[:16]
     old_path = output_dir / "benchmark-metadata.json"
@@ -375,7 +387,9 @@ def build_profile_firmware(profile, build_metadata, memory="onchip", build_dir=N
     result = {
         "status": "in_progress",
         "profile": profile,
+        "cpu_variant": build_metadata.get("cpu_variant"),
         "cpu_candidate": build_metadata.get("cpu_candidate"),
+        "cpu_profile_selection": build_metadata.get("cpu_profile_selection"),
         "memory_mode": memory,
         "build_id": build_id,
         "source_fingerprint": fingerprint,
@@ -401,6 +415,9 @@ def build_profile_firmware(profile, build_metadata, memory="onchip", build_dir=N
             "sequence": [
                 "compiler_and_memory_fence",
                 "flush_cpu_dcache",
+                "compiler_and_memory_fence",
+                "flush_l2_cache_by_configured_eviction_reads_when_present",
+                "flush_cpu_dcache_again_to_remove_eviction_probe_lines",
                 "compiler_and_memory_fence",
                 "flush_cpu_icache",
                 "compiler_and_memory_fence",
@@ -448,7 +465,7 @@ def build_profile_firmware(profile, build_metadata, memory="onchip", build_dir=N
             "timing": "initial image, SRAM, and seed checks run before timed CoreMark work; image rechecks run after each interval",
         },
         "include_flags": include_flags,
-        "cache": generated_cache_config(build_dir),
+        "cache": generated_cache_config(build_dir, build_metadata.get("cpu_configuration")),
         "link_inputs": {
             "startup_object": str(startup_object.relative_to(ROOT)),
             "startup_object_sha256": sha256(startup_object),
@@ -474,6 +491,7 @@ def build_profile_firmware(profile, build_metadata, memory="onchip", build_dir=N
         for mode in ("performance", "validation"):
             result["images"][mode] = compile_variant(
                 profile, mode, build_id, compiler_flags, include_flags, build_dir, output_dir,
+                build_metadata.get("cpu_configuration", {}), build_metadata.get("memory", {}),
             )
         result["status"] = "passed"
         result["finished_utc"] = utc_now().isoformat()
@@ -496,6 +514,8 @@ def main(argv=None):
     import argparse
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--memory", choices=MEMORY_MODES, default="onchip")
+    parser.add_argument("--profile", choices=PROFILES,
+                        help="build only this profile; omit to build the full registered profile set")
     args = parser.parse_args(argv)
     memory = args.memory
     require_coremark_checkout()
@@ -506,17 +526,20 @@ def main(argv=None):
         "schema_version": 1,
         "session_id": session_id,
         "memory_mode": memory,
+        "requested_profiles": [args.profile] if args.profile else list(PROFILES),
         "status": "in_progress",
         "created_utc": utc_now().isoformat(),
         "coremark_commit": COREMARK["commit"],
         "upstream_verification": COREMARK_CHECK,
         "profiles": {},
     }
-    destination = ROOT / "build" / ("benchmark-build.json" if memory == "onchip" else f"{memory}/benchmark-build.json")
+    destination = (ROOT / "build" / f"benchmark-build-{memory}-{args.profile}.json"
+                  if args.profile else ROOT / "build" / ("benchmark-build.json" if memory == "onchip" else f"{memory}/benchmark-build.json"))
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text(json.dumps(combined, indent=2) + "\n")
     try:
-        for profile in PROFILES:
+        profiles = [args.profile] if args.profile else list(PROFILES)
+        for profile in profiles:
             print(f"Building SoC and CoreMark firmware for {profile}", flush=True)
             profile_dir_root = profile_build_dir(ROOT, profile, memory)
             metadata = build_module.build_profile(profile, memory=memory)

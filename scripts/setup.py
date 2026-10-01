@@ -26,6 +26,7 @@ PROJECT_PATCHES = {
         ROOT / "patches/litex-sdram-read-capture-diagnostic.patch",
         ROOT / "patches/litex-memtest-read-only-diagnostic.patch",
         ROOT / "patches/litex-ddr-diagnostic-boot.patch",
+        ROOT / "patches/litex-project-vexriscv-isa-variants.patch",
         ROOT / "patches/litex-gowin-extra-sdc.patch",
     ),
     "litedram": (

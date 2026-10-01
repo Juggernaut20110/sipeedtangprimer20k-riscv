@@ -706,7 +706,7 @@ class BenchmarkReportEvidenceTests(unittest.TestCase):
         self.assertEqual(calls, [f"{batch_id}-minimal", f"{batch_id}-lite"])
         results = json.loads(results_path.read_text())
         self.assertEqual(results["latest_batch_summary"]["status"], "incomplete")
-        self.assertEqual(results["latest_batch_summary"]["missing_profiles"], ["standard", "performance"])
+        self.assertEqual(results["latest_batch_summary"]["missing_profiles"], ["standard", "performance", "linux"])
         self.assertIsNone(results["latest_batch_aggregates"]["standard"])
         rendered = (self.root / "docs/performance.md").read_text()
         self.assertIn("No session was recorded for this profile in the current batch", rendered)

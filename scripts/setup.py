@@ -16,9 +16,17 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 LOCK = json.loads((ROOT / "dependencies.lock.json").read_text())
+CPU_LOCK = json.loads((ROOT / "cpu-generator.lock.json").read_text())
 DEPS = ROOT / ".deps"
 TOOLS = ROOT / ".tools"
 DOWNLOADS = TOOLS / "downloads"
+PROJECT_PATCHES = {
+    "litex": (
+        ROOT / "patches/litex-sdram-training-status.patch",
+        ROOT / "patches/litex-gowin-extra-sdc.patch",
+    ),
+    "litedram": (ROOT / "patches/litedram-gw2ddrphy-cdc.patch",),
+}
 
 
 def run(args, cwd=None):
@@ -66,6 +74,19 @@ def safe_extract_tar(archive, destination):
 
 def checkout_repositories():
     DEPS.mkdir(parents=True, exist_ok=True)
+    # Remove repository-owned edits before checking dependency cleanliness. They
+    # are reapplied at the end of setup, so every installed tree remains pinned
+    # to the lock file plus an explicit, hashable patch in this repository.
+    for name, patches in PROJECT_PATCHES.items():
+        checkout = DEPS / name
+        if checkout.is_dir():
+            for patch in reversed(patches):
+                reverse = subprocess.run(
+                    ["git", "-C", str(checkout), "apply", "--reverse", "--check", str(patch)],
+                    capture_output=True,
+                )
+                if reverse.returncode == 0:
+                    run(["git", "-C", str(checkout), "apply", "--reverse", str(patch)])
     for entry in LOCK["repositories"]:
         path = DEPS / entry["name"]
         if not (path / ".git").exists():
@@ -86,6 +107,24 @@ def checkout_repositories():
                 if actual != commit:
                     raise RuntimeError(f"submodule {entry['name']}/{subpath} is {actual}, expected {commit}")
         print(f"Locked {entry['name']} at {entry['commit']}")
+
+    for name, patches in PROJECT_PATCHES.items():
+        checkout = DEPS / name
+        for patch in patches:
+            forward = subprocess.run(
+                ["git", "-C", str(checkout), "apply", "--check", str(patch)],
+                capture_output=True,
+            )
+            if forward.returncode == 0:
+                run(["git", "-C", str(checkout), "apply", str(patch)])
+            else:
+                reverse = subprocess.run(
+                    ["git", "-C", str(checkout), "apply", "--reverse", "--check", str(patch)],
+                    capture_output=True,
+                )
+                if reverse.returncode != 0:
+                    raise RuntimeError(f"project patch {patch.name} does not apply cleanly to locked {name}")
+            print(f"Applied project patch {patch.name} to {name}")
 
 
 def apt_metadata(package, version):
@@ -210,12 +249,89 @@ def install_python_and_compiler():
     print(f"Installed CPython {python_spec['version']} and xPack RISC-V GCC {gcc_spec['version']}")
 
 
+def install_cpu_generator_toolchain():
+    artifacts = CPU_LOCK["artifacts"]
+    java_spec = artifacts["java"]
+    java_archive = DOWNLOADS / java_spec["file"]
+    fetch(java_spec["url"], java_archive, java_spec["sha256"])
+    java_root = TOOLS / "java-8u432"
+    java_bin = next(iter(java_root.glob("**/bin/java")), None)
+    if java_bin is None:
+        safe_extract_tar(java_archive, java_root)
+        java_bin = next(iter(java_root.glob("**/bin/java")), None)
+    if java_bin is None:
+        raise RuntimeError("Temurin archive did not contain bin/java")
+    java_home = java_bin.parent.parent
+    java_output = subprocess.run([str(java_bin), "-XshowSettings:properties", "-version"],
+                                 capture_output=True, text=True)
+    match = re.search(r"^\s*java\.version\s*=\s*(\S+)",
+                      java_output.stdout + java_output.stderr, re.M)
+    if java_output.returncode or not match or match.group(1) != java_spec["version_output"]:
+        actual = match.group(1) if match else "unknown"
+        raise RuntimeError(f"Temurin runtime is {actual}, expected {java_spec['version_output']}")
+
+    sbt_spec = artifacts["sbt"]
+    sbt_archive = DOWNLOADS / sbt_spec["file"]
+    fetch(sbt_spec["url"], sbt_archive, sbt_spec["sha256"])
+    sbt_root = TOOLS / f"sbt-{sbt_spec['version']}"
+    sbt_script = sbt_root / "sbt/bin/sbt"
+    if not sbt_script.is_file():
+        safe_extract_tar(sbt_archive, sbt_root)
+    if not sbt_script.is_file():
+        raise RuntimeError("SBT archive did not contain sbt/bin/sbt")
+
+    tool_bin = TOOLS / "bin"
+    tool_bin.mkdir(parents=True, exist_ok=True)
+    java_link = tool_bin / "java"
+    if java_link.exists() or java_link.is_symlink():
+        java_link.unlink()
+    java_link.symlink_to(java_bin.resolve())
+    sbt_wrapper = tool_bin / "sbt"
+    sbt_wrapper.write_text(
+        "#!/bin/sh\n"
+        'tool_root="$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)"\n'
+        f'export JAVA_HOME="{java_home}"\n'
+        'export PATH="$JAVA_HOME/bin:$PATH"\n'
+        'export HOME="$tool_root/sbt-home"\n'
+        'export COURSIER_CACHE="$tool_root/coursier-cache"\n'
+        'export SBT_OPTS="${SBT_OPTS:+$SBT_OPTS }-Dsbt.server.autostart=false -Duser.home=$HOME -Dsbt.global.base=$HOME/.sbt -Dsbt.boot.directory=$HOME/.sbt/boot -Dsbt.ivy.home=$HOME/.ivy2"\n'
+        f'exec "{sbt_script}" "$@"\n'
+    )
+    sbt_wrapper.chmod(0o755)
+    env = os.environ.copy()
+    env["JAVA_HOME"] = str(java_home)
+    env["PATH"] = os.pathsep.join((str(tool_bin), str(java_home / "bin"), env.get("PATH", "")))
+    env["HOME"] = str(TOOLS / "sbt-home")
+    env["COURSIER_CACHE"] = str(TOOLS / "coursier-cache")
+    env["SBT_OPTS"] = " ".join((
+        env.get("SBT_OPTS", ""),
+        "-Dsbt.server.autostart=false",
+        f"-Duser.home={env['HOME']}",
+        f"-Dsbt.global.base={env['HOME']}/.sbt",
+        f"-Dsbt.boot.directory={env['HOME']}/.sbt/boot",
+        f"-Dsbt.ivy.home={env['HOME']}/.ivy2",
+    )).strip()
+    version = subprocess.run([str(sbt_wrapper), "--script-version"], cwd=ROOT, env=env,
+                             capture_output=True, text=True, timeout=60)
+    if version.returncode or sbt_spec["version"] not in version.stdout + version.stderr:
+        raise RuntimeError(f"installed SBT version check failed: {(version.stdout + version.stderr).strip()[:300]}")
+    receipt = {
+        "java": {"version": java_spec["version_output"], "sha256": java_spec["sha256"]},
+        "sbt": {"version": sbt_spec["version"], "sha256": sbt_spec["sha256"]},
+        "scala": CPU_LOCK["tools"]["scala"],
+        "spinalhdl": CPU_LOCK["tools"]["spinalhdl"],
+    }
+    (TOOLS / "cpu-generator-setup.json").write_text(json.dumps(receipt, indent=2) + "\n")
+    print(f"Installed pinned Temurin {java_spec['version_output']} and SBT {sbt_spec['version']}")
+
+
 def main():
     TOOLS.mkdir(parents=True, exist_ok=True)
     DOWNLOADS.mkdir(parents=True, exist_ok=True)
     checkout_repositories()
     install_openfpgaloader()
     install_python_and_compiler()
+    install_cpu_generator_toolchain()
     print("Setup complete. Run make doctor to check build tools and hardware access.")
 
 

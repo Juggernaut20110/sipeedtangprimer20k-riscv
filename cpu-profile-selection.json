@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "profile": "performance",
+  "status": "accepted",
+  "candidate": "dynamic_target",
+  "clock_hz": 48000000,
+  "rtl_sha256": "771f520fcf3ff8f66cd168eaea84bc5924b39fa0e470cd5b1e35640a4809c252",
+  "evaluation": {
+    "batch_id": "20261001T005304.396625Z-cpu-eval",
+    "result_path": "docs/performance/cpu-evaluation/evaluations.json",
+    "result_sha256": "51912f510d1c8eb2e74714958be0bba7abf9b5e88dc5829baf09f47329b9d2e8",
+    "status": "candidate_beats_fresh_standard",
+    "clock_hz": 48000000,
+    "standard": {
+      "profile": "standard",
+      "repetitions": 3,
+      "coremark_mean": 109.12748165783437,
+      "coremark_per_mhz_mean": 2.2734892012048826,
+      "coremark_spread": 0.0,
+      "clock_hz": 48000000
+    },
+    "candidates": {
+      "dynamic": {
+        "status": "passed",
+        "repetitions": 3,
+        "coremark_mean": 111.48755404045154,
+        "coremark_per_mhz_mean": 2.3226573758427405,
+        "coremark_spread": 0.0,
+        "clock_hz": 48000000,
+        "rtl_sha256": "fbc1188d3db151ed57e44f81db17955f417cf977bb77b59abc3a177de1af2f4a"
+      },
+      "dynamic_target": {
+        "status": "passed",
+        "repetitions": 3,
+        "coremark_mean": 119.32391343090488,
+        "coremark_per_mhz_mean": 2.4859148631438517,
+        "coremark_spread": 0.0,
+        "clock_hz": 48000000,
+        "rtl_sha256": "771f520fcf3ff8f66cd168eaea84bc5924b39fa0e470cd5b1e35640a4809c252"
+      }
+    },
+    "winner": {
+      "coremark_mean": 119.32391343090488,
+      "standard_mean": 109.12748165783437,
+      "gain_coremark": 10.196431773070515,
+      "gain_percent": 9.346186570373594,
+      "bsram_used": 46,
+      "lut_used": 3656
+    }
+  },
+  "memory_budgets": {
+    "onchip_bios_rom_bytes": 24576,
+    "main_ram_bytes": 32768,
+    "sram_bytes": 8192,
+    "ddr3_l2_bytes": 8192
+  },
+  "generation_lock": "cpu-generator.lock.json"
+}

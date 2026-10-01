@@ -1,0 +1,17 @@
+{
+  "status": "diagnostic_only_not_acceptance_trial",
+  "profile": "minimal",
+  "memory_mode": "ddr3",
+  "port": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+  "resolved_port": "/dev/ttyUSB1",
+  "baud": 115200,
+  "bitstream": "build/ddr3/minimal/bitstream.fs",
+  "bitstream_sha256": "8f2e6eda8645e53ac5a8f6f1677c43d6ce0a9526cc249c87985938ce1629e725",
+  "captured_utc": "2026-10-01T00:27:00.368385+00:00",
+  "elapsed_seconds": 90.13,
+  "raw_uart": "docs/ddr3/evidence/20261001T002530.237189Z-startup-probe-minimal/startup.uart.bin",
+  "raw_uart_sha256": "50cb246aa508dc2c6419f954ed1ffc6167ba818f13d6096b01c6cddbcf6c18da",
+  "raw_uart_bytes": 1371,
+  "text_uart": "docs/ddr3/evidence/20261001T002530.237189Z-startup-probe-minimal/startup.uart.log",
+  "serial_writes": 0
+}

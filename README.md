@@ -8,7 +8,9 @@ The pinned upstream repositories and portable tool archive checksums are in [dep
 
 ## CoreMark benchmark
 
-Build all three SoC profiles and both firmware variants, then measure one selected profile over the Dock UART. The benchmark programs FPGA SRAM only and leaves onboard flash untouched:
+See the [CoreMark results summary](docs/coremark-summary.md) for scores across all profiles and successful measurement history.
+
+Build the SoC profiles and both firmware variants, then measure one selected profile or all profiles over the Dock UART. On-chip RAM is the default. `MEMORY=ddr3` selects the board's 256 MiB DDR3 path. Benchmark runs program FPGA SRAM only and leave onboard flash untouched:
 
 ```sh
 make doctor
@@ -17,8 +19,19 @@ make benchmark-run PROFILE=standard PORT=/dev/serial/by-id/usb-SIPEED_JTAG_Debug
 make benchmark-report
 ```
 
-`PROFILE` may be `minimal`, `lite`, or `standard` and defaults to `standard` for `benchmark-run`. Confirm the Dock UART path with `make doctor`; the runner does not guess or fall back to another serial port. It runs validation first, then three scored performance repetitions if validation succeeds. Build details, captured UART evidence, scores, and any incomplete measurement status are documented in [docs/performance.md](docs/performance.md), with machine-readable results in [docs/performance/results.json](docs/performance/results.json). Scores are CoreMark iterations/second and CoreMark/MHz, calculated from 64-bit timer ticks at the 48 MHz operating clock.
+`PROFILE` may be `minimal`, `lite`, `standard`, `performance`, or `ALL` (`all` also works), and defaults to `standard` for `benchmark-run`. Add `MEMORY=ddr3` to build and measure using DDR3. To validate and measure all profiles in one invocation:
 
-Profiles are `minimal` (default), `lite`, and `standard`. Each has an isolated output directory under `build/<profile>/`. Build metadata, generated CSR and memory descriptions, firmware ELF and binary, raw Gowin reports, and the verification record are stored with those outputs or in `docs/verification.md`.
+```sh
+make benchmark-run PROFILE=ALL PORT=/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0
+make benchmark-report
+```
 
-DDR3, HDMI, Ethernet, flash boot, and custom Scala CPU generation are later milestones. Their planned integration order and pin-sharing note are in [docs/bringup.md](docs/bringup.md).
+`ALL` runs the registered CPU profiles sequentially on the same Dock UART. Each profile runs validation first, then three scored performance repetitions if validation succeeds. Captures remain separate by profile and memory mode. A timeout or disconnect that leaves firmware completion uncertain stops the batch before programming another profile. Ctrl-C stops the batch and closes the UART.
+
+Confirm the Dock UART path with `make doctor`; the runner does not guess or fall back to another serial port. Build details, captured UART evidence, scores, and any incomplete measurement status are documented in [docs/performance.md](docs/performance.md), with machine-readable results in [docs/performance/results.json](docs/performance/results.json). Scores are CoreMark iterations/second and CoreMark/MHz, calculated from 64-bit timer ticks at the 48 MHz operating clock.
+
+Profiles are `minimal` (default), `lite`, `standard`, and `performance`. `performance` uses the measured `dynamic_target` VexRiscv configuration at 48 MHz; its selection evidence is in `cpu-profile-selection.json`. On-chip outputs remain under `build/<profile>/`; DDR3 outputs use `build/ddr3/<profile>/`.
+
+Build and run the destructive DDR3 checks with `make ddr-test-build PROFILE=ALL`, then `make ddr-test-run PROFILE=ALL PORT=<verified-UART>` and `make ddr-test-report`. The defaults are ten fresh SRAM reconfigurations and 1,800 seconds of stress per profile. See [the DDR3 evidence report](docs/ddr3/report.md).
+
+`make cpu-candidate-build` generates and routes the two standard-derived branch-prediction candidates. `make cpu-candidate-run PORT=<verified-UART>` measures a fresh standard baseline and viable candidates. The public `performance` CPU profile is added only after a candidate beats that baseline at 48 MHz. HDMI, Ethernet, and flash boot remain outside the current scope; see [docs/bringup.md](docs/bringup.md) for existing pin-sharing notes.

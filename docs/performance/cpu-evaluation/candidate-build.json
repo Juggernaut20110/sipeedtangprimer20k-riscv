@@ -1,0 +1,2732 @@
+{
+  "schema": 1,
+  "status": "ready_for_board_measurement",
+  "system_clock_hz": 48000000,
+  "bios_rom_bytes": 24576,
+  "created_utc": "2026-10-01T00:47:13.889333+00:00",
+  "finished_utc": "2026-10-01T00:48:53.013370+00:00",
+  "candidates": {
+    "dynamic": {
+      "candidate": "dynamic",
+      "status": "ready_for_board_measurement",
+      "reason": null,
+      "rtl_sha256": "fbc1188d3db151ed57e44f81db17955f417cf977bb77b59abc3a177de1af2f4a",
+      "generator_manifest": "docs/performance/cpu-evaluation/candidates/dynamic/candidate.json",
+      "build_metadata": "docs/performance/cpu-evaluation/candidates/dynamic/build-metadata.json",
+      "benchmark_firmware": {
+        "status": "passed",
+        "build_id": "d42cb27c9679551b",
+        "bitstream_sha256": "16720d19525e17e6d31dd4dc874059e91b385ff1bcd485fadc295ec527381313",
+        "clock_hz": 48000000,
+        "memory": {
+          "mode": "onchip",
+          "main_ram_base": "0x40000000",
+          "main_ram_bytes": 32768,
+          "ddr_physical_bytes": 0,
+          "l2_cache_bytes": 0,
+          "ddr_ck_hz": null,
+          "uncached_alias_base": null,
+          "diagnostic_ram": null,
+          "code_and_read_only_data": "main_ram",
+          "algorithm_data_bss_and_reserved_stack": "sram",
+          "sram_base": "0x10000000",
+          "sram_bytes": 8192
+        },
+        "images": {
+          "performance": {
+            "profile": "standard",
+            "mode": "performance",
+            "build_id": "d42cb27c9679551b",
+            "elf": "build/cpu-candidates/dynamic/soc/benchmark/performance/benchmark.elf",
+            "elf_sha256": "f3b10c81c1077f71c83eec5757bb2ae220c8b42230b1f7b53d86d91c71ecaa1f",
+            "map": "build/cpu-candidates/dynamic/soc/benchmark/performance/benchmark.elf.map",
+            "binary": "build/cpu-candidates/dynamic/soc/benchmark/performance/benchmark.bin",
+            "binary_sha256": "219e41f2456123adc00427080d73d65d4ae480e3355f99968d93067b761b30a3",
+            "binary_crc32": "dfd588cf",
+            "binary_bytes": 28376,
+            "working_sram_bytes": 2592,
+            "sram_section_bytes": 2592,
+            "sram_alignment_padding_bytes": 0,
+            "sram_boundaries": {
+              "_fdata": 268435456,
+              "_end": 268438048,
+              "_stack_bottom": 268441600,
+              "_stack_top": 268443648
+            },
+            "reserved_stack_bytes": 2048,
+            "remaining_sram_bytes": 3552,
+            "main_ram_capacity_bytes": 32768,
+            "sections": {
+              "NULL": {
+                "type": "00000000",
+                "size": 0
+              },
+              ".text": {
+                "type": "PROGBITS",
+                "size": 22328
+              },
+              ".rodata": {
+                "type": "PROGBITS",
+                "size": 6016
+              },
+              ".preinit_array": {
+                "type": "PREINIT_ARRAY",
+                "size": 0
+              },
+              ".init_array": {
+                "type": "INIT_ARRAY",
+                "size": 0
+              },
+              ".fini_array": {
+                "type": "FINI_ARRAY",
+                "size": 0
+              },
+              ".data": {
+                "type": "PROGBITS",
+                "size": 32
+              },
+              ".bss": {
+                "type": "NOBITS",
+                "size": 2560
+              },
+              ".stack": {
+                "type": "NOBITS",
+                "size": 2048
+              },
+              ".riscv.attributes": {
+                "type": "RISCV_ATTRIBUTES",
+                "size": 67
+              },
+              ".comment": {
+                "type": "PROGBITS",
+                "size": 51
+              },
+              ".debug_line": {
+                "type": "PROGBITS",
+                "size": 48930
+              },
+              ".debug_line_str": {
+                "type": "PROGBITS",
+                "size": 5437
+              },
+              ".debug_info": {
+                "type": "PROGBITS",
+                "size": 34252
+              },
+              ".debug_abbrev": {
+                "type": "PROGBITS",
+                "size": 9670
+              },
+              ".debug_aranges": {
+                "type": "PROGBITS",
+                "size": 1080
+              },
+              ".debug_str": {
+                "type": "PROGBITS",
+                "size": 70306
+              },
+              ".debug_loclists": {
+                "type": "PROGBITS",
+                "size": 39062
+              },
+              ".debug_rnglists": {
+                "type": "PROGBITS",
+                "size": 3133
+              },
+              ".debug_macro": {
+                "type": "PROGBITS",
+                "size": 36352
+              },
+              ".debug_frame": {
+                "type": "PROGBITS",
+                "size": 1836
+              },
+              ".symtab": {
+                "type": "SYMTAB",
+                "size": 3568
+              },
+              ".strtab": {
+                "type": "STRTAB",
+                "size": 1685
+              },
+              ".shstrtab": {
+                "type": "STRTAB",
+                "size": 263
+              }
+            },
+            "stack_usage": {
+              "largest_static_frame_bytes": 1152,
+              "reported_function_frames": 55,
+              "top_frames": [
+                {
+                  "function": "ee_printf",
+                  "bytes": 1152,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic/soc/benchmark/performance/obj/ee_printf.su"
+                },
+                {
+                  "function": "coremark_main",
+                  "bytes": 144,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic/soc/benchmark/performance/obj/core_main.su"
+                },
+                {
+                  "function": "main",
+                  "bytes": 128,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic/soc/benchmark/performance/obj/benchmark_main.su"
+                },
+                {
+                  "function": "core_bench_state",
+                  "bytes": 128,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic/soc/benchmark/performance/obj/core_state.su"
+                },
+                {
+                  "function": "number",
+                  "bytes": 96,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic/soc/benchmark/performance/obj/ee_printf.su"
+                },
+                {
+                  "function": "verify_loaded_image",
+                  "bytes": 64,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic/soc/benchmark/performance/obj/benchmark_main.su"
+                },
+                {
+                  "function": "core_list_mergesort",
+                  "bytes": 48,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic/soc/benchmark/performance/obj/core_list_join.su"
+                },
+                {
+                  "function": "core_bench_list",
+                  "bytes": 48,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic/soc/benchmark/performance/obj/core_list_join.su"
+                },
+                {
+                  "function": "matrix_test",
+                  "bytes": 48,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic/soc/benchmark/performance/obj/core_matrix.su"
+                },
+                {
+                  "function": "verify_runtime_seeds",
+                  "bytes": 32,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic/soc/benchmark/performance/obj/benchmark_main.su"
+                },
+                {
+                  "function": "calc_func",
+                  "bytes": 32,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic/soc/benchmark/performance/obj/core_list_join.su"
+                },
+                {
+                  "function": "cmp_complex",
+                  "bytes": 32,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic/soc/benchmark/performance/obj/core_list_join.su"
+                }
+              ],
+              "interpretation": "GCC per-function static frames; the firmware reserves 2048 stack bytes. The report is not a runtime stack high-water measurement."
+            },
+            "stack_usage_reports": [
+              "build/cpu-candidates/dynamic/soc/benchmark/performance/obj/benchmark_main.su",
+              "build/cpu-candidates/dynamic/soc/benchmark/performance/obj/core_list_join.su",
+              "build/cpu-candidates/dynamic/soc/benchmark/performance/obj/core_main.su",
+              "build/cpu-candidates/dynamic/soc/benchmark/performance/obj/core_matrix.su",
+              "build/cpu-candidates/dynamic/soc/benchmark/performance/obj/core_portme.su",
+              "build/cpu-candidates/dynamic/soc/benchmark/performance/obj/core_state.su",
+              "build/cpu-candidates/dynamic/soc/benchmark/performance/obj/core_util.su",
+              "build/cpu-candidates/dynamic/soc/benchmark/performance/obj/ee_printf.su",
+              "build/cpu-candidates/dynamic/soc/benchmark/performance/obj/litex_uart_polling.su"
+            ],
+            "commands": {
+              "core_list_join.c": {
+                "source": ".deps/coremark/core_list_join.c",
+                "flags": [
+                  "-std=gnu99",
+                  "-O2",
+                  "-march=rv32i2p0_m",
+                  "-mabi=ilp32",
+                  "-D__vexriscv__",
+                  "-g3",
+                  "-no-pie",
+                  "-fomit-frame-pointer",
+                  "-Wall",
+                  "-fno-builtin",
+                  "-fno-stack-protector",
+                  "-U_FORTIFY_SOURCE",
+                  "-D_FORTIFY_SOURCE=0",
+                  "-ffunction-sections",
+                  "-fdata-sections",
+                  "-fno-lto",
+                  "-DITERATIONS=1000",
+                  "-DTOTAL_DATA_SIZE=2000",
+                  "-DMEM_METHOD=MEM_STATIC",
+                  "-DMULTITHREAD=1",
+                  "-DPERFORMANCE_RUN=1",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/libc",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/performance"
+                ]
+              },
+              "core_main.c": {
+                "source": ".deps/coremark/core_main.c",
+                "flags": [
+                  "-std=gnu99",
+                  "-O2",
+                  "-march=rv32i2p0_m",
+                  "-mabi=ilp32",
+                  "-D__vexriscv__",
+                  "-g3",
+                  "-no-pie",
+                  "-fomit-frame-pointer",
+                  "-Wall",
+                  "-fno-builtin",
+                  "-fno-stack-protector",
+                  "-U_FORTIFY_SOURCE",
+                  "-D_FORTIFY_SOURCE=0",
+                  "-ffunction-sections",
+                  "-fdata-sections",
+                  "-fno-lto",
+                  "-DITERATIONS=1000",
+                  "-DTOTAL_DATA_SIZE=2000",
+                  "-DMEM_METHOD=MEM_STATIC",
+                  "-DMULTITHREAD=1",
+                  "-DPERFORMANCE_RUN=1",
+                  "-Dmain=coremark_main",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/libc",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/performance"
+                ]
+              },
+              "core_matrix.c": {
+                "source": ".deps/coremark/core_matrix.c",
+                "flags": [
+                  "-std=gnu99",
+                  "-O2",
+                  "-march=rv32i2p0_m",
+                  "-mabi=ilp32",
+                  "-D__vexriscv__",
+                  "-g3",
+                  "-no-pie",
+                  "-fomit-frame-pointer",
+                  "-Wall",
+                  "-fno-builtin",
+                  "-fno-stack-protector",
+                  "-U_FORTIFY_SOURCE",
+                  "-D_FORTIFY_SOURCE=0",
+                  "-ffunction-sections",
+                  "-fdata-sections",
+                  "-fno-lto",
+                  "-DITERATIONS=1000",
+                  "-DTOTAL_DATA_SIZE=2000",
+                  "-DMEM_METHOD=MEM_STATIC",
+                  "-DMULTITHREAD=1",
+                  "-DPERFORMANCE_RUN=1",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/libc",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/performance"
+                ]
+              },
+              "core_state.c": {
+                "source": ".deps/coremark/core_state.c",
+                "flags": [
+                  "-std=gnu99",
+                  "-O2",
+                  "-march=rv32i2p0_m",
+                  "-mabi=ilp32",
+                  "-D__vexriscv__",
+                  "-g3",
+                  "-no-pie",
+                  "-fomit-frame-pointer",
+                  "-Wall",
+                  "-fno-builtin",
+                  "-fno-stack-protector",
+                  "-U_FORTIFY_SOURCE",
+                  "-D_FORTIFY_SOURCE=0",
+                  "-ffunction-sections",
+                  "-fdata-sections",
+                  "-fno-lto",
+                  "-DITERATIONS=1000",
+                  "-DTOTAL_DATA_SIZE=2000",
+                  "-DMEM_METHOD=MEM_STATIC",
+                  "-DMULTITHREAD=1",
+                  "-DPERFORMANCE_RUN=1",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/libc",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/performance"
+                ]
+              },
+              "core_util.c": {
+                "source": ".deps/coremark/core_util.c",
+                "flags": [
+                  "-std=gnu99",
+                  "-O2",
+                  "-march=rv32i2p0_m",
+                  "-mabi=ilp32",
+                  "-D__vexriscv__",
+                  "-g3",
+                  "-no-pie",
+                  "-fomit-frame-pointer",
+                  "-Wall",
+                  "-fno-builtin",
+                  "-fno-stack-protector",
+                  "-U_FORTIFY_SOURCE",
+                  "-D_FORTIFY_SOURCE=0",
+                  "-ffunction-sections",
+                  "-fdata-sections",
+                  "-fno-lto",
+                  "-DITERATIONS=1000",
+                  "-DTOTAL_DATA_SIZE=2000",
+                  "-DMEM_METHOD=MEM_STATIC",
+                  "-DMULTITHREAD=1",
+                  "-DPERFORMANCE_RUN=1",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/libc",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/performance"
+                ]
+              },
+              "core_portme.c": {
+                "source": "firmware/benchmark/core_portme.c",
+                "flags": [
+                  "-std=gnu99",
+                  "-O2",
+                  "-march=rv32i2p0_m",
+                  "-mabi=ilp32",
+                  "-D__vexriscv__",
+                  "-g3",
+                  "-no-pie",
+                  "-fomit-frame-pointer",
+                  "-Wall",
+                  "-fno-builtin",
+                  "-fno-stack-protector",
+                  "-U_FORTIFY_SOURCE",
+                  "-D_FORTIFY_SOURCE=0",
+                  "-ffunction-sections",
+                  "-fdata-sections",
+                  "-fno-lto",
+                  "-DITERATIONS=1000",
+                  "-DTOTAL_DATA_SIZE=2000",
+                  "-DMEM_METHOD=MEM_STATIC",
+                  "-DMULTITHREAD=1",
+                  "-DPERFORMANCE_RUN=1",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/libc",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/performance"
+                ]
+              },
+              "benchmark_main.c": {
+                "source": "firmware/benchmark/benchmark_main.c",
+                "flags": [
+                  "-std=gnu99",
+                  "-O2",
+                  "-march=rv32i2p0_m",
+                  "-mabi=ilp32",
+                  "-D__vexriscv__",
+                  "-g3",
+                  "-no-pie",
+                  "-fomit-frame-pointer",
+                  "-Wall",
+                  "-fno-builtin",
+                  "-fno-stack-protector",
+                  "-U_FORTIFY_SOURCE",
+                  "-D_FORTIFY_SOURCE=0",
+                  "-ffunction-sections",
+                  "-fdata-sections",
+                  "-fno-lto",
+                  "-DITERATIONS=1000",
+                  "-DTOTAL_DATA_SIZE=2000",
+                  "-DMEM_METHOD=MEM_STATIC",
+                  "-DMULTITHREAD=1",
+                  "-DPERFORMANCE_RUN=1",
+                  "-Os",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/libc",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/performance"
+                ]
+              },
+              "ee_printf.c": {
+                "source": "firmware/benchmark/ee_printf.c",
+                "flags": [
+                  "-std=gnu99",
+                  "-O2",
+                  "-march=rv32i2p0_m",
+                  "-mabi=ilp32",
+                  "-D__vexriscv__",
+                  "-g3",
+                  "-no-pie",
+                  "-fomit-frame-pointer",
+                  "-Wall",
+                  "-fno-builtin",
+                  "-fno-stack-protector",
+                  "-U_FORTIFY_SOURCE",
+                  "-D_FORTIFY_SOURCE=0",
+                  "-ffunction-sections",
+                  "-fdata-sections",
+                  "-fno-lto",
+                  "-DITERATIONS=1000",
+                  "-DTOTAL_DATA_SIZE=2000",
+                  "-DMEM_METHOD=MEM_STATIC",
+                  "-DMULTITHREAD=1",
+                  "-DPERFORMANCE_RUN=1",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/libc",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/performance"
+                ]
+              },
+              "litex_uart_polling.c": {
+                "source": ".deps/litex/litex/soc/software/libbase/uart.c",
+                "flags": [
+                  "-std=gnu99",
+                  "-O2",
+                  "-march=rv32i2p0_m",
+                  "-mabi=ilp32",
+                  "-D__vexriscv__",
+                  "-g3",
+                  "-no-pie",
+                  "-fomit-frame-pointer",
+                  "-Wall",
+                  "-fno-builtin",
+                  "-fno-stack-protector",
+                  "-U_FORTIFY_SOURCE",
+                  "-D_FORTIFY_SOURCE=0",
+                  "-ffunction-sections",
+                  "-fdata-sections",
+                  "-fno-lto",
+                  "-DITERATIONS=1000",
+                  "-DTOTAL_DATA_SIZE=2000",
+                  "-DMEM_METHOD=MEM_STATIC",
+                  "-DMULTITHREAD=1",
+                  "-DPERFORMANCE_RUN=1",
+                  "-DUART_POLLING",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/libc",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/performance"
+                ]
+              }
+            },
+            "link_flags": [
+              "-nostdlib",
+              "-nodefaultlibs",
+              "-Wl,--no-dynamic-linker",
+              "-Wl,--build-id=none",
+              "-std=gnu99",
+              "-O2",
+              "-march=rv32i2p0_m",
+              "-mabi=ilp32",
+              "-D__vexriscv__",
+              "-g3",
+              "-no-pie",
+              "-fomit-frame-pointer",
+              "-Wall",
+              "-fno-builtin",
+              "-fno-stack-protector",
+              "-U_FORTIFY_SOURCE",
+              "-D_FORTIFY_SOURCE=0",
+              "-ffunction-sections",
+              "-fdata-sections",
+              "-fno-lto",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/libc",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/performance",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/include",
+              "-T",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/linker.ld",
+              "-N",
+              "-o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/performance/benchmark.elf",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/firmware/crt0.o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/performance/obj/core_list_join.o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/performance/obj/core_main.o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/performance/obj/core_matrix.o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/performance/obj/core_state.o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/performance/obj/core_util.o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/performance/obj/core_portme.o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/performance/obj/benchmark_main.o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/performance/obj/ee_printf.o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/performance/obj/litex_uart_polling.o",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/libc",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/libcompiler_rt",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/libbase",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/libfatfs",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/liblitespi",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/liblitedram",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/libliteeth",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/liblitesdcard",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/liblitesata",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/bios",
+              "-Wl,--start-group",
+              "-lc",
+              "-lcompiler_rt",
+              "-lbase",
+              "-lfatfs",
+              "-llitespi",
+              "-llitedram",
+              "-lliteeth",
+              "-llitesdcard",
+              "-llitesata",
+              "-lgcc",
+              "-Wl,--end-group",
+              "-Wl,--gc-sections",
+              "-Wl,-Map,/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/performance/benchmark.elf.map"
+            ]
+          },
+          "validation": {
+            "profile": "standard",
+            "mode": "validation",
+            "build_id": "d42cb27c9679551b",
+            "elf": "build/cpu-candidates/dynamic/soc/benchmark/validation/benchmark.elf",
+            "elf_sha256": "b1e3f16c2e4899f00f97f7e745d25253af7607b57f3a8b28ecec5ba687fd2d1a",
+            "map": "build/cpu-candidates/dynamic/soc/benchmark/validation/benchmark.elf.map",
+            "binary": "build/cpu-candidates/dynamic/soc/benchmark/validation/benchmark.bin",
+            "binary_sha256": "3a60e824a4feef8ad2e54f9de40813c6af5d012d685e2ff308efeb99a53087bf",
+            "binary_crc32": "b6cfab35",
+            "binary_bytes": 28400,
+            "working_sram_bytes": 2624,
+            "sram_section_bytes": 2600,
+            "sram_alignment_padding_bytes": 24,
+            "sram_boundaries": {
+              "_fdata": 268435456,
+              "_end": 268438080,
+              "_stack_bottom": 268441600,
+              "_stack_top": 268443648
+            },
+            "reserved_stack_bytes": 2048,
+            "remaining_sram_bytes": 3520,
+            "main_ram_capacity_bytes": 32768,
+            "sections": {
+              "NULL": {
+                "type": "00000000",
+                "size": 0
+              },
+              ".text": {
+                "type": "PROGBITS",
+                "size": 22348
+              },
+              ".rodata": {
+                "type": "PROGBITS",
+                "size": 6012
+              },
+              ".preinit_array": {
+                "type": "PREINIT_ARRAY",
+                "size": 0
+              },
+              ".init_array": {
+                "type": "INIT_ARRAY",
+                "size": 0
+              },
+              ".fini_array": {
+                "type": "FINI_ARRAY",
+                "size": 0
+              },
+              ".data": {
+                "type": "PROGBITS",
+                "size": 40
+              },
+              ".bss": {
+                "type": "NOBITS",
+                "size": 2560
+              },
+              ".stack": {
+                "type": "NOBITS",
+                "size": 2048
+              },
+              ".riscv.attributes": {
+                "type": "RISCV_ATTRIBUTES",
+                "size": 67
+              },
+              ".comment": {
+                "type": "PROGBITS",
+                "size": 51
+              },
+              ".debug_line": {
+                "type": "PROGBITS",
+                "size": 48930
+              },
+              ".debug_line_str": {
+                "type": "PROGBITS",
+                "size": 5436
+              },
+              ".debug_info": {
+                "type": "PROGBITS",
+                "size": 34260
+              },
+              ".debug_abbrev": {
+                "type": "PROGBITS",
+                "size": 9670
+              },
+              ".debug_aranges": {
+                "type": "PROGBITS",
+                "size": 1080
+              },
+              ".debug_str": {
+                "type": "PROGBITS",
+                "size": 70311
+              },
+              ".debug_loclists": {
+                "type": "PROGBITS",
+                "size": 39050
+              },
+              ".debug_rnglists": {
+                "type": "PROGBITS",
+                "size": 3133
+              },
+              ".debug_macro": {
+                "type": "PROGBITS",
+                "size": 36352
+              },
+              ".debug_frame": {
+                "type": "PROGBITS",
+                "size": 1836
+              },
+              ".symtab": {
+                "type": "SYMTAB",
+                "size": 3568
+              },
+              ".strtab": {
+                "type": "STRTAB",
+                "size": 1685
+              },
+              ".shstrtab": {
+                "type": "STRTAB",
+                "size": 263
+              }
+            },
+            "stack_usage": {
+              "largest_static_frame_bytes": 1152,
+              "reported_function_frames": 55,
+              "top_frames": [
+                {
+                  "function": "ee_printf",
+                  "bytes": 1152,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic/soc/benchmark/validation/obj/ee_printf.su"
+                },
+                {
+                  "function": "coremark_main",
+                  "bytes": 144,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic/soc/benchmark/validation/obj/core_main.su"
+                },
+                {
+                  "function": "main",
+                  "bytes": 128,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic/soc/benchmark/validation/obj/benchmark_main.su"
+                },
+                {
+                  "function": "core_bench_state",
+                  "bytes": 128,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic/soc/benchmark/validation/obj/core_state.su"
+                },
+                {
+                  "function": "number",
+                  "bytes": 96,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic/soc/benchmark/validation/obj/ee_printf.su"
+                },
+                {
+                  "function": "verify_loaded_image",
+                  "bytes": 64,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic/soc/benchmark/validation/obj/benchmark_main.su"
+                },
+                {
+                  "function": "core_list_mergesort",
+                  "bytes": 48,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic/soc/benchmark/validation/obj/core_list_join.su"
+                },
+                {
+                  "function": "core_bench_list",
+                  "bytes": 48,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic/soc/benchmark/validation/obj/core_list_join.su"
+                },
+                {
+                  "function": "matrix_test",
+                  "bytes": 48,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic/soc/benchmark/validation/obj/core_matrix.su"
+                },
+                {
+                  "function": "verify_runtime_seeds",
+                  "bytes": 32,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic/soc/benchmark/validation/obj/benchmark_main.su"
+                },
+                {
+                  "function": "calc_func",
+                  "bytes": 32,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic/soc/benchmark/validation/obj/core_list_join.su"
+                },
+                {
+                  "function": "cmp_complex",
+                  "bytes": 32,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic/soc/benchmark/validation/obj/core_list_join.su"
+                }
+              ],
+              "interpretation": "GCC per-function static frames; the firmware reserves 2048 stack bytes. The report is not a runtime stack high-water measurement."
+            },
+            "stack_usage_reports": [
+              "build/cpu-candidates/dynamic/soc/benchmark/validation/obj/benchmark_main.su",
+              "build/cpu-candidates/dynamic/soc/benchmark/validation/obj/core_list_join.su",
+              "build/cpu-candidates/dynamic/soc/benchmark/validation/obj/core_main.su",
+              "build/cpu-candidates/dynamic/soc/benchmark/validation/obj/core_matrix.su",
+              "build/cpu-candidates/dynamic/soc/benchmark/validation/obj/core_portme.su",
+              "build/cpu-candidates/dynamic/soc/benchmark/validation/obj/core_state.su",
+              "build/cpu-candidates/dynamic/soc/benchmark/validation/obj/core_util.su",
+              "build/cpu-candidates/dynamic/soc/benchmark/validation/obj/ee_printf.su",
+              "build/cpu-candidates/dynamic/soc/benchmark/validation/obj/litex_uart_polling.su"
+            ],
+            "commands": {
+              "core_list_join.c": {
+                "source": ".deps/coremark/core_list_join.c",
+                "flags": [
+                  "-std=gnu99",
+                  "-O2",
+                  "-march=rv32i2p0_m",
+                  "-mabi=ilp32",
+                  "-D__vexriscv__",
+                  "-g3",
+                  "-no-pie",
+                  "-fomit-frame-pointer",
+                  "-Wall",
+                  "-fno-builtin",
+                  "-fno-stack-protector",
+                  "-U_FORTIFY_SOURCE",
+                  "-D_FORTIFY_SOURCE=0",
+                  "-ffunction-sections",
+                  "-fdata-sections",
+                  "-fno-lto",
+                  "-DITERATIONS=1000",
+                  "-DTOTAL_DATA_SIZE=2000",
+                  "-DMEM_METHOD=MEM_STATIC",
+                  "-DMULTITHREAD=1",
+                  "-DVALIDATION_RUN=1",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/libc",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/validation"
+                ]
+              },
+              "core_main.c": {
+                "source": ".deps/coremark/core_main.c",
+                "flags": [
+                  "-std=gnu99",
+                  "-O2",
+                  "-march=rv32i2p0_m",
+                  "-mabi=ilp32",
+                  "-D__vexriscv__",
+                  "-g3",
+                  "-no-pie",
+                  "-fomit-frame-pointer",
+                  "-Wall",
+                  "-fno-builtin",
+                  "-fno-stack-protector",
+                  "-U_FORTIFY_SOURCE",
+                  "-D_FORTIFY_SOURCE=0",
+                  "-ffunction-sections",
+                  "-fdata-sections",
+                  "-fno-lto",
+                  "-DITERATIONS=1000",
+                  "-DTOTAL_DATA_SIZE=2000",
+                  "-DMEM_METHOD=MEM_STATIC",
+                  "-DMULTITHREAD=1",
+                  "-DVALIDATION_RUN=1",
+                  "-Dmain=coremark_main",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/libc",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/validation"
+                ]
+              },
+              "core_matrix.c": {
+                "source": ".deps/coremark/core_matrix.c",
+                "flags": [
+                  "-std=gnu99",
+                  "-O2",
+                  "-march=rv32i2p0_m",
+                  "-mabi=ilp32",
+                  "-D__vexriscv__",
+                  "-g3",
+                  "-no-pie",
+                  "-fomit-frame-pointer",
+                  "-Wall",
+                  "-fno-builtin",
+                  "-fno-stack-protector",
+                  "-U_FORTIFY_SOURCE",
+                  "-D_FORTIFY_SOURCE=0",
+                  "-ffunction-sections",
+                  "-fdata-sections",
+                  "-fno-lto",
+                  "-DITERATIONS=1000",
+                  "-DTOTAL_DATA_SIZE=2000",
+                  "-DMEM_METHOD=MEM_STATIC",
+                  "-DMULTITHREAD=1",
+                  "-DVALIDATION_RUN=1",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/libc",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/validation"
+                ]
+              },
+              "core_state.c": {
+                "source": ".deps/coremark/core_state.c",
+                "flags": [
+                  "-std=gnu99",
+                  "-O2",
+                  "-march=rv32i2p0_m",
+                  "-mabi=ilp32",
+                  "-D__vexriscv__",
+                  "-g3",
+                  "-no-pie",
+                  "-fomit-frame-pointer",
+                  "-Wall",
+                  "-fno-builtin",
+                  "-fno-stack-protector",
+                  "-U_FORTIFY_SOURCE",
+                  "-D_FORTIFY_SOURCE=0",
+                  "-ffunction-sections",
+                  "-fdata-sections",
+                  "-fno-lto",
+                  "-DITERATIONS=1000",
+                  "-DTOTAL_DATA_SIZE=2000",
+                  "-DMEM_METHOD=MEM_STATIC",
+                  "-DMULTITHREAD=1",
+                  "-DVALIDATION_RUN=1",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/libc",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/validation"
+                ]
+              },
+              "core_util.c": {
+                "source": ".deps/coremark/core_util.c",
+                "flags": [
+                  "-std=gnu99",
+                  "-O2",
+                  "-march=rv32i2p0_m",
+                  "-mabi=ilp32",
+                  "-D__vexriscv__",
+                  "-g3",
+                  "-no-pie",
+                  "-fomit-frame-pointer",
+                  "-Wall",
+                  "-fno-builtin",
+                  "-fno-stack-protector",
+                  "-U_FORTIFY_SOURCE",
+                  "-D_FORTIFY_SOURCE=0",
+                  "-ffunction-sections",
+                  "-fdata-sections",
+                  "-fno-lto",
+                  "-DITERATIONS=1000",
+                  "-DTOTAL_DATA_SIZE=2000",
+                  "-DMEM_METHOD=MEM_STATIC",
+                  "-DMULTITHREAD=1",
+                  "-DVALIDATION_RUN=1",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/libc",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/validation"
+                ]
+              },
+              "core_portme.c": {
+                "source": "firmware/benchmark/core_portme.c",
+                "flags": [
+                  "-std=gnu99",
+                  "-O2",
+                  "-march=rv32i2p0_m",
+                  "-mabi=ilp32",
+                  "-D__vexriscv__",
+                  "-g3",
+                  "-no-pie",
+                  "-fomit-frame-pointer",
+                  "-Wall",
+                  "-fno-builtin",
+                  "-fno-stack-protector",
+                  "-U_FORTIFY_SOURCE",
+                  "-D_FORTIFY_SOURCE=0",
+                  "-ffunction-sections",
+                  "-fdata-sections",
+                  "-fno-lto",
+                  "-DITERATIONS=1000",
+                  "-DTOTAL_DATA_SIZE=2000",
+                  "-DMEM_METHOD=MEM_STATIC",
+                  "-DMULTITHREAD=1",
+                  "-DVALIDATION_RUN=1",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/libc",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/validation"
+                ]
+              },
+              "benchmark_main.c": {
+                "source": "firmware/benchmark/benchmark_main.c",
+                "flags": [
+                  "-std=gnu99",
+                  "-O2",
+                  "-march=rv32i2p0_m",
+                  "-mabi=ilp32",
+                  "-D__vexriscv__",
+                  "-g3",
+                  "-no-pie",
+                  "-fomit-frame-pointer",
+                  "-Wall",
+                  "-fno-builtin",
+                  "-fno-stack-protector",
+                  "-U_FORTIFY_SOURCE",
+                  "-D_FORTIFY_SOURCE=0",
+                  "-ffunction-sections",
+                  "-fdata-sections",
+                  "-fno-lto",
+                  "-DITERATIONS=1000",
+                  "-DTOTAL_DATA_SIZE=2000",
+                  "-DMEM_METHOD=MEM_STATIC",
+                  "-DMULTITHREAD=1",
+                  "-DVALIDATION_RUN=1",
+                  "-Os",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/libc",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/validation"
+                ]
+              },
+              "ee_printf.c": {
+                "source": "firmware/benchmark/ee_printf.c",
+                "flags": [
+                  "-std=gnu99",
+                  "-O2",
+                  "-march=rv32i2p0_m",
+                  "-mabi=ilp32",
+                  "-D__vexriscv__",
+                  "-g3",
+                  "-no-pie",
+                  "-fomit-frame-pointer",
+                  "-Wall",
+                  "-fno-builtin",
+                  "-fno-stack-protector",
+                  "-U_FORTIFY_SOURCE",
+                  "-D_FORTIFY_SOURCE=0",
+                  "-ffunction-sections",
+                  "-fdata-sections",
+                  "-fno-lto",
+                  "-DITERATIONS=1000",
+                  "-DTOTAL_DATA_SIZE=2000",
+                  "-DMEM_METHOD=MEM_STATIC",
+                  "-DMULTITHREAD=1",
+                  "-DVALIDATION_RUN=1",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/libc",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/validation"
+                ]
+              },
+              "litex_uart_polling.c": {
+                "source": ".deps/litex/litex/soc/software/libbase/uart.c",
+                "flags": [
+                  "-std=gnu99",
+                  "-O2",
+                  "-march=rv32i2p0_m",
+                  "-mabi=ilp32",
+                  "-D__vexriscv__",
+                  "-g3",
+                  "-no-pie",
+                  "-fomit-frame-pointer",
+                  "-Wall",
+                  "-fno-builtin",
+                  "-fno-stack-protector",
+                  "-U_FORTIFY_SOURCE",
+                  "-D_FORTIFY_SOURCE=0",
+                  "-ffunction-sections",
+                  "-fdata-sections",
+                  "-fno-lto",
+                  "-DITERATIONS=1000",
+                  "-DTOTAL_DATA_SIZE=2000",
+                  "-DMEM_METHOD=MEM_STATIC",
+                  "-DMULTITHREAD=1",
+                  "-DVALIDATION_RUN=1",
+                  "-DUART_POLLING",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/libc",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/validation"
+                ]
+              }
+            },
+            "link_flags": [
+              "-nostdlib",
+              "-nodefaultlibs",
+              "-Wl,--no-dynamic-linker",
+              "-Wl,--build-id=none",
+              "-std=gnu99",
+              "-O2",
+              "-march=rv32i2p0_m",
+              "-mabi=ilp32",
+              "-D__vexriscv__",
+              "-g3",
+              "-no-pie",
+              "-fomit-frame-pointer",
+              "-Wall",
+              "-fno-builtin",
+              "-fno-stack-protector",
+              "-U_FORTIFY_SOURCE",
+              "-D_FORTIFY_SOURCE=0",
+              "-ffunction-sections",
+              "-fdata-sections",
+              "-fno-lto",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/libc",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/validation",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/include",
+              "-T",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/linker.ld",
+              "-N",
+              "-o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/validation/benchmark.elf",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/firmware/crt0.o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/validation/obj/core_list_join.o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/validation/obj/core_main.o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/validation/obj/core_matrix.o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/validation/obj/core_state.o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/validation/obj/core_util.o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/validation/obj/core_portme.o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/validation/obj/benchmark_main.o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/validation/obj/ee_printf.o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/validation/obj/litex_uart_polling.o",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/libc",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/libcompiler_rt",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/libbase",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/libfatfs",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/liblitespi",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/liblitedram",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/libliteeth",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/liblitesdcard",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/liblitesata",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/software/bios",
+              "-Wl,--start-group",
+              "-lc",
+              "-lcompiler_rt",
+              "-lbase",
+              "-lfatfs",
+              "-llitespi",
+              "-llitedram",
+              "-lliteeth",
+              "-llitesdcard",
+              "-llitesata",
+              "-lgcc",
+              "-Wl,--end-group",
+              "-Wl,--gc-sections",
+              "-Wl,-Map,/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic/soc/benchmark/validation/benchmark.elf.map"
+            ]
+          }
+        }
+      },
+      "resources_and_timing": {
+        "profile": "standard",
+        "memory_mode": "onchip",
+        "device": "GW2A-LV18PG256C8/I7",
+        "resources": {
+          "logic": {
+            "used": 4150,
+            "capacity": 20736
+          },
+          "lut": {
+            "used": 3540,
+            "source": "docs/performance/cpu-evaluation/candidates/dynamic/project.rpt.txt"
+          },
+          "alu": {
+            "used": 490,
+            "source": "docs/performance/cpu-evaluation/candidates/dynamic/project.rpt.txt"
+          },
+          "registers": {
+            "used": 1943,
+            "capacity": 16173
+          },
+          "bsram": {
+            "used": 46,
+            "capacity": 46
+          },
+          "dsp": {
+            "used": null,
+            "status": "unavailable",
+            "detail": "Gowin synthesis resource report lists '-' for DSP NUMBER",
+            "source": "docs/performance/cpu-evaluation/candidates/dynamic/project_syn_resource.html"
+          }
+        },
+        "timing": {
+          "constraint_mhz": 48.0,
+          "actual_fmax_mhz": 64.151,
+          "worst_setup_slack_ns": 5.245,
+          "worst_hold_slack_ns": 0.321,
+          "worst_recovery_slack_ns": 16.137,
+          "worst_removal_slack_ns": 2.372,
+          "setup_violated_endpoints": 0,
+          "analyzed_paths": 12447,
+          "analyzed_endpoints": 6364,
+          "no_timing_path_messages": [
+            "No timing paths to get frequency of rPLL/CLKOUTP.default_gen_clk!",
+            "No timing paths to get frequency of rPLL/CLKOUTD.default_gen_clk!",
+            "No timing paths to get frequency of rPLL/CLKOUTD3.default_gen_clk!"
+          ],
+          "generated_clocks": {
+            "sys_clk": {
+              "period_ns": 20.833,
+              "target_mhz": 48.0,
+              "frequency_mhz": 48.0
+            },
+            "rPLL/CLKOUTP.default_gen_clk": {
+              "period_ns": 20.833,
+              "target_mhz": 48.0,
+              "frequency_mhz": 48.0
+            },
+            "rPLL/CLKOUTD.default_gen_clk": {
+              "period_ns": 41.667,
+              "target_mhz": 24.0,
+              "frequency_mhz": 24.0
+            },
+            "rPLL/CLKOUTD3.default_gen_clk": {
+              "period_ns": 62.5,
+              "target_mhz": 16.0,
+              "frequency_mhz": 16.0
+            }
+          }
+        },
+        "evidence": {
+          "pnr_resource_report": "docs/performance/cpu-evaluation/candidates/dynamic/project.rpt.txt",
+          "timing_report": "docs/performance/cpu-evaluation/candidates/dynamic/project.tr",
+          "synthesis_resource_report": "docs/performance/cpu-evaluation/candidates/dynamic/project_syn_resource.html"
+        },
+        "cpu_candidate": "dynamic"
+      },
+      "evidence": {
+        "generator_manifest": "docs/performance/cpu-evaluation/candidates/dynamic/candidate.json",
+        "generation_log": "docs/performance/cpu-evaluation/candidates/dynamic/generator.log",
+        "build_metadata": "docs/performance/cpu-evaluation/candidates/dynamic/build-metadata.json",
+        "pnr_resource_report": "docs/performance/cpu-evaluation/candidates/dynamic/project.rpt.txt",
+        "timing_report": "docs/performance/cpu-evaluation/candidates/dynamic/project.tr",
+        "synthesis_resource_report": "docs/performance/cpu-evaluation/candidates/dynamic/project_syn_resource.html"
+      }
+    },
+    "dynamic_target": {
+      "candidate": "dynamic_target",
+      "status": "ready_for_board_measurement",
+      "reason": null,
+      "rtl_sha256": "771f520fcf3ff8f66cd168eaea84bc5924b39fa0e470cd5b1e35640a4809c252",
+      "generator_manifest": "docs/performance/cpu-evaluation/candidates/dynamic_target/candidate.json",
+      "build_metadata": "docs/performance/cpu-evaluation/candidates/dynamic_target/build-metadata.json",
+      "benchmark_firmware": {
+        "status": "passed",
+        "build_id": "c1f14f3b4fe932c1",
+        "bitstream_sha256": "0396035499bbc97c980c62f348305405fbed4234f305ec7cb0ccb95033be030c",
+        "clock_hz": 48000000,
+        "memory": {
+          "mode": "onchip",
+          "main_ram_base": "0x40000000",
+          "main_ram_bytes": 32768,
+          "ddr_physical_bytes": 0,
+          "l2_cache_bytes": 0,
+          "ddr_ck_hz": null,
+          "uncached_alias_base": null,
+          "diagnostic_ram": null,
+          "code_and_read_only_data": "main_ram",
+          "algorithm_data_bss_and_reserved_stack": "sram",
+          "sram_base": "0x10000000",
+          "sram_bytes": 8192
+        },
+        "images": {
+          "performance": {
+            "profile": "standard",
+            "mode": "performance",
+            "build_id": "c1f14f3b4fe932c1",
+            "elf": "build/cpu-candidates/dynamic_target/soc/benchmark/performance/benchmark.elf",
+            "elf_sha256": "7ac0ed4d69fe75dd273effce0d7f8620608c1a113909b1aa2f732d8a20dfd601",
+            "map": "build/cpu-candidates/dynamic_target/soc/benchmark/performance/benchmark.elf.map",
+            "binary": "build/cpu-candidates/dynamic_target/soc/benchmark/performance/benchmark.bin",
+            "binary_sha256": "ae5817430ffd99d654525ca5f28451a116199d2eb3afd5f726f0f1b9643bdcb1",
+            "binary_crc32": "050c4e0e",
+            "binary_bytes": 28376,
+            "working_sram_bytes": 2592,
+            "sram_section_bytes": 2592,
+            "sram_alignment_padding_bytes": 0,
+            "sram_boundaries": {
+              "_fdata": 268435456,
+              "_end": 268438048,
+              "_stack_bottom": 268441600,
+              "_stack_top": 268443648
+            },
+            "reserved_stack_bytes": 2048,
+            "remaining_sram_bytes": 3552,
+            "main_ram_capacity_bytes": 32768,
+            "sections": {
+              "NULL": {
+                "type": "00000000",
+                "size": 0
+              },
+              ".text": {
+                "type": "PROGBITS",
+                "size": 22328
+              },
+              ".rodata": {
+                "type": "PROGBITS",
+                "size": 6016
+              },
+              ".preinit_array": {
+                "type": "PREINIT_ARRAY",
+                "size": 0
+              },
+              ".init_array": {
+                "type": "INIT_ARRAY",
+                "size": 0
+              },
+              ".fini_array": {
+                "type": "FINI_ARRAY",
+                "size": 0
+              },
+              ".data": {
+                "type": "PROGBITS",
+                "size": 32
+              },
+              ".bss": {
+                "type": "NOBITS",
+                "size": 2560
+              },
+              ".stack": {
+                "type": "NOBITS",
+                "size": 2048
+              },
+              ".riscv.attributes": {
+                "type": "RISCV_ATTRIBUTES",
+                "size": 67
+              },
+              ".comment": {
+                "type": "PROGBITS",
+                "size": 51
+              },
+              ".debug_line": {
+                "type": "PROGBITS",
+                "size": 48930
+              },
+              ".debug_line_str": {
+                "type": "PROGBITS",
+                "size": 5549
+              },
+              ".debug_info": {
+                "type": "PROGBITS",
+                "size": 34252
+              },
+              ".debug_abbrev": {
+                "type": "PROGBITS",
+                "size": 9670
+              },
+              ".debug_aranges": {
+                "type": "PROGBITS",
+                "size": 1080
+              },
+              ".debug_str": {
+                "type": "PROGBITS",
+                "size": 70313
+              },
+              ".debug_loclists": {
+                "type": "PROGBITS",
+                "size": 39062
+              },
+              ".debug_rnglists": {
+                "type": "PROGBITS",
+                "size": 3133
+              },
+              ".debug_macro": {
+                "type": "PROGBITS",
+                "size": 36352
+              },
+              ".debug_frame": {
+                "type": "PROGBITS",
+                "size": 1836
+              },
+              ".symtab": {
+                "type": "SYMTAB",
+                "size": 3568
+              },
+              ".strtab": {
+                "type": "STRTAB",
+                "size": 1685
+              },
+              ".shstrtab": {
+                "type": "STRTAB",
+                "size": 263
+              }
+            },
+            "stack_usage": {
+              "largest_static_frame_bytes": 1152,
+              "reported_function_frames": 55,
+              "top_frames": [
+                {
+                  "function": "ee_printf",
+                  "bytes": 1152,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic_target/soc/benchmark/performance/obj/ee_printf.su"
+                },
+                {
+                  "function": "coremark_main",
+                  "bytes": 144,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic_target/soc/benchmark/performance/obj/core_main.su"
+                },
+                {
+                  "function": "main",
+                  "bytes": 128,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic_target/soc/benchmark/performance/obj/benchmark_main.su"
+                },
+                {
+                  "function": "core_bench_state",
+                  "bytes": 128,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic_target/soc/benchmark/performance/obj/core_state.su"
+                },
+                {
+                  "function": "number",
+                  "bytes": 96,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic_target/soc/benchmark/performance/obj/ee_printf.su"
+                },
+                {
+                  "function": "verify_loaded_image",
+                  "bytes": 64,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic_target/soc/benchmark/performance/obj/benchmark_main.su"
+                },
+                {
+                  "function": "core_list_mergesort",
+                  "bytes": 48,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic_target/soc/benchmark/performance/obj/core_list_join.su"
+                },
+                {
+                  "function": "core_bench_list",
+                  "bytes": 48,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic_target/soc/benchmark/performance/obj/core_list_join.su"
+                },
+                {
+                  "function": "matrix_test",
+                  "bytes": 48,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic_target/soc/benchmark/performance/obj/core_matrix.su"
+                },
+                {
+                  "function": "verify_runtime_seeds",
+                  "bytes": 32,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic_target/soc/benchmark/performance/obj/benchmark_main.su"
+                },
+                {
+                  "function": "calc_func",
+                  "bytes": 32,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic_target/soc/benchmark/performance/obj/core_list_join.su"
+                },
+                {
+                  "function": "cmp_complex",
+                  "bytes": 32,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic_target/soc/benchmark/performance/obj/core_list_join.su"
+                }
+              ],
+              "interpretation": "GCC per-function static frames; the firmware reserves 2048 stack bytes. The report is not a runtime stack high-water measurement."
+            },
+            "stack_usage_reports": [
+              "build/cpu-candidates/dynamic_target/soc/benchmark/performance/obj/benchmark_main.su",
+              "build/cpu-candidates/dynamic_target/soc/benchmark/performance/obj/core_list_join.su",
+              "build/cpu-candidates/dynamic_target/soc/benchmark/performance/obj/core_main.su",
+              "build/cpu-candidates/dynamic_target/soc/benchmark/performance/obj/core_matrix.su",
+              "build/cpu-candidates/dynamic_target/soc/benchmark/performance/obj/core_portme.su",
+              "build/cpu-candidates/dynamic_target/soc/benchmark/performance/obj/core_state.su",
+              "build/cpu-candidates/dynamic_target/soc/benchmark/performance/obj/core_util.su",
+              "build/cpu-candidates/dynamic_target/soc/benchmark/performance/obj/ee_printf.su",
+              "build/cpu-candidates/dynamic_target/soc/benchmark/performance/obj/litex_uart_polling.su"
+            ],
+            "commands": {
+              "core_list_join.c": {
+                "source": ".deps/coremark/core_list_join.c",
+                "flags": [
+                  "-std=gnu99",
+                  "-O2",
+                  "-march=rv32i2p0_m",
+                  "-mabi=ilp32",
+                  "-D__vexriscv__",
+                  "-g3",
+                  "-no-pie",
+                  "-fomit-frame-pointer",
+                  "-Wall",
+                  "-fno-builtin",
+                  "-fno-stack-protector",
+                  "-U_FORTIFY_SOURCE",
+                  "-D_FORTIFY_SOURCE=0",
+                  "-ffunction-sections",
+                  "-fdata-sections",
+                  "-fno-lto",
+                  "-DITERATIONS=1000",
+                  "-DTOTAL_DATA_SIZE=2000",
+                  "-DMEM_METHOD=MEM_STATIC",
+                  "-DMULTITHREAD=1",
+                  "-DPERFORMANCE_RUN=1",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/libc",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/performance"
+                ]
+              },
+              "core_main.c": {
+                "source": ".deps/coremark/core_main.c",
+                "flags": [
+                  "-std=gnu99",
+                  "-O2",
+                  "-march=rv32i2p0_m",
+                  "-mabi=ilp32",
+                  "-D__vexriscv__",
+                  "-g3",
+                  "-no-pie",
+                  "-fomit-frame-pointer",
+                  "-Wall",
+                  "-fno-builtin",
+                  "-fno-stack-protector",
+                  "-U_FORTIFY_SOURCE",
+                  "-D_FORTIFY_SOURCE=0",
+                  "-ffunction-sections",
+                  "-fdata-sections",
+                  "-fno-lto",
+                  "-DITERATIONS=1000",
+                  "-DTOTAL_DATA_SIZE=2000",
+                  "-DMEM_METHOD=MEM_STATIC",
+                  "-DMULTITHREAD=1",
+                  "-DPERFORMANCE_RUN=1",
+                  "-Dmain=coremark_main",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/libc",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/performance"
+                ]
+              },
+              "core_matrix.c": {
+                "source": ".deps/coremark/core_matrix.c",
+                "flags": [
+                  "-std=gnu99",
+                  "-O2",
+                  "-march=rv32i2p0_m",
+                  "-mabi=ilp32",
+                  "-D__vexriscv__",
+                  "-g3",
+                  "-no-pie",
+                  "-fomit-frame-pointer",
+                  "-Wall",
+                  "-fno-builtin",
+                  "-fno-stack-protector",
+                  "-U_FORTIFY_SOURCE",
+                  "-D_FORTIFY_SOURCE=0",
+                  "-ffunction-sections",
+                  "-fdata-sections",
+                  "-fno-lto",
+                  "-DITERATIONS=1000",
+                  "-DTOTAL_DATA_SIZE=2000",
+                  "-DMEM_METHOD=MEM_STATIC",
+                  "-DMULTITHREAD=1",
+                  "-DPERFORMANCE_RUN=1",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/libc",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/performance"
+                ]
+              },
+              "core_state.c": {
+                "source": ".deps/coremark/core_state.c",
+                "flags": [
+                  "-std=gnu99",
+                  "-O2",
+                  "-march=rv32i2p0_m",
+                  "-mabi=ilp32",
+                  "-D__vexriscv__",
+                  "-g3",
+                  "-no-pie",
+                  "-fomit-frame-pointer",
+                  "-Wall",
+                  "-fno-builtin",
+                  "-fno-stack-protector",
+                  "-U_FORTIFY_SOURCE",
+                  "-D_FORTIFY_SOURCE=0",
+                  "-ffunction-sections",
+                  "-fdata-sections",
+                  "-fno-lto",
+                  "-DITERATIONS=1000",
+                  "-DTOTAL_DATA_SIZE=2000",
+                  "-DMEM_METHOD=MEM_STATIC",
+                  "-DMULTITHREAD=1",
+                  "-DPERFORMANCE_RUN=1",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/libc",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/performance"
+                ]
+              },
+              "core_util.c": {
+                "source": ".deps/coremark/core_util.c",
+                "flags": [
+                  "-std=gnu99",
+                  "-O2",
+                  "-march=rv32i2p0_m",
+                  "-mabi=ilp32",
+                  "-D__vexriscv__",
+                  "-g3",
+                  "-no-pie",
+                  "-fomit-frame-pointer",
+                  "-Wall",
+                  "-fno-builtin",
+                  "-fno-stack-protector",
+                  "-U_FORTIFY_SOURCE",
+                  "-D_FORTIFY_SOURCE=0",
+                  "-ffunction-sections",
+                  "-fdata-sections",
+                  "-fno-lto",
+                  "-DITERATIONS=1000",
+                  "-DTOTAL_DATA_SIZE=2000",
+                  "-DMEM_METHOD=MEM_STATIC",
+                  "-DMULTITHREAD=1",
+                  "-DPERFORMANCE_RUN=1",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/libc",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/performance"
+                ]
+              },
+              "core_portme.c": {
+                "source": "firmware/benchmark/core_portme.c",
+                "flags": [
+                  "-std=gnu99",
+                  "-O2",
+                  "-march=rv32i2p0_m",
+                  "-mabi=ilp32",
+                  "-D__vexriscv__",
+                  "-g3",
+                  "-no-pie",
+                  "-fomit-frame-pointer",
+                  "-Wall",
+                  "-fno-builtin",
+                  "-fno-stack-protector",
+                  "-U_FORTIFY_SOURCE",
+                  "-D_FORTIFY_SOURCE=0",
+                  "-ffunction-sections",
+                  "-fdata-sections",
+                  "-fno-lto",
+                  "-DITERATIONS=1000",
+                  "-DTOTAL_DATA_SIZE=2000",
+                  "-DMEM_METHOD=MEM_STATIC",
+                  "-DMULTITHREAD=1",
+                  "-DPERFORMANCE_RUN=1",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/libc",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/performance"
+                ]
+              },
+              "benchmark_main.c": {
+                "source": "firmware/benchmark/benchmark_main.c",
+                "flags": [
+                  "-std=gnu99",
+                  "-O2",
+                  "-march=rv32i2p0_m",
+                  "-mabi=ilp32",
+                  "-D__vexriscv__",
+                  "-g3",
+                  "-no-pie",
+                  "-fomit-frame-pointer",
+                  "-Wall",
+                  "-fno-builtin",
+                  "-fno-stack-protector",
+                  "-U_FORTIFY_SOURCE",
+                  "-D_FORTIFY_SOURCE=0",
+                  "-ffunction-sections",
+                  "-fdata-sections",
+                  "-fno-lto",
+                  "-DITERATIONS=1000",
+                  "-DTOTAL_DATA_SIZE=2000",
+                  "-DMEM_METHOD=MEM_STATIC",
+                  "-DMULTITHREAD=1",
+                  "-DPERFORMANCE_RUN=1",
+                  "-Os",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/libc",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/performance"
+                ]
+              },
+              "ee_printf.c": {
+                "source": "firmware/benchmark/ee_printf.c",
+                "flags": [
+                  "-std=gnu99",
+                  "-O2",
+                  "-march=rv32i2p0_m",
+                  "-mabi=ilp32",
+                  "-D__vexriscv__",
+                  "-g3",
+                  "-no-pie",
+                  "-fomit-frame-pointer",
+                  "-Wall",
+                  "-fno-builtin",
+                  "-fno-stack-protector",
+                  "-U_FORTIFY_SOURCE",
+                  "-D_FORTIFY_SOURCE=0",
+                  "-ffunction-sections",
+                  "-fdata-sections",
+                  "-fno-lto",
+                  "-DITERATIONS=1000",
+                  "-DTOTAL_DATA_SIZE=2000",
+                  "-DMEM_METHOD=MEM_STATIC",
+                  "-DMULTITHREAD=1",
+                  "-DPERFORMANCE_RUN=1",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/libc",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/performance"
+                ]
+              },
+              "litex_uart_polling.c": {
+                "source": ".deps/litex/litex/soc/software/libbase/uart.c",
+                "flags": [
+                  "-std=gnu99",
+                  "-O2",
+                  "-march=rv32i2p0_m",
+                  "-mabi=ilp32",
+                  "-D__vexriscv__",
+                  "-g3",
+                  "-no-pie",
+                  "-fomit-frame-pointer",
+                  "-Wall",
+                  "-fno-builtin",
+                  "-fno-stack-protector",
+                  "-U_FORTIFY_SOURCE",
+                  "-D_FORTIFY_SOURCE=0",
+                  "-ffunction-sections",
+                  "-fdata-sections",
+                  "-fno-lto",
+                  "-DITERATIONS=1000",
+                  "-DTOTAL_DATA_SIZE=2000",
+                  "-DMEM_METHOD=MEM_STATIC",
+                  "-DMULTITHREAD=1",
+                  "-DPERFORMANCE_RUN=1",
+                  "-DUART_POLLING",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/libc",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/performance"
+                ]
+              }
+            },
+            "link_flags": [
+              "-nostdlib",
+              "-nodefaultlibs",
+              "-Wl,--no-dynamic-linker",
+              "-Wl,--build-id=none",
+              "-std=gnu99",
+              "-O2",
+              "-march=rv32i2p0_m",
+              "-mabi=ilp32",
+              "-D__vexriscv__",
+              "-g3",
+              "-no-pie",
+              "-fomit-frame-pointer",
+              "-Wall",
+              "-fno-builtin",
+              "-fno-stack-protector",
+              "-U_FORTIFY_SOURCE",
+              "-D_FORTIFY_SOURCE=0",
+              "-ffunction-sections",
+              "-fdata-sections",
+              "-fno-lto",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/libc",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/performance",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/include",
+              "-T",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/linker.ld",
+              "-N",
+              "-o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/performance/benchmark.elf",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/firmware/crt0.o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/performance/obj/core_list_join.o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/performance/obj/core_main.o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/performance/obj/core_matrix.o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/performance/obj/core_state.o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/performance/obj/core_util.o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/performance/obj/core_portme.o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/performance/obj/benchmark_main.o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/performance/obj/ee_printf.o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/performance/obj/litex_uart_polling.o",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/libc",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/libcompiler_rt",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/libbase",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/libfatfs",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/liblitespi",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/liblitedram",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/libliteeth",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/liblitesdcard",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/liblitesata",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/bios",
+              "-Wl,--start-group",
+              "-lc",
+              "-lcompiler_rt",
+              "-lbase",
+              "-lfatfs",
+              "-llitespi",
+              "-llitedram",
+              "-lliteeth",
+              "-llitesdcard",
+              "-llitesata",
+              "-lgcc",
+              "-Wl,--end-group",
+              "-Wl,--gc-sections",
+              "-Wl,-Map,/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/performance/benchmark.elf.map"
+            ]
+          },
+          "validation": {
+            "profile": "standard",
+            "mode": "validation",
+            "build_id": "c1f14f3b4fe932c1",
+            "elf": "build/cpu-candidates/dynamic_target/soc/benchmark/validation/benchmark.elf",
+            "elf_sha256": "bc8037e884850b2532ccc0a628dd9e1fb4e9cfcdd3b698f4ffe6d99b0314fe1f",
+            "map": "build/cpu-candidates/dynamic_target/soc/benchmark/validation/benchmark.elf.map",
+            "binary": "build/cpu-candidates/dynamic_target/soc/benchmark/validation/benchmark.bin",
+            "binary_sha256": "81d1af186aadc457112de9ae30aab03b8eebd230875c15a3e29e329b16ce7bae",
+            "binary_crc32": "dbe08d38",
+            "binary_bytes": 28400,
+            "working_sram_bytes": 2624,
+            "sram_section_bytes": 2600,
+            "sram_alignment_padding_bytes": 24,
+            "sram_boundaries": {
+              "_fdata": 268435456,
+              "_end": 268438080,
+              "_stack_bottom": 268441600,
+              "_stack_top": 268443648
+            },
+            "reserved_stack_bytes": 2048,
+            "remaining_sram_bytes": 3520,
+            "main_ram_capacity_bytes": 32768,
+            "sections": {
+              "NULL": {
+                "type": "00000000",
+                "size": 0
+              },
+              ".text": {
+                "type": "PROGBITS",
+                "size": 22348
+              },
+              ".rodata": {
+                "type": "PROGBITS",
+                "size": 6012
+              },
+              ".preinit_array": {
+                "type": "PREINIT_ARRAY",
+                "size": 0
+              },
+              ".init_array": {
+                "type": "INIT_ARRAY",
+                "size": 0
+              },
+              ".fini_array": {
+                "type": "FINI_ARRAY",
+                "size": 0
+              },
+              ".data": {
+                "type": "PROGBITS",
+                "size": 40
+              },
+              ".bss": {
+                "type": "NOBITS",
+                "size": 2560
+              },
+              ".stack": {
+                "type": "NOBITS",
+                "size": 2048
+              },
+              ".riscv.attributes": {
+                "type": "RISCV_ATTRIBUTES",
+                "size": 67
+              },
+              ".comment": {
+                "type": "PROGBITS",
+                "size": 51
+              },
+              ".debug_line": {
+                "type": "PROGBITS",
+                "size": 48930
+              },
+              ".debug_line_str": {
+                "type": "PROGBITS",
+                "size": 5548
+              },
+              ".debug_info": {
+                "type": "PROGBITS",
+                "size": 34260
+              },
+              ".debug_abbrev": {
+                "type": "PROGBITS",
+                "size": 9670
+              },
+              ".debug_aranges": {
+                "type": "PROGBITS",
+                "size": 1080
+              },
+              ".debug_str": {
+                "type": "PROGBITS",
+                "size": 70318
+              },
+              ".debug_loclists": {
+                "type": "PROGBITS",
+                "size": 39050
+              },
+              ".debug_rnglists": {
+                "type": "PROGBITS",
+                "size": 3133
+              },
+              ".debug_macro": {
+                "type": "PROGBITS",
+                "size": 36352
+              },
+              ".debug_frame": {
+                "type": "PROGBITS",
+                "size": 1836
+              },
+              ".symtab": {
+                "type": "SYMTAB",
+                "size": 3568
+              },
+              ".strtab": {
+                "type": "STRTAB",
+                "size": 1685
+              },
+              ".shstrtab": {
+                "type": "STRTAB",
+                "size": 263
+              }
+            },
+            "stack_usage": {
+              "largest_static_frame_bytes": 1152,
+              "reported_function_frames": 55,
+              "top_frames": [
+                {
+                  "function": "ee_printf",
+                  "bytes": 1152,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic_target/soc/benchmark/validation/obj/ee_printf.su"
+                },
+                {
+                  "function": "coremark_main",
+                  "bytes": 144,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic_target/soc/benchmark/validation/obj/core_main.su"
+                },
+                {
+                  "function": "main",
+                  "bytes": 128,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic_target/soc/benchmark/validation/obj/benchmark_main.su"
+                },
+                {
+                  "function": "core_bench_state",
+                  "bytes": 128,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic_target/soc/benchmark/validation/obj/core_state.su"
+                },
+                {
+                  "function": "number",
+                  "bytes": 96,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic_target/soc/benchmark/validation/obj/ee_printf.su"
+                },
+                {
+                  "function": "verify_loaded_image",
+                  "bytes": 64,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic_target/soc/benchmark/validation/obj/benchmark_main.su"
+                },
+                {
+                  "function": "core_list_mergesort",
+                  "bytes": 48,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic_target/soc/benchmark/validation/obj/core_list_join.su"
+                },
+                {
+                  "function": "core_bench_list",
+                  "bytes": 48,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic_target/soc/benchmark/validation/obj/core_list_join.su"
+                },
+                {
+                  "function": "matrix_test",
+                  "bytes": 48,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic_target/soc/benchmark/validation/obj/core_matrix.su"
+                },
+                {
+                  "function": "verify_runtime_seeds",
+                  "bytes": 32,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic_target/soc/benchmark/validation/obj/benchmark_main.su"
+                },
+                {
+                  "function": "calc_func",
+                  "bytes": 32,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic_target/soc/benchmark/validation/obj/core_list_join.su"
+                },
+                {
+                  "function": "cmp_complex",
+                  "bytes": 32,
+                  "classification": "static",
+                  "source": "build/cpu-candidates/dynamic_target/soc/benchmark/validation/obj/core_list_join.su"
+                }
+              ],
+              "interpretation": "GCC per-function static frames; the firmware reserves 2048 stack bytes. The report is not a runtime stack high-water measurement."
+            },
+            "stack_usage_reports": [
+              "build/cpu-candidates/dynamic_target/soc/benchmark/validation/obj/benchmark_main.su",
+              "build/cpu-candidates/dynamic_target/soc/benchmark/validation/obj/core_list_join.su",
+              "build/cpu-candidates/dynamic_target/soc/benchmark/validation/obj/core_main.su",
+              "build/cpu-candidates/dynamic_target/soc/benchmark/validation/obj/core_matrix.su",
+              "build/cpu-candidates/dynamic_target/soc/benchmark/validation/obj/core_portme.su",
+              "build/cpu-candidates/dynamic_target/soc/benchmark/validation/obj/core_state.su",
+              "build/cpu-candidates/dynamic_target/soc/benchmark/validation/obj/core_util.su",
+              "build/cpu-candidates/dynamic_target/soc/benchmark/validation/obj/ee_printf.su",
+              "build/cpu-candidates/dynamic_target/soc/benchmark/validation/obj/litex_uart_polling.su"
+            ],
+            "commands": {
+              "core_list_join.c": {
+                "source": ".deps/coremark/core_list_join.c",
+                "flags": [
+                  "-std=gnu99",
+                  "-O2",
+                  "-march=rv32i2p0_m",
+                  "-mabi=ilp32",
+                  "-D__vexriscv__",
+                  "-g3",
+                  "-no-pie",
+                  "-fomit-frame-pointer",
+                  "-Wall",
+                  "-fno-builtin",
+                  "-fno-stack-protector",
+                  "-U_FORTIFY_SOURCE",
+                  "-D_FORTIFY_SOURCE=0",
+                  "-ffunction-sections",
+                  "-fdata-sections",
+                  "-fno-lto",
+                  "-DITERATIONS=1000",
+                  "-DTOTAL_DATA_SIZE=2000",
+                  "-DMEM_METHOD=MEM_STATIC",
+                  "-DMULTITHREAD=1",
+                  "-DVALIDATION_RUN=1",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/libc",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/validation"
+                ]
+              },
+              "core_main.c": {
+                "source": ".deps/coremark/core_main.c",
+                "flags": [
+                  "-std=gnu99",
+                  "-O2",
+                  "-march=rv32i2p0_m",
+                  "-mabi=ilp32",
+                  "-D__vexriscv__",
+                  "-g3",
+                  "-no-pie",
+                  "-fomit-frame-pointer",
+                  "-Wall",
+                  "-fno-builtin",
+                  "-fno-stack-protector",
+                  "-U_FORTIFY_SOURCE",
+                  "-D_FORTIFY_SOURCE=0",
+                  "-ffunction-sections",
+                  "-fdata-sections",
+                  "-fno-lto",
+                  "-DITERATIONS=1000",
+                  "-DTOTAL_DATA_SIZE=2000",
+                  "-DMEM_METHOD=MEM_STATIC",
+                  "-DMULTITHREAD=1",
+                  "-DVALIDATION_RUN=1",
+                  "-Dmain=coremark_main",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/libc",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/validation"
+                ]
+              },
+              "core_matrix.c": {
+                "source": ".deps/coremark/core_matrix.c",
+                "flags": [
+                  "-std=gnu99",
+                  "-O2",
+                  "-march=rv32i2p0_m",
+                  "-mabi=ilp32",
+                  "-D__vexriscv__",
+                  "-g3",
+                  "-no-pie",
+                  "-fomit-frame-pointer",
+                  "-Wall",
+                  "-fno-builtin",
+                  "-fno-stack-protector",
+                  "-U_FORTIFY_SOURCE",
+                  "-D_FORTIFY_SOURCE=0",
+                  "-ffunction-sections",
+                  "-fdata-sections",
+                  "-fno-lto",
+                  "-DITERATIONS=1000",
+                  "-DTOTAL_DATA_SIZE=2000",
+                  "-DMEM_METHOD=MEM_STATIC",
+                  "-DMULTITHREAD=1",
+                  "-DVALIDATION_RUN=1",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/libc",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/validation"
+                ]
+              },
+              "core_state.c": {
+                "source": ".deps/coremark/core_state.c",
+                "flags": [
+                  "-std=gnu99",
+                  "-O2",
+                  "-march=rv32i2p0_m",
+                  "-mabi=ilp32",
+                  "-D__vexriscv__",
+                  "-g3",
+                  "-no-pie",
+                  "-fomit-frame-pointer",
+                  "-Wall",
+                  "-fno-builtin",
+                  "-fno-stack-protector",
+                  "-U_FORTIFY_SOURCE",
+                  "-D_FORTIFY_SOURCE=0",
+                  "-ffunction-sections",
+                  "-fdata-sections",
+                  "-fno-lto",
+                  "-DITERATIONS=1000",
+                  "-DTOTAL_DATA_SIZE=2000",
+                  "-DMEM_METHOD=MEM_STATIC",
+                  "-DMULTITHREAD=1",
+                  "-DVALIDATION_RUN=1",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/libc",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/validation"
+                ]
+              },
+              "core_util.c": {
+                "source": ".deps/coremark/core_util.c",
+                "flags": [
+                  "-std=gnu99",
+                  "-O2",
+                  "-march=rv32i2p0_m",
+                  "-mabi=ilp32",
+                  "-D__vexriscv__",
+                  "-g3",
+                  "-no-pie",
+                  "-fomit-frame-pointer",
+                  "-Wall",
+                  "-fno-builtin",
+                  "-fno-stack-protector",
+                  "-U_FORTIFY_SOURCE",
+                  "-D_FORTIFY_SOURCE=0",
+                  "-ffunction-sections",
+                  "-fdata-sections",
+                  "-fno-lto",
+                  "-DITERATIONS=1000",
+                  "-DTOTAL_DATA_SIZE=2000",
+                  "-DMEM_METHOD=MEM_STATIC",
+                  "-DMULTITHREAD=1",
+                  "-DVALIDATION_RUN=1",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/libc",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/validation"
+                ]
+              },
+              "core_portme.c": {
+                "source": "firmware/benchmark/core_portme.c",
+                "flags": [
+                  "-std=gnu99",
+                  "-O2",
+                  "-march=rv32i2p0_m",
+                  "-mabi=ilp32",
+                  "-D__vexriscv__",
+                  "-g3",
+                  "-no-pie",
+                  "-fomit-frame-pointer",
+                  "-Wall",
+                  "-fno-builtin",
+                  "-fno-stack-protector",
+                  "-U_FORTIFY_SOURCE",
+                  "-D_FORTIFY_SOURCE=0",
+                  "-ffunction-sections",
+                  "-fdata-sections",
+                  "-fno-lto",
+                  "-DITERATIONS=1000",
+                  "-DTOTAL_DATA_SIZE=2000",
+                  "-DMEM_METHOD=MEM_STATIC",
+                  "-DMULTITHREAD=1",
+                  "-DVALIDATION_RUN=1",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/libc",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/validation"
+                ]
+              },
+              "benchmark_main.c": {
+                "source": "firmware/benchmark/benchmark_main.c",
+                "flags": [
+                  "-std=gnu99",
+                  "-O2",
+                  "-march=rv32i2p0_m",
+                  "-mabi=ilp32",
+                  "-D__vexriscv__",
+                  "-g3",
+                  "-no-pie",
+                  "-fomit-frame-pointer",
+                  "-Wall",
+                  "-fno-builtin",
+                  "-fno-stack-protector",
+                  "-U_FORTIFY_SOURCE",
+                  "-D_FORTIFY_SOURCE=0",
+                  "-ffunction-sections",
+                  "-fdata-sections",
+                  "-fno-lto",
+                  "-DITERATIONS=1000",
+                  "-DTOTAL_DATA_SIZE=2000",
+                  "-DMEM_METHOD=MEM_STATIC",
+                  "-DMULTITHREAD=1",
+                  "-DVALIDATION_RUN=1",
+                  "-Os",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/libc",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/validation"
+                ]
+              },
+              "ee_printf.c": {
+                "source": "firmware/benchmark/ee_printf.c",
+                "flags": [
+                  "-std=gnu99",
+                  "-O2",
+                  "-march=rv32i2p0_m",
+                  "-mabi=ilp32",
+                  "-D__vexriscv__",
+                  "-g3",
+                  "-no-pie",
+                  "-fomit-frame-pointer",
+                  "-Wall",
+                  "-fno-builtin",
+                  "-fno-stack-protector",
+                  "-U_FORTIFY_SOURCE",
+                  "-D_FORTIFY_SOURCE=0",
+                  "-ffunction-sections",
+                  "-fdata-sections",
+                  "-fno-lto",
+                  "-DITERATIONS=1000",
+                  "-DTOTAL_DATA_SIZE=2000",
+                  "-DMEM_METHOD=MEM_STATIC",
+                  "-DMULTITHREAD=1",
+                  "-DVALIDATION_RUN=1",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/libc",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/validation"
+                ]
+              },
+              "litex_uart_polling.c": {
+                "source": ".deps/litex/litex/soc/software/libbase/uart.c",
+                "flags": [
+                  "-std=gnu99",
+                  "-O2",
+                  "-march=rv32i2p0_m",
+                  "-mabi=ilp32",
+                  "-D__vexriscv__",
+                  "-g3",
+                  "-no-pie",
+                  "-fomit-frame-pointer",
+                  "-Wall",
+                  "-fno-builtin",
+                  "-fno-stack-protector",
+                  "-U_FORTIFY_SOURCE",
+                  "-D_FORTIFY_SOURCE=0",
+                  "-ffunction-sections",
+                  "-fdata-sections",
+                  "-fno-lto",
+                  "-DITERATIONS=1000",
+                  "-DTOTAL_DATA_SIZE=2000",
+                  "-DMEM_METHOD=MEM_STATIC",
+                  "-DMULTITHREAD=1",
+                  "-DVALIDATION_RUN=1",
+                  "-DUART_POLLING",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/libc",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+                  "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/validation"
+                ]
+              }
+            },
+            "link_flags": [
+              "-nostdlib",
+              "-nodefaultlibs",
+              "-Wl,--no-dynamic-linker",
+              "-Wl,--build-id=none",
+              "-std=gnu99",
+              "-O2",
+              "-march=rv32i2p0_m",
+              "-mabi=ilp32",
+              "-D__vexriscv__",
+              "-g3",
+              "-no-pie",
+              "-fomit-frame-pointer",
+              "-Wall",
+              "-fno-builtin",
+              "-fno-stack-protector",
+              "-U_FORTIFY_SOURCE",
+              "-D_FORTIFY_SOURCE=0",
+              "-ffunction-sections",
+              "-fdata-sections",
+              "-fno-lto",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/libc",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/validation",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/include",
+              "-T",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/linker.ld",
+              "-N",
+              "-o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/validation/benchmark.elf",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/firmware/crt0.o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/validation/obj/core_list_join.o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/validation/obj/core_main.o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/validation/obj/core_matrix.o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/validation/obj/core_state.o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/validation/obj/core_util.o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/validation/obj/core_portme.o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/validation/obj/benchmark_main.o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/validation/obj/ee_printf.o",
+              "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/validation/obj/litex_uart_polling.o",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/libc",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/libcompiler_rt",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/libbase",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/libfatfs",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/liblitespi",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/liblitedram",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/libliteeth",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/liblitesdcard",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/liblitesata",
+              "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/software/bios",
+              "-Wl,--start-group",
+              "-lc",
+              "-lcompiler_rt",
+              "-lbase",
+              "-lfatfs",
+              "-llitespi",
+              "-llitedram",
+              "-lliteeth",
+              "-llitesdcard",
+              "-llitesata",
+              "-lgcc",
+              "-Wl,--end-group",
+              "-Wl,--gc-sections",
+              "-Wl,-Map,/home/user/git/fpga/sipeedtangprimer20k-riscv/build/cpu-candidates/dynamic_target/soc/benchmark/validation/benchmark.elf.map"
+            ]
+          }
+        }
+      },
+      "resources_and_timing": {
+        "profile": "standard",
+        "memory_mode": "onchip",
+        "device": "GW2A-LV18PG256C8/I7",
+        "resources": {
+          "logic": {
+            "used": 4681,
+            "capacity": 20736
+          },
+          "lut": {
+            "used": 3656,
+            "source": "docs/performance/cpu-evaluation/candidates/dynamic_target/project.rpt.txt"
+          },
+          "alu": {
+            "used": 521,
+            "source": "docs/performance/cpu-evaluation/candidates/dynamic_target/project.rpt.txt"
+          },
+          "registers": {
+            "used": 2060,
+            "capacity": 16173
+          },
+          "bsram": {
+            "used": 46,
+            "capacity": 46
+          },
+          "dsp": {
+            "used": null,
+            "status": "unavailable",
+            "detail": "Gowin synthesis resource report lists '-' for DSP NUMBER",
+            "source": "docs/performance/cpu-evaluation/candidates/dynamic_target/project_syn_resource.html"
+          }
+        },
+        "timing": {
+          "constraint_mhz": 48.0,
+          "actual_fmax_mhz": 64.482,
+          "worst_setup_slack_ns": 5.325,
+          "worst_hold_slack_ns": 0.227,
+          "worst_recovery_slack_ns": 18.844,
+          "worst_removal_slack_ns": 1.158,
+          "setup_violated_endpoints": 0,
+          "analyzed_paths": 14055,
+          "analyzed_endpoints": 7134,
+          "no_timing_path_messages": [
+            "No timing paths to get frequency of rPLL/CLKOUTP.default_gen_clk!",
+            "No timing paths to get frequency of rPLL/CLKOUTD.default_gen_clk!",
+            "No timing paths to get frequency of rPLL/CLKOUTD3.default_gen_clk!"
+          ],
+          "generated_clocks": {
+            "sys_clk": {
+              "period_ns": 20.833,
+              "target_mhz": 48.0,
+              "frequency_mhz": 48.0
+            },
+            "rPLL/CLKOUTP.default_gen_clk": {
+              "period_ns": 20.833,
+              "target_mhz": 48.0,
+              "frequency_mhz": 48.0
+            },
+            "rPLL/CLKOUTD.default_gen_clk": {
+              "period_ns": 41.667,
+              "target_mhz": 24.0,
+              "frequency_mhz": 24.0
+            },
+            "rPLL/CLKOUTD3.default_gen_clk": {
+              "period_ns": 62.5,
+              "target_mhz": 16.0,
+              "frequency_mhz": 16.0
+            }
+          }
+        },
+        "evidence": {
+          "pnr_resource_report": "docs/performance/cpu-evaluation/candidates/dynamic_target/project.rpt.txt",
+          "timing_report": "docs/performance/cpu-evaluation/candidates/dynamic_target/project.tr",
+          "synthesis_resource_report": "docs/performance/cpu-evaluation/candidates/dynamic_target/project_syn_resource.html"
+        },
+        "cpu_candidate": "dynamic_target"
+      },
+      "evidence": {
+        "generator_manifest": "docs/performance/cpu-evaluation/candidates/dynamic_target/candidate.json",
+        "generation_log": "docs/performance/cpu-evaluation/candidates/dynamic_target/generator.log",
+        "build_metadata": "docs/performance/cpu-evaluation/candidates/dynamic_target/build-metadata.json",
+        "pnr_resource_report": "docs/performance/cpu-evaluation/candidates/dynamic_target/project.rpt.txt",
+        "timing_report": "docs/performance/cpu-evaluation/candidates/dynamic_target/project.tr",
+        "synthesis_resource_report": "docs/performance/cpu-evaluation/candidates/dynamic_target/project_syn_resource.html"
+      }
+    }
+  }
+}

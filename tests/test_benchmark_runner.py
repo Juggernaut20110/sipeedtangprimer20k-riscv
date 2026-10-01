@@ -1,12 +1,15 @@
 import io
 import sys
 import time
+import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
-from benchmark_run import RecordingPort, SerialOwner  # noqa: E402
+from benchmark_run import RecordingPort, SerialOwner, clear_uart_input_buffer  # noqa: E402
+import benchmark_run as runner  # noqa: E402
 from litex.tools.litex_term import LiteXTerm  # noqa: E402
 
 
@@ -31,6 +34,62 @@ class FakeTerm:
 
 
 class BenchmarkRunnerTests(unittest.TestCase):
+    def test_all_profiles_run_sequentially_and_accept_upper_or_lower_case(self):
+        for selection in ("ALL", "all"):
+            with self.subTest(selection=selection), patch.object(runner, "run_profile", return_value=0) as run, patch("sys.stdout", io.StringIO()):
+                self.assertEqual(runner.main([selection, "/dev/test-dock"]), 0)
+                calls = run.call_args_list
+                self.assertEqual([call.args[0] for call in calls], ["minimal", "lite", "standard", "performance"])
+                self.assertEqual(len({call.args[4] for call in calls}), 1)
+                self.assertTrue(calls[0].args[4].endswith("-all"))
+                self.assertTrue(all(call.args[1:4] == ("/dev/test-dock", 45.0, 300.0) for call in calls))
+
+    def test_failed_profile_does_not_skip_other_profiles_or_report_success(self):
+        with patch.object(runner, "run_profile", side_effect=[1, 0, 0, 0]) as run, patch("sys.stdout", io.StringIO()):
+            self.assertEqual(runner.main(["ALL", "/dev/test-dock"]), 1)
+            self.assertEqual(run.call_count, 4)
+
+    def test_interrupt_stops_batch_before_programming_another_profile(self):
+        with patch.object(runner, "run_profile", side_effect=[0, 130]) as run, patch("sys.stdout", io.StringIO()):
+            self.assertEqual(runner.main(["ALL", "/dev/test-dock"]), 130)
+            self.assertEqual([call.args[0] for call in run.call_args_list], ["minimal", "lite"])
+
+    def test_uncertain_execution_stops_batch_before_programming_another_profile(self):
+        with patch.object(runner, "run_profile", return_value=2) as run, patch("sys.stdout", io.StringIO()):
+            self.assertEqual(runner.main(["ALL", "/dev/test-dock"]), 1)
+            run.assert_called_once()
+
+    def test_single_profile_preserves_timeout_options_and_has_no_batch(self):
+        with patch.object(runner, "run_profile", return_value=0) as run, patch("sys.stdout", io.StringIO()):
+            self.assertEqual(runner.main(["lite", "/dev/test-dock", "--trial-timeout", "600"]), 0)
+            run.assert_called_once_with("lite", "/dev/test-dock", 45.0, 600.0, None)
+
+    def test_all_still_requires_explicit_uart(self):
+        with patch.object(runner, "run_profile") as run, patch("sys.stderr", io.StringIO()):
+            with self.assertRaises(SystemExit) as raised:
+                runner.main(["ALL"])
+            self.assertEqual(raised.exception.code, 2)
+            run.assert_not_called()
+
+    def test_failed_validation_retains_evidence_and_skips_scored_slots(self):
+        with tempfile.TemporaryDirectory() as directory, patch.object(runner, "ROOT", Path(directory)), \
+                patch.object(runner, "discover_candidate_ports", return_value=[]), \
+                patch.object(runner, "discover_usb_nodes", return_value=[]), \
+                patch.object(runner, "load_selected_artifacts", return_value=({}, {})), \
+                patch.object(runner, "selected_artifact_identity", return_value={}), \
+                patch.object(runner, "run_trial", return_value={"mode": "validation", "attempt": 0,
+                    "status": "failed", "programming_status": "completed", "error": "bad CRC",
+                    "application_end_seen": True}) as trial, \
+                patch.object(runner, "append_public_session") as append, patch("sys.stdout", io.StringIO()):
+            self.assertEqual(runner.run_profile("minimal", "/dev/test-dock", 45, 300, "batch-all"), 1)
+            trial.assert_called_once()
+            session = append.call_args.args[0]
+            self.assertEqual(session["batch_id"], "batch-all")
+            self.assertEqual(session["requested_profiles"], ["minimal", "lite", "standard", "performance"])
+            self.assertEqual([t["status"] for t in session["trials"]], ["failed", "not_run", "not_run", "not_run"])
+            self.assertIsNone(session["aggregate"])
+            self.assertTrue((Path(directory) / session["evidence"]).is_file())
+
     def test_recording_port_preserves_uart_receive_and_transmit_bytes(self):
         class Port:
             def __init__(self):
@@ -50,6 +109,20 @@ class BenchmarkRunnerTests(unittest.TestCase):
         self.assertEqual(port.write(b"tx"), 2)
         self.assertEqual(received, b"rx")
         self.assertEqual(transmitted, b"tx")
+
+    def test_uart_input_buffer_is_cleared_before_a_new_image_is_programmed(self):
+        class Port:
+            def __init__(self):
+                self.reset_count = 0
+
+            def reset_input_buffer(self):
+                self.reset_count += 1
+
+        port = Port()
+        clear_uart_input_buffer(port)
+        self.assertEqual(port.reset_count, 1)
+        with self.assertRaisesRegex(RuntimeError, "clear stale input"):
+            clear_uart_input_buffer(object())
 
     def test_recording_port_forwards_litex_timeout_updates(self):
         class Port:

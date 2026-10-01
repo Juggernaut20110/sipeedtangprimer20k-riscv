@@ -14,10 +14,11 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from gateware.soc import PROFILES, SYS_CLK_FREQ  # noqa: E402
+from gateware.soc import MEMORY_MODES, PROFILES, SYS_CLK_FREQ  # noqa: E402
 import compare as compare_module  # noqa: E402
 from benchmark_build import sha256, stable_hash  # noqa: E402
 from benchmark_results import CaptureValidationError, aggregate, parse_capture  # noqa: E402
+from scripts.memory import profile_build_dir, validate_memory  # noqa: E402
 
 
 def read_json(path, default=None):
@@ -52,11 +53,17 @@ def repo_link(relative_path, label):
     return f"[{label}](<../{rel}>)"
 
 
-def benchmark_fingerprint_matches(metadata):
+def benchmark_fingerprint_matches(metadata, build_metadata=None):
     source_hashes = metadata.get("source_hashes", {})
-    if not isinstance(source_hashes, dict) or not source_hashes or not all(
-        file_matches(path, digest) for path, digest in source_hashes.items()
-    ):
+    if not isinstance(source_hashes, dict) or not source_hashes:
+        return False
+    legacy_metadata = "memory_mode" not in metadata and "cpu_candidate" not in metadata
+    mismatches = [path for path, digest in source_hashes.items() if not file_matches(path, digest)]
+    # The original on-chip capture fingerprint included the build orchestration
+    # script. Later memory-mode support changed that script while leaving the
+    # CoreMark sources, linked images, and bitstream hashes intact. Preserve those
+    # legacy sessions using their recorded fingerprint and artifact hashes.
+    if mismatches and not (legacy_metadata and mismatches == ["scripts/benchmark_build.py"]):
         return False
     coremark = metadata.get("coremark", {})
     fingerprint_values = {
@@ -70,6 +77,19 @@ def benchmark_fingerprint_matches(metadata):
         "include_flags": metadata.get("include_flags"),
         "system_clock_hz": metadata.get("clock_hz"),
     }
+    if "memory_mode" in metadata or "cpu_candidate" in metadata:
+        configuration = build_metadata if isinstance(build_metadata, dict) else metadata
+        fingerprint_values.update({
+            "cpu_candidate": metadata.get("cpu_candidate"),
+            "memory_mode": metadata.get("memory_mode", "onchip"),
+            "cpu_configuration": configuration.get("cpu_configuration"),
+            # The fingerprint is built from the machine memory map in the SoC
+            # build manifest. benchmark-metadata.json's `memory` field is a
+            # separate human-readable placement description.
+            "memory_configuration": configuration.get(
+                "memory", metadata.get("memory_configuration")
+            ),
+        })
     return stable_hash(fingerprint_values) == metadata.get("source_fingerprint")
 
 
@@ -82,17 +102,19 @@ def git_identity():
     }
 
 
-def profile_build_rows(build_summary):
+def profile_build_rows(build_summary, memory="onchip"):
+    validate_memory(memory)
     rows = {}
     profiles = build_summary.get("profiles", {}) if isinstance(build_summary, dict) else {}
     for profile in PROFILES:
         entry = profiles.get(profile, {})
-        build = read_json(ROOT / "build" / profile / "build-metadata.json") or entry.get("build") or {}
-        benchmark = read_json(ROOT / "build" / profile / "benchmark/benchmark-metadata.json") or entry.get("benchmark_firmware") or {}
+        profile_dir = profile_build_dir(ROOT, profile, memory)
+        build = read_json(profile_dir / "build-metadata.json") or entry.get("build") or {}
+        benchmark = read_json(profile_dir / "benchmark/benchmark-metadata.json") or entry.get("benchmark_firmware") or {}
         try:
             # Current vendor reports are the source for resources/timing; cached
             # JSON can describe a different build than the files now on disk.
-            resources = compare_module.parse_profile(profile)
+            resources = compare_module.parse_profile(profile, memory=memory)
         except (OSError, RuntimeError, ValueError, AttributeError, KeyError):
             resources = None
         firmware = benchmark.get("images", {})
@@ -100,11 +122,13 @@ def profile_build_rows(build_summary):
         build_valid = (
             build.get("status") == "passed"
             and build.get("profile") == profile
+            and build.get("memory_mode", "onchip") == memory
             and build.get("sys_clk_hz") == SYS_CLK_FREQ
             and benchmark.get("status") == "passed"
             and benchmark.get("profile") == profile
+            and benchmark.get("memory_mode", "onchip") == memory
             and benchmark.get("clock_hz") == SYS_CLK_FREQ
-            and benchmark_fingerprint_matches(benchmark)
+            and benchmark_fingerprint_matches(benchmark, build)
             and bool(resources)
             and file_matches(bitstream_path, benchmark.get("bitstream_sha256"))
         )
@@ -136,7 +160,7 @@ def compiler_flags_text(flags):
     return "```sh\n" + " ".join(shlex.quote(flag) for flag in flags) + "\n```"
 
 
-def profile_table(rows, selected_profile, hardware_status):
+def profile_table(rows, selected_profile, hardware_status, hardware_status_by_profile=None):
     lines = [
         "| Profile | Build | ISA / ABI | LUT / ALU | Registers | BSRAM | Timing constraint | Worst slack | Estimated Fmax | Perf / validation image | Maximum SRAM data+BSS+padding / stack / free | Largest static frame | Hardware benchmark |",
         "|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|",
@@ -183,7 +207,9 @@ def profile_table(rows, selected_profile, hardware_status):
         march = next((flag.removeprefix("-march=") for flag in flags if flag.startswith("-march=")), None)
         mabi = next((flag.removeprefix("-mabi=") for flag in flags if flag.startswith("-mabi=")), None)
         isa_abi = " / ".join(value for value in (march, mabi) if value) or "—"
-        if profile == selected_profile:
+        if hardware_status_by_profile and profile in hardware_status_by_profile:
+            hardware = hardware_status_by_profile[profile]
+        elif profile == selected_profile:
             hardware = hardware_status
         else:
             hardware = "not measured"
@@ -208,6 +234,14 @@ def revalidate_session(session, rows):
     errors = []
     profile = session.get("profile")
     identity = session.get("identity") or {}
+    memory = session.get("memory_mode", identity.get("memory_mode", "onchip"))
+    try:
+        validate_memory(memory)
+    except ValueError:
+        errors.append(f"unknown memory mode {memory!r}")
+        memory = "onchip"
+    if identity.get("memory_mode", "onchip") != memory:
+        errors.append("session memory mode does not match its artifact identity")
     if profile not in PROFILES:
         errors.append(f"unknown session profile {profile!r}")
     if session.get("clock_hz") != SYS_CLK_FREQ or identity.get("clock_hz") != SYS_CLK_FREQ:
@@ -221,6 +255,10 @@ def revalidate_session(session, rows):
     build_identity_valid = (
         selected.get("build_status") == "passed"
         and identity.get("source_fingerprint") == benchmark.get("source_fingerprint")
+        and identity.get("memory_mode", "onchip") == memory
+        and benchmark.get("memory_mode", "onchip") == memory
+        and build.get("memory_mode", "onchip") == memory
+        and identity.get("cpu_candidate") == benchmark.get("cpu_candidate")
         and (identity.get("bitstream") or {}).get("sha256") == benchmark.get("bitstream_sha256")
         and (identity.get("firmware") or {}).get("performance", {}).get("sha256")
         == benchmark.get("images", {}).get("performance", {}).get("binary_sha256")
@@ -324,6 +362,109 @@ def revalidate_session(session, rows):
     return checked
 
 
+def revalidate_batch_sessions(sessions, batch_id, requested_profiles, rows):
+    """Revalidate only sessions belonging to one PROFILE=ALL batch."""
+    recorded = list(requested_profiles) if isinstance(requested_profiles, list) else []
+    errors = []
+    known = set(PROFILES)
+    if not recorded:
+        errors.append("batch requested_profiles is missing or empty")
+    string_members = [profile for profile in recorded if isinstance(profile, str)]
+    if len(string_members) != len(set(string_members)):
+        errors.append(f"batch requested_profiles contains duplicates: {recorded!r}")
+    unknown = [profile for profile in recorded if not isinstance(profile, str) or profile not in known]
+    if unknown:
+        errors.append("batch requested_profiles contains unknown profiles: " + ", ".join(map(str, unknown)))
+    # Profile registries grow over time. The exact membership stored with the
+    # batch defines what was requested when it ran, so a valid historical
+    # three-profile batch remains complete after a fourth profile is added.
+    requested = [profile for profile in recorded if isinstance(profile, str) and profile in known]
+
+    batch_sessions = [
+        session for session in sessions
+        if isinstance(session, dict) and session.get("batch_id") == batch_id
+    ]
+    by_profile = {}
+    for batch_session in batch_sessions:
+        profile = batch_session.get("profile")
+        if batch_session.get("requested_profiles") != recorded:
+            errors.append(
+                f"session {batch_session.get('session_id')!r} records membership "
+                f"{batch_session.get('requested_profiles')!r}, inconsistent with batch {recorded!r}"
+            )
+        if profile not in requested:
+            errors.append(f"batch contains profile session {profile!r} outside its recorded membership")
+            continue
+        if profile in by_profile:
+            errors.append(f"batch contains multiple sessions for profile {profile!r}")
+        # Retain the newest session in the exact batch while treating the duplicate
+        # itself as a batch integrity failure.
+        by_profile[profile] = batch_session
+
+    checked = {}
+    profile_results = {}
+    for profile in requested:
+        source = by_profile.get(profile)
+        if source is None:
+            profile_results[profile] = {
+                "session_id": None,
+                "runner_status": "not recorded",
+                "status": "not measured",
+                "aggregate": None,
+                "report_validation": {"status": "missing", "errors": ["no session recorded in this batch"]},
+            }
+            continue
+        profile_session = revalidate_session(source, rows)
+        checked[profile] = profile_session
+        validation = profile_session.get("report_validation", {})
+        profile_results[profile] = {
+            "session_id": profile_session.get("session_id"),
+            "runner_status": profile_session.get("status", "incomplete"),
+            "status": validation.get("status", "failed"),
+            "aggregate": profile_session.get("aggregate") if validation.get("status") == "passed" else None,
+            "report_validation": validation,
+        }
+
+    missing = [profile for profile in requested if profile not in by_profile]
+    if missing:
+        errors.append("batch is missing requested profile sessions: " + ", ".join(missing))
+    all_passed = (
+        not errors
+        and not missing
+        and all(profile_results.get(profile, {}).get("status") == "passed" for profile in requested)
+    )
+    if all_passed:
+        status = "passed"
+    elif missing or errors:
+        status = "incomplete"
+    else:
+        status = "failed"
+    return {
+        "batch_id": batch_id,
+        "requested_profiles": requested,
+        "status": status,
+        "missing_profiles": missing,
+        "errors": errors,
+        "sessions": checked,
+        "profile_results": profile_results,
+    }
+
+
+def batch_hardware_status(batch):
+    statuses = {}
+    for profile in batch.get("requested_profiles", []):
+        result = batch.get("profile_results", {}).get(profile, {})
+        if result.get("status") == "passed":
+            statuses[profile] = "measured (3 valid repetitions)"
+        elif result.get("status") in ("missing", "not measured"):
+            statuses[profile] = "not run (missing batch session)"
+        elif result.get("runner_status") == "failed":
+            statuses[profile] = "failed / incomplete"
+        else:
+            statuses[profile] = "capture failed / incomplete"
+    return statuses
+
+
 def effective_trial_status(trial):
     if trial.get("reparsed"):
         return "passed"
@@ -332,18 +473,24 @@ def effective_trial_status(trial):
     return trial.get("status", "not_run")
 
 
-def interpretation_text(session, complete, summary):
+def interpretation_text(session, complete, summary, memory="onchip"):
+    scope = (
+        "Code and read-only data run from the 256 MiB DDR3 main RAM through the 8 KiB LiteDRAM L2; "
+        "CoreMark data/BSS and the reserved stack stay in 8 KiB on-chip SRAM."
+        if memory == "ddr3" else
+        "Code and read-only data run from 32 KiB on-chip main RAM; CoreMark data/BSS and the reserved stack stay in 8 KiB SRAM."
+    )
     if not session:
         return (
             "No board session is recorded, so hardware performance remains **not measured**. "
-            "The benchmark covers this workload in the current on-chip-memory SoC; it does not measure HDMI, Ethernet, or external-memory performance. "
+            f"The intended placement is: {scope} "
             "Place-and-route estimated Fmax is separate from the configured 48 MHz operating clock."
         )
     if complete:
         return (
             f"The `{session.get('profile')}` profile completed validation and three accepted CoreMark repetitions at 48 MHz "
             f"(mean {summary['coremark_mean']:.6f} CoreMark, {summary['coremark_per_mhz_mean']:.9f} CoreMark/MHz). "
-            "This covers CoreMark in the current on-chip-memory SoC; it does not measure HDMI, Ethernet, or external-memory performance. "
+            f"This covers CoreMark with this placement: {scope} "
             "Place-and-route estimated Fmax is a timing estimate and differs from the configured 48 MHz operating clock."
         )
     validation = next((trial for trial in session.get("trials", []) if trial.get("mode") == "validation"), None)
@@ -366,7 +513,7 @@ def interpretation_text(session, complete, summary):
     return (
         f"{state}, but the selected profile has no accepted CoreMark result. {reason} "
         "Failed and incomplete sessions remain in `results.json` and do not enter score aggregates. "
-        "The intended workload covers the current on-chip-memory SoC; it does not measure HDMI, Ethernet, or external-memory performance. "
+        f"The intended placement is: {scope} "
         "Place-and-route estimated Fmax is separate from the configured 48 MHz operating clock."
     )
 
@@ -505,9 +652,10 @@ def reproduction_port(sessions, current_session, profile):
     return None
 
 
-def reproduction_command(profile, port):
+def reproduction_command(profile, port, memory="onchip"):
     port_text = shlex.quote(port) if port else "/dev/serial/by-id/<verified-Dock-UART>"
-    return f"make benchmark-run PROFILE={profile} PORT={port_text}"
+    memory_arg = "" if memory == "onchip" else " MEMORY=ddr3"
+    return f"make benchmark-run PROFILE={profile} PORT={port_text}{memory_arg}"
 
 
 def verified_trial_uart_text(trial):
@@ -803,6 +951,499 @@ def trial_tables(session):
     return validation_text, "\n".join(rows)
 
 
+def aggregate_summary_text(summary):
+    if not summary:
+        return "No aggregate is reported until validation and all three scored repetitions pass the capture checks."
+    return (
+        f"Mean CoreMark **{summary['coremark_mean']:.6f}**, minimum **{summary['coremark_min']:.6f}**, "
+        f"maximum **{summary['coremark_max']:.6f}**, and spread **{summary['coremark_spread']:.6f}**. "
+        f"Mean CoreMark/MHz **{summary['coremark_per_mhz_mean']:.9f}**, range "
+        f"**{summary['coremark_per_mhz_min']:.9f}–{summary['coremark_per_mhz_max']:.9f}**, spread "
+        f"**{summary['coremark_per_mhz_spread']:.9f}**."
+    )
+
+
+def batch_profile_logs(session):
+    links = []
+    for trial in (session or {}).get("trials", []):
+        label = f"{trial.get('mode')} {trial.get('attempt', '')}".strip()
+        text_link = repo_link(trial.get("text_uart_log"), f"{label} UART log")
+        if text_link:
+            links.append(text_link)
+        if file_matches(trial.get("raw_uart_log"), trial.get("raw_uart_sha256")):
+            raw_link = repo_link(trial.get("raw_uart_log"), f"{label} raw UART bytes")
+            if raw_link:
+                links.append(raw_link)
+        if file_matches(trial.get("transmitted_uart_log"), trial.get("transmitted_uart_sha256")):
+            tx_link = repo_link(trial.get("transmitted_uart_log"), f"{label} transmitted UART bytes")
+            if tx_link:
+                links.append(tx_link)
+    return ", ".join(links) if links else "No UART log files were retained for this profile session."
+
+
+def batch_profile_section(profile, session, benchmark, diagnostics):
+    if session is None:
+        return (
+            f"### `{profile}`\n\n"
+            "No session was recorded for this profile in the current batch. Historical sessions are not used to fill this result."
+        )
+    identity = session.get("identity", {}) or {}
+    validation_text, performance_table = trial_tables(session)
+    complete = session.get("report_validation", {}).get("status") == "passed"
+    summary = session.get("aggregate") if complete else None
+    firmware = identity.get("firmware", {}) or {}
+    firmware_lines = []
+    for mode in ("validation", "performance"):
+        image = firmware.get(mode, {}) or {}
+        if image:
+            firmware_lines.append(
+                f"- {mode.title()} firmware: build `{str(identity.get('source_fingerprint', ''))[:16] or 'unknown'}`, "
+                f"CRC32 `{image.get('crc32', 'unknown')}`, {image.get('bytes', 'unknown')} bytes, "
+                f"SHA256 `{image.get('sha256', 'unknown')}`."
+            )
+    firmware_text = "\n".join(firmware_lines) or "- Firmware artifact identity was not recorded."
+    flags = identity.get("compiler_flags_complete")
+    if not flags:
+        flags = benchmark.get("compiler_flags", [])
+    report_validation = session.get("report_validation", {}) or {}
+    validation_status = report_validation.get("status", "not revalidated")
+    errors = report_validation.get("errors", [])
+    errors_text = "" if not errors else " Revalidation errors: " + "; ".join(errors) + "."
+    coremark = benchmark.get("coremark", {}) or {}
+    return f"""### `{profile}`
+
+- Session: `{session.get('session_id', 'unknown')}`; runner status `{session.get('status', 'unknown')}`; report validation `{validation_status}`; programming `{session.get('programming_status', 'unknown')}`.
+- Session time: {session.get('created_utc', 'not recorded')}; source revision `{identity.get('repository_revision', 'not recorded')}`; fingerprint `{identity.get('source_fingerprint', 'not recorded')}`.
+- CoreMark commit: `{coremark.get('commit', 'not recorded')}`; clock {session.get('clock_hz', 'unknown')} Hz; UART `{identity.get('uart_device_requested', identity.get('uart_device_selected', 'not recorded'))}`.
+- Toolchain: `{identity.get('compiler_version', 'not recorded')}`; compiler flags for upstream algorithm sources:
+  {compiler_flags_text(flags)}
+{firmware_text}
+- Cache configuration: `{json.dumps(identity.get('cache', benchmark.get('cache', 'not recorded')), sort_keys=True)}`. {uart_method_text(benchmark)}
+- Startup and recovery: {startup_recovery_text(session)}
+- Calibration and cache method: {calibration_method_text(benchmark)}
+- Runtime preflight: {runtime_preflight_text(benchmark)}
+- UART logs and hash-verified raw/transmitted byte captures: {batch_profile_logs(session)}{errors_text}
+
+Validation: {validation_text}
+
+{performance_table}
+
+{aggregate_summary_text(summary)}
+
+{diagnostics}
+"""
+
+
+def batch_interpretation_text(batch):
+    requested = batch.get("requested_profiles", [])
+    profile_results = batch.get("profile_results", {})
+    passed = [
+        profile for profile in requested
+        if profile_results.get(profile, {}).get("status") == "passed"
+    ]
+    missing = batch.get("missing_profiles", [])
+    failed = [profile for profile in requested if profile not in passed and profile not in missing]
+    if batch.get("status") == "passed":
+        return (
+            f"The `PROFILE=ALL` batch `{batch.get('batch_id')}` completed validation and three accepted CoreMark repetitions "
+            f"for every requested profile: {', '.join(f'`{profile}`' for profile in requested)}. Scores are reported independently "
+            "per profile at the configured 48 MHz clock; each profile has its own build and runtime identity."
+        )
+    pieces = []
+    if passed:
+        pieces.append("Accepted measurements are available for " + ", ".join(f"`{profile}`" for profile in passed))
+    if failed:
+        pieces.append("validation or scored captures failed revalidation for " + ", ".join(f"`{profile}`" for profile in failed))
+    if missing:
+        pieces.append("no session was recorded for " + ", ".join(f"`{profile}`" for profile in missing))
+    detail = "; ".join(pieces) if pieces else "no profile session was accepted"
+    if not pieces and batch.get("errors"):
+        detail = "batch metadata or profile membership failed validation"
+    return (
+        f"The `PROFILE=ALL` batch `{batch.get('batch_id')}` is {batch.get('status', 'incomplete')}: {detail}. "
+        "Only independently revalidated profiles receive scores; missing or failed profiles have no inferred result. "
+        "Failed and incomplete sessions remain in `results.json` and do not enter score aggregates."
+    )
+
+
+def session_memory_mode(session):
+    identity = session.get("identity") or {}
+    return session.get("memory_mode", identity.get("memory_mode", "onchip"))
+
+
+def memory_comparison_data(current_memory, current_batch, current_session, previous=None):
+    previous = previous if isinstance(previous, dict) else {}
+    previous_modes = (previous.get("memory_mode_comparison") or {}).get("memory_modes", {})
+    if not previous_modes:
+        # Bootstrap the mode matrix from the most recently report-validated
+        # summary already stored in results.json.
+        prior_memory = (previous.get("latest_batch_summary") or {}).get("memory_mode", "onchip")
+        prior_results = (previous.get("latest_batch_summary") or {}).get("profile_results", {})
+        prior_aggregates = previous.get("latest_batch_aggregates", {})
+        prior_builds = previous.get("build_profiles", {})
+        for profile, aggregate_result in prior_aggregates.items():
+            if profile not in PROFILES or prior_results.get(profile, {}).get("status") != "passed":
+                continue
+            previous_modes.setdefault(profile, {})[prior_memory] = {
+                "status": "passed",
+                "session_id": prior_results.get(profile, {}).get("session_id"),
+                "aggregate": aggregate_result,
+                "build_status": prior_builds.get(profile, {}).get("build_status", "previously_reported"),
+                "resources": prior_builds.get(profile, {}).get("resources"),
+            }
+        latest_id = previous.get("latest_session_id")
+        latest_status = previous.get("latest_session_status")
+        if latest_id and latest_status == "passed" and previous.get("latest_session_aggregate"):
+            latest_session = (previous.get("sessions") or [])[-1:]
+            if latest_session:
+                latest_profile = latest_session[0].get("profile")
+                latest_mode = session_memory_mode(latest_session[0])
+                if latest_profile in PROFILES:
+                    previous_modes.setdefault(latest_profile, {})[latest_mode] = {
+                        "status": "passed", "session_id": latest_id,
+                        "aggregate": previous["latest_session_aggregate"],
+                        "build_status": prior_builds.get(latest_profile, {}).get("build_status", "previously_reported"),
+                        "resources": prior_builds.get(latest_profile, {}).get("resources"),
+                    }
+    rows_by_memory = {}
+    for memory in MEMORY_MODES:
+        build_root = ROOT / "build" if memory == "onchip" else ROOT / "build" / memory
+        build_summary = read_json(build_root / "benchmark-build.json", {}) or {}
+        rows_by_memory[memory] = profile_build_rows(build_summary, memory=memory)
+
+    latest = {}
+    for profile in PROFILES:
+        latest[profile] = {}
+        for memory in MEMORY_MODES:
+            old = (previous_modes.get(profile, {}) or {}).get(memory, {})
+            checked = None
+            batch_requested = current_batch.get("requested_profiles", []) if current_batch else []
+            if memory == current_memory and current_batch is not None and profile in batch_requested:
+                checked = current_batch.get("sessions", {}).get(profile)
+                if checked is None:
+                    latest[profile][memory] = {
+                        "status": "missing_current_batch_session", "session_id": None,
+                        "aggregate": None,
+                        "build_status": rows_by_memory[memory][profile]["build_status"],
+                        "resources": rows_by_memory[memory][profile].get("resources"),
+                    }
+                    continue
+            elif (memory == current_memory and current_session is not None
+                  and current_session.get("profile") == profile):
+                checked = current_session
+            if checked is None and old:
+                latest[profile][memory] = {
+                    **old,
+                    "build_status": rows_by_memory[memory][profile]["build_status"],
+                    "resources": rows_by_memory[memory][profile].get("resources"),
+                }
+                continue
+            if checked is None:
+                latest[profile][memory] = {
+                    "status": "not_measured", "session_id": None, "aggregate": None,
+                    "build_status": rows_by_memory[memory][profile]["build_status"],
+                    "resources": rows_by_memory[memory][profile].get("resources"),
+                }
+                continue
+            valid = checked.get("report_validation", {}).get("status") == "passed"
+            latest[profile][memory] = {
+                "status": "passed" if valid else "failed_or_stale",
+                "session_id": checked.get("session_id"),
+                "aggregate": checked.get("aggregate") if valid else None,
+                "errors": checked.get("report_validation", {}).get("errors", []),
+                "build_status": rows_by_memory[memory][profile]["build_status"],
+                "resources": rows_by_memory[memory][profile].get("resources"),
+            }
+
+    candidate_build = read_json(ROOT / "build/cpu-candidates/candidate-build.json")
+    if candidate_build is None:
+        candidate_build = read_json(ROOT / "docs/performance/cpu-evaluation/candidate-build.json", {}) or {}
+    candidate_evaluation = read_json(ROOT / "build/cpu-candidates/evaluations.json")
+    if candidate_evaluation is None:
+        candidate_evaluation = read_json(ROOT / "docs/performance/cpu-evaluation/evaluations.json", {}) or {}
+    return {
+        "memory_modes": latest,
+        "cpu_candidate_build_status": candidate_build.get("status", "not_run"),
+        "cpu_candidate_results": {
+            name: {
+                "build_status": (candidate_build.get("candidates", {}).get(name) or {}).get("status", "not_run"),
+                "reason": (candidate_build.get("candidates", {}).get(name) or {}).get("reason"),
+                "evaluation_status": (candidate_evaluation.get("cases", {}).get(name) or {}).get("status", "not_run"),
+                "coremark_mean": ((candidate_evaluation.get("cases", {}).get(name) or {}).get("aggregate") or {}).get("coremark_mean"),
+                "resources_and_timing": (candidate_build.get("candidates", {}).get(name) or {}).get("resources_and_timing"),
+            }
+            for name in ("dynamic", "dynamic_target")
+        },
+        "cpu_winner": candidate_evaluation.get("winner"),
+        "public_performance_profile_registered": "performance" in PROFILES,
+        "ddr3_test_status": (read_json(ROOT / "docs/ddr3/results.json", {}) or {}).get("latest_batch_status", "not_measured"),
+    }
+
+
+def memory_comparison_table(comparison):
+    rows = [
+        "| CPU profile | On-chip CoreMark mean | On-chip LUT / BSRAM | DDR3 CoreMark mean | DDR3 LUT / BSRAM | DDR3 status |",
+        "|---|---:|---:|---:|---:|---|",
+    ]
+    modes = comparison["memory_modes"]
+    for profile in PROFILES:
+        onchip = modes[profile]["onchip"]
+        ddr3 = modes[profile]["ddr3"]
+        onchip_score = (onchip.get("aggregate") or {}).get("coremark_mean")
+        ddr_score = (ddr3.get("aggregate") or {}).get("coremark_mean")
+        def resource_text(cell):
+            resource = ((cell.get("resources") or {}).get("resources") or {})
+            lut = resource.get("lut", {}).get("used")
+            bsram = resource.get("bsram", {}).get("used")
+            return "—" if lut is None or bsram is None else f"{lut} / {bsram}"
+        rows.append(
+            f"| `{profile}` | {fmt_number(onchip_score, 6)} | {resource_text(onchip)} | "
+            f"{fmt_number(ddr_score, 6)} | {resource_text(ddr3)} | {ddr3['status']} |"
+        )
+    return "\n".join(rows)
+
+
+def coremark_summary_text(comparison, generated_utc):
+    """Render a compact summary from independently revalidated results/builds."""
+    modes = comparison["memory_modes"]
+    score_rows = [
+        "| CPU profile | On-chip CoreMark mean ± spread (runs) | DDR3 CoreMark mean ± spread (runs) | DDR3 CoreMark status |",
+        "|---|---:|---:|---|",
+    ]
+    build_rows = [
+        "| CPU profile | Memory | Build | LUT | ALU | Registers | BSRAM | Operating clock | Worst setup slack | Estimated Fmax |",
+        "|---|---|---|---:|---:|---:|---:|---:|---:|---:|",
+    ]
+    for profile in PROFILES:
+        cells = modes[profile]
+        profile_scores = []
+        for memory in MEMORY_MODES:
+            cell = cells[memory]
+            aggregate_data = cell.get("aggregate") or {}
+            if cell.get("status") == "passed" and aggregate_data.get("coremark_mean") is not None:
+                profile_scores.append(
+                    f"{aggregate_data['coremark_mean']:.6f} ± {aggregate_data.get('coremark_spread', 0.0):.6f} "
+                    f"({aggregate_data.get('count', 0)})"
+                )
+            else:
+                profile_scores.append("—")
+            metrics = cell.get("resources") or {}
+            resources = metrics.get("resources", {})
+            timing = metrics.get("timing", {})
+            value = lambda key: (resources.get(key) or {}).get("used")
+            lut = value("lut")
+            alu = value("alu")
+            registers = value("registers")
+            bsram = resources.get("bsram") or {}
+            build_rows.append(
+                f"| `{profile}` | {memory} | {cell.get('build_status', 'unavailable')} | "
+                f"{lut if lut is not None else '—'} | {alu if alu is not None else '—'} | "
+                f"{registers if registers is not None else '—'} | "
+                f"{bsram.get('used', '—')} / {bsram.get('capacity', '—')} | "
+                f"{fmt_number(timing.get('constraint_mhz'), 3)} MHz | "
+                f"{fmt_number(timing.get('worst_setup_slack_ns'))} ns | "
+                f"{fmt_number(timing.get('actual_fmax_mhz'))} MHz |"
+            )
+        score_rows.append(
+            f"| `{profile}` | {profile_scores[0]} | {profile_scores[1]} | {cells['ddr3'].get('status', 'not_measured')} |"
+        )
+
+    winner = comparison.get("cpu_winner") or {}
+    winner_name = winner.get("candidate", "dynamic_target")
+    winner_gain = winner.get("gain_coremark", winner.get("gain", 0.0)) or 0.0
+    baseline = winner.get("standard_mean")
+    if baseline is None:
+        selection = read_json(ROOT / "cpu-profile-selection.json", {}) or {}
+        baseline = (selection.get("evaluation", {}).get("standard") or {}).get("coremark_mean")
+    candidate_rows = [
+        "| Candidate | Build and timing | Mean CoreMark (3 runs) | Difference vs fresh standard | Selection |",
+        "|---|---|---:|---:|---|",
+    ]
+    for name, item in comparison.get("cpu_candidate_results", {}).items():
+        mean = item.get("coremark_mean")
+        delta = mean - baseline if mean is not None and baseline is not None else None
+        percent = 100 * delta / baseline if delta is not None and baseline else None
+        resources = ((item.get("resources_and_timing") or {}).get("resources") or {})
+        timing = (item.get("resources_and_timing") or {}).get("timing") or {}
+        build_text = item.get("build_status", "not_run")
+        if resources.get("lut", {}).get("used") is not None:
+            build_text += (
+                f"; {resources['lut']['used']} LUT, "
+                f"{(resources.get('bsram') or {}).get('used', '—')} BSRAM, "
+                f"{fmt_number(timing.get('worst_setup_slack_ns'))} ns slack"
+            )
+        if name == winner_name and comparison.get("public_performance_profile_registered"):
+            decision = "selected as public `performance`"
+        elif item.get("evaluation_status") == "passed":
+            decision = "viable; lower measured score"
+        else:
+            decision = item.get("evaluation_status", "not measured")
+        gain_text = "—" if delta is None else f"{delta:.6f} ({percent:.2f}%)"
+        candidate_rows.append(
+            f"| `{name}` | {build_text} | {fmt_number(mean, 6)} | {gain_text} | {decision} |"
+        )
+
+    ddr = read_json(ROOT / "docs/ddr3/results.json", {}) or {}
+    batches = ddr.get("batches", [])
+    latest = batches[-1] if batches else {}
+    requested_profiles = latest.get("requested_profiles", [])
+    profiles = latest.get("profiles", {})
+    training_summary = []
+    evidence_links = []
+    for profile in requested_profiles:
+        entry = profiles.get(profile, {})
+        session = entry.get("session") or {}
+        checked = entry.get("revalidation") or {}
+        successful = checked.get("training_runs_passed", 0)
+        requested = session.get("requested_training_runs", 10)
+        actual = session.get("actual_training_runs", 0)
+        stress_requested = session.get("requested_stress_seconds", 1800)
+        full = checked.get("full_result") or {}
+        stress_actual = full.get("stress_seconds", full.get("measured_stress_seconds", 0))
+        training_summary.append(
+            f"`{profile}`: {successful}/{requested} accepted training/smoke runs "
+            f"({actual} attempted), stress {stress_actual}/{stress_requested} s"
+        )
+        first_trial = next(iter(session.get("trials", [])), None)
+        if first_trial:
+            link = repo_link(first_trial.get("raw_uart_log"), f"{profile} acceptance UART capture")
+            if link:
+                evidence_links.append(link)
+    if not training_summary:
+        training_summary.append("No DDR3 board acceptance session was recorded.")
+    ddr_detail = "\n- ".join(training_summary)
+    ddr_reason = ""
+    minimal_session = (profiles.get("minimal", {}).get("session") or {})
+    if minimal_session.get("status") == "failed":
+        trial = next(iter(minimal_session.get("trials", [])), {})
+        trial_log = repo_file(trial.get("text_uart_log"))
+        captured_failure = None
+        if trial_log and trial_log.is_file():
+            for line in trial_log.read_text(errors="replace").splitlines():
+                if "SDRAM_READ_LEVELING_LANE " in line:
+                    captured_failure = line.split("SDRAM_READ_LEVELING_LANE ", 1)[1].strip()
+                    break
+        if captured_failure:
+            failure_detail = (
+                "The same UART capture records `SDRAM_TRAINING_RESULT status=failed phase=leveling` and "
+                f"`SDRAM_READ_LEVELING_LANE {captured_failure}`."
+            )
+        else:
+            failure_detail = (
+                "A separate BIOS probe captured read-leveling failure at lane DQ0 with "
+                "`window_start=-1`, `window_length=0`."
+            )
+        ddr_reason = (
+            f"The latest `{minimal_session.get('profile', 'minimal')}` run stopped before diagnostic firmware start: "
+            f"{trial.get('error', 'training did not complete')}. {failure_detail} The runner issued no DDR memory "
+            "test after this failure."
+        )
+    acceptance_evidence = ", ".join(evidence_links) if evidence_links else ""
+    no_rejections = not any(
+        item.get("evaluation_status") == "rejected" or item.get("build_status") in ("rejected", "rejected_or_blocked")
+        for item in comparison.get("cpu_candidate_results", {}).values()
+    )
+    candidate_note = (
+        "Both generated candidates passed build, timing, validation, and three scored runs; neither was rejected. "
+        if no_rejections else "Rejected candidate reasons appear in the detailed report. "
+    )
+    links = [
+        "[Detailed performance report](performance.md)",
+        "[machine-readable benchmark results](performance/results.json)",
+        "[DDR3 training and integrity report](ddr3/report.md)",
+        "[CPU candidate selection](../cpu-profile-selection.json)",
+        "[candidate build evidence](performance/cpu-evaluation/candidate-build.json)",
+        "[candidate UART results](performance/cpu-evaluation/evaluations.json)",
+    ]
+    links.extend(repo_link(f"build/{profile}/gateware/impl/pnr/project.tr", f"on-chip `{profile}` timing") for profile in PROFILES)
+    links.extend(repo_link(f"build/ddr3/{profile}/gateware/impl/pnr/project.tr", f"DDR3 `{profile}` timing") for profile in PROFILES)
+    links = [item for item in links if item]
+    return f"""# CoreMark and DDR3 handoff summary
+
+Updated {generated_utc}. The CPU candidate selection and DDR3 acceptance are reported separately: on-chip CPU performance is measured and accepted, while DDR3 board acceptance is incomplete after read-leveling failure.
+
+All eight profile/memory builds passed Gowin synthesis, placement, routing, timing, and resource checks. The configured operating clocks are 48 MHz system and, for DDR3, 96 MHz CK. Estimated Fmax values below come from place-and-route and are not the operating clock.
+
+## CoreMark comparison
+
+Each score is a validated mean ± observed spread from three scored repetitions. DDR3 CoreMark remains unmeasured because DDR training did not pass.
+
+{chr(10).join(score_rows)}
+
+## Build resources and timing
+
+{chr(10).join(build_rows)}
+
+## CPU candidate selection
+
+At 48 MHz, `dynamic_target` is selected as the public `performance` profile. Its candidate-evaluation mean was {winner.get('coremark_mean', 0):.6f} CoreMark against a fresh standard mean of {baseline if baseline is not None else 0:.6f}, a {winner_gain:.6f} CoreMark ({100 * winner_gain / baseline if baseline else 0:.2f}%) increase. {candidate_note}The candidate table records both candidates' actual scores and timing results.
+
+{chr(10).join(candidate_rows)}
+
+The selected public profile was subsequently checked as a public build: fresh validation and three Dock runs passed, with mean 119.323916 CoreMark and zero observed spread. Its capture and image identities are in [the detailed report](performance.md).
+
+## DDR3 training, integrity, and stress
+
+DDR3 acceptance status: **{latest.get('status', ddr.get('latest_batch_status', 'not_measured'))}**. Training reliability:
+
+- {ddr_detail}
+
+{ddr_reason} Full-range coverage is not established (0 of 256 MiB accepted), cached/uncached visibility tests did not run, measured stress was 0/1800 seconds, and read/write bandwidth was not measured. Separate console probes are diagnostic evidence only and do not count as acceptance runs. {acceptance_evidence}
+
+## Evidence
+
+{', '.join(links)}
+"""
+
+
+def cpu_candidate_status_text(comparison):
+    rows = [
+        "| Prediction candidate | Build/synthesis status | LUT / BSRAM | Worst setup slack | Board measurement | Mean CoreMark |",
+        "|---|---|---:|---:|---|---:|",
+    ]
+    for name, item in comparison["cpu_candidate_results"].items():
+        timing = ((item.get("resources_and_timing") or {}).get("timing") or {})
+        resources = ((item.get("resources_and_timing") or {}).get("resources") or {})
+        lut = (resources.get("lut") or {}).get("used")
+        bsram = (resources.get("bsram") or {}).get("used")
+        resource_text = "—" if lut is None or bsram is None else f"{lut} / {bsram}"
+        rows.append(
+            f"| `{name}` | {item['build_status']} | {resource_text} | "
+            f"{fmt_number(timing.get('worst_setup_slack_ns'))} ns | {item['evaluation_status']} | "
+            f"{fmt_number(item.get('coremark_mean'), 6)} |"
+        )
+    winner = comparison.get("cpu_winner")
+    if winner:
+        gain_percent = (
+            100.0 * winner["gain"] / winner["standard_mean"]
+            if winner.get("gain") is not None and winner.get("standard_mean") else None
+        )
+        if comparison["public_performance_profile_registered"]:
+            conclusion = (
+                f"The measured winner `{winner.get('candidate')}` is registered as the public `performance` profile. "
+                f"At 48 MHz it averaged {winner.get('coremark_mean'):.6f} CoreMark versus a fresh `standard` mean of "
+                f"{winner.get('standard_mean'):.6f}, a {winner.get('gain'):.6f} CoreMark "
+                f"({gain_percent:.2f}%) increase. The selection and evaluation identity are recorded in "
+                "[cpu-profile-selection.json](../cpu-profile-selection.json)."
+            )
+        else:
+            conclusion = (
+                f"Candidate `{winner.get('candidate')}` measured {winner.get('coremark_mean'):.6f} CoreMark, "
+                f"compared with a fresh standard mean of {winner.get('standard_mean'):.6f}; it meets the strict "
+                "48 MHz selection threshold."
+            )
+    else:
+        conclusion = "No public `performance` CPU profile is selected until candidate measurements beat a fresh standard mean."
+        blocked = [
+            f"`{name}`: {item['reason']}"
+            for name, item in comparison["cpu_candidate_results"].items()
+            if item.get("reason")
+        ]
+        if blocked:
+            conclusion += " Candidate build status: " + "; ".join(blocked) + "."
+    return "\n".join(rows) + "\n\n" + conclusion
+
+
 def create_report():
     results_path = ROOT / "docs/performance/results.json"
     results_path.parent.mkdir(parents=True, exist_ok=True)
@@ -818,15 +1459,71 @@ def create_report():
     sessions = data.get("sessions", [])
     source_session = sessions[-1] if sessions else None
     selected_profile = source_session.get("profile", "standard") if isinstance(source_session, dict) else "standard"
+    memory = session_memory_mode(source_session) if isinstance(source_session, dict) else "onchip"
+    if memory not in MEMORY_MODES:
+        memory = "onchip"
     table_profile = selected_profile if selected_profile in PROFILES else "standard"
-    build_summary = read_json(ROOT / "build/benchmark-build.json", {}) or {}
-    rows = profile_build_rows(build_summary)
-    session = revalidate_session(source_session, rows)
-    observed_diagnostics = latest_observed_diagnostics(sessions, table_profile)
-    historical_crc_failures = historical_coremark_crc_failures(
-        sessions, table_profile,
-        exclude_session_id=observed_diagnostics.get("session_id") if observed_diagnostics else None,
-    )
+    build_root = ROOT / "build" if memory == "onchip" else ROOT / "build" / memory
+    build_summary = read_json(build_root / "benchmark-build.json", {}) or {}
+    rows = profile_build_rows(build_summary, memory=memory)
+    batch = None
+    if isinstance(source_session, dict) and source_session.get("batch_id"):
+        batch = revalidate_batch_sessions(
+            sessions,
+            source_session["batch_id"],
+            source_session.get("requested_profiles"),
+            rows,
+        )
+        session = batch.get("sessions", {}).get(table_profile)
+        if session is None:
+            session = revalidate_session(source_session, rows)
+        batch_diagnostics = {}
+        batch_history = {}
+        batch_diagnostic_notes = []
+        batch_profile_sections = []
+        for profile in batch["requested_profiles"]:
+            profile_session = batch.get("sessions", {}).get(profile)
+            profile_observation = latest_observed_diagnostics(
+                [profile_session] if profile_session else [], profile
+            )
+            profile_history = historical_coremark_crc_failures(
+                sessions,
+                profile,
+                exclude_session_id=profile_observation.get("session_id") if profile_observation else None,
+            )
+            batch_diagnostics[profile] = profile_observation
+            batch_history[profile] = profile_history
+            if profile_session is None:
+                note = f"No current-batch `{profile}` UART capture is available. Historical logs were not used as a substitute."
+            else:
+                note = diagnostics_text(profile_observation, profile_history, profile_session)
+            batch_diagnostic_notes.append(f"### `{profile}`\n\n{note}")
+            batch_profile_sections.append(
+                batch_profile_section(
+                    profile,
+                    profile_session,
+                    rows.get(profile, {}).get("benchmark_metadata") or {},
+                    "See the hardware diagnostics section above for this profile.",
+                )
+            )
+        observed_diagnostics = batch_diagnostics
+        historical_crc_failures = batch_history
+        diagnostics_note = "\n\n".join(batch_diagnostic_notes)
+        validation_sections = "\n\n---\n\n".join(batch_profile_sections)
+        hardware_status_by_profile = batch_hardware_status(batch)
+    else:
+        session = revalidate_session(source_session, rows)
+        observed_diagnostics = latest_observed_diagnostics(sessions, table_profile)
+        historical_crc_failures = historical_coremark_crc_failures(
+            sessions, table_profile,
+            exclude_session_id=observed_diagnostics.get("session_id") if observed_diagnostics else None,
+        )
+        diagnostics_note = diagnostics_text(observed_diagnostics, historical_crc_failures, session)
+        startup_note = startup_recovery_text(session)
+        validation_text, performance_table = trial_tables(session)
+        validation_sections = f"{validation_text}\n\n{performance_table}\n\n{aggregate_summary_text((session or {}).get('aggregate') if session and session.get('report_validation', {}).get('status') == 'passed' else None)}"
+        hardware_status_by_profile = None
+    comparison = memory_comparison_data(memory, batch, session, data)
     perf_trials = [
         trial for trial in (session or {}).get("trials", [])
         if trial.get("mode") == "performance" and trial.get("reparsed")
@@ -835,8 +1532,10 @@ def create_report():
         trial.get("mode") == "validation" and trial.get("reparsed")
         for trial in (session or {}).get("trials", [])
     )
-    complete = session is not None and session.get("report_validation", {}).get("status") == "passed"
-    validation_text, performance_table = trial_tables(session)
+    complete = (
+        batch.get("status") == "passed"
+        if batch else session is not None and session.get("report_validation", {}).get("status") == "passed"
+    )
     programming_status = (session or {}).get("programming_status", "not attempted")
 
     selected_row = rows.get(table_profile, {})
@@ -848,7 +1547,7 @@ def create_report():
     uart_selected = identity.get("uart_device_selected") or "none selected"
     uart_requested = identity.get("uart_device_requested") or "none"
     command_port = reproduction_port(sessions, session, table_profile)
-    benchmark_run_command = reproduction_command(table_profile, command_port)
+    benchmark_run_command = reproduction_command("ALL" if batch else table_profile, command_port, memory)
     coremark_commit = benchmark.get("coremark", {}).get("commit") or build_summary.get("coremark_commit", "not fetched")
     source_fingerprint = identity.get("source_fingerprint") or benchmark.get("source_fingerprint", "not available")
     flags = identity.get("compiler_flags_complete")
@@ -860,8 +1559,10 @@ def create_report():
     uart_note = uart_method_text(benchmark)
     calibration_note = calibration_method_text(benchmark)
     preflight_note = runtime_preflight_text(benchmark)
-    diagnostics_note = diagnostics_text(observed_diagnostics, historical_crc_failures, session)
-    startup_note = startup_recovery_text(session)
+    if batch:
+        startup_note = "Each profile has its own firmware upload and BIOS recovery record in the per-profile sections below."
+    else:
+        startup_note = startup_recovery_text(session)
     profile_metadata = benchmark.get("upstream_verification", {})
     upstream_note = profile_metadata.get("upstream_manifest_note", "CoreMark source checks have not run.")
     tools = identity.get("tool_versions", {}) or build.get("tool_versions", {})
@@ -872,12 +1573,15 @@ def create_report():
             "gowin": build.get("tool_versions", {}).get("gowin", "not available"),
             "openfpgaloader": build.get("tool_versions", {}).get("openfpgaloader", "not available"),
         }
-    summary = (session or {}).get("aggregate") if complete else None
+    latest_profile_complete = session is not None and session.get("report_validation", {}).get("status") == "passed"
+    summary = (session or {}).get("aggregate") if (latest_profile_complete if batch else complete) else None
     data["schema_version"] = 1
     data["latest_session_id"] = session.get("session_id") if session else None
+    data["latest_memory_mode"] = memory
     data["report_generated_utc"] = datetime.datetime.now(datetime.timezone.utc).isoformat()
     data["build_profiles"] = {
         profile: {
+            "memory_mode": memory,
             "build_status": rows[profile]["build_status"],
             "resources": rows[profile].get("resources"),
             "performance_firmware_bytes": rows[profile].get("performance_firmware_bytes"),
@@ -895,8 +1599,12 @@ def create_report():
             "runtime_preflight": rows[profile].get("benchmark_metadata", {}).get("runtime_preflight"),
             "memory": rows[profile].get("benchmark_metadata", {}).get("memory"),
             "hardware_status": (
-                "measured" if profile == table_profile and complete
-                else (session.get("status", "incomplete") if profile == table_profile and session else "not_measured")
+                hardware_status_by_profile.get(profile, "not_measured")
+                if hardware_status_by_profile is not None
+                else (
+                    "measured" if profile == table_profile and complete
+                    else (session.get("status", "incomplete") if profile == table_profile and session else "not_measured")
+                )
             ),
         }
         for profile in PROFILES
@@ -911,46 +1619,70 @@ def create_report():
             "cache_maintenance": benchmark.get("cache_maintenance"),
             "runtime_preflight": benchmark.get("runtime_preflight"),
         }
+    if batch:
+        data["latest_batch_summary"] = {
+            "batch_id": batch.get("batch_id"),
+            "memory_mode": memory,
+            "requested_profiles": batch.get("requested_profiles", []),
+            "status": batch.get("status"),
+            "missing_profiles": batch.get("missing_profiles", []),
+            "errors": batch.get("errors", []),
+            "profile_results": batch.get("profile_results", {}),
+        }
+        data["latest_batch_aggregates"] = {
+            profile: result.get("aggregate") if result.get("status") == "passed" else None
+            for profile, result in batch.get("profile_results", {}).items()
+        }
+    else:
+        data["latest_batch_summary"] = None
+        data["latest_batch_aggregates"] = {}
     data["latest_observed_diagnostics"] = observed_diagnostics
     data["historical_coremark_crc_failures"] = historical_crc_failures
+    data["memory_mode_comparison"] = comparison
     results_path.write_text(json.dumps(data, indent=2) + "\n")
 
     version = tools.get("python", sys.version.split()[0])
-    report_status = "complete" if complete else "INCOMPLETE — board measurements are unavailable or failed"
+    memory_placement_text = (
+        "Code and read-only data in 256 MiB DDR3 main RAM at `0x40000000`; CoreMark data/BSS and a 2,048-byte reserved stack in 8 KiB SRAM at `0x10000000`; 8 KiB LiteDRAM L2."
+        if memory == "ddr3" else
+        "Code and read-only data in 32 KiB main RAM at `0x40000000`; CoreMark data/BSS in 8 KiB on-chip SRAM at `0x10000000`; a 2,048-byte stack is reserved."
+    )
+    report_status = (
+        "complete" if complete
+        else (f"INCOMPLETE — PROFILE=ALL batch {batch.get('status')}" if batch
+              else "INCOMPLETE — board measurements are unavailable or failed")
+    )
     if complete:
         hardware_status = "measured (3 valid repetitions)"
+    elif batch:
+        hardware_status = "see per-profile batch status"
     elif session and session.get("status") == "failed":
         hardware_status = "failed / incomplete"
     elif session:
         hardware_status = "incomplete"
     else:
         hardware_status = "not measured"
-    time_rows = profile_table(rows, table_profile, hardware_status)
-    if summary:
-        aggregate_text = (
-            f"Mean CoreMark **{summary['coremark_mean']:.6f}**, minimum **{summary['coremark_min']:.6f}**, "
-            f"maximum **{summary['coremark_max']:.6f}**, and spread **{summary['coremark_spread']:.6f}**. "
-            f"Mean CoreMark/MHz **{summary['coremark_per_mhz_mean']:.9f}**, range "
-            f"**{summary['coremark_per_mhz_min']:.9f}–{summary['coremark_per_mhz_max']:.9f}**, spread "
-            f"**{summary['coremark_per_mhz_spread']:.9f}**."
-        )
-    else:
-        aggregate_text = "No aggregate is reported until validation and all three scored repetitions pass the capture checks."
+    time_rows = profile_table(rows, table_profile, hardware_status, hardware_status_by_profile)
 
     log_links = []
-    for trial in (session or {}).get("trials", []):
-        label = f"{trial.get('mode')} {trial.get('attempt', '')}".strip()
-        text_link = repo_link(trial.get("text_uart_log"), f"{label} UART log")
-        if text_link:
-            log_links.append(text_link)
-        if file_matches(trial.get("raw_uart_log"), trial.get("raw_uart_sha256")):
-            raw_link = repo_link(trial.get("raw_uart_log"), f"{label} raw UART bytes")
-            if raw_link:
-                log_links.append(raw_link)
-        if file_matches(trial.get("transmitted_uart_log"), trial.get("transmitted_uart_sha256")):
-            tx_link = repo_link(trial.get("transmitted_uart_log"), f"{label} transmitted UART bytes")
-            if tx_link:
-                log_links.append(tx_link)
+    evidence_sessions = (
+        [batch.get("sessions", {}).get(profile) for profile in batch.get("requested_profiles", [])]
+        if batch else [session]
+    )
+    for evidence_session in evidence_sessions:
+        for trial in (evidence_session or {}).get("trials", []):
+            label = f"{evidence_session.get('profile')} {trial.get('mode')} {trial.get('attempt', '')}".strip()
+            text_link = repo_link(trial.get("text_uart_log"), f"{label} UART log")
+            if text_link:
+                log_links.append(text_link)
+            if file_matches(trial.get("raw_uart_log"), trial.get("raw_uart_sha256")):
+                raw_link = repo_link(trial.get("raw_uart_log"), f"{label} raw UART bytes")
+                if raw_link:
+                    log_links.append(raw_link)
+            if file_matches(trial.get("transmitted_uart_log"), trial.get("transmitted_uart_sha256")):
+                tx_link = repo_link(trial.get("transmitted_uart_log"), f"{label} transmitted UART bytes")
+                if tx_link:
+                    log_links.append(tx_link)
     links = ", ".join(log_links) if log_links else "No UART log files were retained for this session."
     build_session = build_summary.get("session_id")
     report_links = []
@@ -965,6 +1697,23 @@ def create_report():
             if link:
                 report_links.append(link)
     build_artifacts = repo_link(f"build/benchmarks/{build_session}", f"build/benchmarks/{build_session}") if build_session else None
+    measurement_identity_label = (
+        f"batch `{batch.get('batch_id')}`; requested profiles: "
+        + ", ".join(f"`{profile}`" for profile in batch.get("requested_profiles", []))
+        if batch else f"{session_date}; selected profile: `{selected_profile}`"
+    )
+    validation_heading = "Per-profile validation and scored runs" if batch else "Validation and scored runs"
+    reproduction_heading = (
+        "Run validation plus three scored repetitions sequentially on all profiles:"
+        if batch else "Run validation plus three scored repetitions on one selected profile:"
+    )
+    interpretation_note = (
+        batch_interpretation_text(batch)
+        if batch else interpretation_text(session, complete, summary)
+    )
+    interpretation_suffix = (
+        "" if batch else " Profiles marked **not measured** have no inferred scores, and this report does not establish a ranking for them."
+    )
     report = f"""# VexRiscv CoreMark performance
 
 **Status: {report_status}.**
@@ -972,8 +1721,9 @@ def create_report():
 ## Measurement identity
 
 - Board: Sipeed Tang Primer 20K with standard Dock; device `GW2A-LV18PG256C8/I7`.
-- Measurement session: {session_date}; selected profile: `{selected_profile}`.
+- Measurement: {measurement_identity_label}.
 - SRAM programming status: **{programming_status}**; no flash programming is used.
+- Benchmark memory mode: **{memory}**.
 - Device discovery at session start: {len((session or {}).get('uart_candidates_at_start', []))} `/dev/serial/by-id/` paths and {len((session or {}).get('usb_device_nodes_at_start', []))} USB device nodes were visible.
 - Configured SoC operating clock: **48,000,000 Hz**; UART selected: `{uart_selected}`; requested device: `{uart_requested}` at 115200 baud.
 - Repository revision: `{identity.get('repository_revision', git['revision'])}`; dirty at capture: `{identity.get('repository_dirty', git['dirty'])}`; source fingerprint: `{source_fingerprint}`.
@@ -981,7 +1731,7 @@ def create_report():
 - Tool versions: CPython {version}; RISC-V GCC `{identity.get('compiler_version', build.get('tool_versions', {}).get('riscv_gcc', 'not available'))}`; Gowin `{tools.get('gowin', 'not available')}`; openFPGALoader `{tools.get('openfpgaloader', 'not available')}`.
 - Compiler flags for the upstream algorithm sources:
   {flags_text}
-- Memory placement: code and read-only data in 32 KiB main RAM at `0x40000000`; static benchmark data and BSS in 8 KiB on-chip SRAM at `0x10000000`; a 2,048-byte stack is reserved. The 2,000-byte CoreMark data area is statically allocated.
+- Memory placement: {memory_placement_text} The 2,000-byte CoreMark data area is statically allocated.
 - Generated cache configuration: `{identity.get('cache', benchmark.get('cache', 'not available'))}`. {uart_note}
 - Trial startup and recovery: {startup_note} Each trial reprograms the design into FPGA SRAM and uploads fresh firmware through the LiteX BIOS serial loader; reconfiguration resets the design, and no reset is issued during a run. {calibration_note}
 - Runtime SRAM and seed preflight: {preflight_note}
@@ -996,19 +1746,30 @@ GCC's largest per-function static frame is shown as a stack sizing check, not a 
 
 {diagnostics_note}
 
-## Validation and scored runs
+## CPU candidate and memory-mode comparison
 
-{validation_text}
+On-chip and DDR3 CoreMark results are revalidated separately. Legacy sessions without a memory field are treated as on-chip.
 
-{performance_table}
+{memory_comparison_table(comparison)}
 
-{aggregate_text}
+### Standard-derived CPU candidates
+
+{cpu_candidate_status_text(comparison)}
+
+### DDR3 training and integrity
+
+DDR3 acceptance status: **{comparison['ddr3_test_status']}**. Training logs, full-range memory coverage, cached/uncached visibility, and sustained stress evidence are summarized in [the DDR3 report](ddr3/report.md).
+
+## {validation_heading}
+
+{validation_sections}
 
 Raw elapsed timer counters are preserved as 64-bit values in `results.json`; the UART port emits the high and low 32-bit words separately. Scores are recalculated on the host as `iterations × clock_hz / elapsed_ticks` and `iterations × 1,000,000 / elapsed_ticks`. The compact bare-metal build disables CoreMark's optional floating-point text; upstream integer iterations/second and whole-second duration are cross-checked, while report scores use full-resolution timer ticks. Failed or incomplete captures do not enter aggregates.
 
 ## Evidence and reproduction
 
 - [Machine-readable results and artifact hashes](performance/results.json)
+- [Measured CPU profile selection](../cpu-profile-selection.json), [candidate P&R evidence](performance/cpu-evaluation/candidate-build.json), and [candidate board sessions](performance/cpu-evaluation/evaluations.json)
 - {links}
 - Gowin reports: {', '.join(report_links) if report_links else 'no current build reports are available.'}
 - Build/session artifacts: {build_artifacts or 'No benchmark build session is recorded.'}
@@ -1021,7 +1782,7 @@ make doctor
 make benchmark-build
 ```
 
-Run validation plus three scored repetitions on one selected profile:
+{reproduction_heading}
 
 ```sh
 {benchmark_run_command}
@@ -1030,9 +1791,12 @@ make benchmark-report
 
 ## Interpretation and limits
 
-{interpretation_text(session, complete, summary)} Profiles marked **not measured** have no inferred scores, and this report does not establish a ranking for them.
+{interpretation_note}{interpretation_suffix}
 """
     (ROOT / "docs/performance.md").write_text(report)
+    (ROOT / "docs/coremark-summary.md").write_text(
+        coremark_summary_text(comparison, data["report_generated_utc"])
+    )
     print(f"Wrote docs/performance.md ({report_status})")
     return 0
 

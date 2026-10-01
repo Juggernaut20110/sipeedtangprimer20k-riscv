@@ -6,28 +6,64 @@ import os
 import subprocess
 import sys
 from pathlib import Path
+from migen.fhdl.specials import READ_FIRST  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import build as build_module  # noqa: E402
-from gateware.soc import PROFILES  # noqa: E402
+from gateware.soc import (  # noqa: E402
+    DDR_DIAGNOSTIC_BASE, DDR_DIAGNOSTIC_SIZE, DDR_L2_SIZE, DDR_SIZE_BYTES,
+    DDR_UNCACHED_BASE, MEMORY_MODES, PROFILES,
+)
 
 
-def check_generated_soc(profile):
-    output = ROOT / "build/validation" / profile
+def check_generated_soc(profile, memory="onchip"):
+    output = (ROOT / "build/validation" / profile if memory == "onchip"
+              else ROOT / "build/validation" / memory / profile)
+    cpu_rtl = None
+    bios_size = None
+    if profile == "performance":
+        _, cpu_rtl, _, _ = build_module.selected_performance_cpu()
+        bios_size = 24 * 1024 if memory == "onchip" else 32 * 1024
     soc, builder = build_module.generate_soc(
         profile,
         output,
         run_tools=False,
         compile_software=False,
         compile_gateware=False,
+        memory=memory,
+        bios_size=bios_size,
+        cpu_rtl=cpu_rtl,
     )
-    assert soc.cpu.variant == profile
+    assert soc.cpu.variant == PROFILES[profile]
     assert soc.sys_clk_freq == 48_000_000
-    assert soc.integrated_rom_size == 32 * 1024
-    assert soc.integrated_main_ram_size == 32 * 1024
+    assert soc.integrated_rom_size == (24 * 1024 if profile == "performance" and memory == "onchip" else 32 * 1024)
     assert soc.integrated_sram_size == 8 * 1024
-    assert not hasattr(soc, "ddrphy") and not hasattr(soc, "sdram")
+    if memory == "onchip":
+        assert soc.integrated_main_ram_size == 32 * 1024
+        assert not hasattr(soc, "ddrphy") and not hasattr(soc, "sdram")
+        assert all(port.mode == READ_FIRST for port in soc.sram.mem.ports)
+        assert all(port.mode == READ_FIRST for port in soc.main_ram.mem.ports)
+    else:
+        assert soc.integrated_main_ram_size == 0
+        assert hasattr(soc, "ddrphy") and hasattr(soc, "sdram")
+        geom = soc.sdram.controller.settings.geom
+        actual_bytes = (1 << (geom.bankbits + geom.rowbits + geom.colbits)) * (soc.ddrphy.settings.databits // 8)
+        assert (1 << geom.bankbits, 1 << geom.rowbits, 1 << geom.colbits) == (8, 16384, 1024)
+        assert actual_bytes == DDR_SIZE_BYTES
+        assert soc.ddrphy.settings.cl == 6 and soc.ddrphy.settings.cwl == 6
+        assert soc.ddrphy.settings.dll_off is True
+        assert soc.ddrphy.settings.read_leveling is True
+        assert soc.ddrphy.settings.bitslips == 4 and soc.ddrphy.settings.delays == 256
+        assert soc.l2_cache is not None
+        assert soc.bus.regions["main_ram"].origin == 0x40000000
+        assert soc.bus.regions["main_ram"].size == DDR_SIZE_BYTES
+        assert soc.bus.regions["ddr_diagnostic_ram"].origin == DDR_DIAGNOSTIC_BASE
+        assert soc.bus.regions["ddr_diagnostic_ram"].size == DDR_DIAGNOSTIC_SIZE
+        assert soc.bus.regions["ddr_uncached"].origin == DDR_UNCACHED_BASE
+        assert soc.bus.regions["ddr_uncached"].size == DDR_SIZE_BYTES
+        assert soc.bus.regions["ddr_uncached"].cached is False
+        assert all(port.mode == READ_FIRST for port in soc.ddr_diagnostic_ram.mem.ports)
     assert len(soc.leds.out.storage) == 6 and soc.leds.out.storage.reset.value == 0
     assert len(soc.buttons._in.status) == 4
     assert any(
@@ -44,7 +80,11 @@ def check_generated_soc(profile):
     assert "timer0_uptime_latch_write" in csr_header
     mem_header = (output / "software/include/generated/mem.h").read_text()
     assert "MAIN_RAM_BASE" in mem_header and "MAIN_RAM_SIZE" in mem_header
-    assert "sdram" not in (output / "csr.json").read_text().lower()
+    if memory == "onchip":
+        assert "sdram" not in (output / "csr.json").read_text().lower()
+    else:
+        assert "ddrphy" in (output / "csr.json").read_text().lower()
+        assert "sdram_dfii_control" in (output / "csr.json").read_text().lower()
 
     cst = (output / "gateware" / f"tang20k_{profile}.cst").read_text()
     sdc = (output / "gateware" / f"tang20k_{profile}.sdc").read_text()
@@ -65,21 +105,56 @@ def check_generated_soc(profile):
         assert f'IO_LOC "{resource}" {pin};' in cst
         assert f'IO_PORT "{resource}" IO_TYPE={standard};' in cst
     assert "create_generated_clock -name sys_clk" in sdc
-    assert "-divide_by 9 -multiply_by 16 [get_pins {rPLL/CLKOUT}]" in sdc
+    if memory == "onchip":
+        assert "-divide_by 9 -multiply_by 16 [get_pins {rPLL/CLKOUT}]" in sdc
+    else:
+        assert "-divide_by 9 -multiply_by 32 [get_pins {rPLL/CLKOUT}]" in sdc
+        assert "create_generated_clock -name sys2x_clk" in sdc
+        assert "-divide_by 2 -multiply_by 1 [get_pins {CLKDIV/CLKOUT}]" in sdc
     assert "create_clock -name clk27 -period 37.037" in sdc
 
     return {
         "profile": profile,
+        "memory_mode": memory,
         "generated": True,
         "clock_constraint": sdc.strip().splitlines(),
         "gpio_csr": ["leds_out_write", "buttons_in_read"],
-        "ddr3_disabled": True,
+        "ddr3_enabled": memory == "ddr3",
         "led_count": len(soc.leds.out.storage),
         "led_logical_resource_order": list(soc.project_led_logical_resource_order),
         "button_count": len(soc.buttons._in.status),
         "button_resource_order": list(soc.project_button_resource_order),
         "platform_device": soc.platform.device,
+        "cpu_variant": soc.cpu.variant,
+        "external_cpu_rtl": soc.project_cpu_rtl,
+        "performance_cpu_candidate": (
+            build_module.read_performance_selection()["candidate"] if profile == "performance" else None
+        ),
         "checked_pin_constraints": expected_pins,
+    }
+
+
+def check_performance_cpu_selection():
+    selection = build_module.read_performance_selection()
+    candidate, source, generated, _ = build_module.selected_performance_cpu()
+    assert candidate == selection["candidate"] == "dynamic_target"
+    assert generated["rtl_sha256"] == selection["rtl_sha256"]
+    assert PROFILES["performance"] == "standard"
+    assert source.is_file()
+    return {
+        "verified": True,
+        "profile_basis": "standard",
+        "public_profile_registered": True,
+        "candidate": candidate,
+        "external_rtl": str(source.relative_to(ROOT)),
+        "rtl_sha256": generated["rtl_sha256"],
+        "system_clock_hz": selection["clock_hz"],
+        "bios_rom_bytes_onchip": selection["memory_budgets"]["onchip_bios_rom_bytes"],
+        "main_ram_bytes": selection["memory_budgets"]["main_ram_bytes"],
+        "sram_bytes": selection["memory_budgets"]["sram_bytes"],
+        "ddr3_l2_bytes": selection["memory_budgets"]["ddr3_l2_bytes"],
+        "measured_mean": selection["evaluation"]["winner"]["coremark_mean"],
+        "fresh_standard_mean": selection["evaluation"]["winner"]["standard_mean"],
     }
 
 
@@ -100,15 +175,18 @@ def main():
     subprocess.run([sys.executable, "-m", "unittest", "discover", "-s", "tests", "-p", "test_*.py"], cwd=ROOT, check=True)
 
     generated = []
-    for profile in PROFILES:
-        print(f"Generating and checking {profile} SoC")
-        generated.append(check_generated_soc(profile))
+    for memory in MEMORY_MODES:
+        for profile in PROFILES:
+            print(f"Generating and checking {memory}/{profile} SoC")
+            generated.append(check_generated_soc(profile, memory))
+    performance_cpu_selection = check_performance_cpu_selection()
 
     result = {
         "status": "passed",
         "host_firmware_logic": "passed",
         "gpio_simulation": "passed",
         "profiles": generated,
+        "performance_cpu_profile": performance_cpu_selection,
         "vendor_synthesis": "not run by make test; use make build for each profile",
         "hardware": "pending until Dock is connected",
     }

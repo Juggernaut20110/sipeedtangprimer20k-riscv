@@ -7,7 +7,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from gateware.soc import PROFILES, ProjectSoC  # noqa: E402
+from gateware.soc import MEMORY_MODES, PROFILES, ProjectSoC  # noqa: E402
+from scripts.memory import profile_build_dir  # noqa: E402
 from litex.tools.litex_term import LiteXTerm  # noqa: E402
 
 
@@ -21,10 +22,14 @@ def generated_main_ram_base(header):
 
 
 def main():
-    if len(sys.argv) != 3 or sys.argv[1] not in PROFILES or not sys.argv[2]:
-        print("usage: make run PROFILE=minimal PORT=/dev/serial/by-id/<device>", file=sys.stderr)
+    if len(sys.argv) not in (3, 4) or sys.argv[1] not in PROFILES or not sys.argv[2]:
+        print("usage: make run PROFILE=minimal PORT=/dev/serial/by-id/<device> [MEMORY=onchip|ddr3]", file=sys.stderr)
         return 2
-    profile, port = sys.argv[1:]
+    profile, port = sys.argv[1:3]
+    memory = sys.argv[3] if len(sys.argv) == 4 else "onchip"
+    if memory not in MEMORY_MODES:
+        print(f"unknown memory mode {memory!r}; choose from {', '.join(MEMORY_MODES)}", file=sys.stderr)
+        return 2
     port_path = Path(port)
     if not port_path.exists():
         print(f"serial port does not exist: {port}; connect the Dock and use its /dev/serial/by-id path", file=sys.stderr)
@@ -33,7 +38,7 @@ def main():
         print(f"serial port is not accessible: {port}; add your user to dialout, log out/in, and reconnect the Dock", file=sys.stderr)
         return 1
 
-    output = ROOT / "build" / profile
+    output = profile_build_dir(ROOT, profile, memory)
     metadata_path = output / "build-metadata.json"
     binary = output / "firmware/demo.bin"
     bitstream = output / "bitstream.fs"
@@ -41,7 +46,8 @@ def main():
         print(f"matching artifacts are missing; run make build PROFILE={profile} first", file=sys.stderr)
         return 1
     metadata = json.loads(metadata_path.read_text())
-    if metadata.get("status") != "passed" or metadata.get("profile") != profile:
+    if (metadata.get("status") != "passed" or metadata.get("profile") != profile
+            or metadata.get("memory_mode", "onchip") != memory):
         print(f"build metadata does not show a successful {profile} build", file=sys.stderr)
         return 1
     base = generated_main_ram_base(output / "software/include/generated/mem.h")
@@ -53,7 +59,12 @@ def main():
         term.open(port, 115200)
         term.console.configure()
         term.start()
-        soc = ProjectSoC(profile=profile)
+        cpu_rtl = metadata.get("cpu_rtl")
+        soc = ProjectSoC(
+            profile=profile, memory=memory,
+            bios_size=metadata.get("bios_size"),
+            cpu_rtl=(ROOT / cpu_rtl) if cpu_rtl else None,
+        )
         programmer = soc.platform.create_programmer(kit="openfpgaloader")
         programmer.load_bitstream(str(bitstream))
         term.wait()

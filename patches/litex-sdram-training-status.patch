@@ -1,0 +1,105 @@
+diff --git a/litex/soc/software/liblitedram/sdram.c b/litex/soc/software/liblitedram/sdram.c
+--- a/litex/soc/software/liblitedram/sdram.c
++++ b/litex/soc/software/liblitedram/sdram.c
+@@ -579,6 +579,9 @@
+ /* Locate the largest passing delay window for the current bitslip and program
+  * the delay to its center. Two consecutive passing taps are required before a
+  * window is trusted, since single-edge taps can be unstable. */
++static int sdram_read_delay_center = -1;
++static int sdram_read_delay_half_window = -1;
++
+ static int sdram_leveling_center_module(
+ 	int module, int show_short, int show_long, action_callback rst_delay,
+ 	action_callback inc_delay, int dq_line) {
+@@ -652,6 +655,8 @@
+ 
+ 	delay_mid   = (delay_min+delay_max)/2 % SDRAM_PHY_DELAYS;
+ 	delay_range = (delay_max-delay_min)/2;
++	sdram_read_delay_center = delay_mid;
++	sdram_read_delay_half_window = delay_range;
+ 	if (show_short) {
+ 		if (delay_min < 0)
+ 			printf("delays: -");
+@@ -1321,7 +1326,7 @@
+ }
+ #endif // SDRAM_READ_LEVELING_FAST
+ 
+-void sdram_read_leveling(void) {
++int sdram_read_leveling(void) {
+ 	int module;
+ 	int bitslip;
+ 	int dq_line;
+@@ -1376,12 +1381,30 @@
+ 				sdram_leveling_action(module, dq_line, read_inc_dq_bitslip);
+ #endif // SDRAM_READ_LEVELING_FAST
+ 
+-			/* Re-do leveling on best read window*/
+-			sdram_leveling_center_module(module, 1, 0,
++			/* Validate a complete all-seed read window for the selected lane. */
++			int window_start = -1;
++			int window_length = 0;
++			if (!sdram_read_leveling_scan_window(module, dq_line,
++				_seed_array_length, 1, 2, &window_start, &window_length,
++				best_bitslip, 0)) {
++				printf("SDRAM_READ_LEVELING_LANE module=%d dq=%d bitslip=%d status=failed window_start=%d window_length=%d\n",
++					module, dq_line, best_bitslip, window_start, window_length);
++				return 0;
++			}
++
++			/* Recenter the validated window; require the center probe to pass. */
++			int centered = sdram_leveling_center_module(module, 1, 0,
+ 				read_rst_dq_delay, read_inc_dq_delay, dq_line);
+ 			printf("\n");
++			printf("SDRAM_READ_LEVELING_LANE module=%d dq=%d bitslip=%d status=%s window_start=%d window_length=%d delay_center=%d delay_half_window=%d\n",
++				module, dq_line, best_bitslip, centered ? "passed" : "failed",
++				window_start, window_length, sdram_read_delay_center,
++				sdram_read_delay_half_window);
++			if (!centered)
++				return 0;
+ 		}
+ 	}
++	return 1;
+ }
+ 
+ #endif // SDRAM_PHY_READ_LEVELING_CAPABLE
+@@ -1680,7 +1703,10 @@
+ 
+ #ifdef SDRAM_PHY_READ_LEVELING_CAPABLE
+ 	printf("Read leveling:\n");
+-	sdram_read_leveling();
++	if (!sdram_read_leveling()) {
++		sdram_software_control_off();
++		return 0;
++	}
+ #endif // SDRAM_PHY_READ_LEVELING_CAPABLE
+ 
+ 	sdram_software_control_off();
+@@ -1755,6 +1781,17 @@
+ 	 * the DRAM can respond to software DFII read/write probes. */
+ 	init_sequence();
+ #if defined(SDRAM_PHY_WRITE_LEVELING_CAPABLE) || defined(SDRAM_PHY_READ_LEVELING_CAPABLE)
+-	sdram_leveling();
++	printf("SDRAM_TRAINING_START phy=GW2DDRPHY read_leveling=1 bitslips=%d delays=%d\n",
++		SDRAM_PHY_BITSLIPS, SDRAM_PHY_DELAYS);
++	if (!sdram_leveling()) {
++		printf("SDRAM_TRAINING_RESULT status=failed phase=leveling\n");
++		sdram_software_control_off();
++#ifdef CSR_DDRCTRL_BASE
++		ddrctrl_init_error_write(1);
++		ddrctrl_init_done_write(1);
++#endif // CSR_DDRCTRL_BASE
++		return 0;
++	}
++	printf("SDRAM_TRAINING_RESULT status=passed\n");
+ #endif // defined(SDRAM_PHY_WRITE_LEVELING_CAPABLE) || defined(SDRAM_PHY_READ_LEVELING_CAPABLE)
+ #endif // CONFIG_SDRAM_CUSTOM_INIT
+diff --git a/litex/soc/software/liblitedram/sdram.h b/litex/soc/software/liblitedram/sdram.h
+--- a/litex/soc/software/liblitedram/sdram.h
++++ b/litex/soc/software/liblitedram/sdram.h
+@@ -36,5 +36,5 @@
+ /*-----------------------------------------------------------------------*/
+ /* Read Leveling                                                         */
+ /*-----------------------------------------------------------------------*/
+-void sdram_read_leveling(void);
++int sdram_read_leveling(void);
+ 

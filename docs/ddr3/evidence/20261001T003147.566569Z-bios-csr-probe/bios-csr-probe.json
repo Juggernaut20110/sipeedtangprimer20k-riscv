@@ -1,0 +1,18 @@
+{
+  "status": "diagnostic_only_read_only_csr_probe",
+  "profile": "minimal",
+  "memory_mode": "ddr3",
+  "port": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+  "commands": [
+    "mem_read 0xf000101c 4",
+    "mem_read 0xf0001000 4",
+    "mem_read 0xf0002800 4"
+  ],
+  "serial_writes": 66,
+  "received_bytes": 408,
+  "raw_uart": "docs/ddr3/evidence/20261001T003147.566569Z-bios-csr-probe/bios-csr-probe.uart.bin",
+  "raw_uart_sha256": "e836246cc1b3d0c81bfee296cf517d35cc623274486364c93eab24474435b742",
+  "transmitted_uart": "docs/ddr3/evidence/20261001T003147.566569Z-bios-csr-probe/bios-csr-probe.uart.tx.bin",
+  "transmitted_uart_sha256": "e4acc7472cee21841608a9f6f5d2cab0e923d35fe730188cbfbaf3b649323277",
+  "captured_utc": "2026-10-01T00:32:06.292355+00:00"
+}

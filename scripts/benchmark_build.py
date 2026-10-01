@@ -17,7 +17,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from gateware.soc import PROFILES, SYS_CLK_FREQ  # noqa: E402
+from gateware.soc import MEMORY_MODES, PROFILES, SYS_CLK_FREQ  # noqa: E402
+from scripts.memory import profile_build_dir, validate_memory  # noqa: E402
 import build as build_module  # noqa: E402
 import compare as compare_module  # noqa: E402
 
@@ -253,8 +254,9 @@ def compile_variant(profile, mode, build_id, compiler_flags, include_flags, buil
         raise RuntimeError(f"{profile}/{mode} is missing linked SRAM/stack boundary symbols")
     sram_used = symbols["_end"] - symbols["_fdata"]
     stack_reserved = sections.get(".stack", {}).get("size", 0)
-    if main_used > 32 * 1024:
-        raise RuntimeError(f"{profile}/{mode} benchmark image is {main_used} bytes; 32768-byte main RAM exceeded")
+    main_capacity = build_module.read_main_ram_size(build_dir / "software/include/generated/mem.h")
+    if main_used > main_capacity:
+        raise RuntimeError(f"{profile}/{mode} benchmark image is {main_used} bytes; {main_capacity}-byte main RAM exceeded")
     if stack_reserved < 2048:
         raise RuntimeError(f"{profile}/{mode} benchmark reserved stack is only {stack_reserved} bytes")
     if sram_used + stack_reserved > 8 * 1024:
@@ -281,7 +283,7 @@ def compile_variant(profile, mode, build_id, compiler_flags, include_flags, buil
         "sram_boundaries": symbols,
         "reserved_stack_bytes": stack_reserved,
         "remaining_sram_bytes": symbols["_stack_bottom"] - symbols["_end"],
-        "main_ram_capacity_bytes": 32 * 1024,
+        "main_ram_capacity_bytes": main_capacity,
         "sections": sections,
         "stack_usage": stack_usage_summary(obj_dir),
         "stack_usage_reports": [str(path.relative_to(ROOT)) for path in stack_usage_reports],
@@ -290,8 +292,9 @@ def compile_variant(profile, mode, build_id, compiler_flags, include_flags, buil
     }
 
 
-def build_profile_firmware(profile, build_metadata):
-    build_dir = ROOT / "build" / profile
+def build_profile_firmware(profile, build_metadata, memory="onchip", build_dir=None):
+    validate_memory(memory)
+    build_dir = Path(build_dir).resolve() if build_dir is not None else profile_build_dir(ROOT, profile, memory)
     output_dir = build_dir / "benchmark"
     output_dir.mkdir(parents=True, exist_ok=True)
     variables = build_dir / "software/include/generated/variables.mak"
@@ -326,6 +329,8 @@ def build_profile_firmware(profile, build_metadata):
         ROOT / "firmware/linker.ld", ROOT / "scripts/benchmark_build.py",
         startup_object, libbase_archive,
     ]
+    if build_metadata.get("cpu_rtl"):
+        source_files.append(ROOT / build_metadata["cpu_rtl"])
     source_files += [PORT / name for name in (
         "core_portme.h", "core_portme.c", "benchmark_main.c", "benchmark_port.h", "ee_printf.c",
     )]
@@ -338,6 +343,8 @@ def build_profile_firmware(profile, build_metadata):
     source_identity = {str(path.relative_to(ROOT)): sha256(path) for path in source_files + generated}
     fingerprint_values = {
         "profile": profile,
+        "cpu_candidate": build_metadata.get("cpu_candidate"),
+        "memory_mode": memory,
         "coremark_commit": COREMARK["commit"],
         "source_hashes": source_identity,
         "bitstream_sha256": bitstream_hash,
@@ -346,6 +353,8 @@ def build_profile_firmware(profile, build_metadata):
         "compiler_flags": compiler_flags,
         "include_flags": include_flags,
         "system_clock_hz": SYS_CLK_FREQ,
+        "cpu_configuration": build_metadata.get("cpu_configuration"),
+        "memory_configuration": build_metadata.get("memory"),
     }
     fingerprint = stable_hash(fingerprint_values)
     build_id = fingerprint[:16]
@@ -366,6 +375,8 @@ def build_profile_firmware(profile, build_metadata):
     result = {
         "status": "in_progress",
         "profile": profile,
+        "cpu_candidate": build_metadata.get("cpu_candidate"),
+        "memory_mode": memory,
         "build_id": build_id,
         "source_fingerprint": fingerprint,
         "source_hashes": source_identity,
@@ -444,7 +455,17 @@ def build_profile_firmware(profile, build_metadata):
             "litex_libbase_archive": str(libbase_archive.relative_to(ROOT)),
             "litex_libbase_archive_sha256": sha256(libbase_archive),
         },
-        "memory": {"main_ram": "0x40000000", "main_ram_bytes": 32768, "sram": "0x10000000", "sram_bytes": 8192},
+        "cpu_configuration": build_metadata.get("cpu_configuration"),
+        "cpu_rtl": build_metadata.get("cpu_rtl"),
+        "memory": {
+            **build_metadata.get("memory", {}),
+            "main_ram_base": f"0x{build_module.read_main_ram_base(build_dir / 'software/include/generated/mem.h'):08x}",
+            "main_ram_bytes": build_module.read_main_ram_size(build_dir / "software/include/generated/mem.h"),
+            "code_and_read_only_data": "main_ram",
+            "algorithm_data_bss_and_reserved_stack": "sram",
+            "sram_base": "0x10000000",
+            "sram_bytes": 8192,
+        },
         "started_utc": utc_now().isoformat(),
         "images": {},
     }
@@ -471,29 +492,36 @@ def copy_file(source, destination):
     shutil.copy2(source, destination)
 
 
-def main():
+def main(argv=None):
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--memory", choices=MEMORY_MODES, default="onchip")
+    args = parser.parse_args(argv)
+    memory = args.memory
     require_coremark_checkout()
-    session_id = utc_now().strftime("%Y%m%dT%H%M%SZ") + "-build"
+    session_id = utc_now().strftime("%Y%m%dT%H%M%SZ") + f"-{memory}-build"
     session_dir = ROOT / "build/benchmarks" / session_id
     session_dir.mkdir(parents=True, exist_ok=True)
     combined = {
         "schema_version": 1,
         "session_id": session_id,
+        "memory_mode": memory,
         "status": "in_progress",
         "created_utc": utc_now().isoformat(),
         "coremark_commit": COREMARK["commit"],
         "upstream_verification": COREMARK_CHECK,
         "profiles": {},
     }
-    destination = ROOT / "build/benchmark-build.json"
+    destination = ROOT / "build" / ("benchmark-build.json" if memory == "onchip" else f"{memory}/benchmark-build.json")
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text(json.dumps(combined, indent=2) + "\n")
     try:
         for profile in PROFILES:
             print(f"Building SoC and CoreMark firmware for {profile}", flush=True)
-            metadata = build_module.build_profile(profile)
-            resources = compare_module.parse_profile(profile)
-            firmware = build_profile_firmware(profile, metadata)
+            profile_dir_root = profile_build_dir(ROOT, profile, memory)
+            metadata = build_module.build_profile(profile, memory=memory)
+            resources = compare_module.parse_profile(profile, memory=memory)
+            firmware = build_profile_firmware(profile, metadata, memory=memory)
             combined["profiles"][profile] = {
                 "status": "passed", "build": metadata, "resources": resources, "benchmark_firmware": firmware,
             }
@@ -501,14 +529,14 @@ def main():
             for key, value in resources["evidence"].items():
                 copy_file(ROOT / value, profile_dir / Path(value).name)
             copy_file(ROOT / metadata["bitstream"], profile_dir / "bitstream.fs")
-            copy_file(ROOT / "build" / profile / "build-metadata.json", profile_dir / "build-metadata.json")
-            copy_file(ROOT / "build" / profile / "benchmark/benchmark-metadata.json", profile_dir / "benchmark-metadata.json")
+            copy_file(profile_dir_root / "build-metadata.json", profile_dir / "build-metadata.json")
+            copy_file(profile_dir_root / "benchmark/benchmark-metadata.json", profile_dir / "benchmark-metadata.json")
             for config_name in ("variables.mak", "soc.h", "csr.h", "mem.h"):
-                config_path = ROOT / "build" / profile / "software/include/generated" / config_name
+                config_path = profile_dir_root / "software/include/generated" / config_name
                 copy_file(config_path, profile_dir / "generated" / config_name)
             for input_name, input_path in (
-                ("crt0.o", ROOT / "build" / profile / "firmware/crt0.o"),
-                ("libbase.a", ROOT / "build" / profile / "software/libbase/libbase.a"),
+                ("crt0.o", profile_dir_root / "firmware/crt0.o"),
+                ("libbase.a", profile_dir_root / "software/libbase/libbase.a"),
             ):
                 copy_file(input_path, profile_dir / "firmware-inputs" / input_name)
             for mode in ("performance", "validation"):

@@ -1,0 +1,41 @@
+
+�
+        __   _ __      _  __
+       / /  (_) /____ | |/_/
+      / /__/ / __/ -_)>  <
+     /____/_/\__/\__/_/|_|
+   Build your hardware, easily!
+
+ (c) Copyright 2012-2026 Enjoy-Digital
+ (c) Copyright 2007-2015 M-Labs
+
+ BIOS CRC passed (45740866)
+
+ LiteX git sha1: 58322a1d2
+
+--================ SoC =================--
+CPU:		VexRiscv_Min @ 48MHz
+BUS:		wishbone 32-bit data/32-bit addr
+CSR:		32-bit data big ordering
+ROM:		32.0KiB
+SRAM:		8.0KiB
+L2:		8.0KiB
+SDRAM:		256.0MiB 16-bit @ 192MT/s (CL-6 CWL-6)
+MAIN RAM:	256.0MiB
+
+--=========== Initialization ===========--
+Initializing SDRAM @0x40000000...
+Switching SDRAM to software control.
+SDRAM_TRAINING_START phy=GW2DDRPHY read_leveling=1 bitslips=4 delays=256
+Read leveling:
+  m0, b00: |00000000000000000000000000000000| 
+  m0, b01: |00000000000000000000000000000000| 
+  m0, b02: |00000000000000000000000000000000| 
+  m0, b03: |00000000000000000000000000000000| 
+  best: m0, b00 SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=0 status=failed window_start=-1 window_length=0
+Switching SDRAM to hardware control.
+SDRAM_TRAINING_RESULT status=failed phase=leveling
+Memory initialization failed
+--============== Console ===============--
+
+litex> 

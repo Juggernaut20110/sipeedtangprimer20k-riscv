@@ -1,0 +1,6 @@
+sdram_mr_write 0 2624
+
+Switching SDRAM to software control.
+Writing 0x0a40 to MR0
+Switching SDRAM to hardware control.
+[92;1mlitex[0m> 

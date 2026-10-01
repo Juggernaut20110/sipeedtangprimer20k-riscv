@@ -1,0 +1,21 @@
+sdram_mr_write 1 2054
+
+Switching SDRAM to software control.
+Writing 0x0806 to MR1
+Switching SDRAM to hardware control.
+litex> sdram_mr_write 2 528
+
+Switching SDRAM to software control.
+Writing 0x0210 to MR2
+Switching SDRAM to hardware control.
+litex> sdram_cal
+
+Switching SDRAM to software control.
+Read leveling:
+  m0, b00: |00000000000000000000000000000000| 
+  m0, b01: |00000000000000000000000000000000| 
+  m0, b02: |00000000000000000000000000000000| 
+  m0, b03: |00000000000000000000000000000000| 
+  best: m0, b02 SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=failed window_start=-1 window_length=0
+Switching SDRAM to hardware control.
+litex> 

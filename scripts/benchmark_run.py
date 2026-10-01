@@ -19,9 +19,10 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 ANSI_ESCAPE = re.compile(rb"\x1b\[[0-?]*[ -/]*[@-~]")
 
-from gateware.soc import PROFILES, SYS_CLK_FREQ, ProjectSoC  # noqa: E402
+from gateware.soc import MEMORY_MODES, PROFILES, SYS_CLK_FREQ, ProjectSoC  # noqa: E402
 from benchmark_results import CaptureValidationError, parse_capture  # noqa: E402
-from benchmark_build import sha256  # noqa: E402
+from benchmark_build import build_module, sha256  # noqa: E402
+from scripts.memory import profile_build_dir, validate_memory  # noqa: E402
 
 
 class HeadlessConsole:
@@ -72,6 +73,14 @@ class RecordingPort:
         return getattr(self._port, name)
 
 
+def clear_uart_input_buffer(port):
+    """Discard input queued before the current FPGA image starts booting."""
+    reset = getattr(port, "reset_input_buffer", None)
+    if reset is None:
+        raise RuntimeError("serial port cannot clear stale input before FPGA programming")
+    reset()
+
+
 class SerialOwner:
     """The sole thread that reads UART bytes and services LiteX serial boot."""
 
@@ -89,6 +98,7 @@ class SerialOwner:
         self.sfl_handler_idle.set()
         self.stopping = threading.Event()
         self.error = None
+        self.application_failure = None
         self.thread = threading.Thread(target=self._read_loop, name="benchmark-uart-reader", daemon=True)
 
     def _record(self, data):
@@ -101,18 +111,20 @@ class SerialOwner:
                     line = normalized_line.decode("utf-8", errors="replace")
                     self.partial_line.clear()
                     self.lines.append(line)
-                    if line.startswith(("BENCHMARK_START ", "BENCHMARK_CALIBRATION_START ")):
+                    if line.startswith(("BENCHMARK_START ", "BENCHMARK_CALIBRATION_START ", "DDR_TEST_START ")):
                         self.start_marker_started.set()
                         self.start_seen.set()
-                    elif line.startswith("BENCHMARK_END "):
+                    elif line.startswith(("BENCHMARK_END ", "DDR_TEST_END ")):
                         self.end_seen.set()
                     elif line.startswith("BENCHMARK_PORT_ERROR "):
                         self.error = RuntimeError(line)
+                    elif line.startswith("DDR_TEST_FAILURE "):
+                        self.application_failure = line
                 else:
                     self.partial_line.append(byte)
                     raw_line = bytes(self.partial_line)
                     normalized_line = ANSI_ESCAPE.sub(b"", raw_line).lstrip(b"\r")
-                    if normalized_line.startswith((b"BENCHMARK_START ", b"BENCHMARK_CALIBRATION_START ")):
+                    if normalized_line.startswith((b"BENCHMARK_START ", b"BENCHMARK_CALIBRATION_START ", b"DDR_TEST_START ")):
                         self.start_marker_started.set()
                     if normalized_line.endswith(b"litex> "):
                         self.console_prompt_seen.set()
@@ -184,18 +196,31 @@ def generated_main_ram_base(header):
     return int(match.group(1), 0)
 
 
-def load_selected_artifacts(profile):
-    output = ROOT / "build" / profile
+def load_selected_artifacts(profile, memory="onchip", build_dir=None, cpu_candidate=None):
+    validate_memory(memory)
+    output = Path(build_dir).resolve() if build_dir is not None else profile_build_dir(ROOT, profile, memory)
     build_path = output / "build-metadata.json"
     benchmark_path = output / "benchmark/benchmark-metadata.json"
     if not build_path.is_file() or not benchmark_path.is_file():
         raise RuntimeError("selected profile artifacts are missing; run make benchmark-build first")
     build = json.loads(build_path.read_text())
     benchmark = json.loads(benchmark_path.read_text())
-    if build.get("status") != "passed" or build.get("profile") != profile:
+    if (build.get("status") != "passed" or build.get("profile") != profile
+            or build.get("memory_mode", "onchip") != memory
+            or (cpu_candidate is not None and build.get("cpu_candidate") != cpu_candidate)):
         raise RuntimeError(f"SoC build metadata does not verify the {profile} profile")
-    if benchmark.get("status") != "passed" or benchmark.get("profile") != profile:
+    if (benchmark.get("status") != "passed" or benchmark.get("profile") != profile
+            or benchmark.get("memory_mode", "onchip") != memory
+            or (cpu_candidate is not None and benchmark.get("cpu_candidate") != cpu_candidate)):
         raise RuntimeError(f"CoreMark build metadata does not verify the {profile} profile")
+    if build.get("cpu_candidate") != benchmark.get("cpu_candidate"):
+        raise RuntimeError("SoC and CoreMark metadata select different CPU candidates")
+    if profile == "performance":
+        selection = build_module.read_performance_selection()
+        if (build.get("cpu_candidate") != selection.get("candidate")
+                or benchmark.get("cpu_candidate") != selection.get("candidate")
+                or build.get("cpu_profile_selection") != selection):
+            raise RuntimeError("performance artifacts do not match the measured public CPU selection")
     source_hashes = benchmark.get("source_hashes")
     if not isinstance(source_hashes, dict) or not source_hashes:
         raise RuntimeError("benchmark source identity is missing; run make benchmark-build")
@@ -269,6 +294,12 @@ def selected_artifact_identity(build, benchmark, port):
         "repository_dirty": state["dirty"],
         "source_fingerprint": benchmark.get("source_fingerprint"),
         "profile": benchmark["profile"],
+        "cpu_candidate": benchmark.get("cpu_candidate"),
+        "memory_mode": benchmark.get("memory_mode", "onchip"),
+        "memory_placement": benchmark.get("memory", {}),
+        "cpu_configuration": benchmark.get("cpu_configuration", build.get("cpu_configuration")),
+        "l2_cache_bytes": benchmark.get("memory", {}).get("l2_cache_bytes", 0),
+        "ddr_training_status": benchmark.get("ddr_training_status"),
         "clock_hz": benchmark["clock_hz"],
         "coremark": benchmark["coremark"],
         "compiler": benchmark["compiler"],
@@ -292,13 +323,15 @@ def selected_artifact_identity(build, benchmark, port):
     }
 
 
-def run_trial(profile, benchmark, mode, attempt, port, session_id, handshake_timeout, trial_timeout):
+def run_trial(profile, benchmark, mode, attempt, port, session_id, handshake_timeout, trial_timeout,
+              evidence_root=None):
     from litex.tools import litex_term
 
     suffix = "validation" if mode == "validation" else f"performance-{attempt}"
-    public_raw = ROOT / "docs/performance" / f"{session_id}-{suffix}.uart.bin"
-    public_text = ROOT / "docs/performance" / f"{session_id}-{suffix}.uart.log"
-    public_tx = ROOT / "docs/performance" / f"{session_id}-{suffix}.uart.tx.bin"
+    evidence_root = Path(evidence_root) if evidence_root is not None else ROOT / "docs/performance"
+    public_raw = evidence_root / f"{session_id}-{suffix}.uart.bin"
+    public_text = evidence_root / f"{session_id}-{suffix}.uart.log"
+    public_tx = evidence_root / f"{session_id}-{suffix}.uart.tx.bin"
     session_dir = ROOT / "build/benchmarks" / session_id
     session_raw = session_dir / f"{suffix}.uart.bin"
     session_tx = session_dir / f"{suffix}.uart.tx.bin"
@@ -338,10 +371,7 @@ def run_trial(profile, benchmark, mode, attempt, port, session_id, handshake_tim
     def start_reader(reset_input_buffer=False):
         nonlocal serial_owner
         if reset_input_buffer:
-            reset = getattr(term.port, "reset_input_buffer", None)
-            if reset is None:
-                raise RuntimeError("serial port cannot reset its input buffer during BIOS recovery")
-            reset()
+            clear_uart_input_buffer(term.port)
         term.port.timeout = 0.1
         term.port.write_timeout = 2.0
         term.port = RecordingPort(
@@ -359,10 +389,14 @@ def run_trial(profile, benchmark, mode, attempt, port, session_id, handshake_tim
             raise PermissionError(f"explicit UART path is not readable and writable: {port}")
         term = create_term(safe=False)
         term.open(port, 115200)
-        start_reader()
+        # Do not let a prompt buffered from the previous bitstream trigger
+        # serialboot recovery for the image that is about to be programmed.
+        start_reader(reset_input_buffer=True)
 
         # The UART reader is already watching the BIOS handshakes before SRAM programming.
-        soc = ProjectSoC(profile=profile)
+        cpu_rtl = benchmark.get("cpu_rtl")
+        soc_kwargs = {"cpu_rtl": ROOT / cpu_rtl} if cpu_rtl else {}
+        soc = ProjectSoC(profile=profile, memory=benchmark.get("memory_mode", "onchip"), **soc_kwargs)
         programmer = soc.platform.create_programmer(kit="openfpgaloader")
         record["programming_status"] = "started"
         programmer.load_bitstream(benchmark["bitstream_path"])
@@ -418,6 +452,11 @@ def run_trial(profile, benchmark, mode, attempt, port, session_id, handshake_tim
         record["error"] = f"{type(error).__name__}: {error}"
     finally:
         if serial_owner is not None:
+            record["application_end_seen"] = serial_owner.end_seen.is_set()
+            record["application_halt_seen"] = (
+                isinstance(serial_owner.error, RuntimeError)
+                and str(serial_owner.error).startswith("BENCHMARK_PORT_ERROR ")
+            )
             try:
                 serial_owner.stop()
             except BaseException as error:
@@ -471,20 +510,10 @@ def _has_decode_errors(raw_bytes):
         return True
 
 
-def main(argv=None):
-    import argparse
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("profile", choices=PROFILES, nargs="?", default="standard")
-    parser.add_argument("port", nargs="?")
-    parser.add_argument("--handshake-timeout", type=float, default=45.0)
-    parser.add_argument("--trial-timeout", type=float, default=300.0)
-    args = parser.parse_args(argv)
-    if not args.port:
-        parser.error("an explicit PORT is required; the runner never selects a serial device automatically")
-    if args.handshake_timeout <= 0 or args.trial_timeout <= 0:
-        parser.error("timeouts must be positive")
-
-    session_id = datetime.datetime.now(datetime.timezone.utc).strftime("%Y%m%dT%H%M%S.%fZ") + f"-{args.profile}"
+def run_profile(profile, port, handshake_timeout, trial_timeout, batch_id=None, memory="onchip"):
+    validate_memory(memory)
+    session_id = (f"{batch_id}-{profile}" if batch_id else
+                  datetime.datetime.now(datetime.timezone.utc).strftime("%Y%m%dT%H%M%S.%fZ") + f"-{memory}-{profile}")
     session_dir = ROOT / "build/benchmarks" / session_id
     session_dir.mkdir(parents=True, exist_ok=True)
     candidates = discover_candidate_ports()
@@ -493,7 +522,8 @@ def main(argv=None):
         "session_id": session_id,
         "status": "in_progress",
         "created_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(),
-        "profile": args.profile,
+        "profile": profile,
+        "memory_mode": memory,
         "board": "Sipeed Tang Primer 20K with standard Dock",
         "clock_hz": SYS_CLK_FREQ,
         "uart_candidates_at_start": candidates,
@@ -501,14 +531,17 @@ def main(argv=None):
         "programming_status": "not_attempted",
         "trials": [],
     }
+    if batch_id is not None:
+        session["batch_id"] = batch_id
+        session["requested_profiles"] = list(PROFILES)
     (session_dir / "session.json").write_text(json.dumps(session, indent=2) + "\n")
     try:
-        build, benchmark = load_selected_artifacts(args.profile)
-        session["identity"] = selected_artifact_identity(build, benchmark, args.port)
+        build, benchmark = load_selected_artifacts(profile, memory=memory)
+        session["identity"] = selected_artifact_identity(build, benchmark, port)
         for mode, attempt in [("validation", 0), ("performance", 1), ("performance", 2), ("performance", 3)]:
             record = run_trial(
-                args.profile, benchmark, mode, attempt, args.port, session_id,
-                args.handshake_timeout, args.trial_timeout,
+                profile, benchmark, mode, attempt, port, session_id,
+                handshake_timeout, trial_timeout,
             )
             session["trials"].append(record)
             if record.get("programming_status") == "completed":
@@ -517,6 +550,14 @@ def main(argv=None):
                 session["programming_status"] = "failed_or_interrupted"
             (session_dir / "session.json").write_text(json.dumps(session, indent=2) + "\n")
             if record["status"] == "interrupted":
+                break
+            if (record["status"] != "passed"
+                    and record.get("programming_status") in ("started", "completed")
+                    and not record.get("application_end_seen")
+                    and not record.get("application_halt_seen")):
+                # A timed-out or disconnected application may still be running.
+                # Preserve its evidence and stop before programming another trial.
+                session["batch_continuation_safe"] = False
                 break
             if mode == "validation" and record["status"] != "passed":
                 break
@@ -557,7 +598,47 @@ def main(argv=None):
         append_public_session(session)
 
     print(json.dumps(session, indent=2))
-    return 0 if session.get("status") == "passed" else (130 if any(t.get("status") == "interrupted" for t in session.get("trials", [])) else 1)
+    interrupted = session.get("error", "").startswith("KeyboardInterrupt:") or any(
+        t.get("status") == "interrupted" for t in session.get("trials", []))
+    return (0 if session.get("status") == "passed" else 130 if interrupted else
+            2 if session.get("batch_continuation_safe") is False else 1)
+
+
+def main(argv=None):
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("profile", type=str.lower, choices=[*PROFILES, "all"],
+                        nargs="?", default="standard",
+                        help="CPU profile, or ALL to measure every registered profile sequentially")
+    parser.add_argument("port", nargs="?")
+    parser.add_argument("--memory", choices=MEMORY_MODES, default="onchip")
+    parser.add_argument("--handshake-timeout", type=float, default=45.0)
+    parser.add_argument("--trial-timeout", type=float, default=300.0)
+    args = parser.parse_args(argv)
+    if not args.port:
+        parser.error("an explicit PORT is required; the runner never selects a serial device automatically")
+    if args.handshake_timeout <= 0 or args.trial_timeout <= 0:
+        parser.error("timeouts must be positive")
+    profiles = list(PROFILES) if args.profile == "all" else [args.profile]
+    memory_suffix = "" if args.memory == "onchip" else f"-{args.memory}"
+    batch_id = (datetime.datetime.now(datetime.timezone.utc).strftime("%Y%m%dT%H%M%S.%fZ") + memory_suffix + "-all"
+                if args.profile == "all" else None)
+    outcomes = {}
+    for profile in profiles:
+        print(f"CoreMark: validating and measuring {profile} ({profiles.index(profile) + 1}/{len(profiles)})", flush=True)
+        call_args = (profile, args.port, args.handshake_timeout, args.trial_timeout, batch_id)
+        result = (run_profile(*call_args) if args.memory == "onchip"
+                  else run_profile(*call_args, memory=args.memory))
+        outcomes[profile] = result
+        if result == 130:
+            return 130
+        if result == 2:
+            print("Batch stopped: firmware completion could not be confirmed; remaining profiles were not programmed.", flush=True)
+            break
+    if batch_id:
+        print(json.dumps({"batch_id": batch_id, "profile_exit_codes": outcomes,
+                          "status": "passed" if all(code == 0 for code in outcomes.values()) else "failed"}, indent=2))
+    return 0 if all(code == 0 for code in outcomes.values()) else 1
 
 
 if __name__ == "__main__":

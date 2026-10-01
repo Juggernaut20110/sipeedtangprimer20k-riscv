@@ -1,0 +1,54 @@
+diff --git a/litedram/phy/gw2ddrphy.py b/litedram/phy/gw2ddrphy.py
+index 66d188e..3f222fd 100644
+--- a/litedram/phy/gw2ddrphy.py
++++ b/litedram/phy/gw2ddrphy.py
+@@ -70,6 +70,17 @@ class GW2DDRPHYInit(Module):
+         pause    = Signal()
+         reset    = Signal()
+ 
++        # The initialization state machine runs from clk27, while the board's
++        # DHCEN clock gate, CLKDIV reset, and PHY output registers use sys2x_i.
++        # Transfer these level controls through two flops in the ungated PLL
++        # domain before exposing them to the board CRG and PHY primitives.
++        stop_sys2x  = Signal()
++        reset_sys2x = Signal()
++        self.specials += [
++            MultiReg(stop,  stop_sys2x,  "sys2x_i"),
++            MultiReg(reset, reset_sys2x, "sys2x_i"),
++        ]
++
+         # DDRDLLA instance -------------------------------------------------------------------------
+         _lock = Signal()
+         delay = Signal(8)
+@@ -109,9 +120,9 @@ class GW2DDRPHYInit(Module):
+         # ------------------------------------------------------------------------------------------
+         self.comb += [
+             self.pause.eq(pause),
+-            self.stop.eq(stop),
++            self.stop.eq(stop_sys2x),
+             self.delay.eq(delay),
+-            self.reset.eq(reset),
++            self.reset.eq(reset_sys2x),
+         ]
+ 
+ # Gowin GW2A DDR PHY -------------------------------------------------------------------------------
+@@ -156,6 +167,10 @@ class GW2DDRPHY(Module, AutoCSR):
+ 
+         # Registers --------------------------------------------------------------------------------
+         self._dly_sel = CSRStorage(databits//8)
++        dqs_hold = Signal(databits//8)
++        self.sync += dqs_hold.eq(Cat(*[
++            pause | self._dly_sel.storage[i] for i in range(databits//8)
++        ]))
+ 
+         self._rdly_dq_rst         = CSR()
+         self._rdly_dq_inc         = CSR()
+@@ -295,7 +310,7 @@ class GW2DDRPHY(Module, AutoCSR):
+                 i_PCLK     = ClockSignal("sys"),
+                 i_FCLK     = ClockSignal("sys2x"),
+                 i_DLLSTEP  = self.init.delay,
+-                i_HOLD     = pause | self._dly_sel.storage[i],
++                    i_HOLD     = dqs_hold[i],
+ 
+                 # Control
+                 # Calibrate the read delay, keeping the FIFO clock source fixed.

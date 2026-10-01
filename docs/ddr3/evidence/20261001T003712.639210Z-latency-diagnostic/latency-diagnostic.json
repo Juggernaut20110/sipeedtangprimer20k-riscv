@@ -1,0 +1,23 @@
+{
+  "status": "diagnostic_only_not_acceptance_trial",
+  "profile": "minimal",
+  "memory_mode": "ddr3",
+  "temporary_latency": "CL8/CWL7",
+  "required_acceptance_latency": "CL6/CWL6",
+  "port": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+  "commands": [
+    {
+      "command": "sdram_mr_write 0 2624",
+      "prompt_seen": false,
+      "timeout_seconds": 5
+    }
+  ],
+  "training_lanes": [],
+  "raw_uart": "docs/ddr3/evidence/20261001T003712.639210Z-latency-diagnostic/latency-diagnostic.uart.bin",
+  "raw_uart_sha256": "55c323bbae6c57656e3ea81878b9f9dc848db3e0d4515571a24a6677a396c07c",
+  "raw_uart_bytes": 142,
+  "transmitted_uart": "docs/ddr3/evidence/20261001T003712.639210Z-latency-diagnostic/latency-diagnostic.uart.tx.bin",
+  "transmitted_uart_sha256": "e96215c73b31ffa6ca8b61932c01d0b45c3b84947a0054173b19a04a94c2dbf4",
+  "transmitted_uart_bytes": 22,
+  "captured_utc": "2026-10-01T00:37:19.650293+00:00"
+}

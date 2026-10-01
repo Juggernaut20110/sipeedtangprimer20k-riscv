@@ -42,6 +42,10 @@ def find_gowin():
 
 
 def main():
+    # Setup keeps Java, SBT, and other optional tools in the project-local
+    # .tools/bin directory. Make the same toolchain visible when doctor.py is
+    # invoked directly from the Makefile instead of through project.py.
+    os.environ["PATH"] = os.pathsep.join((str(TOOLS / "bin"), os.environ.get("PATH", "")))
     failures = 0
     python = find_python()
     python_ok = python.is_file()
@@ -74,6 +78,31 @@ def main():
                     failures += 1
     else:
         if not report("RISC-V compiler", False, "run make setup"):
+            failures += 1
+
+    sys.path.insert(0, str(ROOT / "scripts"))
+    try:
+        from cpu_candidates import java_runtime_check, source_revision_check
+        try:
+            revisions = source_revision_check()
+        except (OSError, RuntimeError, subprocess.CalledProcessError) as error:
+            if not report("Pinned VexRiscv generator sources", False, str(error)):
+                failures += 1
+        else:
+            detail = (f"generator {revisions['generator_commit'][:12]}, submodule "
+                      f"{revisions['submodule_commit'][:12]}, Scala {revisions['scala']}, "
+                      f"SpinalHDL {revisions['spinalhdl']}, SBT {revisions['sbt']}")
+            report("Pinned VexRiscv generator sources", True, detail)
+        try:
+            versions = java_runtime_check()
+        except (OSError, RuntimeError, subprocess.SubprocessError) as error:
+            if not report("CPU candidate Java/SBT toolchain", False, str(error)):
+                failures += 1
+        else:
+            report("CPU candidate Java/SBT toolchain", True,
+                   f"Java {versions['java']}; SBT {versions['sbt']}")
+    except (ImportError, OSError, ValueError) as error:
+        if not report("CPU candidate toolchain checks", False, str(error)):
             failures += 1
 
     gowin = find_gowin()

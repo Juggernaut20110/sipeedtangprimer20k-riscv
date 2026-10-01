@@ -1,0 +1,20 @@
+diff --git a/litex/build/gowin/gowin.py b/litex/build/gowin/gowin.py
+index cde2645b5..76ea90000 100644
+--- a/litex/build/gowin/gowin.py
++++ b/litex/build/gowin/gowin.py
+@@ -143,6 +143,7 @@ class GowinToolchain(GenericToolchain):
+         super().__init__()
+         self.options = {}
+         self.additional_cst_commands = []
++        self.additional_sdc_commands = []
+         self.additional_tcl_commands = []
+         self.generated_clocks = []
+ 
+@@ -233,6 +234,7 @@ class GowinToolchain(GenericToolchain):
+         for from_, to in sorted(self.false_paths, key=lambda p: tuple(clock_name(clk) for clk in p)):
+             sdc.append(f"set_false_path -from [get_clocks {{{clock_name(from_)}}}] "
+                 f"-to [get_clocks {{{clock_name(to)}}}]")
++        sdc.extend(self.additional_sdc_commands)
+         tools.write_to_file(f"{self._build_name}.sdc", "\n".join(sdc))
+         return (f"{self._build_name}.sdc", "SDC")
+ 

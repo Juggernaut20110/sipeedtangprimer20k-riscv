@@ -1,5 +1,6 @@
 import copy
 import hashlib
+import json
 import sys
 import tempfile
 import unittest
@@ -452,6 +453,266 @@ class BenchmarkReportEvidenceTests(unittest.TestCase):
         rendered = report.profile_table(rows, "standard", "not measured")
         self.assertIn("Maximum SRAM data+BSS+padding / stack / free", rendered)
         self.assertIn("2600+24=2624 / 2048 / 3520 B", rendered)
+
+    def test_memory_build_fingerprint_uses_exact_soc_configuration(self):
+        source_hashes = {"firmware/core.c": "source-hash"}
+        cpu_configuration = {"liteX_variant": "standard", "prediction": "dynamic_target"}
+        soc_memory = {"mode": "onchip", "main_ram_base": 0x40000000, "main_ram_bytes": 32768}
+        metadata = {
+            "profile": "performance",
+            "coremark": {"commit": "coremark-revision"},
+            "source_hashes": source_hashes,
+            "bitstream_sha256": "bitstream-hash",
+            "compiler": "riscv-none-elf-gcc",
+            "compiler_version": "gcc-version",
+            "compiler_flags": ["-O2"],
+            "include_flags": ["-Iinclude"],
+            "clock_hz": report.SYS_CLK_FREQ,
+            "cpu_candidate": "dynamic_target",
+            "memory_mode": "onchip",
+            "cpu_configuration": cpu_configuration,
+            # This field describes where benchmark sections are placed; it is
+            # not the integer-address memory map used in the build fingerprint.
+            "memory": {"mode": "onchip", "main_ram_base": "0x40000000", "code_and_read_only_data": "main_ram"},
+        }
+        fingerprint = report.stable_hash({
+            "profile": metadata["profile"],
+            "cpu_candidate": metadata["cpu_candidate"],
+            "memory_mode": metadata["memory_mode"],
+            "coremark_commit": metadata["coremark"]["commit"],
+            "source_hashes": source_hashes,
+            "bitstream_sha256": metadata["bitstream_sha256"],
+            "compiler": metadata["compiler"],
+            "compiler_version": metadata["compiler_version"],
+            "compiler_flags": metadata["compiler_flags"],
+            "include_flags": metadata["include_flags"],
+            "system_clock_hz": metadata["clock_hz"],
+            "cpu_configuration": cpu_configuration,
+            "memory_configuration": soc_memory,
+        })
+        metadata["source_fingerprint"] = fingerprint
+        with patch.object(report, "file_matches", return_value=True):
+            self.assertTrue(report.benchmark_fingerprint_matches(metadata, {
+                "cpu_configuration": cpu_configuration,
+                "memory": soc_memory,
+            }))
+            self.assertFalse(report.benchmark_fingerprint_matches(metadata))
+
+    def test_historical_three_profile_batch_uses_its_recorded_membership(self):
+        batch_id = "20260930T120000.000000Z-all"
+        historical_profiles = ["minimal", "lite", "standard"]
+        prior = {"session_id": "old-standard", "profile": "standard", "status": "passed"}
+        sessions = [
+            prior,
+            *[
+                {
+                    "session_id": f"{batch_id}-{profile}",
+                    "batch_id": batch_id,
+                    "requested_profiles": historical_profiles,
+                    "profile": profile,
+                    "status": "passed",
+                    "aggregate": {"coremark_mean": float(index + 1)},
+                }
+                for index, profile in enumerate(list(report.PROFILES)[:2])
+            ],
+        ]
+        calls = []
+
+        def fake_revalidate(session, _rows):
+            calls.append(session["session_id"])
+            checked = dict(session)
+            checked["report_validation"] = {"status": "passed", "errors": []}
+            checked["aggregate"] = session["aggregate"]
+            return checked
+
+        with patch.object(report, "revalidate_session", side_effect=fake_revalidate):
+            batch = report.revalidate_batch_sessions(
+                sessions, batch_id, historical_profiles, {}
+            )
+        self.assertEqual(batch["status"], "incomplete")
+        self.assertEqual(batch["missing_profiles"], ["standard"])
+        self.assertNotIn("performance", batch["profile_results"])
+        self.assertIsNone(batch["profile_results"]["standard"]["aggregate"])
+        self.assertEqual(set(batch["profile_results"]["minimal"]["aggregate"]), {"coremark_mean"})
+        self.assertEqual(calls, [f"{batch_id}-minimal", f"{batch_id}-lite"])
+        self.assertNotIn("old-standard", calls)
+
+    def test_batch_is_complete_only_when_all_profiles_revalidate(self):
+        batch_id = "20260930T120000.000000Z-all"
+        sessions = [
+            {
+                "session_id": f"{batch_id}-{profile}",
+                "batch_id": batch_id,
+                "requested_profiles": list(report.PROFILES),
+                "profile": profile,
+                "status": "passed",
+                "aggregate": {"coremark_mean": float(index + 1)},
+            }
+            for index, profile in enumerate(report.PROFILES)
+        ]
+
+        def fake_revalidate(session, _rows):
+            checked = dict(session)
+            checked["report_validation"] = {"status": "passed", "errors": []}
+            return checked
+
+        with patch.object(report, "revalidate_session", side_effect=fake_revalidate):
+            batch = report.revalidate_batch_sessions(
+                sessions, batch_id, list(report.PROFILES), {}
+            )
+        self.assertEqual(batch["status"], "passed")
+        self.assertEqual(batch["missing_profiles"], [])
+        self.assertEqual(
+            {profile: result["aggregate"] for profile, result in batch["profile_results"].items()},
+            {profile: {"coremark_mean": float(index + 1)} for index, profile in enumerate(report.PROFILES)},
+        )
+
+    def test_batch_report_keeps_profile_results_separate_when_one_fails(self):
+        batch_id = "20260930T120000.000000Z-all"
+        sessions = []
+        for profile in report.PROFILES:
+            session = copy.deepcopy(self.session)
+            session["session_id"] = f"{batch_id}-{profile}"
+            session["batch_id"] = batch_id
+            session["requested_profiles"] = list(report.PROFILES)
+            session["profile"] = profile
+            session["identity"]["profile"] = profile
+            session["identity"]["uart_device_requested"] = "/dev/serial/by-id/test-dock-uart"
+            sessions.append(session)
+
+        rows = {}
+        for profile in report.PROFILES:
+            rows[profile] = {
+                "build_status": "passed",
+                "resources": None,
+                "benchmark_metadata": {
+                    "status": "passed",
+                    "profile": profile,
+                    "coremark": {"commit": "coremark-commit"},
+                    "source_fingerprint": f"{profile}-fingerprint",
+                    "compiler_flags": ["-O2", f"-march={profile}"],
+                    "images": {},
+                    "cache": {"data_cache": "enabled", "instruction_cache": "enabled"},
+                    "iteration_calibration": {
+                        "method": "fixed_iteration_port_calibration_with_fresh_upstream_initialization",
+                        "calibration_iterations": 1000,
+                        "target_seconds": 20,
+                        "formula": "ceil(calibration_iterations * target_seconds * clock_hz / calibration_ticks)",
+                        "scored_pass_reinitializes_static_algorithm_data": True,
+                    },
+                },
+                "build_metadata": {"status": "passed"},
+            }
+
+        def fake_revalidate(source, _rows):
+            checked = copy.deepcopy(source)
+            passed = source["profile"] != "lite"
+            checked["report_validation"] = {
+                "status": "passed" if passed else "failed",
+                "errors": [] if passed else ["fixture capture rejected"],
+            }
+            for trial in checked["trials"]:
+                trial["reparsed"] = copy.deepcopy(trial["parsed"]) if passed else None
+            checked["aggregate"] = (
+                {"count": 3, "coremark_mean": 10.0, "coremark_min": 9.0, "coremark_max": 11.0,
+                 "coremark_spread": 2.0, "coremark_per_mhz_mean": 0.2,
+                 "coremark_per_mhz_min": 0.18, "coremark_per_mhz_max": 0.22,
+                 "coremark_per_mhz_spread": 0.04}
+                if passed else None
+            )
+            return checked
+
+        results_path = self.root / "docs/performance/results.json"
+        results_path.parent.mkdir(parents=True, exist_ok=True)
+        results_path.write_text(json.dumps({"schema_version": 1, "sessions": sessions}))
+        with (
+            patch.object(report, "ROOT", self.root),
+            patch.object(report, "profile_build_rows", return_value=rows),
+            patch.object(report, "read_json", return_value={}),
+            patch.object(report, "git_identity", return_value={"revision": "test", "dirty": False}),
+            patch.object(report, "revalidate_session", side_effect=fake_revalidate),
+        ):
+            report.create_report()
+
+        results = json.loads(results_path.read_text())
+        batch = results["latest_batch_summary"]
+        self.assertEqual(batch["batch_id"], batch_id)
+        self.assertEqual(batch["status"], "failed")
+        self.assertEqual(set(results["latest_batch_aggregates"]), set(report.PROFILES))
+        self.assertIsNotNone(results["latest_batch_aggregates"]["minimal"])
+        self.assertIsNone(results["latest_batch_aggregates"]["lite"])
+        self.assertIsNotNone(results["latest_batch_aggregates"]["standard"])
+        rendered = (self.root / "docs/performance.md").read_text()
+        self.assertIn("INCOMPLETE — PROFILE=ALL batch failed", rendered)
+        self.assertIn("### `minimal`", rendered)
+        self.assertIn("### `lite`", rendered)
+        self.assertIn("### `standard`", rendered)
+        self.assertIn("CoreMark/MHz", rendered)
+        self.assertIn("PROFILE=ALL PORT=/dev/serial/by-id/test-dock-uart", rendered)
+        self.assertIn("- Cache configuration:", rendered)
+        self.assertIn("- Validation firmware:", rendered)
+
+    def test_incomplete_batch_report_does_not_fill_from_prior_profile_session(self):
+        batch_id = "20260930T120000.000000Z-all"
+        batch_sessions = []
+        for profile in list(report.PROFILES)[:2]:
+            session = copy.deepcopy(self.session)
+            session["session_id"] = f"{batch_id}-{profile}"
+            session["batch_id"] = batch_id
+            session["requested_profiles"] = list(report.PROFILES)
+            session["profile"] = profile
+            session["identity"]["profile"] = profile
+            batch_sessions.append(session)
+        prior_standard = copy.deepcopy(self.session)
+        prior_standard["session_id"] = "old-standard-session"
+        prior_standard["profile"] = "standard"
+        prior_standard.pop("batch_id", None)
+        sessions = [prior_standard, *batch_sessions]
+        rows = {
+            profile: {
+                "build_status": "passed",
+                "resources": None,
+                "benchmark_metadata": {"profile": profile, "images": {}},
+                "build_metadata": {},
+            }
+            for profile in report.PROFILES
+        }
+        calls = []
+
+        def fake_revalidate(source, _rows):
+            calls.append(source["session_id"])
+            checked = copy.deepcopy(source)
+            checked["report_validation"] = {"status": "passed", "errors": []}
+            for trial in checked["trials"]:
+                trial["reparsed"] = copy.deepcopy(trial["parsed"])
+            checked["aggregate"] = {"count": 3, "coremark_mean": 10.0, "coremark_min": 9.0,
+                                     "coremark_max": 11.0, "coremark_spread": 2.0,
+                                     "coremark_per_mhz_mean": 0.2, "coremark_per_mhz_min": 0.18,
+                                     "coremark_per_mhz_max": 0.22, "coremark_per_mhz_spread": 0.04}
+            return checked
+
+        results_path = self.root / "docs/performance/results.json"
+        results_path.parent.mkdir(parents=True, exist_ok=True)
+        results_path.write_text(json.dumps({"schema_version": 1, "sessions": sessions}))
+        with (
+            patch.object(report, "ROOT", self.root),
+            patch.object(report, "profile_build_rows", return_value=rows),
+            patch.object(report, "read_json", return_value={}),
+            patch.object(report, "git_identity", return_value={"revision": "test", "dirty": False}),
+            patch.object(report, "revalidate_session", side_effect=fake_revalidate),
+        ):
+            report.create_report()
+
+        self.assertEqual(calls, [f"{batch_id}-minimal", f"{batch_id}-lite"])
+        results = json.loads(results_path.read_text())
+        self.assertEqual(results["latest_batch_summary"]["status"], "incomplete")
+        self.assertEqual(results["latest_batch_summary"]["missing_profiles"], ["standard", "performance"])
+        self.assertIsNone(results["latest_batch_aggregates"]["standard"])
+        rendered = (self.root / "docs/performance.md").read_text()
+        self.assertIn("No session was recorded for this profile in the current batch", rendered)
+        self.assertIn("No current-batch `standard` UART capture is available", rendered)
+        self.assertIn("Historical logs were not used as a substitute", rendered)
+        self.assertIn("not run (missing batch session)", rendered)
 
 
 if __name__ == "__main__":

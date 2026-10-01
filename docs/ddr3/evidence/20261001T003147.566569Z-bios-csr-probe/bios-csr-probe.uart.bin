@@ -1,0 +1,13 @@
+mem_read 0xf000101c 4
+
+Memory dump:
+0xf000101c  00 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001000 4
+
+Memory dump:
+0xf0001000  00 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0002800 4
+
+Memory dump:
+0xf0002800  01 00 00 00                                      ....            
+[92;1mlitex[0m> 

@@ -1,0 +1,77 @@
+{
+  "mode": "full",
+  "diagnostic_only": true,
+  "attempt": 1,
+  "status": "failed",
+  "programming_status": "completed",
+  "image_sha256": "a699f763421b9bbe3da907f974511f0537a4b8c4c69d69a77ba714b343917911",
+  "bitstream_sha256": "d9022a351882f7b0b2fb1add6dfb63adae470019c43fe0e621f705779503f099",
+  "raw_uart_log": "docs/ddr3/diagnosis/20261001T142124.847265Z-full-probe-minimal/full-01.uart.bin",
+  "text_uart_log": "docs/ddr3/diagnosis/20261001T142124.847265Z-full-probe-minimal/full-01.uart.log",
+  "transmitted_uart_log": "docs/ddr3/diagnosis/20261001T142124.847265Z-full-probe-minimal/full-01.uart.tx.bin",
+  "started_utc": "2026-10-01T14:21:25.119436+00:00",
+  "uart_input_buffer_cleared_before_programming": true,
+  "training": {
+    "status": "passed",
+    "start_records": [
+      "SDRAM_TRAINING_START phy=GW2DDRPHY read_leveling=1 bitslips=4 delays=256"
+    ],
+    "result_records": [
+      "SDRAM_TRAINING_RESULT status=passed"
+    ],
+    "expected_lane_count": 2,
+    "lane_count": 2,
+    "phy_configuration": {
+      "SDRAM_PHY_MODULES": 2,
+      "SDRAM_PHY_DQ_DQS_RATIO": 8,
+      "SDRAM_PHY_DELAYS": 256,
+      "SDRAM_PHY_BITSLIPS": 4,
+      "SDRAM_DELAY_PER_DQ": false
+    },
+    "lanes": [
+      {
+        "module": 0,
+        "dq_line": 0,
+        "bitslip": 2,
+        "status": "passed",
+        "window_start": 0,
+        "window_length": 94,
+        "delay_center": 47,
+        "delay_half_window": 47,
+        "raw": "SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=94 delay_center=47 delay_half_window=47"
+      },
+      {
+        "module": 1,
+        "dq_line": 0,
+        "bitslip": 2,
+        "status": "passed",
+        "window_start": 0,
+        "window_length": 92,
+        "delay_center": 45,
+        "delay_half_window": 45,
+        "raw": "SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=0 window_length=92 delay_center=45 delay_half_window=45"
+      }
+    ],
+    "errors": []
+  },
+  "bios_memtest": {
+    "status": "failed",
+    "records": [
+      "Memtest KO"
+    ],
+    "errors": [
+      "BIOS memory test failed or its result is missing/ambiguous"
+    ]
+  },
+  "error": "TimeoutError: DDR diagnostic firmware did not start after BIOS recovery",
+  "application_end_seen": false,
+  "application_failure": null,
+  "bios_training_status_seen": false,
+  "raw_uart_sha256": "0cd10fb44efed968b7806e7e8b8a3526dd3dfff9db515d71f2935118292633cf",
+  "raw_uart_bytes": 3539,
+  "transmitted_uart_sha256": "49c03940f784e4d4b7c289a29672bbf17467d556dc453426d065d3e42a745689",
+  "transmitted_uart_bytes": 12418,
+  "decode_errors_present": true,
+  "training_status_from_bios": true,
+  "finished_utc": "2026-10-01T14:22:20.189395+00:00"
+}

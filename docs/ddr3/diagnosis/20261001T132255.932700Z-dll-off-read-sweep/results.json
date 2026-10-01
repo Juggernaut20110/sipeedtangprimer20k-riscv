@@ -1,0 +1,5618 @@
+[
+  {
+    "read_pattern": "0x00ff00",
+    "read_slots": [
+      0,
+      0,
+      15,
+      15,
+      0,
+      0
+    ],
+    "rclksel": 0,
+    "rdtap": 2,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 1,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 715,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x00ff00",
+    "read_slots": [
+      0,
+      0,
+      15,
+      15,
+      0,
+      0
+    ],
+    "rclksel": 1,
+    "rdtap": 2,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 2,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      true,
+      false
+    ],
+    "pointers": 3467,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x00ff00",
+    "read_slots": [
+      0,
+      0,
+      15,
+      15,
+      0,
+      0
+    ],
+    "rclksel": 2,
+    "rdtap": 2,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 3,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      true,
+      false
+    ],
+    "pointers": 717,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x00ff00",
+    "read_slots": [
+      0,
+      0,
+      15,
+      15,
+      0,
+      0
+    ],
+    "rclksel": 3,
+    "rdtap": 2,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 4,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      true,
+      true
+    ],
+    "pointers": 704,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x00ff00",
+    "read_slots": [
+      0,
+      0,
+      15,
+      15,
+      0,
+      0
+    ],
+    "rclksel": 4,
+    "rdtap": 2,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 5,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 704,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x00ff00",
+    "read_slots": [
+      0,
+      0,
+      15,
+      15,
+      0,
+      0
+    ],
+    "rclksel": 5,
+    "rdtap": 2,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 6,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 720,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x00ff00",
+    "read_slots": [
+      0,
+      0,
+      15,
+      15,
+      0,
+      0
+    ],
+    "rclksel": 6,
+    "rdtap": 2,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 7,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 2880,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x00ff00",
+    "read_slots": [
+      0,
+      0,
+      15,
+      15,
+      0,
+      0
+    ],
+    "rclksel": 7,
+    "rdtap": 2,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 8,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 2939,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x00af50",
+    "read_slots": [
+      0,
+      5,
+      15,
+      10,
+      0,
+      0
+    ],
+    "rclksel": 0,
+    "rdtap": 1,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 9,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      true,
+      true
+    ],
+    "pointers": 1365,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x00af50",
+    "read_slots": [
+      0,
+      5,
+      15,
+      10,
+      0,
+      0
+    ],
+    "rclksel": 1,
+    "rdtap": 1,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 10,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 749,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x00af50",
+    "read_slots": [
+      0,
+      5,
+      15,
+      10,
+      0,
+      0
+    ],
+    "rclksel": 2,
+    "rdtap": 1,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 11,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 877,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x00af50",
+    "read_slots": [
+      0,
+      5,
+      15,
+      10,
+      0,
+      0
+    ],
+    "rclksel": 3,
+    "rdtap": 1,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 3,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 12,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      true,
+      true
+    ],
+    "pointers": 704,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x00af50",
+    "read_slots": [
+      0,
+      5,
+      15,
+      10,
+      0,
+      0
+    ],
+    "rclksel": 4,
+    "rdtap": 1,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 3,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 13,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      true,
+      true
+    ],
+    "pointers": 896,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x00af50",
+    "read_slots": [
+      0,
+      5,
+      15,
+      10,
+      0,
+      0
+    ],
+    "rclksel": 5,
+    "rdtap": 1,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 14,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 896,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x00af50",
+    "read_slots": [
+      0,
+      5,
+      15,
+      10,
+      0,
+      0
+    ],
+    "rclksel": 6,
+    "rdtap": 1,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 3,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 15,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 2880,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x00af50",
+    "read_slots": [
+      0,
+      5,
+      15,
+      10,
+      0,
+      0
+    ],
+    "rclksel": 7,
+    "rdtap": 1,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 16,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 2936,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x005fa0",
+    "read_slots": [
+      0,
+      10,
+      15,
+      5,
+      0,
+      0
+    ],
+    "rclksel": 0,
+    "rdtap": 1,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 17,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 2925,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x005fa0",
+    "read_slots": [
+      0,
+      10,
+      15,
+      5,
+      0,
+      0
+    ],
+    "rclksel": 1,
+    "rdtap": 1,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 18,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      true
+    ],
+    "pointers": 941,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x005fa0",
+    "read_slots": [
+      0,
+      10,
+      15,
+      5,
+      0,
+      0
+    ],
+    "rclksel": 2,
+    "rdtap": 1,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 19,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      true
+    ],
+    "pointers": 749,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x005fa0",
+    "read_slots": [
+      0,
+      10,
+      15,
+      5,
+      0,
+      0
+    ],
+    "rclksel": 3,
+    "rdtap": 1,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 20,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      true,
+      true
+    ],
+    "pointers": 845,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x005fa0",
+    "read_slots": [
+      0,
+      10,
+      15,
+      5,
+      0,
+      0
+    ],
+    "rclksel": 4,
+    "rdtap": 1,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 21,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 845,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x005fa0",
+    "read_slots": [
+      0,
+      10,
+      15,
+      5,
+      0,
+      0
+    ],
+    "rclksel": 5,
+    "rdtap": 1,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 22,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      true,
+      false
+    ],
+    "pointers": 3467,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x005fa0",
+    "read_slots": [
+      0,
+      10,
+      15,
+      5,
+      0,
+      0
+    ],
+    "rclksel": 6,
+    "rdtap": 1,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 23,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      true,
+      false
+    ],
+    "pointers": 718,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x005fa0",
+    "read_slots": [
+      0,
+      10,
+      15,
+      5,
+      0,
+      0
+    ],
+    "rclksel": 7,
+    "rdtap": 1,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 24,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      true,
+      true
+    ],
+    "pointers": 704,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x000ff0",
+    "read_slots": [
+      0,
+      15,
+      15,
+      0,
+      0,
+      0
+    ],
+    "rclksel": 0,
+    "rdtap": 1,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 25,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      true,
+      true
+    ],
+    "pointers": 1235,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x000ff0",
+    "read_slots": [
+      0,
+      15,
+      15,
+      0,
+      0,
+      0
+    ],
+    "rclksel": 1,
+    "rdtap": 1,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 26,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      true,
+      false
+    ],
+    "pointers": 2899,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x000ff0",
+    "read_slots": [
+      0,
+      15,
+      15,
+      0,
+      0,
+      0
+    ],
+    "rclksel": 2,
+    "rdtap": 1,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 27,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      true,
+      false
+    ],
+    "pointers": 2896,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x000ff0",
+    "read_slots": [
+      0,
+      15,
+      15,
+      0,
+      0,
+      0
+    ],
+    "rclksel": 3,
+    "rdtap": 1,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 28,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 2925,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x000ff0",
+    "read_slots": [
+      0,
+      15,
+      15,
+      0,
+      0,
+      0
+    ],
+    "rclksel": 4,
+    "rdtap": 1,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 29,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 2925,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x000ff0",
+    "read_slots": [
+      0,
+      15,
+      15,
+      0,
+      0,
+      0
+    ],
+    "rclksel": 5,
+    "rdtap": 1,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 30,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      true
+    ],
+    "pointers": 941,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x000ff0",
+    "read_slots": [
+      0,
+      15,
+      15,
+      0,
+      0,
+      0
+    ],
+    "rclksel": 6,
+    "rdtap": 1,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 31,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      true
+    ],
+    "pointers": 941,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x000ff0",
+    "read_slots": [
+      0,
+      15,
+      15,
+      0,
+      0,
+      0
+    ],
+    "rclksel": 7,
+    "rdtap": 1,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 32,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      true,
+      true
+    ],
+    "pointers": 520,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x0af500",
+    "read_slots": [
+      0,
+      0,
+      5,
+      15,
+      10,
+      0
+    ],
+    "rclksel": 0,
+    "rdtap": 2,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 33,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      true,
+      true
+    ],
+    "pointers": 2939,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x0af500",
+    "read_slots": [
+      0,
+      0,
+      5,
+      15,
+      10,
+      0
+    ],
+    "rclksel": 1,
+    "rdtap": 2,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 1,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 34,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 704,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x0af500",
+    "read_slots": [
+      0,
+      0,
+      5,
+      15,
+      10,
+      0
+    ],
+    "rclksel": 2,
+    "rdtap": 2,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 35,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 3835,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x0af500",
+    "read_slots": [
+      0,
+      0,
+      5,
+      15,
+      10,
+      0
+    ],
+    "rclksel": 3,
+    "rdtap": 2,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 36,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      true,
+      true
+    ],
+    "pointers": 1371,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x0af500",
+    "read_slots": [
+      0,
+      0,
+      5,
+      15,
+      10,
+      0
+    ],
+    "rclksel": 4,
+    "rdtap": 2,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 37,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      true,
+      false
+    ],
+    "pointers": 1371,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x0af500",
+    "read_slots": [
+      0,
+      0,
+      5,
+      15,
+      10,
+      0
+    ],
+    "rclksel": 5,
+    "rdtap": 2,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 38,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 2880,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x0af500",
+    "read_slots": [
+      0,
+      0,
+      5,
+      15,
+      10,
+      0
+    ],
+    "rclksel": 6,
+    "rdtap": 2,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 39,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 1278,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x0af500",
+    "read_slots": [
+      0,
+      0,
+      5,
+      15,
+      10,
+      0
+    ],
+    "rclksel": 7,
+    "rdtap": 2,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 40,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 1435,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x05fa00",
+    "read_slots": [
+      0,
+      0,
+      10,
+      15,
+      5,
+      0
+    ],
+    "rclksel": 0,
+    "rdtap": 2,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 41,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 512,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x05fa00",
+    "read_slots": [
+      0,
+      0,
+      10,
+      15,
+      5,
+      0
+    ],
+    "rclksel": 1,
+    "rdtap": 2,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 42,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 725,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x05fa00",
+    "read_slots": [
+      0,
+      0,
+      10,
+      15,
+      5,
+      0
+    ],
+    "rclksel": 2,
+    "rdtap": 2,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 43,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 2894,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x05fa00",
+    "read_slots": [
+      0,
+      0,
+      10,
+      15,
+      5,
+      0
+    ],
+    "rclksel": 3,
+    "rdtap": 2,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 44,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 2942,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x05fa00",
+    "read_slots": [
+      0,
+      0,
+      10,
+      15,
+      5,
+      0
+    ],
+    "rclksel": 4,
+    "rdtap": 2,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 45,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 2941,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x05fa00",
+    "read_slots": [
+      0,
+      0,
+      10,
+      15,
+      5,
+      0
+    ],
+    "rclksel": 5,
+    "rdtap": 2,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 46,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 2880,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x05fa00",
+    "read_slots": [
+      0,
+      0,
+      10,
+      15,
+      5,
+      0
+    ],
+    "rclksel": 6,
+    "rdtap": 2,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 47,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 2941,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x05fa00",
+    "read_slots": [
+      0,
+      0,
+      10,
+      15,
+      5,
+      0
+    ],
+    "rclksel": 7,
+    "rdtap": 2,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 48,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      true,
+      true
+    ],
+    "pointers": 1435,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x0ff000",
+    "read_slots": [
+      0,
+      0,
+      0,
+      15,
+      15,
+      0
+    ],
+    "rclksel": 0,
+    "rdtap": 3,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 49,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 2939,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x0ff000",
+    "read_slots": [
+      0,
+      0,
+      0,
+      15,
+      15,
+      0
+    ],
+    "rclksel": 1,
+    "rdtap": 3,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 50,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 2880,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x0ff000",
+    "read_slots": [
+      0,
+      0,
+      0,
+      15,
+      15,
+      0
+    ],
+    "rclksel": 2,
+    "rdtap": 3,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 51,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 2941,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x0ff000",
+    "read_slots": [
+      0,
+      0,
+      0,
+      15,
+      15,
+      0
+    ],
+    "rclksel": 3,
+    "rdtap": 3,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 52,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      true,
+      true
+    ],
+    "pointers": 1435,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x0ff000",
+    "read_slots": [
+      0,
+      0,
+      0,
+      15,
+      15,
+      0
+    ],
+    "rclksel": 4,
+    "rdtap": 3,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 53,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      true,
+      false
+    ],
+    "pointers": 1435,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x0ff000",
+    "read_slots": [
+      0,
+      0,
+      0,
+      15,
+      15,
+      0
+    ],
+    "rclksel": 5,
+    "rdtap": 3,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 54,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 1400,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x0ff000",
+    "read_slots": [
+      0,
+      0,
+      0,
+      15,
+      15,
+      0
+    ],
+    "rclksel": 6,
+    "rdtap": 3,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 55,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 1278,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x0ff000",
+    "read_slots": [
+      0,
+      0,
+      0,
+      15,
+      15,
+      0
+    ],
+    "rclksel": 7,
+    "rdtap": 3,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 56,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 1051,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x000af5",
+    "read_slots": [
+      5,
+      15,
+      10,
+      0,
+      0,
+      0
+    ],
+    "rclksel": 0,
+    "rdtap": 0,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 57,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 1235,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x000af5",
+    "read_slots": [
+      5,
+      15,
+      10,
+      0,
+      0,
+      0
+    ],
+    "rclksel": 1,
+    "rdtap": 0,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 58,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      true,
+      false
+    ],
+    "pointers": 1232,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x000af5",
+    "read_slots": [
+      5,
+      15,
+      10,
+      0,
+      0,
+      0
+    ],
+    "rclksel": 2,
+    "rdtap": 0,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 59,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      true,
+      false
+    ],
+    "pointers": 16,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x000af5",
+    "read_slots": [
+      5,
+      15,
+      10,
+      0,
+      0,
+      0
+    ],
+    "rclksel": 3,
+    "rdtap": 0,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 60,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 0,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x000af5",
+    "read_slots": [
+      5,
+      15,
+      10,
+      0,
+      0,
+      0
+    ],
+    "rclksel": 4,
+    "rdtap": 0,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 61,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 0,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x000af5",
+    "read_slots": [
+      5,
+      15,
+      10,
+      0,
+      0,
+      0
+    ],
+    "rclksel": 5,
+    "rdtap": 0,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 62,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 2899,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x000af5",
+    "read_slots": [
+      5,
+      15,
+      10,
+      0,
+      0,
+      0
+    ],
+    "rclksel": 6,
+    "rdtap": 0,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 63,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 1408,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x000af5",
+    "read_slots": [
+      5,
+      15,
+      10,
+      0,
+      0,
+      0
+    ],
+    "rclksel": 7,
+    "rdtap": 0,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 64,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 1430,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x0005fa",
+    "read_slots": [
+      10,
+      15,
+      5,
+      0,
+      0,
+      0
+    ],
+    "rclksel": 0,
+    "rdtap": 0,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 1,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 65,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 0,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x0005fa",
+    "read_slots": [
+      10,
+      15,
+      5,
+      0,
+      0,
+      0
+    ],
+    "rclksel": 1,
+    "rdtap": 0,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 1,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 66,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      true
+    ],
+    "pointers": 1408,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x0005fa",
+    "read_slots": [
+      10,
+      15,
+      5,
+      0,
+      0,
+      0
+    ],
+    "rclksel": 2,
+    "rdtap": 0,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 1,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 67,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      true
+    ],
+    "pointers": 1344,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x0005fa",
+    "read_slots": [
+      10,
+      15,
+      5,
+      0,
+      0,
+      0
+    ],
+    "rclksel": 3,
+    "rdtap": 0,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 68,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      true,
+      true
+    ],
+    "pointers": 1430,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x0005fa",
+    "read_slots": [
+      10,
+      15,
+      5,
+      0,
+      0,
+      0
+    ],
+    "rclksel": 4,
+    "rdtap": 0,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 69,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      true,
+      true
+    ],
+    "pointers": 1365,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x0005fa",
+    "read_slots": [
+      10,
+      15,
+      5,
+      0,
+      0,
+      0
+    ],
+    "rclksel": 5,
+    "rdtap": 0,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 70,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      true,
+      false
+    ],
+    "pointers": 2901,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x0005fa",
+    "read_slots": [
+      10,
+      15,
+      5,
+      0,
+      0,
+      0
+    ],
+    "rclksel": 6,
+    "rdtap": 0,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 71,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      true,
+      false
+    ],
+    "pointers": 2899,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x0005fa",
+    "read_slots": [
+      10,
+      15,
+      5,
+      0,
+      0,
+      0
+    ],
+    "rclksel": 7,
+    "rdtap": 0,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 72,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 2925,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x0000ff",
+    "read_slots": [
+      15,
+      15,
+      0,
+      0,
+      0,
+      0
+    ],
+    "rclksel": 0,
+    "rdtap": 0,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 73,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 0,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x0000ff",
+    "read_slots": [
+      15,
+      15,
+      0,
+      0,
+      0,
+      0
+    ],
+    "rclksel": 1,
+    "rdtap": 0,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 74,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 0,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x0000ff",
+    "read_slots": [
+      15,
+      15,
+      0,
+      0,
+      0,
+      0
+    ],
+    "rclksel": 2,
+    "rdtap": 0,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 75,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 0,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x0000ff",
+    "read_slots": [
+      15,
+      15,
+      0,
+      0,
+      0,
+      0
+    ],
+    "rclksel": 3,
+    "rdtap": 0,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 76,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 0,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x0000ff",
+    "read_slots": [
+      15,
+      15,
+      0,
+      0,
+      0,
+      0
+    ],
+    "rclksel": 4,
+    "rdtap": 0,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 77,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 0,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x0000ff",
+    "read_slots": [
+      15,
+      15,
+      0,
+      0,
+      0,
+      0
+    ],
+    "rclksel": 5,
+    "rdtap": 0,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 78,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      true
+    ],
+    "pointers": 1408,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x0000ff",
+    "read_slots": [
+      15,
+      15,
+      0,
+      0,
+      0,
+      0
+    ],
+    "rclksel": 6,
+    "rdtap": 0,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 79,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      true
+    ],
+    "pointers": 1216,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x0000ff",
+    "read_slots": [
+      15,
+      15,
+      0,
+      0,
+      0,
+      0
+    ],
+    "rclksel": 7,
+    "rdtap": 0,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 80,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      true,
+      true
+    ],
+    "pointers": 1235,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0xaf5000",
+    "read_slots": [
+      0,
+      0,
+      0,
+      5,
+      15,
+      10
+    ],
+    "rclksel": 0,
+    "rdtap": 3,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 3,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 81,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 1051,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0xaf5000",
+    "read_slots": [
+      0,
+      0,
+      0,
+      5,
+      15,
+      10
+    ],
+    "rclksel": 1,
+    "rdtap": 3,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 82,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 2936,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0xaf5000",
+    "read_slots": [
+      0,
+      0,
+      0,
+      5,
+      15,
+      10
+    ],
+    "rclksel": 2,
+    "rdtap": 3,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 83,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 2907,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0xaf5000",
+    "read_slots": [
+      0,
+      0,
+      0,
+      5,
+      15,
+      10
+    ],
+    "rclksel": 3,
+    "rdtap": 3,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 84,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 1371,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0xaf5000",
+    "read_slots": [
+      0,
+      0,
+      0,
+      5,
+      15,
+      10
+    ],
+    "rclksel": 4,
+    "rdtap": 3,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 85,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 1243,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0xaf5000",
+    "read_slots": [
+      0,
+      0,
+      0,
+      5,
+      15,
+      10
+    ],
+    "rclksel": 5,
+    "rdtap": 3,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 86,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 1400,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0xaf5000",
+    "read_slots": [
+      0,
+      0,
+      0,
+      5,
+      15,
+      10
+    ],
+    "rclksel": 6,
+    "rdtap": 3,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 87,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 1278,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0xaf5000",
+    "read_slots": [
+      0,
+      0,
+      0,
+      5,
+      15,
+      10
+    ],
+    "rclksel": 7,
+    "rdtap": 3,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 88,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 1051,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x5fa000",
+    "read_slots": [
+      0,
+      0,
+      0,
+      10,
+      15,
+      5
+    ],
+    "rclksel": 0,
+    "rdtap": 3,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 89,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      true,
+      false
+    ],
+    "pointers": 1435,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x5fa000",
+    "read_slots": [
+      0,
+      0,
+      0,
+      10,
+      15,
+      5
+    ],
+    "rclksel": 1,
+    "rdtap": 3,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 90,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 1083,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x5fa000",
+    "read_slots": [
+      0,
+      0,
+      0,
+      10,
+      15,
+      5
+    ],
+    "rclksel": 2,
+    "rdtap": 3,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 0,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 91,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 1469,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x5fa000",
+    "read_slots": [
+      0,
+      0,
+      0,
+      10,
+      15,
+      5
+    ],
+    "rclksel": 3,
+    "rdtap": 3,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 92,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 1435,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x5fa000",
+    "read_slots": [
+      0,
+      0,
+      0,
+      10,
+      15,
+      5
+    ],
+    "rclksel": 4,
+    "rdtap": 3,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 93,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 1435,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x5fa000",
+    "read_slots": [
+      0,
+      0,
+      0,
+      10,
+      15,
+      5
+    ],
+    "rclksel": 5,
+    "rdtap": 3,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 94,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 1435,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x5fa000",
+    "read_slots": [
+      0,
+      0,
+      0,
+      10,
+      15,
+      5
+    ],
+    "rclksel": 6,
+    "rdtap": 3,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 95,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 1435,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0x5fa000",
+    "read_slots": [
+      0,
+      0,
+      0,
+      10,
+      15,
+      5
+    ],
+    "rclksel": 7,
+    "rdtap": 3,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 96,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 1243,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0xff0000",
+    "read_slots": [
+      0,
+      0,
+      0,
+      0,
+      15,
+      15
+    ],
+    "rclksel": 0,
+    "rdtap": 4,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 97,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 1435,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0xff0000",
+    "read_slots": [
+      0,
+      0,
+      0,
+      0,
+      15,
+      15
+    ],
+    "rclksel": 1,
+    "rdtap": 4,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 98,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 1435,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0xff0000",
+    "read_slots": [
+      0,
+      0,
+      0,
+      0,
+      15,
+      15
+    ],
+    "rclksel": 2,
+    "rdtap": 4,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 99,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 1243,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0xff0000",
+    "read_slots": [
+      0,
+      0,
+      0,
+      0,
+      15,
+      15
+    ],
+    "rclksel": 3,
+    "rdtap": 4,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 100,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 1243,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0xff0000",
+    "read_slots": [
+      0,
+      0,
+      0,
+      0,
+      15,
+      15
+    ],
+    "rclksel": 4,
+    "rdtap": 4,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 101,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 1243,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0xff0000",
+    "read_slots": [
+      0,
+      0,
+      0,
+      0,
+      15,
+      15
+    ],
+    "rclksel": 5,
+    "rdtap": 4,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 102,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 1435,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0xff0000",
+    "read_slots": [
+      0,
+      0,
+      0,
+      0,
+      15,
+      15
+    ],
+    "rclksel": 6,
+    "rdtap": 4,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 103,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 1051,
+    "bios_memtest": "not run"
+  },
+  {
+    "read_pattern": "0xff0000",
+    "read_slots": [
+      0,
+      0,
+      0,
+      0,
+      15,
+      15
+    ],
+    "rclksel": 7,
+    "rdtap": 4,
+    "read_latency": 12,
+    "read_latency_offset": 0,
+    "controller_read_latency": 12,
+    "diagnostic_dfii_only": false,
+    "training": "failed",
+    "lanes": [
+      {
+        "lane": 0,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      },
+      {
+        "lane": 1,
+        "dq": 0,
+        "bitslip": 2,
+        "status": "failed",
+        "window_start": -1,
+        "window_length": 0,
+        "delay_center": null,
+        "delay_half_window": null
+      }
+    ],
+    "result_markers": [
+      "failed"
+    ],
+    "candidate": 104,
+    "rvalid_seen": [
+      true,
+      true
+    ],
+    "rburst_seen": [
+      false,
+      false
+    ],
+    "pointers": 1051,
+    "bios_memtest": "not run"
+  }
+]

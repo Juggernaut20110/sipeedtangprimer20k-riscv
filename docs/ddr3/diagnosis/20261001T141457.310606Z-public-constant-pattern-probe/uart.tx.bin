@@ -1,0 +1,54 @@
+
+mem_write 0xc0000000 0xffffffff 524288
+mem_read 0xc00b64f4 4
+mem_read 0xc00b64f4 4
+mem_read 0xc00b64f4 4
+mem_read 0xc0169770 4
+mem_read 0xc0169770 4
+mem_read 0xc0169770 4
+mem_read 0xc0000000 4
+mem_read 0xc0000000 4
+mem_read 0xc0000000 4
+mem_read 0xc01ffffc 4
+mem_read 0xc01ffffc 4
+mem_read 0xc01ffffc 4
+mem_write 0xc0000000 0xaaaaaaaa 524288
+mem_read 0xc00b64f4 4
+mem_read 0xc00b64f4 4
+mem_read 0xc00b64f4 4
+mem_read 0xc0169770 4
+mem_read 0xc0169770 4
+mem_read 0xc0169770 4
+mem_read 0xc0000000 4
+mem_read 0xc0000000 4
+mem_read 0xc0000000 4
+mem_read 0xc01ffffc 4
+mem_read 0xc01ffffc 4
+mem_read 0xc01ffffc 4
+mem_write 0xc0000000 0x55555555 524288
+mem_read 0xc00b64f4 4
+mem_read 0xc00b64f4 4
+mem_read 0xc00b64f4 4
+mem_read 0xc0169770 4
+mem_read 0xc0169770 4
+mem_read 0xc0169770 4
+mem_read 0xc0000000 4
+mem_read 0xc0000000 4
+mem_read 0xc0000000 4
+mem_read 0xc01ffffc 4
+mem_read 0xc01ffffc 4
+mem_read 0xc01ffffc 4
+mem_write 0xc0000000 0x00100000 524288
+mem_read 0xc00b64f4 4
+mem_read 0xc00b64f4 4
+mem_read 0xc00b64f4 4
+mem_read 0xc0169770 4
+mem_read 0xc0169770 4
+mem_read 0xc0169770 4
+mem_read 0xc0000000 4
+mem_read 0xc0000000 4
+mem_read 0xc0000000 4
+mem_read 0xc01ffffc 4
+mem_read 0xc01ffffc 4
+mem_read 0xc01ffffc 4
+mem_test 0xc0000000 0x200000

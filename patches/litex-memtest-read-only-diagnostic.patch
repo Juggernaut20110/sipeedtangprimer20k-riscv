@@ -1,0 +1,33 @@
+--- a/litex/soc/software/bios/cmds/cmd_mem.c
++++ b/litex/soc/software/bios/cmds/cmd_mem.c
+@@ -211,6 +211,30 @@
+ define_command_args(mem_test, mem_test_handler, "Test memory access",
+ 	"mem_test <addr> [maxsize]", 1, 2, MEM_CMDS);
+ 
++#ifdef MEMTEST_READ_ONLY_DIAGNOSTIC
++/* ROM-only diagnostic: verify the PRNG data left by the bounded BIOS test
++ * without writing it again. The aliases refer to the same physical DDR. */
++static void mem_verify_handler(int nb_params, char **params)
++{
++	unsigned long address, size;
++	struct memtest_config config = {
++		.show_progress = 0,
++		.read_only = 1,
++	};
++	if (!parse_ulong(params[0], &address) || !parse_ulong(params[1], &size)
++		|| (address != 0x40000000 && address != 0xc0000000)
++		|| !size || size > MEMTEST_DATA_SIZE || (size & 3)) {
++		printf("Error: use DDR base alias and a bounded, word-aligned size\n");
++		return;
++	}
++	int errors = memtest_data((unsigned int *)address, size, 1, &config);
++	printf("SDRAM_VERIFY address=0x%08lx size=0x%08lx errors=%d status=%s\n",
++		address, size, errors, errors ? "failed" : "passed");
++}
++define_command_args(mem_verify, mem_verify_handler, "Read-only BIOS PRNG verification",
++	"mem_verify <0x40000000|0xc0000000> <size>", 2, 2, MEM_CMDS);
++#endif
++
+ /**
+  * Command "mem_speed"
+  *

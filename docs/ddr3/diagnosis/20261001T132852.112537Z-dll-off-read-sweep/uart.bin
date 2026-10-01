@@ -1,0 +1,914 @@
+
+ý
+[1m        __   _ __      _  __[0m
+[1m       / /  (_) /____ | |/_/[0m
+[1m      / /__/ / __/ -_)>  <[0m
+[1m     /____/_/\__/\__/_/|_|[0m
+[1m   Build your hardware, easily![0m
+
+ (c) Copyright 2012-2026 Enjoy-Digital
+ (c) Copyright 2007-2015 M-Labs
+
+ BIOS CRC passed (0b3085a6)
+
+ LiteX git sha1: 58322a1d2
+
+--================ [1mSoC[0m =================--
+[1mCPU[0m:		VexRiscv_Min @ 48MHz
+[1mBUS[0m:		wishbone 32-bit data/32-bit addr
+[1mCSR[0m:		32-bit data big ordering
+[1mROM[0m:		32.0KiB
+[1mSRAM[0m:		8.0KiB
+[1mL2[0m:		8.0KiB
+[1mSDRAM[0m:		256.0MiB 16-bit @ 192MT/s (CL-6 CWL-6)
+[1mMAIN RAM[0m:	256.0MiB
+
+--=========== [1mInitialization[0m ===========--
+Initializing SDRAM @0x40000000...
+Switching SDRAM to software control.
+SDRAM_TRAINING_START phy=GW2DDRPHY read_leveling=1 bitslips=4 delays=256
+Read leveling:
+  m0, b00: |00000000000000000000000000000000| 
+  m0, b01: |00000000000000000000000000000000| 
+  m0, b02: |00000000000000000000000000000000| 
+  m0, b03: |00000000000000000000000000000000| 
+  best: m0, b00 SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=0 status=failed window_start=-1 window_length=0
+  m1, b00: |00000000000000000000000000000000| 
+  m1, b01: |00000000000000000000000000000000| 
+  m1, b02: |00000000000000000000000000000000| 
+  m1, b03: |00000000000000000000000000000000| 
+  best: m1, b02 SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=failed window_start=-1 window_length=0
+Switching SDRAM to hardware control.
+SDRAM_TRAINING_RESULT status=failed phase=leveling
+Memory initialization failed
+--============== [1mConsole[0m ===============--
+
+[92;1mlitex[0m> mem_write 0xf0001800 0xff00
+
+[92;1mlitex[0m> mem_write 0xf0001804 0x0
+
+[92;1mlitex[0m> mem_write 0xf0001808 0x2
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x3
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x0
+
+[92;1mlitex[0m> mem_write 0xf000180c 0x1
+
+[92;1mlitex[0m> sdram_cal
+
+Switching SDRAM to software control.
+Read leveling:
+  m0, b00: |00000000000000000000000000000000| 
+  m0, b01: |00000000000000000000000000000000| 
+  m0, b02: |00000000000000000000000000000000| 
+  m0, b03: |00000000000000000000000000000000| 
+  best: m0, b02 SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=failed window_start=-1 window_length=0
+  m1, b00: |00000000000000000000000000000000| 
+  m1, b01: |00000000000000000000000000000000| 
+  m1, b02: |00000000000000000000000000000000| 
+  m1, b03: |00000000000000000000000000000000| 
+  best: m1, b02 SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=failed window_start=-1 window_length=0
+Switching SDRAM to hardware control.
+SDRAM_DIAGNOSTIC_CAL_RESULT status=failed
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  00 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001818 4
+
+Memory dump:
+0xf0001818  cb 02 00 00                                      ....            
+[92;1mlitex[0m> mem_write 0xf0001800 0xff00
+
+[92;1mlitex[0m> mem_write 0xf0001804 0x9
+
+[92;1mlitex[0m> mem_write 0xf0001808 0x2
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x3
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x0
+
+[92;1mlitex[0m> mem_write 0xf000180c 0x1
+
+[92;1mlitex[0m> sdram_cal
+
+Switching SDRAM to software control.
+Read leveling:
+  m0, b02: |11111111111000000000000000000000| 
+  best: m0, b02 delays: 40+-40
+SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=82 delay_center=40 delay_half_window=40
+  m1, b00: |00000000000000000000000000000000| 
+  m1, b01: |00000000000000000000000000000000| 
+  m1, b02: |00000000000000000000000000000000| 
+  m1, b03: |00000000000000000000000000000000| 
+  best: m1, b02 SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=failed window_start=-1 window_length=0
+Switching SDRAM to hardware control.
+SDRAM_DIAGNOSTIC_CAL_RESULT status=failed
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  01 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001818 4
+
+Memory dump:
+0xf0001818  b6 0d 00 00                                      ....            
+[92;1mlitex[0m> mem_write 0xf0001800 0xff00
+
+[92;1mlitex[0m> mem_write 0xf0001804 0x12
+
+[92;1mlitex[0m> mem_write 0xf0001808 0x2
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x3
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x0
+
+[92;1mlitex[0m> mem_write 0xf000180c 0x1
+
+[92;1mlitex[0m> sdram_cal
+
+Switching SDRAM to software control.
+Read leveling:
+  m0, b02: |11111111111111111111111111000000| 
+  best: m0, b02 delays: 100+-100
+SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=201 delay_center=100 delay_half_window=100
+  m1, b00: |00000000000000000000000000000000| 
+  m1, b01: |00000000000000000000000000000000| 
+  m1, b02: |00000000000000000000000000000000| 
+  m1, b03: |00000000000000000000000000000000| 
+  best: m1, b00 SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=0 status=failed window_start=-1 window_length=0
+Switching SDRAM to hardware control.
+SDRAM_DIAGNOSTIC_CAL_RESULT status=failed
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  01 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001818 4
+
+Memory dump:
+0xf0001818  76 03 00 00                                      v...            
+[92;1mlitex[0m> mem_write 0xf0001800 0xff00
+
+[92;1mlitex[0m> mem_write 0xf0001804 0x1b
+
+[92;1mlitex[0m> mem_write 0xf0001808 0x2
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x3
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x0
+
+[92;1mlitex[0m> mem_write 0xf000180c 0x1
+
+[92;1mlitex[0m> sdram_cal
+
+Switching SDRAM to software control.
+Read leveling:
+  m0, b00: |00000000000000000000000000000000| 
+  m0, b01: |00000000000000000000000000000000| 
+  m0, b02: |00000000000000000000000000000000| 
+  m0, b03: |00000000000000000000000000000000| 
+  best: m0, b02 SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=failed window_start=-1 window_length=0
+  m1, b00: |00000000000000000000000000000000| 
+  m1, b01: |00000000000000000000000000000000| 
+  m1, b02: |00000000000000000000000000000000| 
+  m1, b03: |00000000000000000000000000000000| 
+  best: m1, b00 SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=0 status=failed window_start=-1 window_length=0
+Switching SDRAM to hardware control.
+SDRAM_DIAGNOSTIC_CAL_RESULT status=failed
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001818 4
+
+Memory dump:
+0xf0001818  80 03 00 00                                      ....            
+[92;1mlitex[0m> mem_write 0xf0001800 0xff00
+
+[92;1mlitex[0m> mem_write 0xf0001804 0x24
+
+[92;1mlitex[0m> mem_write 0xf0001808 0x2
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x3
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x0
+
+[92;1mlitex[0m> mem_write 0xf000180c 0x1
+
+[92;1mlitex[0m> sdram_cal
+
+Switching SDRAM to software control.
+Read leveling:
+  m0, b00: |00000000000000000000000000000000| 
+  m0, b01: |00000000000000000000000000000000| 
+  m0, b02: |00000000000000000000000000000000| 
+  m0, b03: |00000000000000000000000000000000| 
+  best: m0, b02 SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=failed window_start=-1 window_length=0
+  m1, b00: |00000000000000000000000000000000| 
+  m1, b01: |00000000000000000000000000000000| 
+  m1, b02: |00000000000000000000000000000000| 
+  m1, b03: |00000000000000000000000000000000| 
+  best: m1, b00 SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=0 status=failed window_start=-1 window_length=0
+Switching SDRAM to hardware control.
+SDRAM_DIAGNOSTIC_CAL_RESULT status=failed
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  00 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001818 4
+
+Memory dump:
+0xf0001818  40 03 00 00                                      @...            
+[92;1mlitex[0m> mem_write 0xf0001800 0xff00
+
+[92;1mlitex[0m> mem_write 0xf0001804 0x2d
+
+[92;1mlitex[0m> mem_write 0xf0001808 0x2
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x3
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x0
+
+[92;1mlitex[0m> mem_write 0xf000180c 0x1
+
+[92;1mlitex[0m> sdram_cal
+
+Switching SDRAM to software control.
+Read leveling:
+  m0, b00: |00000000000000000000000000000000| 
+  m0, b01: |00000000000000000000000000000000| 
+  m0, b02: |00000000000000000000000000000000| 
+  m0, b03: |00000000000000000000000000000000| 
+  best: m0, b02 SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=failed window_start=-1 window_length=0
+  m1, b00: |00000000000000000000000000000000| 
+  m1, b01: |00000000000000000000000000000000| 
+  m1, b02: |00000000000000000000000000000000| 
+  m1, b03: |00000000000000000000000000000000| 
+  best: m1, b00 SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=0 status=failed window_start=-1 window_length=0
+Switching SDRAM to hardware control.
+SDRAM_DIAGNOSTIC_CAL_RESULT status=failed
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  00 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001818 4
+
+Memory dump:
+0xf0001818  16 02 00 00                                      ....            
+[92;1mlitex[0m> mem_write 0xf0001800 0xff00
+
+[92;1mlitex[0m> mem_write 0xf0001804 0x36
+
+[92;1mlitex[0m> mem_write 0xf0001808 0x2
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x3
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x0
+
+[92;1mlitex[0m> mem_write 0xf000180c 0x1
+
+[92;1mlitex[0m> sdram_cal
+
+Switching SDRAM to software control.
+Read leveling:
+  m0, b00: |00000000000000000000000000000000| 
+  m0, b01: |00000000000000000000000000000000| 
+  m0, b02: |00000000000000000000000000000000| 
+  m0, b03: |00000000000000000000000000000000| 
+  best: m0, b02 SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=failed window_start=-1 window_length=0
+  m1, b00: |00000000000000000000000000000000| 
+  m1, b01: |00000000000000000000000000000000| 
+  m1, b02: |00000000000000000000000000000000| 
+  m1, b03: |00000000000000000000000000000000| 
+  best: m1, b02 SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=failed window_start=-1 window_length=0
+Switching SDRAM to hardware control.
+SDRAM_DIAGNOSTIC_CAL_RESULT status=failed
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  00 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001818 4
+
+Memory dump:
+0xf0001818  48 0b 00 00                                      H...            
+[92;1mlitex[0m> mem_write 0xf0001800 0xff00
+
+[92;1mlitex[0m> mem_write 0xf0001804 0x3f
+
+[92;1mlitex[0m> mem_write 0xf0001808 0x2
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x3
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x0
+
+[92;1mlitex[0m> mem_write 0xf000180c 0x1
+
+[92;1mlitex[0m> sdram_cal
+
+Switching SDRAM to software control.
+Read leveling:
+  m0, b00: |00000000000000000000000000000000| 
+  m0, b01: |00000000000000000000000000000000| 
+  m0, b02: |00000000000000000000000000000000| 
+  m0, b03: |00000000000000000000000000000000| 
+  best: m0, b02 SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=failed window_start=-1 window_length=0
+  m1, b00: |00000000000000000000000000000000| 
+  m1, b01: |00000000000000000000000000000000| 
+  m1, b02: |00000000000000000000000000000000| 
+  m1, b03: |00000000000000000000000000000000| 
+  best: m1, b02 SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=failed window_start=-1 window_length=0
+Switching SDRAM to hardware control.
+SDRAM_DIAGNOSTIC_CAL_RESULT status=failed
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  00 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001818 4
+
+Memory dump:
+0xf0001818  7e 0b 00 00                                      ~...            
+[92;1mlitex[0m> mem_write 0xf0001800 0xaf50
+
+[92;1mlitex[0m> mem_write 0xf0001804 0x0
+
+[92;1mlitex[0m> mem_write 0xf0001808 0x2
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x3
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x0
+
+[92;1mlitex[0m> mem_write 0xf000180c 0x1
+
+[92;1mlitex[0m> sdram_cal
+
+Switching SDRAM to software control.
+Read leveling:
+  m0, b00: |00000000000000000000000000000000| 
+  m0, b01: |00000000000000000000000000000000| 
+  m0, b02: |00000000000000000000000000000000| 
+  m0, b03: |00000000000000000000000000000000| 
+  best: m0, b02 SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=failed window_start=-1 window_length=0
+  m1, b00: |00000000000000000000000000000000| 
+  m1, b01: |00000000000000000000000000000000| 
+  m1, b02: |00000000000000000000000000000000| 
+  m1, b03: |00000000000000000000000000000000| 
+  best: m1, b02 SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=failed window_start=-1 window_length=0
+Switching SDRAM to hardware control.
+SDRAM_DIAGNOSTIC_CAL_RESULT status=failed
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001818 4
+
+Memory dump:
+0xf0001818  96 05 00 00                                      ....            
+[92;1mlitex[0m> mem_write 0xf0001800 0xaf50
+
+[92;1mlitex[0m> mem_write 0xf0001804 0x9
+
+[92;1mlitex[0m> mem_write 0xf0001808 0x2
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x3
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x0
+
+[92;1mlitex[0m> mem_write 0xf000180c 0x1
+
+[92;1mlitex[0m> sdram_cal
+
+Switching SDRAM to software control.
+Read leveling:
+  m0, b00: |00000000000000000000000000000000| 
+  m0, b01: |00000000000000000000000000000000| 
+  m0, b02: |00000000000000000000000000000000| 
+  m0, b03: |00000000000000000000000000000000| 
+  best: m0, b02 SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=failed window_start=-1 window_length=0
+  m1, b00: |00000000000000000000000000000000| 
+  m1, b01: |00000000000000000000000000000000| 
+  m1, b02: |00000000000000000000000000000000| 
+  m1, b03: |00000000000000000000000000000000| 
+  best: m1, b02 SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=failed window_start=-1 window_length=0
+Switching SDRAM to hardware control.
+SDRAM_DIAGNOSTIC_CAL_RESULT status=failed
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  00 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001818 4
+
+Memory dump:
+0xf0001818  ed 02 00 00                                      ....            
+[92;1mlitex[0m> mem_write 0xf0001800 0xaf50
+
+[92;1mlitex[0m> mem_write 0xf0001804 0x12
+
+[92;1mlitex[0m> mem_write 0xf0001808 0x2
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x3
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x0
+
+[92;1mlitex[0m> mem_write 0xf000180c 0x1
+
+[92;1mlitex[0m> sdram_cal
+
+Switching SDRAM to software control.
+Read leveling:
+  m0, b00: |00000000000000000000000000000000| 
+  m0, b01: |00000000000000000000000000000000| 
+  m0, b02: |00000000000000000000000000000000| 
+  m0, b03: |00000000000000000000000000000000| 
+  best: m0, b02 SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=failed window_start=-1 window_length=0
+  m1, b00: |00000000000000000000000000000000| 
+  m1, b01: |00000000000000000000000000000000| 
+  m1, b02: |00000000000000000000000000000000| 
+  m1, b03: |00000000000000000000000000000000| 
+  best: m1, b00 SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=0 status=failed window_start=-1 window_length=0
+Switching SDRAM to hardware control.
+SDRAM_DIAGNOSTIC_CAL_RESULT status=failed
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  00 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001818 4
+
+Memory dump:
+0xf0001818  6d 03 00 00                                      m...            
+[92;1mlitex[0m> mem_write 0xf0001800 0xaf50
+
+[92;1mlitex[0m> mem_write 0xf0001804 0x1b
+
+[92;1mlitex[0m> mem_write 0xf0001808 0x2
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x3
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x0
+
+[92;1mlitex[0m> mem_write 0xf000180c 0x1
+
+[92;1mlitex[0m> sdram_cal
+
+Switching SDRAM to software control.
+Read leveling:
+  m0, b00: |00000000000000000000000000000000| 
+  m0, b01: |00000000000000000000000000000000| 
+  m0, b02: |00000000000000000000000000000000| 
+  m0, b03: |00000000000000000000000000000000| 
+  best: m0, b02 SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=failed window_start=-1 window_length=0
+  m1, b00: |00000000000000000000000000000000| 
+  m1, b01: |00000000000000000000000000000000| 
+  m1, b02: |00000000000000000000000000000000| 
+  m1, b03: |00000000000000000000000000000000| 
+  best: m1, b00 SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=0 status=failed window_start=-1 window_length=0
+Switching SDRAM to hardware control.
+SDRAM_DIAGNOSTIC_CAL_RESULT status=failed
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001818 4
+
+Memory dump:
+0xf0001818  c0 02 00 00                                      ....            
+[92;1mlitex[0m> mem_write 0xf0001800 0xaf50
+
+[92;1mlitex[0m> mem_write 0xf0001804 0x24
+
+[92;1mlitex[0m> mem_write 0xf0001808 0x2
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x3
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x0
+
+[92;1mlitex[0m> mem_write 0xf000180c 0x1
+
+[92;1mlitex[0m> sdram_cal
+
+Switching SDRAM to software control.
+Read leveling:
+  m0, b00: |00000000000000000000000000000000| 
+  m0, b01: |00000000000000000000000000000000| 
+  m0, b02: |00000000000000000000000000000000| 
+  m0, b03: |00000000000000000000000000000000| 
+  best: m0, b02 SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=failed window_start=-1 window_length=0
+  m1, b00: |00000000000000000000000000000000| 
+  m1, b01: |00000000000000000000000000000000| 
+  m1, b02: |00000000000000000000000000000000| 
+  m1, b03: |00000000000000000000000000000000| 
+  best: m1, b00 SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=0 status=failed window_start=-1 window_length=0
+Switching SDRAM to hardware control.
+SDRAM_DIAGNOSTIC_CAL_RESULT status=failed
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001818 4
+
+Memory dump:
+0xf0001818  c0 02 00 00                                      ....            
+[92;1mlitex[0m> mem_write 0xf0001800 0xaf50
+
+[92;1mlitex[0m> mem_write 0xf0001804 0x2d
+
+[92;1mlitex[0m> mem_write 0xf0001808 0x2
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x3
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x0
+
+[92;1mlitex[0m> mem_write 0xf000180c 0x1
+
+[92;1mlitex[0m> sdram_cal
+
+Switching SDRAM to software control.
+Read leveling:
+  m0, b00: |00000000000000000000000000000000| 
+  m0, b01: |00000000000000000000000000000000| 
+  m0, b02: |00000000000000000000000000000000| 
+  m0, b03: |00000000000000000000000000000000| 
+  best: m0, b02 SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=failed window_start=-1 window_length=0
+  m1, b00: |00000000000000000000000000000000| 
+  m1, b01: |00000000000000000000000000000000| 
+  m1, b02: |00000000000000000000000000000000| 
+  m1, b03: |00000000000000000000000000000000| 
+  best: m1, b02 SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=failed window_start=-1 window_length=0
+Switching SDRAM to hardware control.
+SDRAM_DIAGNOSTIC_CAL_RESULT status=failed
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  00 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001818 4
+
+Memory dump:
+0xf0001818  c0 02 00 00                                      ....            
+[92;1mlitex[0m> mem_write 0xf0001800 0xaf50
+
+[92;1mlitex[0m> mem_write 0xf0001804 0x36
+
+[92;1mlitex[0m> mem_write 0xf0001808 0x2
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x3
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x0
+
+[92;1mlitex[0m> mem_write 0xf000180c 0x1
+
+[92;1mlitex[0m> sdram_cal
+
+Switching SDRAM to software control.
+Read leveling:
+  m0, b00: |00000000000000000000000000000000| 
+  m0, b01: |00000000000000000000000000000000| 
+  m0, b02: |00000000000000000000000000000000| 
+  m0, b03: |00000000000000000000000000000000| 
+  best: m0, b02 SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=failed window_start=-1 window_length=0
+  m1, b00: |00000000000000000000000000000000| 
+  m1, b01: |00000000000000000000000000000000| 
+  m1, b02: |00000000000000000000000000000000| 
+  m1, b03: |00000000000000000000000000000000| 
+  best: m1, b00 SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=0 status=failed window_start=-1 window_length=0
+Switching SDRAM to hardware control.
+SDRAM_DIAGNOSTIC_CAL_RESULT status=failed
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  00 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001818 4
+
+Memory dump:
+0xf0001818  40 0b 00 00                                      @...            
+[92;1mlitex[0m> mem_write 0xf0001800 0xaf50
+
+[92;1mlitex[0m> mem_write 0xf0001804 0x3f
+
+[92;1mlitex[0m> mem_write 0xf0001808 0x2
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x3
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x0
+
+[92;1mlitex[0m> mem_write 0xf000180c 0x1
+
+[92;1mlitex[0m> sdram_cal
+
+Switching SDRAM to software control.
+Read leveling:
+  m0, b00: |00000000000000000000000000000000| 
+  m0, b01: |00000000000000000000000000000000| 
+  m0, b02: |00000000000000000000000000000000| 
+  m0, b03: |00000000000000000000000000000000| 
+  best: m0, b00 SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=0 status=failed window_start=-1 window_length=0
+  m1, b00: |00000000000000000000000000000000| 
+  m1, b01: |00000000000000000000000000000000| 
+  m1, b02: |00000000000000000000000000000000| 
+  m1, b03: |00000000000000000000000000000000| 
+  best: m1, b00 SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=0 status=failed window_start=-1 window_length=0
+Switching SDRAM to hardware control.
+SDRAM_DIAGNOSTIC_CAL_RESULT status=failed
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  00 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001818 4
+
+Memory dump:
+0xf0001818  7e 0b 00 00                                      ~...            
+[92;1mlitex[0m> mem_write 0xf0001800 0x5fa0
+
+[92;1mlitex[0m> mem_write 0xf0001804 0x0
+
+[92;1mlitex[0m> mem_write 0xf0001808 0x2
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x3
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x0
+
+[92;1mlitex[0m> mem_write 0xf000180c 0x1
+
+[92;1mlitex[0m> sdram_cal
+
+Switching SDRAM to software control.
+Read leveling:
+  m0, b00: |00000000000000000000000000000000| 
+  m0, b01: |00000000000000000000000000000000| 
+  m0, b02: |00000000000000000000000000000000| 
+  m0, b03: |00000000000000000000000000000000| 
+  best: m0, b02 SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=failed window_start=-1 window_length=0
+  m1, b00: |00000000000000000000000000000000| 
+  m1, b01: |00000000000000000000000000000000| 
+  m1, b02: |00000000000000000000000000000000| 
+  m1, b03: |00000000000000000000000000000000| 
+  best: m1, b02 SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=failed window_start=-1 window_length=0
+Switching SDRAM to hardware control.
+SDRAM_DIAGNOSTIC_CAL_RESULT status=failed
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  00 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001818 4
+
+Memory dump:
+0xf0001818  6d 0b 00 00                                      m...            
+[92;1mlitex[0m> mem_write 0xf0001800 0x5fa0
+
+[92;1mlitex[0m> mem_write 0xf0001804 0x9
+
+[92;1mlitex[0m> mem_write 0xf0001808 0x2
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x3
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x0
+
+[92;1mlitex[0m> mem_write 0xf000180c 0x1
+
+[92;1mlitex[0m> sdram_cal
+
+Switching SDRAM to software control.
+Read leveling:
+  m0, b00: |00000000000000000000000000000000| 
+  m0, b01: |00000000000000000000000000000000| 
+  m0, b02: |00000000000000000000000000000000| 
+  m0, b03: |00000000000000000000000000000000| 
+  best: m0, b02 SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=failed window_start=-1 window_length=0
+  m1, b02: |11111111111000000000000000000000| 
+  best: m1, b02 delays: 40+-40
+SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=0 window_length=81 delay_center=40 delay_half_window=40
+Switching SDRAM to hardware control.
+SDRAM_DIAGNOSTIC_CAL_RESULT status=failed
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  02 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001818 4
+
+Memory dump:
+0xf0001818  ad 0d 00 00                                      ....            
+[92;1mlitex[0m> mem_write 0xf0001800 0x5fa0
+
+[92;1mlitex[0m> mem_write 0xf0001804 0x12
+
+[92;1mlitex[0m> mem_write 0xf0001808 0x2
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x3
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x0
+
+[92;1mlitex[0m> mem_write 0xf000180c 0x1
+
+[92;1mlitex[0m> sdram_cal
+
+Switching SDRAM to software control.
+Read leveling:
+  m0, b00: |00000000000000000000000000000000| 
+  m0, b01: |00000000000000000000000000000000| 
+  m0, b02: |00000000000000000000000000000000| 
+  m0, b03: |00000000000000000000000000000000| 
+  best: m0, b02 SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=failed window_start=-1 window_length=0
+  m1, b02: |11111111111111111111111111000000| 
+  best: m1, b02 delays: 100+-100
+SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=0 window_length=202 delay_center=100 delay_half_window=100
+Switching SDRAM to hardware control.
+SDRAM_DIAGNOSTIC_CAL_RESULT status=failed
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  02 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001818 4
+
+Memory dump:
+0xf0001818  ad 0d 00 00                                      ....            
+[92;1mlitex[0m> mem_write 0xf0001800 0x5fa0
+
+[92;1mlitex[0m> mem_write 0xf0001804 0x1b
+
+[92;1mlitex[0m> mem_write 0xf0001808 0x2
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x3
+
+[92;1mlitex[0m> mem_write 0xf0002000 0x0
+
+[92;1mlitex[0m> mem_write 0xf000180c 0x1
+
+[92;1mlitex[0m> sdram_cal
+
+Switching SDRAM to software control.
+Read leveling:
+  m0, b02: |11111111111111111111111111110000| 
+  best: m0, b02 delays: 108+-108
+SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=217 delay_center=108 delay_half_window=108
+  m1, b02: |11111111111111111111111111100000| 
+  best: m1, b02 delays: 106+-106
+SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=0 window_length=214 delay_center=106 delay_half_window=106
+Switching SDRAM to hardware control.
+SDRAM_DIAGNOSTIC_CAL_RESULT status=passed
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  03 00 00 00                                      ....            
+[92;1mlitex[0m> mem_read 0xf0001818 4
+
+Memory dump:
+0xf0001818  b6 0d 00 00                                      ....            
+[92;1mlitex[0m> 

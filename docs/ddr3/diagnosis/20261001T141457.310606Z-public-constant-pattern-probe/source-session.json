@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "session_id": "20261001T140041.989982Z-ddr3-minimal",
+  "batch_id": "20261001T140041.989982Z-ddr3",
+  "profile": "minimal",
+  "requested_profiles": [
+    "minimal"
+  ],
+  "memory_mode": "ddr3",
+  "status": "failed",
+  "created_utc": "2026-10-01T14:00:42.008902+00:00",
+  "board": "Sipeed Tang Primer 20K with standard Dock",
+  "clock_hz": 48000000,
+  "uart_device_requested": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+  "uart_device_selected": "/dev/ttyUSB1",
+  "uart_candidates_at_start": [
+    "/dev/serial/by-id/usb-1a86_USB_Single_Serial_599D114570-if00",
+    "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if00-port0",
+    "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0"
+  ],
+  "usb_device_nodes_at_start": [
+    "/dev/bus/usb/001/001",
+    "/dev/bus/usb/001/003",
+    "/dev/bus/usb/001/016",
+    "/dev/bus/usb/001/023",
+    "/dev/bus/usb/001/024",
+    "/dev/bus/usb/001/025",
+    "/dev/bus/usb/002/001"
+  ],
+  "requested_training_runs": 10,
+  "actual_training_runs": 1,
+  "requested_stress_seconds": 1800,
+  "training_criteria_runs": 10,
+  "stress_criteria_seconds": 1800,
+  "build_identity": {
+    "build_metadata": "build/ddr3/minimal/build-metadata.json",
+    "bitstream": "build/ddr3/minimal/bitstream.fs",
+    "bitstream_sha256": "c560ea357159c5dfeead06544d409b9edb6729aac98cf1996008d572da2fd8cc",
+    "build_fingerprint": "2fbdf151633f3658ddd5372aabec4933abcb6238f329d79c268aceb47bcb8930",
+    "cpu_configuration": {
+      "liteX_variant": "minimal",
+      "isa": "rv32i2p0",
+      "instruction_cache_bytes": 0,
+      "data_cache_bytes": 0,
+      "prediction": "none",
+      "rtl_sha256": null,
+      "candidate_generation": null
+    },
+    "bios_bytes": 32768,
+    "l2_cache_bytes": 8192,
+    "geometry_bytes": 268435456,
+    "uncached_alias": "0xc0000000",
+    "diagnostic_images": {
+      "smoke": {
+        "binary": "build/ddr3/minimal/diagnostics/smoke/ddr_test.bin",
+        "sha256": "d3dcf7e4f3c05d6c2c92bb10db1d525be1cc5d1da9a4adfb5cf22d492e9eedaa",
+        "stress_seconds": 1800
+      },
+      "full": {
+        "binary": "build/ddr3/minimal/diagnostics/full/ddr_test.bin",
+        "sha256": "34230188df3288cd0c8042be21f16edaaed883f0da4c30c2d9ea665f161ab3e1",
+        "stress_seconds": 1800
+      }
+    }
+  },
+  "training_phy_configuration": {
+    "SDRAM_PHY_MODULES": 2,
+    "SDRAM_PHY_DQ_DQS_RATIO": 8,
+    "SDRAM_PHY_DELAYS": 256,
+    "SDRAM_PHY_BITSLIPS": 4,
+    "SDRAM_DELAY_PER_DQ": false
+  },
+  "expected_read_lanes": 2,
+  "trials": [
+    {
+      "mode": "training",
+      "attempt": 1,
+      "status": "failed",
+      "programming_status": "completed",
+      "image_sha256": "d3dcf7e4f3c05d6c2c92bb10db1d525be1cc5d1da9a4adfb5cf22d492e9eedaa",
+      "bitstream_sha256": "c560ea357159c5dfeead06544d409b9edb6729aac98cf1996008d572da2fd8cc",
+      "raw_uart_log": "docs/ddr3/evidence/20261001T140041.989982Z-ddr3-minimal/training-01.uart.bin",
+      "text_uart_log": "docs/ddr3/evidence/20261001T140041.989982Z-ddr3-minimal/training-01.uart.log",
+      "transmitted_uart_log": "docs/ddr3/evidence/20261001T140041.989982Z-ddr3-minimal/training-01.uart.tx.bin",
+      "started_utc": "2026-10-01T14:00:42.044718+00:00",
+      "uart_input_buffer_cleared_before_programming": true,
+      "error": "TimeoutError: DDR diagnostic firmware did not start after BIOS recovery",
+      "application_end_seen": false,
+      "application_failure": null,
+      "bios_training_status_seen": false,
+      "raw_uart_sha256": "9070127943e54a7be810bac15bea2ccb5f3acdc06a2f2a74b642eb3533653432",
+      "raw_uart_bytes": 3214,
+      "transmitted_uart_sha256": "b9c3c2c8de78e757564cd05866a1a3dcfb10e9d9b1c8ae1c43dd1691ac65d7c2",
+      "transmitted_uart_bytes": 102,
+      "decode_errors_present": true,
+      "training_status_from_bios": true,
+      "finished_utc": "2026-10-01T14:01:37.201735+00:00"
+    }
+  ],
+  "batch_continuation_safe": false,
+  "error": "RuntimeError: DDR training/smoke run 1 failed: TimeoutError: DDR diagnostic firmware did not start after BIOS recovery",
+  "finished_utc": "2026-10-01T14:01:37.201945+00:00",
+  "uart_evidence_directory": "docs/ddr3/evidence/20261001T140041.989982Z-ddr3-minimal",
+  "evidence": "build/ddr3/ddr-test-sessions/20261001T140041.989982Z-ddr3-minimal/session.json"
+}

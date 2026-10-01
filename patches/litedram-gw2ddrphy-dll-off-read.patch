@@ -1,0 +1,49 @@
+--- a/litedram/phy/gw2ddrphy.py
++++ b/litedram/phy/gw2ddrphy.py
+@@ -198,7 +198,7 @@
+             wrphase       = wrphase,
+             cl            = cl,
+             cwl           = cwl,
+-            read_latency  = cl_sys_latency + 9,
++            read_latency  = cl_sys_latency + (8 if dll_off else 9),
+             write_latency = cwl_sys_latency - 1,
+             read_leveling = True,
+             bitslips      = 4,
+@@ -291,9 +291,17 @@
+         # DQS/DM/DQ --------------------------------------------------------------------------------
+         dq_oe         = Signal()
+         dqs_re        = Signal()
++        dqs_re_early  = Signal()
+         dqs_oe        = Signal()
+         dqs_postamble = Signal()
+         dqs_preamble  = Signal()
++        # X2_DDR3 consumes READ[0] and READ[1] as consecutive CK slots.
++        # DLL-off DQS starts one CK earlier than DLL-on at the same CL.
++        # Advance slot 1, select the delayed positive read clock, and consume
++        # the assembled burst one sys cycle earlier (read_latency above).
++        dqs_read = (Cat(dqs_re, dqs_re_early, dqs_re, dqs_re_early)
++                    if dll_off else Replicate(dqs_re, 4))
++
+         for i in range(databits//8):
+             # DQS
+             dqs_i    = Signal()
+@@ -324,8 +332,8 @@
+                 o_WFLAG    = Open(),
+ 
+                 # Reads (generate shifted DQS clock for reads)
+-                i_READ     = Replicate(dqs_re, 4),
+-                i_RCLKSEL  = 0,
++                i_READ     = dqs_read,
++                i_RCLKSEL  = 3 if dll_off else 0,
+                 i_DQSIN    = dqs_i,
+                 o_DQSR90   = dqsr90,
+                 o_RPOINT   = rdpntr,
+@@ -473,6 +481,8 @@
+ 
+         self.comb += [phase.rddata_valid.eq(rddata_en.output) for phase in dfi.phases]
+         self.comb += dqs_re.eq(rddata_en.taps[rdtap] | rddata_en.taps[rdtap + 1])
++        if dll_off:
++            self.comb += dqs_re_early.eq(rddata_en.taps[rdtap - 1] | rddata_en.taps[rdtap])
+ 
+         # Write Control Path -----------------------------------------------------------------------
+         wrtap = cwl_sys_latency - 1

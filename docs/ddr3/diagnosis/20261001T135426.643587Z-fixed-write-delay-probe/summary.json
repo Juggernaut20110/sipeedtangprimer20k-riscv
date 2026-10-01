@@ -1,0 +1,170 @@
+[
+  {
+    "offset": 0,
+    "training": [
+      [
+        "SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=217 delay_center=108 delay_half_window=108",
+        "SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=0 window_length=214 delay_center=106 delay_half_window=106"
+      ]
+    ],
+    "memtest_errors": [
+      "1",
+      "1"
+    ],
+    "verify_errors": [
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "first_errors": [
+      "memtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9",
+      "memtest_data error @ 0x400b64f4: 0xb4ce6cd9 vs 0xb4de6cd9"
+    ]
+  },
+  {
+    "offset": -24,
+    "training": [
+      [
+        "SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=217 delay_center=107 delay_half_window=107",
+        "SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=0 window_length=214 delay_center=106 delay_half_window=106"
+      ]
+    ],
+    "memtest_errors": [
+      "1",
+      "1"
+    ],
+    "verify_errors": [
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "first_errors": [
+      "memtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9",
+      "memtest_data error @ 0x400b64f4: 0xb4ce6cd9 vs 0xb4de6cd9"
+    ]
+  },
+  {
+    "offset": 24,
+    "training": [
+      [
+        "SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=0 status=failed window_start=-1 window_length=0"
+      ]
+    ],
+    "memtest_errors": [
+      "524267",
+      "457694"
+    ],
+    "verify_errors": [
+      "393305",
+      "393354",
+      "393330",
+      "393354"
+    ],
+    "first_errors": [
+      "memtest_data error @ 0xc0000000: 0xc0180001 vs 0x80200003",
+      "memtest_data error @ 0xc0000004: 0xc0180001 vs 0xc0300002",
+      "memtest_data error @ 0x40000000: 0xc0180001 vs 0x80200003",
+      "memtest_data error @ 0x40000004: 0x60180001 vs 0xc0300002"
+    ]
+  },
+  {
+    "offset": -48,
+    "training": [
+      [
+        "SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=0 status=failed window_start=-1 window_length=0"
+      ]
+    ],
+    "memtest_errors": [
+      "524265",
+      "457694"
+    ],
+    "verify_errors": [
+      "393336",
+      "393350",
+      "393311",
+      "393353"
+    ],
+    "first_errors": [
+      "memtest_data error @ 0xc0000000: 0xc0180001 vs 0x80200003",
+      "memtest_data error @ 0xc0000004: 0xc0180001 vs 0xc0300002",
+      "memtest_data error @ 0x40000000: 0xc0180001 vs 0x80200003",
+      "memtest_data error @ 0x40000004: 0x60180001 vs 0xc0300002"
+    ]
+  },
+  {
+    "offset": 48,
+    "training": [
+      [
+        "SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=217 delay_center=108 delay_half_window=108",
+        "SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=0 window_length=214 delay_center=106 delay_half_window=106"
+      ]
+    ],
+    "memtest_errors": [
+      "1",
+      "1"
+    ],
+    "verify_errors": [
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "first_errors": [
+      "memtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9",
+      "memtest_data error @ 0x400b64f4: 0xb4ce6cd9 vs 0xb4de6cd9"
+    ]
+  },
+  {
+    "offset": -72,
+    "training": [
+      [
+        "SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=216 delay_center=108 delay_half_window=108",
+        "SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=0 window_length=214 delay_center=106 delay_half_window=106"
+      ]
+    ],
+    "memtest_errors": [
+      "1",
+      "1"
+    ],
+    "verify_errors": [
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "first_errors": [
+      "memtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9",
+      "memtest_data error @ 0x400b64f4: 0xb4ce6cd9 vs 0xb4de6cd9"
+    ]
+  },
+  {
+    "offset": 72,
+    "training": [
+      [
+        "SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=217 delay_center=107 delay_half_window=107",
+        "SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=0 status=failed window_start=-1 window_length=0"
+      ],
+      [
+        "SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=0 status=failed window_start=-1 window_length=0"
+      ]
+    ],
+    "memtest_errors": [
+      "393212",
+      "393212"
+    ],
+    "verify_errors": [
+      "393212",
+      "393212",
+      "393212",
+      "393212"
+    ],
+    "first_errors": [
+      "memtest_data error @ 0xc0000000: 0x60200003 vs 0x80200003",
+      "memtest_data error @ 0xc0000004: 0x60300002 vs 0xc0300002",
+      "memtest_data error @ 0x40000000: 0x60200003 vs 0x80200003",
+      "memtest_data error @ 0x40000004: 0x60300002 vs 0xc0300002"
+    ]
+  }
+]

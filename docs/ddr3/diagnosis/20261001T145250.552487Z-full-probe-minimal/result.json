@@ -1,0 +1,78 @@
+{
+  "mode": "full",
+  "diagnostic_only": true,
+  "attempt": 1,
+  "status": "failed",
+  "programming_status": "completed",
+  "image_sha256": "520a8b0769eeb7f49d5c26492a0682a43b4d967bdb185914e0c58d27b2335bd1",
+  "bitstream_sha256": "d9022a351882f7b0b2fb1add6dfb63adae470019c43fe0e621f705779503f099",
+  "raw_uart_log": "docs/ddr3/diagnosis/20261001T145250.552487Z-full-probe-minimal/full-01.uart.bin",
+  "text_uart_log": "docs/ddr3/diagnosis/20261001T145250.552487Z-full-probe-minimal/full-01.uart.log",
+  "transmitted_uart_log": "docs/ddr3/diagnosis/20261001T145250.552487Z-full-probe-minimal/full-01.uart.tx.bin",
+  "started_utc": "2026-10-01T14:52:50.840783+00:00",
+  "uart_input_buffer_cleared_before_programming": true,
+  "training": {
+    "status": "passed",
+    "start_records": [
+      "SDRAM_TRAINING_START phy=GW2DDRPHY read_leveling=1 bitslips=4 delays=256"
+    ],
+    "result_records": [
+      "SDRAM_TRAINING_RESULT status=passed"
+    ],
+    "expected_lane_count": 2,
+    "lane_count": 2,
+    "phy_configuration": {
+      "SDRAM_PHY_MODULES": 2,
+      "SDRAM_PHY_DQ_DQS_RATIO": 8,
+      "SDRAM_PHY_DELAYS": 256,
+      "SDRAM_PHY_BITSLIPS": 4,
+      "SDRAM_DELAY_PER_DQ": false
+    },
+    "lanes": [
+      {
+        "module": 0,
+        "dq_line": 0,
+        "bitslip": 2,
+        "status": "passed",
+        "window_start": 0,
+        "window_length": 93,
+        "delay_center": 46,
+        "delay_half_window": 46,
+        "raw": "SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=93 delay_center=46 delay_half_window=46"
+      },
+      {
+        "module": 1,
+        "dq_line": 0,
+        "bitslip": 2,
+        "status": "passed",
+        "window_start": 0,
+        "window_length": 91,
+        "delay_center": 45,
+        "delay_half_window": 45,
+        "raw": "SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=0 window_length=91 delay_center=45 delay_half_window=45"
+      }
+    ],
+    "errors": []
+  },
+  "bios_memtest": {
+    "status": "failed",
+    "records": [
+      "Memtest KO"
+    ],
+    "errors": [
+      "BIOS memory test failed or its result is missing/ambiguous"
+    ]
+  },
+  "startup_recovery": "completed without FPGA reconfiguration",
+  "error": "RuntimeError: DDR_TEST_FAILURE phase=walking_zeros address=0xc64011ac expected=0xfffff7ff actual=0x7ffff7ff errors=1",
+  "application_end_seen": true,
+  "application_failure": "DDR_TEST_FAILURE phase=walking_zeros address=0xc64011ac expected=0xfffff7ff actual=0x7ffff7ff errors=1",
+  "bios_training_status_seen": false,
+  "raw_uart_sha256": "b404de2d7e15a1c3741264094ee50a2312167708a53be4f352c8dd24cdfb9ee0",
+  "raw_uart_bytes": 4963,
+  "transmitted_uart_sha256": "ba9fd0f9ba919ca0aad7f0eef05b6867576c0c390d472b1527570c519cf546af",
+  "transmitted_uart_bytes": 13178,
+  "decode_errors_present": true,
+  "training_status_from_bios": true,
+  "finished_utc": "2026-10-01T14:56:23.489113+00:00"
+}

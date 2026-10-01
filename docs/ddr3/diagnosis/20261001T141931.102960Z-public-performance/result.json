@@ -1,0 +1,7 @@
+{
+  "experiment": "public-performance",
+  "dll_mode_probe": false,
+  "console_confirmed": true,
+  "ddrphy_burstdet_seen": "mem_read 0xf000101c 4\n\r\n\rMemory dump:\n\r0xf000101c  03 00 00 00                                      ....            \n\rlitex> ",
+  "uart_sha256": "5b66fa738b4b654edce041354402a8017e4ed36e2b06da71b6372309392d1527"
+}

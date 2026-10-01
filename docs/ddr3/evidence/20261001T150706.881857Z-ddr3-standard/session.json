@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "session_id": "20261001T150706.881857Z-ddr3-standard",
+  "batch_id": "20261001T150706.881857Z-ddr3",
+  "profile": "standard",
+  "requested_profiles": [
+    "standard"
+  ],
+  "memory_mode": "ddr3",
+  "status": "failed",
+  "created_utc": "2026-10-01T15:07:06.899277+00:00",
+  "board": "Sipeed Tang Primer 20K with standard Dock",
+  "clock_hz": 48000000,
+  "uart_device_requested": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+  "uart_device_selected": "/dev/ttyUSB1",
+  "uart_candidates_at_start": [
+    "/dev/serial/by-id/usb-1a86_USB_Single_Serial_599D114570-if00",
+    "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if00-port0",
+    "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0"
+  ],
+  "usb_device_nodes_at_start": [
+    "/dev/bus/usb/001/001",
+    "/dev/bus/usb/001/003",
+    "/dev/bus/usb/001/016",
+    "/dev/bus/usb/001/023",
+    "/dev/bus/usb/001/024",
+    "/dev/bus/usb/001/025",
+    "/dev/bus/usb/002/001"
+  ],
+  "requested_training_runs": 10,
+  "actual_training_runs": 1,
+  "requested_stress_seconds": 1800,
+  "training_criteria_runs": 10,
+  "stress_criteria_seconds": 1800,
+  "build_identity": {
+    "build_metadata": "build/ddr3/standard/build-metadata.json",
+    "bitstream": "build/ddr3/standard/bitstream.fs",
+    "bitstream_sha256": "0d9150fe024a039baf38cb236e0c9728c7ef8f367b0ea1ad060de3d3950b2a6c",
+    "build_fingerprint": "03804335e8bf1de4fb574f523197979b229429ce627e686da69b4c593e0d6bb6",
+    "cpu_configuration": {
+      "liteX_variant": "standard",
+      "isa": "rv32i2p0_m",
+      "instruction_cache_bytes": 4096,
+      "data_cache_bytes": 4096,
+      "prediction": "static",
+      "rtl_sha256": null,
+      "candidate_generation": null
+    },
+    "bios_bytes": 32768,
+    "l2_cache_bytes": 8192,
+    "geometry_bytes": 268435456,
+    "uncached_alias": "0xc0000000",
+    "diagnostic_images": {
+      "smoke": {
+        "binary": "build/ddr3/standard/diagnostics/smoke/ddr_test.bin",
+        "sha256": "c6d2304b26e1ac608a53e3a492ee39e43fca689c014e98e9c52e2c8b7f6314b6",
+        "stress_seconds": 1800
+      },
+      "full": {
+        "binary": "build/ddr3/standard/diagnostics/full/ddr_test.bin",
+        "sha256": "6b919d1aa5bca507f690dd11867eaebee3ebb2304cbbdcb652f3349c728861fc",
+        "stress_seconds": 1800
+      }
+    }
+  },
+  "training_phy_configuration": {
+    "SDRAM_PHY_MODULES": 2,
+    "SDRAM_PHY_DQ_DQS_RATIO": 8,
+    "SDRAM_PHY_DELAYS": 256,
+    "SDRAM_PHY_BITSLIPS": 4,
+    "SDRAM_DELAY_PER_DQ": false
+  },
+  "expected_read_lanes": 2,
+  "trials": [
+    {
+      "mode": "training",
+      "diagnostic_only": false,
+      "attempt": 1,
+      "status": "failed",
+      "programming_status": "completed",
+      "image_sha256": "c6d2304b26e1ac608a53e3a492ee39e43fca689c014e98e9c52e2c8b7f6314b6",
+      "bitstream_sha256": "0d9150fe024a039baf38cb236e0c9728c7ef8f367b0ea1ad060de3d3950b2a6c",
+      "raw_uart_log": "docs/ddr3/evidence/20261001T150706.881857Z-ddr3-standard/training-01.uart.bin",
+      "text_uart_log": "docs/ddr3/evidence/20261001T150706.881857Z-ddr3-standard/training-01.uart.log",
+      "transmitted_uart_log": "docs/ddr3/evidence/20261001T150706.881857Z-ddr3-standard/training-01.uart.tx.bin",
+      "started_utc": "2026-10-01T15:07:06.935899+00:00",
+      "uart_input_buffer_cleared_before_programming": true,
+      "training": {
+        "status": "passed",
+        "start_records": [
+          "SDRAM_TRAINING_START phy=GW2DDRPHY read_leveling=1 bitslips=4 delays=256"
+        ],
+        "result_records": [
+          "SDRAM_TRAINING_RESULT status=passed"
+        ],
+        "expected_lane_count": 2,
+        "lane_count": 2,
+        "phy_configuration": {
+          "SDRAM_PHY_MODULES": 2,
+          "SDRAM_PHY_DQ_DQS_RATIO": 8,
+          "SDRAM_PHY_DELAYS": 256,
+          "SDRAM_PHY_BITSLIPS": 4,
+          "SDRAM_DELAY_PER_DQ": false
+        },
+        "lanes": [
+          {
+            "module": 0,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 214,
+            "delay_center": 106,
+            "delay_half_window": 106,
+            "raw": "SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=214 delay_center=106 delay_half_window=106"
+          },
+          {
+            "module": 1,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 89,
+            "delay_center": 44,
+            "delay_half_window": 44,
+            "raw": "SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=0 window_length=89 delay_center=44 delay_half_window=44"
+          }
+        ],
+        "errors": []
+      },
+      "bios_memtest": {
+        "status": "failed",
+        "records": [
+          "Memtest KO"
+        ],
+        "errors": [
+          "BIOS memory test failed or its result is missing/ambiguous"
+        ]
+      },
+      "bios_console_confirmed": true,
+      "error": "RuntimeError: BIOS memory test failed; acceptance firmware upload was refused",
+      "application_end_seen": false,
+      "application_failure": null,
+      "bios_training_status_seen": true,
+      "raw_uart_sha256": "73b6524559296fe39579af7364544f5836878068b1eaaa32018dcfa8acf04f06",
+      "raw_uart_bytes": 3014,
+      "transmitted_uart_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transmitted_uart_bytes": 0,
+      "decode_errors_present": true,
+      "training_status_from_bios": true,
+      "finished_utc": "2026-10-01T15:07:12.398168+00:00"
+    }
+  ],
+  "batch_continuation_safe": true,
+  "error": "RuntimeError: DDR training/smoke run 1 failed: RuntimeError: BIOS memory test failed; acceptance firmware upload was refused",
+  "finished_utc": "2026-10-01T15:07:12.398412+00:00",
+  "uart_evidence_directory": "docs/ddr3/evidence/20261001T150706.881857Z-ddr3-standard",
+  "evidence": "build/ddr3/ddr-test-sessions/20261001T150706.881857Z-ddr3-standard/session.json"
+}

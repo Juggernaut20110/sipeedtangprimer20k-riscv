@@ -55,6 +55,19 @@ def check_generated_soc(profile, memory="onchip"):
         assert soc.ddrphy.settings.dll_off is True
         assert soc.ddrphy.settings.read_leveling is True
         assert soc.ddrphy.settings.bitslips == 4 and soc.ddrphy.settings.delays == 256
+        assert soc.ddrphy.settings.read_latency == 11
+        assert soc.sdram.crossbar.read_latency == 12
+        from migen import Instance
+        dqs_instances = [item for item in soc.ddrphy._fragment.specials
+                         if isinstance(item, Instance) and item.of == "DQS"]
+        assert len(dqs_instances) == 2
+        for instance in dqs_instances:
+            inputs = {pin.name: pin.expr for pin in instance.items if isinstance(pin, Instance.Input)}
+            assert inputs["RCLKSEL"].value == 3
+            assert len(inputs["READ"].l) == 4
+            assert inputs["READ"].l[0] is inputs["READ"].l[2]
+            assert inputs["READ"].l[1] is inputs["READ"].l[3]
+            assert inputs["READ"].l[0] is not inputs["READ"].l[1]
         assert soc.l2_cache is not None
         assert soc.bus.regions["main_ram"].origin == 0x40000000
         assert soc.bus.regions["main_ram"].size == DDR_SIZE_BYTES

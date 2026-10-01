@@ -1,0 +1,10 @@
+{
+  "experiment": "dll-off-wr-recovery",
+  "dll_mode_probe": false,
+  "console_confirmed": true,
+  "ddr_debug_clock": "mem_read 0xf0001000 4\n\r\n\rMemory dump:\n\r0xf0001000  7a 03 00 00                                      z...            \n\rlitex> ",
+  "ddr_debug_lanes": "mem_read 0xf0001004 4\n\r\n\rMemory dump:\n\r0xf0001004  00 00 00 00                                      ....            \n\rlitex> ",
+  "ddr_debug_valid": "mem_read 0xf0001008 4\n\r\n\rMemory dump:\n\r0xf0001008  03 00 00 00                                      ....            \n\rlitex> ",
+  "ddrphy_burstdet_seen": "mem_read 0xf000181c 4\n\r\n\rMemory dump:\n\r0xf000181c  03 00 00 00                                      ....            \n\rlitex> ",
+  "uart_sha256": "228ace0caa7e12aa09b6ebbcb02cd1be237adab3f3e5596e1acaaffe56fd1e51"
+}

@@ -1,0 +1,66 @@
+--- a/litex/soc/software/liblitedram/sdram.c
++++ b/litex/soc/software/liblitedram/sdram.c
+@@ -1333,6 +1333,9 @@
+ 	unsigned int score;
+ 	unsigned int best_score;
+ 	int best_bitslip;
++#ifdef SDRAM_READ_CAPTURE_DIAGNOSTIC
++	int all_lanes_ok = 1;
++#endif
+ 
+ 	for(module=0; module<SDRAM_PHY_MODULES; module++) {
+ 		for (dq_line = 0; dq_line < DQ_COUNT; dq_line++) {
+@@ -1389,7 +1392,12 @@
+ 				best_bitslip, 0)) {
+ 				printf("SDRAM_READ_LEVELING_LANE module=%d dq=%d bitslip=%d status=failed window_start=%d window_length=%d\n",
+ 					module, dq_line, best_bitslip, window_start, window_length);
++#ifdef SDRAM_READ_CAPTURE_DIAGNOSTIC
++				all_lanes_ok = 0;
++				continue;
++#else
+ 				return 0;
++#endif
+ 			}
+ 
+ 			/* Recenter the validated window; require the center probe to pass. */
+@@ -1400,11 +1408,20 @@
+ 				module, dq_line, best_bitslip, centered ? "passed" : "failed",
+ 				window_start, window_length, sdram_read_delay_center,
+ 				sdram_read_delay_half_window);
+-			if (!centered)
++			if (!centered) {
++#ifdef SDRAM_READ_CAPTURE_DIAGNOSTIC
++				all_lanes_ok = 0;
++#else
+ 				return 0;
+-		}
+-	}
++#endif
++			}
++		}
++	}
++#ifdef SDRAM_READ_CAPTURE_DIAGNOSTIC
++	return all_lanes_ok;
++#else
+ 	return 1;
++#endif
+ }
+ 
+ #endif // SDRAM_PHY_READ_LEVELING_CAPABLE
+--- a/litex/soc/software/bios/cmds/cmd_litedram.c
++++ b/litex/soc/software/bios/cmds/cmd_litedram.c
+@@ -220,8 +220,14 @@
+ static void sdram_cal_handler(int nb_params, char **params)
+ {
+ 	sdram_software_control_on();
++#ifdef SDRAM_READ_CAPTURE_DIAGNOSTIC
++	int passed = sdram_leveling();
++	sdram_software_control_off();
++	printf("SDRAM_DIAGNOSTIC_CAL_RESULT status=%s\n", passed ? "passed" : "failed");
++#else
+ 	sdram_leveling();
+ 	sdram_software_control_off();
++#endif
+ }
+ define_command(sdram_cal, sdram_cal_handler, "Calibrate SDRAM", LITEDRAM_CMDS);
+ #endif

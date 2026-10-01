@@ -25,6 +25,8 @@ def raw_capture_lines(path):
 
 def validate_trial(profile, trial, session, expected_lanes, phy_config):
     errors = []
+    if trial.get("diagnostic_only"):
+        errors.append("diagnostic-only trial cannot satisfy DDR acceptance")
     raw_path = ROOT / trial.get("raw_uart_log", "")
     tx_path = ROOT / trial.get("transmitted_uart_log", "")
     if not raw_path.is_file():
@@ -57,6 +59,8 @@ def validate_trial(profile, trial, session, expected_lanes, phy_config):
     training = ddr_runner.validate_training(lines, expected_lanes, phy_config)
     if training["status"] != "passed":
         errors.extend(training["errors"])
+    bios_memtest = ddr_runner.validate_bios_memtest(lines)
+    errors.extend(bios_memtest["errors"])
     if not any(line.startswith("DDR_TEST_START ") for line in lines):
         errors.append("diagnostic firmware start marker is missing")
     failure = next((line for line in lines if line.startswith("DDR_TEST_FAILURE ")), None)
@@ -88,6 +92,7 @@ def validate_trial(profile, trial, session, expected_lanes, phy_config):
         "raw_uart_sha256": serial_runner.sha256(raw_path),
         "raw_uart_bytes": len(raw),
         "training": training,
+        "bios_memtest": bios_memtest,
         "full_result": result if trial.get("mode") == "full" else None,
     }
 
@@ -437,7 +442,7 @@ Run `make ddr-test-build PROFILE=ALL`, then `make ddr-test-run PROFILE=ALL PORT=
 
 **Latest batch status: {latest['status']}.**
 
-The hardware investigation and controlled DLL-mode experiments are recorded in [DDR3 failure diagnosis](diagnosis.md). Diagnostic experiments do not count as acceptance passes.
+The receive patch and current integrity investigation are recorded in [DDR3 training handoff](training-handoff.md), with the original experiments retained in [DDR3 failure diagnosis](diagnosis.md). Diagnostic experiments do not count as acceptance passes.
 
 Batch `{latest_batch}` uses the configured 256 MiB DDR3 geometry at a 48 MHz system clock and 96 MHz DDR CK. Training success is based on captured BIOS status and all lane bitslip/delay-window records. Each counted training pass required a fresh SRAM reconfiguration and an uncached diagnostic smoke test. The full test executes from the 16 KiB diagnostic RAM. DDR3 CoreMark placement, when run, keeps code/read-only data in DDR and algorithm data/BSS/stack in SRAM.
 

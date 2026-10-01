@@ -1,0 +1,218 @@
+[
+  {
+    "command": "\n",
+    "output": "\n\nlitex> "
+  },
+  {
+    "command": "mem_write 0xc0000000 0xffffffff 524288\n",
+    "output": "mem_write 0xc0000000 0xffffffff 524288\n\nlitex> "
+  },
+  {
+    "command": "mem_read 0xc00b64f4 4\n",
+    "output": "mem_read 0xc00b64f4 4\n\nMemory dump:\n0xc00b64f4  ff ff ff ff                                      ....            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc00b64f4 4\n",
+    "output": "mem_read 0xc00b64f4 4\n\nMemory dump:\n0xc00b64f4  ff ff ff ff                                      ....            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc00b64f4 4\n",
+    "output": "mem_read 0xc00b64f4 4\n\nMemory dump:\n0xc00b64f4  ff ff ff ff                                      ....            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc0169770 4\n",
+    "output": "mem_read 0xc0169770 4\n\nMemory dump:\n0xc0169770  ff ff ef ff                                      ....            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc0169770 4\n",
+    "output": "mem_read 0xc0169770 4\n\nMemory dump:\n0xc0169770  ff ff ef ff                                      ....            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc0169770 4\n",
+    "output": "mem_read 0xc0169770 4\n\nMemory dump:\n0xc0169770  ff ff ef ff                                      ....            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc0000000 4\n",
+    "output": "mem_read 0xc0000000 4\n\nMemory dump:\n0xc0000000  ff ff ff ff                                      ....            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc0000000 4\n",
+    "output": "mem_read 0xc0000000 4\n\nMemory dump:\n0xc0000000  ff ff ff ff                                      ....            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc0000000 4\n",
+    "output": "mem_read 0xc0000000 4\n\nMemory dump:\n0xc0000000  ff ff ff ff                                      ....            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc01ffffc 4\n",
+    "output": "mem_read 0xc01ffffc 4\n\nMemory dump:\n0xc01ffffc  ff ff ff ff                                      ....            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc01ffffc 4\n",
+    "output": "mem_read 0xc01ffffc 4\n\nMemory dump:\n0xc01ffffc  ff ff ff ff                                      ....            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc01ffffc 4\n",
+    "output": "mem_read 0xc01ffffc 4\n\nMemory dump:\n0xc01ffffc  ff ff ff ff                                      ....            \nlitex> "
+  },
+  {
+    "command": "mem_write 0xc0000000 0xaaaaaaaa 524288\n",
+    "output": "mem_write 0xc0000000 0xaaaaaaaa 524288\n\nlitex> "
+  },
+  {
+    "command": "mem_read 0xc00b64f4 4\n",
+    "output": "mem_read 0xc00b64f4 4\n\nMemory dump:\n0xc00b64f4  aa aa aa aa                                      ....            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc00b64f4 4\n",
+    "output": "mem_read 0xc00b64f4 4\n\nMemory dump:\n0xc00b64f4  aa aa aa aa                                      ....            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc00b64f4 4\n",
+    "output": "mem_read 0xc00b64f4 4\n\nMemory dump:\n0xc00b64f4  aa aa aa aa                                      ....            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc0169770 4\n",
+    "output": "mem_read 0xc0169770 4\n\nMemory dump:\n0xc0169770  aa aa aa aa                                      ....            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc0169770 4\n",
+    "output": "mem_read 0xc0169770 4\n\nMemory dump:\n0xc0169770  aa aa aa aa                                      ....            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc0169770 4\n",
+    "output": "mem_read 0xc0169770 4\n\nMemory dump:\n0xc0169770  aa aa aa aa                                      ....            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc0000000 4\n",
+    "output": "mem_read 0xc0000000 4\n\nMemory dump:\n0xc0000000  aa aa aa aa                                      ....            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc0000000 4\n",
+    "output": "mem_read 0xc0000000 4\n\nMemory dump:\n0xc0000000  aa aa aa aa                                      ....            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc0000000 4\n",
+    "output": "mem_read 0xc0000000 4\n\nMemory dump:\n0xc0000000  aa aa aa aa                                      ....            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc01ffffc 4\n",
+    "output": "mem_read 0xc01ffffc 4\n\nMemory dump:\n0xc01ffffc  aa aa aa aa                                      ....            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc01ffffc 4\n",
+    "output": "mem_read 0xc01ffffc 4\n\nMemory dump:\n0xc01ffffc  aa aa aa aa                                      ....            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc01ffffc 4\n",
+    "output": "mem_read 0xc01ffffc 4\n\nMemory dump:\n0xc01ffffc  aa aa aa aa                                      ....            \nlitex> "
+  },
+  {
+    "command": "mem_write 0xc0000000 0x55555555 524288\n",
+    "output": "mem_write 0xc0000000 0x55555555 524288\n\nlitex> "
+  },
+  {
+    "command": "mem_read 0xc00b64f4 4\n",
+    "output": "mem_read 0xc00b64f4 4\n\nMemory dump:\n0xc00b64f4  55 55 55 55                                      UUUU            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc00b64f4 4\n",
+    "output": "mem_read 0xc00b64f4 4\n\nMemory dump:\n0xc00b64f4  55 55 55 55                                      UUUU            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc00b64f4 4\n",
+    "output": "mem_read 0xc00b64f4 4\n\nMemory dump:\n0xc00b64f4  55 55 55 55                                      UUUU            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc0169770 4\n",
+    "output": "mem_read 0xc0169770 4\n\nMemory dump:\n0xc0169770  55 55 45 55                                      UUEU            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc0169770 4\n",
+    "output": "mem_read 0xc0169770 4\n\nMemory dump:\n0xc0169770  55 55 45 55                                      UUEU            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc0169770 4\n",
+    "output": "mem_read 0xc0169770 4\n\nMemory dump:\n0xc0169770  55 55 45 55                                      UUEU            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc0000000 4\n",
+    "output": "mem_read 0xc0000000 4\n\nMemory dump:\n0xc0000000  55 55 55 55                                      UUUU            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc0000000 4\n",
+    "output": "mem_read 0xc0000000 4\n\nMemory dump:\n0xc0000000  55 55 55 55                                      UUUU            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc0000000 4\n",
+    "output": "mem_read 0xc0000000 4\n\nMemory dump:\n0xc0000000  55 55 55 55                                      UUUU            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc01ffffc 4\n",
+    "output": "mem_read 0xc01ffffc 4\n\nMemory dump:\n0xc01ffffc  55 55 55 55                                      UUUU            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc01ffffc 4\n",
+    "output": "mem_read 0xc01ffffc 4\n\nMemory dump:\n0xc01ffffc  55 55 55 55                                      UUUU            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc01ffffc 4\n",
+    "output": "mem_read 0xc01ffffc 4\n\nMemory dump:\n0xc01ffffc  55 55 55 55                                      UUUU            \nlitex> "
+  },
+  {
+    "command": "mem_write 0xc0000000 0x00100000 524288\n",
+    "output": "mem_write 0xc0000000 0x00100000 524288\n\nlitex> "
+  },
+  {
+    "command": "mem_read 0xc00b64f4 4\n",
+    "output": "mem_read 0xc00b64f4 4\n\nMemory dump:\n0xc00b64f4  00 00 10 00                                      ....            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc00b64f4 4\n",
+    "output": "mem_read 0xc00b64f4 4\n\nMemory dump:\n0xc00b64f4  00 00 10 00                                      ....            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc00b64f4 4\n",
+    "output": "mem_read 0xc00b64f4 4\n\nMemory dump:\n0xc00b64f4  00 00 10 00                                      ....            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc0169770 4\n",
+    "output": "mem_read 0xc0169770 4\n\nMemory dump:\n0xc0169770  00 00 10 00                                      ....            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc0169770 4\n",
+    "output": "mem_read 0xc0169770 4\n\nMemory dump:\n0xc0169770  00 00 10 00                                      ....            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc0169770 4\n",
+    "output": "mem_read 0xc0169770 4\n\nMemory dump:\n0xc0169770  00 00 10 00                                      ....            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc0000000 4\n",
+    "output": "mem_read 0xc0000000 4\n\nMemory dump:\n0xc0000000  00 00 10 00                                      ....            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc0000000 4\n",
+    "output": "mem_read 0xc0000000 4\n\nMemory dump:\n0xc0000000  00 00 10 00                                      ....            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc0000000 4\n",
+    "output": "mem_read 0xc0000000 4\n\nMemory dump:\n0xc0000000  00 00 10 00                                      ....            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc01ffffc 4\n",
+    "output": "mem_read 0xc01ffffc 4\n\nMemory dump:\n0xc01ffffc  00 00 10 00                                      ....            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc01ffffc 4\n",
+    "output": "mem_read 0xc01ffffc 4\n\nMemory dump:\n0xc01ffffc  00 00 10 00                                      ....            \nlitex> "
+  },
+  {
+    "command": "mem_read 0xc01ffffc 4\n",
+    "output": "mem_read 0xc01ffffc 4\n\nMemory dump:\n0xc01ffffc  00 00 10 00                                      ....            \nlitex> "
+  },
+  {
+    "command": "mem_test 0xc0000000 0x200000\n",
+    "output": "mem_test 0xc0000000 0x200000\n\nMemtest at 0xc0000000 (2.0MiB)...\n  Write: 0xc0000000-0xc0000000 0B     Write: 0xc0000000-0xc0020000 128.0KiB     Write: 0xc0000000-0xc0040000 256.0KiB     Write: 0xc0000000-0xc0060000 384.0KiB     Write: 0xc0000000-0xc0080000 512.0KiB     Write: 0xc0000000-0xc00a0000 640.0KiB     Write: 0xc0000000-0xc00c0000 768.0KiB     Write: 0xc0000000-0xc00e0000 896.0KiB     Write: 0xc0000000-0xc0100000 1.0MiB     Write: 0xc0000000-0xc0120000 1.1MiB     Write: 0xc0000000-0xc0140000 1.2MiB     Write: 0xc0000000-0xc0160000 1.3MiB     Write: 0xc0000000-0xc0180000 1.5MiB     Write: 0xc0000000-0xc01a0000 1.6MiB     Write: 0xc0000000-0xc01c0000 1.7MiB     Write: 0xc0000000-0xc01e0000 1.8MiB     Write: 0xc0000000-0xc0200000 2.0MiB   \n   Read: 0xc0000000-0xc0000000 0B      Read: 0xc0000000-0xc0020000 128.0KiB      Read: 0xc0000000-0xc0040000 256.0KiB      Read: 0xc0000000-0xc0060000 384.0KiB      Read: 0xc0000000-0xc0080000 512.0KiB      Read: 0xc0000000-0xc00a0000 640.0KiB      Read: 0xc0000000-0xc00c0000 768.0KiB      Read: 0xc0000000-0xc00e0000 896.0KiB      Read: 0xc0000000-0xc0100000 1.0MiB      Read: 0xc0000000-0xc0120000 1.1MiB      Read: 0xc0000000-0xc0140000 1.2MiB      Read: 0xc0000000-0xc0160000 1.3MiB      Read: 0xc0000000-0xc0180000 1.5MiB      Read: 0xc0000000-0xc01a0000 1.6MiB      Read: 0xc0000000-0xc01c0000 1.7MiB      Read: 0xc0000000-0xc01e0000 1.8MiB      Read: 0xc0000000-0xc0200000 2.0MiB   \n  bus errors:  0/256\n  addr errors: 0/8192\n  data errors: 2/524288\nMemtest KO\nlitex> "
+  }
+]

@@ -1,5 +1,7 @@
 # DDR3 hardware acceptance failure diagnosis
 
+**Historical diagnosis:** the original zero-window failure below has since been reproduced and corrected by a project-owned receive patch. DDR memory integrity still fails. See the [training handoff implementation and current evidence](training-handoff.md). The reproduction commands and final board state below describe the earlier diagnostic session.
+
 ## Finding
 
 The acceptance failure is real and happens in BIOS read leveling, before the diagnostic application is uploaded. The attached Dock communicates over JTAG/UART and both FPGA PLL and DLL report locked. The required 48 MHz system / 96 MHz DDR CK, CL6/CWL6, DRAM DLL-off configuration produces an empty read window.

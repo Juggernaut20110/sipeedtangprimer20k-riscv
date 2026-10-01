@@ -1,0 +1,7 @@
+{
+  "console_confirmed": true,
+  "diagnostic_only": true,
+  "completed": true,
+  "uart_sha256": "e10dd69e0489aa62c8ca46231b0a832b39fc260582f4652b4d74227ecd0898eb",
+  "transmitted_uart_sha256": "9f04812456cbf54caed56b679c57da0c8da9fbc8176d2c980b66e251c096cb03"
+}

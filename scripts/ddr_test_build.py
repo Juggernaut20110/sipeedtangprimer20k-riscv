@@ -58,7 +58,7 @@ def section_layout(readelf, elf):
     }
 
 
-def compile_image(profile, memory_dir, output_dir, variant, stress_seconds):
+def compile_image(profile, memory_dir, output_dir, variant, stress_seconds, *, read_delay_probe=False, isolated_write_probe=False):
     if variant not in ("smoke", "full"):
         raise ValueError(f"unknown DDR diagnostic image {variant!r}")
     firmware_dir = output_dir / variant
@@ -78,6 +78,12 @@ def compile_image(profile, memory_dir, output_dir, variant, stress_seconds):
         f"-DSTRESS_SECONDS={stress_seconds}",
         f'-DCPU_PROFILE_NAME="{profile}"',
     ]
+    if isolated_write_probe and not read_delay_probe:
+        raise ValueError("isolated rewrite requires the read-only failure probe first")
+    if read_delay_probe:
+        common.append("-DDDR_TEST_READ_DELAY_PROBE=1")
+    if isolated_write_probe:
+        common.append("-DDDR_TEST_ISOLATED_WRITE_PROBE=1")
     if variant == "smoke":
         common.append("-DDDR_TEST_SMOKE_ONLY=1")
     include = [
@@ -164,6 +170,8 @@ def compile_image(profile, memory_dir, output_dir, variant, stress_seconds):
         "source_sha256": sha256(ROOT / "firmware/ddrtest/ddr_test.c"),
         "linker_sha256": sha256(ROOT / "firmware/ddrtest/linker.ld"),
         "stress_seconds": stress_seconds,
+        "read_delay_probe": read_delay_probe,
+        "isolated_write_probe": isolated_write_probe,
         "diagnostic_ram": {
             "base": DDR_DIAGNOSTIC_BASE,
             "size_bytes": DDR_DIAGNOSTIC_SIZE,
@@ -191,6 +199,8 @@ def build_profile_diagnostics(profile, stress_seconds, force=False):
         "firmware/ddrtest/linker.ld": sha256(ROOT / "firmware/ddrtest/linker.ld"),
         "patches/litex-sdram-training-status.patch": sha256(ROOT / "patches/litex-sdram-training-status.patch"),
         "patches/litex-gowin-extra-sdc.patch": sha256(ROOT / "patches/litex-gowin-extra-sdc.patch"),
+        "patches/litedram-gw2ddrphy-dll-off-read.patch": sha256(ROOT / "patches/litedram-gw2ddrphy-dll-off-read.patch"),
+        "patches/litex-ddr-diagnostic-boot.patch": sha256(ROOT / "patches/litex-ddr-diagnostic-boot.patch"),
         "patches/litedram-gw2ddrphy-cdc.patch": sha256(ROOT / "patches/litedram-gw2ddrphy-cdc.patch"),
         "bitstream": sha256(ROOT / build["bitstream"]),
     }

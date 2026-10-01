@@ -1,0 +1,5 @@
+stress_seconds=1
+DDR_TEST_PHASE_START name=walking_ones range_start=0xc0000000 range_end=0xd0000000 coverage_bytes=268435456
+DDR_TEST_PHASE_END name=walking_ones status=passed bytes=268435456 operations=67108864 elapsed_ticks_hi=00000001 elapsed_ticks_lo=5418ef91 errors=0
+DDR_TEST_PHASE_START name=walking_zeros range_start=0xc0000000 range_end=0xd0000000 coverage_bytes=268435456
+DDR_TEST_FAILURE phase=walking_zeros address=0xc64011ac expect

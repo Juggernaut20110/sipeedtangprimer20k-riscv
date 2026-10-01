@@ -1,0 +1,27 @@
+
+
+litex> mem_verify 0xc0000000 0x200000
+
+memtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9
+SDRAM_VERIFY address=0xc0000000 size=0x00200000 errors=1 status=failed
+litex> mem_verify 0xc0000000 0x200000
+
+memtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9
+SDRAM_VERIFY address=0xc0000000 size=0x00200000 errors=1 status=failed
+litex> mem_verify 0xc0000000 0x200000
+
+memtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9
+SDRAM_VERIFY address=0xc0000000 size=0x00200000 errors=1 status=failed
+litex> mem_verify 0x40000000 0x200000
+
+memtest_data error @ 0x400b64f4: 0xb4ce6cd9 vs 0xb4de6cd9
+SDRAM_VERIFY address=0x40000000 size=0x00200000 errors=1 status=failed
+litex> mem_verify 0x40000000 0x200000
+
+memtest_data error @ 0x400b64f4: 0xb4ce6cd9 vs 0xb4de6cd9
+SDRAM_VERIFY address=0x40000000 size=0x00200000 errors=1 status=failed
+litex> mem_verify 0x40000000 0x200000
+
+memtest_data error @ 0x400b64f4: 0xb4ce6cd9 vs 0xb4de6cd9
+SDRAM_VERIFY address=0x40000000 size=0x00200000 errors=1 status=failed
+litex> 

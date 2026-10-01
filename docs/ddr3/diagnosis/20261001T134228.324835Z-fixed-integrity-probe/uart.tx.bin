@@ -1,0 +1,18 @@
+
+mem_read 0x400b64f4 4
+mem_read 0xc00b64f4 4
+mem_read 0x400b64f4 4
+mem_read 0xc00b64f4 4
+mem_read 0x400b64f4 4
+mem_read 0xc00b64f4 4
+mem_read 0x400b64f4 4
+mem_read 0xc00b64f4 4
+mem_read 0x400b64f4 4
+mem_read 0xc00b64f4 4
+mem_test 0xc0000000 0x200000
+mem_read 0x400b64f4 4
+mem_read 0xc00b64f4 4
+mem_read 0x400b64f4 4
+mem_read 0xc00b64f4 4
+mem_read 0x400b64f4 4
+mem_read 0xc00b64f4 4

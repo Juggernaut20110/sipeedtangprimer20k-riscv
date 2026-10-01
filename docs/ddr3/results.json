@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "report_generated_utc": "2026-10-01T02:31:05.937287+00:00",
-  "latest_batch_id": "20261001T014933.087634Z-ddr3",
+  "report_generated_utc": "2026-10-01T18:20:25.156655+00:00",
+  "latest_batch_id": "20261001T153918.134692Z-ddr3",
   "latest_batch_status": "failed",
   "batches": [
     {
@@ -450,6 +450,655 @@
           ],
           "training_runs_passed": 0,
           "training_runs_requested": 1,
+          "expected_read_lanes": 2,
+          "full_result": null
+        }
+      }
+    },
+    {
+      "batch_id": "20261001T150658.512368Z-ddr3",
+      "requested_profiles": [
+        "lite"
+      ],
+      "status": "failed",
+      "missing_profiles": [],
+      "errors": [],
+      "profiles": {
+        "lite": {
+          "session": {
+            "schema_version": 1,
+            "session_id": "20261001T150658.512368Z-ddr3-lite",
+            "batch_id": "20261001T150658.512368Z-ddr3",
+            "profile": "lite",
+            "requested_profiles": [
+              "lite"
+            ],
+            "memory_mode": "ddr3",
+            "status": "in_progress",
+            "created_utc": "2026-10-01T15:06:58.530286+00:00",
+            "board": "Sipeed Tang Primer 20K with standard Dock",
+            "clock_hz": 48000000,
+            "uart_device_requested": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+            "uart_device_selected": "/dev/ttyUSB1",
+            "uart_candidates_at_start": [
+              "/dev/serial/by-id/usb-1a86_USB_Single_Serial_599D114570-if00",
+              "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if00-port0",
+              "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0"
+            ],
+            "usb_device_nodes_at_start": [
+              "/dev/bus/usb/001/001",
+              "/dev/bus/usb/001/003",
+              "/dev/bus/usb/001/016",
+              "/dev/bus/usb/001/023",
+              "/dev/bus/usb/001/024",
+              "/dev/bus/usb/001/025",
+              "/dev/bus/usb/002/001"
+            ],
+            "requested_training_runs": 10,
+            "actual_training_runs": 0,
+            "requested_stress_seconds": 1800,
+            "training_criteria_runs": 10,
+            "stress_criteria_seconds": 1800,
+            "build_identity": {
+              "build_metadata": "build/ddr3/lite/build-metadata.json",
+              "bitstream": "build/ddr3/lite/bitstream.fs",
+              "bitstream_sha256": "552712fcf0f3840fd87a386d6d8ba27eafc28f8f82e5741c82f5a567660a23b8",
+              "build_fingerprint": "03804335e8bf1de4fb574f523197979b229429ce627e686da69b4c593e0d6bb6",
+              "cpu_configuration": {
+                "liteX_variant": "lite",
+                "isa": "rv32i2p0_m",
+                "instruction_cache_bytes": 2048,
+                "data_cache_bytes": 0,
+                "prediction": "static",
+                "rtl_sha256": null,
+                "candidate_generation": null
+              },
+              "bios_bytes": 32768,
+              "l2_cache_bytes": 8192,
+              "geometry_bytes": 268435456,
+              "uncached_alias": "0xc0000000",
+              "diagnostic_images": {
+                "smoke": {
+                  "binary": "build/ddr3/lite/diagnostics/smoke/ddr_test.bin",
+                  "sha256": "265d0f32c77fd7c93de7810da583c934f3fe595b8be8598088ca6acd8ecfe03e",
+                  "stress_seconds": 1800
+                },
+                "full": {
+                  "binary": "build/ddr3/lite/diagnostics/full/ddr_test.bin",
+                  "sha256": "4d4c480fbc23a1e3ed49ee8a30127946b0b1dc3f17161b8370bc4826724fa16b",
+                  "stress_seconds": 1800
+                }
+              }
+            },
+            "training_phy_configuration": {
+              "SDRAM_PHY_MODULES": 2,
+              "SDRAM_PHY_DQ_DQS_RATIO": 8,
+              "SDRAM_PHY_DELAYS": 256,
+              "SDRAM_PHY_BITSLIPS": 4,
+              "SDRAM_DELAY_PER_DQ": false
+            },
+            "expected_read_lanes": 2,
+            "trials": []
+          },
+          "status": "failed",
+          "errors": [
+            "recorded 0 training trials; requested 10",
+            "one or more fresh SRAM reconfiguration/training/smoke trials failed revalidation",
+            "full destructive memory and sustained stress evidence did not pass revalidation"
+          ],
+          "trials": [],
+          "training_runs_passed": 0,
+          "training_runs_requested": 10,
+          "expected_read_lanes": 2,
+          "full_result": null
+        }
+      }
+    },
+    {
+      "batch_id": "20261001T150712.642628Z-ddr3",
+      "requested_profiles": [
+        "performance"
+      ],
+      "status": "failed",
+      "missing_profiles": [],
+      "errors": [],
+      "profiles": {
+        "performance": {
+          "session": {
+            "schema_version": 1,
+            "session_id": "20261001T150712.642628Z-ddr3-performance",
+            "batch_id": "20261001T150712.642628Z-ddr3",
+            "profile": "performance",
+            "requested_profiles": [
+              "performance"
+            ],
+            "memory_mode": "ddr3",
+            "status": "failed",
+            "created_utc": "2026-10-01T15:07:12.660425+00:00",
+            "board": "Sipeed Tang Primer 20K with standard Dock",
+            "clock_hz": 48000000,
+            "uart_device_requested": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+            "uart_device_selected": "/dev/ttyUSB1",
+            "uart_candidates_at_start": [
+              "/dev/serial/by-id/usb-1a86_USB_Single_Serial_599D114570-if00",
+              "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if00-port0",
+              "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0"
+            ],
+            "usb_device_nodes_at_start": [
+              "/dev/bus/usb/001/001",
+              "/dev/bus/usb/001/003",
+              "/dev/bus/usb/001/016",
+              "/dev/bus/usb/001/023",
+              "/dev/bus/usb/001/024",
+              "/dev/bus/usb/001/025",
+              "/dev/bus/usb/002/001"
+            ],
+            "requested_training_runs": 10,
+            "actual_training_runs": 1,
+            "requested_stress_seconds": 1800,
+            "training_criteria_runs": 10,
+            "stress_criteria_seconds": 1800,
+            "build_identity": {
+              "build_metadata": "build/ddr3/performance/build-metadata.json",
+              "bitstream": "build/ddr3/performance/bitstream.fs",
+              "bitstream_sha256": "80cb840fea63be60a6067ac3cdb18211accf7d22041f78337956c6a94d3d2624",
+              "build_fingerprint": "fd88cbf4c55cf85d414f7ab5cfdb5453d8bd7ad7c18ccb8e9b3fbbb286089aa2",
+              "cpu_configuration": {
+                "liteX_variant": "standard",
+                "isa": "rv32i2p0_m",
+                "instruction_cache_bytes": 4096,
+                "data_cache_bytes": 4096,
+                "prediction": "dynamic_target",
+                "rtl_sha256": "771f520fcf3ff8f66cd168eaea84bc5924b39fa0e470cd5b1e35640a4809c252",
+                "candidate_generation": {
+                  "schema": 1,
+                  "candidate": "dynamic_target",
+                  "status": "generated",
+                  "generator_command": [
+                    "sbt",
+                    "--no-server",
+                    "compile",
+                    "runMain vexriscv.GenCoreDefault --hardwareBreakpointCount=0 --iCacheSize=4096 --dCacheSize=4096 --pmpRegions=0 --pmpGranularity=256 --pmpAddressMatchingModes=na4,napot,tor --mulDiv=true --cfu=false --singleCycleMulDiv=true --singleCycleShift=true --relaxedPcCalculation=false --bypass=true --externalInterruptArray=true --csrPluginConfig=small --atomics=false --compressedGen=false --dBusCachedRelaxedMemoryTranslationRegister=false --dBusCachedEarlyWaysHits=true --prediction=dynamic_target --outputFile=../../../../build/cpu-candidates/dynamic_target/VexRiscv"
+                  ],
+                  "generator_arguments": [
+                    "--hardwareBreakpointCount=0",
+                    "--iCacheSize=4096",
+                    "--dCacheSize=4096",
+                    "--pmpRegions=0",
+                    "--pmpGranularity=256",
+                    "--pmpAddressMatchingModes=na4,napot,tor",
+                    "--mulDiv=true",
+                    "--cfu=false",
+                    "--singleCycleMulDiv=true",
+                    "--singleCycleShift=true",
+                    "--relaxedPcCalculation=false",
+                    "--bypass=true",
+                    "--externalInterruptArray=true",
+                    "--csrPluginConfig=small",
+                    "--atomics=false",
+                    "--compressedGen=false",
+                    "--dBusCachedRelaxedMemoryTranslationRegister=false",
+                    "--dBusCachedEarlyWaysHits=true",
+                    "--prediction=dynamic_target",
+                    "--outputFile=../../../../build/cpu-candidates/dynamic_target/VexRiscv"
+                  ],
+                  "generator_revisions": {
+                    "generator_commit": "642ecfed1c84460555d6d803d660cc60cfc1ecb6",
+                    "submodule_commit": "b6118e5cc2a33323425df6455697139021d50c72",
+                    "sbt": "1.9.7",
+                    "scala": "2.11.12",
+                    "spinalhdl": "1.9.4"
+                  },
+                  "tool_versions": {
+                    "java": "1.8.0_432",
+                    "java_executable": ".tools/java-8u432/jdk8u432-b06/bin/java",
+                    "java_sha256": "abaaa90deadf51bd28921453baf2992b3dff6171bb7142f5bdd14ef269f7b245",
+                    "sbt": "1.9.7",
+                    "sbt_executable": ".tools/bin/sbt",
+                    "sbt_sha256": "23543bc4597b552e8e2c27d695fe672ec235ab8a64f766b37828fb68c6d9d910",
+                    "scala": "2.11.12",
+                    "spinalhdl": "1.9.4"
+                  },
+                  "cpu_configuration": {
+                    "isa": "rv32im/ILP32",
+                    "instruction_cache_bytes": 4096,
+                    "data_cache_bytes": 4096,
+                    "mul_div": true,
+                    "single_cycle_mul_div": true,
+                    "single_cycle_shift": true,
+                    "bypass": true,
+                    "debug": false,
+                    "hardware_breakpoints": 0,
+                    "csr_plugin_config": "small",
+                    "pmp_regions": 0,
+                    "pmp_granularity_bytes": 256,
+                    "pmp_address_matching_modes": "na4,napot,tor",
+                    "relaxed_pc_calculation": false,
+                    "external_interrupt_array": true,
+                    "dcache_relaxed_memory_translation_register": false,
+                    "dcache_early_way_hits": true,
+                    "atomics": false,
+                    "compressed": false,
+                    "cfu": false,
+                    "prediction": "dynamic_target",
+                    "clock_hz": 48000000,
+                    "profile_basis": "standard"
+                  },
+                  "rtl": "build/cpu-candidates/dynamic_target/VexRiscv.v",
+                  "rtl_sha256": "771f520fcf3ff8f66cd168eaea84bc5924b39fa0e470cd5b1e35640a4809c252",
+                  "generated_utc": "2026-10-01T01:18:34.881350+00:00"
+                }
+              },
+              "bios_bytes": 32768,
+              "l2_cache_bytes": 8192,
+              "geometry_bytes": 268435456,
+              "uncached_alias": "0xc0000000",
+              "diagnostic_images": {
+                "smoke": {
+                  "binary": "build/ddr3/performance/diagnostics/smoke/ddr_test.bin",
+                  "sha256": "d0fd24b4d87938b286eeba2e6a422a80feb0124b1c25bbe388ccb75b198d0a85",
+                  "stress_seconds": 1800
+                },
+                "full": {
+                  "binary": "build/ddr3/performance/diagnostics/full/ddr_test.bin",
+                  "sha256": "efadcf458d19e3a5e0f790438343c4ced2fd71d73e722b12568ab18465eb6c4f",
+                  "stress_seconds": 1800
+                }
+              }
+            },
+            "training_phy_configuration": {
+              "SDRAM_PHY_MODULES": 2,
+              "SDRAM_PHY_DQ_DQS_RATIO": 8,
+              "SDRAM_PHY_DELAYS": 256,
+              "SDRAM_PHY_BITSLIPS": 4,
+              "SDRAM_DELAY_PER_DQ": false
+            },
+            "expected_read_lanes": 2,
+            "trials": [
+              {
+                "mode": "training",
+                "diagnostic_only": false,
+                "attempt": 1,
+                "status": "failed",
+                "programming_status": "completed",
+                "image_sha256": "d0fd24b4d87938b286eeba2e6a422a80feb0124b1c25bbe388ccb75b198d0a85",
+                "bitstream_sha256": "80cb840fea63be60a6067ac3cdb18211accf7d22041f78337956c6a94d3d2624",
+                "raw_uart_log": "docs/ddr3/evidence/20261001T150712.642628Z-ddr3-performance/training-01.uart.bin",
+                "text_uart_log": "docs/ddr3/evidence/20261001T150712.642628Z-ddr3-performance/training-01.uart.log",
+                "transmitted_uart_log": "docs/ddr3/evidence/20261001T150712.642628Z-ddr3-performance/training-01.uart.tx.bin",
+                "started_utc": "2026-10-01T15:07:12.695822+00:00",
+                "uart_input_buffer_cleared_before_programming": true,
+                "training": {
+                  "status": "passed",
+                  "start_records": [
+                    "SDRAM_TRAINING_START phy=GW2DDRPHY read_leveling=1 bitslips=4 delays=256"
+                  ],
+                  "result_records": [
+                    "SDRAM_TRAINING_RESULT status=passed"
+                  ],
+                  "expected_lane_count": 2,
+                  "lane_count": 2,
+                  "phy_configuration": {
+                    "SDRAM_PHY_MODULES": 2,
+                    "SDRAM_PHY_DQ_DQS_RATIO": 8,
+                    "SDRAM_PHY_DELAYS": 256,
+                    "SDRAM_PHY_BITSLIPS": 4,
+                    "SDRAM_DELAY_PER_DQ": false
+                  },
+                  "lanes": [
+                    {
+                      "module": 0,
+                      "dq_line": 0,
+                      "bitslip": 2,
+                      "status": "passed",
+                      "window_start": 0,
+                      "window_length": 212,
+                      "delay_center": 106,
+                      "delay_half_window": 106,
+                      "raw": "SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=212 delay_center=106 delay_half_window=106"
+                    },
+                    {
+                      "module": 1,
+                      "dq_line": 0,
+                      "bitslip": 2,
+                      "status": "passed",
+                      "window_start": 0,
+                      "window_length": 210,
+                      "delay_center": 104,
+                      "delay_half_window": 104,
+                      "raw": "SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=0 window_length=210 delay_center=104 delay_half_window=104"
+                    }
+                  ],
+                  "errors": []
+                },
+                "bios_memtest": {
+                  "status": "failed",
+                  "records": [
+                    "Memtest KO"
+                  ],
+                  "errors": [
+                    "BIOS memory test failed or its result is missing/ambiguous"
+                  ]
+                },
+                "bios_console_confirmed": true,
+                "error": "RuntimeError: BIOS memory test failed; acceptance firmware upload was refused",
+                "application_end_seen": false,
+                "application_failure": null,
+                "bios_training_status_seen": true,
+                "raw_uart_sha256": "51f6d00cc600ff87245807fd2366aaf12f57379a6603d1fd9c49a6f5dd25e759",
+                "raw_uart_bytes": 3019,
+                "transmitted_uart_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "transmitted_uart_bytes": 0,
+                "decode_errors_present": true,
+                "training_status_from_bios": true,
+                "finished_utc": "2026-10-01T15:07:17.971886+00:00"
+              }
+            ],
+            "batch_continuation_safe": true,
+            "error": "RuntimeError: DDR training/smoke run 1 failed: RuntimeError: BIOS memory test failed; acceptance firmware upload was refused",
+            "finished_utc": "2026-10-01T15:07:17.972206+00:00",
+            "uart_evidence_directory": "docs/ddr3/evidence/20261001T150712.642628Z-ddr3-performance",
+            "evidence": "build/ddr3/ddr-test-sessions/20261001T150712.642628Z-ddr3-performance/session.json"
+          },
+          "status": "failed",
+          "errors": [
+            "recorded 1 training trials; requested 10",
+            "one or more fresh SRAM reconfiguration/training/smoke trials failed revalidation",
+            "full destructive memory and sustained stress evidence did not pass revalidation"
+          ],
+          "trials": [
+            {
+              "mode": "training",
+              "attempt": 1,
+              "status": "failed",
+              "errors": [
+                "BIOS memory test failed or its result is missing/ambiguous",
+                "diagnostic firmware start marker is missing",
+                "training capture lacks a passing DDR_TEST_SMOKE marker",
+                "training smoke capture lacks a passing DDR_TEST_END marker"
+              ],
+              "raw_uart_sha256": "51f6d00cc600ff87245807fd2366aaf12f57379a6603d1fd9c49a6f5dd25e759",
+              "training_lane_count": 2,
+              "full_result": null
+            }
+          ],
+          "training_runs_passed": 0,
+          "training_runs_requested": 10,
+          "expected_read_lanes": 2,
+          "full_result": null
+        }
+      }
+    },
+    {
+      "batch_id": "20261001T153918.134692Z-ddr3",
+      "requested_profiles": [
+        "performance"
+      ],
+      "status": "failed",
+      "missing_profiles": [],
+      "errors": [],
+      "profiles": {
+        "performance": {
+          "session": {
+            "schema_version": 1,
+            "session_id": "20261001T153918.134692Z-ddr3-performance",
+            "batch_id": "20261001T153918.134692Z-ddr3",
+            "profile": "performance",
+            "requested_profiles": [
+              "performance"
+            ],
+            "memory_mode": "ddr3",
+            "status": "failed",
+            "created_utc": "2026-10-01T15:39:18.152697+00:00",
+            "board": "Sipeed Tang Primer 20K with standard Dock",
+            "clock_hz": 48000000,
+            "uart_device_requested": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+            "uart_device_selected": "/dev/ttyUSB1",
+            "uart_candidates_at_start": [
+              "/dev/serial/by-id/usb-1a86_USB_Single_Serial_599D114570-if00",
+              "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if00-port0",
+              "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0"
+            ],
+            "usb_device_nodes_at_start": [
+              "/dev/bus/usb/001/001",
+              "/dev/bus/usb/001/003",
+              "/dev/bus/usb/001/016",
+              "/dev/bus/usb/001/023",
+              "/dev/bus/usb/001/024",
+              "/dev/bus/usb/001/025",
+              "/dev/bus/usb/002/001"
+            ],
+            "requested_training_runs": 10,
+            "actual_training_runs": 1,
+            "requested_stress_seconds": 1800,
+            "training_criteria_runs": 10,
+            "stress_criteria_seconds": 1800,
+            "build_identity": {
+              "build_metadata": "build/ddr3/performance/build-metadata.json",
+              "bitstream": "build/ddr3/performance/bitstream.fs",
+              "bitstream_sha256": "80cb840fea63be60a6067ac3cdb18211accf7d22041f78337956c6a94d3d2624",
+              "build_fingerprint": "fd88cbf4c55cf85d414f7ab5cfdb5453d8bd7ad7c18ccb8e9b3fbbb286089aa2",
+              "cpu_configuration": {
+                "liteX_variant": "standard",
+                "isa": "rv32i2p0_m",
+                "instruction_cache_bytes": 4096,
+                "data_cache_bytes": 4096,
+                "prediction": "dynamic_target",
+                "rtl_sha256": "771f520fcf3ff8f66cd168eaea84bc5924b39fa0e470cd5b1e35640a4809c252",
+                "candidate_generation": {
+                  "schema": 1,
+                  "candidate": "dynamic_target",
+                  "status": "generated",
+                  "generator_command": [
+                    "sbt",
+                    "--no-server",
+                    "compile",
+                    "runMain vexriscv.GenCoreDefault --hardwareBreakpointCount=0 --iCacheSize=4096 --dCacheSize=4096 --pmpRegions=0 --pmpGranularity=256 --pmpAddressMatchingModes=na4,napot,tor --mulDiv=true --cfu=false --singleCycleMulDiv=true --singleCycleShift=true --relaxedPcCalculation=false --bypass=true --externalInterruptArray=true --csrPluginConfig=small --atomics=false --compressedGen=false --dBusCachedRelaxedMemoryTranslationRegister=false --dBusCachedEarlyWaysHits=true --prediction=dynamic_target --outputFile=../../../../build/cpu-candidates/dynamic_target/VexRiscv"
+                  ],
+                  "generator_arguments": [
+                    "--hardwareBreakpointCount=0",
+                    "--iCacheSize=4096",
+                    "--dCacheSize=4096",
+                    "--pmpRegions=0",
+                    "--pmpGranularity=256",
+                    "--pmpAddressMatchingModes=na4,napot,tor",
+                    "--mulDiv=true",
+                    "--cfu=false",
+                    "--singleCycleMulDiv=true",
+                    "--singleCycleShift=true",
+                    "--relaxedPcCalculation=false",
+                    "--bypass=true",
+                    "--externalInterruptArray=true",
+                    "--csrPluginConfig=small",
+                    "--atomics=false",
+                    "--compressedGen=false",
+                    "--dBusCachedRelaxedMemoryTranslationRegister=false",
+                    "--dBusCachedEarlyWaysHits=true",
+                    "--prediction=dynamic_target",
+                    "--outputFile=../../../../build/cpu-candidates/dynamic_target/VexRiscv"
+                  ],
+                  "generator_revisions": {
+                    "generator_commit": "642ecfed1c84460555d6d803d660cc60cfc1ecb6",
+                    "submodule_commit": "b6118e5cc2a33323425df6455697139021d50c72",
+                    "sbt": "1.9.7",
+                    "scala": "2.11.12",
+                    "spinalhdl": "1.9.4"
+                  },
+                  "tool_versions": {
+                    "java": "1.8.0_432",
+                    "java_executable": ".tools/java-8u432/jdk8u432-b06/bin/java",
+                    "java_sha256": "abaaa90deadf51bd28921453baf2992b3dff6171bb7142f5bdd14ef269f7b245",
+                    "sbt": "1.9.7",
+                    "sbt_executable": ".tools/bin/sbt",
+                    "sbt_sha256": "23543bc4597b552e8e2c27d695fe672ec235ab8a64f766b37828fb68c6d9d910",
+                    "scala": "2.11.12",
+                    "spinalhdl": "1.9.4"
+                  },
+                  "cpu_configuration": {
+                    "isa": "rv32im/ILP32",
+                    "instruction_cache_bytes": 4096,
+                    "data_cache_bytes": 4096,
+                    "mul_div": true,
+                    "single_cycle_mul_div": true,
+                    "single_cycle_shift": true,
+                    "bypass": true,
+                    "debug": false,
+                    "hardware_breakpoints": 0,
+                    "csr_plugin_config": "small",
+                    "pmp_regions": 0,
+                    "pmp_granularity_bytes": 256,
+                    "pmp_address_matching_modes": "na4,napot,tor",
+                    "relaxed_pc_calculation": false,
+                    "external_interrupt_array": true,
+                    "dcache_relaxed_memory_translation_register": false,
+                    "dcache_early_way_hits": true,
+                    "atomics": false,
+                    "compressed": false,
+                    "cfu": false,
+                    "prediction": "dynamic_target",
+                    "clock_hz": 48000000,
+                    "profile_basis": "standard"
+                  },
+                  "rtl": "build/cpu-candidates/dynamic_target/VexRiscv.v",
+                  "rtl_sha256": "771f520fcf3ff8f66cd168eaea84bc5924b39fa0e470cd5b1e35640a4809c252",
+                  "generated_utc": "2026-10-01T01:18:34.881350+00:00"
+                }
+              },
+              "bios_bytes": 32768,
+              "l2_cache_bytes": 8192,
+              "geometry_bytes": 268435456,
+              "uncached_alias": "0xc0000000",
+              "diagnostic_images": {
+                "smoke": {
+                  "binary": "build/ddr3/performance/diagnostics/smoke/ddr_test.bin",
+                  "sha256": "d0fd24b4d87938b286eeba2e6a422a80feb0124b1c25bbe388ccb75b198d0a85",
+                  "stress_seconds": 1800
+                },
+                "full": {
+                  "binary": "build/ddr3/performance/diagnostics/full/ddr_test.bin",
+                  "sha256": "efadcf458d19e3a5e0f790438343c4ced2fd71d73e722b12568ab18465eb6c4f",
+                  "stress_seconds": 1800
+                }
+              }
+            },
+            "training_phy_configuration": {
+              "SDRAM_PHY_MODULES": 2,
+              "SDRAM_PHY_DQ_DQS_RATIO": 8,
+              "SDRAM_PHY_DELAYS": 256,
+              "SDRAM_PHY_BITSLIPS": 4,
+              "SDRAM_DELAY_PER_DQ": false
+            },
+            "expected_read_lanes": 2,
+            "trials": [
+              {
+                "mode": "training",
+                "diagnostic_only": false,
+                "attempt": 1,
+                "status": "failed",
+                "programming_status": "completed",
+                "image_sha256": "d0fd24b4d87938b286eeba2e6a422a80feb0124b1c25bbe388ccb75b198d0a85",
+                "bitstream_sha256": "80cb840fea63be60a6067ac3cdb18211accf7d22041f78337956c6a94d3d2624",
+                "raw_uart_log": "docs/ddr3/evidence/20261001T153918.134692Z-ddr3-performance/training-01.uart.bin",
+                "text_uart_log": "docs/ddr3/evidence/20261001T153918.134692Z-ddr3-performance/training-01.uart.log",
+                "transmitted_uart_log": "docs/ddr3/evidence/20261001T153918.134692Z-ddr3-performance/training-01.uart.tx.bin",
+                "started_utc": "2026-10-01T15:39:18.187708+00:00",
+                "uart_input_buffer_cleared_before_programming": true,
+                "training": {
+                  "status": "passed",
+                  "start_records": [
+                    "SDRAM_TRAINING_START phy=GW2DDRPHY read_leveling=1 bitslips=4 delays=256"
+                  ],
+                  "result_records": [
+                    "SDRAM_TRAINING_RESULT status=passed"
+                  ],
+                  "expected_lane_count": 2,
+                  "lane_count": 2,
+                  "phy_configuration": {
+                    "SDRAM_PHY_MODULES": 2,
+                    "SDRAM_PHY_DQ_DQS_RATIO": 8,
+                    "SDRAM_PHY_DELAYS": 256,
+                    "SDRAM_PHY_BITSLIPS": 4,
+                    "SDRAM_DELAY_PER_DQ": false
+                  },
+                  "lanes": [
+                    {
+                      "module": 0,
+                      "dq_line": 0,
+                      "bitslip": 2,
+                      "status": "passed",
+                      "window_start": 0,
+                      "window_length": 212,
+                      "delay_center": 106,
+                      "delay_half_window": 106,
+                      "raw": "SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=212 delay_center=106 delay_half_window=106"
+                    },
+                    {
+                      "module": 1,
+                      "dq_line": 0,
+                      "bitslip": 2,
+                      "status": "passed",
+                      "window_start": 0,
+                      "window_length": 210,
+                      "delay_center": 104,
+                      "delay_half_window": 104,
+                      "raw": "SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=0 window_length=210 delay_center=104 delay_half_window=104"
+                    }
+                  ],
+                  "errors": []
+                },
+                "bios_memtest": {
+                  "status": "failed",
+                  "records": [
+                    "Memtest KO"
+                  ],
+                  "errors": [
+                    "BIOS memory test failed or its result is missing/ambiguous"
+                  ]
+                },
+                "bios_console_confirmed": true,
+                "error": "RuntimeError: BIOS memory test failed; acceptance firmware upload was refused",
+                "application_end_seen": false,
+                "application_failure": null,
+                "bios_training_status_seen": true,
+                "raw_uart_sha256": "51f6d00cc600ff87245807fd2366aaf12f57379a6603d1fd9c49a6f5dd25e759",
+                "raw_uart_bytes": 3019,
+                "transmitted_uart_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "transmitted_uart_bytes": 0,
+                "decode_errors_present": true,
+                "training_status_from_bios": true,
+                "finished_utc": "2026-10-01T15:39:23.529544+00:00"
+              }
+            ],
+            "batch_continuation_safe": true,
+            "error": "RuntimeError: DDR training/smoke run 1 failed: RuntimeError: BIOS memory test failed; acceptance firmware upload was refused",
+            "finished_utc": "2026-10-01T15:39:23.529998+00:00",
+            "uart_evidence_directory": "docs/ddr3/evidence/20261001T153918.134692Z-ddr3-performance",
+            "evidence": "build/ddr3/ddr-test-sessions/20261001T153918.134692Z-ddr3-performance/session.json"
+          },
+          "status": "failed",
+          "errors": [
+            "recorded 1 training trials; requested 10",
+            "one or more fresh SRAM reconfiguration/training/smoke trials failed revalidation",
+            "full destructive memory and sustained stress evidence did not pass revalidation"
+          ],
+          "trials": [
+            {
+              "mode": "training",
+              "attempt": 1,
+              "status": "failed",
+              "errors": [
+                "BIOS memory test failed or its result is missing/ambiguous",
+                "diagnostic firmware start marker is missing",
+                "training capture lacks a passing DDR_TEST_SMOKE marker",
+                "training smoke capture lacks a passing DDR_TEST_END marker"
+              ],
+              "raw_uart_sha256": "51f6d00cc600ff87245807fd2366aaf12f57379a6603d1fd9c49a6f5dd25e759",
+              "training_lane_count": 2,
+              "full_result": null
+            }
+          ],
+          "training_runs_passed": 0,
+          "training_runs_requested": 10,
           "expected_read_lanes": 2,
           "full_result": null
         }

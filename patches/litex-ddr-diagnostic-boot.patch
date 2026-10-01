@@ -1,0 +1,17 @@
+--- a/litex/soc/software/bios/boot.c
++++ b/litex/soc/software/bios/boot.c
+@@ -153,6 +153,14 @@
+ #endif
+ 		return 1;
+ 	}
++
++#if defined(DDR_DIAGNOSTIC_RAM_BASE) && defined(DDR_DIAGNOSTIC_RAM_SIZE)
++	/* The project reserves this separate on-chip RAM for destructive DDR
++	   diagnostics. Keep the BIOS SRAM reservation and region bounds intact. */
++	if (boot_region_max_size(physical, DDR_DIAGNOSTIC_RAM_BASE,
++	                         DDR_DIAGNOSTIC_RAM_SIZE, max_size))
++		return 1;
++#endif
+ 
+ 	printf("Error: boot load address 0x%08lx is outside writable memory\n", addr);
+ 	return 0;

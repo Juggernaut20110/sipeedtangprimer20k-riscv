@@ -31,8 +31,12 @@ def source_fingerprint():
         "scripts/cpu_candidates.py", "dependencies.lock.json", "cpu-generator.lock.json",
         "cpu-profile-selection.json", "requirements-py312.txt",
         "patches/litex-sdram-training-status.patch",
+        "patches/litex-sdram-read-capture-diagnostic.patch",
+        "patches/litex-memtest-read-only-diagnostic.patch",
+        "patches/litex-ddr-diagnostic-boot.patch",
         "patches/litex-gowin-extra-sdc.patch",
         "patches/litedram-gw2ddrphy-cdc.patch",
+        "patches/litedram-gw2ddrphy-dll-off-read.patch",
     ]:
         digest.update((ROOT / relative).read_bytes())
     return digest.hexdigest()
@@ -120,9 +124,24 @@ def apply_project_patch(dependency_name, patch_name):
 
 
 def apply_project_patches():
+    # The diagnostic patch extends the training-status patch's hunks. Remove
+    # only that exact, verified overlay before checking the underlying patch;
+    # then reapply it below. Unrelated dependency edits are never discarded.
+    overlay = ROOT / "patches/litex-sdram-read-capture-diagnostic.patch"
+    dependency = ROOT / ".deps/litex"
+    reverse = subprocess.run(
+        ["git", "-C", str(dependency), "apply", "--reverse", "--check", str(overlay)],
+        capture_output=True, text=True,
+    )
+    if reverse.returncode == 0:
+        subprocess.run(["git", "-C", str(dependency), "apply", "--reverse", str(overlay)], check=True)
     apply_project_patch("litex", "litex-sdram-training-status.patch")
+    apply_project_patch("litex", "litex-sdram-read-capture-diagnostic.patch")
+    apply_project_patch("litex", "litex-memtest-read-only-diagnostic.patch")
+    apply_project_patch("litex", "litex-ddr-diagnostic-boot.patch")
     apply_project_patch("litex", "litex-gowin-extra-sdc.patch")
     apply_project_patch("litedram", "litedram-gw2ddrphy-cdc.patch")
+    apply_project_patch("litedram", "litedram-gw2ddrphy-dll-off-read.patch")
 
 
 def read_main_ram_size(mem_header):

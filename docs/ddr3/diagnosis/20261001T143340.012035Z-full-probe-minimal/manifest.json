@@ -1,0 +1,367 @@
+{
+  "diagnostic_only": true,
+  "profile": "minimal",
+  "build_metadata": {
+    "profile": "minimal",
+    "memory_mode": "ddr3",
+    "cpu_candidate": null,
+    "cpu_profile_selection": null,
+    "liteX_variant": "minimal",
+    "sys_clk_hz": 48000000,
+    "uart_baud": 115200,
+    "status": "passed",
+    "source_fingerprint": "03804335e8bf1de4fb574f523197979b229429ce627e686da69b4c593e0d6bb6",
+    "started_utc": "2026-10-01T14:07:57.644789+00:00",
+    "locked_repositories": {
+      "litex": "58322a1d239a9eca8b93a8497f8945855d965f4f",
+      "migen": "e19524c963a8342952840983047557707fbe0b6a",
+      "litex-boards": "c0d9cdf11e20c8b774f4ee1154fddac6e1dca03a",
+      "litedram": "4c979d195aa0c60adcaf70374a52872028aaca63",
+      "liteeth": "013a6ad38c26317ac9588acd0660922981cc2a73",
+      "liteiclink": "ad793817302490b04b3abc5c4de669594d3958e8",
+      "pythondata-cpu-vexriscv": "642ecfed1c84460555d6d803d660cc60cfc1ecb6",
+      "pythondata-software-picolibc": "6a13ccce7c575b32c102dd9dc52178505b81fe39",
+      "pythondata-software-compiler_rt": "6eb76609c9627bf26635e57c63fb22cda7115887",
+      "coremark": "1f483d5b8316753a742cbf5590caf5bd0a4e4777"
+    },
+    "tool_versions": {
+      "python": "3.12.14",
+      "riscv_gcc": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+      "gowin": "V1.9.12.04",
+      "openfpgaloader": "openFPGALoader v0.13.1"
+    },
+    "firmware": {
+      "elf": "build/ddr3/minimal/firmware/demo.elf",
+      "binary": "build/ddr3/minimal/firmware/demo.bin",
+      "binary_bytes": 6864,
+      "working_sram_bytes": 384,
+      "reserved_stack_bytes": 2048,
+      "sections": {
+        "NULL": {
+          "type": "00000000",
+          "size": 0
+        },
+        ".text": {
+          "type": "PROGBITS",
+          "size": 6028
+        },
+        ".rodata": {
+          "type": "PROGBITS",
+          "size": 820
+        },
+        ".preinit_array": {
+          "type": "PREINIT_ARRAY",
+          "size": 0
+        },
+        ".init_array": {
+          "type": "INIT_ARRAY",
+          "size": 0
+        },
+        ".fini_array": {
+          "type": "FINI_ARRAY",
+          "size": 0
+        },
+        ".data": {
+          "type": "PROGBITS",
+          "size": 16
+        },
+        ".bss": {
+          "type": "NOBITS",
+          "size": 368
+        },
+        ".stack": {
+          "type": "NOBITS",
+          "size": 2048
+        },
+        ".riscv.attributes": {
+          "type": "RISCV_ATTRIBUTES",
+          "size": 53
+        },
+        ".comment": {
+          "type": "PROGBITS",
+          "size": 51
+        },
+        ".debug_line": {
+          "type": "PROGBITS",
+          "size": 17744
+        },
+        ".debug_line_str": {
+          "type": "PROGBITS",
+          "size": 5289
+        },
+        ".debug_info": {
+          "type": "PROGBITS",
+          "size": 13834
+        },
+        ".debug_abbrev": {
+          "type": "PROGBITS",
+          "size": 6296
+        },
+        ".debug_aranges": {
+          "type": "PROGBITS",
+          "size": 800
+        },
+        ".debug_str": {
+          "type": "PROGBITS",
+          "size": 70495
+        },
+        ".debug_loclists": {
+          "type": "PROGBITS",
+          "size": 7314
+        },
+        ".debug_rnglists": {
+          "type": "PROGBITS",
+          "size": 1165
+        },
+        ".debug_macro": {
+          "type": "PROGBITS",
+          "size": 29174
+        },
+        ".symtab": {
+          "type": "SYMTAB",
+          "size": 2432
+        },
+        ".strtab": {
+          "type": "STRTAB",
+          "size": 1203
+        },
+        ".shstrtab": {
+          "type": "STRTAB",
+          "size": 250
+        }
+      },
+      "main_ram_base": 1073741824,
+      "main_ram_size": 268435456
+    },
+    "bios_size": 32768,
+    "bitstream": "build/ddr3/minimal/bitstream.fs",
+    "bitstream_bytes": 7261998,
+    "cpu_variant": "minimal",
+    "cpu_configuration": {
+      "liteX_variant": "minimal",
+      "isa": "rv32i2p0",
+      "instruction_cache_bytes": 0,
+      "data_cache_bytes": 0,
+      "prediction": "none",
+      "rtl_sha256": null,
+      "candidate_generation": null
+    },
+    "memory": {
+      "mode": "ddr3",
+      "main_ram_base": 1073741824,
+      "main_ram_bytes": 268435456,
+      "ddr_physical_bytes": 268435456,
+      "l2_cache_bytes": 8192,
+      "ddr_ck_hz": 96000000,
+      "uncached_alias_base": "0xc0000000",
+      "diagnostic_ram": {
+        "base": "0x20000000",
+        "bytes": 16384
+      }
+    },
+    "device": "GW2A-LV18PG256C8/I7",
+    "cpu_rtl": null,
+    "finished_utc": "2026-10-01T14:09:04.877992+00:00"
+  },
+  "bitstream_sha256": "d9022a351882f7b0b2fb1add6dfb63adae470019c43fe0e621f705779503f099",
+  "metrics": {
+    "profile": "minimal",
+    "memory_mode": "ddr3",
+    "device": "GW2A-LV18PG256C8/I7",
+    "resources": {
+      "logic": {
+        "used": 6621,
+        "capacity": 20736
+      },
+      "lut": {
+        "used": 5549,
+        "source": "build/ddr3/minimal/gateware/impl/pnr/project.rpt.txt"
+      },
+      "alu": {
+        "used": 664,
+        "source": "build/ddr3/minimal/gateware/impl/pnr/project.rpt.txt"
+      },
+      "registers": {
+        "used": 3241,
+        "capacity": 16173
+      },
+      "bsram": {
+        "used": 46,
+        "capacity": 46
+      },
+      "dsp": {
+        "used": null,
+        "status": "unavailable",
+        "detail": "Gowin synthesis resource report lists '-' for DSP NUMBER",
+        "source": "build/ddr3/minimal/gateware/impl/gwsynthesis/project_syn_resource.html"
+      }
+    },
+    "timing": {
+      "constraint_mhz": 48.0,
+      "actual_fmax_mhz": 49.185,
+      "worst_setup_slack_ns": 0.502,
+      "worst_hold_slack_ns": 0.319,
+      "worst_recovery_slack_ns": 1.274,
+      "worst_removal_slack_ns": 2.006,
+      "setup_violated_endpoints": 0,
+      "analyzed_paths": 38401,
+      "analyzed_endpoints": 9758,
+      "no_timing_path_messages": [
+        "No timing paths to get frequency of rPLL/CLKOUTP.default_gen_clk!",
+        "No timing paths to get frequency of rPLL/CLKOUTD.default_gen_clk!",
+        "No timing paths to get frequency of rPLL/CLKOUTD3.default_gen_clk!"
+      ],
+      "generated_clocks": {
+        "ddr_ck_96mhz": {
+          "period_ns": 10.417,
+          "target_mhz": 96.0,
+          "frequency_mhz": 96.0
+        },
+        "sys2x_clk": {
+          "period_ns": 10.417,
+          "target_mhz": 96.0,
+          "frequency_mhz": 96.0
+        },
+        "sys_clk": {
+          "period_ns": 20.833,
+          "target_mhz": 48.0,
+          "frequency_mhz": 48.0
+        },
+        "rPLL/CLKOUTP.default_gen_clk": {
+          "period_ns": 10.417,
+          "target_mhz": 96.0,
+          "frequency_mhz": 96.0
+        },
+        "rPLL/CLKOUTD.default_gen_clk": {
+          "period_ns": 20.833,
+          "target_mhz": 48.0,
+          "frequency_mhz": 48.0
+        },
+        "rPLL/CLKOUTD3.default_gen_clk": {
+          "period_ns": 31.25,
+          "target_mhz": 32.0,
+          "frequency_mhz": 32.0
+        }
+      }
+    },
+    "evidence": {
+      "pnr_resource_report": "build/ddr3/minimal/gateware/impl/pnr/project.rpt.txt",
+      "timing_report": "build/ddr3/minimal/gateware/impl/pnr/project.tr",
+      "synthesis_resource_report": "build/ddr3/minimal/gateware/impl/gwsynthesis/project_syn_resource.html"
+    }
+  },
+  "image": {
+    "variant": "full",
+    "profile": "minimal",
+    "binary": "build/ddr3/diagnosis/20261001T143340.012035Z-full-probe-minimal/full/ddr_test.bin",
+    "elf": "build/ddr3/diagnosis/20261001T143340.012035Z-full-probe-minimal/full/ddr_test.elf",
+    "map": "build/ddr3/diagnosis/20261001T143340.012035Z-full-probe-minimal/full/ddr_test.elf.map",
+    "binary_bytes": 11072,
+    "binary_sha256": "39d5e20182d0a35f22cb23f3ad98d83f132a14daa7282cba1c7b0e37b74f8ce5",
+    "elf_sha256": "7095b10a4566c6e5530b2022febbcb3f125b451e721ae75ef271f5a66dc87073",
+    "source_sha256": "8d9e38aeebde792e3d8a036dc18fc8a81303040367a5649fd46c1548faaa0802",
+    "linker_sha256": "6d0cd5da419337fe8bce527898bc9595f83ed3e1be15eebc74ea410619981877",
+    "stress_seconds": 1,
+    "diagnostic_ram": {
+      "base": 536870912,
+      "size_bytes": 16384,
+      "code_data_bss_stack_in_ram": true,
+      "stack_bytes": 2048,
+      "symbols": {
+        "_ftext": 536870912,
+        "_start": 536870912,
+        "_fdata": 536881960,
+        "_end": 536882272,
+        "_stack_bottom": 536885248,
+        "_stack_top": 536887296
+      },
+      "sections": {
+        "NULL": {
+          "address": 0,
+          "size": 0
+        },
+        ".text": {
+          "address": 536870912,
+          "size": 9160
+        },
+        ".rodata": {
+          "address": 536880072,
+          "size": 1888
+        },
+        ".data": {
+          "address": 536881960,
+          "size": 24
+        },
+        ".bss": {
+          "address": 536881984,
+          "size": 288
+        },
+        ".stack": {
+          "address": 536885248,
+          "size": 2048
+        },
+        ".riscv.attributes": {
+          "address": 0,
+          "size": 53
+        },
+        ".comment": {
+          "address": 0,
+          "size": 51
+        },
+        ".debug_line": {
+          "address": 0,
+          "size": 28774
+        },
+        ".debug_line_str": {
+          "address": 0,
+          "size": 5044
+        },
+        ".debug_info": {
+          "address": 0,
+          "size": 21882
+        },
+        ".debug_abbrev": {
+          "address": 0,
+          "size": 6261
+        },
+        ".debug_aranges": {
+          "address": 0,
+          "size": 704
+        },
+        ".debug_str": {
+          "address": 0,
+          "size": 70877
+        },
+        ".debug_loclists": {
+          "address": 0,
+          "size": 13055
+        },
+        ".debug_rnglists": {
+          "address": 0,
+          "size": 3013
+        },
+        ".debug_macro": {
+          "address": 0,
+          "size": 31086
+        },
+        ".debug_frame": {
+          "address": 0,
+          "size": 220
+        },
+        ".symtab": {
+          "address": 0,
+          "size": 2224
+        },
+        ".strtab": {
+          "address": 0,
+          "size": 909
+        },
+        ".shstrtab": {
+          "address": 0,
+          "size": 224
+        }
+      }
+    }
+  },
+  "stress_seconds": 1
+}

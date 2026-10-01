@@ -1,0 +1,8 @@
+{
+  "console_confirmed": true,
+  "diagnostic_only": true,
+  "completed": true,
+  "first_passing_candidate": 20,
+  "uart_sha256": "d27c2f156db9ec146b4c078ab29454a6a42efa5ed4daf4afd8279a9ca9c55dc4",
+  "transmitted_uart_sha256": "9b56064ed331605fcf5c55485d5bc9e65c9df6e167da1e79c9832b5c01ea3172"
+}

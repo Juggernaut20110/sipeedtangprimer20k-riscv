@@ -1,0 +1,1153 @@
+{
+  "schema": 1,
+  "status": "training_restored_memory_integrity_failed",
+  "acceptance": "failed",
+  "configuration": {
+    "sys_clk_hz": 48000000,
+    "ddr_ck_hz": 96000000,
+    "cl": 6,
+    "cwl": 6,
+    "dll_off": true,
+    "phy_read_latency": 11,
+    "crossbar_read_latency": 12,
+    "read_slots": [
+      0,
+      10,
+      15,
+      5,
+      0,
+      0
+    ],
+    "rclksel": [
+      3,
+      3
+    ]
+  },
+  "host_tests": 71,
+  "generated_soc_checks": 8,
+  "profiles": {
+    "minimal": {
+      "timing": {
+        "constraint_mhz": 48.0,
+        "actual_fmax_mhz": 49.185,
+        "worst_setup_slack_ns": 0.502,
+        "worst_hold_slack_ns": 0.319,
+        "worst_recovery_slack_ns": 1.274,
+        "worst_removal_slack_ns": 2.006,
+        "setup_violated_endpoints": 0,
+        "analyzed_paths": 38401,
+        "analyzed_endpoints": 9758,
+        "no_timing_path_messages": [
+          "No timing paths to get frequency of rPLL/CLKOUTP.default_gen_clk!",
+          "No timing paths to get frequency of rPLL/CLKOUTD.default_gen_clk!",
+          "No timing paths to get frequency of rPLL/CLKOUTD3.default_gen_clk!"
+        ],
+        "generated_clocks": {
+          "ddr_ck_96mhz": {
+            "period_ns": 10.417,
+            "target_mhz": 96.0,
+            "frequency_mhz": 96.0
+          },
+          "sys2x_clk": {
+            "period_ns": 10.417,
+            "target_mhz": 96.0,
+            "frequency_mhz": 96.0
+          },
+          "sys_clk": {
+            "period_ns": 20.833,
+            "target_mhz": 48.0,
+            "frequency_mhz": 48.0
+          },
+          "rPLL/CLKOUTP.default_gen_clk": {
+            "period_ns": 10.417,
+            "target_mhz": 96.0,
+            "frequency_mhz": 96.0
+          },
+          "rPLL/CLKOUTD.default_gen_clk": {
+            "period_ns": 20.833,
+            "target_mhz": 48.0,
+            "frequency_mhz": 48.0
+          },
+          "rPLL/CLKOUTD3.default_gen_clk": {
+            "period_ns": 31.25,
+            "target_mhz": 32.0,
+            "frequency_mhz": 32.0
+          }
+        }
+      },
+      "bitstream_sha256": "d9022a351882f7b0b2fb1add6dfb63adae470019c43fe0e621f705779503f099",
+      "source_fingerprint": "03804335e8bf1de4fb574f523197979b229429ce627e686da69b4c593e0d6bb6",
+      "fresh_training_passes": 3,
+      "fresh_training_captures": 3,
+      "accepted_training_smoke_cycles": 0,
+      "records": [
+        {
+          "session": "docs/ddr3/diagnosis/20261001T141819.266786Z-public-minimal",
+          "lanes": [
+            {
+              "lane": 0,
+              "bitslip": 2,
+              "status": "passed",
+              "window_start": 0,
+              "window_length": 94,
+              "delay_center": 47
+            },
+            {
+              "lane": 1,
+              "bitslip": 2,
+              "status": "passed",
+              "window_start": 0,
+              "window_length": 92,
+              "delay_center": 45
+            }
+          ],
+          "bios_data_errors": [
+            1
+          ],
+          "bios_memtest": "failed"
+        },
+        {
+          "session": "docs/ddr3/diagnosis/20261001T141829.487960Z-public-minimal",
+          "lanes": [
+            {
+              "lane": 0,
+              "bitslip": 2,
+              "status": "passed",
+              "window_start": 0,
+              "window_length": 94,
+              "delay_center": 46
+            },
+            {
+              "lane": 1,
+              "bitslip": 2,
+              "status": "passed",
+              "window_start": 0,
+              "window_length": 92,
+              "delay_center": 45
+            }
+          ],
+          "bios_data_errors": [
+            1
+          ],
+          "bios_memtest": "failed"
+        },
+        {
+          "session": "docs/ddr3/diagnosis/20261001T141839.684249Z-public-minimal",
+          "lanes": [
+            {
+              "lane": 0,
+              "bitslip": 2,
+              "status": "passed",
+              "window_start": 0,
+              "window_length": 94,
+              "delay_center": 46
+            },
+            {
+              "lane": 1,
+              "bitslip": 2,
+              "status": "passed",
+              "window_start": 0,
+              "window_length": 92,
+              "delay_center": 45
+            }
+          ],
+          "bios_data_errors": [
+            1
+          ],
+          "bios_memtest": "failed"
+        }
+      ]
+    },
+    "lite": {
+      "timing": {
+        "constraint_mhz": 48.0,
+        "actual_fmax_mhz": 49.576,
+        "worst_setup_slack_ns": 0.277,
+        "worst_hold_slack_ns": 0.321,
+        "worst_recovery_slack_ns": 1.779,
+        "worst_removal_slack_ns": 1.543,
+        "setup_violated_endpoints": 0,
+        "analyzed_paths": 41969,
+        "analyzed_endpoints": 10619,
+        "no_timing_path_messages": [
+          "No timing paths to get frequency of rPLL/CLKOUTP.default_gen_clk!",
+          "No timing paths to get frequency of rPLL/CLKOUTD.default_gen_clk!",
+          "No timing paths to get frequency of rPLL/CLKOUTD3.default_gen_clk!"
+        ],
+        "generated_clocks": {
+          "ddr_ck_96mhz": {
+            "period_ns": 10.417,
+            "target_mhz": 96.0,
+            "frequency_mhz": 96.0
+          },
+          "sys2x_clk": {
+            "period_ns": 10.417,
+            "target_mhz": 96.0,
+            "frequency_mhz": 96.0
+          },
+          "sys_clk": {
+            "period_ns": 20.833,
+            "target_mhz": 48.0,
+            "frequency_mhz": 48.0
+          },
+          "rPLL/CLKOUTP.default_gen_clk": {
+            "period_ns": 10.417,
+            "target_mhz": 96.0,
+            "frequency_mhz": 96.0
+          },
+          "rPLL/CLKOUTD.default_gen_clk": {
+            "period_ns": 20.833,
+            "target_mhz": 48.0,
+            "frequency_mhz": 48.0
+          },
+          "rPLL/CLKOUTD3.default_gen_clk": {
+            "period_ns": 31.25,
+            "target_mhz": 32.0,
+            "frequency_mhz": 32.0
+          }
+        }
+      },
+      "bitstream_sha256": "552712fcf0f3840fd87a386d6d8ba27eafc28f8f82e5741c82f5a567660a23b8",
+      "source_fingerprint": "03804335e8bf1de4fb574f523197979b229429ce627e686da69b4c593e0d6bb6",
+      "fresh_training_passes": 3,
+      "fresh_training_captures": 3,
+      "accepted_training_smoke_cycles": 0,
+      "records": [
+        {
+          "session": "docs/ddr3/diagnosis/20261001T141849.883342Z-public-lite",
+          "lanes": [
+            {
+              "lane": 0,
+              "bitslip": 2,
+              "status": "passed",
+              "window_start": 0,
+              "window_length": 95,
+              "delay_center": 46
+            },
+            {
+              "lane": 1,
+              "bitslip": 2,
+              "status": "passed",
+              "window_start": 0,
+              "window_length": 93,
+              "delay_center": 46
+            }
+          ],
+          "bios_data_errors": [
+            1
+          ],
+          "bios_memtest": "failed"
+        },
+        {
+          "session": "docs/ddr3/diagnosis/20261001T141858.019482Z-public-lite",
+          "lanes": [
+            {
+              "lane": 0,
+              "bitslip": 2,
+              "status": "passed",
+              "window_start": 0,
+              "window_length": 94,
+              "delay_center": 46
+            },
+            {
+              "lane": 1,
+              "bitslip": 2,
+              "status": "passed",
+              "window_start": 0,
+              "window_length": 92,
+              "delay_center": 46
+            }
+          ],
+          "bios_data_errors": [
+            1
+          ],
+          "bios_memtest": "failed"
+        },
+        {
+          "session": "docs/ddr3/diagnosis/20261001T141906.167854Z-public-lite",
+          "lanes": [
+            {
+              "lane": 0,
+              "bitslip": 2,
+              "status": "passed",
+              "window_start": 0,
+              "window_length": 94,
+              "delay_center": 46
+            },
+            {
+              "lane": 1,
+              "bitslip": 2,
+              "status": "passed",
+              "window_start": 0,
+              "window_length": 92,
+              "delay_center": 45
+            }
+          ],
+          "bios_data_errors": [
+            1
+          ],
+          "bios_memtest": "failed"
+        }
+      ]
+    },
+    "standard": {
+      "timing": {
+        "constraint_mhz": 48.0,
+        "actual_fmax_mhz": 50.573,
+        "worst_setup_slack_ns": 0.548,
+        "worst_hold_slack_ns": 0.318,
+        "worst_recovery_slack_ns": 1.779,
+        "worst_removal_slack_ns": 1.365,
+        "setup_violated_endpoints": 0,
+        "analyzed_paths": 59937,
+        "analyzed_endpoints": 15153,
+        "no_timing_path_messages": [
+          "No timing paths to get frequency of rPLL/CLKOUTP.default_gen_clk!",
+          "No timing paths to get frequency of rPLL/CLKOUTD.default_gen_clk!",
+          "No timing paths to get frequency of rPLL/CLKOUTD3.default_gen_clk!"
+        ],
+        "generated_clocks": {
+          "ddr_ck_96mhz": {
+            "period_ns": 10.417,
+            "target_mhz": 96.0,
+            "frequency_mhz": 96.0
+          },
+          "sys2x_clk": {
+            "period_ns": 10.417,
+            "target_mhz": 96.0,
+            "frequency_mhz": 96.0
+          },
+          "sys_clk": {
+            "period_ns": 20.833,
+            "target_mhz": 48.0,
+            "frequency_mhz": 48.0
+          },
+          "rPLL/CLKOUTP.default_gen_clk": {
+            "period_ns": 10.417,
+            "target_mhz": 96.0,
+            "frequency_mhz": 96.0
+          },
+          "rPLL/CLKOUTD.default_gen_clk": {
+            "period_ns": 20.833,
+            "target_mhz": 48.0,
+            "frequency_mhz": 48.0
+          },
+          "rPLL/CLKOUTD3.default_gen_clk": {
+            "period_ns": 31.25,
+            "target_mhz": 32.0,
+            "frequency_mhz": 32.0
+          }
+        }
+      },
+      "bitstream_sha256": "0d9150fe024a039baf38cb236e0c9728c7ef8f367b0ea1ad060de3d3950b2a6c",
+      "source_fingerprint": "03804335e8bf1de4fb574f523197979b229429ce627e686da69b4c593e0d6bb6",
+      "fresh_training_passes": 3,
+      "fresh_training_captures": 3,
+      "accepted_training_smoke_cycles": 0,
+      "records": [
+        {
+          "session": "docs/ddr3/diagnosis/20261001T141914.304613Z-public-standard",
+          "lanes": [
+            {
+              "lane": 0,
+              "bitslip": 2,
+              "status": "passed",
+              "window_start": 0,
+              "window_length": 214,
+              "delay_center": 106
+            },
+            {
+              "lane": 1,
+              "bitslip": 2,
+              "status": "passed",
+              "window_start": 0,
+              "window_length": 89,
+              "delay_center": 44
+            }
+          ],
+          "bios_data_errors": [
+            1
+          ],
+          "bios_memtest": "failed"
+        },
+        {
+          "session": "docs/ddr3/diagnosis/20261001T141919.890496Z-public-standard",
+          "lanes": [
+            {
+              "lane": 0,
+              "bitslip": 2,
+              "status": "passed",
+              "window_start": 0,
+              "window_length": 214,
+              "delay_center": 106
+            },
+            {
+              "lane": 1,
+              "bitslip": 2,
+              "status": "passed",
+              "window_start": 0,
+              "window_length": 89,
+              "delay_center": 44
+            }
+          ],
+          "bios_data_errors": [
+            1
+          ],
+          "bios_memtest": "failed"
+        },
+        {
+          "session": "docs/ddr3/diagnosis/20261001T141925.478567Z-public-standard",
+          "lanes": [
+            {
+              "lane": 0,
+              "bitslip": 2,
+              "status": "passed",
+              "window_start": 0,
+              "window_length": 214,
+              "delay_center": 106
+            },
+            {
+              "lane": 1,
+              "bitslip": 2,
+              "status": "passed",
+              "window_start": 0,
+              "window_length": 89,
+              "delay_center": 44
+            }
+          ],
+          "bios_data_errors": [
+            1
+          ],
+          "bios_memtest": "failed"
+        }
+      ]
+    },
+    "performance": {
+      "timing": {
+        "constraint_mhz": 48.0,
+        "actual_fmax_mhz": 49.252,
+        "worst_setup_slack_ns": 0.53,
+        "worst_hold_slack_ns": 0.077,
+        "worst_recovery_slack_ns": 2.022,
+        "worst_removal_slack_ns": 1.07,
+        "setup_violated_endpoints": 0,
+        "analyzed_paths": 77461,
+        "analyzed_endpoints": 19470,
+        "no_timing_path_messages": [
+          "No timing paths to get frequency of rPLL/CLKOUTP.default_gen_clk!",
+          "No timing paths to get frequency of rPLL/CLKOUTD.default_gen_clk!",
+          "No timing paths to get frequency of rPLL/CLKOUTD3.default_gen_clk!"
+        ],
+        "generated_clocks": {
+          "ddr_ck_96mhz": {
+            "period_ns": 10.417,
+            "target_mhz": 96.0,
+            "frequency_mhz": 96.0
+          },
+          "sys2x_clk": {
+            "period_ns": 10.417,
+            "target_mhz": 96.0,
+            "frequency_mhz": 96.0
+          },
+          "sys_clk": {
+            "period_ns": 20.833,
+            "target_mhz": 48.0,
+            "frequency_mhz": 48.0
+          },
+          "rPLL/CLKOUTP.default_gen_clk": {
+            "period_ns": 10.417,
+            "target_mhz": 96.0,
+            "frequency_mhz": 96.0
+          },
+          "rPLL/CLKOUTD.default_gen_clk": {
+            "period_ns": 20.833,
+            "target_mhz": 48.0,
+            "frequency_mhz": 48.0
+          },
+          "rPLL/CLKOUTD3.default_gen_clk": {
+            "period_ns": 31.25,
+            "target_mhz": 32.0,
+            "frequency_mhz": 32.0
+          }
+        }
+      },
+      "bitstream_sha256": "80cb840fea63be60a6067ac3cdb18211accf7d22041f78337956c6a94d3d2624",
+      "source_fingerprint": "fd88cbf4c55cf85d414f7ab5cfdb5453d8bd7ad7c18ccb8e9b3fbbb286089aa2",
+      "fresh_training_passes": 3,
+      "fresh_training_captures": 3,
+      "accepted_training_smoke_cycles": 0,
+      "records": [
+        {
+          "session": "docs/ddr3/diagnosis/20261001T141931.102960Z-public-performance",
+          "lanes": [
+            {
+              "lane": 0,
+              "bitslip": 2,
+              "status": "passed",
+              "window_start": 0,
+              "window_length": 212,
+              "delay_center": 105
+            },
+            {
+              "lane": 1,
+              "bitslip": 2,
+              "status": "passed",
+              "window_start": 0,
+              "window_length": 210,
+              "delay_center": 104
+            }
+          ],
+          "bios_data_errors": [
+            1
+          ],
+          "bios_memtest": "failed"
+        },
+        {
+          "session": "docs/ddr3/diagnosis/20261001T141936.485097Z-public-performance",
+          "lanes": [
+            {
+              "lane": 0,
+              "bitslip": 2,
+              "status": "passed",
+              "window_start": 0,
+              "window_length": 213,
+              "delay_center": 106
+            },
+            {
+              "lane": 1,
+              "bitslip": 2,
+              "status": "passed",
+              "window_start": 0,
+              "window_length": 210,
+              "delay_center": 104
+            }
+          ],
+          "bios_data_errors": [
+            1
+          ],
+          "bios_memtest": "failed"
+        },
+        {
+          "session": "docs/ddr3/diagnosis/20261001T141941.869129Z-public-performance",
+          "lanes": [
+            {
+              "lane": 0,
+              "bitslip": 2,
+              "status": "passed",
+              "window_start": 0,
+              "window_length": 213,
+              "delay_center": 106
+            },
+            {
+              "lane": 1,
+              "bitslip": 2,
+              "status": "passed",
+              "window_start": 0,
+              "window_length": 210,
+              "delay_center": 104
+            }
+          ],
+          "bios_data_errors": [
+            1
+          ],
+          "bios_memtest": "failed"
+        }
+      ]
+    }
+  },
+  "receive_sweeps": [
+    {
+      "session": "docs/ddr3/diagnosis/20261001T132255.932700Z-dll-off-read-sweep",
+      "candidates": 104,
+      "passing_candidates": [],
+      "any_burst_candidates": 36,
+      "both_burst_candidates": 15
+    },
+    {
+      "session": "docs/ddr3/diagnosis/20261001T132852.112537Z-dll-off-read-sweep",
+      "candidates": 20,
+      "passing_candidates": [
+        {
+          "read_pattern": "0x005fa0",
+          "read_slots": [
+            0,
+            10,
+            15,
+            5,
+            0,
+            0
+          ],
+          "rclksel": 3,
+          "rdtap": 1,
+          "read_latency": 11,
+          "read_latency_offset": -1,
+          "controller_read_latency": 12,
+          "diagnostic_dfii_only": true,
+          "training": "passed",
+          "lanes": [
+            {
+              "lane": 0,
+              "dq": 0,
+              "bitslip": 2,
+              "status": "passed",
+              "window_start": 0,
+              "window_length": 217,
+              "delay_center": 108,
+              "delay_half_window": 108
+            },
+            {
+              "lane": 1,
+              "dq": 0,
+              "bitslip": 2,
+              "status": "passed",
+              "window_start": 0,
+              "window_length": 214,
+              "delay_center": 106,
+              "delay_half_window": 106
+            }
+          ],
+          "result_markers": [
+            "passed"
+          ],
+          "candidate": 20,
+          "rvalid_seen": [
+            true,
+            true
+          ],
+          "rburst_seen": [
+            true,
+            true
+          ],
+          "pointers": 3510,
+          "bios_memtest": "not run"
+        }
+      ],
+      "any_burst_candidates": 9,
+      "both_burst_candidates": 5
+    }
+  ],
+  "sessions": [
+    {
+      "session": "docs/ddr3/diagnosis/20261001T131216.886048Z-baseline-reproduction-mr1-toggle",
+      "sha256": {
+        "ddr_diagnose.py": "d6bb9bc4350f90d97f5a27201c8e70aa93b324a9caca913f6e06c2200fa9bac2",
+        "uart.tx.bin": "b0c65b5d1ffa0a396c4a0816f01834b5aa2d8829a4e5eaaff89fde73609877e4",
+        "sdram_phy.h": "4e6440ae694345d8649012ad9aa63b12b5f67e5e8c402aad55a98e29ebfdbc93",
+        "uart.bin": "ca5b556c61c76544c511c532f733c058d0b1a18c06521d6f2df07d774fd157f8",
+        "manifest.json": "b49cedad4bb29b94ccf3e1993bb2884db916a166ac641da8ebb199ed5fe4d251"
+      }
+    },
+    {
+      "session": "docs/ddr3/diagnosis/20261001T132255.932700Z-dll-off-read-sweep",
+      "sha256": {
+        "ddr_read_sweep.py": "dd4a15793efdb3e6ca857cdeb078347b919b0aeada7726c0640565542b544bee",
+        "timing.tr": "ca92f7226b247f8c23a448d942c1f261b13396b53225c0b27061fcb671bc1df6",
+        "uart.tx.bin": "9f04812456cbf54caed56b679c57da0c8da9fbc8176d2c980b66e251c096cb03",
+        "sdram_phy.h": "4e6440ae694345d8649012ad9aa63b12b5f67e5e8c402aad55a98e29ebfdbc93",
+        "uart.bin": "e10dd69e0489aa62c8ca46231b0a832b39fc260582f4652b4d74227ecd0898eb",
+        "manifest.json": "231ed092b316bbbb175ce6b7faba9aed6a2e621cfc8aaa256a52e33c1e85e33d"
+      }
+    },
+    {
+      "session": "docs/ddr3/diagnosis/20261001T132852.112537Z-dll-off-read-sweep",
+      "sha256": {
+        "ddr_read_sweep.py": "dd4a15793efdb3e6ca857cdeb078347b919b0aeada7726c0640565542b544bee",
+        "timing.tr": "ca92f7226b247f8c23a448d942c1f261b13396b53225c0b27061fcb671bc1df6",
+        "uart.tx.bin": "9b56064ed331605fcf5c55485d5bc9e65c9df6e167da1e79c9832b5c01ea3172",
+        "sdram_phy.h": "4e6440ae694345d8649012ad9aa63b12b5f67e5e8c402aad55a98e29ebfdbc93",
+        "uart.bin": "d27c2f156db9ec146b4c078ab29454a6a42efa5ed4daf4afd8279a9ca9c55dc4",
+        "manifest.json": "231ed092b316bbbb175ce6b7faba9aed6a2e621cfc8aaa256a52e33c1e85e33d"
+      }
+    },
+    {
+      "session": "docs/ddr3/diagnosis/20261001T133554.525974Z-dll-off-fixed",
+      "sha256": {
+        "ddr_diagnose.py": "d70cc9f8fb8181dcec561547c28e400070050658630d50dd7b6955c996773f97",
+        "uart.tx.bin": "132867a9e562660d6872ca732d09d0aba6cf8a632b1baaa19ec133200d60701e",
+        "sdram_phy.h": "4e6440ae694345d8649012ad9aa63b12b5f67e5e8c402aad55a98e29ebfdbc93",
+        "uart.bin": "92f80010d38f14c846ec4b5f61ee71fe99827469b94c7d3133d00adc8f2e1a16",
+        "manifest.json": "204ad7b2634e08d82224bec9fa2ca60c74d9c14f4663b179f48e1744fdb4c921"
+      }
+    },
+    {
+      "session": "docs/ddr3/diagnosis/20261001T134228.324835Z-fixed-integrity-probe",
+      "sha256": {
+        "uart.tx.bin": "fd8c7646e7227ec832a4d12fb9a8890348faec89d0032b14e27ba6554dd7b522",
+        "uart.bin": "48a32d0ecb1915513ae60a067c2beb6cece6ba14bfdf10de7f4e906abeca13da",
+        "probe.py": "a9cc8b609e11718c7bedaa696a870e011c29bae72dbf90b4f27aec337e7c4e05",
+        "manifest.json": "204ad7b2634e08d82224bec9fa2ca60c74d9c14f4663b179f48e1744fdb4c921"
+      }
+    },
+    {
+      "session": "docs/ddr3/diagnosis/20261001T134327.466031Z-fixed-targeted-write-probe",
+      "sha256": {
+        "uart.tx.bin": "2c2bcb7461bd5bdd4efa1598d8ce3b009d32a2c67b96421bf3dd473e172e41b0",
+        "uart.bin": "7ad4e43d4dfa7bfc7fafc7ad0e432e02a65edb8c1d0a8615b11360ea3e94131f",
+        "probe.py": "89ae5b659506d732a0820352fa54870797c288c86ea2d3b577b601364d4061b3",
+        "manifest.json": "204ad7b2634e08d82224bec9fa2ca60c74d9c14f4663b179f48e1744fdb4c921"
+      }
+    },
+    {
+      "session": "docs/ddr3/diagnosis/20261001T134512.729998Z-fixed-read-delay-probe",
+      "sha256": {
+        "uart.tx.bin": "efc35306b9d01cf849f37fe91301fa06abfae1a7a5728326ec731d8fda1c6c05",
+        "uart.bin": "5e238d196fbcd3b1d8b98a173356892e17bf294728001f82a43269e91c57aeec",
+        "probe.py": "c848bdd750628a8666c20ab63fa156f94c2501c9502e33c8e11c3507567a84f6",
+        "manifest.json": "204ad7b2634e08d82224bec9fa2ca60c74d9c14f4663b179f48e1744fdb4c921"
+      }
+    },
+    {
+      "session": "docs/ddr3/diagnosis/20261001T134643.233397Z-fixed-retention-offset-probe",
+      "sha256": {
+        "uart.tx.bin": "f031af245085797ce339b836ce709b8abef6c9ce189534ba89d2a25028a63c12",
+        "uart.bin": "698f92ccf55f7926db442d2faae8f234e5c9f780e062a7ce8256ba33ea2f09a1",
+        "probe.py": "282431da67f7173be25dc710f016152a56853dd41c9e9565a3b6dd302e323c5e",
+        "manifest.json": "204ad7b2634e08d82224bec9fa2ca60c74d9c14f4663b179f48e1744fdb4c921"
+      }
+    },
+    {
+      "session": "docs/ddr3/diagnosis/20261001T134922.571544Z-dll-off-integrity",
+      "sha256": {
+        "ddr_diagnose.py": "629baaba88cabbd21c80ce2a6b513b9a9e08a1534fa1403351134c5001293e6c",
+        "uart.tx.bin": "132867a9e562660d6872ca732d09d0aba6cf8a632b1baaa19ec133200d60701e",
+        "sdram_phy.h": "4e6440ae694345d8649012ad9aa63b12b5f67e5e8c402aad55a98e29ebfdbc93",
+        "uart.bin": "5436ed4860fefd2729f6ff4b4129f09ce14eb277d76429da4d8919f8c3d5bcb2",
+        "manifest.json": "387578a7c8d152d0a9786a945e6487574616b24691cc47bf18817d2ad4f041cc"
+      }
+    },
+    {
+      "session": "docs/ddr3/diagnosis/20261001T135054.249726Z-fixed-read-only-probe",
+      "sha256": {
+        "uart.tx.bin": "5b1cfe400c505e93fe6fe33ea008bd5aa962b309c49aae16e1437fa0c8781902",
+        "uart.bin": "2504ad61c8e41d8f89fa611a7b7b9c95d3ee9a4fdb8cba8c0ff3a9df4f9dcbc3",
+        "probe.py": "e88bb1f8e2c04d718d33bfce3f2b155891b3463e5416686674ccb54bd3b0d75e",
+        "manifest.json": "387578a7c8d152d0a9786a945e6487574616b24691cc47bf18817d2ad4f041cc"
+      }
+    },
+    {
+      "session": "docs/ddr3/diagnosis/20261001T135345.189228Z-dll-off-write-sweep",
+      "sha256": {
+        "ddr_diagnose.py": "74de71259627673cd29391b3a4de5491f13551004b861d296f0ca46b3d9af8f4",
+        "uart.tx.bin": "2882561523ef37d1d178d1f41b8a905b9de509e36c289db3bbafd2dc7a4d7b4f",
+        "sdram_phy.h": "4e6440ae694345d8649012ad9aa63b12b5f67e5e8c402aad55a98e29ebfdbc93",
+        "uart.bin": "4f52a2fedda567683381e84e005a5daa542fc2c4b02614978ee515efc6cd752e",
+        "manifest.json": "6a3f21acf6e6aa93a3ff8819a2a4e6f0678a5f4348ce11a6bb3be53fb19ff542"
+      }
+    },
+    {
+      "session": "docs/ddr3/diagnosis/20261001T135426.643587Z-fixed-write-delay-probe",
+      "sha256": {
+        "uart.tx.bin": "cde60da1244d684982f3a22f999068a85f57020718ee90590948615e568a9d9d",
+        "uart.bin": "66b4be80bdfad3dcdac97c56687b65ee0b43004cee8820b4f07e88f571327bad",
+        "probe.py": "8806beb85137cac29e0aa8e2d3a8152b81efe0b303c030f27a7b60e61a86cccf",
+        "manifest.json": "6a3f21acf6e6aa93a3ff8819a2a4e6f0678a5f4348ce11a6bb3be53fb19ff542"
+      }
+    },
+    {
+      "session": "docs/ddr3/diagnosis/20261001T141457.310606Z-public-constant-pattern-probe",
+      "sha256": {
+        "uart.tx.bin": "7b081163519d21aaa5a197a45bdc212cc74dc748a7eedc5f2fc80484b16ee01d",
+        "uart.bin": "8c64b7af353a409c1f04da3e71bcacc7a295e126b4a3fb6ec8addff13968dda7",
+        "probe.py": "0f1a0c9c569b9c60670aa10faa7ab9cc9ae6e164b2d94511d7b7b42b485b1544"
+      }
+    },
+    {
+      "session": "docs/ddr3/diagnosis/20261001T141819.266786Z-public-minimal",
+      "sha256": {
+        "project.tr": "87b1a2207b392d17f1ef6442199ac4a518f4b3bee5e9d202d36ae299a79a679f",
+        "ddr_diagnose.py": "01e1be6cfee8ff00a27060075ed0aeeee27e7d1717a2c3a30d198cf8dab414dc",
+        "uart.tx.bin": "ea521c8db503642a54b23b4bd043dcde6c366da8a2f700525ee216ae6e415220",
+        "sdram_phy.h": "4e6440ae694345d8649012ad9aa63b12b5f67e5e8c402aad55a98e29ebfdbc93",
+        "uart.bin": "d32be294f05be35e36360b045abb526230e8bf8873caa7667228759440adac99",
+        "manifest.json": "f1151da91c5c4ac2d8ed03e14f4bba8546488819e57b78712773bc4be3710ab9"
+      }
+    },
+    {
+      "session": "docs/ddr3/diagnosis/20261001T141829.487960Z-public-minimal",
+      "sha256": {
+        "project.tr": "87b1a2207b392d17f1ef6442199ac4a518f4b3bee5e9d202d36ae299a79a679f",
+        "ddr_diagnose.py": "01e1be6cfee8ff00a27060075ed0aeeee27e7d1717a2c3a30d198cf8dab414dc",
+        "uart.tx.bin": "ea521c8db503642a54b23b4bd043dcde6c366da8a2f700525ee216ae6e415220",
+        "sdram_phy.h": "4e6440ae694345d8649012ad9aa63b12b5f67e5e8c402aad55a98e29ebfdbc93",
+        "uart.bin": "0033a3c551314bfc42c9a607a8d45fc2f9a725ef919476a1e6758508cabdceda",
+        "manifest.json": "f1151da91c5c4ac2d8ed03e14f4bba8546488819e57b78712773bc4be3710ab9"
+      }
+    },
+    {
+      "session": "docs/ddr3/diagnosis/20261001T141839.684249Z-public-minimal",
+      "sha256": {
+        "project.tr": "87b1a2207b392d17f1ef6442199ac4a518f4b3bee5e9d202d36ae299a79a679f",
+        "ddr_diagnose.py": "01e1be6cfee8ff00a27060075ed0aeeee27e7d1717a2c3a30d198cf8dab414dc",
+        "uart.tx.bin": "ea521c8db503642a54b23b4bd043dcde6c366da8a2f700525ee216ae6e415220",
+        "sdram_phy.h": "4e6440ae694345d8649012ad9aa63b12b5f67e5e8c402aad55a98e29ebfdbc93",
+        "uart.bin": "0033a3c551314bfc42c9a607a8d45fc2f9a725ef919476a1e6758508cabdceda",
+        "manifest.json": "f1151da91c5c4ac2d8ed03e14f4bba8546488819e57b78712773bc4be3710ab9"
+      }
+    },
+    {
+      "session": "docs/ddr3/diagnosis/20261001T141849.883342Z-public-lite",
+      "sha256": {
+        "project.tr": "a66cffbd8e25d38cc58d34b98b62c1153179d0ec03271d3ede685e1cc02d34d0",
+        "ddr_diagnose.py": "01e1be6cfee8ff00a27060075ed0aeeee27e7d1717a2c3a30d198cf8dab414dc",
+        "uart.tx.bin": "ea521c8db503642a54b23b4bd043dcde6c366da8a2f700525ee216ae6e415220",
+        "sdram_phy.h": "4e6440ae694345d8649012ad9aa63b12b5f67e5e8c402aad55a98e29ebfdbc93",
+        "uart.bin": "d8cdab0f8da2c8297dac54b6df8b2a63892c08ce27d2dcb02fccc37dd4211a14",
+        "manifest.json": "68d3c14dbe2d80aad16b7c8d6c2b0c29acfb48d758e30a155383163472756fd3"
+      }
+    },
+    {
+      "session": "docs/ddr3/diagnosis/20261001T141858.019482Z-public-lite",
+      "sha256": {
+        "project.tr": "a66cffbd8e25d38cc58d34b98b62c1153179d0ec03271d3ede685e1cc02d34d0",
+        "ddr_diagnose.py": "01e1be6cfee8ff00a27060075ed0aeeee27e7d1717a2c3a30d198cf8dab414dc",
+        "uart.tx.bin": "ea521c8db503642a54b23b4bd043dcde6c366da8a2f700525ee216ae6e415220",
+        "sdram_phy.h": "4e6440ae694345d8649012ad9aa63b12b5f67e5e8c402aad55a98e29ebfdbc93",
+        "uart.bin": "a9bd4fb376b1446d787d34b67e86c47c34aad5836268df55dfa18c4fdcf5dbf9",
+        "manifest.json": "68d3c14dbe2d80aad16b7c8d6c2b0c29acfb48d758e30a155383163472756fd3"
+      }
+    },
+    {
+      "session": "docs/ddr3/diagnosis/20261001T141906.167854Z-public-lite",
+      "sha256": {
+        "project.tr": "a66cffbd8e25d38cc58d34b98b62c1153179d0ec03271d3ede685e1cc02d34d0",
+        "ddr_diagnose.py": "01e1be6cfee8ff00a27060075ed0aeeee27e7d1717a2c3a30d198cf8dab414dc",
+        "uart.tx.bin": "ea521c8db503642a54b23b4bd043dcde6c366da8a2f700525ee216ae6e415220",
+        "sdram_phy.h": "4e6440ae694345d8649012ad9aa63b12b5f67e5e8c402aad55a98e29ebfdbc93",
+        "uart.bin": "ce9d91a53594db7a539ea2bad962d844f85eda6fdfe3177acf5b8ef5f455f2d3",
+        "manifest.json": "68d3c14dbe2d80aad16b7c8d6c2b0c29acfb48d758e30a155383163472756fd3"
+      }
+    },
+    {
+      "session": "docs/ddr3/diagnosis/20261001T141914.304613Z-public-standard",
+      "sha256": {
+        "project.tr": "177cf63ac74a509373ed1ad277bcd0c4794d1bd400c72fc17a1bb9b9b7b896a1",
+        "ddr_diagnose.py": "01e1be6cfee8ff00a27060075ed0aeeee27e7d1717a2c3a30d198cf8dab414dc",
+        "uart.tx.bin": "ea521c8db503642a54b23b4bd043dcde6c366da8a2f700525ee216ae6e415220",
+        "sdram_phy.h": "4e6440ae694345d8649012ad9aa63b12b5f67e5e8c402aad55a98e29ebfdbc93",
+        "uart.bin": "e961cfd17a5e0725ad56aaf1eaa53e994a80a7176950274ed0d3830961d274b2",
+        "manifest.json": "3d4f3c0ee5ea5bfe77c144c1d9244198db93e493fc206c2f45a0be36afcdd46d"
+      }
+    },
+    {
+      "session": "docs/ddr3/diagnosis/20261001T141919.890496Z-public-standard",
+      "sha256": {
+        "project.tr": "177cf63ac74a509373ed1ad277bcd0c4794d1bd400c72fc17a1bb9b9b7b896a1",
+        "ddr_diagnose.py": "01e1be6cfee8ff00a27060075ed0aeeee27e7d1717a2c3a30d198cf8dab414dc",
+        "uart.tx.bin": "ea521c8db503642a54b23b4bd043dcde6c366da8a2f700525ee216ae6e415220",
+        "sdram_phy.h": "4e6440ae694345d8649012ad9aa63b12b5f67e5e8c402aad55a98e29ebfdbc93",
+        "uart.bin": "e961cfd17a5e0725ad56aaf1eaa53e994a80a7176950274ed0d3830961d274b2",
+        "manifest.json": "3d4f3c0ee5ea5bfe77c144c1d9244198db93e493fc206c2f45a0be36afcdd46d"
+      }
+    },
+    {
+      "session": "docs/ddr3/diagnosis/20261001T141925.478567Z-public-standard",
+      "sha256": {
+        "project.tr": "177cf63ac74a509373ed1ad277bcd0c4794d1bd400c72fc17a1bb9b9b7b896a1",
+        "ddr_diagnose.py": "01e1be6cfee8ff00a27060075ed0aeeee27e7d1717a2c3a30d198cf8dab414dc",
+        "uart.tx.bin": "ea521c8db503642a54b23b4bd043dcde6c366da8a2f700525ee216ae6e415220",
+        "sdram_phy.h": "4e6440ae694345d8649012ad9aa63b12b5f67e5e8c402aad55a98e29ebfdbc93",
+        "uart.bin": "e961cfd17a5e0725ad56aaf1eaa53e994a80a7176950274ed0d3830961d274b2",
+        "manifest.json": "3d4f3c0ee5ea5bfe77c144c1d9244198db93e493fc206c2f45a0be36afcdd46d"
+      }
+    },
+    {
+      "session": "docs/ddr3/diagnosis/20261001T141931.102960Z-public-performance",
+      "sha256": {
+        "project.tr": "cc7d95ed9f32f317c6b5d3b7ff75b673abc2a37b3fd185a1f61d60f45fbbb0b6",
+        "ddr_diagnose.py": "01e1be6cfee8ff00a27060075ed0aeeee27e7d1717a2c3a30d198cf8dab414dc",
+        "uart.tx.bin": "ea521c8db503642a54b23b4bd043dcde6c366da8a2f700525ee216ae6e415220",
+        "sdram_phy.h": "4e6440ae694345d8649012ad9aa63b12b5f67e5e8c402aad55a98e29ebfdbc93",
+        "uart.bin": "5b66fa738b4b654edce041354402a8017e4ed36e2b06da71b6372309392d1527",
+        "manifest.json": "3750cdd639ab48db7ccc278600a52d060d64b1dbdb7a951d29541a26b68d4172"
+      }
+    },
+    {
+      "session": "docs/ddr3/diagnosis/20261001T141936.485097Z-public-performance",
+      "sha256": {
+        "project.tr": "cc7d95ed9f32f317c6b5d3b7ff75b673abc2a37b3fd185a1f61d60f45fbbb0b6",
+        "ddr_diagnose.py": "01e1be6cfee8ff00a27060075ed0aeeee27e7d1717a2c3a30d198cf8dab414dc",
+        "uart.tx.bin": "ea521c8db503642a54b23b4bd043dcde6c366da8a2f700525ee216ae6e415220",
+        "sdram_phy.h": "4e6440ae694345d8649012ad9aa63b12b5f67e5e8c402aad55a98e29ebfdbc93",
+        "uart.bin": "b13f1ed81634657962a3cebdb431947988d243014061fa4d991953cbd11f69d8",
+        "manifest.json": "3750cdd639ab48db7ccc278600a52d060d64b1dbdb7a951d29541a26b68d4172"
+      }
+    },
+    {
+      "session": "docs/ddr3/diagnosis/20261001T141941.869129Z-public-performance",
+      "sha256": {
+        "project.tr": "cc7d95ed9f32f317c6b5d3b7ff75b673abc2a37b3fd185a1f61d60f45fbbb0b6",
+        "ddr_diagnose.py": "01e1be6cfee8ff00a27060075ed0aeeee27e7d1717a2c3a30d198cf8dab414dc",
+        "uart.tx.bin": "ea521c8db503642a54b23b4bd043dcde6c366da8a2f700525ee216ae6e415220",
+        "sdram_phy.h": "4e6440ae694345d8649012ad9aa63b12b5f67e5e8c402aad55a98e29ebfdbc93",
+        "uart.bin": "b13f1ed81634657962a3cebdb431947988d243014061fa4d991953cbd11f69d8",
+        "manifest.json": "3750cdd639ab48db7ccc278600a52d060d64b1dbdb7a951d29541a26b68d4172"
+      }
+    },
+    {
+      "session": "docs/ddr3/diagnosis/20261001T142124.847265Z-full-probe-minimal",
+      "sha256": {
+        "timing.tr": "87b1a2207b392d17f1ef6442199ac4a518f4b3bee5e9d202d36ae299a79a679f",
+        "full-01.uart.tx.bin": "49c03940f784e4d4b7c289a29672bbf17467d556dc453426d065d3e42a745689",
+        "ddr_test_run.py": "6a17783eb2aed13872b2108c625a2f9fae86bbf36e4212bd5c930dd0ffd19cec",
+        "full-01.uart.bin": "0cd10fb44efed968b7806e7e8b8a3526dd3dfff9db515d71f2935118292633cf",
+        "ddr_test.c": "f8c501fba7dcb1a418f63b779cf52c08c13336bee8daffd5eb13597d2238e431",
+        "sdram_phy.h": "4e6440ae694345d8649012ad9aa63b12b5f67e5e8c402aad55a98e29ebfdbc93",
+        "manifest.json": "ebb55df2dc66ce10f9f06545b59b2408d843ed5ad6fdf6550202f44c344e5d91"
+      }
+    },
+    {
+      "session": "docs/ddr3/diagnosis/20261001T142550.064808Z-full-probe-passive",
+      "sha256": {
+        "uart.bin": "e2bc132593951956fbe2df9db0bfd7ce112cb4238fb6a8ed2f496cb4baa92a8f",
+        "probe.py": "b0ebf68e369751c7cca8e2ebdae5cf1c54c6745440d75185a8419b5be06fd3cf"
+      }
+    },
+    {
+      "session": "docs/ddr3/diagnosis/20261001T142952.526524Z-full-probe-passive",
+      "sha256": {
+        "uart.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "probe.py": "b0ebf68e369751c7cca8e2ebdae5cf1c54c6745440d75185a8419b5be06fd3cf"
+      }
+    },
+    {
+      "session": "docs/ddr3/diagnosis/20261001T143340.012035Z-full-probe-minimal",
+      "sha256": {
+        "timing.tr": "87b1a2207b392d17f1ef6442199ac4a518f4b3bee5e9d202d36ae299a79a679f",
+        "full-01.uart.tx.bin": "87e5f6742fb441a2e1084666a3beffbac68e304eea7355cf1de620a65fc64f31",
+        "ddr_test_run.py": "300b61745c03bb95809f6085106610cdb0eddeb029eef785a3574a350178b73e",
+        "full-01.uart.bin": "0c3bf69140e1e28cfa6252b0dd0803d08d3afebd2badb775d952b6c74023c630",
+        "ddr_test.c": "8d9e38aeebde792e3d8a036dc18fc8a81303040367a5649fd46c1548faaa0802",
+        "sdram_phy.h": "4e6440ae694345d8649012ad9aa63b12b5f67e5e8c402aad55a98e29ebfdbc93",
+        "manifest.json": "e8adf5b59cf2b791c00b263b688373404c35a2ef72dda69d2b836122c6825d60"
+      }
+    },
+    {
+      "session": "docs/ddr3/diagnosis/20261001T144349.005478Z-full-probe-minimal",
+      "sha256": {
+        "timing.tr": "87b1a2207b392d17f1ef6442199ac4a518f4b3bee5e9d202d36ae299a79a679f",
+        "full-01.uart.tx.bin": "7fa7e2bc1bb6189eb788241a2522018438aa98d7302504bff01aab4d01c3d11d",
+        "ddr_test_run.py": "9c452c852a51e114ff516fed8d698f86412a3712124958e8d2c1fb2aba47e132",
+        "full-01.uart.bin": "cf50f05421277da7d92b7261bbb839fd8e8795499618a82c10edb5a45343cfd7",
+        "ddr_test.c": "557162d1d9405aa6e233620fb88d59532910c345b429e72705102008117d077f",
+        "sdram_phy.h": "4e6440ae694345d8649012ad9aa63b12b5f67e5e8c402aad55a98e29ebfdbc93",
+        "manifest.json": "c76fb8915ca4536c717e9b3cbc1dde16765bae15ab7eed95e9cdcd840cc229ea"
+      }
+    },
+    {
+      "session": "docs/ddr3/diagnosis/20261001T145250.552487Z-full-probe-minimal",
+      "sha256": {
+        "timing.tr": "87b1a2207b392d17f1ef6442199ac4a518f4b3bee5e9d202d36ae299a79a679f",
+        "full-01.uart.tx.bin": "ba9fd0f9ba919ca0aad7f0eef05b6867576c0c390d472b1527570c519cf546af",
+        "ddr_test_run.py": "9c452c852a51e114ff516fed8d698f86412a3712124958e8d2c1fb2aba47e132",
+        "full-01.uart.bin": "b404de2d7e15a1c3741264094ee50a2312167708a53be4f352c8dd24cdfb9ee0",
+        "ddr_test.c": "5fb3bbf80495e96e718c1404ef3f1286432458485e08895f08ebbbc42d9f9bf0",
+        "sdram_phy.h": "4e6440ae694345d8649012ad9aa63b12b5f67e5e8c402aad55a98e29ebfdbc93",
+        "manifest.json": "16a507b2b43a7e09908eaf3f292731b680e81a41b559fadbf673bbba264434aa"
+      }
+    },
+    {
+      "session": "docs/ddr3/diagnosis/20261001T152517.396911Z-dll-off-wr-recovery",
+      "sha256": {
+        "project.tr": "4448aa28a4896b15454f644cb355d773f286f00e7ae474cf48a736cdd397a2a7",
+        "ddr_diagnose.py": "5bdaca8080b4d92a12f38f18732f6ec318e458fea6ee40e10a0bd1130d17b81b",
+        "uart.tx.bin": "132867a9e562660d6872ca732d09d0aba6cf8a632b1baaa19ec133200d60701e",
+        "sdram_phy.h": "4e6440ae694345d8649012ad9aa63b12b5f67e5e8c402aad55a98e29ebfdbc93",
+        "uart.bin": "228ace0caa7e12aa09b6ebbcb02cd1be237adab3f3e5596e1acaaffe56fd1e51",
+        "manifest.json": "5c886b8de08f37e043ae0893fb0b07446024afc0037144392d9d6e6178a98b70"
+      }
+    }
+  ],
+  "patches": {
+    "patches/litedram-gw2ddrphy-cdc.patch": "71229b174b5d5f637379c059b0dcf4d9643252341056c92c832faf99722bac92",
+    "patches/litedram-gw2ddrphy-dll-off-read.patch": "df5a3e3451bc43aae1910633a51c7ee38e37d6c7e8c8cb2bb00e4464e449efb1",
+    "patches/litex-ddr-diagnostic-boot.patch": "5aaa1ff59cbe6d4cbbf8349c9c2f951f6fb01783ab0b34d5abd18f5ed2cfe0f1",
+    "patches/litex-gowin-extra-sdc.patch": "84e41d7d1b78d54e13a6e528d7b9600a95b9ffb75ec99b00e9bddaaf11ddfe85",
+    "patches/litex-memtest-read-only-diagnostic.patch": "cd5f38d8ffa19a9e3818df9e506b7085d0564b5767ff5bd60ff9f0ad991f3614",
+    "patches/litex-sdram-read-capture-diagnostic.patch": "282232cc7d0c16f6fef14f9216cfb3e9803dad4eb265d25f3cfecf0c71716332",
+    "patches/litex-sdram-training-status.patch": "7cfc35b269fb7123dbedf32ca4a1ea3a6a59d809f1fd834ba0ac4399916d6635"
+  },
+  "vendor_model": {
+    "path": "/home/user/.local/opt/Gowin_V1.9.12.04_linux/IDE/simlib/gw2a/prim_sim.v",
+    "sha256": "ea60e176f48306d596dc11d2495641a49cd778447f539427f53da95430bf9081",
+    "dqs_lines": [
+      13674,
+      14415
+    ],
+    "tool_version": "Gowin V1.9.12.04"
+  },
+  "full_range_probes": [
+    {
+      "session": "docs/ddr3/diagnosis/20261001T142124.847265Z-full-probe-minimal",
+      "status": "failed",
+      "diagnostic_only": true,
+      "application_end_seen": false,
+      "failure": null,
+      "phase_end_records": [],
+      "read_probe_records": [],
+      "isolated_write_probe_records": []
+    },
+    {
+      "session": "docs/ddr3/diagnosis/20261001T143340.012035Z-full-probe-minimal",
+      "status": "failed",
+      "diagnostic_only": true,
+      "application_end_seen": true,
+      "failure": "DDR_TEST_FAILURE phase=walking_zeros address=0xc64011ac expected=0xfffff7ff actual=0x7ffff7ff errors=1",
+      "phase_end_records": [
+        "DDR_TEST_PHASE_END name=walking_ones status=passed bytes=268435456 operations=67108864 elapsed_ticks_hi=00000001 elapsed_ticks_lo=5418ef96 errors=0"
+      ],
+      "read_probe_records": [],
+      "isolated_write_probe_records": []
+    },
+    {
+      "session": "docs/ddr3/diagnosis/20261001T144349.005478Z-full-probe-minimal",
+      "status": "failed",
+      "diagnostic_only": true,
+      "application_end_seen": true,
+      "failure": "DDR_TEST_FAILURE phase=walking_zeros address=0xc64011ac expected=0xfffff7ff actual=0x7ffff7ff errors=1",
+      "phase_end_records": [
+        "DDR_TEST_PHASE_END name=walking_ones status=passed bytes=268435456 operations=67108864 elapsed_ticks_hi=00000001 elapsed_ticks_lo=5418efa8 errors=0"
+      ],
+      "read_probe_records": [
+        "DDR_TEST_READ_PROBE offset=0 lanes=2 address=0xc64011ac expected=0xfffff7ff actual_first=0x7ffff7ff errors=16 reads=16",
+        "DDR_TEST_READ_PROBE offset=20 lanes=2 address=0xc64011ac expected=0xfffff7ff actual_first=0x7ffff7ff errors=16 reads=16",
+        "DDR_TEST_READ_PROBE offset=-20 lanes=2 address=0xc64011ac expected=0xfffff7ff actual_first=0x7ffff7ff errors=16 reads=16",
+        "DDR_TEST_READ_PROBE offset=40 lanes=2 address=0xc64011ac expected=0xfffff7ff actual_first=0x7ffff7ff errors=16 reads=16",
+        "DDR_TEST_READ_PROBE offset=-40 lanes=2 address=0xc64011ac expected=0xfffff7ff actual_first=0x7ffff7ff errors=16 reads=16",
+        "DDR_TEST_READ_PROBE offset=0 lanes=2 address=0xc64011ac expected=0xfffff7ff actual_first=0x7ffff7ff errors=16 reads=16"
+      ],
+      "isolated_write_probe_records": []
+    },
+    {
+      "session": "docs/ddr3/diagnosis/20261001T145250.552487Z-full-probe-minimal",
+      "status": "failed",
+      "diagnostic_only": true,
+      "application_end_seen": true,
+      "failure": "DDR_TEST_FAILURE phase=walking_zeros address=0xc64011ac expected=0xfffff7ff actual=0x7ffff7ff errors=1",
+      "phase_end_records": [
+        "DDR_TEST_PHASE_END name=walking_ones status=passed bytes=268435456 operations=67108864 elapsed_ticks_hi=00000001 elapsed_ticks_lo=5418ef9a errors=0"
+      ],
+      "read_probe_records": [
+        "DDR_TEST_READ_PROBE offset=0 lanes=2 address=0xc64011ac expected=0xfffff7ff actual_first=0x7ffff7ff errors=16 reads=16",
+        "DDR_TEST_READ_PROBE offset=20 lanes=2 address=0xc64011ac expected=0xfffff7ff actual_first=0x7ffff7ff errors=16 reads=16",
+        "DDR_TEST_READ_PROBE offset=-20 lanes=2 address=0xc64011ac expected=0xfffff7ff actual_first=0x7ffff7ff errors=16 reads=16",
+        "DDR_TEST_READ_PROBE offset=40 lanes=2 address=0xc64011ac expected=0xfffff7ff actual_first=0x7ffff7ff errors=16 reads=16",
+        "DDR_TEST_READ_PROBE offset=-40 lanes=2 address=0xc64011ac expected=0xfffff7ff actual_first=0x7ffff7ff errors=16 reads=16",
+        "DDR_TEST_READ_PROBE offset=0 lanes=2 address=0xc64011ac expected=0xfffff7ff actual_first=0x7ffff7ff errors=16 reads=16"
+      ],
+      "isolated_write_probe_records": [
+        "DDR_TEST_ISOLATED_WRITE_PROBE address=0xc64011ac expected=0xfffff7ff actual_first=0xfffff7ff errors=0 reads=16"
+      ]
+    }
+  ],
+  "acceptance_gate_trials": [
+    {
+      "profile": "minimal",
+      "status": "failed",
+      "actual_training_runs": 1,
+      "batch_continuation_safe": true,
+      "evidence": "docs/ddr3/evidence/20261001T150224.562837Z-ddr3-minimal",
+      "trial_error": "RuntimeError: BIOS memory test failed; acceptance firmware upload was refused",
+      "bios_memtest": {
+        "status": "failed",
+        "records": [
+          "Memtest KO"
+        ],
+        "errors": [
+          "BIOS memory test failed or its result is missing/ambiguous"
+        ]
+      },
+      "application_end_seen": false,
+      "bios_console_confirmed": true,
+      "session_sha256": "b66482d736e54508d9d67569a1b71dfee6b9b3e4a02aa0784735c8f361657279"
+    },
+    {
+      "profile": "lite",
+      "status": "failed",
+      "actual_training_runs": 1,
+      "batch_continuation_safe": true,
+      "evidence": "docs/ddr3/evidence/20261001T150658.512368Z-ddr3-lite",
+      "trial_error": "RuntimeError: BIOS memory test failed; acceptance firmware upload was refused",
+      "bios_memtest": {
+        "status": "failed",
+        "records": [
+          "Memtest KO"
+        ],
+        "errors": [
+          "BIOS memory test failed or its result is missing/ambiguous"
+        ]
+      },
+      "application_end_seen": false,
+      "bios_console_confirmed": true,
+      "session_sha256": "e128d10143991a8b09829ac5a5d22932759ccb2d394392585f29e937a042d0c2"
+    },
+    {
+      "profile": "standard",
+      "status": "failed",
+      "actual_training_runs": 1,
+      "batch_continuation_safe": true,
+      "evidence": "docs/ddr3/evidence/20261001T150706.881857Z-ddr3-standard",
+      "trial_error": "RuntimeError: BIOS memory test failed; acceptance firmware upload was refused",
+      "bios_memtest": {
+        "status": "failed",
+        "records": [
+          "Memtest KO"
+        ],
+        "errors": [
+          "BIOS memory test failed or its result is missing/ambiguous"
+        ]
+      },
+      "application_end_seen": false,
+      "bios_console_confirmed": true,
+      "session_sha256": "ab93982afafd46af38fefe44871a75dc8e1f33db46ea94baa3b30114242e1421"
+    },
+    {
+      "profile": "performance",
+      "status": "failed",
+      "actual_training_runs": 1,
+      "batch_continuation_safe": true,
+      "evidence": "docs/ddr3/evidence/20261001T150712.642628Z-ddr3-performance",
+      "trial_error": "RuntimeError: BIOS memory test failed; acceptance firmware upload was refused",
+      "bios_memtest": {
+        "status": "failed",
+        "records": [
+          "Memtest KO"
+        ],
+        "errors": [
+          "BIOS memory test failed or its result is missing/ambiguous"
+        ]
+      },
+      "application_end_seen": false,
+      "bios_console_confirmed": true,
+      "session_sha256": "5ba1871dc774144a9b397881e3559feacf7e16bf88219b4a47366dda2b582531"
+    },
+    {
+      "profile": "performance",
+      "status": "failed",
+      "actual_training_runs": 1,
+      "batch_continuation_safe": true,
+      "evidence": "docs/ddr3/evidence/20261001T153918.134692Z-ddr3-performance",
+      "trial_error": "RuntimeError: BIOS memory test failed; acceptance firmware upload was refused",
+      "bios_memtest": {
+        "status": "failed",
+        "records": [
+          "Memtest KO"
+        ],
+        "errors": [
+          "BIOS memory test failed or its result is missing/ambiguous"
+        ]
+      },
+      "application_end_seen": false,
+      "bios_console_confirmed": true,
+      "session_sha256": "1f11367fee8bdc2764724b95c61e0020dee9cc2da5439bd8acb27600a05770f3"
+    }
+  ],
+  "final_board_state": {
+    "profile": "performance",
+    "mode": "ddr3",
+    "bios_prompt_confirmed": true,
+    "application_running": false,
+    "bios_memtest": "failed",
+    "flash_modified": false,
+    "evidence": "docs/ddr3/evidence/20261001T153918.134692Z-ddr3-performance"
+  }
+}

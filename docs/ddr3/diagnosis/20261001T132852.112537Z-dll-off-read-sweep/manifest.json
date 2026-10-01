@@ -1,0 +1,503 @@
+{
+  "experiment": "dll-off-read-sweep",
+  "changes": [
+    "Diagnostic CSR-controlled READ schedule/RCLKSEL/DFII snapshot latency; DLL-off retained"
+  ],
+  "diagnostic_only": true,
+  "bitstream": "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/diagnosis/dll-off-read-sweep/gateware/impl/pnr/project.fs",
+  "bitstream_sha256": "38ef5169a898702478794077b915a2ccce3afb84602fbb06b135b13e25f967b9",
+  "metrics": {
+    "profile": "minimal",
+    "memory_mode": "ddr3",
+    "device": "GW2A-LV18PG256C8/I7",
+    "resources": {
+      "logic": {
+        "used": 6656,
+        "capacity": 20736
+      },
+      "lut": {
+        "used": 5584,
+        "source": "build/ddr3/diagnosis/dll-off-read-sweep/gateware/impl/pnr/project.rpt.txt"
+      },
+      "alu": {
+        "used": 664,
+        "source": "build/ddr3/diagnosis/dll-off-read-sweep/gateware/impl/pnr/project.rpt.txt"
+      },
+      "registers": {
+        "used": 3385,
+        "capacity": 16173
+      },
+      "bsram": {
+        "used": 46,
+        "capacity": 46
+      },
+      "dsp": {
+        "used": null,
+        "status": "unavailable",
+        "detail": "Gowin synthesis resource report lists '-' for DSP NUMBER",
+        "source": "build/ddr3/diagnosis/dll-off-read-sweep/gateware/impl/gwsynthesis/project_syn_resource.html"
+      }
+    },
+    "timing": {
+      "constraint_mhz": 48.0,
+      "actual_fmax_mhz": 52.018,
+      "worst_setup_slack_ns": 1.513,
+      "worst_hold_slack_ns": 0.314,
+      "worst_recovery_slack_ns": 1.856,
+      "worst_removal_slack_ns": 1.681,
+      "setup_violated_endpoints": 0,
+      "analyzed_paths": 40076,
+      "analyzed_endpoints": 10193,
+      "no_timing_path_messages": [
+        "No timing paths to get frequency of rPLL/CLKOUTP.default_gen_clk!",
+        "No timing paths to get frequency of rPLL/CLKOUTD.default_gen_clk!",
+        "No timing paths to get frequency of rPLL/CLKOUTD3.default_gen_clk!"
+      ],
+      "generated_clocks": {
+        "ddr_ck_96mhz": {
+          "period_ns": 10.417,
+          "target_mhz": 96.0,
+          "frequency_mhz": 96.0
+        },
+        "sys2x_clk": {
+          "period_ns": 10.417,
+          "target_mhz": 96.0,
+          "frequency_mhz": 96.0
+        },
+        "sys_clk": {
+          "period_ns": 20.833,
+          "target_mhz": 48.0,
+          "frequency_mhz": 48.0
+        },
+        "rPLL/CLKOUTP.default_gen_clk": {
+          "period_ns": 10.417,
+          "target_mhz": 96.0,
+          "frequency_mhz": 96.0
+        },
+        "rPLL/CLKOUTD.default_gen_clk": {
+          "period_ns": 20.833,
+          "target_mhz": 48.0,
+          "frequency_mhz": 48.0
+        },
+        "rPLL/CLKOUTD3.default_gen_clk": {
+          "period_ns": 31.25,
+          "target_mhz": 32.0,
+          "frequency_mhz": 32.0
+        }
+      }
+    },
+    "evidence": {
+      "pnr_resource_report": "build/ddr3/diagnosis/dll-off-read-sweep/gateware/impl/pnr/project.rpt.txt",
+      "timing_report": "build/ddr3/diagnosis/dll-off-read-sweep/gateware/impl/pnr/project.tr",
+      "synthesis_resource_report": "build/ddr3/diagnosis/dll-off-read-sweep/gateware/impl/gwsynthesis/project_syn_resource.html"
+    }
+  },
+  "csr": {
+    "csr_bases": {
+      "buttons": 4026531840,
+      "ctrl": 4026533888,
+      "ddr_debug": 4026535936,
+      "ddr_sweep": 4026537984,
+      "ddrphy": 4026540032,
+      "identifier_mem": 4026542080,
+      "leds": 4026544128,
+      "sdram": 4026546176,
+      "timer0": 4026548224,
+      "uart": 4026550272
+    },
+    "csr_registers": {
+      "buttons_in": {
+        "addr": 4026531840,
+        "size": 1,
+        "type": "ro"
+      },
+      "ctrl_reset": {
+        "addr": 4026533888,
+        "size": 1,
+        "type": "rw"
+      },
+      "ctrl_scratch": {
+        "addr": 4026533892,
+        "size": 1,
+        "type": "rw"
+      },
+      "ctrl_bus_errors": {
+        "addr": 4026533896,
+        "size": 1,
+        "type": "ro"
+      },
+      "ddr_debug_clock": {
+        "addr": 4026535936,
+        "size": 1,
+        "type": "ro"
+      },
+      "ddr_debug_lanes": {
+        "addr": 4026535940,
+        "size": 1,
+        "type": "ro"
+      },
+      "ddr_debug_valid": {
+        "addr": 4026535944,
+        "size": 1,
+        "type": "ro"
+      },
+      "ddr_sweep_slots": {
+        "addr": 4026537984,
+        "size": 1,
+        "type": "rw"
+      },
+      "ddr_sweep_rclksel": {
+        "addr": 4026537988,
+        "size": 1,
+        "type": "rw"
+      },
+      "ddr_sweep_latency": {
+        "addr": 4026537992,
+        "size": 1,
+        "type": "rw"
+      },
+      "ddr_sweep_clear": {
+        "addr": 4026537996,
+        "size": 1,
+        "type": "rw"
+      },
+      "ddr_sweep_valid": {
+        "addr": 4026538000,
+        "size": 1,
+        "type": "ro"
+      },
+      "ddr_sweep_burst": {
+        "addr": 4026538004,
+        "size": 1,
+        "type": "ro"
+      },
+      "ddr_sweep_pointers": {
+        "addr": 4026538008,
+        "size": 1,
+        "type": "ro"
+      },
+      "ddrphy_dly_sel": {
+        "addr": 4026540032,
+        "size": 1,
+        "type": "rw"
+      },
+      "ddrphy_rdly_dq_rst": {
+        "addr": 4026540036,
+        "size": 1,
+        "type": "rw"
+      },
+      "ddrphy_rdly_dq_inc": {
+        "addr": 4026540040,
+        "size": 1,
+        "type": "rw"
+      },
+      "ddrphy_rdly_dq_dir": {
+        "addr": 4026540044,
+        "size": 1,
+        "type": "rw"
+      },
+      "ddrphy_rdly_dq_bitslip_rst": {
+        "addr": 4026540048,
+        "size": 1,
+        "type": "rw"
+      },
+      "ddrphy_rdly_dq_bitslip": {
+        "addr": 4026540052,
+        "size": 1,
+        "type": "rw"
+      },
+      "ddrphy_burstdet_clr": {
+        "addr": 4026540056,
+        "size": 1,
+        "type": "rw"
+      },
+      "ddrphy_burstdet_seen": {
+        "addr": 4026540060,
+        "size": 1,
+        "type": "ro"
+      },
+      "leds_out": {
+        "addr": 4026544128,
+        "size": 1,
+        "type": "rw"
+      },
+      "sdram_dfii_control": {
+        "addr": 4026546176,
+        "size": 1,
+        "type": "rw"
+      },
+      "sdram_dfii_pi0_command": {
+        "addr": 4026546180,
+        "size": 1,
+        "type": "rw"
+      },
+      "sdram_dfii_pi0_command_issue": {
+        "addr": 4026546184,
+        "size": 1,
+        "type": "rw"
+      },
+      "sdram_dfii_pi0_address": {
+        "addr": 4026546188,
+        "size": 1,
+        "type": "rw"
+      },
+      "sdram_dfii_pi0_baddress": {
+        "addr": 4026546192,
+        "size": 1,
+        "type": "rw"
+      },
+      "sdram_dfii_pi0_wrdata": {
+        "addr": 4026546196,
+        "size": 2,
+        "type": "rw"
+      },
+      "sdram_dfii_pi0_rddata": {
+        "addr": 4026546204,
+        "size": 2,
+        "type": "ro"
+      },
+      "sdram_dfii_pi1_command": {
+        "addr": 4026546212,
+        "size": 1,
+        "type": "rw"
+      },
+      "sdram_dfii_pi1_command_issue": {
+        "addr": 4026546216,
+        "size": 1,
+        "type": "rw"
+      },
+      "sdram_dfii_pi1_address": {
+        "addr": 4026546220,
+        "size": 1,
+        "type": "rw"
+      },
+      "sdram_dfii_pi1_baddress": {
+        "addr": 4026546224,
+        "size": 1,
+        "type": "rw"
+      },
+      "sdram_dfii_pi1_wrdata": {
+        "addr": 4026546228,
+        "size": 2,
+        "type": "rw"
+      },
+      "sdram_dfii_pi1_rddata": {
+        "addr": 4026546236,
+        "size": 2,
+        "type": "ro"
+      },
+      "timer0_load": {
+        "addr": 4026548224,
+        "size": 1,
+        "type": "rw"
+      },
+      "timer0_reload": {
+        "addr": 4026548228,
+        "size": 1,
+        "type": "rw"
+      },
+      "timer0_en": {
+        "addr": 4026548232,
+        "size": 1,
+        "type": "rw"
+      },
+      "timer0_update_value": {
+        "addr": 4026548236,
+        "size": 1,
+        "type": "rw"
+      },
+      "timer0_value": {
+        "addr": 4026548240,
+        "size": 1,
+        "type": "ro"
+      },
+      "timer0_ev_status": {
+        "addr": 4026548244,
+        "size": 1,
+        "type": "ro"
+      },
+      "timer0_ev_pending": {
+        "addr": 4026548248,
+        "size": 1,
+        "type": "rw"
+      },
+      "timer0_ev_enable": {
+        "addr": 4026548252,
+        "size": 1,
+        "type": "rw"
+      },
+      "timer0_uptime_latch": {
+        "addr": 4026548256,
+        "size": 1,
+        "type": "rw"
+      },
+      "timer0_uptime_cycles": {
+        "addr": 4026548260,
+        "size": 2,
+        "type": "ro"
+      },
+      "uart_rxtx": {
+        "addr": 4026550272,
+        "size": 1,
+        "type": "rw"
+      },
+      "uart_txfull": {
+        "addr": 4026550276,
+        "size": 1,
+        "type": "ro"
+      },
+      "uart_rxempty": {
+        "addr": 4026550280,
+        "size": 1,
+        "type": "ro"
+      },
+      "uart_ev_status": {
+        "addr": 4026550284,
+        "size": 1,
+        "type": "ro"
+      },
+      "uart_ev_pending": {
+        "addr": 4026550288,
+        "size": 1,
+        "type": "rw"
+      },
+      "uart_ev_enable": {
+        "addr": 4026550292,
+        "size": 1,
+        "type": "rw"
+      },
+      "uart_txempty": {
+        "addr": 4026550296,
+        "size": 1,
+        "type": "ro"
+      },
+      "uart_rxfull": {
+        "addr": 4026550300,
+        "size": 1,
+        "type": "ro"
+      }
+    },
+    "constants": {
+      "config_platform_name": "sipeed_tang_primer_20k",
+      "config_clock_frequency": 48000000,
+      "config_cpu_has_interrupt": null,
+      "config_cpu_reset_addr": 0,
+      "config_cpu_type_vexriscv": null,
+      "config_cpu_variant_minimal": null,
+      "config_cpu_family": "riscv",
+      "config_cpu_name": "vexriscv",
+      "config_cpu_human_name": "VexRiscv_Min",
+      "config_cpu_nop": "nop",
+      "config_bios_no_build_time": null,
+      "config_identifier": "LiteX SoC on Tang Primer 20K",
+      "config_l2_size": 8192,
+      "project_ddr_bytes": 268435456,
+      "project_ddr_uncached_base": 3221225472,
+      "project_ddr_diagnostic_base": 536870912,
+      "project_ddr_l2_bytes": 8192,
+      "project_profile": "minimal",
+      "project_memory_mode": "ddr3",
+      "project_gpio_led_count": 6,
+      "project_gpio_button_count": 4,
+      "sdram_read_capture_diagnostic": 1,
+      "memtest_data_debug": 1,
+      "memtest_debug_max_errors": 16,
+      "config_csr_data_width": 32,
+      "config_csr_alignment": 32,
+      "config_csr_ordering_big": null,
+      "config_bus_standard": "wishbone",
+      "config_bus_data_width": 32,
+      "config_bus_address_width": 32,
+      "config_bus_bursting": 0,
+      "config_cpu_interrupts": 2,
+      "timer0_interrupt": 1,
+      "uart_interrupt": 0
+    },
+    "memories": {
+      "rom": {
+        "base": 0,
+        "size": 32768,
+        "type": "cached"
+      },
+      "sram": {
+        "base": 268435456,
+        "size": 8192,
+        "type": "cached"
+      },
+      "main_ram": {
+        "base": 1073741824,
+        "size": 268435456,
+        "type": "cached"
+      },
+      "ddr_diagnostic_ram": {
+        "base": 536870912,
+        "size": 16384,
+        "type": "cached"
+      },
+      "ddr_uncached": {
+        "base": 3221225472,
+        "size": 268435456,
+        "type": "io"
+      },
+      "csr": {
+        "base": 4026531840,
+        "size": 65536,
+        "type": "io"
+      }
+    },
+    "cores": {
+      "buttons": "GPIOIn",
+      "ctrl": "SoCController",
+      "ddr_debug": "Status",
+      "ddr_sweep": "Controls",
+      "ddrphy": "GW2DDRPHY",
+      "leds": "GPIOOut",
+      "sdram": "LiteDRAMCore",
+      "timer0": "Timer",
+      "uart": "UART"
+    }
+  },
+  "clock_bits": {
+    "delay": [
+      0,
+      7
+    ],
+    "dll_lock": 8,
+    "pll_lock": 9,
+    "stop": 10,
+    "reset": 11,
+    "pause": 12
+  },
+  "lane_bits": "Each pair: RFLAG bit0 WFLAG bit1; lane0 bits0:1 lane1 bits2:3",
+  "script_sha256": "ee96aeb9f59cff4dd37476d9d4741161840c66ca8c3309ce7a257a938d583bf6",
+  "phy_sha256": "7f7a45f162c25f0870a379be67a9654304d7a1e073ae0bcdcc7ec595840fc020",
+  "generated_header_sha256": "4e6440ae694345d8649012ad9aa63b12b5f67e5e8c402aad55a98e29ebfdbc93",
+  "bios_sha256": "382d410c036d66855b8e6f45e03a8f7ba1c09e88110ddfdb544d151ffde29b57",
+  "receive_sweep": {
+    "read_pattern": "0x00ff00",
+    "rclksel": [
+      0,
+      0
+    ],
+    "read_latency": 12,
+    "read_slots": 6,
+    "latency_choices": [
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "dll_off": true,
+    "cl": 6,
+    "cwl": 6,
+    "sys_clk_hz": 48000000,
+    "ddr_ck_hz": 96000000,
+    "firmware_all_lanes": true,
+    "controller_read_latency": 12
+  },
+  "sweep_source_sha256": "dd4a15793efdb3e6ca857cdeb078347b919b0aeada7726c0640565542b544bee",
+  "diagnostic_patch_sha256": "282232cc7d0c16f6fef14f9216cfb3e9803dad4eb265d25f3cfecf0c71716332"
+}

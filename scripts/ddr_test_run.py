@@ -142,6 +142,16 @@ def validate_training(lines, expected_lanes, phy_config):
     }
 
 
+def validate_bios_memtest(lines):
+    """A training or firmware pass cannot override a failed startup memtest."""
+    records = [line.strip() for line in lines if line.strip() in ("Memtest OK", "Memtest KO")]
+    return {
+        "status": "passed" if records == ["Memtest OK"] else "failed",
+        "records": records,
+        "errors": [] if records == ["Memtest OK"] else ["BIOS memory test failed or its result is missing/ambiguous"],
+    }
+
+
 def parse_phase_records(lines):
     starts = {}
     ends = {}
@@ -294,7 +304,7 @@ def read_serial_training(lines, expected_lanes, phy_config):
 
 def run_ddr_trial(profile, mode, attempt, image, build, ddr_meta, port,
                   run_id, evidence_dir, handshake_timeout, trial_timeout,
-                  expected_lanes, phy_config):
+                  expected_lanes, phy_config, *, diagnostic_only=False):
     from litex.tools import litex_term
 
     label = f"{mode}-{attempt:02d}"
@@ -302,10 +312,11 @@ def run_ddr_trial(profile, mode, attempt, image, build, ddr_meta, port,
     text_path = evidence_dir / f"{label}.uart.log"
     tx_path = evidence_dir / f"{label}.uart.tx.bin"
     raw_path.parent.mkdir(parents=True, exist_ok=True)
-    raw_file = raw_path.open("wb")
-    tx_file = tx_path.open("wb")
+    raw_file = raw_path.open("wb", buffering=0)
+    tx_file = tx_path.open("wb", buffering=0)
     record = {
         "mode": mode,
+        "diagnostic_only": diagnostic_only,
         "attempt": attempt,
         "status": "in_progress",
         "programming_status": "not_attempted",
@@ -374,10 +385,17 @@ def run_ddr_trial(profile, mode, attempt, image, build, ddr_meta, port,
             training = read_serial_training(current_lines, expected_lanes, phy_config)
             if training["status"] != "passed":
                 raise RuntimeError("DDR training did not pass before BIOS console; serialboot recovery was refused")
+            record["training"] = training
+            record["bios_memtest"] = validate_bios_memtest(current_lines)
             if serial_owner.start_marker_started.is_set() or serial_owner.start_seen.is_set():
                 raise RuntimeError("DDR BIOS recovery refused after diagnostic firmware startup began")
             if not serial_owner.sfl_handler_idle.wait(timeout=30.0):
                 raise TimeoutError("LiteXTerm SFL handler did not finish before DDR BIOS recovery")
+            if serial_owner.start_marker_started.is_set() or serial_owner.start_seen.is_set():
+                raise RuntimeError("DDR BIOS recovery refused after diagnostic firmware startup began")
+            if record["bios_memtest"]["status"] != "passed" and not diagnostic_only:
+                record["bios_console_confirmed"] = True
+                raise RuntimeError("BIOS memory test failed; acceptance firmware upload was refused")
             previous_error = serial_owner.error
             serial_owner.stop()
             serial_owner = None
@@ -399,9 +417,15 @@ def run_ddr_trial(profile, mode, attempt, image, build, ddr_meta, port,
 
         if not serial_owner.wait_for(serial_owner.end_seen, trial_timeout, "DDR_TEST_END"):
             raise TimeoutError(f"no DDR diagnostic completion marker within {trial_timeout} seconds")
-        lines = list(serial_owner.lines)
+        # BIOS recovery replaces the UART reader; validate the complete raw
+        # capture, including the original boot/training records, after the end.
+        raw_file.flush()
+        lines = ANSI_ESCAPE.sub(b"", raw_path.read_bytes()).decode("utf-8", errors="replace").splitlines()
         training = read_serial_training(lines, expected_lanes, phy_config)
         record["training"] = training
+        record["bios_memtest"] = validate_bios_memtest(lines)
+        if record["bios_memtest"]["status"] != "passed" and not diagnostic_only:
+            raise RuntimeError("BIOS memory test failed or its result was missing")
         if training["status"] != "passed":
             raise RuntimeError("DDR BIOS training records failed or did not cover every read lane")
         if serial_owner.application_failure is not None:
@@ -416,7 +440,7 @@ def run_ddr_trial(profile, mode, attempt, image, build, ddr_meta, port,
             record["smoke_test"] = split_words(smoke_lines[0])
         else:
             record["result"] = validate_full_capture(lines, profile, ddr_meta["stress_seconds"])
-        record["status"] = "passed"
+        record["status"] = "diagnostic_complete" if diagnostic_only else "passed"
     except KeyboardInterrupt:
         record["status"] = "interrupted"
         record["error"] = "KeyboardInterrupt"
@@ -455,6 +479,9 @@ def run_ddr_trial(profile, mode, attempt, image, build, ddr_meta, port,
             "transmitted_uart_sha256": serial_runner.sha256(tx_path),
             "transmitted_uart_bytes": tx_path.stat().st_size,
             "decode_errors_present": _has_decode_errors(raw_bytes),
+            "bios_training_status_seen": any(
+                line.startswith("SDRAM_TRAINING_RESULT ") for line in decoded.splitlines()
+            ),
             "training_status_from_bios": any(
                 line.startswith("SDRAM_TRAINING_RESULT status=passed")
                 for line in decoded.splitlines()
@@ -564,7 +591,8 @@ def run_profile(profile, port, run_id, training_runs, stress_seconds,
             session_path.write_text(json.dumps(session, indent=2) + "\n")
             if record["status"] != "passed":
                 session["batch_continuation_safe"] = (
-                    record.get("application_end_seen") is True
+                    (record.get("application_end_seen") is True
+                     or record.get("bios_console_confirmed") is True)
                     and record.get("programming_status") == "completed"
                 )
                 if not session["batch_continuation_safe"]:

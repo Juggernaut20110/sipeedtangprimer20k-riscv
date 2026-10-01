@@ -1,4 +1,5 @@
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -64,13 +65,54 @@ class Ddr3ParserTests(unittest.TestCase):
         ]
         checked = ddr_test_run.validate_training(lines, 1, {
             "SDRAM_PHY_BITSLIPS": 4, "SDRAM_PHY_DELAYS": 256,
+            "SDRAM_PHY_MODULES": 1, "SDRAM_PHY_DQ_DQS_RATIO": 8,
         })
         self.assertEqual(checked["status"], "passed")
         failed = list(lines)
         failed[-1] = "SDRAM_TRAINING_RESULT status=failed"
         self.assertEqual(ddr_test_run.validate_training(failed, 1, {
             "SDRAM_PHY_BITSLIPS": 4, "SDRAM_PHY_DELAYS": 256,
+            "SDRAM_PHY_MODULES": 1, "SDRAM_PHY_DQ_DQS_RATIO": 8,
         })["status"], "failed")
+
+    def test_generated_header_selects_byte_or_dq_training(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            header = root / "software/include/generated/sdram_phy.h"
+            header.parent.mkdir(parents=True)
+            contents = "\n".join((
+                "#define SDRAM_PHY_MODULES 2", "#define SDRAM_PHY_DQ_DQS_RATIO 8",
+                "#define SDRAM_PHY_DELAYS 256", "#define SDRAM_PHY_BITSLIPS 4",
+                "#define SDRAM_PHY_READ_LEVELING_CAPABLE",
+            )) + "\n"
+            header.write_text(contents)
+            self.assertEqual(ddr_test_run.expected_read_lanes(root)[0], 2)
+            header.write_text(contents + "#define SDRAM_DELAY_PER_DQ\n")
+            self.assertEqual(ddr_test_run.expected_read_lanes(root)[0], 16)
+
+    def test_training_rejects_duplicate_missing_and_unexpected_lanes(self):
+        config = {"SDRAM_PHY_MODULES": 2, "SDRAM_PHY_DQ_DQS_RATIO": 8,
+                  "SDRAM_PHY_BITSLIPS": 4, "SDRAM_PHY_DELAYS": 256}
+        lane = "SDRAM_READ_LEVELING_LANE module={} dq=0 bitslip=2 status=passed window_start=20 window_length=12 delay_center=26 delay_half_window=6"
+        lines = ["SDRAM_TRAINING_START phy=GW2DDRPHY", lane.format(0), lane.format(1),
+                 "SDRAM_TRAINING_RESULT status=passed"]
+        self.assertEqual(ddr_test_run.validate_training(lines, 2, config)["status"], "passed")
+        for replacement in (lane.format(0), lane.format(2), lane.format(1).replace("dq=0", "dq=1")):
+            invalid = list(lines)
+            invalid[2] = replacement
+            self.assertEqual(ddr_test_run.validate_training(invalid, 2, config)["status"], "failed")
+        self.assertEqual(ddr_test_run.validate_training(lines[:2] + lines[3:], 2, config)["status"], "failed")
+
+    def test_failed_lane_embedded_after_bios_best_prefix_is_preserved(self):
+        config = {"SDRAM_PHY_MODULES": 2, "SDRAM_PHY_DQ_DQS_RATIO": 8,
+                  "SDRAM_PHY_BITSLIPS": 4, "SDRAM_PHY_DELAYS": 256}
+        lines = ["SDRAM_TRAINING_START phy=GW2DDRPHY",
+                 "  best: m0, b00 SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=0 status=failed window_start=-1 window_length=0",
+                 "SDRAM_TRAINING_RESULT status=failed phase=leveling"]
+        checked = ddr_test_run.validate_training(lines, 2, config)
+        self.assertEqual(checked["status"], "failed")
+        self.assertEqual(checked["lane_count"], 1)
+        self.assertEqual(checked["lanes"][0]["window_length"], 0)
 
     def test_full_capture_requires_all_ranges_and_requested_duration(self):
         result = ddr_test_run.validate_full_capture(full_capture(1), "minimal", 1)

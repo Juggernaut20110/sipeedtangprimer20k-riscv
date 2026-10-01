@@ -1,0 +1,8 @@
+{
+  "experiment": "restore-standard",
+  "memory": "onchip",
+  "console_confirmed": true,
+  "programmer_returncode": 0,
+  "uart_sha256": "ee3028ad430a8a5378a483ac3c0a535d23928f5a622395ce2aaf6b4ad8101330",
+  "bitstream_sha256": "6407ff0c7f970121d9abb6b54c701e36c3903e2a09da3cd24628cfee35f05200"
+}

@@ -63,19 +63,22 @@ def expected_read_lanes(memory_dir):
         definitions[name] = int(match.group(1))
     if "#define SDRAM_PHY_READ_LEVELING_CAPABLE" not in text:
         raise RuntimeError("generated GW2DDRPHY does not advertise read leveling")
-    return definitions["SDRAM_PHY_MODULES"] * definitions["SDRAM_PHY_DQ_DQS_RATIO"], definitions
+    definitions["SDRAM_DELAY_PER_DQ"] = bool(re.search(r"^#define\s+SDRAM_DELAY_PER_DQ(?:\s|$)", text, re.M))
+    dq_count = definitions["SDRAM_PHY_DQ_DQS_RATIO"] if definitions["SDRAM_DELAY_PER_DQ"] else 1
+    return definitions["SDRAM_PHY_MODULES"] * dq_count, definitions
 
 
 def validate_training(lines, expected_lanes, phy_config):
     starts = [line for line in lines if line.startswith("SDRAM_TRAINING_START ")]
     results = [line for line in lines if line.startswith("SDRAM_TRAINING_RESULT ")]
-    lane_lines = [line for line in lines if line.startswith("SDRAM_READ_LEVELING_LANE ")]
+    lane_lines = [line[line.index("SDRAM_READ_LEVELING_LANE "):]
+                  for line in lines if "SDRAM_READ_LEVELING_LANE " in line]
     lanes = []
     lane_errors = []
     lane_pattern = re.compile(
         r"SDRAM_READ_LEVELING_LANE module=(\d+) dq=(\d+) bitslip=(\d+) "
-        r"status=(\w+) window_start=(-?\d+) window_length=(\d+) "
-        r"delay_center=(-?\d+) delay_half_window=(-?\d+)"
+        r"status=(\w+) window_start=(-?\d+) window_length=(\d+)"
+        r"(?: delay_center=(-?\d+) delay_half_window=(-?\d+))?"
     )
     for line in lane_lines:
         match = lane_pattern.fullmatch(line)
@@ -86,20 +89,31 @@ def validate_training(lines, expected_lanes, phy_config):
         record = {
             "module": int(module), "dq_line": int(dq), "bitslip": int(bitslip),
             "status": status, "window_start": int(start), "window_length": int(length),
-            "delay_center": int(center), "delay_half_window": int(half_window),
+            "delay_center": int(center) if center is not None else -1,
+            "delay_half_window": int(half_window) if half_window is not None else -1,
             "raw": line,
         }
         lanes.append(record)
         if status != "passed":
             lane_errors.append(f"leveling lane failed: {line}")
-        if not 0 <= record["bitslip"] < phy_config["SDRAM_PHY_BITSLIPS"]:
+        if not 0 <= record["bitslip"] < phy_config.get("SDRAM_PHY_BITSLIPS", 0):
             lane_errors.append(f"lane has an invalid bitslip selection: {line}")
         if (record["window_length"] < 2
                 or record["window_start"] < 0
-                or record["window_start"] >= phy_config["SDRAM_PHY_DELAYS"]
+                or record["window_start"] >= phy_config.get("SDRAM_PHY_DELAYS", 0)
                 or record["delay_center"] < 0
-                or record["delay_center"] >= phy_config["SDRAM_PHY_DELAYS"]):
+                or record["delay_center"] >= phy_config.get("SDRAM_PHY_DELAYS", 0)):
             lane_errors.append(f"lane has an invalid delay window/center: {line}")
+    dq_count = phy_config.get("SDRAM_PHY_DQ_DQS_RATIO", 0) if phy_config.get("SDRAM_DELAY_PER_DQ") else 1
+    expected_ids = {(module, dq) for module in range(phy_config.get("SDRAM_PHY_MODULES", 0))
+                    for dq in range(dq_count)}
+    if not expected_ids or len(expected_ids) != expected_lanes:
+        lane_errors.append("expected lane count does not match the generated PHY configuration")
+    lane_ids = [(lane["module"], lane["dq_line"]) for lane in lanes]
+    if len(set(lane_ids)) != len(lane_ids):
+        lane_errors.append("duplicate leveling lane identity")
+    if set(lane_ids) != expected_ids:
+        lane_errors.append(f"leveling lane identities mismatch; missing={sorted(expected_ids - set(lane_ids))}, unexpected={sorted(set(lane_ids) - expected_ids)}")
     result_fields = [split_words(line) for line in results]
     passed = (
         len(starts) == 1

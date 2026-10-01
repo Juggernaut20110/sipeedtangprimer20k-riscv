@@ -141,6 +141,7 @@ def validate_session(path):
         "trials": checked_trials,
         "training_runs_passed": sum(item["status"] == "passed" for item in training_trials),
         "training_runs_requested": requested,
+        "expected_read_lanes": expected_lanes,
         "full_result": full_trials[0].get("full_result") if full_trials else None,
     }
 
@@ -421,7 +422,7 @@ Run `make ddr-test-build PROFILE=ALL`, then `make ddr-test-run PROFILE=ALL PORT=
             f"### `{profile}`\n\n"
             f"- Session status: **{entry['status']}**; training/smoke runs passed "
             f"{entry.get('training_runs_passed', 0)}/{entry.get('training_runs_requested', 0)}.\n"
-            f"- DDR configuration: {DDR_SIZE_BYTES} bytes; 48 MHz system, 96 MHz DDR CK; 8 KiB L2; {session.get('expected_read_lanes')} trained read lanes per configuration.\n"
+            f"- DDR configuration: {DDR_SIZE_BYTES} bytes; 48 MHz system, 96 MHz DDR CK; 8 KiB L2; {entry.get('expected_read_lanes')} trained read lanes per configuration (revalidated from generated PHY header).\n"
             f"- Stress: requested {session.get('requested_stress_seconds')} s; measured "
             f"{full.get('stress_seconds_actual', 'not measured')} s. Uncached alias bandwidth: "
             f"{bandwidth.get('read_bytes_per_second', 'not measured')} B/s read and "
@@ -435,6 +436,8 @@ Run `make ddr-test-build PROFILE=ALL`, then `make ddr-test-run PROFILE=ALL PORT=
     report = f"""# DDR3 training and integrity report
 
 **Latest batch status: {latest['status']}.**
+
+The hardware investigation and controlled DLL-mode experiments are recorded in [DDR3 failure diagnosis](diagnosis.md). Diagnostic experiments do not count as acceptance passes.
 
 Batch `{latest_batch}` uses the configured 256 MiB DDR3 geometry at a 48 MHz system clock and 96 MHz DDR CK. Training success is based on captured BIOS status and all lane bitslip/delay-window records. Each counted training pass required a fresh SRAM reconfiguration and an uncached diagnostic smoke test. The full test executes from the 16 KiB diagnostic RAM. DDR3 CoreMark placement, when run, keeps code/read-only data in DDR and algorithm data/BSS/stack in SRAM.
 

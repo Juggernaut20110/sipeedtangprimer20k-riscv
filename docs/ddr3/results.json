@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "report_generated_utc": "2026-10-01T01:54:36.906297+00:00",
+  "report_generated_utc": "2026-10-01T02:31:05.937287+00:00",
   "latest_batch_id": "20261001T014933.087634Z-ddr3",
   "latest_batch_status": "failed",
   "batches": [
@@ -434,19 +434,23 @@
               "attempt": 1,
               "status": "failed",
               "errors": [
+                "leveling lane failed: SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=0 status=failed window_start=-1 window_length=0",
+                "lane has an invalid delay window/center: SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=0 status=failed window_start=-1 window_length=0",
+                "leveling lane identities mismatch; missing=[(1, 0)], unexpected=[]",
                 "BIOS reported DDR3 leveling failure",
-                "recorded 0 training lanes; expected 16",
+                "recorded 1 training lanes; expected 2",
                 "diagnostic firmware start marker is missing",
                 "training capture lacks a passing DDR_TEST_SMOKE marker",
                 "training smoke capture lacks a passing DDR_TEST_END marker"
               ],
               "raw_uart_sha256": "50cb246aa508dc2c6419f954ed1ffc6167ba818f13d6096b01c6cddbcf6c18da",
-              "training_lane_count": 0,
+              "training_lane_count": 1,
               "full_result": null
             }
           ],
           "training_runs_passed": 0,
           "training_runs_requested": 1,
+          "expected_read_lanes": 2,
           "full_result": null
         }
       }

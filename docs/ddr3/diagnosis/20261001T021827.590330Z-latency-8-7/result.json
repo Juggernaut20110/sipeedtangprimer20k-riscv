@@ -1,0 +1,9 @@
+{
+  "experiment": "latency-8-7",
+  "console_confirmed": true,
+  "ddr_debug_clock": "mem_read 0xf0001000 4\n\r\n\rMemory dump:\n\r0xf0001000  7b 03 00 00                                      {...            \n\rlitex> ",
+  "ddr_debug_lanes": "mem_read 0xf0001004 4\n\r\n\rMemory dump:\n\r0xf0001004  00 00 00 00                                      ....            \n\rlitex> ",
+  "ddr_debug_valid": "mem_read 0xf0001008 4\n\r\n\rMemory dump:\n\r0xf0001008  03 00 00 00                                      ....            \n\rlitex> ",
+  "ddrphy_burstdet_seen": "mem_read 0xf000181c 4\n\r\n\rMemory dump:\n\r0xf000181c  03 00 00 00                                      ....            \n\rlitex> ",
+  "uart_sha256": "bebd9d03e8b137ee45338a438cf6397743a7eef28e5c7545faaf8012699c48a6"
+}

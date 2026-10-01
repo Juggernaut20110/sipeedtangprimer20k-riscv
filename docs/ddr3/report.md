@@ -2,6 +2,8 @@
 
 **Latest batch status: failed.**
 
+The hardware investigation and controlled DLL-mode experiments are recorded in [DDR3 failure diagnosis](diagnosis.md). Diagnostic experiments do not count as acceptance passes.
+
 Batch `20261001T014933.087634Z-ddr3` uses the configured 256 MiB DDR3 geometry at a 48 MHz system clock and 96 MHz DDR CK. Training success is based on captured BIOS status and all lane bitslip/delay-window records. Each counted training pass required a fresh SRAM reconfiguration and an uncached diagnostic smoke test. The full test executes from the 16 KiB diagnostic RAM. DDR3 CoreMark placement, when run, keeps code/read-only data in DDR and algorithm data/BSS/stack in SRAM.
 
 ## Per-profile evidence
@@ -9,7 +11,7 @@ Batch `20261001T014933.087634Z-ddr3` uses the configured 256 MiB DDR3 geometry a
 ### `minimal`
 
 - Session status: **failed**; training/smoke runs passed 0/1.
-- DDR configuration: 268435456 bytes; 48 MHz system, 96 MHz DDR CK; 8 KiB L2; 16 trained read lanes per configuration.
+- DDR configuration: 268435456 bytes; 48 MHz system, 96 MHz DDR CK; 8 KiB L2; 2 trained read lanes per configuration (revalidated from generated PHY header).
 - Stress: requested 60 s; measured not measured s. Uncached alias bandwidth: not measured B/s read and not measured B/s write, not measured-byte transfers, not measured Hz, not measured timer ticks.
 - Resources and timing: LUT 5412, ALU 664, registers 3244, BSRAM 46; operating clock 48.0 MHz, estimated Fmax 48.36 MHz, worst setup slack 0.155 ns.
 - Evidence: [training 1 UART](evidence/20261001T014933.087634Z-ddr3-minimal/training-01.uart.bin)

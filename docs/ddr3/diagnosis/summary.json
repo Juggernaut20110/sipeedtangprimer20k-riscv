@@ -1,0 +1,602 @@
+[
+  {
+    "session": "20261001T021529.730720Z-current-status",
+    "experiment": "current-status",
+    "mode_probe": false,
+    "initial_training": "failed",
+    "lanes": [
+      [
+        "0",
+        "0",
+        "0",
+        "failed",
+        "-1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "failed",
+        "-1",
+        "0"
+      ]
+    ],
+    "bios_data_errors": null,
+    "bios_data_words": null,
+    "console_confirmed": true,
+    "uart_sha256": "07ec9dd5339a841431ef7fed7150ccaa7d86e9d8f6cdac21e4afbe1d22264a4f",
+    "bitstream_sha256": "ff8d4f27945a551f2ce265c4965d26b57dd3dbfb29eb27ff6169211cab6be29d",
+    "timing": {
+      "constraint_mhz": 48.0,
+      "actual_fmax_mhz": 48.06,
+      "worst_setup_slack_ns": 0.026,
+      "worst_hold_slack_ns": 0.319,
+      "worst_recovery_slack_ns": 2.022,
+      "worst_removal_slack_ns": 1.153,
+      "setup_violated_endpoints": 0,
+      "analyzed_paths": 38718,
+      "analyzed_endpoints": 9852,
+      "no_timing_path_messages": [
+        "No timing paths to get frequency of rPLL/CLKOUTP.default_gen_clk!",
+        "No timing paths to get frequency of rPLL/CLKOUTD.default_gen_clk!",
+        "No timing paths to get frequency of rPLL/CLKOUTD3.default_gen_clk!"
+      ],
+      "generated_clocks": {
+        "ddr_ck_96mhz": {
+          "period_ns": 10.417,
+          "target_mhz": 96.0,
+          "frequency_mhz": 96.0
+        },
+        "sys2x_clk": {
+          "period_ns": 10.417,
+          "target_mhz": 96.0,
+          "frequency_mhz": 96.0
+        },
+        "sys_clk": {
+          "period_ns": 20.833,
+          "target_mhz": 48.0,
+          "frequency_mhz": 48.0
+        },
+        "rPLL/CLKOUTP.default_gen_clk": {
+          "period_ns": 10.417,
+          "target_mhz": 96.0,
+          "frequency_mhz": 96.0
+        },
+        "rPLL/CLKOUTD.default_gen_clk": {
+          "period_ns": 20.833,
+          "target_mhz": 48.0,
+          "frequency_mhz": 48.0
+        },
+        "rPLL/CLKOUTD3.default_gen_clk": {
+          "period_ns": 31.25,
+          "target_mhz": 32.0,
+          "frequency_mhz": 32.0
+        }
+      }
+    }
+  },
+  {
+    "session": "20261001T021600.689478Z-legacy-rclksel",
+    "experiment": "legacy-rclksel",
+    "mode_probe": false,
+    "initial_training": "failed",
+    "lanes": [
+      [
+        "0",
+        "0",
+        "0",
+        "failed",
+        "-1",
+        "0"
+      ]
+    ],
+    "bios_data_errors": null,
+    "bios_data_words": null,
+    "console_confirmed": true,
+    "uart_sha256": "a04ac0922cfaaf57a2e63f48eda68181b5f414ec440defd90be32ca4d7565a91",
+    "bitstream_sha256": "1245456773f5f947e60d50e281010bdb32d737008cddd535bf94987ebc2284af",
+    "timing": {
+      "constraint_mhz": 48.0,
+      "actual_fmax_mhz": 48.148,
+      "worst_setup_slack_ns": 0.04,
+      "worst_hold_slack_ns": 0.324,
+      "worst_recovery_slack_ns": 1.917,
+      "worst_removal_slack_ns": 1.04,
+      "setup_violated_endpoints": 0,
+      "analyzed_paths": 38868,
+      "analyzed_endpoints": 9885,
+      "no_timing_path_messages": [
+        "No timing paths to get frequency of rPLL/CLKOUTP.default_gen_clk!",
+        "No timing paths to get frequency of rPLL/CLKOUTD.default_gen_clk!",
+        "No timing paths to get frequency of rPLL/CLKOUTD3.default_gen_clk!"
+      ],
+      "generated_clocks": {
+        "ddr_ck_96mhz": {
+          "period_ns": 10.417,
+          "target_mhz": 96.0,
+          "frequency_mhz": 96.0
+        },
+        "sys2x_clk": {
+          "period_ns": 10.417,
+          "target_mhz": 96.0,
+          "frequency_mhz": 96.0
+        },
+        "sys_clk": {
+          "period_ns": 20.833,
+          "target_mhz": 48.0,
+          "frequency_mhz": 48.0
+        },
+        "rPLL/CLKOUTP.default_gen_clk": {
+          "period_ns": 10.417,
+          "target_mhz": 96.0,
+          "frequency_mhz": 96.0
+        },
+        "rPLL/CLKOUTD.default_gen_clk": {
+          "period_ns": 20.833,
+          "target_mhz": 48.0,
+          "frequency_mhz": 48.0
+        },
+        "rPLL/CLKOUTD3.default_gen_clk": {
+          "period_ns": 31.25,
+          "target_mhz": 32.0,
+          "frequency_mhz": 32.0
+        }
+      }
+    }
+  },
+  {
+    "session": "20261001T021735.112151Z-legacy-reset",
+    "experiment": "legacy-reset",
+    "mode_probe": false,
+    "initial_training": "failed",
+    "lanes": [
+      [
+        "0",
+        "0",
+        "0",
+        "failed",
+        "-1",
+        "0"
+      ]
+    ],
+    "bios_data_errors": null,
+    "bios_data_words": null,
+    "console_confirmed": true,
+    "uart_sha256": "2e7088fc25899b56843e60d319193c6b7475e17caff593761d8623fb07b1f208",
+    "bitstream_sha256": "0ace8b4ea763e572e2b985283b827634bc9b6c8aace6b1562b7858cb95d7b738",
+    "timing": {
+      "constraint_mhz": 48.0,
+      "actual_fmax_mhz": 48.504,
+      "worst_setup_slack_ns": 0.216,
+      "worst_hold_slack_ns": 0.318,
+      "worst_recovery_slack_ns": 2.845,
+      "worst_removal_slack_ns": 1.07,
+      "setup_violated_endpoints": 0,
+      "analyzed_paths": 38844,
+      "analyzed_endpoints": 9852,
+      "no_timing_path_messages": [
+        "No timing paths to get frequency of rPLL/CLKOUTP.default_gen_clk!",
+        "No timing paths to get frequency of rPLL/CLKOUTD.default_gen_clk!",
+        "No timing paths to get frequency of rPLL/CLKOUTD3.default_gen_clk!"
+      ],
+      "generated_clocks": {
+        "ddr_ck_96mhz": {
+          "period_ns": 10.417,
+          "target_mhz": 96.0,
+          "frequency_mhz": 96.0
+        },
+        "sys2x_clk": {
+          "period_ns": 10.417,
+          "target_mhz": 96.0,
+          "frequency_mhz": 96.0
+        },
+        "sys_clk": {
+          "period_ns": 20.833,
+          "target_mhz": 48.0,
+          "frequency_mhz": 48.0
+        },
+        "rPLL/CLKOUTP.default_gen_clk": {
+          "period_ns": 10.417,
+          "target_mhz": 96.0,
+          "frequency_mhz": 96.0
+        },
+        "rPLL/CLKOUTD.default_gen_clk": {
+          "period_ns": 20.833,
+          "target_mhz": 48.0,
+          "frequency_mhz": 48.0
+        },
+        "rPLL/CLKOUTD3.default_gen_clk": {
+          "period_ns": 31.25,
+          "target_mhz": 32.0,
+          "frequency_mhz": 32.0
+        }
+      }
+    }
+  },
+  {
+    "session": "20261001T021827.590330Z-latency-8-7",
+    "experiment": "latency-8-7",
+    "mode_probe": false,
+    "initial_training": "passed",
+    "lanes": [
+      [
+        "0",
+        "0",
+        "2",
+        "passed",
+        "109",
+        "57"
+      ],
+      [
+        "1",
+        "0",
+        "2",
+        "passed",
+        "108",
+        "56"
+      ]
+    ],
+    "bios_data_errors": 2,
+    "bios_data_words": 524288,
+    "console_confirmed": true,
+    "uart_sha256": "bebd9d03e8b137ee45338a438cf6397743a7eef28e5c7545faaf8012699c48a6",
+    "bitstream_sha256": "562d96adc40218e81c7aff71b9afc799f8c0a7fa603c560af9bf2679e3a88144",
+    "timing": {
+      "constraint_mhz": 48.0,
+      "actual_fmax_mhz": 48.747,
+      "worst_setup_slack_ns": 0.319,
+      "worst_hold_slack_ns": 0.316,
+      "worst_recovery_slack_ns": 2.022,
+      "worst_removal_slack_ns": 1.583,
+      "setup_violated_endpoints": 0,
+      "analyzed_paths": 38850,
+      "analyzed_endpoints": 9885,
+      "no_timing_path_messages": [
+        "No timing paths to get frequency of rPLL/CLKOUTP.default_gen_clk!",
+        "No timing paths to get frequency of rPLL/CLKOUTD.default_gen_clk!",
+        "No timing paths to get frequency of rPLL/CLKOUTD3.default_gen_clk!"
+      ],
+      "generated_clocks": {
+        "ddr_ck_96mhz": {
+          "period_ns": 10.417,
+          "target_mhz": 96.0,
+          "frequency_mhz": 96.0
+        },
+        "sys2x_clk": {
+          "period_ns": 10.417,
+          "target_mhz": 96.0,
+          "frequency_mhz": 96.0
+        },
+        "sys_clk": {
+          "period_ns": 20.833,
+          "target_mhz": 48.0,
+          "frequency_mhz": 48.0
+        },
+        "rPLL/CLKOUTP.default_gen_clk": {
+          "period_ns": 10.417,
+          "target_mhz": 96.0,
+          "frequency_mhz": 96.0
+        },
+        "rPLL/CLKOUTD.default_gen_clk": {
+          "period_ns": 20.833,
+          "target_mhz": 48.0,
+          "frequency_mhz": 48.0
+        },
+        "rPLL/CLKOUTD3.default_gen_clk": {
+          "period_ns": 31.25,
+          "target_mhz": 32.0,
+          "frequency_mhz": 32.0
+        }
+      }
+    }
+  },
+  {
+    "session": "20261001T021904.816554Z-dll-on-6-6",
+    "experiment": "dll-on-6-6",
+    "mode_probe": false,
+    "initial_training": "passed",
+    "lanes": [
+      [
+        "0",
+        "0",
+        "2",
+        "passed",
+        "110",
+        "54"
+      ],
+      [
+        "1",
+        "0",
+        "2",
+        "passed",
+        "110",
+        "54"
+      ]
+    ],
+    "bios_data_errors": 1,
+    "bios_data_words": 524288,
+    "console_confirmed": true,
+    "uart_sha256": "3e9c26d3df6da36c6dcd9f193bc636a8b5f8a4120afc8fbad7630f12764aeec1",
+    "bitstream_sha256": "04d8952a96fa65915dd6d68ece1b826f731a5223fe97cdd2e04e2c701dda1def",
+    "timing": {
+      "constraint_mhz": 48.0,
+      "actual_fmax_mhz": 48.06,
+      "worst_setup_slack_ns": 0.026,
+      "worst_hold_slack_ns": 0.319,
+      "worst_recovery_slack_ns": 2.022,
+      "worst_removal_slack_ns": 1.153,
+      "setup_violated_endpoints": 0,
+      "analyzed_paths": 38718,
+      "analyzed_endpoints": 9852,
+      "no_timing_path_messages": [
+        "No timing paths to get frequency of rPLL/CLKOUTP.default_gen_clk!",
+        "No timing paths to get frequency of rPLL/CLKOUTD.default_gen_clk!",
+        "No timing paths to get frequency of rPLL/CLKOUTD3.default_gen_clk!"
+      ],
+      "generated_clocks": {
+        "ddr_ck_96mhz": {
+          "period_ns": 10.417,
+          "target_mhz": 96.0,
+          "frequency_mhz": 96.0
+        },
+        "sys2x_clk": {
+          "period_ns": 10.417,
+          "target_mhz": 96.0,
+          "frequency_mhz": 96.0
+        },
+        "sys_clk": {
+          "period_ns": 20.833,
+          "target_mhz": 48.0,
+          "frequency_mhz": 48.0
+        },
+        "rPLL/CLKOUTP.default_gen_clk": {
+          "period_ns": 10.417,
+          "target_mhz": 96.0,
+          "frequency_mhz": 96.0
+        },
+        "rPLL/CLKOUTD.default_gen_clk": {
+          "period_ns": 20.833,
+          "target_mhz": 48.0,
+          "frequency_mhz": 48.0
+        },
+        "rPLL/CLKOUTD3.default_gen_clk": {
+          "period_ns": 31.25,
+          "target_mhz": 32.0,
+          "frequency_mhz": 32.0
+        }
+      }
+    }
+  },
+  {
+    "session": "20261001T022104.806077Z-legacy-both",
+    "experiment": "legacy-both",
+    "mode_probe": false,
+    "initial_training": "failed",
+    "lanes": [
+      [
+        "0",
+        "0",
+        "0",
+        "failed",
+        "-1",
+        "0"
+      ]
+    ],
+    "bios_data_errors": null,
+    "bios_data_words": null,
+    "console_confirmed": true,
+    "uart_sha256": "344df67a787052157e3e1701b6473e542d84b84e621a496b6e4f85d229eab74e",
+    "bitstream_sha256": "e820b033535ff3db6a524751a1e55bca80f55fdf160a0730bb42203f9cd4a046",
+    "timing": {
+      "constraint_mhz": 48.0,
+      "actual_fmax_mhz": 48.218,
+      "worst_setup_slack_ns": 0.094,
+      "worst_hold_slack_ns": 0.318,
+      "worst_recovery_slack_ns": 2.501,
+      "worst_removal_slack_ns": 1.043,
+      "setup_violated_endpoints": 0,
+      "analyzed_paths": 38994,
+      "analyzed_endpoints": 9885,
+      "no_timing_path_messages": [
+        "No timing paths to get frequency of rPLL/CLKOUTP.default_gen_clk!",
+        "No timing paths to get frequency of rPLL/CLKOUTD.default_gen_clk!",
+        "No timing paths to get frequency of rPLL/CLKOUTD3.default_gen_clk!"
+      ],
+      "generated_clocks": {
+        "ddr_ck_96mhz": {
+          "period_ns": 10.417,
+          "target_mhz": 96.0,
+          "frequency_mhz": 96.0
+        },
+        "sys2x_clk": {
+          "period_ns": 10.417,
+          "target_mhz": 96.0,
+          "frequency_mhz": 96.0
+        },
+        "sys_clk": {
+          "period_ns": 20.833,
+          "target_mhz": 48.0,
+          "frequency_mhz": 48.0
+        },
+        "rPLL/CLKOUTP.default_gen_clk": {
+          "period_ns": 10.417,
+          "target_mhz": 96.0,
+          "frequency_mhz": 96.0
+        },
+        "rPLL/CLKOUTD.default_gen_clk": {
+          "period_ns": 20.833,
+          "target_mhz": 48.0,
+          "frequency_mhz": 48.0
+        },
+        "rPLL/CLKOUTD3.default_gen_clk": {
+          "period_ns": 31.25,
+          "target_mhz": 32.0,
+          "frequency_mhz": 32.0
+        }
+      }
+    }
+  },
+  {
+    "session": "20261001T022123.701824Z-current-status-mr1-toggle",
+    "experiment": "current-status",
+    "mode_probe": true,
+    "initial_training": "failed",
+    "lanes": [
+      [
+        "0",
+        "0",
+        "0",
+        "failed",
+        "-1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "2",
+        "passed",
+        "110",
+        "55"
+      ],
+      [
+        "1",
+        "0",
+        "2",
+        "passed",
+        "109",
+        "55"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "failed",
+        "-1",
+        "0"
+      ]
+    ],
+    "bios_data_errors": null,
+    "bios_data_words": null,
+    "console_confirmed": true,
+    "uart_sha256": "436501689c62fd2d6f82bdb89e1849c2b81715c50a4b3724f07c7e81b630ac55",
+    "bitstream_sha256": "ff8d4f27945a551f2ce265c4965d26b57dd3dbfb29eb27ff6169211cab6be29d",
+    "timing": {
+      "constraint_mhz": 48.0,
+      "actual_fmax_mhz": 48.06,
+      "worst_setup_slack_ns": 0.026,
+      "worst_hold_slack_ns": 0.319,
+      "worst_recovery_slack_ns": 2.022,
+      "worst_removal_slack_ns": 1.153,
+      "setup_violated_endpoints": 0,
+      "analyzed_paths": 38718,
+      "analyzed_endpoints": 9852,
+      "no_timing_path_messages": [
+        "No timing paths to get frequency of rPLL/CLKOUTP.default_gen_clk!",
+        "No timing paths to get frequency of rPLL/CLKOUTD.default_gen_clk!",
+        "No timing paths to get frequency of rPLL/CLKOUTD3.default_gen_clk!"
+      ],
+      "generated_clocks": {
+        "ddr_ck_96mhz": {
+          "period_ns": 10.417,
+          "target_mhz": 96.0,
+          "frequency_mhz": 96.0
+        },
+        "sys2x_clk": {
+          "period_ns": 10.417,
+          "target_mhz": 96.0,
+          "frequency_mhz": 96.0
+        },
+        "sys_clk": {
+          "period_ns": 20.833,
+          "target_mhz": 48.0,
+          "frequency_mhz": 48.0
+        },
+        "rPLL/CLKOUTP.default_gen_clk": {
+          "period_ns": 10.417,
+          "target_mhz": 96.0,
+          "frequency_mhz": 96.0
+        },
+        "rPLL/CLKOUTD.default_gen_clk": {
+          "period_ns": 20.833,
+          "target_mhz": 48.0,
+          "frequency_mhz": 48.0
+        },
+        "rPLL/CLKOUTD3.default_gen_clk": {
+          "period_ns": 31.25,
+          "target_mhz": 32.0,
+          "frequency_mhz": 32.0
+        }
+      }
+    }
+  },
+  {
+    "session": "20261001T022850.526645Z-read-gate-early",
+    "experiment": "read-gate-early",
+    "mode_probe": false,
+    "initial_training": "failed",
+    "lanes": [
+      [
+        "0",
+        "0",
+        "0",
+        "failed",
+        "-1",
+        "0"
+      ]
+    ],
+    "bios_data_errors": null,
+    "bios_data_words": null,
+    "console_confirmed": true,
+    "uart_sha256": "a912782263aaf9d0460f6a24ce28bc7101cb31eea19f0c9c8b21c85ef0d331c8",
+    "bitstream_sha256": "ae89ac98012cea60b928498466856c5b3e68eb49105c26a71c537d6cdc571518",
+    "timing": {
+      "constraint_mhz": 48.0,
+      "actual_fmax_mhz": 48.081,
+      "worst_setup_slack_ns": 0.035,
+      "worst_hold_slack_ns": 0.318,
+      "worst_recovery_slack_ns": 2.038,
+      "worst_removal_slack_ns": 1.546,
+      "setup_violated_endpoints": 0,
+      "analyzed_paths": 38750,
+      "analyzed_endpoints": 9859,
+      "no_timing_path_messages": [
+        "No timing paths to get frequency of rPLL/CLKOUTP.default_gen_clk!",
+        "No timing paths to get frequency of rPLL/CLKOUTD.default_gen_clk!",
+        "No timing paths to get frequency of rPLL/CLKOUTD3.default_gen_clk!"
+      ],
+      "generated_clocks": {
+        "ddr_ck_96mhz": {
+          "period_ns": 10.417,
+          "target_mhz": 96.0,
+          "frequency_mhz": 96.0
+        },
+        "sys2x_clk": {
+          "period_ns": 10.417,
+          "target_mhz": 96.0,
+          "frequency_mhz": 96.0
+        },
+        "sys_clk": {
+          "period_ns": 20.833,
+          "target_mhz": 48.0,
+          "frequency_mhz": 48.0
+        },
+        "rPLL/CLKOUTP.default_gen_clk": {
+          "period_ns": 10.417,
+          "target_mhz": 96.0,
+          "frequency_mhz": 96.0
+        },
+        "rPLL/CLKOUTD.default_gen_clk": {
+          "period_ns": 20.833,
+          "target_mhz": 48.0,
+          "frequency_mhz": 48.0
+        },
+        "rPLL/CLKOUTD3.default_gen_clk": {
+          "period_ns": 31.25,
+          "target_mhz": 32.0,
+          "frequency_mhz": 32.0
+        }
+      }
+    }
+  }
+]

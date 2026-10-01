@@ -1,0 +1,40 @@
+
+        __   _ __      _  __
+       / /  (_) /____ | |/_/
+      / /__/ / __/ -_)>  <
+     /____/_/\__/\__/_/|_|
+   Build your hardware, easily!
+
+ (c) Copyright 2012-2026 Enjoy-Digital
+ (c) Copyright 2007-2015 M-Labs
+
+ BIOS CRC passed (1e8be547)
+
+ LiteX git sha1: 58322a1d2
+
+--================ SoC =================--
+CPU:		VexRiscv @ 48MHz
+BUS:		wishbone 32-bit data/32-bit addr
+CSR:		32-bit data big ordering
+ROM:		32.0KiB
+SRAM:		8.0KiB
+MAIN RAM:	32.0KiB
+
+--=========== Initialization ===========--
+Memtest at 0x40000000 (32.0KiB)...
+  Write: 0x40000000-0x40000000 0B     Write: 0x40000000-0x40008000 32.0KiB   
+   Read: 0x40000000-0x40000000 0B      Read: 0x40000000-0x40008000 32.0KiB   
+Memtest OK
+Memspeed at 0x40000000 (Sequential, 32.0KiB)...
+  Write speed: 76.1MiB/s
+   Read speed: 39.1MiB/s
+--================ Boot ================--
+Booting from serial...
+Press Q or ESC to abort boot completely.
+sL5DdSMmkekro
+Timeout
+No boot medium found
+
+--============== Console ===============--
+
+litex> 

@@ -1,0 +1,15 @@
+{
+  "experiment": "current-status",
+  "dll_mode_probe": true,
+  "console_confirmed": true,
+  "ddr_debug_clock": "mem_read 0xf0001000 4\n\r\n\rMemory dump:\n\r0xf0001000  7b 03 00 00                                      {...            \n\rlitex> ",
+  "ddr_debug_lanes": "mem_read 0xf0001004 4\n\r\n\rMemory dump:\n\r0xf0001004  01 00 00 00                                      ....            \n\rlitex> ",
+  "ddr_debug_valid": "mem_read 0xf0001008 4\n\r\n\rMemory dump:\n\r0xf0001008  03 00 00 00                                      ....            \n\rlitex> ",
+  "ddrphy_burstdet_seen": "mem_read 0xf000181c 4\n\r\n\rMemory dump:\n\r0xf000181c  00 00 00 00                                      ....            \n\rlitex> ",
+  "enable_dll": "sdram_mr_write 1 0x2\n\r\n\rSwitching SDRAM to software control.\n\rWriting 0x0002 to MR1\n\rSwitching SDRAM to hardware control.\n\rlitex> ",
+  "reset_dll": "sdram_mr_write 0 0x320\n\r\n\rSwitching SDRAM to software control.\n\rWriting 0x0320 to MR0\n\rSwitching SDRAM to hardware control.\n\rlitex> ",
+  "calibrate_dll_on": "sdram_cal\n\r\n\rSwitching SDRAM to software control.\n\rRead leveling:\n\r  m0, b02: |00000000000000111111100000000000| \n\r  best: m0, b02 delays: 137+-27\n\rSDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=110 window_length=55 delay_center=137 delay_half_window=27\n\r  m1, b02: |00000000000000111111100000000000| \n\r  best: m1, b02 delays: 136+-26\n\rSDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=109 window_length=55 delay_center=136 delay_half_window=26\n\rSwitching SDRAM to hardware control.\n\rlitex> ",
+  "disable_dll": "sdram_mr_write 1 0x3\n\r\n\rSwitching SDRAM to software control.\n\rWriting 0x0003 to MR1\n\rSwitching SDRAM to hardware control.\n\rlitex> ",
+  "calibrate_dll_off": "sdram_cal\n\r\n\rSwitching SDRAM to software control.\n\rRead leveling:\n\r  m0, b00: |00000000000000000000000000000000| \n\r  m0, b01: |00000000000000000000000000000000| \n\r  m0, b02: |00000000000000000000000000000000| \n\r  m0, b03: |00000000000000000000000000000000| \n\r  best: m0, b00 SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=0 status=failed window_start=-1 window_length=0\n\rSwitching SDRAM to hardware control.\n\rlitex> ",
+  "uart_sha256": "436501689c62fd2d6f82bdb89e1849c2b81715c50a4b3724f07c7e81b630ac55"
+}

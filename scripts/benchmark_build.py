@@ -337,6 +337,8 @@ def build_profile_firmware(profile, build_metadata, memory="onchip", build_dir=N
         ROOT / "scripts/benchmark_identity.py", ROOT / "scripts/benchmark_evidence.py",
         startup_object, libbase_archive,
     ]
+    if memory == "ddr3":
+        source_files += [ROOT / "gateware/ddr3.py", ROOT / "gateware/ddr_geometry.py"]
     if build_metadata.get("cpu_rtl"):
         source_files.append(ROOT / build_metadata["cpu_rtl"])
     elif build_metadata.get("cpu_configuration", {}).get("rtl"):

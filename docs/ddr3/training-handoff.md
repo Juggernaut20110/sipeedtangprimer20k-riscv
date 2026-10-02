@@ -1,5 +1,7 @@
 # DLL-off training handoff implementation
 
+> Geometry correction, 2026-10-02 UTC: the fitted H5TQ1G63EFR has 128 MiB and 13 row bits. Earlier 256 MiB assumptions and full-capacity claims in this historical document are superseded by the [correction and hardware retest](hynix-geometry-correction.md). Errors below 128 MiB remain reproducible.
+
 ## Result
 
 The receive patch restores DLL-off training at **48 MHz system / 96 MHz DDR CK, CL6/CWL6**. All twelve fresh public-image captures—three each for minimal, lite, standard and performance—train both byte lanes with bitslip 2.

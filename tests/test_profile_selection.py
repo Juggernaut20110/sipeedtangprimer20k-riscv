@@ -118,19 +118,19 @@ def ddr_qualification(root, directory, candidate_id, bitstream_sha, profile="sta
     }
     phase_records = []
     for name in sorted(phase_names):
-        coverage = 104 if name == "address_bank_row_column_alias" else 512 if name == "cached_uncached_visibility" else 256 * 1024 * 1024
+        coverage = 100 if name == "address_bank_row_column_alias" else 512 if name == "cached_uncached_visibility" else 128 * 1024 * 1024
         start = "0xc0100000" if name == "cached_uncached_visibility" else "0xc0000000"
         phase_records.append(
-            f"DDR_TEST_PHASE_START name={name} range_start={start} range_end=0xd0000000 coverage_bytes={coverage}\n"
-            f"DDR_TEST_PHASE_END name={name} status=passed bytes={coverage} operations=26 elapsed_ticks_hi=00000000 elapsed_ticks_lo=00000001 errors=0\n"
+            f"DDR_TEST_PHASE_START name={name} range_start={start} range_end=0xc8000000 coverage_bytes={coverage}\n"
+            f"DDR_TEST_PHASE_END name={name} status=passed bytes={coverage} operations=25 elapsed_ticks_hi=00000000 elapsed_ticks_lo=00000001 errors=0\n"
         )
     raw.write_text(
         lane_records + "SDRAM_TRAINING_RESULT status=passed\nMemtest OK\n"
-        f"DDR_TEST_START profile={profile} memory=ddr3 clock_hz=48000000 ddr_bytes=268435456 "
+        f"DDR_TEST_START profile={profile} memory=ddr3 clock_hz=48000000 ddr_bytes=134217728 "
         "l2_bytes=8192 stress_seconds=1800\n"
         + "".join(phase_records)
         + "DDR_TEST_STRESS requested_seconds=1800 elapsed_ticks_hi=00000014 elapsed_ticks_lo=1dd76000\n"
-        + f"DDR_TEST_END status=passed profile={profile} memory=ddr3 errors=0 tested_bytes=268435456\n"
+        + f"DDR_TEST_END status=passed profile={profile} memory=ddr3 errors=0 tested_bytes=134217728\n"
     )
     tx = root / f"{directory}-full.uart.tx.bin"
     tx.write_bytes(b"\nserialboot\n")
@@ -141,7 +141,7 @@ def ddr_qualification(root, directory, candidate_id, bitstream_sha, profile="sta
         "transmitted_uart_log": str(tx.relative_to(root)),
         "transmitted_uart_sha256": digest(tx),
         "result": {
-            "status": "passed", "geometry_bytes": 256 * 1024 * 1024,
+            "status": "passed", "geometry_bytes": 128 * 1024 * 1024,
             "stress_seconds_actual": 1800.0,
             "phases": {name: {"status": "passed"} for name in phase_names},
             "bandwidth": {
@@ -155,7 +155,7 @@ def ddr_qualification(root, directory, candidate_id, bitstream_sha, profile="sta
         "status": "passed", "acceptance": "thorough", "profile": profile,
         "memory_mode": "ddr3", "cpu_candidate": candidate_id,
         "expected_read_lanes": 2,
-        "stress_seconds": 1800.0, "full_range_bytes": 256 * 1024 * 1024,
+        "stress_seconds": 1800.0, "full_range_bytes": 128 * 1024 * 1024,
         "error_count": 0, "uncached_smoke_passed": True,
         "build_identity": {"bitstream_sha256": bitstream_sha}, "trials": trials,
     }
@@ -201,7 +201,7 @@ class MaxPerfSelectionTests(unittest.TestCase):
             qualification = {
                 "status": "passed", "training_runs_passed": 10 if memory == "ddr3" else 0,
                 "stress_seconds": ddr_stress if memory == "ddr3" else 0,
-                "full_range_bytes": 256 * 1024 * 1024 if memory == "ddr3" else 0,
+                "full_range_bytes": 128 * 1024 * 1024 if memory == "ddr3" else 0,
                 "error_count": 0, "uncached_smoke_passed": memory == "ddr3",
             }
             if memory == "ddr3":
@@ -237,7 +237,7 @@ class MaxPerfSelectionTests(unittest.TestCase):
             if memory == "ddr3":
                 evaluation["ddr_preflight"] = {
                     "status": "passed", "acceptance": "thorough", "actual_training_runs": 10,
-                    "stress_seconds": ddr_stress, "full_range_bytes": 256 * 1024 * 1024,
+                    "stress_seconds": ddr_stress, "full_range_bytes": 128 * 1024 * 1024,
                     "error_count": 0, "uncached_smoke_passed": True,
                     "identity_matches_scored_baseline": True,
                     "expected_bitstream_sha256": baseline["identity"]["bitstream"]["sha256"],

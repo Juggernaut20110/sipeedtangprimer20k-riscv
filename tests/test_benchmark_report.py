@@ -564,7 +564,7 @@ class BenchmarkReportEvidenceTests(unittest.TestCase):
                 memory_configuration = {
                     "mode": memory,
                     "main_ram_base": 0x40000000,
-                    "main_ram_bytes": 32768 if memory == "onchip" else 268435456,
+                    "main_ram_bytes": 32768 if memory == "onchip" else 134217728,
                 }
                 build_metadata = {
                     "cpu_variant": variant, "cpu_candidate": candidate,

@@ -1,0 +1,4137 @@
+
+
+litex> mem_read 0xc00b64f0 16
+
+Memory dump:
+0xc00b64f0  b5 d9 fc 69 d9 6c ce b4 6f 36 4f da 34 9b 07 ed  ...i.l..o6O.4...
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+litex> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  24 5e fd 07                                      $^..            
+litex> mem_write 0xf0001818 0x0
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  e0 09 14 00 00 00 ff 1f 00 00 00 00 ff ff 00 00  ................
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x1
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 09 74 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..t.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x2
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 09 74 00 00 00 ff 04 00 00 00 00 00 00 00 00  ..t.............
+0xf000182c  34 9b 07 ed 6f 36 4f da d9 6c de b4 b5 d9 fc 69  4...o6O..l.....i
+litex> mem_write 0xf0001818 0x3
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 09 74 00 de b4 00 00 fc 69 d9 6c ff ff b5 d9  ..t......i.l....
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x4
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 09 74 00 07 ed 00 00 4f da 34 9b ff ff 6f 36  ..t.....O.4...o6
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x5
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 09 74 00 00 00 ff 0b 00 00 00 00 ff ff 00 00  ..t.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x6
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 09 74 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..t.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x7
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 09 74 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..t.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_read 0xf000186c 4
+
+Memory dump:
+0xf000186c  02 00 00 00                                      ....            
+litex> mem_read 0xf000183c 16
+
+Memory dump:
+0xf000183c  d9 6c ce b4 b5 d9 fc 69 b5 d9 fc 69 b5 d9 fc 69  .l.....i...i...i
+litex> mem_read 0xf000184c 16
+
+Memory dump:
+0xf000184c  34 9b 07 ed 6f 36 4f da d9 6c ce b4 b5 d9 fc 69  4...o6O..l.....i
+litex> mem_read 0xf000185c 16
+
+Memory dump:
+0xf000185c  42 9b 4d 9e 42 9b 4d 9e 34 9b 07 ed 6f 36 4f da  B.M.B.M.4...o6O.
+litex> mem_write 0xf0001804 0x0
+
+litex> mem_write 0xf0001800 0x0
+
+litex> mem_write 0xf0001808 0x0
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc0000000 0x5a5a0000
+
+litex> mem_read 0xc0000000 16
+
+Memory dump:
+0xc0000000  00 00 5a 5a 02 00 30 c0 01 00 18 60 03 00 2c b0  ..ZZ..0....`..,.
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+litex> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  d5 08 cd 15                                      ....            
+litex> mem_write 0xf0001818 0x0
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 10 00 00 00 ff 1f 00 00 00 00 ff ff 00 00  ................
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x1
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  20 0f 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00   .p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x2
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  20 0f 70 00 00 00 ff 04 00 00 00 00 f0 ff 00 00   .p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 5a 5a  ..............ZZ
+litex> mem_write 0xf0001818 0x3
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  20 0f 70 00 00 00 f0 00 5a 5a 00 00 ff ff 00 00   .p.....ZZ......
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x4
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  20 0f 70 00 00 00 ff 00 00 00 00 00 ff ff 00 00   .p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x5
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  20 0f 70 00 00 00 ff 0b 00 00 00 00 ff ff 00 00   .p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x6
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  20 0f 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00   .p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x7
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  20 0f 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00   .p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_read 0xf000186c 4
+
+Memory dump:
+0xf000186c  02 00 00 00                                      ....            
+litex> mem_read 0xf000183c 16
+
+Memory dump:
+0xf000183c  02 00 30 c0 00 00 5a 5a 00 00 5a 5a 00 00 5a 5a  ..0...ZZ..ZZ..ZZ
+litex> mem_read 0xf000184c 16
+
+Memory dump:
+0xf000184c  03 00 2c b0 01 00 18 60 02 00 30 c0 00 00 5a 5a  ..,....`..0...ZZ
+litex> mem_read 0xf000185c 16
+
+Memory dump:
+0xf000185c  b5 d9 fc 69 b5 d9 fc 69 03 00 2c b0 01 00 18 60  ...i...i..,....`
+litex> mem_read 0xc0000000 4
+
+Memory dump:
+0xc0000000  00 00 5a 5a                                      ..ZZ            
+litex> mem_write 0xf0001804 0x0
+
+litex> mem_write 0xf0001800 0x0
+
+litex> mem_write 0xf0001808 0x0
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc0000004 0x5a5a0005
+
+litex> mem_read 0xc0000000 16
+
+Memory dump:
+0xc0000000  00 00 5a 5a 05 00 5a 5a 01 00 18 60 03 00 2c b0  ..ZZ..ZZ...`..,.
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+litex> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  12 bc ff 19                                      ....            
+litex> mem_write 0xf0001818 0x0
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 10 00 00 00 ff 1f 00 00 00 00 ff ff 00 00  ................
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x1
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x2
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 04 00 00 00 00 0f ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 05 00 5a 5a 00 00 00 00  ..........ZZ....
+litex> mem_write 0xf0001818 0x3
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 5a 5a 0f 00 00 00 05 00 ff ff 00 00  ..p.ZZ..........
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x4
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 00 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x5
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0b 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x6
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x7
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_read 0xf000186c 4
+
+Memory dump:
+0xf000186c  02 00 00 00                                      ....            
+litex> mem_read 0xf000183c 16
+
+Memory dump:
+0xf000183c  05 00 5a 5a 00 00 5a 5a 00 00 5a 5a 00 00 5a 5a  ..ZZ..ZZ..ZZ..ZZ
+litex> mem_read 0xf000184c 16
+
+Memory dump:
+0xf000184c  03 00 2c b0 01 00 18 60 05 00 5a 5a 00 00 5a 5a  ..,....`..ZZ..ZZ
+litex> mem_read 0xf000185c 16
+
+Memory dump:
+0xf000185c  00 00 5a 5a 00 00 5a 5a 03 00 2c b0 01 00 18 60  ..ZZ..ZZ..,....`
+litex> mem_read 0xc0000000 4
+
+Memory dump:
+0xc0000000  00 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000004 4
+
+Memory dump:
+0xc0000004  05 00 5a 5a                                      ..ZZ            
+litex> mem_write 0xf0001804 0x0
+
+litex> mem_write 0xf0001800 0x0
+
+litex> mem_write 0xf0001808 0x0
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc0000008 0x5a5a000a
+
+litex> mem_read 0xc0000000 16
+
+Memory dump:
+0xc0000000  00 00 5a 5a 05 00 5a 5a 0a 00 5a 5a 03 00 2c b0  ..ZZ..ZZ..ZZ..,.
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+litex> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  3a 95 56 1e                                      :.V.            
+litex> mem_write 0xf0001818 0x0
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 10 00 00 00 ff 1f 00 00 00 00 ff ff 00 00  ................
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x1
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x2
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 04 00 00 00 00 ff f0 00 00  ..p.............
+0xf000182c  00 00 00 00 0a 00 5a 5a 00 00 00 00 00 00 00 00  ......ZZ........
+litex> mem_write 0xf0001818 0x3
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 00 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x4
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 f0 00 5a 5a 00 00 ff ff 0a 00  ..p.....ZZ......
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x5
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0b 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x6
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x7
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_read 0xf000186c 4
+
+Memory dump:
+0xf000186c  02 00 00 00                                      ....            
+litex> mem_read 0xf000183c 16
+
+Memory dump:
+0xf000183c  05 00 5a 5a 00 00 5a 5a 00 00 5a 5a 00 00 5a 5a  ..ZZ..ZZ..ZZ..ZZ
+litex> mem_read 0xf000184c 16
+
+Memory dump:
+0xf000184c  03 00 2c b0 0a 00 5a 5a 05 00 5a 5a 00 00 5a 5a  ..,...ZZ..ZZ..ZZ
+litex> mem_read 0xf000185c 16
+
+Memory dump:
+0xf000185c  00 00 5a 5a 00 00 5a 5a 03 00 2c b0 0a 00 5a 5a  ..ZZ..ZZ..,...ZZ
+litex> mem_read 0xc0000000 4
+
+Memory dump:
+0xc0000000  00 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000004 4
+
+Memory dump:
+0xc0000004  05 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000008 4
+
+Memory dump:
+0xc0000008  0a 00 5a 5a                                      ..ZZ            
+litex> mem_write 0xf0001804 0x0
+
+litex> mem_write 0xf0001800 0x0
+
+litex> mem_write 0xf0001808 0x8
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc0000010 0x5a5a0013
+
+litex> mem_read 0xc0000010 16
+
+Memory dump:
+0xc0000010  13 00 5a 5a 01 00 1b 6c 03 80 2d b6 02 c0 36 db  ..ZZ...l..-...6.
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+litex> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  b3 1b d3 22                                      ..."            
+litex> mem_write 0xf0001818 0x0
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  20 00 10 00 00 00 ff 1f 00 00 00 00 ff ff 00 00   ...............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x1
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x2
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 04 00 00 00 00 f0 ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 13 00 5a 5a  ..............ZZ
+litex> mem_write 0xf0001818 0x3
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 f0 00 5a 5a 00 00 ff ff 13 00  ..p.....ZZ......
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x4
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 00 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x5
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0b 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x6
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x7
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_read 0xf000186c 4
+
+Memory dump:
+0xf000186c  02 00 00 00                                      ....            
+litex> mem_read 0xf000183c 16
+
+Memory dump:
+0xf000183c  01 00 1b 6c 13 00 5a 5a 13 00 5a 5a 13 00 5a 5a  ...l..ZZ..ZZ..ZZ
+litex> mem_read 0xf000184c 16
+
+Memory dump:
+0xf000184c  02 c0 36 db 03 80 2d b6 01 00 1b 6c 13 00 5a 5a  ..6...-....l..ZZ
+litex> mem_read 0xf000185c 16
+
+Memory dump:
+0xf000185c  00 00 5a 5a 00 00 5a 5a 02 c0 36 db 03 80 2d b6  ..ZZ..ZZ..6...-.
+litex> mem_read 0xc0000000 4
+
+Memory dump:
+0xc0000000  00 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000004 4
+
+Memory dump:
+0xc0000004  05 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000008 4
+
+Memory dump:
+0xc0000008  0a 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000010 4
+
+Memory dump:
+0xc0000010  13 00 5a 5a                                      ..ZZ            
+litex> mem_write 0xf0001804 0x0
+
+litex> mem_write 0xf0001800 0x0
+
+litex> mem_write 0xf0001808 0x10
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc0000020 0x5a5a0024
+
+litex> mem_read 0xc0000020 16
+
+Memory dump:
+0xc0000020  24 00 5a 5a 03 b0 ed b6 02 d8 56 db 01 6c ab 6d  $.ZZ......V..l.m
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+litex> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  d0 e2 75 27                                      ..u'            
+litex> mem_write 0xf0001818 0x0
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  40 00 10 00 00 00 ff 1f 00 00 00 00 ff ff 00 00  @...............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x1
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x2
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 04 00 00 00 00 f0 ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 24 00 5a 5a  ............$.ZZ
+litex> mem_write 0xf0001818 0x3
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 f0 00 5a 5a 00 00 ff ff 24 00  ..p.....ZZ....$.
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x4
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 00 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x5
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0b 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x6
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x7
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_read 0xf000186c 4
+
+Memory dump:
+0xf000186c  02 00 00 00                                      ....            
+litex> mem_read 0xf000183c 16
+
+Memory dump:
+0xf000183c  03 b0 ed b6 24 00 5a 5a 24 00 5a 5a 24 00 5a 5a  ....$.ZZ$.ZZ$.ZZ
+litex> mem_read 0xf000184c 16
+
+Memory dump:
+0xf000184c  01 6c ab 6d 02 d8 56 db 03 b0 ed b6 24 00 5a 5a  .l.m..V.....$.ZZ
+litex> mem_read 0xf000185c 16
+
+Memory dump:
+0xf000185c  13 00 5a 5a 13 00 5a 5a 01 6c ab 6d 02 d8 56 db  ..ZZ..ZZ.l.m..V.
+litex> mem_read 0xc0000000 4
+
+Memory dump:
+0xc0000000  00 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000004 4
+
+Memory dump:
+0xc0000004  05 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000008 4
+
+Memory dump:
+0xc0000008  0a 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000010 4
+
+Memory dump:
+0xc0000010  13 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000020 4
+
+Memory dump:
+0xc0000020  24 00 5a 5a                                      $.ZZ            
+litex> mem_write 0xf0001804 0x0
+
+litex> mem_write 0xf0001800 0x0
+
+litex> mem_write 0xf0001808 0x20
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc0000040 0x5a5a0045
+
+litex> mem_read 0xc0000040 16
+
+Memory dump:
+0xc0000040  45 00 5a 5a b1 ad ad 6d db d6 f6 b6 6e 6b 5b db  E.ZZ...m....nk[.
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+litex> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  97 4a 3c 2c                                      .J<,            
+litex> mem_write 0xf0001818 0x0
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  80 00 10 00 00 00 ff 1f 00 00 00 00 ff ff 00 00  ................
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x1
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  20 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00   .p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x2
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  20 00 70 00 00 00 ff 04 00 00 00 00 f0 ff 00 00   .p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 45 00 5a 5a  ............E.ZZ
+litex> mem_write 0xf0001818 0x3
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  20 00 70 00 00 00 f0 00 5a 5a 00 00 ff ff 45 00   .p.....ZZ....E.
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x4
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  20 00 70 00 00 00 ff 00 00 00 00 00 ff ff 00 00   .p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x5
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  20 00 70 00 00 00 ff 0b 00 00 00 00 ff ff 00 00   .p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x6
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  20 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00   .p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x7
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  20 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00   .p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_read 0xf000186c 4
+
+Memory dump:
+0xf000186c  02 00 00 00                                      ....            
+litex> mem_read 0xf000183c 16
+
+Memory dump:
+0xf000183c  b1 ad ad 6d 45 00 5a 5a 45 00 5a 5a 45 00 5a 5a  ...mE.ZZE.ZZE.ZZ
+litex> mem_read 0xf000184c 16
+
+Memory dump:
+0xf000184c  6e 6b 5b db db d6 f6 b6 b1 ad ad 6d 45 00 5a 5a  nk[........mE.ZZ
+litex> mem_read 0xf000185c 16
+
+Memory dump:
+0xf000185c  24 00 5a 5a 24 00 5a 5a 6e 6b 5b db db d6 f6 b6  $.ZZ$.ZZnk[.....
+litex> mem_read 0xc0000000 4
+
+Memory dump:
+0xc0000000  00 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000004 4
+
+Memory dump:
+0xc0000004  05 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000008 4
+
+Memory dump:
+0xc0000008  0a 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000010 4
+
+Memory dump:
+0xc0000010  13 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000020 4
+
+Memory dump:
+0xc0000020  24 00 5a 5a                                      $.ZZ            
+litex> mem_read 0xc0000040 4
+
+Memory dump:
+0xc0000040  45 00 5a 5a                                      E.ZZ            
+litex> mem_write 0xf0001804 0x0
+
+litex> mem_write 0xf0001800 0x0
+
+litex> mem_write 0xf0001808 0x40
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc0000080 0x5a5a0086
+
+litex> mem_read 0xc0000080 16
+
+Memory dump:
+0xc0000080  86 00 5a 5a 6f cf b3 e2 b4 e7 79 f1 da f3 bc 78  ..ZZo.....y....x
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+litex> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  24 ac 28 31                                      $.(1            
+litex> mem_write 0xf0001818 0x0
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 01 10 00 00 00 ff 1f 00 00 00 00 ff ff 00 00  ................
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x1
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  40 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  @.p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x2
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  40 00 70 00 00 00 ff 04 00 00 00 00 f0 ff 00 00  @.p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 86 00 5a 5a  ..............ZZ
+litex> mem_write 0xf0001818 0x3
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  40 00 70 00 00 00 f0 00 5a 5a 00 00 ff ff 86 00  @.p.....ZZ......
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x4
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  40 00 70 00 00 00 ff 00 00 00 00 00 ff ff 00 00  @.p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x5
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  40 00 70 00 00 00 ff 0b 00 00 00 00 ff ff 00 00  @.p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x6
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  40 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  @.p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x7
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  40 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  @.p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_read 0xf000186c 4
+
+Memory dump:
+0xf000186c  02 00 00 00                                      ....            
+litex> mem_read 0xf000183c 16
+
+Memory dump:
+0xf000183c  6f cf b3 e2 86 00 5a 5a 86 00 5a 5a 86 00 5a 5a  o.....ZZ..ZZ..ZZ
+litex> mem_read 0xf000184c 16
+
+Memory dump:
+0xf000184c  da f3 bc 78 b4 e7 79 f1 6f cf b3 e2 86 00 5a 5a  ...x..y.o.....ZZ
+litex> mem_read 0xf000185c 16
+
+Memory dump:
+0xf000185c  45 00 5a 5a 45 00 5a 5a da f3 bc 78 b4 e7 79 f1  E.ZZE.ZZ...x..y.
+litex> mem_read 0xc0000000 4
+
+Memory dump:
+0xc0000000  00 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000004 4
+
+Memory dump:
+0xc0000004  05 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000008 4
+
+Memory dump:
+0xc0000008  0a 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000010 4
+
+Memory dump:
+0xc0000010  13 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000020 4
+
+Memory dump:
+0xc0000020  24 00 5a 5a                                      $.ZZ            
+litex> mem_read 0xc0000040 4
+
+Memory dump:
+0xc0000040  45 00 5a 5a                                      E.ZZ            
+litex> mem_read 0xc0000080 4
+
+Memory dump:
+0xc0000080  86 00 5a 5a                                      ..ZZ            
+litex> mem_write 0xf0001804 0x0
+
+litex> mem_write 0xf0001800 0x0
+
+litex> mem_write 0xf0001808 0x80
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc0000100 0x5a5a0107
+
+litex> mem_read 0xc0000100 16
+
+Memory dump:
+0xc0000100  07 01 5a 5a ea 4b 0f a4 f5 a5 07 52 f9 d2 23 a9  ..ZZ.K.....R..#.
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+litex> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  67 e9 39 36                                      g.96            
+litex> mem_write 0xf0001818 0x0
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 02 10 00 00 00 ff 1f 00 00 00 00 ff ff 00 00  ................
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x1
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  80 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x2
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  80 00 70 00 00 00 ff 04 00 00 00 00 f0 ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 07 01 5a 5a  ..............ZZ
+litex> mem_write 0xf0001818 0x3
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  80 00 70 00 00 00 f0 00 5a 5a 00 00 ff ff 07 01  ..p.....ZZ......
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x4
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  80 00 70 00 00 00 ff 00 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x5
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  80 00 70 00 00 00 ff 0b 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x6
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  80 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x7
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  80 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_read 0xf000186c 4
+
+Memory dump:
+0xf000186c  02 00 00 00                                      ....            
+litex> mem_read 0xf000183c 16
+
+Memory dump:
+0xf000183c  ea 4b 0f a4 07 01 5a 5a 07 01 5a 5a 07 01 5a 5a  .K....ZZ..ZZ..ZZ
+litex> mem_read 0xf000184c 16
+
+Memory dump:
+0xf000184c  f9 d2 23 a9 f5 a5 07 52 ea 4b 0f a4 07 01 5a 5a  ..#....R.K....ZZ
+litex> mem_read 0xf000185c 16
+
+Memory dump:
+0xf000185c  86 00 5a 5a 86 00 5a 5a f9 d2 23 a9 f5 a5 07 52  ..ZZ..ZZ..#....R
+litex> mem_read 0xc0000000 4
+
+Memory dump:
+0xc0000000  00 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000004 4
+
+Memory dump:
+0xc0000004  05 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000008 4
+
+Memory dump:
+0xc0000008  0a 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000010 4
+
+Memory dump:
+0xc0000010  13 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000020 4
+
+Memory dump:
+0xc0000020  24 00 5a 5a                                      $.ZZ            
+litex> mem_read 0xc0000040 4
+
+Memory dump:
+0xc0000040  45 00 5a 5a                                      E.ZZ            
+litex> mem_read 0xc0000080 4
+
+Memory dump:
+0xc0000080  86 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000100 4
+
+Memory dump:
+0xc0000100  07 01 5a 5a                                      ..ZZ            
+litex> mem_write 0xf0001804 0x0
+
+litex> mem_write 0xf0001800 0x0
+
+litex> mem_write 0xf0001808 0x100
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc0000200 0x5a5a0208
+
+litex> mem_read 0xc0000200 16
+
+Memory dump:
+0xc0000200  08 02 5a 5a a9 50 c9 25 57 a8 c4 92 28 54 42 c9  ..ZZ.P.%W...(TB.
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+litex> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  c9 08 70 3b                                      ..p;            
+litex> mem_write 0xf0001818 0x0
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 04 10 00 00 00 ff 1f 00 00 00 00 ff ff 00 00  ................
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x1
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 01 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x2
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 01 70 00 00 00 ff 04 00 00 00 00 f0 ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 08 02 5a 5a  ..............ZZ
+litex> mem_write 0xf0001818 0x3
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 01 70 00 00 00 f0 00 5a 5a 00 00 ff ff 08 02  ..p.....ZZ......
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x4
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 01 70 00 00 00 ff 00 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x5
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 01 70 00 00 00 ff 0b 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x6
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 01 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x7
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 01 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_read 0xf000186c 4
+
+Memory dump:
+0xf000186c  02 00 00 00                                      ....            
+litex> mem_read 0xf000183c 16
+
+Memory dump:
+0xf000183c  a9 50 c9 25 08 02 5a 5a 08 02 5a 5a 08 02 5a 5a  .P.%..ZZ..ZZ..ZZ
+litex> mem_read 0xf000184c 16
+
+Memory dump:
+0xf000184c  28 54 42 c9 57 a8 c4 92 a9 50 c9 25 08 02 5a 5a  (TB.W....P.%..ZZ
+litex> mem_read 0xf000185c 16
+
+Memory dump:
+0xf000185c  07 01 5a 5a 07 01 5a 5a 28 54 42 c9 57 a8 c4 92  ..ZZ..ZZ(TB.W...
+litex> mem_read 0xc0000000 4
+
+Memory dump:
+0xc0000000  00 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000004 4
+
+Memory dump:
+0xc0000004  05 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000008 4
+
+Memory dump:
+0xc0000008  0a 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000010 4
+
+Memory dump:
+0xc0000010  13 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000020 4
+
+Memory dump:
+0xc0000020  24 00 5a 5a                                      $.ZZ            
+litex> mem_read 0xc0000040 4
+
+Memory dump:
+0xc0000040  45 00 5a 5a                                      E.ZZ            
+litex> mem_read 0xc0000080 4
+
+Memory dump:
+0xc0000080  86 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000100 4
+
+Memory dump:
+0xc0000100  07 01 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000200 4
+
+Memory dump:
+0xc0000200  08 02 5a 5a                                      ..ZZ            
+litex> mem_write 0xf0001804 0x0
+
+litex> mem_write 0xf0001800 0x0
+
+litex> mem_write 0xf0001808 0x200
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc0000400 0x5a5a0409
+
+litex> mem_read 0xc0000400 16
+
+Memory dump:
+0xc0000400  09 04 5a 5a b4 a7 c7 61 da d3 e3 30 ed e9 71 18  ..ZZ...a...0..q.
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+litex> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  b0 a9 cd 40                                      ...@            
+litex> mem_write 0xf0001818 0x0
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 08 10 00 00 00 ff 1f 00 00 00 00 ff ff 00 00  ................
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x1
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 02 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x2
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 02 70 00 00 00 ff 04 00 00 00 00 f0 ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 09 04 5a 5a  ..............ZZ
+litex> mem_write 0xf0001818 0x3
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 02 70 00 00 00 f0 00 5a 5a 00 00 ff ff 09 04  ..p.....ZZ......
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x4
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 02 70 00 00 00 ff 00 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x5
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 02 70 00 00 00 ff 0b 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x6
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 02 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x7
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 02 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_read 0xf000186c 4
+
+Memory dump:
+0xf000186c  02 00 00 00                                      ....            
+litex> mem_read 0xf000183c 16
+
+Memory dump:
+0xf000183c  b4 a7 c7 61 09 04 5a 5a 09 04 5a 5a 09 04 5a 5a  ...a..ZZ..ZZ..ZZ
+litex> mem_read 0xf000184c 16
+
+Memory dump:
+0xf000184c  ed e9 71 18 da d3 e3 30 b4 a7 c7 61 09 04 5a 5a  ..q....0...a..ZZ
+litex> mem_read 0xf000185c 16
+
+Memory dump:
+0xf000185c  08 02 5a 5a 08 02 5a 5a ed e9 71 18 da d3 e3 30  ..ZZ..ZZ..q....0
+litex> mem_read 0xc0000000 4
+
+Memory dump:
+0xc0000000  00 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000004 4
+
+Memory dump:
+0xc0000004  05 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000008 4
+
+Memory dump:
+0xc0000008  0a 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000010 4
+
+Memory dump:
+0xc0000010  13 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000020 4
+
+Memory dump:
+0xc0000020  24 00 5a 5a                                      $.ZZ            
+litex> mem_read 0xc0000040 4
+
+Memory dump:
+0xc0000040  45 00 5a 5a                                      E.ZZ            
+litex> mem_read 0xc0000080 4
+
+Memory dump:
+0xc0000080  86 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000100 4
+
+Memory dump:
+0xc0000100  07 01 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000200 4
+
+Memory dump:
+0xc0000200  08 02 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000400 4
+
+Memory dump:
+0xc0000400  09 04 5a 5a                                      ..ZZ            
+litex> mem_write 0xf0001804 0x0
+
+litex> mem_write 0xf0001800 0x1
+
+litex> mem_write 0xf0001808 0x0
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc0000800 0x5a5a080a
+
+litex> mem_read 0xc0000800 16
+
+Memory dump:
+0xc0000800  0a 08 5a 5a 5b c8 63 a1 2e e4 91 d0 17 f2 48 68  ..ZZ[.c.......Hh
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+litex> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  53 84 4f 46                                      S.OF            
+litex> mem_write 0xf0001818 0x0
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 11 00 00 00 ff 1f 00 00 00 00 ff ff 00 00  ................
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x1
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  20 0f 71 00 00 00 ff 0f 00 00 00 00 ff ff 00 00   .q.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x2
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  20 0f 71 00 00 00 ff 04 00 00 00 00 f0 ff 00 00   .q.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 0a 08 5a 5a  ..............ZZ
+litex> mem_write 0xf0001818 0x3
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  20 0f 71 00 00 00 f0 00 5a 5a 00 00 ff ff 0a 08   .q.....ZZ......
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x4
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  20 0f 71 00 00 00 ff 00 00 00 00 00 ff ff 00 00   .q.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x5
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  20 0f 71 00 00 00 ff 0b 00 00 00 00 ff ff 00 00   .q.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x6
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  20 0f 71 00 00 00 ff 0f 00 00 00 00 ff ff 00 00   .q.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x7
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  20 0f 71 00 00 00 ff 0f 00 00 00 00 ff ff 00 00   .q.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_read 0xf000186c 4
+
+Memory dump:
+0xf000186c  02 00 00 00                                      ....            
+litex> mem_read 0xf000183c 16
+
+Memory dump:
+0xf000183c  5b c8 63 a1 0a 08 5a 5a 0a 08 5a 5a 0a 08 5a 5a  [.c...ZZ..ZZ..ZZ
+litex> mem_read 0xf000184c 16
+
+Memory dump:
+0xf000184c  17 f2 48 68 2e e4 91 d0 5b c8 63 a1 0a 08 5a 5a  ..Hh....[.c...ZZ
+litex> mem_read 0xf000185c 16
+
+Memory dump:
+0xf000185c  09 04 5a 5a 09 04 5a 5a 17 f2 48 68 2e e4 91 d0  ..ZZ..ZZ..Hh....
+litex> mem_read 0xc0000000 4
+
+Memory dump:
+0xc0000000  00 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000004 4
+
+Memory dump:
+0xc0000004  05 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000008 4
+
+Memory dump:
+0xc0000008  0a 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000010 4
+
+Memory dump:
+0xc0000010  13 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000020 4
+
+Memory dump:
+0xc0000020  24 00 5a 5a                                      $.ZZ            
+litex> mem_read 0xc0000040 4
+
+Memory dump:
+0xc0000040  45 00 5a 5a                                      E.ZZ            
+litex> mem_read 0xc0000080 4
+
+Memory dump:
+0xc0000080  86 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000100 4
+
+Memory dump:
+0xc0000100  07 01 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000200 4
+
+Memory dump:
+0xc0000200  08 02 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000400 4
+
+Memory dump:
+0xc0000400  09 04 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000800 4
+
+Memory dump:
+0xc0000800  0a 08 5a 5a                                      ..ZZ            
+litex> mem_write 0xf0001804 0x0
+
+litex> mem_write 0xf0001800 0x2
+
+litex> mem_write 0xf0001808 0x0
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc0001000 0x5a5a100b
+
+litex> mem_read 0xc0001000 16
+
+Memory dump:
+0xc0001000  0b 10 5a 5a 1a 85 41 30 8d c2 20 18 45 61 30 8c  ..ZZ..A0.. .Ea0.
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+litex> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  70 fe f7 4b                                      p..K            
+litex> mem_write 0xf0001818 0x0
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 12 00 00 00 ff 1f 00 00 00 00 ff ff 00 00  ................
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x1
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  20 0f 72 00 00 00 ff 0f 00 00 00 00 ff ff 00 00   .r.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x2
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  20 0f 72 00 00 00 ff 04 00 00 00 00 f0 ff 00 00   .r.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 0b 10 5a 5a  ..............ZZ
+litex> mem_write 0xf0001818 0x3
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  20 0f 72 00 00 00 f0 00 5a 5a 00 00 ff ff 0b 10   .r.....ZZ......
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x4
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  20 0f 72 00 00 00 ff 00 00 00 00 00 ff ff 00 00   .r.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x5
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  20 0f 72 00 00 00 ff 0b 00 00 00 00 ff ff 00 00   .r.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x6
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  20 0f 72 00 00 00 ff 0f 00 00 00 00 ff ff 00 00   .r.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x7
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  20 0f 72 00 00 00 ff 0f 00 00 00 00 ff ff 00 00   .r.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_read 0xf000186c 4
+
+Memory dump:
+0xf000186c  02 00 00 00                                      ....            
+litex> mem_read 0xf000183c 16
+
+Memory dump:
+0xf000183c  1a 85 41 30 0b 10 5a 5a 0b 10 5a 5a 0b 10 5a 5a  ..A0..ZZ..ZZ..ZZ
+litex> mem_read 0xf000184c 16
+
+Memory dump:
+0xf000184c  45 61 30 8c 8d c2 20 18 1a 85 41 30 0b 10 5a 5a  Ea0... ...A0..ZZ
+litex> mem_read 0xf000185c 16
+
+Memory dump:
+0xf000185c  0a 08 5a 5a 0a 08 5a 5a 45 61 30 8c 8d c2 20 18  ..ZZ..ZZEa0... .
+litex> mem_read 0xc0000000 4
+
+Memory dump:
+0xc0000000  00 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000004 4
+
+Memory dump:
+0xc0000004  05 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000008 4
+
+Memory dump:
+0xc0000008  0a 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000010 4
+
+Memory dump:
+0xc0000010  13 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000020 4
+
+Memory dump:
+0xc0000020  24 00 5a 5a                                      $.ZZ            
+litex> mem_read 0xc0000040 4
+
+Memory dump:
+0xc0000040  45 00 5a 5a                                      E.ZZ            
+litex> mem_read 0xc0000080 4
+
+Memory dump:
+0xc0000080  86 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000100 4
+
+Memory dump:
+0xc0000100  07 01 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000200 4
+
+Memory dump:
+0xc0000200  08 02 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000400 4
+
+Memory dump:
+0xc0000400  09 04 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000800 4
+
+Memory dump:
+0xc0000800  0a 08 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0001000 4
+
+Memory dump:
+0xc0001000  0b 10 5a 5a                                      ..ZZ            
+litex> mem_write 0xf0001804 0x0
+
+litex> mem_write 0xf0001800 0x4
+
+litex> mem_write 0xf0001808 0x0
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc0002000 0x5a5a200c
+
+litex> mem_read 0xc0002000 16
+
+Memory dump:
+0xc0002000  0c 20 5a 5a bb c3 1e 39 de 61 af 9c ef b0 57 4e  . ZZ...9.a....WN
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+litex> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  0f af c3 51                                      ...Q            
+litex> mem_write 0xf0001818 0x0
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 14 00 00 00 ff 1f 00 00 00 00 ff ff 00 00  ................
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x1
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  e0 09 74 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..t.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x2
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  e0 09 74 00 00 00 ff 04 00 00 00 00 f0 ff 00 00  ..t.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 0c 20 5a 5a  ............. ZZ
+litex> mem_write 0xf0001818 0x3
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  e0 09 74 00 00 00 f0 00 5a 5a 00 00 ff ff 0c 20  ..t.....ZZ..... 
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x4
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  e0 09 74 00 00 00 ff 00 00 00 00 00 ff ff 00 00  ..t.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x5
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  e0 09 74 00 00 00 ff 0b 00 00 00 00 ff ff 00 00  ..t.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x6
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  e0 09 74 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..t.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x7
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  e0 09 74 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..t.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_read 0xf000186c 4
+
+Memory dump:
+0xf000186c  02 00 00 00                                      ....            
+litex> mem_read 0xf000183c 16
+
+Memory dump:
+0xf000183c  bb c3 1e 39 0c 20 5a 5a 0c 20 5a 5a 0c 20 5a 5a  ...9. ZZ. ZZ. ZZ
+litex> mem_read 0xf000184c 16
+
+Memory dump:
+0xf000184c  ef b0 57 4e de 61 af 9c bb c3 1e 39 0c 20 5a 5a  ..WN.a.....9. ZZ
+litex> mem_read 0xf000185c 16
+
+Memory dump:
+0xf000185c  0b 10 5a 5a 0b 10 5a 5a ef b0 57 4e de 61 af 9c  ..ZZ..ZZ..WN.a..
+litex> mem_read 0xc0000000 4
+
+Memory dump:
+0xc0000000  00 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000004 4
+
+Memory dump:
+0xc0000004  05 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000008 4
+
+Memory dump:
+0xc0000008  0a 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000010 4
+
+Memory dump:
+0xc0000010  13 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000020 4
+
+Memory dump:
+0xc0000020  24 00 5a 5a                                      $.ZZ            
+litex> mem_read 0xc0000040 4
+
+Memory dump:
+0xc0000040  45 00 5a 5a                                      E.ZZ            
+litex> mem_read 0xc0000080 4
+
+Memory dump:
+0xc0000080  86 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000100 4
+
+Memory dump:
+0xc0000100  07 01 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000200 4
+
+Memory dump:
+0xc0000200  08 02 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000400 4
+
+Memory dump:
+0xc0000400  09 04 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000800 4
+
+Memory dump:
+0xc0000800  0a 08 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0001000 4
+
+Memory dump:
+0xc0001000  0b 10 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0002000 4
+
+Memory dump:
+0xc0002000  0c 20 5a 5a                                      . ZZ            
+litex> mem_write 0xf0001804 0x1
+
+litex> mem_write 0xf0001800 0x0
+
+litex> mem_write 0xf0001808 0x0
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc0004000 0x5a5a400d
+
+litex> mem_read 0xc0004000 16
+
+Memory dump:
+0xc0004000  0d 40 5a 5a 14 ce 13 6b 0a e7 89 35 85 f3 c4 1a  .@ZZ...k...5....
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+litex> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  c3 d0 b8 57                                      ...W            
+litex> mem_write 0xf0001818 0x0
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 10 00 00 00 ff 1f 00 00 00 00 ff ff 00 00  ................
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x1
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 04 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x2
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 04 70 00 00 00 ff 04 00 00 00 00 f0 ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 0d 40 5a 5a  .............@ZZ
+litex> mem_write 0xf0001818 0x3
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 04 70 00 00 00 f0 00 5a 5a 00 00 ff ff 0d 40  ..p.....ZZ.....@
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x4
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 04 70 00 00 00 ff 00 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x5
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 04 70 00 00 00 ff 0b 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x6
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 04 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x7
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 04 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_read 0xf000186c 4
+
+Memory dump:
+0xf000186c  02 00 00 00                                      ....            
+litex> mem_read 0xf000183c 16
+
+Memory dump:
+0xf000183c  14 ce 13 6b 0d 40 5a 5a 0d 40 5a 5a 0d 40 5a 5a  ...k.@ZZ.@ZZ.@ZZ
+litex> mem_read 0xf000184c 16
+
+Memory dump:
+0xf000184c  85 f3 c4 1a 0a e7 89 35 14 ce 13 6b 0d 40 5a 5a  .......5...k.@ZZ
+litex> mem_read 0xf000185c 16
+
+Memory dump:
+0xf000185c  0c 20 5a 5a 0c 20 5a 5a 85 f3 c4 1a 0a e7 89 35  . ZZ. ZZ.......5
+litex> mem_read 0xc0000000 4
+
+Memory dump:
+0xc0000000  00 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000004 4
+
+Memory dump:
+0xc0000004  05 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000008 4
+
+Memory dump:
+0xc0000008  0a 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000010 4
+
+Memory dump:
+0xc0000010  13 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000020 4
+
+Memory dump:
+0xc0000020  24 00 5a 5a                                      $.ZZ            
+litex> mem_read 0xc0000040 4
+
+Memory dump:
+0xc0000040  45 00 5a 5a                                      E.ZZ            
+litex> mem_read 0xc0000080 4
+
+Memory dump:
+0xc0000080  86 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000100 4
+
+Memory dump:
+0xc0000100  07 01 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000200 4
+
+Memory dump:
+0xc0000200  08 02 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000400 4
+
+Memory dump:
+0xc0000400  09 04 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000800 4
+
+Memory dump:
+0xc0000800  0a 08 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0001000 4
+
+Memory dump:
+0xc0001000  0b 10 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0002000 4
+
+Memory dump:
+0xc0002000  0c 20 5a 5a                                      . ZZ            
+litex> mem_read 0xc0004000 4
+
+Memory dump:
+0xc0004000  0d 40 5a 5a                                      .@ZZ            
+litex> mem_write 0xf0001804 0x2
+
+litex> mem_write 0xf0001800 0x0
+
+litex> mem_write 0xf0001808 0x0
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc0008000 0x5a5a800e
+
+litex> mem_read 0xc0008000 16
+
+Memory dump:
+0xc0008000  0e 80 5a 5a 5b d8 11 f7 2e ec a8 fb 17 76 d4 7d  ..ZZ[........v.}
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+litex> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  6f 0a d1 5d                                      o..]            
+litex> mem_write 0xf0001818 0x0
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 10 00 00 00 ff 1f 00 00 00 00 ff ff 00 00  ................
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x1
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 08 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x2
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 08 70 00 00 00 ff 04 00 00 00 00 f0 ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 0e 80 5a 5a  ..............ZZ
+litex> mem_write 0xf0001818 0x3
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 08 70 00 00 00 f0 00 5a 5a 00 00 ff ff 0e 80  ..p.....ZZ......
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x4
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 08 70 00 00 00 ff 00 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x5
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 08 70 00 00 00 ff 0b 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x6
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 08 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x7
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 08 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_read 0xf000186c 4
+
+Memory dump:
+0xf000186c  02 00 00 00                                      ....            
+litex> mem_read 0xf000183c 16
+
+Memory dump:
+0xf000183c  5b d8 11 f7 0e 80 5a 5a 0e 80 5a 5a 0e 80 5a 5a  [.....ZZ..ZZ..ZZ
+litex> mem_read 0xf000184c 16
+
+Memory dump:
+0xf000184c  17 76 d4 7d 2e ec a8 fb 5b d8 11 f7 0e 80 5a 5a  .v.}....[.....ZZ
+litex> mem_read 0xf000185c 16
+
+Memory dump:
+0xf000185c  0d 40 5a 5a 0d 40 5a 5a 17 76 d4 7d 2e ec a8 fb  .@ZZ.@ZZ.v.}....
+litex> mem_read 0xc0000000 4
+
+Memory dump:
+0xc0000000  00 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000004 4
+
+Memory dump:
+0xc0000004  05 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000008 4
+
+Memory dump:
+0xc0000008  0a 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000010 4
+
+Memory dump:
+0xc0000010  13 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000020 4
+
+Memory dump:
+0xc0000020  24 00 5a 5a                                      $.ZZ            
+litex> mem_read 0xc0000040 4
+
+Memory dump:
+0xc0000040  45 00 5a 5a                                      E.ZZ            
+litex> mem_read 0xc0000080 4
+
+Memory dump:
+0xc0000080  86 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000100 4
+
+Memory dump:
+0xc0000100  07 01 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000200 4
+
+Memory dump:
+0xc0000200  08 02 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000400 4
+
+Memory dump:
+0xc0000400  09 04 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000800 4
+
+Memory dump:
+0xc0000800  0a 08 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0001000 4
+
+Memory dump:
+0xc0001000  0b 10 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0002000 4
+
+Memory dump:
+0xc0002000  0c 20 5a 5a                                      . ZZ            
+litex> mem_read 0xc0004000 4
+
+Memory dump:
+0xc0004000  0d 40 5a 5a                                      .@ZZ            
+litex> mem_read 0xc0008000 4
+
+Memory dump:
+0xc0008000  0e 80 5a 5a                                      ..ZZ            
+litex> mem_write 0xf0001804 0x4
+
+litex> mem_write 0xf0001800 0x0
+
+litex> mem_write 0xf0001808 0x0
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc0010000 0x5a5b000f
+
+litex> mem_read 0xc0010000 16
+
+Memory dump:
+0xc0010000  0f 00 5b 5a da 58 87 f9 6d ac c3 7c 35 d6 41 be  ..[Z.X..m..|5.A.
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+litex> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  8f ae 09 64                                      ...d            
+litex> mem_write 0xf0001818 0x0
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 10 00 00 00 ff 1f 00 00 00 00 ff ff 00 00  ................
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x1
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x2
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 04 00 00 00 00 f0 ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 0f 00 5b 5a  ..............[Z
+litex> mem_write 0xf0001818 0x3
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 f0 00 5b 5a 00 00 ff ff 0f 00  ..p.....[Z......
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x4
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 00 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x5
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0b 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x6
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x7
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_read 0xf000186c 4
+
+Memory dump:
+0xf000186c  02 00 00 00                                      ....            
+litex> mem_read 0xf000183c 16
+
+Memory dump:
+0xf000183c  da 58 87 f9 0f 00 5b 5a 0f 00 5b 5a 0f 00 5b 5a  .X....[Z..[Z..[Z
+litex> mem_read 0xf000184c 16
+
+Memory dump:
+0xf000184c  35 d6 41 be 6d ac c3 7c da 58 87 f9 0f 00 5b 5a  5.A.m..|.X....[Z
+litex> mem_read 0xf000185c 16
+
+Memory dump:
+0xf000185c  0e 80 5a 5a 0e 80 5a 5a 35 d6 41 be 6d ac c3 7c  ..ZZ..ZZ5.A.m..|
+litex> mem_read 0xc0000000 4
+
+Memory dump:
+0xc0000000  00 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000004 4
+
+Memory dump:
+0xc0000004  05 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000008 4
+
+Memory dump:
+0xc0000008  0a 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000010 4
+
+Memory dump:
+0xc0000010  13 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000020 4
+
+Memory dump:
+0xc0000020  24 00 5a 5a                                      $.ZZ            
+litex> mem_read 0xc0000040 4
+
+Memory dump:
+0xc0000040  45 00 5a 5a                                      E.ZZ            
+litex> mem_read 0xc0000080 4
+
+Memory dump:
+0xc0000080  86 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000100 4
+
+Memory dump:
+0xc0000100  07 01 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000200 4
+
+Memory dump:
+0xc0000200  08 02 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000400 4
+
+Memory dump:
+0xc0000400  09 04 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000800 4
+
+Memory dump:
+0xc0000800  0a 08 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0001000 4
+
+Memory dump:
+0xc0001000  0b 10 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0002000 4
+
+Memory dump:
+0xc0002000  0c 20 5a 5a                                      . ZZ            
+litex> mem_read 0xc0004000 4
+
+Memory dump:
+0xc0004000  0d 40 5a 5a                                      .@ZZ            
+litex> mem_read 0xc0008000 4
+
+Memory dump:
+0xc0008000  0e 80 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0010000 4
+
+Memory dump:
+0xc0010000  0f 00 5b 5a                                      ..[Z            
+litex> mem_write 0xf0001804 0x8
+
+litex> mem_write 0xf0001800 0x0
+
+litex> mem_write 0xf0001808 0x0
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc0020000 0x5a580010
+
+litex> mem_read 0xc0020000 16
+
+Memory dump:
+0xc0020000  10 00 58 5a c5 e8 70 fe 61 74 18 ff 33 3a ac ff  ..XZ..p.at..3:..
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+litex> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  84 12 6c 6a                                      ..lj            
+litex> mem_write 0xf0001818 0x0
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 10 00 00 00 ff 1f 00 00 00 00 ff ff 00 00  ................
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x1
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x2
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 04 00 00 00 00 f0 ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 10 00 58 5a  ..............XZ
+litex> mem_write 0xf0001818 0x3
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 f0 00 58 5a 00 00 ff ff 10 00  ..p.....XZ......
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x4
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 00 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x5
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0b 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x6
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x7
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_read 0xf000186c 4
+
+Memory dump:
+0xf000186c  02 00 00 00                                      ....            
+litex> mem_read 0xf000183c 16
+
+Memory dump:
+0xf000183c  c5 e8 70 fe 10 00 58 5a 10 00 58 5a 10 00 58 5a  ..p...XZ..XZ..XZ
+litex> mem_read 0xf000184c 16
+
+Memory dump:
+0xf000184c  33 3a ac ff 61 74 18 ff c5 e8 70 fe 10 00 58 5a  3:..at....p...XZ
+litex> mem_read 0xf000185c 16
+
+Memory dump:
+0xf000185c  0f 00 5b 5a 0f 00 5b 5a 33 3a ac ff 61 74 18 ff  ..[Z..[Z3:..at..
+litex> mem_read 0xc0000000 4
+
+Memory dump:
+0xc0000000  00 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000004 4
+
+Memory dump:
+0xc0000004  05 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000008 4
+
+Memory dump:
+0xc0000008  0a 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000010 4
+
+Memory dump:
+0xc0000010  13 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000020 4
+
+Memory dump:
+0xc0000020  24 00 5a 5a                                      $.ZZ            
+litex> mem_read 0xc0000040 4
+
+Memory dump:
+0xc0000040  45 00 5a 5a                                      E.ZZ            
+litex> mem_read 0xc0000080 4
+
+Memory dump:
+0xc0000080  86 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000100 4
+
+Memory dump:
+0xc0000100  07 01 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000200 4
+
+Memory dump:
+0xc0000200  08 02 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000400 4
+
+Memory dump:
+0xc0000400  09 04 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000800 4
+
+Memory dump:
+0xc0000800  0a 08 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0001000 4
+
+Memory dump:
+0xc0001000  0b 10 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0002000 4
+
+Memory dump:
+0xc0002000  0c 20 5a 5a                                      . ZZ            
+litex> mem_read 0xc0004000 4
+
+Memory dump:
+0xc0004000  0d 40 5a 5a                                      .@ZZ            
+litex> mem_read 0xc0008000 4
+
+Memory dump:
+0xc0008000  0e 80 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0010000 4
+
+Memory dump:
+0xc0010000  0f 00 5b 5a                                      ..[Z            
+litex> mem_read 0xc0020000 4
+
+Memory dump:
+0xc0020000  10 00 58 5a                                      ..XZ            
+litex> mem_write 0xf0001804 0x10
+
+litex> mem_write 0xf0001800 0x0
+
+litex> mem_write 0xf0001808 0x0
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc0040000 0x5a5e0011
+
+litex> mem_read 0xc0040000 16
+
+Memory dump:
+0xc0040000  11 00 5e 5a 8a 2a 9a aa 45 15 4d 55 a1 8a 86 aa  ..^Z.*..E.MU....
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+litex> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  24 9c f0 70                                      $..p            
+litex> mem_write 0xf0001818 0x0
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 10 00 00 00 ff 1f 00 00 00 00 ff ff 00 00  ................
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x1
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x2
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 04 00 00 00 00 f0 ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 11 00 5e 5a  ..............^Z
+litex> mem_write 0xf0001818 0x3
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 f0 00 5e 5a 00 00 ff ff 11 00  ..p.....^Z......
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x4
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 00 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x5
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0b 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x6
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x7
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_read 0xf000186c 4
+
+Memory dump:
+0xf000186c  02 00 00 00                                      ....            
+litex> mem_read 0xf000183c 16
+
+Memory dump:
+0xf000183c  8a 2a 9a aa 11 00 5e 5a 11 00 5e 5a 11 00 5e 5a  .*....^Z..^Z..^Z
+litex> mem_read 0xf000184c 16
+
+Memory dump:
+0xf000184c  a1 8a 86 aa 45 15 4d 55 8a 2a 9a aa 11 00 5e 5a  ....E.MU.*....^Z
+litex> mem_read 0xf000185c 16
+
+Memory dump:
+0xf000185c  10 00 58 5a 10 00 58 5a a1 8a 86 aa 45 15 4d 55  ..XZ..XZ....E.MU
+litex> mem_read 0xc0000000 4
+
+Memory dump:
+0xc0000000  00 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000004 4
+
+Memory dump:
+0xc0000004  05 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000008 4
+
+Memory dump:
+0xc0000008  0a 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000010 4
+
+Memory dump:
+0xc0000010  13 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000020 4
+
+Memory dump:
+0xc0000020  24 00 5a 5a                                      $.ZZ            
+litex> mem_read 0xc0000040 4
+
+Memory dump:
+0xc0000040  45 00 5a 5a                                      E.ZZ            
+litex> mem_read 0xc0000080 4
+
+Memory dump:
+0xc0000080  86 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000100 4
+
+Memory dump:
+0xc0000100  07 01 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000200 4
+
+Memory dump:
+0xc0000200  08 02 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000400 4
+
+Memory dump:
+0xc0000400  09 04 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000800 4
+
+Memory dump:
+0xc0000800  0a 08 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0001000 4
+
+Memory dump:
+0xc0001000  0b 10 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0002000 4
+
+Memory dump:
+0xc0002000  0c 20 5a 5a                                      . ZZ            
+litex> mem_read 0xc0004000 4
+
+Memory dump:
+0xc0004000  0d 40 5a 5a                                      .@ZZ            
+litex> mem_read 0xc0008000 4
+
+Memory dump:
+0xc0008000  0e 80 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0010000 4
+
+Memory dump:
+0xc0010000  0f 00 5b 5a                                      ..[Z            
+litex> mem_read 0xc0020000 4
+
+Memory dump:
+0xc0020000  10 00 58 5a                                      ..XZ            
+litex> mem_read 0xc0040000 4
+
+Memory dump:
+0xc0040000  11 00 5e 5a                                      ..^Z            
+litex> mem_write 0xf0001804 0x20
+
+litex> mem_write 0xf0001800 0x0
+
+litex> mem_write 0xf0001808 0x0
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc0080000 0x5a520012
+
+litex> mem_read 0xc0080000 16
+
+Memory dump:
+0xc0080000  12 00 52 5a d9 b0 7b 77 6f d8 9d bb 34 ec ee dd  ..RZ..{wo...4...
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+litex> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  81 64 99 77                                      .d.w            
+litex> mem_write 0xf0001818 0x0
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 10 00 00 00 ff 1f 00 00 00 00 ff ff 00 00  ................
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x1
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x2
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 04 00 00 00 00 f0 ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 12 00 52 5a  ..............RZ
+litex> mem_write 0xf0001818 0x3
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 f0 00 52 5a 00 00 ff ff 12 00  ..p.....RZ......
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x4
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 00 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x5
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0b 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x6
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x7
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_read 0xf000186c 4
+
+Memory dump:
+0xf000186c  02 00 00 00                                      ....            
+litex> mem_read 0xf000183c 16
+
+Memory dump:
+0xf000183c  d9 b0 7b 77 12 00 52 5a 12 00 52 5a 12 00 52 5a  ..{w..RZ..RZ..RZ
+litex> mem_read 0xf000184c 16
+
+Memory dump:
+0xf000184c  34 ec ee dd 6f d8 9d bb d9 b0 7b 77 12 00 52 5a  4...o.....{w..RZ
+litex> mem_read 0xf000185c 16
+
+Memory dump:
+0xf000185c  11 00 5e 5a 11 00 5e 5a 34 ec ee dd 6f d8 9d bb  ..^Z..^Z4...o...
+litex> mem_read 0xc0000000 4
+
+Memory dump:
+0xc0000000  00 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000004 4
+
+Memory dump:
+0xc0000004  05 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000008 4
+
+Memory dump:
+0xc0000008  0a 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000010 4
+
+Memory dump:
+0xc0000010  13 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000020 4
+
+Memory dump:
+0xc0000020  24 00 5a 5a                                      $.ZZ            
+litex> mem_read 0xc0000040 4
+
+Memory dump:
+0xc0000040  45 00 5a 5a                                      E.ZZ            
+litex> mem_read 0xc0000080 4
+
+Memory dump:
+0xc0000080  86 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000100 4
+
+Memory dump:
+0xc0000100  07 01 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000200 4
+
+Memory dump:
+0xc0000200  08 02 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000400 4
+
+Memory dump:
+0xc0000400  09 04 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000800 4
+
+Memory dump:
+0xc0000800  0a 08 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0001000 4
+
+Memory dump:
+0xc0001000  0b 10 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0002000 4
+
+Memory dump:
+0xc0002000  0c 20 5a 5a                                      . ZZ            
+litex> mem_read 0xc0004000 4
+
+Memory dump:
+0xc0004000  0d 40 5a 5a                                      .@ZZ            
+litex> mem_read 0xc0008000 4
+
+Memory dump:
+0xc0008000  0e 80 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0010000 4
+
+Memory dump:
+0xc0010000  0f 00 5b 5a                                      ..[Z            
+litex> mem_read 0xc0020000 4
+
+Memory dump:
+0xc0020000  10 00 58 5a                                      ..XZ            
+litex> mem_read 0xc0040000 4
+
+Memory dump:
+0xc0040000  11 00 5e 5a                                      ..^Z            
+litex> mem_read 0xc0080000 4
+
+Memory dump:
+0xc0080000  12 00 52 5a                                      ..RZ            
+litex> mem_write 0xf0001804 0x40
+
+litex> mem_write 0xf0001800 0x0
+
+litex> mem_write 0xf0001808 0x0
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc0100000 0x5a4a0013
+
+litex> mem_read 0xc0100000 16
+
+Memory dump:
+0xc0100000  13 00 4a 5a df 9f 87 e8 ec cf 63 f4 f6 e7 31 7a  ..JZ......c...1z
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+litex> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  2e d1 69 7e                                      ..i~            
+litex> mem_write 0xf0001818 0x0
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 10 00 00 00 ff 1f 00 00 00 00 ff ff 00 00  ................
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x1
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x2
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 04 00 00 00 00 f0 ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 13 00 4a 5a  ..............JZ
+litex> mem_write 0xf0001818 0x3
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 f0 00 4a 5a 00 00 ff ff 13 00  ..p.....JZ......
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x4
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 00 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x5
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0b 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x6
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x7
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_read 0xf000186c 4
+
+Memory dump:
+0xf000186c  02 00 00 00                                      ....            
+litex> mem_read 0xf000183c 16
+
+Memory dump:
+0xf000183c  df 9f 87 e8 13 00 4a 5a 13 00 4a 5a 13 00 4a 5a  ......JZ..JZ..JZ
+litex> mem_read 0xf000184c 16
+
+Memory dump:
+0xf000184c  f6 e7 31 7a ec cf 63 f4 df 9f 87 e8 13 00 4a 5a  ..1z..c.......JZ
+litex> mem_read 0xf000185c 16
+
+Memory dump:
+0xf000185c  12 00 52 5a 12 00 52 5a f6 e7 31 7a ec cf 63 f4  ..RZ..RZ..1z..c.
+litex> mem_read 0xc0000000 4
+
+Memory dump:
+0xc0000000  00 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000004 4
+
+Memory dump:
+0xc0000004  05 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000008 4
+
+Memory dump:
+0xc0000008  0a 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000010 4
+
+Memory dump:
+0xc0000010  13 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000020 4
+
+Memory dump:
+0xc0000020  24 00 5a 5a                                      $.ZZ            
+litex> mem_read 0xc0000040 4
+
+Memory dump:
+0xc0000040  45 00 5a 5a                                      E.ZZ            
+litex> mem_read 0xc0000080 4
+
+Memory dump:
+0xc0000080  86 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000100 4
+
+Memory dump:
+0xc0000100  07 01 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000200 4
+
+Memory dump:
+0xc0000200  08 02 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000400 4
+
+Memory dump:
+0xc0000400  09 04 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000800 4
+
+Memory dump:
+0xc0000800  0a 08 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0001000 4
+
+Memory dump:
+0xc0001000  0b 10 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0002000 4
+
+Memory dump:
+0xc0002000  0c 20 5a 5a                                      . ZZ            
+litex> mem_read 0xc0004000 4
+
+Memory dump:
+0xc0004000  0d 40 5a 5a                                      .@ZZ            
+litex> mem_read 0xc0008000 4
+
+Memory dump:
+0xc0008000  0e 80 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0010000 4
+
+Memory dump:
+0xc0010000  0f 00 5b 5a                                      ..[Z            
+litex> mem_read 0xc0020000 4
+
+Memory dump:
+0xc0020000  10 00 58 5a                                      ..XZ            
+litex> mem_read 0xc0040000 4
+
+Memory dump:
+0xc0040000  11 00 5e 5a                                      ..^Z            
+litex> mem_read 0xc0080000 4
+
+Memory dump:
+0xc0080000  12 00 52 5a                                      ..RZ            
+litex> mem_read 0xc0100000 4
+
+Memory dump:
+0xc0100000  13 00 4a 5a                                      ..JZ            
+litex> mem_write 0xf0001804 0x80
+
+litex> mem_write 0xf0001800 0x0
+
+litex> mem_write 0xf0001808 0x0
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc0200000 0x5a7a0014
+
+litex> mem_read 0xc0200000 16
+
+Memory dump:
+0xc0200000  14 00 7a 5a 88 d4 97 90 3a 14 b0 3c 97 80 83 6b  ..zZ....:..<...k
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+litex> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  01 97 60 85                                      ..`.            
+litex> mem_write 0xf0001818 0x0
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 10 00 00 00 ff 1f 00 00 00 00 ff ff 00 00  ................
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x1
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x2
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 04 00 00 00 00 f0 ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 14 00 7a 5a  ..............zZ
+litex> mem_write 0xf0001818 0x3
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 f0 00 7a 5a 00 00 ff ff 14 00  ..p.....zZ......
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x4
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 00 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x5
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0b 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x6
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x7
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_read 0xf000186c 4
+
+Memory dump:
+0xf000186c  02 00 00 00                                      ....            
+litex> mem_read 0xf000183c 16
+
+Memory dump:
+0xf000183c  88 d4 97 90 14 00 7a 5a 14 00 7a 5a 14 00 7a 5a  ......zZ..zZ..zZ
+litex> mem_read 0xf000184c 16
+
+Memory dump:
+0xf000184c  97 80 83 6b 3a 14 b0 3c 88 d4 97 90 14 00 7a 5a  ...k:..<......zZ
+litex> mem_read 0xf000185c 16
+
+Memory dump:
+0xf000185c  13 00 4a 5a 13 00 4a 5a 97 80 83 6b 3a 14 b0 3c  ..JZ..JZ...k:..<
+litex> mem_read 0xc0000000 4
+
+Memory dump:
+0xc0000000  00 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000004 4
+
+Memory dump:
+0xc0000004  05 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000008 4
+
+Memory dump:
+0xc0000008  0a 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000010 4
+
+Memory dump:
+0xc0000010  13 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000020 4
+
+Memory dump:
+0xc0000020  24 00 5a 5a                                      $.ZZ            
+litex> mem_read 0xc0000040 4
+
+Memory dump:
+0xc0000040  45 00 5a 5a                                      E.ZZ            
+litex> mem_read 0xc0000080 4
+
+Memory dump:
+0xc0000080  86 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000100 4
+
+Memory dump:
+0xc0000100  07 01 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000200 4
+
+Memory dump:
+0xc0000200  08 02 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000400 4
+
+Memory dump:
+0xc0000400  09 04 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000800 4
+
+Memory dump:
+0xc0000800  0a 08 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0001000 4
+
+Memory dump:
+0xc0001000  0b 10 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0002000 4
+
+Memory dump:
+0xc0002000  0c 20 5a 5a                                      . ZZ            
+litex> mem_read 0xc0004000 4
+
+Memory dump:
+0xc0004000  0d 40 5a 5a                                      .@ZZ            
+litex> mem_read 0xc0008000 4
+
+Memory dump:
+0xc0008000  0e 80 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0010000 4
+
+Memory dump:
+0xc0010000  0f 00 5b 5a                                      ..[Z            
+litex> mem_read 0xc0020000 4
+
+Memory dump:
+0xc0020000  10 00 58 5a                                      ..XZ            
+litex> mem_read 0xc0040000 4
+
+Memory dump:
+0xc0040000  11 00 5e 5a                                      ..^Z            
+litex> mem_read 0xc0080000 4
+
+Memory dump:
+0xc0080000  12 00 52 5a                                      ..RZ            
+litex> mem_read 0xc0100000 4
+
+Memory dump:
+0xc0100000  13 00 4a 5a                                      ..JZ            
+litex> mem_read 0xc0200000 4
+
+Memory dump:
+0xc0200000  14 00 7a 5a                                      ..zZ            
+litex> mem_write 0xf0001804 0x100
+
+litex> mem_write 0xf0001800 0x0
+
+litex> mem_write 0xf0001808 0x0
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc0400000 0x5a1a0015
+
+litex> mem_read 0xc0400000 16
+
+Memory dump:
+0xc0400000  15 00 1a 5a 23 f6 c0 4c 5f de 76 7a 8e ea 7b 2a  ...Z#..L_.vz..{*
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+litex> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  68 52 7d 8c                                      hR}.            
+litex> mem_write 0xf0001818 0x0
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 10 00 00 00 ff 1f 00 00 00 00 ff ff 00 00  ................
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x1
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x2
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 04 00 00 00 00 f0 ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 15 00 1a 5a  ...............Z
+litex> mem_write 0xf0001818 0x3
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 f0 00 1a 5a 00 00 ff ff 15 00  ..p......Z......
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x4
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 00 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x5
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0b 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x6
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x7
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_read 0xf000186c 4
+
+Memory dump:
+0xf000186c  02 00 00 00                                      ....            
+litex> mem_read 0xf000183c 16
+
+Memory dump:
+0xf000183c  23 f6 c0 4c 15 00 1a 5a 15 00 1a 5a 15 00 1a 5a  #..L...Z...Z...Z
+litex> mem_read 0xf000184c 16
+
+Memory dump:
+0xf000184c  8e ea 7b 2a 5f de 76 7a 23 f6 c0 4c 15 00 1a 5a  ..{*_.vz#..L...Z
+litex> mem_read 0xf000185c 16
+
+Memory dump:
+0xf000185c  14 00 7a 5a 14 00 7a 5a 8e ea 7b 2a 5f de 76 7a  ..zZ..zZ..{*_.vz
+litex> mem_read 0xc0000000 4
+
+Memory dump:
+0xc0000000  00 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000004 4
+
+Memory dump:
+0xc0000004  05 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000008 4
+
+Memory dump:
+0xc0000008  0a 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000010 4
+
+Memory dump:
+0xc0000010  13 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000020 4
+
+Memory dump:
+0xc0000020  24 00 5a 5a                                      $.ZZ            
+litex> mem_read 0xc0000040 4
+
+Memory dump:
+0xc0000040  45 00 5a 5a                                      E.ZZ            
+litex> mem_read 0xc0000080 4
+
+Memory dump:
+0xc0000080  86 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000100 4
+
+Memory dump:
+0xc0000100  07 01 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000200 4
+
+Memory dump:
+0xc0000200  08 02 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000400 4
+
+Memory dump:
+0xc0000400  09 04 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000800 4
+
+Memory dump:
+0xc0000800  0a 08 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0001000 4
+
+Memory dump:
+0xc0001000  0b 10 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0002000 4
+
+Memory dump:
+0xc0002000  0c 20 5a 5a                                      . ZZ            
+litex> mem_read 0xc0004000 4
+
+Memory dump:
+0xc0004000  0d 40 5a 5a                                      .@ZZ            
+litex> mem_read 0xc0008000 4
+
+Memory dump:
+0xc0008000  0e 80 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0010000 4
+
+Memory dump:
+0xc0010000  0f 00 5b 5a                                      ..[Z            
+litex> mem_read 0xc0020000 4
+
+Memory dump:
+0xc0020000  10 00 58 5a                                      ..XZ            
+litex> mem_read 0xc0040000 4
+
+Memory dump:
+0xc0040000  11 00 5e 5a                                      ..^Z            
+litex> mem_read 0xc0080000 4
+
+Memory dump:
+0xc0080000  12 00 52 5a                                      ..RZ            
+litex> mem_read 0xc0100000 4
+
+Memory dump:
+0xc0100000  13 00 4a 5a                                      ..JZ            
+litex> mem_read 0xc0200000 4
+
+Memory dump:
+0xc0200000  14 00 7a 5a                                      ..zZ            
+litex> mem_read 0xc0400000 4
+
+Memory dump:
+0xc0400000  15 00 1a 5a                                      ...Z            
+litex> mem_write 0xf0001804 0x200
+
+litex> mem_write 0xf0001800 0x0
+
+litex> mem_write 0xf0001808 0x0
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc0800000 0x5ada0016
+
+litex> mem_read 0xc0800000 16
+
+Memory dump:
+0xc0800000  16 00 da 5a 6c ca 5d 97 a0 30 75 3e e1 fd 0c 0e  ...Zl.]..0u>....
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+litex> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  f4 8b be 93                                      ....            
+litex> mem_write 0xf0001818 0x0
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 10 00 00 00 ff 1f 00 00 00 00 ff ff 00 00  ................
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x1
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x2
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 04 00 00 00 00 f0 ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 16 00 da 5a  ...............Z
+litex> mem_write 0xf0001818 0x3
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 f0 00 da 5a 00 00 ff ff 16 00  ..p......Z......
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x4
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 00 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x5
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0b 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x6
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x7
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_read 0xf000186c 4
+
+Memory dump:
+0xf000186c  02 00 00 00                                      ....            
+litex> mem_read 0xf000183c 16
+
+Memory dump:
+0xf000183c  6c ca 5d 97 16 00 da 5a 16 00 da 5a 16 00 da 5a  l.]....Z...Z...Z
+litex> mem_read 0xf000184c 16
+
+Memory dump:
+0xf000184c  e1 fd 0c 0e a0 30 75 3e 6c ca 5d 97 16 00 da 5a  .....0u>l.]....Z
+litex> mem_read 0xf000185c 16
+
+Memory dump:
+0xf000185c  15 00 1a 5a 15 00 1a 5a e1 fd 0c 0e a0 30 75 3e  ...Z...Z.....0u>
+litex> mem_read 0xc0000000 4
+
+Memory dump:
+0xc0000000  00 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000004 4
+
+Memory dump:
+0xc0000004  05 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000008 4
+
+Memory dump:
+0xc0000008  0a 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000010 4
+
+Memory dump:
+0xc0000010  13 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000020 4
+
+Memory dump:
+0xc0000020  24 00 5a 5a                                      $.ZZ            
+litex> mem_read 0xc0000040 4
+
+Memory dump:
+0xc0000040  45 00 5a 5a                                      E.ZZ            
+litex> mem_read 0xc0000080 4
+
+Memory dump:
+0xc0000080  86 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000100 4
+
+Memory dump:
+0xc0000100  07 01 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000200 4
+
+Memory dump:
+0xc0000200  08 02 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000400 4
+
+Memory dump:
+0xc0000400  09 04 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000800 4
+
+Memory dump:
+0xc0000800  0a 08 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0001000 4
+
+Memory dump:
+0xc0001000  0b 10 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0002000 4
+
+Memory dump:
+0xc0002000  0c 20 5a 5a                                      . ZZ            
+litex> mem_read 0xc0004000 4
+
+Memory dump:
+0xc0004000  0d 40 5a 5a                                      .@ZZ            
+litex> mem_read 0xc0008000 4
+
+Memory dump:
+0xc0008000  0e 80 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0010000 4
+
+Memory dump:
+0xc0010000  0f 00 5b 5a                                      ..[Z            
+litex> mem_read 0xc0020000 4
+
+Memory dump:
+0xc0020000  10 00 58 5a                                      ..XZ            
+litex> mem_read 0xc0040000 4
+
+Memory dump:
+0xc0040000  11 00 5e 5a                                      ..^Z            
+litex> mem_read 0xc0080000 4
+
+Memory dump:
+0xc0080000  12 00 52 5a                                      ..RZ            
+litex> mem_read 0xc0100000 4
+
+Memory dump:
+0xc0100000  13 00 4a 5a                                      ..JZ            
+litex> mem_read 0xc0200000 4
+
+Memory dump:
+0xc0200000  14 00 7a 5a                                      ..zZ            
+litex> mem_read 0xc0400000 4
+
+Memory dump:
+0xc0400000  15 00 1a 5a                                      ...Z            
+litex> mem_read 0xc0800000 4
+
+Memory dump:
+0xc0800000  16 00 da 5a                                      ...Z            
+litex> mem_write 0xf0001804 0x400
+
+litex> mem_write 0xf0001800 0x0
+
+litex> mem_write 0xf0001808 0x0
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc1000000 0x5b5a0017
+
+litex> mem_read 0xc1000000 16
+
+Memory dump:
+0xc1000000  17 00 5a 5b e2 50 86 09 ee 08 f1 e6 79 46 cd 35  ..Z[.P......yF.5
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+litex> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  6a 3b 22 9b                                      j;".            
+litex> mem_write 0xf0001818 0x0
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 10 00 00 00 ff 1f 00 00 00 00 ff ff 00 00  ................
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x1
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x2
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 04 00 00 00 00 f0 ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 17 00 5a 5b  ..............Z[
+litex> mem_write 0xf0001818 0x3
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 f0 00 5a 5b 00 00 ff ff 17 00  ..p.....Z[......
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x4
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 00 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x5
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0b 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x6
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x7
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_read 0xf000186c 4
+
+Memory dump:
+0xf000186c  02 00 00 00                                      ....            
+litex> mem_read 0xf000183c 16
+
+Memory dump:
+0xf000183c  e2 50 86 09 17 00 5a 5b 17 00 5a 5b 17 00 5a 5b  .P....Z[..Z[..Z[
+litex> mem_read 0xf000184c 16
+
+Memory dump:
+0xf000184c  79 46 cd 35 ee 08 f1 e6 e2 50 86 09 17 00 5a 5b  yF.5.....P....Z[
+litex> mem_read 0xf000185c 16
+
+Memory dump:
+0xf000185c  16 00 da 5a 16 00 da 5a 79 46 cd 35 ee 08 f1 e6  ...Z...ZyF.5....
+litex> mem_read 0xc0000000 4
+
+Memory dump:
+0xc0000000  00 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000004 4
+
+Memory dump:
+0xc0000004  05 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000008 4
+
+Memory dump:
+0xc0000008  0a 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000010 4
+
+Memory dump:
+0xc0000010  13 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000020 4
+
+Memory dump:
+0xc0000020  24 00 5a 5a                                      $.ZZ            
+litex> mem_read 0xc0000040 4
+
+Memory dump:
+0xc0000040  45 00 5a 5a                                      E.ZZ            
+litex> mem_read 0xc0000080 4
+
+Memory dump:
+0xc0000080  86 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000100 4
+
+Memory dump:
+0xc0000100  07 01 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000200 4
+
+Memory dump:
+0xc0000200  08 02 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000400 4
+
+Memory dump:
+0xc0000400  09 04 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000800 4
+
+Memory dump:
+0xc0000800  0a 08 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0001000 4
+
+Memory dump:
+0xc0001000  0b 10 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0002000 4
+
+Memory dump:
+0xc0002000  0c 20 5a 5a                                      . ZZ            
+litex> mem_read 0xc0004000 4
+
+Memory dump:
+0xc0004000  0d 40 5a 5a                                      .@ZZ            
+litex> mem_read 0xc0008000 4
+
+Memory dump:
+0xc0008000  0e 80 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0010000 4
+
+Memory dump:
+0xc0010000  0f 00 5b 5a                                      ..[Z            
+litex> mem_read 0xc0020000 4
+
+Memory dump:
+0xc0020000  10 00 58 5a                                      ..XZ            
+litex> mem_read 0xc0040000 4
+
+Memory dump:
+0xc0040000  11 00 5e 5a                                      ..^Z            
+litex> mem_read 0xc0080000 4
+
+Memory dump:
+0xc0080000  12 00 52 5a                                      ..RZ            
+litex> mem_read 0xc0100000 4
+
+Memory dump:
+0xc0100000  13 00 4a 5a                                      ..JZ            
+litex> mem_read 0xc0200000 4
+
+Memory dump:
+0xc0200000  14 00 7a 5a                                      ..zZ            
+litex> mem_read 0xc0400000 4
+
+Memory dump:
+0xc0400000  15 00 1a 5a                                      ...Z            
+litex> mem_read 0xc0800000 4
+
+Memory dump:
+0xc0800000  16 00 da 5a                                      ...Z            
+litex> mem_read 0xc1000000 4
+
+Memory dump:
+0xc1000000  17 00 5a 5b                                      ..Z[            
+litex> mem_write 0xf0001804 0x800
+
+litex> mem_write 0xf0001800 0x0
+
+litex> mem_write 0xf0001808 0x0
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc2000000 0x585a0018
+
+litex> mem_read 0xc2000000 16
+
+Memory dump:
+0xc2000000  18 00 5a 58 9e dd 45 2c ca bf 6b 24 e1 77 ac 04  ..ZX..E,..k$.w..
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+litex> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  7a 0a ad a2                                      z...            
+litex> mem_write 0xf0001818 0x0
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 10 00 00 00 ff 1f 00 00 00 00 ff ff 00 00  ................
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x1
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x2
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 04 00 00 00 00 f0 ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 18 00 5a 58  ..............ZX
+litex> mem_write 0xf0001818 0x3
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 f0 00 5a 58 00 00 ff ff 18 00  ..p.....ZX......
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x4
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 00 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x5
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0b 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x6
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x7
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_read 0xf000186c 4
+
+Memory dump:
+0xf000186c  02 00 00 00                                      ....            
+litex> mem_read 0xf000183c 16
+
+Memory dump:
+0xf000183c  9e dd 45 2c 18 00 5a 58 18 00 5a 58 18 00 5a 58  ..E,..ZX..ZX..ZX
+litex> mem_read 0xf000184c 16
+
+Memory dump:
+0xf000184c  e1 77 ac 04 ca bf 6b 24 9e dd 45 2c 18 00 5a 58  .w....k$..E,..ZX
+litex> mem_read 0xf000185c 16
+
+Memory dump:
+0xf000185c  17 00 5a 5b 17 00 5a 5b e1 77 ac 04 ca bf 6b 24  ..Z[..Z[.w....k$
+litex> mem_read 0xc0000000 4
+
+Memory dump:
+0xc0000000  00 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000004 4
+
+Memory dump:
+0xc0000004  05 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000008 4
+
+Memory dump:
+0xc0000008  0a 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000010 4
+
+Memory dump:
+0xc0000010  13 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000020 4
+
+Memory dump:
+0xc0000020  24 00 5a 5a                                      $.ZZ            
+litex> mem_read 0xc0000040 4
+
+Memory dump:
+0xc0000040  45 00 5a 5a                                      E.ZZ            
+litex> mem_read 0xc0000080 4
+
+Memory dump:
+0xc0000080  86 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000100 4
+
+Memory dump:
+0xc0000100  07 01 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000200 4
+
+Memory dump:
+0xc0000200  08 02 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000400 4
+
+Memory dump:
+0xc0000400  09 04 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000800 4
+
+Memory dump:
+0xc0000800  0a 08 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0001000 4
+
+Memory dump:
+0xc0001000  0b 10 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0002000 4
+
+Memory dump:
+0xc0002000  0c 20 5a 5a                                      . ZZ            
+litex> mem_read 0xc0004000 4
+
+Memory dump:
+0xc0004000  0d 40 5a 5a                                      .@ZZ            
+litex> mem_read 0xc0008000 4
+
+Memory dump:
+0xc0008000  0e 80 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0010000 4
+
+Memory dump:
+0xc0010000  0f 00 5b 5a                                      ..[Z            
+litex> mem_read 0xc0020000 4
+
+Memory dump:
+0xc0020000  10 00 58 5a                                      ..XZ            
+litex> mem_read 0xc0040000 4
+
+Memory dump:
+0xc0040000  11 00 5e 5a                                      ..^Z            
+litex> mem_read 0xc0080000 4
+
+Memory dump:
+0xc0080000  12 00 52 5a                                      ..RZ            
+litex> mem_read 0xc0100000 4
+
+Memory dump:
+0xc0100000  13 00 4a 5a                                      ..JZ            
+litex> mem_read 0xc0200000 4
+
+Memory dump:
+0xc0200000  14 00 7a 5a                                      ..zZ            
+litex> mem_read 0xc0400000 4
+
+Memory dump:
+0xc0400000  15 00 1a 5a                                      ...Z            
+litex> mem_read 0xc0800000 4
+
+Memory dump:
+0xc0800000  16 00 da 5a                                      ...Z            
+litex> mem_read 0xc1000000 4
+
+Memory dump:
+0xc1000000  17 00 5a 5b                                      ..Z[            
+litex> mem_read 0xc2000000 4
+
+Memory dump:
+0xc2000000  18 00 5a 58                                      ..ZX            
+litex> mem_write 0xf0001804 0x1000
+
+litex> mem_write 0xf0001800 0x0
+
+litex> mem_write 0xf0001808 0x0
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc4000000 0x5e5a0019
+
+litex> mem_read 0xc4000000 16
+
+Memory dump:
+0xc4000000  19 00 5a 5e 14 60 35 18 99 17 40 a7 92 3d b5 3d  ..Z^.`5...@..=.=
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+litex> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  7d c9 59 aa                                      }.Y.            
+litex> mem_write 0xf0001818 0x0
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 10 00 00 00 ff 1f 00 00 00 00 ff ff 00 00  ................
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x1
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x2
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 04 00 00 00 00 f0 ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 19 00 5a 5e  ..............Z^
+litex> mem_write 0xf0001818 0x3
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 f0 00 5a 5e 00 00 ff ff 19 00  ..p.....Z^......
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x4
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 00 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x5
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0b 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x6
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x7
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 00 70 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..p.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_read 0xf000186c 4
+
+Memory dump:
+0xf000186c  02 00 00 00                                      ....            
+litex> mem_read 0xf000183c 16
+
+Memory dump:
+0xf000183c  14 60 35 18 19 00 5a 5e 19 00 5a 5e 19 00 5a 5e  .`5...Z^..Z^..Z^
+litex> mem_read 0xf000184c 16
+
+Memory dump:
+0xf000184c  92 3d b5 3d 99 17 40 a7 14 60 35 18 19 00 5a 5e  .=.=..@..`5...Z^
+litex> mem_read 0xf000185c 16
+
+Memory dump:
+0xf000185c  18 00 5a 58 18 00 5a 58 92 3d b5 3d 99 17 40 a7  ..ZX..ZX.=.=..@.
+litex> mem_read 0xc0000000 4
+
+Memory dump:
+0xc0000000  00 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000004 4
+
+Memory dump:
+0xc0000004  05 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000008 4
+
+Memory dump:
+0xc0000008  0a 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000010 4
+
+Memory dump:
+0xc0000010  13 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000020 4
+
+Memory dump:
+0xc0000020  24 00 5a 5a                                      $.ZZ            
+litex> mem_read 0xc0000040 4
+
+Memory dump:
+0xc0000040  45 00 5a 5a                                      E.ZZ            
+litex> mem_read 0xc0000080 4
+
+Memory dump:
+0xc0000080  86 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000100 4
+
+Memory dump:
+0xc0000100  07 01 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000200 4
+
+Memory dump:
+0xc0000200  08 02 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000400 4
+
+Memory dump:
+0xc0000400  09 04 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000800 4
+
+Memory dump:
+0xc0000800  0a 08 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0001000 4
+
+Memory dump:
+0xc0001000  0b 10 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0002000 4
+
+Memory dump:
+0xc0002000  0c 20 5a 5a                                      . ZZ            
+litex> mem_read 0xc0004000 4
+
+Memory dump:
+0xc0004000  0d 40 5a 5a                                      .@ZZ            
+litex> mem_read 0xc0008000 4
+
+Memory dump:
+0xc0008000  0e 80 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0010000 4
+
+Memory dump:
+0xc0010000  0f 00 5b 5a                                      ..[Z            
+litex> mem_read 0xc0020000 4
+
+Memory dump:
+0xc0020000  10 00 58 5a                                      ..XZ            
+litex> mem_read 0xc0040000 4
+
+Memory dump:
+0xc0040000  11 00 5e 5a                                      ..^Z            
+litex> mem_read 0xc0080000 4
+
+Memory dump:
+0xc0080000  12 00 52 5a                                      ..RZ            
+litex> mem_read 0xc0100000 4
+
+Memory dump:
+0xc0100000  13 00 4a 5a                                      ..JZ            
+litex> mem_read 0xc0200000 4
+
+Memory dump:
+0xc0200000  14 00 7a 5a                                      ..zZ            
+litex> mem_read 0xc0400000 4
+
+Memory dump:
+0xc0400000  15 00 1a 5a                                      ...Z            
+litex> mem_read 0xc0800000 4
+
+Memory dump:
+0xc0800000  16 00 da 5a                                      ...Z            
+litex> mem_read 0xc1000000 4
+
+Memory dump:
+0xc1000000  17 00 5a 5b                                      ..Z[            
+litex> mem_read 0xc2000000 4
+
+Memory dump:
+0xc2000000  18 00 5a 58                                      ..ZX            
+litex> mem_read 0xc4000000 4
+
+Memory dump:
+0xc4000000  19 00 5a 5e                                      ..Z^            
+litex> mem_write 0xf0001804 0x1fff
+
+litex> mem_write 0xf0001800 0x7
+
+litex> mem_write 0xf0001808 0x3f8
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc7fffffc 0x5da5ffe6
+
+litex> mem_read 0xc7fffff0 16
+
+Memory dump:
+0xc7fffff0  fa 07 46 36 50 aa c2 88 bb 75 f9 67 e6 ff a5 5d  ..F6P....u.g...]
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+litex> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  9d bb 31 b2                                      ..1.            
+litex> mem_write 0xf0001818 0x0
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  e0 0f 17 00 00 00 ff 1f 00 00 00 00 ff ff 00 00  ................
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x1
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  20 0f 77 00 00 00 ff 0f 00 00 00 00 ff ff 00 00   .w.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x2
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  20 0f 77 00 00 00 ff 04 00 00 00 00 ff 0f 00 00   .w.............
+0xf000182c  e6 ff a5 5d 00 00 00 00 00 00 00 00 00 00 00 00  ...]............
+litex> mem_write 0xf0001818 0x3
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  20 0f 77 00 00 00 ff 00 00 00 00 00 ff ff 00 00   .w.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x4
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  20 0f 77 00 a5 5d 0f 00 00 00 e6 ff ff ff 00 00   .w..]..........
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x5
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  20 0f 77 00 00 00 ff 0b 00 00 00 00 ff ff 00 00   .w.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x6
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  20 0f 77 00 00 00 ff 0f 00 00 00 00 ff ff 00 00   .w.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x7
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  20 0f 77 00 00 00 ff 0f 00 00 00 00 ff ff 00 00   .w.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_read 0xf000186c 4
+
+Memory dump:
+0xf000186c  02 00 00 00                                      ....            
+litex> mem_read 0xf000183c 16
+
+Memory dump:
+0xf000183c  50 aa c2 88 fa 07 46 36 fa 07 46 36 fa 07 46 36  P.....F6..F6..F6
+litex> mem_read 0xf000184c 16
+
+Memory dump:
+0xf000184c  e6 ff a5 5d bb 75 f9 67 50 aa c2 88 fa 07 46 36  ...].u.gP.....F6
+litex> mem_read 0xf000185c 16
+
+Memory dump:
+0xf000185c  19 00 5a 5e 19 00 5a 5e e6 ff a5 5d bb 75 f9 67  ..Z^..Z^...].u.g
+litex> mem_read 0xc0000000 4
+
+Memory dump:
+0xc0000000  00 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000004 4
+
+Memory dump:
+0xc0000004  05 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000008 4
+
+Memory dump:
+0xc0000008  0a 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000010 4
+
+Memory dump:
+0xc0000010  13 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000020 4
+
+Memory dump:
+0xc0000020  24 00 5a 5a                                      $.ZZ            
+litex> mem_read 0xc0000040 4
+
+Memory dump:
+0xc0000040  45 00 5a 5a                                      E.ZZ            
+litex> mem_read 0xc0000080 4
+
+Memory dump:
+0xc0000080  86 00 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000100 4
+
+Memory dump:
+0xc0000100  07 01 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000200 4
+
+Memory dump:
+0xc0000200  08 02 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000400 4
+
+Memory dump:
+0xc0000400  09 04 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0000800 4
+
+Memory dump:
+0xc0000800  0a 08 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0001000 4
+
+Memory dump:
+0xc0001000  0b 10 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0002000 4
+
+Memory dump:
+0xc0002000  0c 20 5a 5a                                      . ZZ            
+litex> mem_read 0xc0004000 4
+
+Memory dump:
+0xc0004000  0d 40 5a 5a                                      .@ZZ            
+litex> mem_read 0xc0008000 4
+
+Memory dump:
+0xc0008000  0e 80 5a 5a                                      ..ZZ            
+litex> mem_read 0xc0010000 4
+
+Memory dump:
+0xc0010000  0f 00 5b 5a                                      ..[Z            
+litex> mem_read 0xc0020000 4
+
+Memory dump:
+0xc0020000  10 00 58 5a                                      ..XZ            
+litex> mem_read 0xc0040000 4
+
+Memory dump:
+0xc0040000  11 00 5e 5a                                      ..^Z            
+litex> mem_read 0xc0080000 4
+
+Memory dump:
+0xc0080000  12 00 52 5a                                      ..RZ            
+litex> mem_read 0xc0100000 4
+
+Memory dump:
+0xc0100000  13 00 4a 5a                                      ..JZ            
+litex> mem_read 0xc0200000 4
+
+Memory dump:
+0xc0200000  14 00 7a 5a                                      ..zZ            
+litex> mem_read 0xc0400000 4
+
+Memory dump:
+0xc0400000  15 00 1a 5a                                      ...Z            
+litex> mem_read 0xc0800000 4
+
+Memory dump:
+0xc0800000  16 00 da 5a                                      ...Z            
+litex> mem_read 0xc1000000 4
+
+Memory dump:
+0xc1000000  17 00 5a 5b                                      ..Z[            
+litex> mem_read 0xc2000000 4
+
+Memory dump:
+0xc2000000  18 00 5a 58                                      ..ZX            
+litex> mem_read 0xc4000000 4
+
+Memory dump:
+0xc4000000  19 00 5a 5e                                      ..Z^            
+litex> mem_read 0xc7fffffc 4
+
+Memory dump:
+0xc7fffffc  e6 ff a5 5d                                      ...]            
+litex> 

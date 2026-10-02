@@ -19,6 +19,7 @@ from gateware.soc import (  # noqa: E402
 )
 from scripts.memory import profile_build_dir, validate_memory  # noqa: E402
 from scripts.cpu_profiles import configuration_for  # noqa: E402
+from gateware.ddr_geometry import DDR_PART, DDR_ROW_BITS, DDR_BANK_BITS, DDR_COLUMN_BITS
 from cpu_candidates import ensure_generated  # noqa: E402
 from litex.soc.integration.builder import Builder  # noqa: E402
 
@@ -26,7 +27,8 @@ from litex.soc.integration.builder import Builder  # noqa: E402
 def source_fingerprint():
     digest = hashlib.sha256()
     for relative in [
-        "gateware/soc.py", "firmware/main.c", "firmware/app_logic.c",
+        "gateware/soc.py", "gateware/ddr3.py", "gateware/ddr_geometry.py",
+        "firmware/main.c", "firmware/app_logic.c",
         "gateware/profile_selection.py",
         "firmware/app_logic.h", "firmware/linker.ld", "firmware/Makefile",
         "scripts/build.py", "scripts/project.py", "scripts/memory.py",
@@ -531,6 +533,9 @@ def build_profile(profile, memory="onchip", force=False, output_dir=None,
                 "main_ram_base": firmware["main_ram_base"],
                 "main_ram_bytes": firmware["main_ram_size"],
                 "ddr_physical_bytes": DDR_SIZE_BYTES if memory == "ddr3" else 0,
+                "ddr_part": DDR_PART if memory == "ddr3" else None,
+                "ddr_geometry": {"row_bits": DDR_ROW_BITS, "bank_bits": DDR_BANK_BITS,
+                                 "column_bits": DDR_COLUMN_BITS} if memory == "ddr3" else None,
                 "l2_cache_bytes": DDR_L2_SIZE if memory == "ddr3" else 0,
                 "ddr_ck_hz": 96_000_000 if memory == "ddr3" else None,
                 "uncached_alias_base": "0xc0000000" if memory == "ddr3" else None,

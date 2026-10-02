@@ -105,6 +105,8 @@ def validate_session(path):
         return {"session": session, "status": "failed", "errors": [f"unknown profile {profile!r}"]}
     if session.get("memory_mode") != "ddr3":
         errors.append("session identity does not select DDR3")
+    if session.get("build_identity", {}).get("geometry_bytes") != DDR_SIZE_BYTES:
+        errors.append("session geometry does not match the fitted 128 MiB part")
     if session.get("batch_id") != session.get("session_id", "").rsplit("-", 1)[0]:
         # Profile names contain no hyphens; this catches an altered profile/batch link.
         errors.append("session ID and batch ID are inconsistent")
@@ -332,9 +334,28 @@ def create_report():
         }
         investigation_section = f"""## Write-disturbance investigation
 
-The [retained investigation](write-disturbance.md) captured correct digital write inputs for the original BIOS error and reproduced bit-20 and bit-31 corruption at untouched victims after writes to another row. Conservative controller row timing and ODT-low did not resolve those failures. All probes remain diagnostic-only; public configuration and acceptance requirements are unchanged.
+The [retained investigation](write-disturbance.md) captured correct digital write inputs for the original BIOS error and reproduced bit-20 and bit-31 corruption at untouched victims after writes to another row. Conservative controller row timing and ODT-low did not resolve those failures. These historical probes used the former 256 MiB configuration and remain diagnostic-only; see the geometry correction below for current hardware results.
 
 An independent raw-UART and artifact audit verified {sum(item['trace_count'] for item in audited)} snapshots and {sum(item['decoded_frame_count'] for item in audited)} frames. The [machine-readable investigation](diagnosis/{investigation_path.name}) links the exact images, captures, attempted fixes, limitations and post-investigation board recovery. DDR integrity remains failed; pin-level observations and comparison on another board are the next hardware discriminators.
+
+"""
+    corrections = sorted((ROOT / "docs/ddr3/diagnosis").glob("*-geometry-correction.json"))
+    if corrections:
+        from scripts.ddr_trace_audit import audit
+        correction_path = corrections[-1]
+        correction = json.loads(correction_path.read_text())
+        if correction.get("acceptance_credit") is not False:
+            raise ValueError("geometry retest must remain diagnostic-only")
+        correction["audit"] = [audit(ROOT / item["evidence"]) for item in correction["audit"]]
+        data["geometry_correction"] = correction
+        data["latest_diagnostic_status"] = correction["status"]
+        data["latest_diagnostic_id"] = Path(correction["audit"][-1]["evidence"]).name
+        recovery_path = ROOT / correction["current_board_recovery"]
+        recovery = json.loads(recovery_path.read_text())
+        data["current_board_recovery"] = dict(recovery, evidence=str(recovery_path.relative_to(ROOT)))
+        investigation_section += """## Fitted-part geometry correction
+
+The fitted H5TQ1G63EFR is 128 MiB (13 row bits). Current builds and acceptance bounds have been corrected. The fresh 128 MiB design still fails BIOS Memtest and reproduces the bit-20 and bit-31 neighboring-row write errors. The bounded address probe is diagnostic evidence only. See [the correction and retained hardware results](hynix-geometry-correction.md). The board was recovered using a dedicated SRAM idle image that holds DDR in reset; the earlier combined JTAG detect/reset command does not prove reset occurred.
 
 """
     results_path.write_text(json.dumps(data, indent=2) + "\n")
@@ -388,7 +409,7 @@ An independent raw-UART and artifact audit verified {sum(item['trace_count'] for
 
 **Status: not measured.** No DDR3 board sessions are recorded.
 
-The intended configuration is a 48 MHz system clock, 96 MHz DDR CK, and 256 MiB of DDR3 with an 8 KiB LiteDRAM L2. Local synthesis/place-and-route and diagnostic firmware build results are summarized below. They do not establish board training, full-range integrity, cache visibility, or stress performance.
+The intended configuration is a 48 MHz system clock, 96 MHz DDR CK, and 128 MiB of DDR3 with an 8 KiB LiteDRAM L2. Local synthesis/place-and-route and diagnostic firmware build results are summarized below. They do not establish board training, full-range integrity, cache visibility, or stress performance.
 
 ## Local generated-design evidence
 
@@ -475,7 +496,7 @@ Run `make ddr-test-build PROFILE=ALL`, then `make ddr-test-run PROFILE=ALL PORT=
             f"### `{profile}`\n\n"
             f"- Session status: **{entry['status']}**; training/smoke runs passed "
             f"{entry.get('training_runs_passed', 0)}/{entry.get('training_runs_requested', 0)}.\n"
-            f"- DDR configuration: {DDR_SIZE_BYTES} bytes; 48 MHz system, 96 MHz DDR CK; 8 KiB L2; {entry.get('expected_read_lanes')} trained read lanes per configuration (revalidated from generated PHY header).\n"
+            f"- Recorded DDR configuration: {session.get('build_identity', {}).get('geometry_bytes', 'unrecorded')} bytes; 48 MHz system, 96 MHz DDR CK; 8 KiB L2; {entry.get('expected_read_lanes')} trained read lanes per configuration (revalidated from generated PHY header).\n"
             f"- Stress: requested {session.get('requested_stress_seconds')} s; measured "
             f"{full.get('stress_seconds_actual', 'not measured')} s. Uncached alias bandwidth: "
             f"{bandwidth.get('read_bytes_per_second', 'not measured')} B/s read and "
@@ -492,7 +513,7 @@ Run `make ddr-test-build PROFILE=ALL`, then `make ddr-test-run PROFILE=ALL PORT=
 
 The receive patch and current integrity investigation are recorded in [DDR3 training handoff](training-handoff.md), with the original experiments retained in [DDR3 failure diagnosis](diagnosis.md). Diagnostic experiments do not count as acceptance passes.
 
-Batch `{latest_batch}` uses the configured 256 MiB DDR3 geometry at a 48 MHz system clock and 96 MHz DDR CK. Training success is based on captured BIOS status and all lane bitslip/delay-window records. Each counted training pass required a fresh SRAM reconfiguration and an uncached diagnostic smoke test. The full test executes from the 16 KiB diagnostic RAM. DDR3 CoreMark placement, when run, keeps code/read-only data in DDR and algorithm data/BSS/stack in SRAM.
+Batch `{latest_batch}` records its original configured geometry; older 256 MiB captures cannot qualify the fitted 128 MiB part. Current builds use 128 MiB at a 48 MHz system clock and 96 MHz DDR CK. Training success is based on captured BIOS status and all lane bitslip/delay-window records. Each counted training pass required a fresh SRAM reconfiguration and an uncached diagnostic smoke test. The full test executes from the 16 KiB diagnostic RAM. DDR3 CoreMark placement, when run, keeps code/read-only data in DDR and algorithm data/BSS/stack in SRAM.
 
 ## Per-profile evidence
 
@@ -506,7 +527,7 @@ These console probes were captured outside the acceptance runner and do not coun
 
 ## Acceptance criteria
 
-Thorough status requires at least {ddr_runner.THOROUGH_TRAINING_RUNS} successful reconfiguration/training/smoke runs and {ddr_runner.THOROUGH_STRESS_SECONDS} seconds of measured stress per profile, full 256 MiB coverage, passing uncached bypass tests, cached visibility checks that evict both CPU and LiteDRAM L2 caches, zero errors, and complete UART captures. Shorter runs are marked partial. These records describe SRAM reconfigurations, not power-cycle or cold-boot tests.
+Thorough status requires at least {ddr_runner.THOROUGH_TRAINING_RUNS} successful reconfiguration/training/smoke runs and {ddr_runner.THOROUGH_STRESS_SECONDS} seconds of measured stress per profile, full 128 MiB coverage, passing uncached bypass tests, cached visibility checks that evict both CPU and LiteDRAM L2 caches, zero errors, and complete UART captures. Shorter runs are marked partial. These records describe SRAM reconfigurations, not power-cycle or cold-boot tests.
 
 Machine-readable results and capture identities: [results.json](results.json).
 """

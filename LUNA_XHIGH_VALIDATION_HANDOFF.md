@@ -1,5 +1,7 @@
 # Luna xhigh: repair issues and finish validation
 
+> Geometry correction, 2026-10-02 UTC: the fitted H5TQ1G63EFR has 128 MiB and 13 row bits. Earlier 256 MiB assumptions and full-capacity claims in this historical document are superseded by the [correction and hardware retest](docs/ddr3/hynix-geometry-correction.md). Errors below 128 MiB remain reproducible.
+
 ## Assignment and scope
 
 Use **Luna (`gpt-6-luna`) with extra-high (`xhigh`) reasoning** in `/home/user/git/fpga/sipeedtangprimer20k-riscv` to implement fixes and complete testing. Read [the prioritized plan](docs/validation-plan.md) and the three source reports: [performance](docs/performance.md), [CoreMark summary](docs/coremark-summary.md), and [DDR3](docs/ddr3/report.md).

@@ -1,5 +1,7 @@
 # Issue resolution and validation plan
 
+> Geometry correction, 2026-10-02 UTC: the fitted H5TQ1G63EFR has 128 MiB and 13 row bits. Earlier 256 MiB assumptions and full-capacity claims in this historical document are superseded by the [correction and hardware retest](ddr3/hynix-geometry-correction.md). Errors below 128 MiB remain reproducible.
+
 Prepared 2026-10-01 from [performance.md](performance.md), [coremark-summary.md](coremark-summary.md), and [ddr3/report.md](ddr3/report.md), with read-only checks of the current runners, metadata, and retained captures. Implementation instructions are in [the Luna xhigh handoff](../LUNA_XHIGH_VALIDATION_HANDOFF.md).
 
 This plan continues the existing Linux/maxperf and DDR3 work. It does not restart CPU selection or expand the bounded tuning matrix. No fixes, synthesis, or board qualification were performed while preparing this plan.

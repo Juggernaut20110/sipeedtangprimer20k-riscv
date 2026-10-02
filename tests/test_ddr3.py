@@ -24,27 +24,27 @@ def full_capture(stress_seconds=1):
     )
     lines = [
         "DDR_TEST_START profile=minimal memory=ddr3 clock_hz=48000000 "
-        "ddr_bytes=268435456 cached_base=0x40000000 uncached_base=0xc0000000 "
+        "ddr_bytes=134217728 cached_base=0x40000000 uncached_base=0xc0000000 "
         "l2_bytes=8192 stress_seconds={}".format(stress_seconds),
     ]
     for name in phases:
         lines.extend([
-            f"DDR_TEST_PHASE_START name={name} range_start={base:#x} range_end={end:#x} coverage_bytes=268435456",
-            f"DDR_TEST_PHASE_END name={name} status=passed bytes=268435456 operations={word_count} elapsed_ticks_hi=0 elapsed_ticks_lo=100 errors=0",
+            f"DDR_TEST_PHASE_START name={name} range_start={base:#x} range_end={end:#x} coverage_bytes=134217728",
+            f"DDR_TEST_PHASE_END name={name} status=passed bytes=134217728 operations={word_count} elapsed_ticks_hi=0 elapsed_ticks_lo=100 errors=0",
         ])
     subword_operations = (ddr_test_run.DDR_SIZE_BYTES // 4096) * 5
     lines.extend([
-        f"DDR_TEST_PHASE_START name=address_bank_row_column_alias range_start={base:#x} range_end={end:#x} coverage_bytes=104 alias_offsets=26 geometry=8x16384x1024",
-        "DDR_TEST_PHASE_END name=address_bank_row_column_alias status=passed bytes=104 operations=26 elapsed_ticks_hi=0 elapsed_ticks_lo=100 errors=0",
-        f"DDR_TEST_PHASE_START name=byte_halfword_neighbor_preservation range_start={base:#x} range_end={end:#x} coverage_bytes=268435456 sample_stride_bytes=4096 samples_per_page=5",
-        f"DDR_TEST_PHASE_END name=byte_halfword_neighbor_preservation status=passed bytes=268435456 operations={subword_operations} elapsed_ticks_hi=0 elapsed_ticks_lo=100 errors=0",
-        f"DDR_TEST_PHASE_START name=cached_uncached_visibility range_start={base + 1048576:#x} range_end={end:#x} coverage_bytes=512 sample_stride_bytes=4194304 samples=64 cache_maintenance=fence,dflush,l2flush",
+        f"DDR_TEST_PHASE_START name=address_bank_row_column_alias range_start={base:#x} range_end={end:#x} coverage_bytes=100 alias_offsets=25 geometry=8x8192x1024",
+        "DDR_TEST_PHASE_END name=address_bank_row_column_alias status=passed bytes=100 operations=25 elapsed_ticks_hi=0 elapsed_ticks_lo=100 errors=0",
+        f"DDR_TEST_PHASE_START name=byte_halfword_neighbor_preservation range_start={base:#x} range_end={end:#x} coverage_bytes=134217728 sample_stride_bytes=4096 samples_per_page=5",
+        f"DDR_TEST_PHASE_END name=byte_halfword_neighbor_preservation status=passed bytes=134217728 operations={subword_operations} elapsed_ticks_hi=0 elapsed_ticks_lo=100 errors=0",
+        f"DDR_TEST_PHASE_START name=cached_uncached_visibility range_start={base + 1048576:#x} range_end={end:#x} coverage_bytes=512 sample_stride_bytes=2097152 samples=64 cache_maintenance=fence,dflush,l2flush",
         "DDR_TEST_PHASE_END name=cached_uncached_visibility status=passed bytes=512 operations=128 elapsed_ticks_hi=0 elapsed_ticks_lo=100 errors=0",
-        f"DDR_TEST_PHASE_START name=sustained_delayed_readback_stress range_start={base:#x} range_end={end:#x} coverage_bytes=268435456",
-        f"DDR_TEST_PHASE_END name=sustained_delayed_readback_stress status=passed bytes=268435456 operations={word_count} elapsed_ticks_hi=0 elapsed_ticks_lo={stress_seconds * 48000000} errors=0",
+        f"DDR_TEST_PHASE_START name=sustained_delayed_readback_stress range_start={base:#x} range_end={end:#x} coverage_bytes=134217728",
+        f"DDR_TEST_PHASE_END name=sustained_delayed_readback_stress status=passed bytes=134217728 operations={word_count} elapsed_ticks_hi=0 elapsed_ticks_lo={stress_seconds * 48000000} errors=0",
         "DDR_TEST_BANDWIDTH path=uncached_controller_alias transfer_bytes=1048576 clock_hz=48000000 read_bytes_hi=0 read_bytes_lo=1048576 write_bytes_hi=0 write_bytes_lo=1048576 elapsed_ticks_hi=0 elapsed_ticks_lo=48000000 read_bytes_per_second=1048576 write_bytes_per_second=1048576 sweeps=1",
         f"DDR_TEST_STRESS requested_seconds={stress_seconds} actual_seconds_whole={stress_seconds} elapsed_ticks_hi=0 elapsed_ticks_lo={stress_seconds * 48000000}",
-        f"DDR_TEST_END status=passed profile=minimal memory=ddr3 phases=10 errors=0 tested_bytes=268435456 elapsed_ticks_hi=0 elapsed_ticks_lo={stress_seconds * 48000000}",
+        f"DDR_TEST_END status=passed profile=minimal memory=ddr3 phases=10 errors=0 tested_bytes=134217728 elapsed_ticks_hi=0 elapsed_ticks_lo={stress_seconds * 48000000}",
     ])
     return lines
 
@@ -117,13 +117,29 @@ class Ddr3ParserTests(unittest.TestCase):
     def test_full_capture_requires_all_ranges_and_requested_duration(self):
         result = ddr_test_run.validate_full_capture(full_capture(1), "minimal", 1)
         self.assertEqual(result["status"], "passed")
-        self.assertEqual(result["geometry_bytes"], 256 * 1024 * 1024)
+        self.assertEqual(result["geometry_bytes"], 128 * 1024 * 1024)
         with self.assertRaises(ValueError):
             ddr_test_run.validate_full_capture(full_capture(2), "minimal", 1)
         missing = full_capture(1)
         missing = [line for line in missing if "name=walking_zeros" not in line]
         with self.assertRaises(ValueError):
             ddr_test_run.validate_full_capture(missing, "minimal", 1)
+
+    def test_old_256mib_capture_cannot_qualify_the_fitted_part(self):
+        wrong = [line.replace('134217728', '268435456').replace('0xc8000000', '0xd0000000')
+                 for line in full_capture(1)]
+        with self.assertRaisesRegex(ValueError, 'geometry mismatch'):
+            ddr_test_run.validate_full_capture(wrong, 'minimal', 1)
+
+    def test_geometry_and_visibility_sampling_match_the_fitted_hynix_part(self):
+        from gateware.ddr3 import H5TQ1G63EFR
+        module = H5TQ1G63EFR(48_000_000, '1:2')
+        self.assertEqual((module.geom_settings.bankbits, module.geom_settings.rowbits,
+                          module.geom_settings.colbits), (3, 13, 10))
+        self.assertEqual(ddr_test_run.DDR_SIZE_BYTES, 128 * 1024 * 1024)
+        self.assertEqual(ddr_test_run.DDR_ALIAS_OFFSETS, 25)
+        self.assertEqual(ddr_test_run.DDR_VISIBILITY_STRIDE, 2 * 1024 * 1024)
+        self.assertEqual(ddr_test_run.DDR_VISIBILITY_SAMPLES, 64)
 
 
 if __name__ == "__main__":

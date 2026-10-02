@@ -1,0 +1,1585 @@
+python3 scripts/project.py ddr-test-build minimal 1800
+Building DDR3 diagnostic firmware for minimal
+INFO:SoC:        __   _ __      _  __  
+INFO:SoC:       / /  (_) /____ | |/_/  
+INFO:SoC:      / /__/ / __/ -_)>  <    
+INFO:SoC:     /____/_/\__/\__/_/|_|  
+INFO:SoC:  Build your hardware, easily!
+INFO:SoC:--------------------------------------------------------------------------------
+INFO:SoC:Creating SoC... (2026-10-01 23:03:26)
+INFO:SoC:--------------------------------------------------------------------------------
+INFO:SoC:FPGA device : GW2A-LV18PG256C8/I7.
+INFO:SoC:System clock: 48.000MHz.
+INFO:SoCBusHandler:Creating Bus Handler...
+INFO:SoCBusHandler:32-bit wishbone Bus, 4.0GiB Address Space.
+INFO:SoCBusHandler:Adding reserved Bus Regions...
+INFO:SoCBusHandler:Bus Handler created.
+INFO:SoCCSRHandler:Creating CSR Handler...
+INFO:SoCCSRHandler:32-bit CSR Bus, 32-bit Aligned, 16.0KiB Address Space, 2048B Paging, big Ordering (Up to 32 Locations).
+INFO:SoCCSRHandler:Adding reserved CSRs...
+INFO:SoCCSRHandler:CSR Handler created.
+INFO:SoCIRQHandler:Creating IRQ Handler...
+INFO:SoCIRQHandler:IRQ Handler (up to 32 Locations).
+INFO:SoCIRQHandler:Adding reserved IRQs...
+INFO:SoCIRQHandler:IRQ Handler created.
+INFO:SoC:--------------------------------------------------------------------------------
+INFO:SoC:Initial SoC:
+INFO:SoC:--------------------------------------------------------------------------------
+INFO:SoC:32-bit wishbone Bus, 4.0GiB Address Space.
+INFO:SoC:32-bit CSR Bus, 32-bit Aligned, 16.0KiB Address Space, 2048B Paging, big Ordering (Up to 32 Locations).
+INFO:SoC:IRQ Handler (up to 32 Locations).
+INFO:SoC:--------------------------------------------------------------------------------
+INFO:SoC:Controller ctrl added.
+INFO:SoC:CPU vexriscv added.
+INFO:SoC:CPU vexriscv adding IO Region 0 at 0x80000000 (Size: 0x80000000).
+INFO:SoCBusHandler:io0 Region added at Origin: 0x80000000, Size: 0x80000000, Mode:  RW, Cached: False, Linker: False.
+INFO:SoC:CPU vexriscv overriding sram mapping from 0x01000000 to 0x10000000.
+INFO:SoC:CPU vexriscv setting reset address to 0x00000000.
+INFO:SoC:CPU vexriscv adding Bus Master(s).
+INFO:SoCBusHandler:cpu_bus0 added as Bus Master.
+INFO:SoCBusHandler:cpu_bus1 added as Bus Master.
+INFO:SoC:CPU vexriscv adding Interrupt(s).
+INFO:SoC:CPU vexriscv adding SoC components.
+INFO:SoCBusHandler:rom Region added at Origin: 0x00000000, Size: 0x00008000, Mode:  RX, Cached:  True, Linker: False.
+INFO:SoCBusHandler:rom added as Bus Slave.
+INFO:SoC:RAM rom added Origin: 0x00000000, Size: 0x00008000, Mode:  RX, Cached:  True, Linker: False.
+INFO:SoCBusHandler:sram Region added at Origin: 0x10000000, Size: 0x00002000, Mode: RWX, Cached:  True, Linker: False.
+INFO:SoCBusHandler:sram added as Bus Slave.
+INFO:SoC:RAM sram added Origin: 0x10000000, Size: 0x00002000, Mode: RWX, Cached:  True, Linker: False.
+INFO:SoCIRQHandler:uart IRQ allocated at Location 0.
+INFO:SoCIRQHandler:timer0 IRQ allocated at Location 1.
+INFO:SoCBusHandler:main_ram Region added at Origin: 0x40000000, Size: 0x08000000, Mode: RWX, Cached:  True, Linker: False.
+INFO:SoCBusHandler:main_ram added as Bus Slave.
+INFO:SoCBusHandler:ddr_diagnostic_ram Region added at Origin: 0x20000000, Size: 0x00004000, Mode: RWX, Cached:  True, Linker: False.
+INFO:SoCBusHandler:ddr_diagnostic_ram added as Bus Slave.
+INFO:SoC:RAM ddr_diagnostic_ram added Origin: 0x20000000, Size: 0x00004000, Mode: RWX, Cached:  True, Linker: False.
+INFO:SoCBusHandler:ddr_uncached Region added at Origin: 0xc0000000, Size: 0x08000000, Mode: RWX, Cached: False, Linker: False.
+INFO:SoCBusHandler:ddr_uncached added as Bus Slave.
+INFO:SoC:CSR Bridge csr added.
+INFO:SoCBusHandler:csr Region added at Origin: 0xf0000000, Size: 0x00010000, Mode:  RW, Cached: False, Linker: False.
+INFO:SoCBusHandler:csr added as Bus Slave.
+INFO:SoCCSRHandler:csr added as CSR Master.
+INFO:SoCBusHandler:Interconnect: InterconnectShared (2 <-> 6).
+INFO:SoCCSRHandler:buttons CSR allocated at Location 0.
+INFO:SoCCSRHandler:ctrl CSR allocated at Location 1.
+INFO:SoCCSRHandler:ddrphy CSR allocated at Location 2.
+INFO:SoCCSRHandler:identifier_mem CSR allocated at Location 3.
+INFO:SoCCSRHandler:leds CSR allocated at Location 4.
+INFO:SoCCSRHandler:sdram CSR allocated at Location 5.
+INFO:SoCCSRHandler:timer0 CSR allocated at Location 6.
+INFO:SoCCSRHandler:uart CSR allocated at Location 7.
+INFO:SoC:--------------------------------------------------------------------------------
+INFO:SoC:Finalized SoC:
+INFO:SoC:--------------------------------------------------------------------------------
+INFO:SoC:32-bit wishbone Bus, 4.0GiB Address Space.
+IO Regions: (1)
+io0                 : Origin: 0x80000000, Size: 0x80000000, Mode:  RW, Cached: False, Linker: False
+Bus Regions: (6)
+rom                 : Origin: 0x00000000, Size: 0x00008000, Mode:  RX, Cached:  True, Linker: False
+sram                : Origin: 0x10000000, Size: 0x00002000, Mode: RWX, Cached:  True, Linker: False
+ddr_diagnostic_ram  : Origin: 0x20000000, Size: 0x00004000, Mode: RWX, Cached:  True, Linker: False
+main_ram            : Origin: 0x40000000, Size: 0x08000000, Mode: RWX, Cached:  True, Linker: False
+ddr_uncached        : Origin: 0xc0000000, Size: 0x08000000, Mode: RWX, Cached: False, Linker: False
+csr                 : Origin: 0xf0000000, Size: 0x00010000, Mode:  RW, Cached: False, Linker: False
+Bus Masters: (2)
+- cpu_bus0          : rw
+- cpu_bus1          : rw
+Bus Slaves: (6)
+- rom               : r
+- sram              : rw
+- main_ram          : rw
+- ddr_diagnostic_ram : rw
+- ddr_uncached      : rw
+- csr               : rw
+INFO:SoC:32-bit CSR Bus, 32-bit Aligned, 16.0KiB Address Space, 2048B Paging, big Ordering (Up to 32 Locations).
+CSR Locations: (8)
+- buttons        : 0
+- ctrl           : 1
+- ddrphy         : 2
+- identifier_mem : 3
+- leds           : 4
+- sdram          : 5
+- timer0         : 6
+- uart           : 7
+INFO:SoC:IRQ Handler (up to 32 Locations).
+IRQ Locations: (2)
+- uart   : 0
+- timer0 : 1
+INFO:SoC:--------------------------------------------------------------------------------
+INFO:SoC:--------------------------------------------------------------------------------
+INFO:SoC:SoC Hierarchy:
+INFO:SoC:--------------------------------------------------------------------------------
+INFO:SoC:
+ProjectSoC
+├── crg (_CRG)
+│    ├── pll (GW2APLL)
+│    │    └── [BB:rPLL]
+│    ├── [BB:DHCEN]
+│    └── [BB:CLKDIV]
+├── bus (SoCBusHandler)
+│    └── _interconnect (InterconnectShared)
+│         ├── arbiter (Arbiter)
+│         │    └── rr (RoundRobin)
+│         ├── decoder (Decoder)
+│         └── timeout (Timeout)
+│              └── waittimer_0 (WaitTimer) [Gen]
+├── csr (SoCCSRHandler)
+├── irq (SoCIRQHandler)
+├── ctrl (SoCController)
+├── cpu (VexRiscv)
+│    └── [BB:VexRiscv]
+├── rom (SRAM)
+├── sram (SRAM)
+├── identifier (Identifier)
+├── uart (UART)
+│    ├── ev (EventManager)
+│    │    ├── eventsourcelevel_0 (EventSourceLevel) [Gen]
+│    │    └── eventsourcelevel_1 (EventSourceLevel) [Gen]
+│    ├── phy (RS232PHY)
+│    │    ├── tx (RS232PHYTX)
+│    │    │    ├── clk_phase_accum (RS232ClkPhaseAccum)
+│    │    │    └── fsm (FSM)
+│    │    └── rx (RS232PHYRX)
+│    │         ├── clk_phase_accum (RS232ClkPhaseAccum)
+│    │         └── fsm (FSM)
+│    ├── tx_fifo (SyncFIFO)
+│    │    └── fifo (SyncFIFOBuffered)
+│    │         └── fifo (SyncFIFO)
+│    └── rx_fifo (SyncFIFO)
+│         └── fifo (SyncFIFOBuffered)
+│              └── fifo (SyncFIFO)
+├── timer0 (Timer)
+│    └── ev (EventManager)
+│         └── eventsourceprocess_0 (EventSourceProcess) [Gen]
+├── ddrphy (GW2DDRPHY)
+│    ├── init (GW2DDRPHYInit)
+│    │    └── [BB:DLL]
+│    ├── bitslip_0 (BitSlip) [Gen]
+│    ├── bitslip_1 (BitSlip) [Gen]
+│    ├── bitslip_2 (BitSlip) [Gen]
+│    ├── bitslip_3 (BitSlip) [Gen]
+│    ├── bitslip_4 (BitSlip) [Gen]
+│    ├── bitslip_5 (BitSlip) [Gen]
+│    ├── bitslip_6 (BitSlip) [Gen]
+│    ├── bitslip_7 (BitSlip) [Gen]
+│    ├── bitslip_8 (BitSlip) [Gen]
+│    ├── bitslip_9 (BitSlip) [Gen]
+│    ├── bitslip_10 (BitSlip) [Gen]
+│    ├── bitslip_11 (BitSlip) [Gen]
+│    ├── bitslip_12 (BitSlip) [Gen]
+│    ├── bitslip_13 (BitSlip) [Gen]
+│    ├── bitslip_14 (BitSlip) [Gen]
+│    ├── bitslip_15 (BitSlip) [Gen]
+│    ├── tappeddelayline_0 (TappedDelayLine) [Gen]
+│    ├── tappeddelayline_1 (TappedDelayLine) [Gen]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:DQS]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:ELVDS_IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:DQS]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:ELVDS_IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:OSER4]
+│    ├── [BB:ELVDS_OBUF]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    └── [BB:OSER4]
+├── sdram (LiteDRAMCore)
+│    ├── dfii (DFIInjector)
+│    │    ├── pi0 (PhaseInjector)
+│    │    └── pi1 (PhaseInjector)
+│    ├── controller (LiteDRAMController)
+│    │    ├── refresher (Refresher)
+│    │    │    ├── timer (RefreshTimer)
+│    │    │    ├── postponer (RefreshPostponer)
+│    │    │    ├── sequencer (RefreshSequencer)
+│    │    │    │    └── refreshexecuter_0 (RefreshExecuter) [Gen]
+│    │    │    ├── zqcs_timer (RefreshTimer)
+│    │    │    ├── zqs_executer (ZQCSExecuter)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_0 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_1 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_2 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_3 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_4 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_5 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_6 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_7 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    └── multiplexer (Multiplexer)
+│    │         ├── choose_cmd (_CommandChooser)
+│    │         │    └── roundrobin_0 (RoundRobin) [Gen]
+│    │         ├── choose_req (_CommandChooser)
+│    │         │    └── roundrobin_0 (RoundRobin) [Gen]
+│    │         ├── _steerer_0 (_Steerer) [Gen]
+│    │         ├── trrdcon (tXXDController)
+│    │         ├── tfawcon (tFAWController)
+│    │         ├── tccdcon (tXXDController)
+│    │         ├── twtrcon (tXXDController)
+│    │         └── fsm (FSM)
+│    └── crossbar (LiteDRAMCrossbar)
+│         ├── roundrobin_0 (RoundRobin) [Gen]
+│         ├── roundrobin_1 (RoundRobin) [Gen]
+│         ├── roundrobin_2 (RoundRobin) [Gen]
+│         ├── roundrobin_3 (RoundRobin) [Gen]
+│         ├── roundrobin_4 (RoundRobin) [Gen]
+│         ├── roundrobin_5 (RoundRobin) [Gen]
+│         ├── roundrobin_6 (RoundRobin) [Gen]
+│         └── roundrobin_7 (RoundRobin) [Gen]
+├── l2_cache (Cache)
+│    └── fsm (FSM)
+├── wishbone_bridge (LiteDRAMWishbone2Native)
+│    └── fsm (FSM)
+├── ddr_diagnostic_ram (SRAM)
+├── ddr_uncached_bridge (LiteDRAMWishbone2Native)
+│    └── fsm (FSM)
+├── leds (GPIOOut)
+├── buttons (GPIOIn)
+├── csr_bridge (Wishbone2CSR)
+│    └── fsm (FSM)
+├── csr_bankarray (CSRBankArray)
+│    ├── csrbank_0 (CSRBank) [Gen]
+│    │    └── csrstatus_0 (CSRStatus) [Gen]
+│    ├── csrbank_1 (CSRBank) [Gen]
+│    │    ├── csrstorage_0 (CSRStorage) [Gen]
+│    │    ├── csrstorage_1 (CSRStorage) [Gen]
+│    │    └── csrstatus_0 (CSRStatus) [Gen]
+│    ├── csrbank_2 (CSRBank) [Gen]
+│    │    ├── csrstorage_0 (CSRStorage) [Gen]
+│    │    ├── csrstorage_1 (CSRStorage) [Gen]
+│    │    └── csrstatus_0 (CSRStatus) [Gen]
+│    ├── sram_0 (SRAM) [Gen]
+│    ├── csrbank_3 (CSRBank) [Gen]
+│    │    └── csrstorage_0 (CSRStorage) [Gen]
+│    ├── csrbank_4 (CSRBank) [Gen]
+│    │    ├── csrstorage_0 (CSRStorage) [Gen]
+│    │    ├── csrstorage_1 (CSRStorage) [Gen]
+│    │    ├── csrstorage_2 (CSRStorage) [Gen]
+│    │    ├── csrstorage_3 (CSRStorage) [Gen]
+│    │    ├── csrstorage_4 (CSRStorage) [Gen]
+│    │    ├── csrstatus_0 (CSRStatus) [Gen]
+│    │    ├── csrstorage_5 (CSRStorage) [Gen]
+│    │    ├── csrstorage_6 (CSRStorage) [Gen]
+│    │    ├── csrstorage_7 (CSRStorage) [Gen]
+│    │    ├── csrstorage_8 (CSRStorage) [Gen]
+│    │    └── csrstatus_1 (CSRStatus) [Gen]
+│    ├── csrbank_5 (CSRBank) [Gen]
+│    │    ├── csrstorage_0 (CSRStorage) [Gen]
+│    │    ├── csrstorage_1 (CSRStorage) [Gen]
+│    │    ├── csrstorage_2 (CSRStorage) [Gen]
+│    │    ├── csrstorage_3 (CSRStorage) [Gen]
+│    │    ├── csrstatus_0 (CSRStatus) [Gen]
+│    │    ├── csrstatus_1 (CSRStatus) [Gen]
+│    │    ├── csrstatus_2 (CSRStatus) [Gen]
+│    │    ├── csrstorage_4 (CSRStorage) [Gen]
+│    │    ├── csrstorage_5 (CSRStorage) [Gen]
+│    │    └── csrstatus_3 (CSRStatus) [Gen]
+│    └── csrbank_6 (CSRBank) [Gen]
+│         ├── csrstatus_0 (CSRStatus) [Gen]
+│         ├── csrstatus_1 (CSRStatus) [Gen]
+│         ├── csrstatus_2 (CSRStatus) [Gen]
+│         ├── csrstatus_3 (CSRStatus) [Gen]
+│         ├── csrstorage_0 (CSRStorage) [Gen]
+│         ├── csrstatus_4 (CSRStatus) [Gen]
+│         └── csrstatus_5 (CSRStatus) [Gen]
+└── csr_interconnect (InterconnectShared)
+Legend:
+  [Gen]: Auto-generated instance name.
+  [BB:NAME]: Blackbox instance (verilog Instance).
+
+INFO:SoC:--------------------------------------------------------------------------------
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/diagnostics/bios-probes/32768/software/libc'
+rm -f -r /home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/diagnostics/bios-probes/32768/software/include/../picolibc_src
+cp -a /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data /home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/diagnostics/bios-probes/32768/software/include/../picolibc_src
+if [ -d "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libc/riscv" ]; then \
+	cp /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libc/riscv/* /home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/diagnostics/bios-probes/32768/software/include/../picolibc_src/libc/machine/riscv/ ;\
+fi
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/diagnostics/bios-probes/32768/software/libc'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/diagnostics/bios-probes/32768/software/libcompiler_rt'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/diagnostics/bios-probes/32768/software/libcompiler_rt'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/diagnostics/bios-probes/32768/software/libbase'
+ CC       console.o
+ CC       timeout.o
+ CC       system.o
+ CC       memtest.o
+ CC       uart.o
+ CC       startup.o
+ CC       spiflash.o
+ CC       i2c.o
+ CC       isr.o
+ CC       hyperram.o
+ AR       libbase.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/diagnostics/bios-probes/32768/software/libbase'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/diagnostics/bios-probes/32768/software/libfatfs'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/diagnostics/bios-probes/32768/software/libfatfs'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/diagnostics/bios-probes/32768/software/liblitespi'
+ CC       spiflash.o
+ CC       spiram.o
+ AR       liblitespi.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/diagnostics/bios-probes/32768/software/liblitespi'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/diagnostics/bios-probes/32768/software/liblitedram'
+ CC       sdram.o
+ CC       bist.o
+ CC       sdram_dbg.o
+ CC       sdram_spd.o
+ CC       utils.o
+ CC       accessors.o
+ AR       liblitedram.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/diagnostics/bios-probes/32768/software/liblitedram'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/diagnostics/bios-probes/32768/software/libliteeth'
+ CC       udp.o
+ CC       tftp.o
+ CC       mdio.o
+ CC       dhcp.o
+ CC       sfp.o
+/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libliteeth/sfp.c:816:6: warning: no previous prototype for 'sfp_init' [-Wmissing-prototypes]
+  816 | void sfp_init(void) {}
+      |      ^~~~~~~~
+ AR       libliteeth.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/diagnostics/bios-probes/32768/software/libliteeth'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/diagnostics/bios-probes/32768/software/liblitesdcard'
+ CC       sdcard.o
+ CC       spisdcard.o
+ AR       liblitesdcard.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/diagnostics/bios-probes/32768/software/liblitesdcard'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/diagnostics/bios-probes/32768/software/liblitesata'
+ CC       sata.o
+ AR       liblitesata.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/diagnostics/bios-probes/32768/software/liblitesata'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/diagnostics/bios-probes/32768/software/bios'
+ CC       boot.o
+ CC       cmd_bios.o
+ CC       cmd_mem.o
+ CC       cmd_boot.o
+ CC       cmd_i2c.o
+ CC       cmd_spiflash.o
+ CC       cmd_litedram.o
+ CC       cmd_liteeth.o
+ CC       cmd_litesdcard.o
+ CC       cmd_litesata.o
+ CC       sim_debug.o
+ CC       main.o
+ CC       bios.elf
+/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/bin/ld: warning: bios.elf has a LOAD segment with RWX permissions
+chmod -x bios.elf
+ OBJCOPY  bios.bin
+chmod -x bios.bin
+python3 -m litex.soc.software.crcfbigen bios.bin --little
+python3 -m litex.soc.software.memusage --fail-stack-margin 2048 bios.elf /home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/diagnostics/bios-probes/32768/software/bios/../include/generated/regions.ld riscv-none-elf
+
+ROM usage: 26.89KiB 	(84.02%)
+SRAM usage: 0.33KiB 	(4.10%)
+  .data: 0.02KiB
+  .bss: 0.30KiB
+  stack margin: 7.67KiB
+
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/diagnostics/bios-probes/32768/software/bios'
+INFO:SoC:Initializing ROM rom with contents (Size: 0x8000).
+INFO:GW1NPLL:Creating GW1NPLL.
+INFO:GW1NPLL:Registering Single Ended ClkIn of 27.00MHz.
+INFO:GW1NPLL:Creating ClkOut0 sys2x_i of 96.00MHz (+-10000.00ppm).
+INFO:SoC:        __   _ __      _  __  
+INFO:SoC:       / /  (_) /____ | |/_/  
+INFO:SoC:      / /__/ / __/ -_)>  <    
+INFO:SoC:     /____/_/\__/\__/_/|_|  
+INFO:SoC:  Build your hardware, easily!
+INFO:SoC:--------------------------------------------------------------------------------
+INFO:SoC:Creating SoC... (2026-10-01 23:03:29)
+INFO:SoC:--------------------------------------------------------------------------------
+INFO:SoC:FPGA device : GW2A-LV18PG256C8/I7.
+INFO:SoC:System clock: 48.000MHz.
+INFO:SoCBusHandler:Creating Bus Handler...
+INFO:SoCBusHandler:32-bit wishbone Bus, 4.0GiB Address Space.
+INFO:SoCBusHandler:Adding reserved Bus Regions...
+INFO:SoCBusHandler:Bus Handler created.
+INFO:SoCCSRHandler:Creating CSR Handler...
+INFO:SoCCSRHandler:32-bit CSR Bus, 32-bit Aligned, 16.0KiB Address Space, 2048B Paging, big Ordering (Up to 32 Locations).
+INFO:SoCCSRHandler:Adding reserved CSRs...
+INFO:SoCCSRHandler:CSR Handler created.
+INFO:SoCIRQHandler:Creating IRQ Handler...
+INFO:SoCIRQHandler:IRQ Handler (up to 32 Locations).
+INFO:SoCIRQHandler:Adding reserved IRQs...
+INFO:SoCIRQHandler:IRQ Handler created.
+INFO:SoC:--------------------------------------------------------------------------------
+INFO:SoC:Initial SoC:
+INFO:SoC:--------------------------------------------------------------------------------
+INFO:SoC:32-bit wishbone Bus, 4.0GiB Address Space.
+INFO:SoC:32-bit CSR Bus, 32-bit Aligned, 16.0KiB Address Space, 2048B Paging, big Ordering (Up to 32 Locations).
+INFO:SoC:IRQ Handler (up to 32 Locations).
+INFO:SoC:--------------------------------------------------------------------------------
+INFO:SoC:Controller ctrl added.
+INFO:SoC:CPU vexriscv added.
+INFO:SoC:CPU vexriscv adding IO Region 0 at 0x80000000 (Size: 0x80000000).
+INFO:SoCBusHandler:io0 Region added at Origin: 0x80000000, Size: 0x80000000, Mode:  RW, Cached: False, Linker: False.
+INFO:SoC:CPU vexriscv overriding sram mapping from 0x01000000 to 0x10000000.
+INFO:SoC:CPU vexriscv setting reset address to 0x00000000.
+INFO:SoC:CPU vexriscv adding Bus Master(s).
+INFO:SoCBusHandler:cpu_bus0 added as Bus Master.
+INFO:SoCBusHandler:cpu_bus1 added as Bus Master.
+INFO:SoC:CPU vexriscv adding Interrupt(s).
+INFO:SoC:CPU vexriscv adding SoC components.
+INFO:SoCBusHandler:rom Region added at Origin: 0x00000000, Size: 0x00008000, Mode:  RX, Cached:  True, Linker: False.
+INFO:SoCBusHandler:rom added as Bus Slave.
+INFO:SoC:RAM rom added Origin: 0x00000000, Size: 0x00008000, Mode:  RX, Cached:  True, Linker: False.
+INFO:SoCBusHandler:sram Region added at Origin: 0x10000000, Size: 0x00002000, Mode: RWX, Cached:  True, Linker: False.
+INFO:SoCBusHandler:sram added as Bus Slave.
+INFO:SoC:RAM sram added Origin: 0x10000000, Size: 0x00002000, Mode: RWX, Cached:  True, Linker: False.
+INFO:SoCIRQHandler:uart IRQ allocated at Location 0.
+INFO:SoCIRQHandler:timer0 IRQ allocated at Location 1.
+INFO:SoCBusHandler:main_ram Region added at Origin: 0x40000000, Size: 0x08000000, Mode: RWX, Cached:  True, Linker: False.
+INFO:SoCBusHandler:main_ram added as Bus Slave.
+INFO:SoCBusHandler:ddr_diagnostic_ram Region added at Origin: 0x20000000, Size: 0x00004000, Mode: RWX, Cached:  True, Linker: False.
+INFO:SoCBusHandler:ddr_diagnostic_ram added as Bus Slave.
+INFO:SoC:RAM ddr_diagnostic_ram added Origin: 0x20000000, Size: 0x00004000, Mode: RWX, Cached:  True, Linker: False.
+INFO:SoCBusHandler:ddr_uncached Region added at Origin: 0xc0000000, Size: 0x08000000, Mode: RWX, Cached: False, Linker: False.
+INFO:SoCBusHandler:ddr_uncached added as Bus Slave.
+INFO:SoC:CSR Bridge csr added.
+INFO:SoCBusHandler:csr Region added at Origin: 0xf0000000, Size: 0x00010000, Mode:  RW, Cached: False, Linker: False.
+INFO:SoCBusHandler:csr added as Bus Slave.
+INFO:SoCCSRHandler:csr added as CSR Master.
+INFO:SoCBusHandler:Interconnect: InterconnectShared (2 <-> 6).
+INFO:SoCCSRHandler:buttons CSR allocated at Location 0.
+INFO:SoCCSRHandler:ctrl CSR allocated at Location 1.
+INFO:SoCCSRHandler:ddrphy CSR allocated at Location 2.
+INFO:SoCCSRHandler:identifier_mem CSR allocated at Location 3.
+INFO:SoCCSRHandler:leds CSR allocated at Location 4.
+INFO:SoCCSRHandler:sdram CSR allocated at Location 5.
+INFO:SoCCSRHandler:timer0 CSR allocated at Location 6.
+INFO:SoCCSRHandler:uart CSR allocated at Location 7.
+INFO:SoC:--------------------------------------------------------------------------------
+INFO:SoC:Finalized SoC:
+INFO:SoC:--------------------------------------------------------------------------------
+INFO:SoC:32-bit wishbone Bus, 4.0GiB Address Space.
+IO Regions: (1)
+io0                 : Origin: 0x80000000, Size: 0x80000000, Mode:  RW, Cached: False, Linker: False
+Bus Regions: (6)
+rom                 : Origin: 0x00000000, Size: 0x00008000, Mode:  RX, Cached:  True, Linker: False
+sram                : Origin: 0x10000000, Size: 0x00002000, Mode: RWX, Cached:  True, Linker: False
+ddr_diagnostic_ram  : Origin: 0x20000000, Size: 0x00004000, Mode: RWX, Cached:  True, Linker: False
+main_ram            : Origin: 0x40000000, Size: 0x08000000, Mode: RWX, Cached:  True, Linker: False
+ddr_uncached        : Origin: 0xc0000000, Size: 0x08000000, Mode: RWX, Cached: False, Linker: False
+csr                 : Origin: 0xf0000000, Size: 0x00010000, Mode:  RW, Cached: False, Linker: False
+Bus Masters: (2)
+- cpu_bus0          : rw
+- cpu_bus1          : rw
+Bus Slaves: (6)
+- rom               : r
+- sram              : rw
+- main_ram          : rw
+- ddr_diagnostic_ram : rw
+- ddr_uncached      : rw
+- csr               : rw
+INFO:SoC:32-bit CSR Bus, 32-bit Aligned, 16.0KiB Address Space, 2048B Paging, big Ordering (Up to 32 Locations).
+CSR Locations: (8)
+- buttons        : 0
+- ctrl           : 1
+- ddrphy         : 2
+- identifier_mem : 3
+- leds           : 4
+- sdram          : 5
+- timer0         : 6
+- uart           : 7
+INFO:SoC:IRQ Handler (up to 32 Locations).
+IRQ Locations: (2)
+- uart   : 0
+- timer0 : 1
+INFO:SoC:--------------------------------------------------------------------------------
+INFO:SoC:--------------------------------------------------------------------------------
+INFO:SoC:SoC Hierarchy:
+INFO:SoC:--------------------------------------------------------------------------------
+INFO:SoC:
+ProjectSoC
+├── crg (_CRG)
+│    ├── pll (GW2APLL)
+│    │    └── [BB:rPLL]
+│    ├── [BB:DHCEN]
+│    └── [BB:CLKDIV]
+├── bus (SoCBusHandler)
+│    └── _interconnect (InterconnectShared)
+│         ├── arbiter (Arbiter)
+│         │    └── rr (RoundRobin)
+│         ├── decoder (Decoder)
+│         └── timeout (Timeout)
+│              └── waittimer_0 (WaitTimer) [Gen]
+├── csr (SoCCSRHandler)
+├── irq (SoCIRQHandler)
+├── ctrl (SoCController)
+├── cpu (VexRiscv)
+│    └── [BB:VexRiscv]
+├── rom (SRAM)
+├── sram (SRAM)
+├── identifier (Identifier)
+├── uart (UART)
+│    ├── ev (EventManager)
+│    │    ├── eventsourcelevel_0 (EventSourceLevel) [Gen]
+│    │    └── eventsourcelevel_1 (EventSourceLevel) [Gen]
+│    ├── phy (RS232PHY)
+│    │    ├── tx (RS232PHYTX)
+│    │    │    ├── clk_phase_accum (RS232ClkPhaseAccum)
+│    │    │    └── fsm (FSM)
+│    │    └── rx (RS232PHYRX)
+│    │         ├── clk_phase_accum (RS232ClkPhaseAccum)
+│    │         └── fsm (FSM)
+│    ├── tx_fifo (SyncFIFO)
+│    │    └── fifo (SyncFIFOBuffered)
+│    │         └── fifo (SyncFIFO)
+│    └── rx_fifo (SyncFIFO)
+│         └── fifo (SyncFIFOBuffered)
+│              └── fifo (SyncFIFO)
+├── timer0 (Timer)
+│    └── ev (EventManager)
+│         └── eventsourceprocess_0 (EventSourceProcess) [Gen]
+├── ddrphy (GW2DDRPHY)
+│    ├── init (GW2DDRPHYInit)
+│    │    └── [BB:DLL]
+│    ├── bitslip_0 (BitSlip) [Gen]
+│    ├── bitslip_1 (BitSlip) [Gen]
+│    ├── bitslip_2 (BitSlip) [Gen]
+│    ├── bitslip_3 (BitSlip) [Gen]
+│    ├── bitslip_4 (BitSlip) [Gen]
+│    ├── bitslip_5 (BitSlip) [Gen]
+│    ├── bitslip_6 (BitSlip) [Gen]
+│    ├── bitslip_7 (BitSlip) [Gen]
+│    ├── bitslip_8 (BitSlip) [Gen]
+│    ├── bitslip_9 (BitSlip) [Gen]
+│    ├── bitslip_10 (BitSlip) [Gen]
+│    ├── bitslip_11 (BitSlip) [Gen]
+│    ├── bitslip_12 (BitSlip) [Gen]
+│    ├── bitslip_13 (BitSlip) [Gen]
+│    ├── bitslip_14 (BitSlip) [Gen]
+│    ├── bitslip_15 (BitSlip) [Gen]
+│    ├── tappeddelayline_0 (TappedDelayLine) [Gen]
+│    ├── tappeddelayline_1 (TappedDelayLine) [Gen]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:IOBUF]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:ELVDS_OBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IODELAY]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:DQS]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:ELVDS_IOBUF]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:ELVDS_IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:DQS]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    └── [BB:IOBUF]
+├── sdram (LiteDRAMCore)
+│    ├── dfii (DFIInjector)
+│    │    ├── pi0 (PhaseInjector)
+│    │    └── pi1 (PhaseInjector)
+│    ├── controller (LiteDRAMController)
+│    │    ├── refresher (Refresher)
+│    │    │    ├── timer (RefreshTimer)
+│    │    │    ├── postponer (RefreshPostponer)
+│    │    │    ├── sequencer (RefreshSequencer)
+│    │    │    │    └── refreshexecuter_0 (RefreshExecuter) [Gen]
+│    │    │    ├── zqcs_timer (RefreshTimer)
+│    │    │    ├── zqs_executer (ZQCSExecuter)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_0 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_1 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_2 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_3 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_4 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_5 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_6 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_7 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    └── multiplexer (Multiplexer)
+│    │         ├── choose_cmd (_CommandChooser)
+│    │         │    └── roundrobin_0 (RoundRobin) [Gen]
+│    │         ├── choose_req (_CommandChooser)
+│    │         │    └── roundrobin_0 (RoundRobin) [Gen]
+│    │         ├── _steerer_0 (_Steerer) [Gen]
+│    │         ├── trrdcon (tXXDController)
+│    │         ├── tfawcon (tFAWController)
+│    │         ├── tccdcon (tXXDController)
+│    │         ├── twtrcon (tXXDController)
+│    │         └── fsm (FSM)
+│    └── crossbar (LiteDRAMCrossbar)
+│         ├── roundrobin_0 (RoundRobin) [Gen]
+│         ├── roundrobin_1 (RoundRobin) [Gen]
+│         ├── roundrobin_2 (RoundRobin) [Gen]
+│         ├── roundrobin_3 (RoundRobin) [Gen]
+│         ├── roundrobin_4 (RoundRobin) [Gen]
+│         ├── roundrobin_5 (RoundRobin) [Gen]
+│         ├── roundrobin_6 (RoundRobin) [Gen]
+│         └── roundrobin_7 (RoundRobin) [Gen]
+├── l2_cache (Cache)
+│    └── fsm (FSM)
+├── wishbone_bridge (LiteDRAMWishbone2Native)
+│    └── fsm (FSM)
+├── ddr_diagnostic_ram (SRAM)
+├── ddr_uncached_bridge (LiteDRAMWishbone2Native)
+│    └── fsm (FSM)
+├── leds (GPIOOut)
+├── buttons (GPIOIn)
+├── csr_bridge (Wishbone2CSR)
+│    └── fsm (FSM)
+├── csr_bankarray (CSRBankArray)
+│    ├── csrbank_0 (CSRBank) [Gen]
+│    │    └── csrstatus_0 (CSRStatus) [Gen]
+│    ├── csrbank_1 (CSRBank) [Gen]
+│    │    ├── csrstorage_0 (CSRStorage) [Gen]
+│    │    ├── csrstorage_1 (CSRStorage) [Gen]
+│    │    └── csrstatus_0 (CSRStatus) [Gen]
+│    ├── csrbank_2 (CSRBank) [Gen]
+│    │    ├── csrstorage_0 (CSRStorage) [Gen]
+│    │    ├── csrstorage_1 (CSRStorage) [Gen]
+│    │    └── csrstatus_0 (CSRStatus) [Gen]
+│    ├── sram_0 (SRAM) [Gen]
+│    ├── csrbank_3 (CSRBank) [Gen]
+│    │    └── csrstorage_0 (CSRStorage) [Gen]
+│    ├── csrbank_4 (CSRBank) [Gen]
+│    │    ├── csrstorage_0 (CSRStorage) [Gen]
+│    │    ├── csrstorage_1 (CSRStorage) [Gen]
+│    │    ├── csrstorage_2 (CSRStorage) [Gen]
+│    │    ├── csrstorage_3 (CSRStorage) [Gen]
+│    │    ├── csrstorage_4 (CSRStorage) [Gen]
+│    │    ├── csrstatus_0 (CSRStatus) [Gen]
+│    │    ├── csrstorage_5 (CSRStorage) [Gen]
+│    │    ├── csrstorage_6 (CSRStorage) [Gen]
+│    │    ├── csrstorage_7 (CSRStorage) [Gen]
+│    │    ├── csrstorage_8 (CSRStorage) [Gen]
+│    │    └── csrstatus_1 (CSRStatus) [Gen]
+│    ├── csrbank_5 (CSRBank) [Gen]
+│    │    ├── csrstorage_0 (CSRStorage) [Gen]
+│    │    ├── csrstorage_1 (CSRStorage) [Gen]
+│    │    ├── csrstorage_2 (CSRStorage) [Gen]
+│    │    ├── csrstorage_3 (CSRStorage) [Gen]
+│    │    ├── csrstatus_0 (CSRStatus) [Gen]
+│    │    ├── csrstatus_1 (CSRStatus) [Gen]
+│    │    ├── csrstatus_2 (CSRStatus) [Gen]
+│    │    ├── csrstorage_4 (CSRStorage) [Gen]
+│    │    ├── csrstorage_5 (CSRStorage) [Gen]
+│    │    └── csrstatus_3 (CSRStatus) [Gen]
+│    └── csrbank_6 (CSRBank) [Gen]
+│         ├── csrstatus_0 (CSRStatus) [Gen]
+│         ├── csrstatus_1 (CSRStatus) [Gen]
+│         ├── csrstatus_2 (CSRStatus) [Gen]
+│         ├── csrstatus_3 (CSRStatus) [Gen]
+│         ├── csrstorage_0 (CSRStorage) [Gen]
+│         ├── csrstatus_4 (CSRStatus) [Gen]
+│         └── csrstatus_5 (CSRStatus) [Gen]
+└── csr_interconnect (InterconnectShared)
+Legend:
+  [Gen]: Auto-generated instance name.
+  [BB:NAME]: Blackbox instance (verilog Instance).
+
+INFO:SoC:--------------------------------------------------------------------------------
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/software/libc'
+rm -f -r /home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/software/include/../picolibc_src
+cp -a /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data /home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/software/include/../picolibc_src
+if [ -d "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libc/riscv" ]; then \
+	cp /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libc/riscv/* /home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/software/include/../picolibc_src/libc/machine/riscv/ ;\
+fi
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/software/libc'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/software/libcompiler_rt'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/software/libcompiler_rt'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/software/libbase'
+ CC       console.o
+ CC       timeout.o
+ CC       system.o
+ CC       memtest.o
+ CC       uart.o
+ CC       startup.o
+ CC       spiflash.o
+ CC       i2c.o
+ CC       isr.o
+ CC       hyperram.o
+ AR       libbase.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/software/libbase'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/software/libfatfs'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/software/libfatfs'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/software/liblitespi'
+ CC       spiflash.o
+ CC       spiram.o
+ AR       liblitespi.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/software/liblitespi'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/software/liblitedram'
+ CC       sdram.o
+ CC       bist.o
+ CC       sdram_dbg.o
+ CC       sdram_spd.o
+ CC       utils.o
+ CC       accessors.o
+ AR       liblitedram.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/software/liblitedram'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/software/libliteeth'
+ CC       udp.o
+ CC       tftp.o
+ CC       mdio.o
+ CC       dhcp.o
+ CC       sfp.o
+/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libliteeth/sfp.c:816:6: warning: no previous prototype for 'sfp_init' [-Wmissing-prototypes]
+  816 | void sfp_init(void) {}
+      |      ^~~~~~~~
+ AR       libliteeth.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/software/libliteeth'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/software/liblitesdcard'
+ CC       sdcard.o
+ CC       spisdcard.o
+ AR       liblitesdcard.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/software/liblitesdcard'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/software/liblitesata'
+ CC       sata.o
+ AR       liblitesata.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/software/liblitesata'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/software/bios'
+ CC       boot.o
+ CC       cmd_bios.o
+ CC       cmd_mem.o
+ CC       cmd_boot.o
+ CC       cmd_i2c.o
+ CC       cmd_spiflash.o
+ CC       cmd_litedram.o
+ CC       cmd_liteeth.o
+ CC       cmd_litesdcard.o
+ CC       cmd_litesata.o
+ CC       sim_debug.o
+ CC       main.o
+ CC       bios.elf
+/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/bin/ld: warning: bios.elf has a LOAD segment with RWX permissions
+chmod -x bios.elf
+ OBJCOPY  bios.bin
+chmod -x bios.bin
+python3 -m litex.soc.software.crcfbigen bios.bin --little
+python3 -m litex.soc.software.memusage --fail-stack-margin 2048 bios.elf /home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/software/bios/../include/generated/regions.ld riscv-none-elf
+
+ROM usage: 26.89KiB 	(84.02%)
+SRAM usage: 0.33KiB 	(4.10%)
+  .data: 0.02KiB
+  .bss: 0.30KiB
+  stack margin: 7.67KiB
+
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/software/bios'
+INFO:SoC:Initializing ROM rom with contents (Size: 0x8000).
+*** GOWIN Tcl Command Line Console  *** 
+current device: GW2A-18C  GW2A-LV18PG256C8/I7
+add new file: "tang20k_minimal.cst"
+add new file: "tang20k_minimal.sdc"
+add new file: "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Min.v"
+add new file: "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v"
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file '/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Min.v'
+Analyzing Verilog file '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v'
+Compiling module 'tang20k_minimal'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":23)
+WARN  (EX3780) : Using initial value of 'alias_bus_err' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":420)
+WARN  (EX3780) : Using initial value of 'gw2ddrphy_burstdet_clr_w' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":867)
+WARN  (EX3780) : Using initial value of 'gw2ddrphy_rdly_dq_bitslip_rst_w' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1113)
+WARN  (EX3780) : Using initial value of 'gw2ddrphy_rdly_dq_bitslip_w' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1115)
+WARN  (EX3780) : Using initial value of 'gw2ddrphy_rdly_dq_inc_w' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1121)
+WARN  (EX3780) : Using initial value of 'gw2ddrphy_rdly_dq_rst_w' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1125)
+WARN  (EX3780) : Using initial value of 'interface0_err' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1154)
+WARN  (EX3780) : Using initial value of 'locked0' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1178)
+WARN  (EX3780) : Using initial value of 'locked1' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1179)
+WARN  (EX3780) : Using initial value of 'locked10' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1180)
+WARN  (EX3780) : Using initial value of 'locked11' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1181)
+WARN  (EX3780) : Using initial value of 'locked12' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1182)
+WARN  (EX3780) : Using initial value of 'locked13' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1183)
+WARN  (EX3780) : Using initial value of 'locked14' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1184)
+WARN  (EX3780) : Using initial value of 'locked15' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1185)
+WARN  (EX3780) : Using initial value of 'locked2' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1186)
+WARN  (EX3780) : Using initial value of 'locked3' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1187)
+WARN  (EX3780) : Using initial value of 'locked4' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1188)
+WARN  (EX3780) : Using initial value of 'locked5' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1189)
+WARN  (EX3780) : Using initial value of 'locked6' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1190)
+WARN  (EX3780) : Using initial value of 'locked7' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1191)
+WARN  (EX3780) : Using initial value of 'locked8' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1192)
+WARN  (EX3780) : Using initial value of 'locked9' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1193)
+WARN  (EX3780) : Using initial value of 'por_rst' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1239)
+WARN  (EX3780) : Using initial value of 'projectsoc_adr_burst' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1244)
+WARN  (EX3780) : Using initial value of 'projectsoc_projectsoc_adr_burst' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1304)
+WARN  (EX3780) : Using initial value of 'projectsoc_projectsoc_ram_bus_err' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1313)
+WARN  (EX3780) : Using initial value of 'projectsoc_ram_adr_burst' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1318)
+WARN  (EX3780) : Using initial value of 'projectsoc_ram_bus_err' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1326)
+WARN  (EX3780) : Using initial value of 'projectsoc_ram_bus_ram_bus_err' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1334)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_bankmachine0_replace' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1388)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_bankmachine0_sink_first' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1402)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_bankmachine0_sink_last' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1403)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_bankmachine1_replace' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1483)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_bankmachine1_sink_first' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1497)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_bankmachine1_sink_last' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1498)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_bankmachine2_replace' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1578)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_bankmachine2_sink_first' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1592)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_bankmachine2_sink_last' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1593)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_bankmachine3_replace' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1673)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_bankmachine3_sink_first' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1687)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_bankmachine3_sink_last' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1688)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_bankmachine4_replace' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1768)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_bankmachine4_sink_first' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1782)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_bankmachine4_sink_last' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1783)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_bankmachine5_replace' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1863)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_bankmachine5_sink_first' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1877)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_bankmachine5_sink_last' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1878)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_bankmachine6_replace' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1958)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_bankmachine6_sink_first' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1972)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_bankmachine6_sink_last' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":1973)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_bankmachine7_replace' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2053)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_bankmachine7_sink_first' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2067)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_bankmachine7_sink_last' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2068)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_choose_cmd_want_cmds' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2125)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_choose_cmd_want_reads' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2126)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_choose_cmd_want_writes' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2127)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_choose_req_want_activates' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2142)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_choose_req_want_cmds' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2143)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_cmd_payload_is_read' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2151)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_cmd_payload_is_write' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2152)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_csr_dfi_p0_act_n' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2157)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_csr_dfi_p1_act_n' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2173)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_dfi_p0_act_n' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2189)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_dfi_p1_act_n' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2205)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_ext_dfi_p0_act_n' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2223)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_ext_dfi_p0_address' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2224)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_ext_dfi_p0_bank' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2225)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_ext_dfi_p0_cas_n' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2226)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_ext_dfi_p0_cke' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2227)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_ext_dfi_p0_cs_n' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2228)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_ext_dfi_p0_odt' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2229)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_ext_dfi_p0_ras_n' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2230)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_ext_dfi_p0_rddata_en' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2232)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_ext_dfi_p0_reset_n' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2234)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_ext_dfi_p0_we_n' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2235)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_ext_dfi_p0_wrdata' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2236)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_ext_dfi_p0_wrdata_en' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2237)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_ext_dfi_p0_wrdata_mask' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2238)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_ext_dfi_p1_act_n' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2239)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_ext_dfi_p1_address' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2240)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_ext_dfi_p1_bank' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2241)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_ext_dfi_p1_cas_n' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2242)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_ext_dfi_p1_cke' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2243)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_ext_dfi_p1_cs_n' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2244)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_ext_dfi_p1_odt' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2245)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_ext_dfi_p1_ras_n' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2246)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_ext_dfi_p1_rddata_en' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2248)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_ext_dfi_p1_reset_n' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2250)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_ext_dfi_p1_we_n' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2251)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_ext_dfi_p1_wrdata' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2252)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_ext_dfi_p1_wrdata_en' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2253)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_ext_dfi_p1_wrdata_mask' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2254)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_ext_dfi_sel' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2255)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_nop_a' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2350)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_nop_ba' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2351)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_phaseinjector0_command_issue_w' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2360)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_phaseinjector1_command_issue_w' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2383)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_steerer2' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2446)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_steerer3' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2447)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_steerer4' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2448)
+WARN  (EX3780) : Using initial value of 'projectsoc_sdram_steerer5' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2449)
+WARN  (EX3780) : Using initial value of 'projectsoc_uart_core_rx_fifo_replace' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2558)
+WARN  (EX3780) : Using initial value of 'projectsoc_uart_core_rx_source_first' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2584)
+WARN  (EX3780) : Using initial value of 'projectsoc_uart_core_rx_source_last' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2585)
+WARN  (EX3780) : Using initial value of 'projectsoc_uart_core_tx_fifo_replace' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2632)
+WARN  (EX3780) : Using initial value of 'projectsoc_uart_core_tx_fifo_sink_first' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2633)
+WARN  (EX3780) : Using initial value of 'projectsoc_uart_core_tx_fifo_sink_last' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2634)
+WARN  (EX3780) : Using initial value of 'projectsoc_vexriscv' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2684)
+WARN  (EX3780) : Using initial value of 'projectsoc_wb_sdram_err' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":2692)
+Extracting RAM for identifier 'rom'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":10888)
+Extracting RAM for identifier 'sram'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":10903)
+Extracting RAM for identifier 'mem'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":10922)
+Extracting RAM for identifier 'storage'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":10938)
+Extracting RAM for identifier 'storage_1'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":10957)
+Extracting RAM for identifier 'storage_2'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":13211)
+Extracting RAM for identifier 'storage_3'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":13226)
+Extracting RAM for identifier 'storage_4'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":13241)
+Extracting RAM for identifier 'storage_5'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":13256)
+Extracting RAM for identifier 'storage_6'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":13271)
+Extracting RAM for identifier 'storage_7'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":13286)
+Extracting RAM for identifier 'storage_8'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":13301)
+Extracting RAM for identifier 'storage_9'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":13316)
+Extracting RAM for identifier 'tag_mem'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":13330)
+Extracting RAM for identifier 'ddr_diagnostic_ram'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":13347)
+Extracting RAM for identifier 'data_mem_grain0'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":13451)
+Extracting RAM for identifier 'data_mem_grain1'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":13468)
+Extracting RAM for identifier 'data_mem_grain2'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":13485)
+Extracting RAM for identifier 'data_mem_grain3'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":13502)
+Extracting RAM for identifier 'data_mem_grain4'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":13519)
+Extracting RAM for identifier 'data_mem_grain5'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":13536)
+Extracting RAM for identifier 'data_mem_grain6'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":13553)
+Extracting RAM for identifier 'data_mem_grain7'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":13570)
+Extracting RAM for identifier 'data_mem_grain8'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":13587)
+Extracting RAM for identifier 'data_mem_grain9'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":13604)
+Extracting RAM for identifier 'data_mem_grain10'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":13621)
+Extracting RAM for identifier 'data_mem_grain11'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":13638)
+Extracting RAM for identifier 'data_mem_grain12'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":13655)
+Extracting RAM for identifier 'data_mem_grain13'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":13672)
+Extracting RAM for identifier 'data_mem_grain14'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":13689)
+Extracting RAM for identifier 'data_mem_grain15'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":13706)
+WARN  (EX3791) : Expression size 2 truncated to fit in target size 1("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":4021)
+WARN  (EX3791) : Expression size 2 truncated to fit in target size 1("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":4052)
+WARN  (EX3791) : Expression size 30 truncated to fit in target size 28("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":5944)
+WARN  (EX3791) : Expression size 28 truncated to fit in target size 23("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":6011)
+WARN  (EX3791) : Expression size 28 truncated to fit in target size 23("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":6133)
+WARN  (EX3791) : Expression size 30 truncated to fit in target size 14("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":6438)
+WARN  (EX3791) : Expression size 4 truncated to fit in target size 3("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":9923)
+WARN  (EX3670) : Actual bit length 2 differs from formal bit length 3 for port 'RCLKSEL'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":12039)
+WARN  (EX3670) : Actual bit length 2 differs from formal bit length 3 for port 'RCLKSEL'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.v":12629)
+Compiling module 'VexRiscv'("/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Min.v":7)
+Extracting RAM for identifier 'RegFilePlugin_regFile'("/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Min.v":977)
+Compiling module 'StreamFifoLowLatency'("/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Min.v":3812)
+Compiling module 'StreamFifo'("/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Min.v":3859)
+WARN  (EX1998) : Net 'IBusSimplePlugin_rspJoin_fetchRsp_isRvc' does not have a driver("/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Min.v":541)
+WARN  (EX1998) : Net 'CsrPlugin_mtvec_mode[1]' does not have a driver("/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Min.v":661)
+NOTE  (EX0101) : Current top module is "tang20k_minimal"
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/impl/gwsynthesis/project.vg" completed
+[100%] Generate report file "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/impl/gwsynthesis/project_syn.rpt.html" completed
+GowinSynthesis finish
+Reading netlist file: "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/impl/gwsynthesis/project.vg"
+Parsing netlist file "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/impl/gwsynthesis/project.vg" completed
+Processing netlist completed
+Reading constraint file: "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/tang20k_minimal.cst"
+Physical Constraint parsed completed
+Running placement......
+[10%] Placement Phase 0 completed
+[20%] Placement Phase 1 completed
+[30%] Placement Phase 2 completed
+[50%] Placement Phase 3 completed
+Running routing......
+[60%] Routing Phase 0 completed
+[70%] Routing Phase 1 completed
+[80%] Routing Phase 2 completed
+[90%] Routing Phase 3 completed
+Running timing analysis......
+[95%] Timing analysis completed
+Placement and routing completed
+Bitstream generation in progress......
+Bitstream generation completed
+Running power analysis......
+[100%] Power analysis completed
+Generate file "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/impl/pnr/project.power.html" completed
+Generate file "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/impl/pnr/project.pin.html" completed
+Generate file "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/impl/pnr/project.rpt.html" completed
+Generate file "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/impl/pnr/project.rpt.txt" completed
+Generate file "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/impl/pnr/project.tr.html" completed
+Generate file "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/gateware/impl/pnr/project.tr" completed
+Thu Oct  1 23:04:30 2026
+
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/firmware'
+ CC       main.o
+ CC       /home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/firmware/demo.elf
+/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/bin/ld: warning: /home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/firmware/demo.elf has a LOAD segment with RWX permissions
+ OBJCOPY  /home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/firmware/demo.bin
+chmod -x /home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/firmware/demo.bin
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/firmware'
+/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/bin/ld: warning: /home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/diagnostics/smoke/ddr_test.elf has a LOAD segment with RWX permissions
+/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/bin/ld: warning: /home/user/git/fpga/sipeedtangprimer20k-riscv/build/ddr3/minimal/diagnostics/full/ddr_test.elf has a LOAD segment with RWX permissions
+{
+  "status": "passed",
+  "stress_seconds": 1800,
+  "profiles": {
+    "minimal": {
+      "status": "passed",
+      "profile": "minimal",
+      "cpu_candidate": null,
+      "candidate_rtl_sha256": null,
+      "memory_mode": "ddr3",
+      "clock_hz": 48000000,
+      "ddr_geometry_bytes": 134217728,
+      "ddr_uncached_base": 3221225472,
+      "l2_cache_bytes": 8192,
+      "training_patch_sha256": "7cfc35b269fb7123dbedf32ca4a1ea3a6a59d809f1fd834ba0ac4399916d6635",
+      "gowin_sdc_patch_sha256": "84e41d7d1b78d54e13a6e528d7b9600a95b9ffb75ec99b00e9bddaaf11ddfe85",
+      "cdc_patch_sha256": "71229b174b5d5f637379c059b0dcf4d9643252341056c92c832faf99722bac92",
+      "source_identity": {
+        "gateware/ddr3.py": "2133b4b308f3af3c7c8b95ecfc84a5ce6cec7b163b0bdac4d53db6fcbdcbbde2",
+        "gateware/ddr_geometry.py": "a560747cf2d231da7e4f4380e73510b604f5d7398fb3749def7765709c8833ec",
+        "firmware/ddrtest/ddr_test.c": "d4472e390622411da9205657f15936184c76fd3fc8c831d99c0fec54d84bac84",
+        "firmware/ddrtest/linker.ld": "6d0cd5da419337fe8bce527898bc9595f83ed3e1be15eebc74ea410619981877",
+        "patches/litex-sdram-training-status.patch": "7cfc35b269fb7123dbedf32ca4a1ea3a6a59d809f1fd834ba0ac4399916d6635",
+        "patches/litex-gowin-extra-sdc.patch": "84e41d7d1b78d54e13a6e528d7b9600a95b9ffb75ec99b00e9bddaaf11ddfe85",
+        "patches/litedram-gw2ddrphy-dll-off-read.patch": "df5a3e3451bc43aae1910633a51c7ee38e37d6c7e8c8cb2bb00e4464e449efb1",
+        "patches/litex-ddr-diagnostic-boot.patch": "5aaa1ff59cbe6d4cbbf8349c9c2f951f6fb01783ab0b34d5abd18f5ed2cfe0f1",
+        "patches/litedram-gw2ddrphy-cdc.patch": "71229b174b5d5f637379c059b0dcf4d9643252341056c92c832faf99722bac92",
+        "bitstream": "9defcbc9bc2bdd76163cac712771b8911be6e91dbccb87cf764eabb6fb2de1db"
+      },
+      "stress_seconds": 1800,
+      "images": {
+        "smoke": {
+          "variant": "smoke",
+          "profile": "minimal",
+          "binary": "build/ddr3/minimal/diagnostics/smoke/ddr_test.bin",
+          "elf": "build/ddr3/minimal/diagnostics/smoke/ddr_test.elf",
+          "map": "build/ddr3/minimal/diagnostics/smoke/ddr_test.elf.map",
+          "binary_bytes": 6048,
+          "binary_sha256": "2dd6efea1ed7634f586fcd712f21f5b1f749f76a9e7d8da5a56ab9e9e709a0a4",
+          "elf_sha256": "b663602885467a5692580ebf35ca87b55606b753fce95db7ffd121716191a035",
+          "source_sha256": "d4472e390622411da9205657f15936184c76fd3fc8c831d99c0fec54d84bac84",
+          "linker_sha256": "6d0cd5da419337fe8bce527898bc9595f83ed3e1be15eebc74ea410619981877",
+          "stress_seconds": 1800,
+          "read_delay_probe": false,
+          "isolated_write_probe": false,
+          "diagnostic_ram": {
+            "base": 536870912,
+            "size_bytes": 16384,
+            "code_data_bss_stack_in_ram": true,
+            "stack_bytes": 2048,
+            "symbols": {
+              "_ftext": 536870912,
+              "_start": 536870912,
+              "_fdata": 536876944,
+              "_end": 536877248,
+              "_stack_bottom": 536885248,
+              "_stack_top": 536887296
+            },
+            "sections": {
+              "NULL": {
+                "address": 0,
+                "size": 0
+              },
+              ".text": {
+                "address": 536870912,
+                "size": 4880
+              },
+              ".rodata": {
+                "address": 536875792,
+                "size": 1152
+              },
+              ".data": {
+                "address": 536876944,
+                "size": 16
+              },
+              ".bss": {
+                "address": 536876960,
+                "size": 288
+              },
+              ".stack": {
+                "address": 536885248,
+                "size": 2048
+              },
+              ".riscv.attributes": {
+                "address": 0,
+                "size": 53
+              },
+              ".comment": {
+                "address": 0,
+                "size": 51
+              },
+              ".debug_line": {
+                "address": 0,
+                "size": 13185
+              },
+              ".debug_line_str": {
+                "address": 0,
+                "size": 4373
+              },
+              ".debug_info": {
+                "address": 0,
+                "size": 9858
+              },
+              ".debug_abbrev": {
+                "address": 0,
+                "size": 4499
+              },
+              ".debug_aranges": {
+                "address": 0,
+                "size": 496
+              },
+              ".debug_str": {
+                "address": 0,
+                "size": 70511
+              },
+              ".debug_loclists": {
+                "address": 0,
+                "size": 5369
+              },
+              ".debug_rnglists": {
+                "address": 0,
+                "size": 895
+              },
+              ".debug_macro": {
+                "address": 0,
+                "size": 30223
+              },
+              ".debug_frame": {
+                "address": 0,
+                "size": 92
+              },
+              ".symtab": {
+                "address": 0,
+                "size": 1888
+              },
+              ".strtab": {
+                "address": 0,
+                "size": 775
+              },
+              ".shstrtab": {
+                "address": 0,
+                "size": 224
+              }
+            }
+          }
+        },
+        "full": {
+          "variant": "full",
+          "profile": "minimal",
+          "binary": "build/ddr3/minimal/diagnostics/full/ddr_test.bin",
+          "elf": "build/ddr3/minimal/diagnostics/full/ddr_test.elf",
+          "map": "build/ddr3/minimal/diagnostics/full/ddr_test.elf.map",
+          "binary_bytes": 11088,
+          "binary_sha256": "ce48e2513591119f0fab1233399f23408c65beb2dc50081241b6600c6cc671eb",
+          "elf_sha256": "5a05db06c614580b9062c5a1a9909ebd6ff1048f31298d55f3b26a6564f7b8b1",
+          "source_sha256": "d4472e390622411da9205657f15936184c76fd3fc8c831d99c0fec54d84bac84",
+          "linker_sha256": "6d0cd5da419337fe8bce527898bc9595f83ed3e1be15eebc74ea410619981877",
+          "stress_seconds": 1800,
+          "read_delay_probe": false,
+          "isolated_write_probe": false,
+          "diagnostic_ram": {
+            "base": 536870912,
+            "size_bytes": 16384,
+            "code_data_bss_stack_in_ram": true,
+            "stack_bytes": 2048,
+            "symbols": {
+              "_ftext": 536870912,
+              "_start": 536870912,
+              "_fdata": 536881976,
+              "_end": 536882288,
+              "_stack_bottom": 536885248,
+              "_stack_top": 536887296
+            },
+            "sections": {
+              "NULL": {
+                "address": 0,
+                "size": 0
+              },
+              ".text": {
+                "address": 536870912,
+                "size": 9192
+              },
+              ".rodata": {
+                "address": 536880104,
+                "size": 1872
+              },
+              ".data": {
+                "address": 536881976,
+                "size": 24
+              },
+              ".bss": {
+                "address": 536882000,
+                "size": 288
+              },
+              ".stack": {
+                "address": 536885248,
+                "size": 2048
+              },
+              ".riscv.attributes": {
+                "address": 0,
+                "size": 53
+              },
+              ".comment": {
+                "address": 0,
+                "size": 51
+              },
+              ".debug_line": {
+                "address": 0,
+                "size": 28796
+              },
+              ".debug_line_str": {
+                "address": 0,
+                "size": 5044
+              },
+              ".debug_info": {
+                "address": 0,
+                "size": 21869
+              },
+              ".debug_abbrev": {
+                "address": 0,
+                "size": 6265
+              },
+              ".debug_aranges": {
+                "address": 0,
+                "size": 704
+              },
+              ".debug_str": {
+                "address": 0,
+                "size": 71093
+              },
+              ".debug_loclists": {
+                "address": 0,
+                "size": 13007
+              },
+              ".debug_rnglists": {
+                "address": 0,
+                "size": 3018
+              },
+              ".debug_macro": {
+                "address": 0,
+                "size": 31306
+              },
+              ".debug_frame": {
+                "address": 0,
+                "size": 220
+              },
+              ".symtab": {
+                "address": 0,
+                "size": 2224
+              },
+              ".strtab": {
+                "address": 0,
+                "size": 909
+              },
+              ".shstrtab": {
+                "address": 0,
+                "size": 224
+              }
+            }
+          }
+        }
+      },
+      "created_utc": "2026-10-02T03:04:30.383093+00:00",
+      "finished_utc": "2026-10-02T03:04:30.718414+00:00"
+    }
+  },
+  "finished_utc": "2026-10-02T03:04:30.718789+00:00"
+}

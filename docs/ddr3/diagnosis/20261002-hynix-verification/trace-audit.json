@@ -1,0 +1,20 @@
+[
+  {
+    "evidence": "docs/ddr3/diagnosis/20261002T030129.340475Z-dll-off-write-trace",
+    "audit": "passed",
+    "suite": "neighbor-read",
+    "bitstream_sha256": "74518b3959a8ea91974c923a0a4ad152a6fe20b9fa05a5c380e47133352414f4",
+    "trace_count": 10,
+    "decoded_frame_count": 8,
+    "acceptance_credit": false
+  },
+  {
+    "evidence": "docs/ddr3/diagnosis/20261002T030658.410143Z-dll-off-write-trace",
+    "audit": "passed",
+    "suite": "geometry",
+    "bitstream_sha256": "74518b3959a8ea91974c923a0a4ad152a6fe20b9fa05a5c380e47133352414f4",
+    "trace_count": 28,
+    "decoded_frame_count": 224,
+    "acceptance_credit": false
+  }
+]

@@ -76,7 +76,7 @@ def check_generated_soc(profile, memory="onchip"):
         assert hasattr(soc, "ddrphy") and hasattr(soc, "sdram")
         geom = soc.sdram.controller.settings.geom
         actual_bytes = (1 << (geom.bankbits + geom.rowbits + geom.colbits)) * (soc.ddrphy.settings.databits // 8)
-        assert (1 << geom.bankbits, 1 << geom.rowbits, 1 << geom.colbits) == (8, 16384, 1024)
+        assert (1 << geom.bankbits, 1 << geom.rowbits, 1 << geom.colbits) == (8, 8192, 1024)
         assert actual_bytes == DDR_SIZE_BYTES
         assert soc.ddrphy.settings.cl == 6 and soc.ddrphy.settings.cwl == 6
         assert soc.ddrphy.settings.dll_off is True

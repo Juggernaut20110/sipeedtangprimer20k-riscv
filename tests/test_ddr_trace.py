@@ -14,6 +14,29 @@ from scripts.ddr_trace_audit import audit
 
 
 class TraceTests(unittest.TestCase):
+    def test_geometry_capture_audit_rejects_false_result_and_source_identity(self):
+        root = Path(__file__).resolve().parents[1]
+        fixture = root / 'docs/ddr3/diagnosis/20261002T030658.410143Z-dll-off-write-trace'
+        self.assertEqual(audit(fixture)['audit'], 'passed')
+        with tempfile.TemporaryDirectory(dir=root / 'build') as temporary:
+            directory = Path(temporary)
+            for source in fixture.iterdir():
+                if source.name not in ('trace-probe.json', 'manifest.json'):
+                    (directory / source.name).symlink_to(source)
+            original = json.loads((fixture / 'trace-probe.json').read_text())
+            manifest = json.loads((fixture / 'manifest.json').read_text())
+            (directory / 'manifest.json').write_text(json.dumps(manifest))
+            forged = copy.deepcopy(original)
+            forged['bounded_geometry_probe_passed'] = False
+            (directory / 'trace-probe.json').write_text(json.dumps(forged))
+            with self.assertRaisesRegex(ValueError, 'false geometry result'):
+                audit(directory)
+            (directory / 'trace-probe.json').write_text(json.dumps(original))
+            manifest['geometry_source_sha256']['gateware/ddr3.py'] = '0' * 64
+            (directory / 'manifest.json').write_text(json.dumps(manifest))
+            with self.assertRaisesRegex(ValueError, 'hash mismatch'):
+                audit(directory)
+
     def test_retained_capture_audit_rejects_false_physical_and_serializer_results(self):
         root = Path(__file__).resolve().parents[1]
         fixture = root/'docs/ddr3/diagnosis/20261002T013805.615625Z-dll-off-write-trace'
@@ -51,6 +74,8 @@ class TraceTests(unittest.TestCase):
             name: {'frequency_mhz': frequency} for name, frequency in
             [('sys_clk', 48), ('sys2x_clk', 96), ('ddr_ck_96mhz', 96)]})
         manifest = {'diagnostic_only': True, 'write_trace': {'frames': 8},
+                    'csr': {'memories': {name: {'size': 128 * 1024 * 1024}
+                                        for name in ('main_ram', 'ddr_uncached')}},
                     'metrics': {'timing': timing}}
         validate_manifest(manifest)
         for kind in ('setup', 'hold', 'recovery', 'removal'):
@@ -62,12 +87,17 @@ class TraceTests(unittest.TestCase):
         bad['metrics']['timing']['generated_clocks']['sys_clk']['frequency_mhz'] = 50
         with self.assertRaises(ValueError):
             validate_manifest(bad)
+        bad = copy.deepcopy(manifest)
+        bad['csr']['memories']['main_ram']['size'] = 256 * 1024 * 1024
+        with self.assertRaisesRegex(ValueError, 'geometry'):
+            validate_manifest(bad)
 
     def test_failed_address_maps_to_the_correct_burst_and_word(self):
         self.assertEqual(burst_address(0xb64f4),
                          {'row': 45, 'bank': 4, 'column': 632, 'word_lane': 1})
         self.assertEqual(burst_address(0x64011ac)['word_lane'], 3)
-        for offset in (-4, 1, 256 * 1024 * 1024):
+        self.assertEqual(burst_address(128 * 1024 * 1024 - 4)['row'], 8191)
+        for offset in (-4, 1, 128 * 1024 * 1024, 256 * 1024 * 1024):
             with self.assertRaises(ValueError):
                 burst_address(offset)
 

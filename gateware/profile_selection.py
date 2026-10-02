@@ -4,11 +4,12 @@ import hashlib
 import json
 import re
 from pathlib import Path
+from gateware.ddr_geometry import DDR_SIZE_BYTES, DDR_ALIAS_OFFSETS
 
 ROOT = Path(__file__).resolve().parents[1]
 SELECTION_PATH = ROOT / "maxperf-profile-selection.json"
 SYS_CLK_HZ = 48_000_000
-DDR_BYTES = 256 * 1024 * 1024
+DDR_BYTES = DDR_SIZE_BYTES
 DDR_STRESS_SECONDS = 1800
 DDR_TRAINING_RUNS = 10
 ANSI_ESCAPE = re.compile(rb"\x1b\[[0-?]*[ -/]*[@-~]")
@@ -197,11 +198,11 @@ def _validate_ddr_capture(root, qualification_session, trial):
         raise ValueError("DDR3 raw capture does not contain every required full-range phase")
     for name in required_phases:
         started, finished = phase_starts[name], phase_ends[name]
-        expected_coverage = (104 if name == "address_bank_row_column_alias"
+        expected_coverage = (DDR_ALIAS_OFFSETS * 4 if name == "address_bank_row_column_alias"
                              else 512 if name == "cached_uncached_visibility" else DDR_BYTES)
         if (finished.get("status") != "passed" or int(finished.get("errors", "-1")) != 0
                 or int(started.get("coverage_bytes", "-1")) != expected_coverage
-                or int(started.get("range_end", "0"), 0) != 0xD0000000
+                or int(started.get("range_end", "0"), 0) != 0xC0000000 + DDR_BYTES
                 or (name != "cached_uncached_visibility"
                     and int(started.get("range_start", "0"), 0) != 0xC0000000)
                 or (name == "cached_uncached_visibility"

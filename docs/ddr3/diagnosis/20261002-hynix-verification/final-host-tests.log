@@ -1,0 +1,178 @@
+........................................................................INFO:SoC:[1m        __   _ __      _  __  [0m
+INFO:SoC:[1m       / /  (_) /____ | |/_/  [0m
+INFO:SoC:[1m      / /__/ / __/ -_)>  <    [0m
+INFO:SoC:[1m     /____/_/\__/\__/_/|_|  [0m
+INFO:SoC:[1m  Build your hardware, easily![0m
+INFO:SoC:[1m--------------------------------------------------------------------------------[0m
+INFO:SoC:[1mCreating SoC... (2026-10-01 23:11:53)[0m
+INFO:SoC:[1m--------------------------------------------------------------------------------[0m
+INFO:SoC:FPGA device : GW2A-LV18PG256C8/I7.
+INFO:SoC:System clock: 48.000MHz.
+INFO:SoCBusHandler:Creating Bus Handler...
+INFO:SoCBusHandler:[1m32[0m-bit [1mwishbone[0m Bus, [1m4.0[0mGiB Address Space.
+INFO:SoCBusHandler:Adding [36mreserved[0m Bus Regions...
+INFO:SoCBusHandler:Bus Handler [32mcreated[0m.
+INFO:SoCCSRHandler:Creating CSR Handler...
+INFO:SoCCSRHandler:[1m32[0m-bit CSR Bus, [1m32[0m-bit Aligned, [1m16.0[0mKiB Address Space, [1m2048[0mB Paging, [1mbig[0m Ordering (Up to [1m32[0m Locations).
+INFO:SoCCSRHandler:Adding [36mreserved[0m CSRs...
+INFO:SoCCSRHandler:CSR Handler [32mcreated[0m.
+INFO:SoCIRQHandler:Creating IRQ Handler...
+INFO:SoCIRQHandler:IRQ Handler (up to [1m32[0m Locations).
+INFO:SoCIRQHandler:Adding [36mreserved[0m IRQs...
+INFO:SoCIRQHandler:IRQ Handler [32mcreated[0m.
+INFO:SoC:[1m--------------------------------------------------------------------------------[0m
+INFO:SoC:[1mInitial SoC:[0m
+INFO:SoC:[1m--------------------------------------------------------------------------------[0m
+INFO:SoC:[1m32[0m-bit [1mwishbone[0m Bus, [1m4.0[0mGiB Address Space.
+INFO:SoC:[1m32[0m-bit CSR Bus, [1m32[0m-bit Aligned, [1m16.0[0mKiB Address Space, [1m2048[0mB Paging, [1mbig[0m Ordering (Up to [1m32[0m Locations).
+INFO:SoC:IRQ Handler (up to [1m32[0m Locations).
+INFO:SoC:[1m--------------------------------------------------------------------------------[0m
+INFO:SoC:Controller [4mctrl[0m [32madded[0m.
+INFO:SoC:CPU [4mvexriscv[0m [32madded[0m.
+INFO:SoC:CPU [4mvexriscv[0m [36madding[0m IO Region [1m0[0m at [1m0x80000000[0m (Size: [1m0x80000000[0m).
+INFO:SoCBusHandler:[4mio0[0m Region [32madded[0m at Origin: [1m0x80000000[0m, Size: [1m0x80000000[0m, Mode:  [1mRW[0m, Cached: [1mFalse[0m, Linker: [1mFalse[0m.
+INFO:SoC:CPU [4mvexriscv[0m [36moverriding[0m [1msram[0m mapping from [1m0x01000000[0m to [1m0x10000000[0m.
+INFO:SoC:CPU [4mvexriscv[0m [36msetting[0m reset address to [1m0x00000000[0m.
+INFO:SoC:CPU [4mvexriscv[0m [36madding[0m Bus Master(s).
+INFO:SoCBusHandler:[4mcpu_bus0[0m [32madded[0m as Bus Master.
+INFO:SoCBusHandler:[4mcpu_bus1[0m [32madded[0m as Bus Master.
+INFO:SoC:CPU [4mvexriscv[0m [36madding[0m Interrupt(s).
+INFO:SoC:CPU [4mvexriscv[0m [36madding[0m SoC components.
+INFO:SoCBusHandler:[4mrom[0m Region [32madded[0m at Origin: [1m0x00000000[0m, Size: [1m0x00008000[0m, Mode:  [1mRX[0m, Cached:  [1mTrue[0m, Linker: [1mFalse[0m.
+INFO:SoCBusHandler:[4mrom[0m [32madded[0m as Bus Slave.
+INFO:SoC:RAM [1mrom[0m [32madded[0m Origin: [1m0x00000000[0m, Size: [1m0x00008000[0m, Mode:  [1mRX[0m, Cached:  [1mTrue[0m, Linker: [1mFalse[0m.
+INFO:SoCBusHandler:[4msram[0m Region [32madded[0m at Origin: [1m0x10000000[0m, Size: [1m0x00002000[0m, Mode: [1mRWX[0m, Cached:  [1mTrue[0m, Linker: [1mFalse[0m.
+INFO:SoCBusHandler:[4msram[0m [32madded[0m as Bus Slave.
+INFO:SoC:RAM [1msram[0m [32madded[0m Origin: [1m0x10000000[0m, Size: [1m0x00002000[0m, Mode: [1mRWX[0m, Cached:  [1mTrue[0m, Linker: [1mFalse[0m.
+INFO:SoCIRQHandler:[4muart[0m IRQ [36mallocated[0m at Location [1m0[0m.
+INFO:SoCIRQHandler:[4mtimer0[0m IRQ [36mallocated[0m at Location [1m1[0m.
+INFO:SoCBusHandler:[4mmain_ram[0m Region [32madded[0m at Origin: [1m0x40000000[0m, Size: [1m0x08000000[0m, Mode: [1mRWX[0m, Cached:  [1mTrue[0m, Linker: [1mFalse[0m.
+INFO:SoCBusHandler:[4mmain_ram[0m [32madded[0m as Bus Slave.
+INFO:SoCBusHandler:[4mddr_diagnostic_ram[0m Region [32madded[0m at Origin: [1m0x20000000[0m, Size: [1m0x00004000[0m, Mode: [1mRWX[0m, Cached:  [1mTrue[0m, Linker: [1mFalse[0m.
+INFO:SoCBusHandler:[4mddr_diagnostic_ram[0m [32madded[0m as Bus Slave.
+INFO:SoC:RAM [1mddr_diagnostic_ram[0m [32madded[0m Origin: [1m0x20000000[0m, Size: [1m0x00004000[0m, Mode: [1mRWX[0m, Cached:  [1mTrue[0m, Linker: [1mFalse[0m.
+INFO:SoCBusHandler:[4mddr_uncached[0m Region [32madded[0m at Origin: [1m0xc0000000[0m, Size: [1m0x08000000[0m, Mode: [1mRWX[0m, Cached: [1mFalse[0m, Linker: [1mFalse[0m.
+INFO:SoCBusHandler:[4mddr_uncached[0m [32madded[0m as Bus Slave.
+INFO:GW1NPLL:Creating GW1NPLL.
+INFO:GW1NPLL:Registering [1mSingle Ended[0m [1mClkIn[0m of [1m27.00MHz[0m.
+INFO:GW1NPLL:Creating [1mClkOut0 sys2x_i[0m of [1m96.00MHz[0m (+-10000.00ppm).
+INFO:SoC:[1m        __   _ __      _  __  [0m
+INFO:SoC:[1m       / /  (_) /____ | |/_/  [0m
+INFO:SoC:[1m      / /__/ / __/ -_)>  <    [0m
+INFO:SoC:[1m     /____/_/\__/\__/_/|_|  [0m
+INFO:SoC:[1m  Build your hardware, easily![0m
+INFO:SoC:[1m--------------------------------------------------------------------------------[0m
+INFO:SoC:[1mCreating SoC... (2026-10-01 23:11:53)[0m
+INFO:SoC:[1m--------------------------------------------------------------------------------[0m
+INFO:SoC:FPGA device : GW2A-LV18PG256C8/I7.
+INFO:SoC:System clock: 48.000MHz.
+INFO:SoCBusHandler:Creating Bus Handler...
+INFO:SoCBusHandler:[1m32[0m-bit [1mwishbone[0m Bus, [1m4.0[0mGiB Address Space.
+INFO:SoCBusHandler:Adding [36mreserved[0m Bus Regions...
+INFO:SoCBusHandler:Bus Handler [32mcreated[0m.
+INFO:SoCCSRHandler:Creating CSR Handler...
+INFO:SoCCSRHandler:[1m32[0m-bit CSR Bus, [1m32[0m-bit Aligned, [1m16.0[0mKiB Address Space, [1m2048[0mB Paging, [1mbig[0m Ordering (Up to [1m32[0m Locations).
+INFO:SoCCSRHandler:Adding [36mreserved[0m CSRs...
+INFO:SoCCSRHandler:CSR Handler [32mcreated[0m.
+INFO:SoCIRQHandler:Creating IRQ Handler...
+INFO:SoCIRQHandler:IRQ Handler (up to [1m32[0m Locations).
+INFO:SoCIRQHandler:Adding [36mreserved[0m IRQs...
+INFO:SoCIRQHandler:IRQ Handler [32mcreated[0m.
+INFO:SoC:[1m--------------------------------------------------------------------------------[0m
+INFO:SoC:[1mInitial SoC:[0m
+INFO:SoC:[1m--------------------------------------------------------------------------------[0m
+INFO:SoC:[1m32[0m-bit [1mwishbone[0m Bus, [1m4.0[0mGiB Address Space.
+INFO:SoC:[1m32[0m-bit CSR Bus, [1m32[0m-bit Aligned, [1m16.0[0mKiB Address Space, [1m2048[0mB Paging, [1mbig[0m Ordering (Up to [1m32[0m Locations).
+INFO:SoC:IRQ Handler (up to [1m32[0m Locations).
+INFO:SoC:[1m--------------------------------------------------------------------------------[0m
+INFO:SoC:Controller [4mctrl[0m [32madded[0m.
+INFO:SoC:CPU [4mvexriscv[0m [32madded[0m.
+INFO:SoC:CPU [4mvexriscv[0m [36madding[0m IO Region [1m0[0m at [1m0x80000000[0m (Size: [1m0x80000000[0m).
+INFO:SoCBusHandler:[4mio0[0m Region [32madded[0m at Origin: [1m0x80000000[0m, Size: [1m0x80000000[0m, Mode:  [1mRW[0m, Cached: [1mFalse[0m, Linker: [1mFalse[0m.
+INFO:SoC:CPU [4mvexriscv[0m [36moverriding[0m [1msram[0m mapping from [1m0x01000000[0m to [1m0x10000000[0m.
+INFO:SoC:CPU [4mvexriscv[0m [36msetting[0m reset address to [1m0x00000000[0m.
+INFO:SoC:CPU [4mvexriscv[0m [36madding[0m Bus Master(s).
+INFO:SoCBusHandler:[4mcpu_bus0[0m [32madded[0m as Bus Master.
+INFO:SoCBusHandler:[4mcpu_bus1[0m [32madded[0m as Bus Master.
+INFO:SoC:CPU [4mvexriscv[0m [36madding[0m Interrupt(s).
+INFO:SoC:CPU [4mvexriscv[0m [36madding[0m SoC components.
+INFO:SoCBusHandler:[4mrom[0m Region [32madded[0m at Origin: [1m0x00000000[0m, Size: [1m0x00008000[0m, Mode:  [1mRX[0m, Cached:  [1mTrue[0m, Linker: [1mFalse[0m.
+INFO:SoCBusHandler:[4mrom[0m [32madded[0m as Bus Slave.
+INFO:SoC:RAM [1mrom[0m [32madded[0m Origin: [1m0x00000000[0m, Size: [1m0x00008000[0m, Mode:  [1mRX[0m, Cached:  [1mTrue[0m, Linker: [1mFalse[0m.
+INFO:SoCBusHandler:[4msram[0m Region [32madded[0m at Origin: [1m0x10000000[0m, Size: [1m0x00002000[0m, Mode: [1mRWX[0m, Cached:  [1mTrue[0m, Linker: [1mFalse[0m.
+INFO:SoCBusHandler:[4msram[0m [32madded[0m as Bus Slave.
+INFO:SoC:RAM [1msram[0m [32madded[0m Origin: [1m0x10000000[0m, Size: [1m0x00002000[0m, Mode: [1mRWX[0m, Cached:  [1mTrue[0m, Linker: [1mFalse[0m.
+INFO:SoCIRQHandler:[4muart[0m IRQ [36mallocated[0m at Location [1m0[0m.
+INFO:SoCIRQHandler:[4mtimer0[0m IRQ [36mallocated[0m at Location [1m1[0m.
+INFO:SoCBusHandler:[4mmain_ram[0m Region [32madded[0m at Origin: [1m0x40000000[0m, Size: [1m0x08000000[0m, Mode: [1mRWX[0m, Cached:  [1mTrue[0m, Linker: [1mFalse[0m.
+INFO:SoCBusHandler:[4mmain_ram[0m [32madded[0m as Bus Slave.
+INFO:SoCBusHandler:[4mddr_diagnostic_ram[0m Region [32madded[0m at Origin: [1m0x20000000[0m, Size: [1m0x00004000[0m, Mode: [1mRWX[0m, Cached:  [1mTrue[0m, Linker: [1mFalse[0m.
+INFO:SoCBusHandler:[4mddr_diagnostic_ram[0m [32madded[0m as Bus Slave.
+INFO:SoC:RAM [1mddr_diagnostic_ram[0m [32madded[0m Origin: [1m0x20000000[0m, Size: [1m0x00004000[0m, Mode: [1mRWX[0m, Cached:  [1mTrue[0m, Linker: [1mFalse[0m.
+INFO:SoCBusHandler:[4mddr_uncached[0m Region [32madded[0m at Origin: [1m0xc0000000[0m, Size: [1m0x08000000[0m, Mode: [1mRWX[0m, Cached: [1mFalse[0m, Linker: [1mFalse[0m.
+INFO:SoCBusHandler:[4mddr_uncached[0m [32madded[0m as Bus Slave.
+.INFO:GW1NPLL:Creating GW1NPLL.
+INFO:GW1NPLL:Registering [1mSingle Ended[0m [1mClkIn[0m of [1m27.00MHz[0m.
+INFO:GW1NPLL:Creating [1mClkOut0 sys2x_i[0m of [1m96.00MHz[0m (+-10000.00ppm).
+INFO:SoC:[1m        __   _ __      _  __  [0m
+INFO:SoC:[1m       / /  (_) /____ | |/_/  [0m
+INFO:SoC:[1m      / /__/ / __/ -_)>  <    [0m
+INFO:SoC:[1m     /____/_/\__/\__/_/|_|  [0m
+INFO:SoC:[1m  Build your hardware, easily![0m
+INFO:SoC:[1m--------------------------------------------------------------------------------[0m
+INFO:SoC:[1mCreating SoC... (2026-10-01 23:11:53)[0m
+INFO:SoC:[1m--------------------------------------------------------------------------------[0m
+INFO:SoC:FPGA device : GW2A-LV18PG256C8/I7.
+INFO:SoC:System clock: 48.000MHz.
+INFO:SoCBusHandler:Creating Bus Handler...
+INFO:SoCBusHandler:[1m32[0m-bit [1mwishbone[0m Bus, [1m4.0[0mGiB Address Space.
+INFO:SoCBusHandler:Adding [36mreserved[0m Bus Regions...
+INFO:SoCBusHandler:Bus Handler [32mcreated[0m.
+INFO:SoCCSRHandler:Creating CSR Handler...
+INFO:SoCCSRHandler:[1m32[0m-bit CSR Bus, [1m32[0m-bit Aligned, [1m16.0[0mKiB Address Space, [1m2048[0mB Paging, [1mbig[0m Ordering (Up to [1m32[0m Locations).
+INFO:SoCCSRHandler:Adding [36mreserved[0m CSRs...
+INFO:SoCCSRHandler:CSR Handler [32mcreated[0m.
+INFO:SoCIRQHandler:Creating IRQ Handler...
+INFO:SoCIRQHandler:IRQ Handler (up to [1m32[0m Locations).
+INFO:SoCIRQHandler:Adding [36mreserved[0m IRQs...
+INFO:SoCIRQHandler:IRQ Handler [32mcreated[0m.
+INFO:SoC:[1m--------------------------------------------------------------------------------[0m
+INFO:SoC:[1mInitial SoC:[0m
+INFO:SoC:[1m--------------------------------------------------------------------------------[0m
+INFO:SoC:[1m32[0m-bit [1mwishbone[0m Bus, [1m4.0[0mGiB Address Space.
+INFO:SoC:[1m32[0m-bit CSR Bus, [1m32[0m-bit Aligned, [1m16.0[0mKiB Address Space, [1m2048[0mB Paging, [1mbig[0m Ordering (Up to [1m32[0m Locations).
+INFO:SoC:IRQ Handler (up to [1m32[0m Locations).
+INFO:SoC:[1m--------------------------------------------------------------------------------[0m
+INFO:SoC:Controller [4mctrl[0m [32madded[0m.
+INFO:SoC:CPU [4mvexriscv[0m [32madded[0m.
+INFO:SoC:CPU [4mvexriscv[0m [36madding[0m IO Region [1m0[0m at [1m0x80000000[0m (Size: [1m0x80000000[0m).
+INFO:SoCBusHandler:[4mio0[0m Region [32madded[0m at Origin: [1m0x80000000[0m, Size: [1m0x80000000[0m, Mode:  [1mRW[0m, Cached: [1mFalse[0m, Linker: [1mFalse[0m.
+INFO:SoC:CPU [4mvexriscv[0m [36moverriding[0m [1msram[0m mapping from [1m0x01000000[0m to [1m0x10000000[0m.
+INFO:SoC:CPU [4mvexriscv[0m [36msetting[0m reset address to [1m0x00000000[0m.
+INFO:SoC:CPU [4mvexriscv[0m [36madding[0m Bus Master(s).
+INFO:SoCBusHandler:[4mcpu_bus0[0m [32madded[0m as Bus Master.
+INFO:SoCBusHandler:[4mcpu_bus1[0m [32madded[0m as Bus Master.
+INFO:SoC:CPU [4mvexriscv[0m [36madding[0m Interrupt(s).
+INFO:SoC:CPU [4mvexriscv[0m [36madding[0m SoC components.
+INFO:SoCBusHandler:[4mrom[0m Region [32madded[0m at Origin: [1m0x00000000[0m, Size: [1m0x00008000[0m, Mode:  [1mRX[0m, Cached:  [1mTrue[0m, Linker: [1mFalse[0m.
+INFO:SoCBusHandler:[4mrom[0m [32madded[0m as Bus Slave.
+INFO:SoC:RAM [1mrom[0m [32madded[0m Origin: [1m0x00000000[0m, Size: [1m0x00008000[0m, Mode:  [1mRX[0m, Cached:  [1mTrue[0m, Linker: [1mFalse[0m.
+INFO:SoCBusHandler:[4msram[0m Region [32madded[0m at Origin: [1m0x10000000[0m, Size: [1m0x00002000[0m, Mode: [1mRWX[0m, Cached:  [1mTrue[0m, Linker: [1mFalse[0m.
+INFO:SoCBusHandler:[4msram[0m [32madded[0m as Bus Slave.
+INFO:SoC:RAM [1msram[0m [32madded[0m Origin: [1m0x10000000[0m, Size: [1m0x00002000[0m, Mode: [1mRWX[0m, Cached:  [1mTrue[0m, Linker: [1mFalse[0m.
+INFO:SoCIRQHandler:[4muart[0m IRQ [36mallocated[0m at Location [1m0[0m.
+INFO:SoCIRQHandler:[4mtimer0[0m IRQ [36mallocated[0m at Location [1m1[0m.
+INFO:SoCBusHandler:[4mmain_ram[0m Region [32madded[0m at Origin: [1m0x40000000[0m, Size: [1m0x08000000[0m, Mode: [1mRWX[0m, Cached:  [1mTrue[0m, Linker: [1mFalse[0m.
+INFO:SoCBusHandler:[4mmain_ram[0m [32madded[0m as Bus Slave.
+INFO:SoCBusHandler:[4mddr_diagnostic_ram[0m Region [32madded[0m at Origin: [1m0x20000000[0m, Size: [1m0x00004000[0m, Mode: [1mRWX[0m, Cached:  [1mTrue[0m, Linker: [1mFalse[0m.
+INFO:SoCBusHandler:[4mddr_diagnostic_ram[0m [32madded[0m as Bus Slave.
+INFO:SoC:RAM [1mddr_diagnostic_ram[0m [32madded[0m Origin: [1m0x20000000[0m, Size: [1m0x00004000[0m, Mode: [1mRWX[0m, Cached:  [1mTrue[0m, Linker: [1mFalse[0m.
+INFO:SoCBusHandler:[4mddr_uncached[0m Region [32madded[0m at Origin: [1m0xc0000000[0m, Size: [1m0x08000000[0m, Mode: [1mRWX[0m, Cached: [1mFalse[0m, Linker: [1mFalse[0m.
+INFO:SoCBusHandler:[4mddr_uncached[0m [32madded[0m as Bus Slave.
+...........................
+----------------------------------------------------------------------
+Ran 100 tests in 1.455s
+
+OK
+Wrote docs/performance.md (INCOMPLETE — PROFILE=ALL batch failed)
+Wrote docs/performance.md (INCOMPLETE — PROFILE=ALL batch incomplete)

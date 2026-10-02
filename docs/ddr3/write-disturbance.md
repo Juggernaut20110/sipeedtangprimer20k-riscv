@@ -1,5 +1,7 @@
 # DDR3 write-disturbance investigation
 
+> Geometry correction, 2026-10-02 UTC: the fitted H5TQ1G63EFR has 128 MiB and 13 row bits. Earlier 256 MiB assumptions and full-capacity claims in this historical document are superseded by the [correction and hardware retest](hynix-geometry-correction.md). Errors below 128 MiB remain reproducible.
+
 Updated 2026-10-02 UTC. **Integrity remains failed. No experimental setting was promoted to a public build.** All programming used FPGA SRAM; flash was untouched. The system and DDR clocks remained 48 MHz and 96 MHz, with DLL-off CL6/CWL6 and the existing 256 MiB geometry.
 
 ## What the recorder established

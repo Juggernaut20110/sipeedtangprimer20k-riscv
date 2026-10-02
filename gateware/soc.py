@@ -8,6 +8,8 @@ from litex.soc.cores.gpio import GPIOIn, GPIOOut
 from litex.soc.integration.soc import SoCCore, SoCRegion
 from litex_boards.targets import sipeed_tang_primer_20k
 from gateware.profile_selection import accepted_maxperf_selection
+from gateware.ddr_geometry import DDR_SIZE_BYTES, DDR_PART, DDR_ADDRESS_BITS
+from gateware.ddr3 import H5TQ1G63EFR
 
 
 PROFILES = {
@@ -27,7 +29,6 @@ if accepted_maxperf_selection() is not None:
 SYS_CLK_FREQ = 48_000_000
 DDR_CK_FREQ = 96_000_000
 MEMORY_MODES = ("onchip", "ddr3")
-DDR_SIZE_BYTES = 256 * 1024 * 1024
 DDR_MAIN_RAM_BASE = 0x4000_0000
 DDR_UNCACHED_BASE = 0xC000_0000
 DDR_DIAGNOSTIC_BASE = 0x2000_0000
@@ -47,7 +48,7 @@ class ProjectSoC(sipeed_tang_primer_20k.BaseSoC):
     """Upstream board SoC with project-owned, ordered Dock GPIO CSRs."""
 
     def __init__(self, profile="minimal", memory="onchip", bios_size=None, cpu_rtl=None,
-                 cpu_variant=None, **kwargs):
+                 cpu_variant=None, ddr_module=H5TQ1G63EFR, **kwargs):
         provisional_maxperf = (profile == "maxperf" and profile not in PROFILES
                                and cpu_rtl is not None
                                and cpu_variant in ("projectim", "projectimc"))
@@ -57,6 +58,7 @@ class ProjectSoC(sipeed_tang_primer_20k.BaseSoC):
             raise ValueError(f"unknown memory mode {memory!r}; choose from {', '.join(MEMORY_MODES)}")
 
         ddr3 = memory == "ddr3"
+        self._project_ddr_module_class = ddr_module if ddr3 else None
         if profile == "performance" and cpu_rtl is None:
             raise ValueError("the performance profile requires its selected generated VexRiscv RTL")
         if bios_size is None:
@@ -73,7 +75,8 @@ class ProjectSoC(sipeed_tang_primer_20k.BaseSoC):
                 raise ValueError("on-chip public profiles keep their approved BIOS reservation")
 
         # An integrated main RAM size of zero is the upstream target's documented
-        # switch for its board-specific GW2DDRPHY and IMD128M16R39CG8GNF path.
+        # switch for its board-specific GW2DDRPHY path. add_sdram below replaces
+        # the upstream 256 MiB module with the fitted 128 MiB Hynix part.
         super().__init__(
             dock="standard",
             sys_clk_freq=SYS_CLK_FREQ,
@@ -225,6 +228,11 @@ class ProjectSoC(sipeed_tang_primer_20k.BaseSoC):
                 pin="rPLL/CLKOUT",
             )
 
+    def add_sdram(self, name, phy, module, **kwargs):
+        if name == "sdram" and self._project_ddr_module_class is not None:
+            module = self._project_ddr_module_class(SYS_CLK_FREQ, "1:2")
+        return super().add_sdram(name, phy=phy, module=module, **kwargs)
+
     def _add_ddr3_aliases(self):
         from litedram.frontend.wishbone import LiteDRAMWishbone2Native
         from litex.soc.interconnect import wishbone
@@ -247,7 +255,7 @@ class ProjectSoC(sipeed_tang_primer_20k.BaseSoC):
 
         # Normal CPU accesses at 0x40000000 pass through LiteDRAM's 8 KiB L2.
         # This second Wishbone/native bridge has its own controller port and maps
-        # the same 256 MiB physical range into VexRiscv's uncached IO window.
+        # the same 128 MiB physical range into VexRiscv's uncached IO window.
         alias_bus = wishbone.Interface(data_width=32, address_width=32, addressing="word")
         alias_region = SoCRegion(
             origin=DDR_UNCACHED_BASE,
@@ -263,6 +271,8 @@ class ProjectSoC(sipeed_tang_primer_20k.BaseSoC):
             base_address=DDR_UNCACHED_BASE,
         )
         self.add_constant("PROJECT_DDR_BYTES", DDR_SIZE_BYTES)
+        self.add_constant("PROJECT_DDR_PART", DDR_PART)
+        self.add_constant("PROJECT_DDR_ADDRESS_BITS", DDR_ADDRESS_BITS)
         self.add_constant("PROJECT_DDR_UNCACHED_BASE", DDR_UNCACHED_BASE)
         self.add_constant("PROJECT_DDR_DIAGNOSTIC_BASE", DDR_DIAGNOSTIC_BASE)
         self.add_constant("PROJECT_DDR_L2_BYTES", DDR_L2_SIZE)

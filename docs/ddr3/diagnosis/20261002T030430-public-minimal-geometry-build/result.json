@@ -1,0 +1,9 @@
+{
+  "diagnostic_only": true,
+  "acceptance_credit": false,
+  "firmware_compilation": "passed",
+  "programmed": false,
+  "status": "blocked_routed_timing",
+  "worst_setup_slack_ns": -0.911,
+  "violated_endpoints": 1
+}

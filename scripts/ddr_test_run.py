@@ -18,6 +18,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import benchmark_run as serial_runner  # noqa: E402
 import ddr_test_build as build_runner  # noqa: E402
 from gateware.soc import DDR_DIAGNOSTIC_BASE, DDR_L2_SIZE, DDR_SIZE_BYTES, MEMORY_MODES, PROFILES, ProjectSoC  # noqa: E402
+from gateware.ddr_geometry import DDR_ALIAS_OFFSETS, DDR_VISIBILITY_STRIDE, DDR_VISIBILITY_SAMPLES
 from memory import profile_build_dir, validate_memory  # noqa: E402
 
 
@@ -250,12 +251,16 @@ def validate_full_capture(lines, profile, stress_seconds):
     cache_phase = phases["cached_uncached_visibility"]
     if (alias_phase["range_start"] != 0xC0000000
             or alias_phase["range_end"] != 0xC0000000 + DDR_SIZE_BYTES
-            or alias_phase["alias_offsets"] != 26 or alias_phase["operations"] != 26):
+            or alias_phase["alias_offsets"] != DDR_ALIAS_OFFSETS
+            or alias_phase["operations"] != DDR_ALIAS_OFFSETS
+            or alias_phase["coverage_bytes"] != DDR_ALIAS_OFFSETS * 4
+            or alias_phase["bytes"] != DDR_ALIAS_OFFSETS * 4):
         raise ValueError(f"DDR address alias check did not exercise each expected address bit: {alias_phase}")
     if (cache_phase["range_start"] < 0xC0000000
             or cache_phase["range_end"] != 0xC0000000 + DDR_SIZE_BYTES
-            or cache_phase["sample_stride_bytes"] != 4 * 1024 * 1024
-            or cache_phase["samples"] != 64 or cache_phase["operations"] != 128
+            or cache_phase["sample_stride_bytes"] != DDR_VISIBILITY_STRIDE
+            or cache_phase["samples"] != DDR_VISIBILITY_SAMPLES
+            or cache_phase["operations"] != DDR_VISIBILITY_SAMPLES * 2
             or cache_phase["cache_maintenance"] != "fence,dflush,l2flush"):
         raise ValueError(f"DDR cache visibility checks did not cover their documented samples: {cache_phase}")
 

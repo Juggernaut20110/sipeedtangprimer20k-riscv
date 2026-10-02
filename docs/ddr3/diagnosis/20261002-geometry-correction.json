@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "status": "geometry_corrected_integrity_still_failed",
+  "acceptance_credit": false,
+  "report": "docs/ddr3/hynix-geometry-correction.md",
+  "physical_part": "H5TQ1G63EFR",
+  "physical_bytes": 134217728,
+  "previous_configured_bytes": 268435456,
+  "row_bits": 13,
+  "bank_bits": 3,
+  "column_bits": 10,
+  "audit": [
+    {
+      "evidence": "docs/ddr3/diagnosis/20261002T030129.340475Z-dll-off-write-trace",
+      "audit": "passed",
+      "suite": "neighbor-read",
+      "bitstream_sha256": "74518b3959a8ea91974c923a0a4ad152a6fe20b9fa05a5c380e47133352414f4",
+      "trace_count": 10,
+      "decoded_frame_count": 8,
+      "acceptance_credit": false
+    },
+    {
+      "evidence": "docs/ddr3/diagnosis/20261002T030658.410143Z-dll-off-write-trace",
+      "audit": "passed",
+      "suite": "geometry",
+      "bitstream_sha256": "74518b3959a8ea91974c923a0a4ad152a6fe20b9fa05a5c380e47133352414f4",
+      "trace_count": 28,
+      "decoded_frame_count": 224,
+      "acceptance_credit": false
+    }
+  ],
+  "audit_source_sha256": "e094927d6194a7b7bdeb4b05bb38f96b2da80f16b4046893f0baba8ac1e9d123",
+  "bounded_geometry_probe": {
+    "addresses": 27,
+    "readbacks": 378,
+    "observed_aliases": 0,
+    "acceptance_credit": false
+  },
+  "public_minimal_build": "docs/ddr3/diagnosis/20261002T030430-public-minimal-geometry-build/result.json",
+  "public_minimal_status": "blocked_routed_timing",
+  "current_board_recovery": "docs/ddr3/diagnosis/20261002T030948.302505Z-hynix-idle-recovery/results.json",
+  "flash_programming": false,
+  "verification": {
+    "host_tests": 100,
+    "generated_designs": 10,
+    "artifacts": "docs/ddr3/diagnosis/20261002-hynix-verification",
+    "sha256": {
+      "generated-and-host-tests.log": "4d7fa853f311ad2a4f0ec58b68024d7e06b91bb093eb2fdef322894de7f7dd67",
+      "public-programming-blocked.log": "fe4178c05256385d022b53d77cf7b9a672c8b0a1450e6538e04f4a01a68d4bfc",
+      "trace-audit.json": "38641a34fb87ea2fb6b06c57e172e4a8773e40c93721c008ab7cc191faaa4761",
+      "final-host-tests.log": "68457985a70f4c6699647d3be7bf6782c30722b33477d0acca256d5ba1d57fe3",
+      "ddr_trace_audit.py": "e094927d6194a7b7bdeb4b05bb38f96b2da80f16b4046893f0baba8ac1e9d123"
+    }
+  }
+}

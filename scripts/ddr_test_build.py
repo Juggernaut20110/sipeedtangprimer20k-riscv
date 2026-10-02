@@ -236,6 +236,8 @@ def build_profile_diagnostics(profile, stress_seconds, force=False, candidate_id
     metadata_path = output_dir / "ddr-test-metadata.json"
     output_dir.mkdir(parents=True, exist_ok=True)
     source_identity = {
+        "gateware/ddr3.py": sha256(ROOT / "gateware/ddr3.py"),
+        "gateware/ddr_geometry.py": sha256(ROOT / "gateware/ddr_geometry.py"),
         "firmware/ddrtest/ddr_test.c": sha256(ROOT / "firmware/ddrtest/ddr_test.c"),
         "firmware/ddrtest/linker.ld": sha256(ROOT / "firmware/ddrtest/linker.ld"),
         "patches/litex-sdram-training-status.patch": sha256(ROOT / "patches/litex-sdram-training-status.patch"),

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "report_generated_utc": "2026-10-02T02:08:44.672052+00:00",
+  "report_generated_utc": "2026-10-02T03:12:30.147081+00:00",
   "latest_batch_id": "20261001T201828.617667Z-ddr3",
   "latest_batch_status": "failed",
   "batches": [
@@ -1281,6 +1281,7 @@
           },
           "status": "failed",
           "errors": [
+            "session geometry does not match the fitted 128 MiB part",
             "recorded 1 training trials; requested 10",
             "one or more fresh SRAM reconfiguration/training/smoke trials failed revalidation",
             "full destructive memory and sustained stress evidence did not pass revalidation"
@@ -1515,8 +1516,8 @@
     }
   ],
   "integrity_investigation": "docs/ddr3/diagnosis/20261002-integrity-investigation.json",
-  "latest_diagnostic_id": "20261002T015614.337611Z-dll-off-odt-low",
-  "latest_diagnostic_status": "diagnostic_only_write_disturbance_reproduced",
+  "latest_diagnostic_id": "20261002T030658.410143Z-dll-off-write-trace",
+  "latest_diagnostic_status": "geometry_corrected_integrity_still_failed",
   "diagnostic_summary": {
     "status": "write_disturbance_reproduced_integrity_still_failed",
     "acceptance_credit": false,
@@ -1617,12 +1618,83 @@
     ]
   },
   "current_board_recovery": {
-    "status": "safe_idle_confirmed_after_explicit_fpga_reset",
-    "evidence": "docs/ddr3/diagnosis/20261002T020045.394626Z-integrity-recovery/recovery.json",
-    "pre_reset_uart_rx_bytes": 0,
-    "post_reset_uart_rx_bytes": 0,
-    "jtag_reset_exit_code": 0,
-    "post_reset_jtag_detect_exit_code": 0,
-    "flash_programming": false
+    "command": [
+      "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/bin/openFPGALoader",
+      "--board",
+      "tangprimer20k",
+      "--write-sram",
+      "/home/user/git/fpga/sipeedtangprimer20k-riscv/docs/ddr3/diagnosis/20261002T030948.302505Z-hynix-idle-recovery/idle.fs"
+    ],
+    "exit_code": 0,
+    "flash_programming": false,
+    "bitstream_sha256": "a7a702e3ff9835ab3ee653f0f9ff7c90165808db514b3230dcc91d0314b93df3",
+    "ddr_state": {
+      "reset_n": 0,
+      "cke": 0,
+      "cs_n": 1,
+      "ck_p": 0,
+      "odt": 0
+    },
+    "uart_bytes": 0,
+    "observation_seconds": 5,
+    "status": "ddr_held_in_reset_uart_quiet",
+    "uart_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "recovery_method": "dedicated_idle_sram_image",
+    "evidence": "docs/ddr3/diagnosis/20261002T030948.302505Z-hynix-idle-recovery/results.json"
+  },
+  "geometry_correction": {
+    "schema_version": 1,
+    "status": "geometry_corrected_integrity_still_failed",
+    "acceptance_credit": false,
+    "report": "docs/ddr3/hynix-geometry-correction.md",
+    "physical_part": "H5TQ1G63EFR",
+    "physical_bytes": 134217728,
+    "previous_configured_bytes": 268435456,
+    "row_bits": 13,
+    "bank_bits": 3,
+    "column_bits": 10,
+    "audit": [
+      {
+        "evidence": "docs/ddr3/diagnosis/20261002T030129.340475Z-dll-off-write-trace",
+        "audit": "passed",
+        "suite": "neighbor-read",
+        "bitstream_sha256": "74518b3959a8ea91974c923a0a4ad152a6fe20b9fa05a5c380e47133352414f4",
+        "trace_count": 10,
+        "decoded_frame_count": 8,
+        "acceptance_credit": false
+      },
+      {
+        "evidence": "docs/ddr3/diagnosis/20261002T030658.410143Z-dll-off-write-trace",
+        "audit": "passed",
+        "suite": "geometry",
+        "bitstream_sha256": "74518b3959a8ea91974c923a0a4ad152a6fe20b9fa05a5c380e47133352414f4",
+        "trace_count": 28,
+        "decoded_frame_count": 224,
+        "acceptance_credit": false
+      }
+    ],
+    "audit_source_sha256": "e094927d6194a7b7bdeb4b05bb38f96b2da80f16b4046893f0baba8ac1e9d123",
+    "bounded_geometry_probe": {
+      "addresses": 27,
+      "readbacks": 378,
+      "observed_aliases": 0,
+      "acceptance_credit": false
+    },
+    "public_minimal_build": "docs/ddr3/diagnosis/20261002T030430-public-minimal-geometry-build/result.json",
+    "public_minimal_status": "blocked_routed_timing",
+    "current_board_recovery": "docs/ddr3/diagnosis/20261002T030948.302505Z-hynix-idle-recovery/results.json",
+    "flash_programming": false,
+    "verification": {
+      "host_tests": 100,
+      "generated_designs": 10,
+      "artifacts": "docs/ddr3/diagnosis/20261002-hynix-verification",
+      "sha256": {
+        "generated-and-host-tests.log": "4d7fa853f311ad2a4f0ec58b68024d7e06b91bb093eb2fdef322894de7f7dd67",
+        "public-programming-blocked.log": "fe4178c05256385d022b53d77cf7b9a672c8b0a1450e6538e04f4a01a68d4bfc",
+        "trace-audit.json": "38641a34fb87ea2fb6b06c57e172e4a8773e40c93721c008ab7cc191faaa4761",
+        "final-host-tests.log": "68457985a70f4c6699647d3be7bf6782c30722b33477d0acca256d5ba1d57fe3",
+        "ddr_trace_audit.py": "e094927d6194a7b7bdeb4b05bb38f96b2da80f16b4046893f0baba8ac1e9d123"
+      }
+    }
   }
 }

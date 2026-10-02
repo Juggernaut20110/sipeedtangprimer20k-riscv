@@ -524,7 +524,7 @@ def effective_trial_status(trial):
 
 def interpretation_text(session, complete, summary, memory="onchip"):
     scope = (
-        "Code and read-only data run from the 256 MiB DDR3 main RAM through the 8 KiB LiteDRAM L2; "
+        "Code and read-only data run from the 128 MiB DDR3 main RAM through the 8 KiB LiteDRAM L2; "
         "CoreMark data/BSS and the reserved stack stay in 8 KiB on-chip SRAM."
         if memory == "ddr3" else
         "Code and read-only data run from 32 KiB on-chip main RAM; CoreMark data/BSS and the reserved stack stay in 8 KiB SRAM."
@@ -1437,7 +1437,7 @@ DDR3 acceptance status: **{latest.get('status', ddr.get('latest_batch_status', '
 
 - {ddr_detail}
 
-{ddr_reason} Full-range coverage is not established (0 of 256 MiB accepted), cached/uncached visibility tests did not run, measured stress was 0/1800 seconds, and read/write bandwidth was not measured. Separate console probes are diagnostic evidence only and do not count as acceptance runs. {acceptance_evidence}
+{ddr_reason} Full-range coverage is not established (0 of 128 MiB accepted), cached/uncached visibility tests did not run, measured stress was 0/1800 seconds, and read/write bandwidth was not measured. Separate console probes are diagnostic evidence only and do not count as acceptance runs. {acceptance_evidence}
 
 ## Evidence
 
@@ -1692,7 +1692,7 @@ def create_report():
 
     version = tools.get("python", sys.version.split()[0])
     memory_placement_text = (
-        "Code and read-only data in 256 MiB DDR3 main RAM at `0x40000000`; CoreMark data/BSS and a 2,048-byte reserved stack in 8 KiB SRAM at `0x10000000`; 8 KiB LiteDRAM L2."
+        "Code and read-only data in 128 MiB DDR3 main RAM at `0x40000000`; CoreMark data/BSS and a 2,048-byte reserved stack in 8 KiB SRAM at `0x10000000`; 8 KiB LiteDRAM L2."
         if memory == "ddr3" else
         "Code and read-only data in 32 KiB main RAM at `0x40000000`; CoreMark data/BSS in 8 KiB on-chip SRAM at `0x10000000`; a 2,048-byte stack is reserved."
     )

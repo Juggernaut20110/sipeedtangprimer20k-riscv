@@ -1,0 +1,310 @@
+{
+    "csr_bases": {
+        "buttons": 4026531840,
+        "ctrl": 4026533888,
+        "ddrphy": 4026535936,
+        "identifier_mem": 4026537984,
+        "leds": 4026540032,
+        "sdram": 4026542080,
+        "timer0": 4026544128,
+        "uart": 4026546176
+    },
+    "csr_registers": {
+        "buttons_in": {
+            "addr": 4026531840,
+            "size": 1,
+            "type": "ro"
+        },
+        "ctrl_reset": {
+            "addr": 4026533888,
+            "size": 1,
+            "type": "rw"
+        },
+        "ctrl_scratch": {
+            "addr": 4026533892,
+            "size": 1,
+            "type": "rw"
+        },
+        "ctrl_bus_errors": {
+            "addr": 4026533896,
+            "size": 1,
+            "type": "ro"
+        },
+        "ddrphy_dly_sel": {
+            "addr": 4026535936,
+            "size": 1,
+            "type": "rw"
+        },
+        "ddrphy_rdly_dq_rst": {
+            "addr": 4026535940,
+            "size": 1,
+            "type": "rw"
+        },
+        "ddrphy_rdly_dq_inc": {
+            "addr": 4026535944,
+            "size": 1,
+            "type": "rw"
+        },
+        "ddrphy_rdly_dq_dir": {
+            "addr": 4026535948,
+            "size": 1,
+            "type": "rw"
+        },
+        "ddrphy_rdly_dq_bitslip_rst": {
+            "addr": 4026535952,
+            "size": 1,
+            "type": "rw"
+        },
+        "ddrphy_rdly_dq_bitslip": {
+            "addr": 4026535956,
+            "size": 1,
+            "type": "rw"
+        },
+        "ddrphy_burstdet_clr": {
+            "addr": 4026535960,
+            "size": 1,
+            "type": "rw"
+        },
+        "ddrphy_burstdet_seen": {
+            "addr": 4026535964,
+            "size": 1,
+            "type": "ro"
+        },
+        "leds_out": {
+            "addr": 4026540032,
+            "size": 1,
+            "type": "rw"
+        },
+        "sdram_dfii_control": {
+            "addr": 4026542080,
+            "size": 1,
+            "type": "rw"
+        },
+        "sdram_dfii_pi0_command": {
+            "addr": 4026542084,
+            "size": 1,
+            "type": "rw"
+        },
+        "sdram_dfii_pi0_command_issue": {
+            "addr": 4026542088,
+            "size": 1,
+            "type": "rw"
+        },
+        "sdram_dfii_pi0_address": {
+            "addr": 4026542092,
+            "size": 1,
+            "type": "rw"
+        },
+        "sdram_dfii_pi0_baddress": {
+            "addr": 4026542096,
+            "size": 1,
+            "type": "rw"
+        },
+        "sdram_dfii_pi0_wrdata": {
+            "addr": 4026542100,
+            "size": 2,
+            "type": "rw"
+        },
+        "sdram_dfii_pi0_rddata": {
+            "addr": 4026542108,
+            "size": 2,
+            "type": "ro"
+        },
+        "sdram_dfii_pi1_command": {
+            "addr": 4026542116,
+            "size": 1,
+            "type": "rw"
+        },
+        "sdram_dfii_pi1_command_issue": {
+            "addr": 4026542120,
+            "size": 1,
+            "type": "rw"
+        },
+        "sdram_dfii_pi1_address": {
+            "addr": 4026542124,
+            "size": 1,
+            "type": "rw"
+        },
+        "sdram_dfii_pi1_baddress": {
+            "addr": 4026542128,
+            "size": 1,
+            "type": "rw"
+        },
+        "sdram_dfii_pi1_wrdata": {
+            "addr": 4026542132,
+            "size": 2,
+            "type": "rw"
+        },
+        "sdram_dfii_pi1_rddata": {
+            "addr": 4026542140,
+            "size": 2,
+            "type": "ro"
+        },
+        "timer0_load": {
+            "addr": 4026544128,
+            "size": 1,
+            "type": "rw"
+        },
+        "timer0_reload": {
+            "addr": 4026544132,
+            "size": 1,
+            "type": "rw"
+        },
+        "timer0_en": {
+            "addr": 4026544136,
+            "size": 1,
+            "type": "rw"
+        },
+        "timer0_update_value": {
+            "addr": 4026544140,
+            "size": 1,
+            "type": "rw"
+        },
+        "timer0_value": {
+            "addr": 4026544144,
+            "size": 1,
+            "type": "ro"
+        },
+        "timer0_ev_status": {
+            "addr": 4026544148,
+            "size": 1,
+            "type": "ro"
+        },
+        "timer0_ev_pending": {
+            "addr": 4026544152,
+            "size": 1,
+            "type": "rw"
+        },
+        "timer0_ev_enable": {
+            "addr": 4026544156,
+            "size": 1,
+            "type": "rw"
+        },
+        "timer0_uptime_latch": {
+            "addr": 4026544160,
+            "size": 1,
+            "type": "rw"
+        },
+        "timer0_uptime_cycles": {
+            "addr": 4026544164,
+            "size": 2,
+            "type": "ro"
+        },
+        "uart_rxtx": {
+            "addr": 4026546176,
+            "size": 1,
+            "type": "rw"
+        },
+        "uart_txfull": {
+            "addr": 4026546180,
+            "size": 1,
+            "type": "ro"
+        },
+        "uart_rxempty": {
+            "addr": 4026546184,
+            "size": 1,
+            "type": "ro"
+        },
+        "uart_ev_status": {
+            "addr": 4026546188,
+            "size": 1,
+            "type": "ro"
+        },
+        "uart_ev_pending": {
+            "addr": 4026546192,
+            "size": 1,
+            "type": "rw"
+        },
+        "uart_ev_enable": {
+            "addr": 4026546196,
+            "size": 1,
+            "type": "rw"
+        },
+        "uart_txempty": {
+            "addr": 4026546200,
+            "size": 1,
+            "type": "ro"
+        },
+        "uart_rxfull": {
+            "addr": 4026546204,
+            "size": 1,
+            "type": "ro"
+        }
+    },
+    "constants": {
+        "config_platform_name": "sipeed_tang_primer_20k",
+        "config_clock_frequency": 48000000,
+        "config_cpu_has_interrupt": null,
+        "config_cpu_reset_addr": 0,
+        "config_cpu_type_vexriscv": null,
+        "config_cpu_variant_minimal": null,
+        "config_cpu_family": "riscv",
+        "config_cpu_name": "vexriscv",
+        "config_cpu_human_name": "VexRiscv_Min",
+        "config_cpu_nop": "nop",
+        "config_bios_no_build_time": null,
+        "config_identifier": "LiteX SoC on Tang Primer 20K",
+        "config_l2_size": 8192,
+        "project_ddr_bytes": 134217728,
+        "project_ddr_part": "H5TQ1G63EFR",
+        "project_ddr_address_bits": 27,
+        "project_ddr_uncached_base": 3221225472,
+        "project_ddr_diagnostic_base": 536870912,
+        "project_ddr_l2_bytes": 8192,
+        "project_profile": "minimal",
+        "project_memory_mode": "ddr3",
+        "project_gpio_led_count": 6,
+        "project_gpio_button_count": 4,
+        "config_csr_data_width": 32,
+        "config_csr_alignment": 32,
+        "config_csr_ordering_big": null,
+        "config_bus_standard": "wishbone",
+        "config_bus_data_width": 32,
+        "config_bus_address_width": 32,
+        "config_bus_bursting": 0,
+        "config_cpu_interrupts": 2,
+        "timer0_interrupt": 1,
+        "uart_interrupt": 0
+    },
+    "memories": {
+        "rom": {
+            "base": 0,
+            "size": 32768,
+            "type": "cached"
+        },
+        "sram": {
+            "base": 268435456,
+            "size": 8192,
+            "type": "cached"
+        },
+        "main_ram": {
+            "base": 1073741824,
+            "size": 134217728,
+            "type": "cached"
+        },
+        "ddr_diagnostic_ram": {
+            "base": 536870912,
+            "size": 16384,
+            "type": "cached"
+        },
+        "ddr_uncached": {
+            "base": 3221225472,
+            "size": 134217728,
+            "type": "io"
+        },
+        "csr": {
+            "base": 4026531840,
+            "size": 65536,
+            "type": "io"
+        }
+    },
+    "cores": {
+        "buttons": "GPIOIn",
+        "ctrl": "SoCController",
+        "ddrphy": "GW2DDRPHY",
+        "leds": "GPIOOut",
+        "sdram": "LiteDRAMCore",
+        "timer0": "Timer",
+        "uart": "UART"
+    }
+}

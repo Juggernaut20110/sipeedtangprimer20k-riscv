@@ -1,0 +1,168 @@
+{
+  "profile": "minimal",
+  "memory_mode": "ddr3",
+  "cpu_candidate": null,
+  "cpu_profile_selection": null,
+  "liteX_variant": "minimal",
+  "sys_clk_hz": 48000000,
+  "uart_baud": 115200,
+  "status": "passed",
+  "source_fingerprint": "0624909b509a188686ddea7f091ac7f8dbbcd88ad5e43e0d19c9defc62df396d",
+  "started_utc": "2026-10-02T03:03:26.741444+00:00",
+  "locked_repositories": {
+    "litex": "58322a1d239a9eca8b93a8497f8945855d965f4f",
+    "migen": "e19524c963a8342952840983047557707fbe0b6a",
+    "litex-boards": "c0d9cdf11e20c8b774f4ee1154fddac6e1dca03a",
+    "litedram": "4c979d195aa0c60adcaf70374a52872028aaca63",
+    "liteeth": "013a6ad38c26317ac9588acd0660922981cc2a73",
+    "liteiclink": "ad793817302490b04b3abc5c4de669594d3958e8",
+    "pythondata-cpu-vexriscv": "642ecfed1c84460555d6d803d660cc60cfc1ecb6",
+    "pythondata-software-picolibc": "6a13ccce7c575b32c102dd9dc52178505b81fe39",
+    "pythondata-software-compiler_rt": "6eb76609c9627bf26635e57c63fb22cda7115887",
+    "coremark": "1f483d5b8316753a742cbf5590caf5bd0a4e4777"
+  },
+  "tool_versions": {
+    "python": "3.12.14",
+    "riscv_gcc": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+    "gowin": "V1.9.12.04",
+    "openfpgaloader": "openFPGALoader v0.13.1"
+  },
+  "firmware": {
+    "elf": "build/ddr3/minimal/firmware/demo.elf",
+    "binary": "build/ddr3/minimal/firmware/demo.bin",
+    "binary_bytes": 6864,
+    "working_sram_bytes": 384,
+    "reserved_stack_bytes": 2048,
+    "sections": {
+      "NULL": {
+        "type": "00000000",
+        "size": 0
+      },
+      ".text": {
+        "type": "PROGBITS",
+        "size": 6028
+      },
+      ".rodata": {
+        "type": "PROGBITS",
+        "size": 820
+      },
+      ".preinit_array": {
+        "type": "PREINIT_ARRAY",
+        "size": 0
+      },
+      ".init_array": {
+        "type": "INIT_ARRAY",
+        "size": 0
+      },
+      ".fini_array": {
+        "type": "FINI_ARRAY",
+        "size": 0
+      },
+      ".data": {
+        "type": "PROGBITS",
+        "size": 16
+      },
+      ".bss": {
+        "type": "NOBITS",
+        "size": 368
+      },
+      ".stack": {
+        "type": "NOBITS",
+        "size": 2048
+      },
+      ".riscv.attributes": {
+        "type": "RISCV_ATTRIBUTES",
+        "size": 53
+      },
+      ".comment": {
+        "type": "PROGBITS",
+        "size": 51
+      },
+      ".debug_line": {
+        "type": "PROGBITS",
+        "size": 17744
+      },
+      ".debug_line_str": {
+        "type": "PROGBITS",
+        "size": 5289
+      },
+      ".debug_info": {
+        "type": "PROGBITS",
+        "size": 13834
+      },
+      ".debug_abbrev": {
+        "type": "PROGBITS",
+        "size": 6296
+      },
+      ".debug_aranges": {
+        "type": "PROGBITS",
+        "size": 800
+      },
+      ".debug_str": {
+        "type": "PROGBITS",
+        "size": 70582
+      },
+      ".debug_loclists": {
+        "type": "PROGBITS",
+        "size": 7314
+      },
+      ".debug_rnglists": {
+        "type": "PROGBITS",
+        "size": 1165
+      },
+      ".debug_macro": {
+        "type": "PROGBITS",
+        "size": 29388
+      },
+      ".symtab": {
+        "type": "SYMTAB",
+        "size": 2432
+      },
+      ".strtab": {
+        "type": "STRTAB",
+        "size": 1203
+      },
+      ".shstrtab": {
+        "type": "STRTAB",
+        "size": 250
+      }
+    },
+    "main_ram_base": 1073741824,
+    "main_ram_size": 134217728
+  },
+  "bios_size": 32768,
+  "bitstream": "build/ddr3/minimal/bitstream.fs",
+  "bitstream_bytes": 7261998,
+  "bitstream_sha256": "9defcbc9bc2bdd76163cac712771b8911be6e91dbccb87cf764eabb6fb2de1db",
+  "cpu_variant": "minimal",
+  "cpu_configuration": {
+    "liteX_variant": "minimal",
+    "isa": "rv32i2p0",
+    "instruction_cache_bytes": 0,
+    "data_cache_bytes": 0,
+    "prediction": "none",
+    "compressed": false
+  },
+  "memory": {
+    "mode": "ddr3",
+    "main_ram_base": 1073741824,
+    "main_ram_bytes": 134217728,
+    "ddr_physical_bytes": 134217728,
+    "ddr_part": "H5TQ1G63EFR",
+    "ddr_geometry": {
+      "row_bits": 13,
+      "bank_bits": 3,
+      "column_bits": 10
+    },
+    "l2_cache_bytes": 8192,
+    "ddr_ck_hz": 96000000,
+    "uncached_alias_base": "0xc0000000",
+    "diagnostic_ram": {
+      "base": "0x20000000",
+      "bytes": 16384
+    }
+  },
+  "device": "GW2A-LV18PG256C8/I7",
+  "cpu_rtl": null,
+  "finished_utc": "2026-10-02T03:04:30.365927+00:00"
+}

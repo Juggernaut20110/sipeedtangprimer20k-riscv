@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/ddr_diagnose.py", line 482, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/ddr_diagnose.py", line 458, in main
+    capture_public(args.profile, args.port)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/ddr_diagnose.py", line 386, in capture_public
+    build_metadata=metadata, metrics=parse_profile(profile, memory='ddr3'),
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/compare.py", line 150, in parse_profile
+    raise RuntimeError(
+RuntimeError: minimal misses timing: Fmax=50.849 MHz, slack=-0.911 ns, hold=0.319 ns, recovery=1.646 ns, removal=1.05 ns, violated endpoints=1

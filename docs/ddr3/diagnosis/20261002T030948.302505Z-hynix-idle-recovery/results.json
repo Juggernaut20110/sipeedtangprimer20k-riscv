@@ -1,0 +1,24 @@
+{
+  "command": [
+    "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/bin/openFPGALoader",
+    "--board",
+    "tangprimer20k",
+    "--write-sram",
+    "/home/user/git/fpga/sipeedtangprimer20k-riscv/docs/ddr3/diagnosis/20261002T030948.302505Z-hynix-idle-recovery/idle.fs"
+  ],
+  "exit_code": 0,
+  "flash_programming": false,
+  "bitstream_sha256": "a7a702e3ff9835ab3ee653f0f9ff7c90165808db514b3230dcc91d0314b93df3",
+  "ddr_state": {
+    "reset_n": 0,
+    "cke": 0,
+    "cs_n": 1,
+    "ck_p": 0,
+    "odt": 0
+  },
+  "uart_bytes": 0,
+  "observation_seconds": 5,
+  "status": "ddr_held_in_reset_uart_quiet",
+  "uart_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "recovery_method": "dedicated_idle_sram_image"
+}

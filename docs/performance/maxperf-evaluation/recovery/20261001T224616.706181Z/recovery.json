@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-01T22:46:21.737835+00:00",
+  "recovery_status": "safe_idle_confirmed_unconfigured",
+  "repository_revision": "cfc1d350aa5e20498a33b886abda9ae3bedef3d3",
+  "repository_status": [
+    " M gateware/profile_selection.py",
+    " M scripts/benchmark_build.py",
+    " M scripts/benchmark_report.py",
+    " M scripts/benchmark_run.py",
+    " M scripts/ddr_test_build.py",
+    " M scripts/ddr_test_run.py",
+    " M scripts/maxperf_run.py",
+    " M tests/test_benchmark_report.py",
+    " M tests/test_profile_selection.py",
+    "?? LUNA_XHIGH_VALIDATION_HANDOFF.md",
+    "?? docs/performance/maxperf-evaluation/recovery/20261001T224616.706181Z/jtag-detect.txt",
+    "?? docs/performance/maxperf-evaluation/recovery/20261001T224616.706181Z/uart-rx.bin",
+    "?? docs/validation-plan.md",
+    "?? scripts/benchmark_identity.py"
+  ],
+  "board": "Sipeed Tang Primer 20K with standard Dock",
+  "jtag": {
+    "command": ".tools/bin/openFPGALoader --board tangprimer20k --detect",
+    "operation": "read_only_detect",
+    "evidence": {
+      "path": "docs/performance/maxperf-evaluation/recovery/20261001T224616.706181Z/jtag-detect.txt",
+      "bytes": 153,
+      "sha256": "a7151966980283ac2988b96cfced2be220a8c2ffa7624a242805369f5ae40c6f"
+    },
+    "reports_empty_configuration": true,
+    "idcode": "0x81b",
+    "family": "GW2A",
+    "model": "GW2A(R)-18(C)"
+  },
+  "uart": {
+    "path": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+    "resolved_device": "/dev/ttyUSB1",
+    "baud": 115200,
+    "read_only_seconds": 5,
+    "bytes_received": 0,
+    "bytes_transmitted": 0,
+    "raw_rx_evidence": {
+      "path": "docs/performance/maxperf-evaluation/recovery/20261001T224616.706181Z/uart-rx.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "conclusion": "The FPGA reports empty configuration and the passive UART read received no bytes; no application workload is configured or continuing."
+}

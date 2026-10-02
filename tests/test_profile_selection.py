@@ -207,8 +207,9 @@ class MaxPerfSelectionTests(unittest.TestCase):
             if memory == "ddr3":
                 session = ddr_qualification(
                     root, f"{memory}-qualification", candidate_id,
-                    candidate["identity"]["bitstream"]["sha256"],
+                    verification["identity"]["bitstream"]["sha256"], profile="maxperf",
                 )
+                session["build_identity"]["cpu_configuration"] = verification["identity"]["cpu_configuration"]
                 if ddr_stress != 1800:
                     session["stress_seconds"] = ddr_stress
                     session["trials"][-1]["result"]["stress_seconds_actual"] = ddr_stress
@@ -238,6 +239,8 @@ class MaxPerfSelectionTests(unittest.TestCase):
                     "status": "passed", "acceptance": "thorough", "actual_training_runs": 10,
                     "stress_seconds": ddr_stress, "full_range_bytes": 256 * 1024 * 1024,
                     "error_count": 0, "uncached_smoke_passed": True,
+                    "identity_matches_scored_baseline": True,
+                    "expected_bitstream_sha256": baseline["identity"]["bitstream"]["sha256"],
                     "session_evidence": baseline_ref,
                 }
             evaluation_ref = write_json(
@@ -274,6 +277,41 @@ class MaxPerfSelectionTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             self.create_selection(root, ddr_stress=1799)
+            self.assertIsNone(accepted_maxperf_selection(root))
+
+    def test_ddr_qualification_must_match_final_maxperf_bitstream_and_profile(self):
+        for field, value in (("profile", "standard"), ("bitstream_sha256", "wrong-final-bitstream")):
+            with self.subTest(field=field), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                selection = self.create_selection(root)
+                mode = selection["memory_modes"]["ddr3"]
+                evaluation_path = root / mode["evaluation_evidence"]["path"]
+                evaluation = json.loads(evaluation_path.read_text())
+                qualification_ref = evaluation["qualification"]["session_evidence"]
+                qualification_path = root / qualification_ref["path"]
+                qualification = json.loads(qualification_path.read_text())
+                if field == "profile":
+                    qualification[field] = value
+                else:
+                    qualification["build_identity"][field] = value
+                qualification_path.write_text(json.dumps(qualification, indent=2) + "\n")
+                qualification_ref["sha256"] = digest(qualification_path)
+                evaluation_path.write_text(json.dumps(evaluation, indent=2) + "\n")
+                mode["evaluation_evidence"]["sha256"] = digest(evaluation_path)
+                (root / "maxperf-profile-selection.json").write_text(json.dumps(selection, indent=2) + "\n")
+                self.assertIsNone(accepted_maxperf_selection(root))
+
+    def test_ddr_baseline_qualification_must_match_the_scored_bitstream(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            selection = self.create_selection(root)
+            mode = selection["memory_modes"]["ddr3"]
+            evaluation_path = root / mode["evaluation_evidence"]["path"]
+            evaluation = json.loads(evaluation_path.read_text())
+            evaluation["ddr_preflight"]["expected_bitstream_sha256"] = "another-build"
+            evaluation_path.write_text(json.dumps(evaluation, indent=2) + "\n")
+            mode["evaluation_evidence"]["sha256"] = digest(evaluation_path)
+            (root / "maxperf-profile-selection.json").write_text(json.dumps(selection, indent=2) + "\n")
             self.assertIsNone(accepted_maxperf_selection(root))
 
     def test_changed_raw_uart_capture_rejects_even_a_rehashed_evaluation(self):

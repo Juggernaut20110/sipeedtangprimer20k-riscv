@@ -1,0 +1,83 @@
+
+[1m        __   _ __      _  __[0m
+[1m       / /  (_) /____ | |/_/[0m
+[1m      / /__/ / __/ -_)>  <[0m
+[1m     /____/_/\__/\__/_/|_|[0m
+[1m   Build your hardware, easily![0m
+
+ (c) Copyright 2012-2026 Enjoy-Digital
+ (c) Copyright 2007-2015 M-Labs
+
+ BIOS CRC passed (08b1ecd9)
+
+ LiteX git sha1: 58322a1d2
+
+--================ [1mSoC[0m =================--
+[1mCPU[0m:		VexRiscv_Min @ 48MHz
+[1mBUS[0m:		wishbone 32-bit data/32-bit addr
+[1mCSR[0m:		32-bit data big ordering
+[1mROM[0m:		32.0KiB
+[1mSRAM[0m:		8.0KiB
+[1mMAIN RAM[0m:	32.0KiB
+
+--=========== [1mInitialization[0m ===========--
+Memtest at 0x40000000 (32.0KiB)...
+  Write: 0x40000000-0x40000000 0B     Write: 0x40000000-0x40008000 32.0KiB   
+   Read: 0x40000000-0x40000000 0B      Read: 0x40000000-0x40008000 32.0KiB   
+Memtest OK
+Memspeed at 0x40000000 (Sequential, 32.0KiB)...
+  Write speed: 20.0MiB/s
+   Read speed: 18.7MiB/s
+--================ [1mBoot[0m ================--
+Booting from serial...
+Press Q or ESC to abort boot completely.
+sL5DdSMmkekro
+KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKExecuting booted program at 0x40000000
+
+--============== [1mLiftoff![0m ==============--
+BENCHMARK_IMAGE_CRC32 build_id=f53de8c509be524d value=8bfaa159 size=29320
+BENCHMARK_RAM_CHECK status=passed words=64 bytes=256 alignment=32 phases=word,halfword_u16_s16,byte_u8_s8,tight_sh_lh_rmw,tight_sb_lb_rmw,cache_flushed errors=0 code_conflict_address=00000000
+BENCHMARK_CALIBRATION_START profile=minimal build_id=f53de8c509be524d mode=performance method=fixed_iterations iterations=1000 target_seconds=20 clock_hz=48000000 data_size=2000 contexts=1 seed1=0 seed2=0 seed3=0x66
+BENCHMARK_RUNTIME_SEEDS phase=calibration seed1=0 seed2=0 seed3=102 seed4=1000
+2K performance run parameters for coremark.
+CoreMark Size    : 666
+Total ticks      : 2893592365
+Total time (secs): 60
+Iterations/Sec   : 16
+Iterations       : 1000
+Compiler version : 15.2.0
+Compiler flags   : -std=gnu99 -O2 -march=rv32i2p0 -mabi=ilp32 -D__vexriscv__ -g3 -no-pie -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0 -ffunction-sections -fdata-sections -fno-lto -DITERATIONS=1000 -DTOTAL_DATA_SIZE=2000 -DMEM_METHOD=MEM_STATIC -DMULTITHREAD=1 -DPERFORMANCE_RUN=1
+Memory location  : Code in main RAM, static data in on-chip SRAM
+seedcrc          : 0xe9f5
+[0]crclist       : 0xe714
+[0]crcmatrix     : 0x1fd7
+[0]crcstate      : 0x8e3a
+[0]crcfinal      : 0xd340
+Correct operation validated. See README.md for run and reporting rules.
+BENCHMARK_IMAGE_RECHECK phase=calibration cached=8bfaa159 flushed=8bfaa159 expected=8bfaa159 size=29320 cached_size=29320 flushed_size=29320
+BENCHMARK_CALIBRATION_RESULT profile=minimal build_id=f53de8c509be524d mode=performance iterations=1000 elapsed_hi=00000000 elapsed_lo=ac78b72d target_seconds=20 scored_iterations=332
+BENCHMARK_START profile=minimal build_id=f53de8c509be524d mode=performance clock_hz=48000000 data_size=2000 contexts=1 seed1=0 seed2=0 seed3=0x66 calibration_method=fresh_invocation calibration_iterations=1000 target_seconds=20 scored_iterations=332
+BENCHMARK_CALIBRATION_PLAN iterations=1000 target_seconds=20 scored_iterations=332 method=fresh_invocation
+BENCHMARK_MEMORY code=main_ram data=bss=onchip_sram cache=icache=0,dcache=0,l2=0
+BENCHMARK_RUNTIME_SEEDS phase=scored seed1=0 seed2=0 seed3=102 seed4=332
+2K performance run parameters for coremark.
+CoreMark Size    : 666
+Total ticks      : 960674749
+Total time (secs): 20
+Iterations/Sec   : 16
+Iterations       : 332
+Compiler version : 15.2.0
+Compiler flags   : -std=gnu99 -O2 -march=rv32i2p0 -mabi=ilp32 -D__vexriscv__ -g3 -no-pie -fomit-frame-pointer -Wall -fno-builtin -fno-stack-protector -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0 -ffunction-sections -fdata-sections -fno-lto -DITERATIONS=1000 -DTOTAL_DATA_SIZE=2000 -DMEM_METHOD=MEM_STATIC -DMULTITHREAD=1 -DPERFORMANCE_RUN=1
+Memory location  : Code in main RAM, static data in on-chip SRAM
+seedcrc          : 0xe9f5
+[0]crclist       : 0xe714
+[0]crcmatrix     : 0x1fd7
+[0]crcstate      : 0x8e3a
+[0]crcfinal      : 0x1188
+Correct operation validated. See README.md for run and reporting rules.
+BENCHMARK_IMAGE_RECHECK phase=scored cached=8bfaa159 flushed=8bfaa159 expected=8bfaa159 size=29320 cached_size=29320 flushed_size=29320
+BENCHMARK_INTERVAL_COUNT count=2 overflow=0
+BENCHMARK_CALIBRATION_COUNT count=1
+BENCHMARK_CALIBRATION_TICKS index=1 hi=00000000 lo=ac78b72d
+BENCHMARK_SCORED_TICKS index=2 hi=00000000 lo=3942bbbd
+BENCHMARK_END status=returned profile=minimal build_id=f53de8c509be524d

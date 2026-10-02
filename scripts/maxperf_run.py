@@ -43,7 +43,7 @@ def run_case(label, profile, build_dir, memory, port, batch_id, evidence_dir,
     for mode, attempt in (("validation", 0), ("performance", 1),
                           ("performance", 2), ("performance", 3)):
         record = benchmark_run.run_trial(
-            profile, firmware, mode, attempt, port, f"{batch_id}-{label}",
+            profile, build, firmware, mode, attempt, port, f"{batch_id}-{label}",
             45.0, 300.0, evidence_root=evidence_dir / label,
         )
         session["trials"].append(record)
@@ -85,7 +85,8 @@ def run_ddr_candidate_check(candidate_id, profile, build_dir, port, batch_id,
             profile, port, run_id,
             10 if thorough else 1,
             1800 if thorough else 1,
-            45.0, 2400.0 if thorough else 300.0,
+            45.0,
+            ddr_test_run.DEFAULT_TRIAL_TIMEOUT_SECONDS if thorough else 300.0,
             directory, [profile], candidate_id=candidate_id,
             build_dir=build_dir, smoke_only=not thorough,
         )
@@ -219,19 +220,30 @@ def record_mode_acceptance(memory, candidate_id, result_path):
     return pending
 
 
-def ddr_baseline_integrity_gate(port, batch_id, evidence_dir):
-    """Require current BIOS and uncached smoke acceptance before DDR scoring."""
+def ddr_baseline_integrity_gate(port, batch_id, evidence_dir, baseline_build):
+    """Qualify the already-built baseline image before scoring that same image."""
     import ddr_test_build
     import ddr_test_run
 
-    ddr_test_build.build_profile_diagnostics("performance", 1800, force=True)
+    ddr_test_build.build_profile_diagnostics("performance", 1800, force=False)
+    expected_bitstream = baseline_build.get("bitstream_sha256")
     session, _ = ddr_test_run.run_profile(
         "performance", port, batch_id + "-ddr-preflight", 10, 1800,
-        45.0, 2400.0, evidence_dir / "ddr-preflight", ["performance"],
+        45.0, ddr_test_run.DEFAULT_TRIAL_TIMEOUT_SECONDS,
+        evidence_dir / "ddr-preflight", ["performance"],
     )
     session_path = ROOT / session["evidence"]
+    identity_matches = (
+        bool(expected_bitstream)
+        and session.get("build_identity", {}).get("bitstream_sha256") == expected_bitstream
+    )
+    passed = (
+        session.get("status") == "passed"
+        and session.get("acceptance") == "thorough"
+        and identity_matches
+    )
     return {
-        "status": session.get("status"),
+        "status": "passed" if passed else "failed",
         "acceptance": session.get("acceptance", "failed"),
         "actual_training_runs": session.get("actual_training_runs", 0),
         "stress_seconds": session.get("stress_seconds", 0),
@@ -242,6 +254,9 @@ def ddr_baseline_integrity_gate(port, batch_id, evidence_dir):
             "path": str(session_path.relative_to(ROOT)),
             "sha256": benchmark_run.sha256(session_path),
         },
+        "expected_bitstream_sha256": expected_bitstream,
+        "qualified_bitstream_sha256": session.get("build_identity", {}).get("bitstream_sha256"),
+        "identity_matches_scored_baseline": identity_matches,
         "error": session.get("error"),
     }
 
@@ -276,19 +291,21 @@ def run_evaluation(memory, port):
     result_path.write_text(json.dumps(result, indent=2) + "\n")
     try:
         build_module.apply_project_patches()
-        if memory == "ddr3":
-            result["ddr_preflight"] = ddr_baseline_integrity_gate(port, batch_id, evidence_dir)
-            if result["ddr_preflight"]["status"] != "passed":
-                result["status"] = "blocked_by_ddr_baseline_integrity"
-                result["reason"] = "fresh performance DDR training, BIOS memtest, full range and stress did not qualify"
-                return finalize(result, result_path)
-
         print(f"Building the fresh {memory} performance baseline", flush=True)
         baseline_build = build_module.build_profile("performance", memory=memory, force=True)
         baseline_dir = profile_build_dir(ROOT, "performance", memory)
         baseline_fw = benchmark_build.build_profile_firmware(
             "performance", baseline_build, memory=memory, build_dir=baseline_dir,
         )
+        if memory == "ddr3":
+            result["ddr_preflight"] = ddr_baseline_integrity_gate(
+                port, batch_id, evidence_dir, baseline_build,
+            )
+            if result["ddr_preflight"]["status"] != "passed":
+                result["status"] = "blocked_by_ddr_baseline_integrity"
+                result["reason"] = "fresh performance DDR training, BIOS memtest, full range and stress did not qualify"
+                return finalize(result, result_path)
+
         result["baseline"] = run_case(
             "performance-baseline", "performance", baseline_dir,
             memory, port, batch_id, evidence_dir,
@@ -352,9 +369,18 @@ def run_evaluation(memory, port):
                 "stress_seconds": 0, "full_range_bytes": 0,
                 "error_count": 0, "uncached_smoke_passed": True,
             }
+            try:
+                verify_dir, _verify_build, _verify_firmware = build_provisional_maxperf(
+                    memory, candidate_id,
+                )
+            except Exception as error:
+                winner["status"] = "excluded_public_identity_build_failure"
+                winner["public_identity_build_error"] = f"{type(error).__name__}: {error}"
+                result_path.write_text(json.dumps(result, indent=2) + "\n")
+                continue
             if memory == "ddr3":
                 qualification_attempt = run_ddr_candidate_check(
-                    candidate_id, "standard", candidate_dir, port, batch_id,
+                    candidate_id, "maxperf", verify_dir, port, batch_id,
                     evidence_dir, thorough=True,
                 )
                 qualification = {key: qualification_attempt[key] for key in (
@@ -367,31 +393,8 @@ def run_evaluation(memory, port):
                     winner["status"] = "excluded_ddr_qualification_failure"
                     if qualification_attempt.get("session", {}).get("batch_continuation_safe") is False:
                         result["status"] = "stopped_uncertain_hardware_state"
-                        result["reason"] = "selected DDR candidate qualification ended without a confirmed safe idle state"
+                        result["reason"] = "final maxperf DDR qualification ended without a confirmed safe idle state"
                         return finalize(result, result_path)
-                    continue
-
-            try:
-                verify_dir, _verify_build, _verify_firmware = build_provisional_maxperf(
-                    memory, candidate_id,
-                )
-            except Exception as error:
-                winner["status"] = "excluded_public_identity_build_failure"
-                winner["public_identity_build_error"] = f"{type(error).__name__}: {error}"
-                result_path.write_text(json.dumps(result, indent=2) + "\n")
-                continue
-            if memory == "ddr3":
-                verify_smoke = run_ddr_candidate_check(
-                    candidate_id, "maxperf", verify_dir, port, batch_id,
-                    evidence_dir, thorough=False,
-                )
-                if verify_smoke["status"] != "passed":
-                    winner["public_identity_ddr_smoke"] = verify_smoke
-                    if verify_smoke.get("session", {}).get("batch_continuation_safe") is False:
-                        result["status"] = "stopped_uncertain_hardware_state"
-                        result["reason"] = "public-identity DDR smoke ended without a confirmed safe idle state"
-                        return finalize(result, result_path)
-                    winner["status"] = "excluded_public_identity_ddr_smoke_failure"
                     continue
 
             verification = run_case(

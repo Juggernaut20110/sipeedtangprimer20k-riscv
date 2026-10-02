@@ -1,0 +1,14 @@
+{
+  "created_utc": "2026-10-01T23:39:11.110464+00:00",
+  "command": [
+    ".tools/bin/openFPGALoader",
+    "--board",
+    "tangprimer20k",
+    "--detect",
+    "--reset"
+  ],
+  "operation": "read-only JTAG detect followed by explicit FPGA reset; no bitstream or flash operation",
+  "exit_code": 0,
+  "output_path": "docs/performance/maxperf-evaluation/recovery/20261001T233737.094969Z/stop-reset/jtag-reset-detect.txt",
+  "output": "empty\nJtag frequency : requested 6.00MHz\u0000   -> real 6.00MHz\u0000  \nindex 0:\n\tidcode 0x81b\n\tmanufacturer Gowin\n\tfamily GW2A\n\tmodel  GW2A(R)-18(C)\n\tirlength 8\n"
+}

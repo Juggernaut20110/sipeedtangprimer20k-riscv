@@ -204,9 +204,24 @@ def build_profile_diagnostics(profile, stress_seconds, force=False, candidate_id
             raise RuntimeError(f"DDR candidate SoC build metadata is missing: {candidate_id}")
         build = json.loads(build_path.read_text())
         rtl_path = ROOT / candidate_manifest["rtl"]
-        if (build.get("status") != "passed" or build.get("profile") != "standard"
+        expected_candidate_profile = "standard" if profile == "standard" else "maxperf"
+        expected_output = (
+            candidate_root / "soc" if profile == "standard"
+            else ROOT / "build/maxperf-verification/ddr3" / candidate_id / "soc"
+        ).resolve()
+        build_selection = build.get("cpu_profile_selection", {})
+        provisional_mode = build_selection.get("memory_modes", {}).get("ddr3", {})
+        provisional_identity_ok = (
+            profile == "standard"
+            or (build_selection.get("status") == "provisional"
+                and provisional_mode.get("status") == "provisional"
+                and provisional_mode.get("candidate_id") == candidate_id
+                and build_dir == expected_output)
+        )
+        if (build.get("status") != "passed" or build.get("profile") != expected_candidate_profile
                 or build.get("cpu_candidate") != candidate_id
                 or build.get("memory_mode") != "ddr3"
+                or not provisional_identity_ok
                 or not rtl_path.is_file()
                 or sha256(rtl_path) != candidate_manifest.get("rtl_sha256")
                 or build.get("cpu_configuration", {}).get("rtl_sha256") != candidate_manifest.get("rtl_sha256")):

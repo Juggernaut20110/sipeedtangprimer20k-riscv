@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-01T23:43:17.539781+00:00",
+  "recovery_status": "safe_idle_confirmed_after_explicit_fpga_reset",
+  "failed_session_id": "20261001T232022.342523Z-onchip-maxperf",
+  "failed_candidate": "icache-4096_dcache-2048_rv32imc",
+  "failed_trial": {
+    "mode": "validation",
+    "attempt": 0,
+    "status": "failed",
+    "programming_status": "completed",
+    "raw_uart_bytes": 53,
+    "transmitted_uart_bytes": 0,
+    "application_end_seen": false,
+    "application_halt_seen": false,
+    "error": "TimeoutError: no benchmark start marker within 45.0 seconds"
+  },
+  "reset": {
+    "command": [
+      ".tools/bin/openFPGALoader",
+      "--board",
+      "tangprimer20k",
+      "--detect",
+      "--reset"
+    ],
+    "exit_code": 0,
+    "no_bitstream_loaded": true,
+    "flash_write_option_used": false,
+    "evidence": "docs/performance/maxperf-evaluation/recovery/20261001T233737.094969Z/stop-reset/jtag-reset-detect.txt",
+    "sha256": "a7151966980283ac2988b96cfced2be220a8c2ffa7624a242805369f5ae40c6f"
+  },
+  "post_reset_jtag": {
+    "evidence": "docs/performance/maxperf-evaluation/recovery/20261001T233737.094969Z/stop-reset/jtag-post-reset-detect.txt",
+    "sha256": "a7151966980283ac2988b96cfced2be220a8c2ffa7624a242805369f5ae40c6f",
+    "reported_empty": true
+  },
+  "post_reset_uart": {
+    "observed_utc": "2026-10-01T23:40:00.671467+00:00",
+    "port": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+    "duration_seconds": 5,
+    "receive_only": true,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "litex_prompt_seen": false,
+    "benchmark_start_seen": false
+  },
+  "conclusion": "The failed application never emitted a start marker or host TX data. An explicit FPGA reset completed; afterward JTAG detection reported empty and a receive-only UART observation captured zero bytes. No workload remains active."
+}

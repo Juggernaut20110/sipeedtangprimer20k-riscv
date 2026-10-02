@@ -19,6 +19,10 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from gateware.soc import MEMORY_MODES, PROFILES, SYS_CLK_FREQ  # noqa: E402
 from scripts.memory import profile_build_dir, validate_memory  # noqa: E402
+from benchmark_identity import (  # noqa: E402
+    CURRENT_IDENTITY_SCHEMA, benchmark_fingerprint_payload, stable_hash,
+)
+from benchmark_evidence import bundle_is_current, create_bundle  # noqa: E402
 import build as build_module  # noqa: E402
 import compare as compare_module  # noqa: E402
 
@@ -41,10 +45,6 @@ def sha256(path):
         for block in iter(lambda: source.read(1024 * 1024), b""):
             digest.update(block)
     return digest.hexdigest()
-
-
-def stable_hash(value):
-    return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
 
 
 def utc_now():
@@ -334,6 +334,7 @@ def build_profile_firmware(profile, build_metadata, memory="onchip", build_dir=N
         raise RuntimeError(f"{profile} is missing its LiteX startup object or libbase archive")
     source_files = [
         ROOT / "firmware/linker.ld", ROOT / "scripts/benchmark_build.py",
+        ROOT / "scripts/benchmark_identity.py", ROOT / "scripts/benchmark_evidence.py",
         startup_object, libbase_archive,
     ]
     if build_metadata.get("cpu_rtl"):
@@ -350,25 +351,27 @@ def build_profile_firmware(profile, build_metadata, memory="onchip", build_dir=N
     ]
     source_files += [UPSTREAM / name for name in ALGORITHMS + ["coremark.h", "coremark.md5", "LICENSE.md"]]
     source_identity = {str(path.relative_to(ROOT)): sha256(path) for path in source_files + generated}
-    fingerprint_values = {
+    fingerprint_metadata = {
         "profile": profile,
         "cpu_variant": build_metadata.get("cpu_variant"),
         "cpu_candidate": build_metadata.get("cpu_candidate"),
+        "cpu_profile_selection": build_metadata.get("cpu_profile_selection"),
         "memory_mode": memory,
-        "coremark_commit": COREMARK["commit"],
+        "coremark": {"commit": COREMARK["commit"]},
         "source_hashes": source_identity,
         "bitstream_sha256": bitstream_hash,
         "compiler": str(compiler_path()),
         "compiler_version": build_metadata["tool_versions"]["riscv_gcc"],
         "compiler_flags": compiler_flags,
         "include_flags": include_flags,
-        "system_clock_hz": SYS_CLK_FREQ,
+        "clock_hz": SYS_CLK_FREQ,
         "cpu_configuration": build_metadata.get("cpu_configuration"),
         "memory_configuration": build_metadata.get("memory"),
     }
-    if build_metadata.get("cpu_profile_selection") is not None:
-        fingerprint_values["cpu_profile_selection"] = build_metadata["cpu_profile_selection"]
-    fingerprint = stable_hash(fingerprint_values)
+    fingerprint_payload = benchmark_fingerprint_payload(
+        fingerprint_metadata, build_metadata, schema_version=CURRENT_IDENTITY_SCHEMA,
+    )
+    fingerprint = stable_hash(fingerprint_payload)
     build_id = fingerprint[:16]
     old_path = output_dir / "benchmark-metadata.json"
     if old_path.is_file():
@@ -378,7 +381,10 @@ def build_profile_firmware(profile, build_metadata, memory="onchip", build_dir=N
                 (ROOT / entry["binary"]).is_file() and sha256(ROOT / entry["binary"]) == entry["binary_sha256"]
                 for entry in previous.get("images", {}).values()
             )
-            if previous.get("status") == "passed" and previous.get("source_fingerprint") == fingerprint and images_current:
+            if (previous.get("status") == "passed"
+                    and previous.get("source_fingerprint") == fingerprint
+                    and images_current
+                    and bundle_is_current(previous.get("evidence_bundle"), fingerprint, ROOT)):
                 print(f"Using current {profile} benchmark firmware")
                 return previous
         except (OSError, ValueError, KeyError):
@@ -387,6 +393,8 @@ def build_profile_firmware(profile, build_metadata, memory="onchip", build_dir=N
     result = {
         "status": "in_progress",
         "profile": profile,
+        "identity_schema_version": CURRENT_IDENTITY_SCHEMA,
+        "fingerprint_payload": fingerprint_payload,
         "cpu_variant": build_metadata.get("cpu_variant"),
         "cpu_candidate": build_metadata.get("cpu_candidate"),
         "cpu_profile_selection": build_metadata.get("cpu_profile_selection"),
@@ -495,6 +503,8 @@ def build_profile_firmware(profile, build_metadata, memory="onchip", build_dir=N
             )
         result["status"] = "passed"
         result["finished_utc"] = utc_now().isoformat()
+        old_path.write_text(json.dumps(result, indent=2) + "\n")
+        result["evidence_bundle"] = create_bundle(build_dir, result, build_metadata, ROOT)
     except BaseException as error:
         result["status"] = "failed"
         result["error"] = f"{type(error).__name__}: {error}"

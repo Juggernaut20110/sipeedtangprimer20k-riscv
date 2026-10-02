@@ -11,6 +11,10 @@ from unittest.mock import patch
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 import scripts.benchmark_report as report  # noqa: E402
+from scripts.benchmark_identity import (  # noqa: E402
+    CURRENT_IDENTITY_SCHEMA, benchmark_fingerprint_payload, legacy_fingerprint_payload, stable_hash,
+)
+from scripts.benchmark_evidence import bundle_file_matches, bundle_is_current, create_bundle  # noqa: E402
 
 
 class BenchmarkReportEvidenceTests(unittest.TestCase):
@@ -110,6 +114,9 @@ class BenchmarkReportEvidenceTests(unittest.TestCase):
             (self.root / raw_rel).parent.mkdir(parents=True, exist_ok=True)
             (self.root / raw_rel).write_bytes(raw)
             (self.root / text_rel).write_text(raw.decode())
+            tx_rel = f"docs/performance/{stem}.uart.tx.bin"
+            tx = b"\nserialboot\n"
+            (self.root / tx_rel).write_bytes(tx)
             parsed = copy.deepcopy(self.parsed[mode])
             trials.append({
                 "mode": mode,
@@ -120,6 +127,9 @@ class BenchmarkReportEvidenceTests(unittest.TestCase):
                 "text_uart_log": text_rel,
                 "raw_uart_sha256": hashlib.sha256(raw).hexdigest(),
                 "raw_uart_bytes": len(raw),
+                "transmitted_uart_log": tx_rel,
+                "transmitted_uart_sha256": hashlib.sha256(tx).hexdigest(),
+                "transmitted_uart_bytes": len(tx),
                 "parsed": parsed,
             })
         return {
@@ -158,6 +168,14 @@ class BenchmarkReportEvidenceTests(unittest.TestCase):
         self.assertIsNone(checked["trials"][1]["reparsed"])
         self.assertIsNone(checked["aggregate"])
         self.assertIn("raw UART capture hash", " ".join(checked["report_validation"]["errors"]))
+
+    def test_transmitted_uart_hash_tampering_rejects_complete_session(self):
+        changed = self.root / self.session["trials"][1]["transmitted_uart_log"]
+        changed.write_bytes(b"changed upload bytes")
+        checked = self.revalidate()
+        self.assertEqual(checked["report_validation"]["status"], "failed")
+        self.assertIsNone(checked["aggregate"])
+        self.assertIn("transmitted UART capture hash", " ".join(checked["report_validation"]["errors"]))
 
     def test_cached_parsed_counters_must_match_reparsed_capture(self):
         session = copy.deepcopy(self.session)
@@ -455,10 +473,16 @@ class BenchmarkReportEvidenceTests(unittest.TestCase):
         self.assertIn("2600+24=2624 / 2048 / 3520 B", rendered)
 
     def test_memory_build_fingerprint_uses_exact_soc_configuration(self):
-        source_hashes = {"firmware/core.c": "source-hash"}
+        source_hashes = {
+            "firmware/core.c": "source-hash",
+            "build/software/include/generated/soc.h": "header-hash",
+            ".deps/pythondata-cpu-vexriscv/verilog/VexRiscv.v": "rtl-hash",
+        }
         cpu_configuration = {"liteX_variant": "standard", "prediction": "dynamic_target"}
         soc_memory = {"mode": "onchip", "main_ram_base": 0x40000000, "main_ram_bytes": 32768}
+        selection = {"schema_version": 1, "profile": "performance", "candidate": "dynamic_target"}
         metadata = {
+            "identity_schema_version": CURRENT_IDENTITY_SCHEMA,
             "profile": "performance",
             "coremark": {"commit": "coremark-revision"},
             "source_hashes": source_hashes,
@@ -468,35 +492,173 @@ class BenchmarkReportEvidenceTests(unittest.TestCase):
             "compiler_flags": ["-O2"],
             "include_flags": ["-Iinclude"],
             "clock_hz": report.SYS_CLK_FREQ,
+            "cpu_variant": "standard",
             "cpu_candidate": "dynamic_target",
+            "cpu_profile_selection": selection,
             "memory_mode": "onchip",
             "cpu_configuration": cpu_configuration,
             # This field describes where benchmark sections are placed; it is
             # not the integer-address memory map used in the build fingerprint.
             "memory": {"mode": "onchip", "main_ram_base": "0x40000000", "code_and_read_only_data": "main_ram"},
         }
-        fingerprint = report.stable_hash({
-            "profile": metadata["profile"],
-            "cpu_candidate": metadata["cpu_candidate"],
-            "memory_mode": metadata["memory_mode"],
-            "coremark_commit": metadata["coremark"]["commit"],
-            "source_hashes": source_hashes,
-            "bitstream_sha256": metadata["bitstream_sha256"],
-            "compiler": metadata["compiler"],
-            "compiler_version": metadata["compiler_version"],
-            "compiler_flags": metadata["compiler_flags"],
-            "include_flags": metadata["include_flags"],
-            "system_clock_hz": metadata["clock_hz"],
-            "cpu_configuration": cpu_configuration,
-            "memory_configuration": soc_memory,
-        })
+        build_metadata = {
+            "cpu_variant": "standard", "cpu_candidate": "dynamic_target",
+            "cpu_profile_selection": selection, "memory_mode": "onchip",
+            "cpu_configuration": cpu_configuration, "memory": soc_memory,
+        }
+        metadata["fingerprint_payload"] = benchmark_fingerprint_payload(
+            metadata, build_metadata,
+        )
+        fingerprint = stable_hash(metadata["fingerprint_payload"])
         metadata["source_fingerprint"] = fingerprint
         with patch.object(report, "file_matches", return_value=True):
-            self.assertTrue(report.benchmark_fingerprint_matches(metadata, {
-                "cpu_configuration": cpu_configuration,
-                "memory": soc_memory,
-            }))
+            self.assertTrue(report.benchmark_fingerprint_matches(metadata, build_metadata))
             self.assertFalse(report.benchmark_fingerprint_matches(metadata))
+
+            for field, changed in (
+                ("cpu_variant", "linux"),
+                ("cpu_candidate", "different-candidate"),
+                ("cpu_profile_selection", {"profile": "different-selection"}),
+                ("bitstream_sha256", "different-bitstream"),
+            ):
+                mutated = copy.deepcopy(metadata)
+                mutated[field] = changed
+                self.assertFalse(report.benchmark_fingerprint_matches(mutated, build_metadata), field)
+
+            for path in source_hashes:
+                mutated = copy.deepcopy(metadata)
+                mutated["source_hashes"][path] = "changed-input-hash"
+                self.assertFalse(report.benchmark_fingerprint_matches(mutated, build_metadata), path)
+
+            changed_build = copy.deepcopy(build_metadata)
+            changed_build["memory"] = {**soc_memory, "main_ram_bytes": 65536}
+            self.assertFalse(report.benchmark_fingerprint_matches(metadata, changed_build))
+
+    def test_modern_fingerprint_round_trips_linux_performance_and_maxperf_modes(self):
+        selection_profiles = [{
+            "schema_version": 1, "profile": "performance", "status": "accepted",
+            "candidate": "dynamic_target",
+        }]
+        for state in ("provisional", "accepted"):
+            for memory in ("onchip", "ddr3"):
+                selection_profiles.append({
+                    "schema_version": 1, "profile": "maxperf", "status": state,
+                    "memory_modes": {memory: {"status": state, "candidate_id": "candidate-x"}},
+                })
+        scenarios = [
+            ("linux", "linux", None, "onchip", None),
+            ("performance", "standard", "dynamic_target", "onchip", selection_profiles[0]),
+        ]
+        scenarios.extend(
+            ("maxperf", "projectim", "candidate-x", memory, selection)
+            for selection in selection_profiles[1:]
+            for memory in selection["memory_modes"]
+        )
+
+        for profile, variant, candidate, memory, selection in scenarios:
+            with self.subTest(profile=profile, memory=memory, selection=selection):
+                cpu_configuration = {
+                    "isa": "rv32i2p0_ma" if profile == "linux" else "rv32i2p0_m",
+                    "rtl_sha256": f"rtl-{profile}-{memory}",
+                }
+                memory_configuration = {
+                    "mode": memory,
+                    "main_ram_base": 0x40000000,
+                    "main_ram_bytes": 32768 if memory == "onchip" else 268435456,
+                }
+                build_metadata = {
+                    "cpu_variant": variant, "cpu_candidate": candidate,
+                    "cpu_profile_selection": selection, "memory_mode": memory,
+                    "cpu_configuration": cpu_configuration,
+                    "memory": memory_configuration,
+                }
+                metadata = {
+                    "identity_schema_version": CURRENT_IDENTITY_SCHEMA,
+                    "profile": profile, "cpu_variant": variant,
+                    "cpu_candidate": candidate, "cpu_profile_selection": selection,
+                    "memory_mode": memory,
+                    "coremark": {"commit": "coremark"},
+                    "source_hashes": {"build/input.h": f"header-{memory}"},
+                    "bitstream_sha256": f"bitstream-{profile}-{memory}",
+                    "compiler": "riscv-gcc", "compiler_version": "15.2",
+                    "compiler_flags": ["-O2"], "include_flags": ["-Iinclude"],
+                    "clock_hz": report.SYS_CLK_FREQ,
+                    "cpu_configuration": cpu_configuration,
+                }
+                metadata["fingerprint_payload"] = benchmark_fingerprint_payload(metadata, build_metadata)
+                metadata["source_fingerprint"] = stable_hash(metadata["fingerprint_payload"])
+                with patch.object(report, "file_matches", return_value=True):
+                    self.assertTrue(report.benchmark_fingerprint_matches(metadata, build_metadata))
+
+    def test_legacy_fingerprint_schema_keeps_onchip_default(self):
+        metadata = {
+            "profile": "minimal", "coremark": {"commit": "legacy-coremark"},
+            "source_hashes": {"firmware/core.c": "old-hash"},
+            "bitstream_sha256": "old-bitstream", "compiler": "old-gcc",
+            "compiler_version": "old-version", "compiler_flags": ["-O2"],
+            "include_flags": ["-Iinclude"], "clock_hz": report.SYS_CLK_FREQ,
+        }
+        metadata["source_fingerprint"] = stable_hash(legacy_fingerprint_payload(metadata))
+        with patch.object(report, "file_matches", return_value=True):
+            self.assertTrue(report.benchmark_fingerprint_matches(metadata))
+            self.assertEqual(metadata.get("memory_mode", "onchip"), "onchip")
+
+    def test_archived_identity_remains_verifiable_after_source_paths_change(self):
+        source_path = self.root / "firmware/core.c"
+        source_path.parent.mkdir(parents=True, exist_ok=True)
+        source_path.write_bytes(b"original source")
+        build_dir = self.root / "build/standard"
+        benchmark_dir = build_dir / "benchmark"
+        benchmark_dir.mkdir(parents=True, exist_ok=True)
+        bitstream_path = build_dir / "bitstream.fs"
+        bitstream_path.write_bytes(b"bitstream")
+        images = {}
+        for mode in ("validation", "performance"):
+            image_path = benchmark_dir / f"{mode}.bin"
+            image_path.write_bytes(mode.encode())
+            images[mode] = {
+                "binary": str(image_path.relative_to(self.root)),
+                "binary_sha256": hashlib.sha256(image_path.read_bytes()).hexdigest(),
+                "profile": "standard", "mode": mode, "build_id": "build-id",
+                "binary_crc32": 1234, "binary_bytes": image_path.stat().st_size,
+            }
+        cpu_configuration = {"isa": "rv32im", "rtl_sha256": "rtl-hash"}
+        memory_configuration = {"mode": "onchip", "main_ram_base": 0x40000000, "main_ram_bytes": 32768}
+        build = {
+            "status": "passed", "profile": "standard", "cpu_variant": "standard",
+            "cpu_candidate": None, "cpu_profile_selection": None, "memory_mode": "onchip",
+            "cpu_configuration": cpu_configuration, "memory": memory_configuration,
+            "sys_clk_hz": report.SYS_CLK_FREQ,
+            "bitstream": str(bitstream_path.relative_to(self.root)),
+        }
+        metadata = {
+            "status": "passed", "identity_schema_version": CURRENT_IDENTITY_SCHEMA,
+            "profile": "standard", "cpu_variant": "standard", "cpu_candidate": None,
+            "cpu_profile_selection": None, "memory_mode": "onchip",
+            "coremark": {"commit": "coremark"},
+            "source_hashes": {"firmware/core.c": hashlib.sha256(source_path.read_bytes()).hexdigest()},
+            "bitstream": str(bitstream_path.relative_to(self.root)),
+            "bitstream_sha256": hashlib.sha256(bitstream_path.read_bytes()).hexdigest(),
+            "compiler": "gcc", "compiler_version": "test", "compiler_flags": ["-O2"],
+            "include_flags": ["-Iinclude"], "clock_hz": report.SYS_CLK_FREQ,
+            "cpu_configuration": cpu_configuration, "memory_configuration": memory_configuration,
+            "images": images,
+        }
+        metadata["fingerprint_payload"] = benchmark_fingerprint_payload(metadata, build)
+        metadata["source_fingerprint"] = stable_hash(metadata["fingerprint_payload"])
+        (build_dir / "build-metadata.json").write_text(json.dumps(build, indent=2) + "\n")
+        (benchmark_dir / "benchmark-metadata.json").write_text(json.dumps(metadata, indent=2) + "\n")
+
+        reference = create_bundle(build_dir, metadata, build, self.root)
+        metadata["evidence_bundle"] = reference
+        source_path.write_bytes(b"replacement source")
+        with patch.object(report, "ROOT", self.root):
+            self.assertFalse(report.benchmark_fingerprint_matches(metadata, build))
+            self.assertTrue(report.benchmark_fingerprint_matches(metadata, build, allow_bundle=True))
+        self.assertTrue(bundle_is_current(reference, metadata["source_fingerprint"], self.root))
+        self.assertTrue(bundle_file_matches(
+            reference, "firmware/core.c", metadata["source_hashes"]["firmware/core.c"], self.root,
+        ))
 
     def test_historical_three_profile_batch_uses_its_recorded_membership(self):
         batch_id = "20260930T120000.000000Z-all"
@@ -536,6 +698,31 @@ class BenchmarkReportEvidenceTests(unittest.TestCase):
         self.assertEqual(set(batch["profile_results"]["minimal"]["aggregate"]), {"coremark_mean"})
         self.assertEqual(calls, [f"{batch_id}-minimal", f"{batch_id}-lite"])
         self.assertNotIn("old-standard", calls)
+
+    def test_three_through_six_profile_batches_follow_recorded_membership(self):
+        all_profiles = ["minimal", "lite", "standard", "performance", "linux", "maxperf"]
+        for count in (3, 4, 5, 6):
+            batch_id = f"historical-{count}-profile-batch"
+            membership = all_profiles[:count]
+            sessions = [{
+                "session_id": f"{batch_id}-{profile}", "batch_id": batch_id,
+                "requested_profiles": membership, "profile": profile, "status": "passed",
+                "aggregate": {"coremark_mean": float(index + 1)},
+            } for index, profile in enumerate(membership)]
+
+            def fake_revalidate(session, _rows):
+                checked = dict(session)
+                checked["report_validation"] = {"status": "passed", "errors": []}
+                checked["aggregate"] = session["aggregate"]
+                return checked
+
+            with self.subTest(count=count), patch.object(
+                report, "PROFILES", {profile: profile for profile in all_profiles[:5]},
+            ), patch.object(report, "revalidate_session", side_effect=fake_revalidate):
+                batch = report.revalidate_batch_sessions(sessions, batch_id, membership, {})
+            self.assertEqual(batch["status"], "passed")
+            self.assertEqual(batch["requested_profiles"], membership)
+            self.assertEqual(set(batch["profile_results"]), set(membership))
 
     def test_batch_is_complete_only_when_all_profiles_revalidate(self):
         batch_id = "20260930T120000.000000Z-all"

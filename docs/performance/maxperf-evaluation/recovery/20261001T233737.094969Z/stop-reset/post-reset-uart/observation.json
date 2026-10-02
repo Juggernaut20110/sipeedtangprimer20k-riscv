@@ -1,0 +1,10 @@
+{
+  "observed_utc": "2026-10-01T23:40:00.671467+00:00",
+  "port": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+  "duration_seconds": 5,
+  "receive_only": true,
+  "bytes": 0,
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "litex_prompt_seen": false,
+  "benchmark_start_seen": false
+}

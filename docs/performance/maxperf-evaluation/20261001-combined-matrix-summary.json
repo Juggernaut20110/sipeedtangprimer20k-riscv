@@ -1,0 +1,296 @@
+{
+  "board_recovery": {
+    "status": "safe_idle_confirmed_after_explicit_fpga_reset",
+    "evidence": "docs/performance/maxperf-evaluation/recovery/20261002T004311Z-final-onchip/recovery.json",
+    "pre_reset_uart_rx_bytes": 0,
+    "post_reset_uart_rx_bytes": 0,
+    "jtag_reset_exit_code": 0,
+    "post_reset_jtag_detect_exit_code": 0,
+    "flash_programming": false
+  },
+  "ddr3": {
+    "candidate_build_batch": "20261001T202139.975865Z-ddr3-maxperf-build",
+    "candidate_count": 18,
+    "candidate_results": [
+      {
+        "build_reason": "RuntimeError: standard misses timing: Fmax=48.87 MHz, slack=-0.06 ns, hold=0.077 ns, recovery=2.022 ns, removal=1.157 ns, violated endpoints=1",
+        "candidate_evidence": "docs/performance/maxperf-evaluation/20261001T202139.975865Z-ddr3-maxperf-build/icache-4096_dcache-2048_rv32im",
+        "candidate_id": "icache-4096_dcache-2048_rv32im",
+        "latest_build_status": "rejected_or_blocked",
+        "matrix_outcome": "timing_failure",
+        "scoring_status": "not_scored_ddr_reference_integrity_gate_failed"
+      },
+      {
+        "candidate_evidence": "docs/performance/maxperf-evaluation/20261001T202139.975865Z-ddr3-maxperf-build/icache-4096_dcache-2048_rv32imc",
+        "candidate_id": "icache-4096_dcache-2048_rv32imc",
+        "latest_build_status": "ready_for_board_measurement",
+        "matrix_outcome": "ready_for_board_measurement",
+        "scoring_status": "not_scored_ddr_reference_integrity_gate_failed"
+      },
+      {
+        "candidate_evidence": "docs/performance/maxperf-evaluation/20261001T202139.975865Z-ddr3-maxperf-build/icache-4096_dcache-4096_rv32im",
+        "candidate_id": "icache-4096_dcache-4096_rv32im",
+        "latest_build_status": "ready_for_board_measurement",
+        "matrix_outcome": "ready_for_board_measurement",
+        "scoring_status": "not_scored_ddr_reference_integrity_gate_failed"
+      },
+      {
+        "build_reason": "RuntimeError: standard misses timing: Fmax=47.493 MHz, slack=-0.223 ns, hold=0.198 ns, recovery=1.314 ns, removal=1.614 ns, violated endpoints=4",
+        "candidate_evidence": "docs/performance/maxperf-evaluation/20261001T202139.975865Z-ddr3-maxperf-build/icache-4096_dcache-4096_rv32imc",
+        "candidate_id": "icache-4096_dcache-4096_rv32imc",
+        "latest_build_status": "rejected_or_blocked",
+        "matrix_outcome": "timing_failure",
+        "scoring_status": "not_scored_ddr_reference_integrity_gate_failed"
+      },
+      {
+        "candidate_evidence": "docs/performance/maxperf-evaluation/20261001T202139.975865Z-ddr3-maxperf-build/icache-4096_dcache-8192_rv32im",
+        "candidate_id": "icache-4096_dcache-8192_rv32im",
+        "latest_build_status": "ready_for_board_measurement",
+        "matrix_outcome": "ready_for_board_measurement",
+        "scoring_status": "not_scored_ddr_reference_integrity_gate_failed"
+      },
+      {
+        "candidate_evidence": "docs/performance/maxperf-evaluation/20261001T202139.975865Z-ddr3-maxperf-build/icache-4096_dcache-8192_rv32imc",
+        "candidate_id": "icache-4096_dcache-8192_rv32imc",
+        "latest_build_status": "ready_for_board_measurement",
+        "matrix_outcome": "ready_for_board_measurement",
+        "scoring_status": "not_scored_ddr_reference_integrity_gate_failed"
+      },
+      {
+        "build_reason": "OSError: Error occured during Gowin's script execution.",
+        "candidate_evidence": "docs/performance/maxperf-evaluation/20261001T202139.975865Z-ddr3-maxperf-build/icache-8192_dcache-2048_rv32im",
+        "candidate_id": "icache-8192_dcache-2048_rv32im",
+        "latest_build_status": "rejected_or_blocked",
+        "matrix_outcome": "placement_failure",
+        "scoring_status": "not_scored_ddr_reference_integrity_gate_failed"
+      },
+      {
+        "build_reason": "OSError: Error occured during Gowin's script execution.",
+        "candidate_evidence": "docs/performance/maxperf-evaluation/20261001T202139.975865Z-ddr3-maxperf-build/icache-8192_dcache-2048_rv32imc",
+        "candidate_id": "icache-8192_dcache-2048_rv32imc",
+        "latest_build_status": "rejected_or_blocked",
+        "matrix_outcome": "placement_failure",
+        "scoring_status": "not_scored_ddr_reference_integrity_gate_failed"
+      },
+      {
+        "build_reason": "OSError: Error occured during Gowin's script execution.",
+        "candidate_evidence": "docs/performance/maxperf-evaluation/20261001T202139.975865Z-ddr3-maxperf-build/icache-8192_dcache-4096_rv32im",
+        "candidate_id": "icache-8192_dcache-4096_rv32im",
+        "latest_build_status": "rejected_or_blocked",
+        "matrix_outcome": "placement_failure",
+        "scoring_status": "not_scored_ddr_reference_integrity_gate_failed"
+      },
+      {
+        "build_reason": "OSError: Error occured during Gowin's script execution.",
+        "candidate_evidence": "docs/performance/maxperf-evaluation/20261001T202139.975865Z-ddr3-maxperf-build/icache-8192_dcache-4096_rv32imc",
+        "candidate_id": "icache-8192_dcache-4096_rv32imc",
+        "latest_build_status": "rejected_or_blocked",
+        "matrix_outcome": "placement_failure",
+        "scoring_status": "not_scored_ddr_reference_integrity_gate_failed"
+      },
+      {
+        "build_reason": "OSError: Error occured during Gowin's script execution.",
+        "candidate_evidence": "docs/performance/maxperf-evaluation/20261001T202139.975865Z-ddr3-maxperf-build/icache-8192_dcache-8192_rv32im",
+        "candidate_id": "icache-8192_dcache-8192_rv32im",
+        "latest_build_status": "rejected_or_blocked",
+        "matrix_outcome": "placement_failure",
+        "scoring_status": "not_scored_ddr_reference_integrity_gate_failed"
+      },
+      {
+        "build_reason": "OSError: Error occured during Gowin's script execution.",
+        "candidate_evidence": "docs/performance/maxperf-evaluation/20261001T202139.975865Z-ddr3-maxperf-build/icache-8192_dcache-8192_rv32imc",
+        "candidate_id": "icache-8192_dcache-8192_rv32imc",
+        "latest_build_status": "rejected_or_blocked",
+        "matrix_outcome": "placement_failure",
+        "scoring_status": "not_scored_ddr_reference_integrity_gate_failed"
+      },
+      {
+        "build_reason": "OSError: Error occured during Gowin's script execution.",
+        "candidate_evidence": "docs/performance/maxperf-evaluation/20261001T202139.975865Z-ddr3-maxperf-build/icache-16384_dcache-2048_rv32im",
+        "candidate_id": "icache-16384_dcache-2048_rv32im",
+        "latest_build_status": "rejected_or_blocked",
+        "matrix_outcome": "logic_limit",
+        "scoring_status": "not_scored_ddr_reference_integrity_gate_failed"
+      },
+      {
+        "build_reason": "OSError: Error occured during Gowin's script execution.",
+        "candidate_evidence": "docs/performance/maxperf-evaluation/20261001T202139.975865Z-ddr3-maxperf-build/icache-16384_dcache-2048_rv32imc",
+        "candidate_id": "icache-16384_dcache-2048_rv32imc",
+        "latest_build_status": "rejected_or_blocked",
+        "matrix_outcome": "logic_limit",
+        "scoring_status": "not_scored_ddr_reference_integrity_gate_failed"
+      },
+      {
+        "build_reason": "OSError: Error occured during Gowin's script execution.",
+        "candidate_evidence": "docs/performance/maxperf-evaluation/20261001T202139.975865Z-ddr3-maxperf-build/icache-16384_dcache-4096_rv32im",
+        "candidate_id": "icache-16384_dcache-4096_rv32im",
+        "latest_build_status": "rejected_or_blocked",
+        "matrix_outcome": "logic_limit",
+        "scoring_status": "not_scored_ddr_reference_integrity_gate_failed"
+      },
+      {
+        "build_reason": "OSError: Error occured during Gowin's script execution.",
+        "candidate_evidence": "docs/performance/maxperf-evaluation/20261001T202139.975865Z-ddr3-maxperf-build/icache-16384_dcache-4096_rv32imc",
+        "candidate_id": "icache-16384_dcache-4096_rv32imc",
+        "latest_build_status": "rejected_or_blocked",
+        "matrix_outcome": "logic_limit",
+        "scoring_status": "not_scored_ddr_reference_integrity_gate_failed"
+      },
+      {
+        "build_reason": "OSError: Error occured during Gowin's script execution.",
+        "candidate_evidence": "docs/performance/maxperf-evaluation/20261001T202139.975865Z-ddr3-maxperf-build/icache-16384_dcache-8192_rv32im",
+        "candidate_id": "icache-16384_dcache-8192_rv32im",
+        "latest_build_status": "rejected_or_blocked",
+        "matrix_outcome": "logic_limit",
+        "scoring_status": "not_scored_ddr_reference_integrity_gate_failed"
+      },
+      {
+        "build_reason": "OSError: Error occured during Gowin's script execution.",
+        "candidate_evidence": "docs/performance/maxperf-evaluation/20261001T202139.975865Z-ddr3-maxperf-build/icache-16384_dcache-8192_rv32imc",
+        "candidate_id": "icache-16384_dcache-8192_rv32imc",
+        "latest_build_status": "rejected_or_blocked",
+        "matrix_outcome": "logic_limit",
+        "scoring_status": "not_scored_ddr_reference_integrity_gate_failed"
+      }
+    ],
+    "matrix_classification_counts": {
+      "logic_limit": 6,
+      "placement_failure": 6,
+      "ready_for_board_measurement": 4,
+      "timing_failure": 2
+    },
+    "scoring_and_qualification": "No DDR candidate was scored or qualified: the public performance DDR reference failed its integrity gate, and the current diagnostic bitstream reproduced persistent memory corruption."
+  },
+  "evidence_paths": {
+    "candidate7_control": "docs/performance/maxperf-evaluation/20261001T234858.674707Z-onchip-candidate7-control/candidate7-control.json",
+    "candidate8_control": "docs/performance/maxperf-evaluation/20261001T234517Z-onchip-candidate8-control-pinned/candidate8-control.json",
+    "ddr3_build": "docs/performance/maxperf-evaluation/20261001T202139.975865Z-ddr3-maxperf-build/candidate-build.json",
+    "ddr3_diagnostic": "docs/ddr3/diagnosis/20261001T230918.180452Z-dll-off-integrity/result.json",
+    "ddr3_read_only_reproduction": "docs/ddr3/diagnosis/20261001T230928.211880Z-read-only-probe/result.json",
+    "onchip_build": "docs/performance/maxperf-evaluation/20261001T231128.855688Z-onchip-maxperf-build/candidate-build.json",
+    "onchip_primary_evaluation": "docs/performance/maxperf-evaluation/20261001T232022.342523Z-onchip-maxperf/evaluation.json",
+    "final_board_recovery": "docs/performance/maxperf-evaluation/recovery/20261002T004311Z-final-onchip/recovery.json"
+  },
+  "generated_utc": "2026-10-02T00:01:01.236662+00:00",
+  "onchip": {
+    "candidate_build_batch": "20261001T231128.855688Z-onchip-maxperf-build",
+    "candidate_results": [
+      {
+        "build_evidence": "docs/performance/maxperf-evaluation/20261001T231128.855688Z-onchip-maxperf-build/icache-2048_dcache-2048_rv32im",
+        "build_status": "ready_for_board_measurement",
+        "candidate_id": "icache-2048_dcache-2048_rv32im",
+        "coremark_delta_vs_fresh_performance": -5.194899827391595,
+        "coremark_mean": 114.12901571607911,
+        "gain_percent_vs_fresh_performance": -4.353611598924651,
+        "measurement_status": "passed",
+        "scored_repetitions": 3,
+        "validation_passes": 1
+      },
+      {
+        "build_evidence": "docs/performance/maxperf-evaluation/20261001T231128.855688Z-onchip-maxperf-build/icache-2048_dcache-2048_rv32imc",
+        "build_status": "ready_for_board_measurement",
+        "candidate_id": "icache-2048_dcache-2048_rv32imc",
+        "coremark_delta_vs_fresh_performance": -4.810676678838718,
+        "coremark_mean": 114.51323886463199,
+        "gain_percent_vs_fresh_performance": -4.031611481175497,
+        "measurement_status": "passed",
+        "scored_repetitions": 3,
+        "validation_passes": 1
+      },
+      {
+        "build_evidence": "docs/performance/maxperf-evaluation/20261001T231128.855688Z-onchip-maxperf-build/icache-2048_dcache-4096_rv32im",
+        "build_status": "ready_for_board_measurement",
+        "candidate_id": "icache-2048_dcache-4096_rv32im",
+        "coremark_delta_vs_fresh_performance": -1.6403905014545614,
+        "coremark_mean": 117.68352504201614,
+        "gain_percent_vs_fresh_performance": -1.3747374061463424,
+        "measurement_status": "passed",
+        "scored_repetitions": 3,
+        "validation_passes": 1
+      },
+      {
+        "build_evidence": "docs/performance/maxperf-evaluation/20261001T231128.855688Z-onchip-maxperf-build/icache-2048_dcache-4096_rv32imc",
+        "build_status": "ready_for_board_measurement",
+        "candidate_id": "icache-2048_dcache-4096_rv32imc",
+        "coremark_delta_vs_fresh_performance": -1.5760619887177967,
+        "coremark_mean": 117.74785355475291,
+        "gain_percent_vs_fresh_performance": -1.3208265765831528,
+        "measurement_status": "passed",
+        "scored_repetitions": 3,
+        "validation_passes": 1
+      },
+      {
+        "build_evidence": "docs/performance/maxperf-evaluation/20261001T231128.855688Z-onchip-maxperf-build/icache-4096_dcache-2048_rv32im",
+        "build_status": "ready_for_board_measurement",
+        "candidate_id": "icache-4096_dcache-2048_rv32im",
+        "coremark_delta_vs_fresh_performance": -3.6476403860171445,
+        "coremark_mean": 115.67627515745356,
+        "gain_percent_vs_fresh_performance": -3.056923140179957,
+        "measurement_status": "passed",
+        "scored_repetitions": 3,
+        "validation_passes": 1
+      },
+      {
+        "build_evidence": "docs/performance/maxperf-evaluation/20261001T231128.855688Z-onchip-maxperf-build/icache-4096_dcache-2048_rv32imc",
+        "build_status": "ready_for_board_measurement",
+        "candidate_evidence": "docs/performance/maxperf-evaluation/20261001T232022.342523Z-onchip-maxperf/icache-4096_dcache-2048_rv32imc",
+        "candidate_id": "icache-4096_dcache-2048_rv32imc",
+        "error": "TimeoutError: no benchmark start marker within 45.0 seconds",
+        "measurement_status": "failed",
+        "scored_repetitions": 0,
+        "validation_passes": 0
+      },
+      {
+        "build_evidence": "docs/performance/maxperf-evaluation/20261001T231128.855688Z-onchip-maxperf-build/icache-4096_dcache-4096_rv32im",
+        "build_status": "ready_for_board_measurement",
+        "candidate_id": "icache-4096_dcache-4096_rv32im",
+        "control_batch_id": "20261001T234858.674707Z-onchip-candidate7-control",
+        "control_evidence": "docs/performance/maxperf-evaluation/20261001T234858.674707Z-onchip-candidate7-control/candidate7-control.json",
+        "coremark_delta_vs_fresh_performance": -2.1125658236087475e-06,
+        "coremark_mean": 119.32391343090488,
+        "gain_percent_vs_fresh_performance": -1.7704462797645305e-06,
+        "measurement_status": "passed_supplemental_control",
+        "scored_repetitions": 3,
+        "validation_passes": 1
+      },
+      {
+        "build_evidence": "docs/performance/maxperf-evaluation/20261001T231128.855688Z-onchip-maxperf-build/icache-4096_dcache-4096_rv32imc",
+        "build_status": "ready_for_board_measurement",
+        "candidate_id": "icache-4096_dcache-4096_rv32imc",
+        "control_batch_id": "20261001T234517Z-onchip-candidate8-control-pinned",
+        "control_evidence": "docs/performance/maxperf-evaluation/20261001T234517Z-onchip-candidate8-control-pinned/candidate8-control.json",
+        "coremark_delta_vs_fresh_performance": 0.4747314805594698,
+        "coremark_mean": 119.79864702403017,
+        "gain_percent_vs_fresh_performance": 0.3978510748639665,
+        "measurement_status": "passed_supplemental_control",
+        "scored_repetitions": 3,
+        "validation_passes": 1
+      }
+    ],
+    "fresh_performance_baseline": {
+      "batch_id": "20261001T232022.342523Z-onchip-maxperf",
+      "bitstream_sha256": "6b33147dee92a623d1756cd023ffdf603e2cebdd49c4b1e9ca0eaec8ba66fcb9",
+      "mean_coremark": 119.3239155434707,
+      "scored_repetitions": 3,
+      "status": "passed",
+      "validation_passes": 1
+    },
+    "primary_measurement_batch": "20261001T232022.342523Z-onchip-maxperf",
+    "summary": "All eight on-chip candidate identities have evidence-backed outcomes. Candidates 1-5 scored in the primary batch; candidate 6 failed startup and stopped it; candidates 7 and 8 passed separately against the same fresh performance baseline bitstream. Candidate 8 has a strict on-chip gain only."
+  },
+  "overall_status": "incomplete_ddr_integrity_failure_no_maxperf_promotion",
+  "promotion": {
+    "public_profile_registry_remains": [
+      "minimal",
+      "lite",
+      "standard",
+      "performance",
+      "linux"
+    ],
+    "reason": "A maxperf profile requires strict gain and exact-artifact qualification in both onchip and DDR3 modes. DDR3 integrity did not pass.",
+    "status": "not_promoted"
+  },
+  "schema_version": 1,
+  "system_clock_hz": 48000000,
+  "last_updated_utc": "2026-10-02T00:47:14+00:00"
+}

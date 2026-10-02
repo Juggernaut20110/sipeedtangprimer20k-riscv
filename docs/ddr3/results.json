@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "report_generated_utc": "2026-10-01T20:43:51.891827+00:00",
+  "report_generated_utc": "2026-10-02T00:47:14+00:00",
   "latest_batch_id": "20261001T201828.617667Z-ddr3",
   "latest_batch_status": "failed",
   "batches": [
@@ -1291,6 +1291,7 @@
               "attempt": 1,
               "status": "failed",
               "errors": [
+                "DDR3 bitstream artifact is missing or has changed",
                 "BIOS memory test failed or its result is missing/ambiguous",
                 "diagnostic firmware start marker is missing",
                 "training capture lacks a passing DDR_TEST_SMOKE marker",
@@ -1413,19 +1414,102 @@
       "capture_validation": "passed",
       "capture_validation_errors": [],
       "manifest": "docs/ddr3/evidence/20261001T003751.798780Z-latency-calibration/latency-calibration.json"
+    },
+    {
+      "status": "diagnostic_only_not_acceptance_trial",
+      "profile": "minimal",
+      "memory_mode": "ddr3",
+      "experiment": "dll-off-integrity",
+      "captured_utc": "2026-10-01T23:09:18.180452+00:00",
+      "console_confirmed": true,
+      "bitstream": "build/ddr3/diagnosis/dll-off-integrity/gateware/impl/pnr/project.fs",
+      "bitstream_sha256": "073d774225b51c58b77abef5ceb9739b33ce58ba0278f13400780078f3bd9ca6",
+      "trained_lanes": [
+        {
+          "lane": 0,
+          "bitslip": 2,
+          "window_length": 221,
+          "center": 110
+        },
+        {
+          "lane": 1,
+          "bitslip": 2,
+          "window_length": 218,
+          "center": 108
+        }
+      ],
+      "bios_memtest": "failed",
+      "timing": {
+        "sys_clock_mhz": 48.0,
+        "ddr_ck_mhz": 96.0,
+        "worst_setup_slack_ns": 0.112,
+        "worst_hold_slack_ns": 0.318,
+        "worst_recovery_slack_ns": 1.779,
+        "worst_removal_slack_ns": 1.207,
+        "estimated_fmax_mhz": 49.959
+      },
+      "raw_uart": "docs/ddr3/diagnosis/20261001T230918.180452Z-dll-off-integrity/uart.bin",
+      "raw_uart_sha256": "d81c01ec1bca691f7829f1f9228bca0d614fe424acefe385eebac2ad7c93c9cf",
+      "result": "docs/ddr3/diagnosis/20261001T230918.180452Z-dll-off-integrity/result.json",
+      "manifest": "docs/ddr3/diagnosis/20261001T230918.180452Z-dll-off-integrity/manifest.json"
+    },
+    {
+      "status": "diagnostic_only_read_only_integrity_reproduction",
+      "profile": "minimal",
+      "memory_mode": "ddr3",
+      "experiment": "dll-off-integrity",
+      "captured_utc": "2026-10-01T23:09:28.211880+00:00",
+      "console_confirmed": true,
+      "cached_base": "0x40000000",
+      "uncached_alias": "0xc0000000",
+      "verification_bytes_per_pass": 2097152,
+      "verification_passes": {
+        "uncached_alias": 3,
+        "cached_base": 3
+      },
+      "errors_per_pass": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "first_error": {
+        "address_cached": "0x400b64f4",
+        "address_uncached": "0xc00b64f4",
+        "expected": "0xb4de6cd9",
+        "actual": "0xb4ce6cd9",
+        "xor": "0x00100000"
+      },
+      "interpretation": "The same stored bit-20 corruption persisted across repeated cached and uncached reads; reads were diagnostic only and did not repair memory.",
+      "raw_uart": "docs/ddr3/diagnosis/20261001T230928.211880Z-read-only-probe/uart.bin",
+      "raw_uart_sha256": "2504ad61c8e41d8f89fa611a7b7b9c95d3ee9a4fdb8cba8c0ff3a9df4f9dcbc3",
+      "transmitted_uart_sha256": "5b1cfe400c505e93fe6fe33ea008bd5aa962b309c49aae16e1437fa0c8781902",
+      "result": "docs/ddr3/diagnosis/20261001T230928.211880Z-read-only-probe/result.json",
+      "manifest": "docs/ddr3/diagnosis/20261001T230928.211880Z-read-only-probe/manifest.json"
     }
   ],
-  "maxperf_candidate_evaluation": {
-    "memory_mode": "ddr3",
-    "candidate_build": {
-      "path": "docs/performance/maxperf-evaluation/20261001T202139.975865Z-ddr3-maxperf-build/candidate-build.json",
-      "sha256": "ac789fb2e0f32f277aeb8afff4dc7c2ac989f23744af417cedfd476eefb4310f",
-      "status": "incomplete",
-      "candidate_count": 18,
-      "board_measurement_ready_candidates": 4
-    },
-    "board_status": "not_started",
-    "reason": "DDR3 candidate measurements require a fresh accepted performance reference. Existing performance DDR attempts and the latest linux run failed BIOS Memtest after training.",
-    "scored_candidates": 0
+  "latest_diagnostic_id": "20261001T230928.211880Z-read-only-probe",
+  "latest_diagnostic_status": "diagnostic_only_read_only_integrity_reproduction",
+  "diagnostic_summary": {
+    "status": "persistent_integrity_failure_reproduced",
+    "bitstream_sha256": "073d774225b51c58b77abef5ceb9739b33ce58ba0278f13400780078f3bd9ca6",
+    "fault_address": "0x400b64f4 / 0xc00b64f4",
+    "expected": "0xb4de6cd9",
+    "actual": "0xb4ce6cd9",
+    "xor": "0x00100000",
+    "read_only_repetitions": 6,
+    "acceptance_credit": false,
+    "evidence": "docs/ddr3/diagnosis/20261001T230928.211880Z-read-only-probe/result.json"
+  },
+  "current_board_recovery": {
+    "status": "safe_idle_confirmed_after_explicit_fpga_reset",
+    "evidence": "docs/performance/maxperf-evaluation/recovery/20261002T004311Z-final-onchip/recovery.json",
+    "pre_reset_uart_rx_bytes": 0,
+    "post_reset_uart_rx_bytes": 0,
+    "jtag_reset_exit_code": 0,
+    "post_reset_jtag_detect_exit_code": 0,
+    "flash_programming": false
   }
 }

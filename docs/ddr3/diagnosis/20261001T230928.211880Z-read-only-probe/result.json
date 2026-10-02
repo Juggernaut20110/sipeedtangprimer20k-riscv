@@ -1,0 +1,51 @@
+{
+  "diagnostic_only": true,
+  "source_capture": "docs/ddr3/diagnosis/20261001T230918.180452Z-dll-off-integrity",
+  "kind": "read-only",
+  "console_confirmed": true,
+  "records": [
+    {
+      "command": "\n",
+      "output": "\n\nlitex> "
+    },
+    {
+      "command": "mem_verify 0xc0000000 0x200000\n",
+      "output": "mem_verify 0xc0000000 0x200000\n\nmemtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9\nSDRAM_VERIFY address=0xc0000000 size=0x00200000 errors=1 status=failed\nlitex> "
+    },
+    {
+      "command": "mem_verify 0xc0000000 0x200000\n",
+      "output": "mem_verify 0xc0000000 0x200000\n\nmemtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9\nSDRAM_VERIFY address=0xc0000000 size=0x00200000 errors=1 status=failed\nlitex> "
+    },
+    {
+      "command": "mem_verify 0xc0000000 0x200000\n",
+      "output": "mem_verify 0xc0000000 0x200000\n\nmemtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9\nSDRAM_VERIFY address=0xc0000000 size=0x00200000 errors=1 status=failed\nlitex> "
+    },
+    {
+      "command": "mem_verify 0x40000000 0x200000\n",
+      "output": "mem_verify 0x40000000 0x200000\n\nmemtest_data error @ 0x400b64f4: 0xb4ce6cd9 vs 0xb4de6cd9\nSDRAM_VERIFY address=0x40000000 size=0x00200000 errors=1 status=failed\nlitex> "
+    },
+    {
+      "command": "mem_verify 0x40000000 0x200000\n",
+      "output": "mem_verify 0x40000000 0x200000\n\nmemtest_data error @ 0x400b64f4: 0xb4ce6cd9 vs 0xb4de6cd9\nSDRAM_VERIFY address=0x40000000 size=0x00200000 errors=1 status=failed\nlitex> "
+    },
+    {
+      "command": "mem_verify 0x40000000 0x200000\n",
+      "output": "mem_verify 0x40000000 0x200000\n\nmemtest_data error @ 0x400b64f4: 0xb4ce6cd9 vs 0xb4de6cd9\nSDRAM_VERIFY address=0x40000000 size=0x00200000 errors=1 status=failed\nlitex> "
+    }
+  ],
+  "summary": [
+    {
+      "memtests": [],
+      "verifications": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "uart.bin_sha256": "2504ad61c8e41d8f89fa611a7b7b9c95d3ee9a4fdb8cba8c0ff3a9df4f9dcbc3",
+  "uart.tx.bin_sha256": "5b1cfe400c505e93fe6fe33ea008bd5aa962b309c49aae16e1437fa0c8781902"
+}

@@ -16,6 +16,7 @@ from gateware.soc import (  # noqa: E402
     DDR_UNCACHED_BASE, MEMORY_MODES, PROFILES,
 )
 from cpu_profiles import configuration_for  # noqa: E402
+from memory import profile_build_dir  # noqa: E402
 
 
 def check_generated_soc(profile, memory="onchip"):
@@ -23,9 +24,28 @@ def check_generated_soc(profile, memory="onchip"):
               else ROOT / "build/validation" / memory / profile)
     cpu_rtl = None
     bios_size = None
+    accepted_maxperf = None
     if profile == "performance":
         _, cpu_rtl, _, _ = build_module.selected_performance_cpu()
         bios_size = 24 * 1024 if memory == "onchip" else 32 * 1024
+    elif profile == "maxperf":
+        selection, selected, manifest, cpu_rtl = build_module.read_maxperf_selection(memory)
+        selected_build_path = profile_build_dir(ROOT, "maxperf", memory) / "build-metadata.json"
+        if not selected_build_path.is_file():
+            raise RuntimeError(
+                f"accepted maxperf {memory} build metadata is missing; build the selected public profile before validation"
+            )
+        accepted_maxperf = json.loads(selected_build_path.read_text())
+        if (accepted_maxperf.get("status") != "passed"
+                or accepted_maxperf.get("profile") != "maxperf"
+                or accepted_maxperf.get("memory_mode") != memory
+                or accepted_maxperf.get("cpu_candidate") != selected.get("candidate_id")
+                or accepted_maxperf.get("cpu_profile_selection") != selection
+                or accepted_maxperf.get("cpu_configuration", {}).get("rtl_sha256") != manifest.get("rtl_sha256")):
+            raise RuntimeError(f"accepted maxperf {memory} build does not match its selected identity")
+        bios_size = accepted_maxperf.get("bios_size")
+        if not isinstance(bios_size, int) or bios_size <= 0:
+            raise RuntimeError(f"accepted maxperf {memory} build does not record its BIOS reservation")
     soc, builder = build_module.generate_soc(
         profile,
         output,
@@ -36,9 +56,15 @@ def check_generated_soc(profile, memory="onchip"):
         bios_size=bios_size,
         cpu_rtl=cpu_rtl,
     )
-    assert soc.cpu.variant == PROFILES[profile]
+    expected_cpu_variant = (
+        accepted_maxperf.get("cpu_variant") if accepted_maxperf is not None else PROFILES[profile]
+    )
+    assert soc.cpu.variant == expected_cpu_variant
     assert soc.sys_clk_freq == 48_000_000
-    assert soc.integrated_rom_size == (24 * 1024 if profile in ("performance", "linux") and memory == "onchip" else 32 * 1024)
+    expected_rom_size = bios_size or (
+        24 * 1024 if profile in ("performance", "linux") and memory == "onchip" else 32 * 1024
+    )
+    assert soc.integrated_rom_size == expected_rom_size
     assert soc.integrated_sram_size == 8 * 1024
     if memory == "onchip":
         assert soc.integrated_main_ram_size == 32 * 1024
@@ -95,6 +121,19 @@ def check_generated_soc(profile, memory="onchip"):
         assert linux["mmu"] and linux["supervisor"] and linux["atomics"]
         flags = (output / "software/include/generated/variables.mak").read_text()
         assert "-march=rv32i2p0_ma" in flags and "-mabi=ilp32" in flags
+    if accepted_maxperf is not None:
+        assert soc.cpu.variant == accepted_maxperf.get("cpu_variant")
+        assert accepted_maxperf["cpu_configuration"].get("rtl_sha256") == build_module.read_maxperf_selection(memory)[2].get("rtl_sha256")
+        assert accepted_maxperf.get("bios_size") == expected_rom_size
+        if memory == "onchip":
+            assert accepted_maxperf.get("memory", {}).get("main_ram_bytes") == 32 * 1024
+            assert soc.integrated_main_ram_size == accepted_maxperf["memory"]["main_ram_bytes"]
+        else:
+            selected_memory = accepted_maxperf.get("memory", {})
+            assert selected_memory.get("ddr_physical_bytes") == DDR_SIZE_BYTES
+            assert selected_memory.get("l2_cache_bytes") == DDR_L2_SIZE
+            assert soc.bus.regions["main_ram"].size == selected_memory["ddr_physical_bytes"]
+            assert soc.l2_cache is not None
 
     csr_header = (output / "software/include/generated/csr.h").read_text()
     assert "leds_out_write" in csr_header

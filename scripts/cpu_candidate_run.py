@@ -54,7 +54,7 @@ def run_case(label, build_dir, port, batch_id, handshake_timeout, trial_timeout,
         for mode, attempt in (("validation", 0), ("performance", 1),
                               ("performance", 2), ("performance", 3)):
             trial = benchmark_run.run_trial(
-                "standard", benchmark, mode, attempt, port, session_id,
+                "standard", build, benchmark, mode, attempt, port, session_id,
                 handshake_timeout, trial_timeout, evidence_root=evidence_dir,
             )
             session["trials"].append(trial)

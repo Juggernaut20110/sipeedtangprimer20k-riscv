@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "batch_id": "20261001T231846.192778Z-onchip-maxperf",
+  "memory_mode": "onchip",
+  "clock_hz": 48000000,
+  "candidate_build_batch": "20261001T231128.855688Z-onchip-maxperf-build",
+  "status": "failed",
+  "baseline": null,
+  "candidates": {},
+  "created_utc": "2026-10-01T23:18:46.192881+00:00",
+  "error": "TypeError: run_trial() missing 1 required positional argument: 'trial_timeout'",
+  "finished_utc": "2026-10-01T23:19:27.078858+00:00",
+  "evidence": "docs/performance/maxperf-evaluation/20261001T231846.192778Z-onchip-maxperf/evaluation.json"
+}

@@ -16,7 +16,11 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from gateware.soc import MEMORY_MODES, PROFILES, SYS_CLK_FREQ  # noqa: E402
 import compare as compare_module  # noqa: E402
-from benchmark_build import sha256, stable_hash  # noqa: E402
+from benchmark_build import sha256  # noqa: E402
+from benchmark_identity import (  # noqa: E402
+    CURRENT_IDENTITY_SCHEMA, fingerprint_matches,
+)
+from benchmark_evidence import bundle_file_matches, bundle_identity  # noqa: E402
 from benchmark_results import CaptureValidationError, aggregate, parse_capture  # noqa: E402
 from scripts.memory import profile_build_dir, validate_memory  # noqa: E402
 
@@ -53,44 +57,27 @@ def repo_link(relative_path, label):
     return f"[{label}](<../{rel}>)"
 
 
-def benchmark_fingerprint_matches(metadata, build_metadata=None):
+def benchmark_fingerprint_matches(metadata, build_metadata=None, *, allow_bundle=False):
     source_hashes = metadata.get("source_hashes", {})
     if not isinstance(source_hashes, dict) or not source_hashes:
         return False
-    legacy_metadata = "memory_mode" not in metadata and "cpu_candidate" not in metadata
-    mismatches = [path for path, digest in source_hashes.items() if not file_matches(path, digest)]
+    legacy_metadata = (
+        "identity_schema_version" not in metadata
+        and "memory_mode" not in metadata
+        and "cpu_candidate" not in metadata
+    )
+    mismatches = [
+        path for path, digest in source_hashes.items()
+        if not file_matches(path, digest)
+        and not (allow_bundle and bundle_file_matches(metadata.get("evidence_bundle"), path, digest, ROOT))
+    ]
     # The original on-chip capture fingerprint included the build orchestration
     # script. Later memory-mode support changed that script while leaving the
     # CoreMark sources, linked images, and bitstream hashes intact. Preserve those
     # legacy sessions using their recorded fingerprint and artifact hashes.
     if mismatches and not (legacy_metadata and mismatches == ["scripts/benchmark_build.py"]):
         return False
-    coremark = metadata.get("coremark", {})
-    fingerprint_values = {
-        "profile": metadata.get("profile"),
-        "coremark_commit": coremark.get("commit"),
-        "source_hashes": source_hashes,
-        "bitstream_sha256": metadata.get("bitstream_sha256"),
-        "compiler": metadata.get("compiler"),
-        "compiler_version": metadata.get("compiler_version"),
-        "compiler_flags": metadata.get("compiler_flags"),
-        "include_flags": metadata.get("include_flags"),
-        "system_clock_hz": metadata.get("clock_hz"),
-    }
-    if "memory_mode" in metadata or "cpu_candidate" in metadata:
-        configuration = build_metadata if isinstance(build_metadata, dict) else metadata
-        fingerprint_values.update({
-            "cpu_candidate": metadata.get("cpu_candidate"),
-            "memory_mode": metadata.get("memory_mode", "onchip"),
-            "cpu_configuration": configuration.get("cpu_configuration"),
-            # The fingerprint is built from the machine memory map in the SoC
-            # build manifest. benchmark-metadata.json's `memory` field is a
-            # separate human-readable placement description.
-            "memory_configuration": configuration.get(
-                "memory", metadata.get("memory_configuration")
-            ),
-        })
-    return stable_hash(fingerprint_values) == metadata.get("source_fingerprint")
+    return fingerprint_matches(metadata, build_metadata)
 
 
 def git_identity():
@@ -242,28 +229,77 @@ def revalidate_session(session, rows):
         memory = "onchip"
     if identity.get("memory_mode", "onchip") != memory:
         errors.append("session memory mode does not match its artifact identity")
-    if profile not in PROFILES:
+    if profile not in PROFILES and profile != "maxperf":
         errors.append(f"unknown session profile {profile!r}")
     if session.get("clock_hz") != SYS_CLK_FREQ or identity.get("clock_hz") != SYS_CLK_FREQ:
         errors.append(f"session clock metadata does not match {SYS_CLK_FREQ} Hz")
     if identity.get("profile") != profile:
         errors.append("session identity profile does not match the selected profile")
 
-    selected = rows.get(profile, {}) if profile in PROFILES else {}
-    benchmark = selected.get("benchmark_metadata") or {}
-    build = selected.get("build_metadata") or {}
+    selected = rows.get(profile, {}) if profile in PROFILES or profile == "maxperf" else {}
+    bundle_reference = identity.get("evidence_bundle")
+    archived_benchmark, archived_build = bundle_identity(bundle_reference, ROOT)
+    archive_valid = isinstance(archived_benchmark, dict) and isinstance(archived_build, dict)
+    if bundle_reference and not archive_valid:
+        errors.append("immutable benchmark evidence bundle is missing, changed, or malformed")
+    if archive_valid:
+        benchmark = dict(archived_benchmark)
+        benchmark["evidence_bundle"] = bundle_reference
+        build = archived_build
+    else:
+        benchmark = selected.get("benchmark_metadata") or {}
+        build = selected.get("build_metadata") or {}
+
+    def artifact_matches(relative, expected):
+        if not archive_valid:
+            return True
+        return file_matches(relative, expected) or bundle_file_matches(
+            bundle_reference, relative, expected, ROOT,
+        )
+
+    build_status_valid = (
+        build.get("status") == "passed"
+        if archive_valid else selected.get("build_status") == "passed"
+    )
     build_identity_valid = (
-        selected.get("build_status") == "passed"
+        build_status_valid
+        and (
+            benchmark.get("identity_schema_version", 1) < CURRENT_IDENTITY_SCHEMA
+            or archive_valid
+        )
         and identity.get("source_fingerprint") == benchmark.get("source_fingerprint")
+        and (
+            not benchmark.get("source_hashes")
+            or benchmark_fingerprint_matches(benchmark, build, allow_bundle=archive_valid)
+        )
+        and (
+            benchmark.get("identity_schema_version") != CURRENT_IDENTITY_SCHEMA
+            or (
+                identity.get("cpu_variant") == benchmark.get("cpu_variant")
+                and identity.get("cpu_profile_selection") == benchmark.get("cpu_profile_selection")
+                and identity.get("fingerprint_payload") == benchmark.get("fingerprint_payload")
+            )
+        )
         and identity.get("memory_mode", "onchip") == memory
         and benchmark.get("memory_mode", "onchip") == memory
         and build.get("memory_mode", "onchip") == memory
         and identity.get("cpu_candidate") == benchmark.get("cpu_candidate")
         and (identity.get("bitstream") or {}).get("sha256") == benchmark.get("bitstream_sha256")
+        and artifact_matches(
+            (identity.get("bitstream") or {}).get("path"), benchmark.get("bitstream_sha256"),
+        )
         and (identity.get("firmware") or {}).get("performance", {}).get("sha256")
         == benchmark.get("images", {}).get("performance", {}).get("binary_sha256")
+        and artifact_matches(
+            (identity.get("firmware") or {}).get("performance", {}).get("path"),
+            benchmark.get("images", {}).get("performance", {}).get("binary_sha256"),
+        )
         and (identity.get("firmware") or {}).get("validation", {}).get("sha256")
         == benchmark.get("images", {}).get("validation", {}).get("binary_sha256")
+        and artifact_matches(
+            (identity.get("firmware") or {}).get("validation", {}).get("path"),
+            benchmark.get("images", {}).get("validation", {}).get("binary_sha256"),
+        )
         and identity.get("coremark", {}).get("commit") == benchmark.get("coremark", {}).get("commit")
         and build.get("sys_clk_hz") == SYS_CLK_FREQ
     )
@@ -288,6 +324,17 @@ def revalidate_session(session, rows):
                 trial_errors.append("raw UART capture hash does not match session metadata")
             elif trial.get("raw_uart_bytes") != raw_path.stat().st_size:
                 trial_errors.append("raw UART capture length does not match session metadata")
+            tx_path_value = trial.get("transmitted_uart_log")
+            tx_hash_value = trial.get("transmitted_uart_sha256")
+            tx_size_value = trial.get("transmitted_uart_bytes")
+            if any(value is not None for value in (tx_path_value, tx_hash_value, tx_size_value)):
+                tx_path = repo_file(tx_path_value)
+                if not tx_path or not tx_path.is_file():
+                    trial_errors.append("transmitted UART capture is missing or outside the repository")
+                elif not file_matches(tx_path_value, tx_hash_value):
+                    trial_errors.append("transmitted UART capture hash does not match session metadata")
+                elif tx_size_value != tx_path.stat().st_size:
+                    trial_errors.append("transmitted UART capture length does not match session metadata")
             if image.get("binary_sha256") != trial.get("firmware_sha256"):
                 trial_errors.append("trial firmware hash does not match the built image")
             if not build_identity_valid:
@@ -366,7 +413,9 @@ def revalidate_batch_sessions(sessions, batch_id, requested_profiles, rows):
     """Revalidate only sessions belonging to one PROFILE=ALL batch."""
     recorded = list(requested_profiles) if isinstance(requested_profiles, list) else []
     errors = []
-    known = set(PROFILES)
+    # maxperf may have been public in a historical six-profile batch even when
+    # the current checkout no longer has an accepted selection.
+    known = set(PROFILES) | {"maxperf"}
     if not recorded:
         errors.append("batch requested_profiles is missing or empty")
     string_members = [profile for profile in recorded if isinstance(profile, str)]

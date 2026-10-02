@@ -1,0 +1,2090 @@
+{
+  "candidate_id": "icache-2048_dcache-4096_rv32im",
+  "memory_mode": "onchip",
+  "status": "ready_for_board_measurement",
+  "generation": {
+    "rtl": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/VexRiscv.v",
+    "rtl_sha256": "464e12900014a125ccbe904e8959f4c1409b8e1583b3f13387957c08bf46319d",
+    "generator_command": [
+      "sbt",
+      "--no-server",
+      "compile",
+      "runMain vexriscv.GenCoreDefault --hardwareBreakpointCount=0 --iCacheSize=2048 --dCacheSize=4096 --pmpRegions=0 --pmpGranularity=256 --pmpAddressMatchingModes=na4,napot,tor --mulDiv=true --cfu=false --singleCycleMulDiv=true --singleCycleShift=true --relaxedPcCalculation=false --bypass=true --externalInterruptArray=true --csrPluginConfig=small --atomics=false --compressedGen=false --dBusCachedRelaxedMemoryTranslationRegister=false --dBusCachedEarlyWaysHits=true --prediction=dynamic_target --outputFile=../../../../build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/VexRiscv"
+    ],
+    "generator_arguments": [
+      "--hardwareBreakpointCount=0",
+      "--iCacheSize=2048",
+      "--dCacheSize=4096",
+      "--pmpRegions=0",
+      "--pmpGranularity=256",
+      "--pmpAddressMatchingModes=na4,napot,tor",
+      "--mulDiv=true",
+      "--cfu=false",
+      "--singleCycleMulDiv=true",
+      "--singleCycleShift=true",
+      "--relaxedPcCalculation=false",
+      "--bypass=true",
+      "--externalInterruptArray=true",
+      "--csrPluginConfig=small",
+      "--atomics=false",
+      "--compressedGen=false",
+      "--dBusCachedRelaxedMemoryTranslationRegister=false",
+      "--dBusCachedEarlyWaysHits=true",
+      "--prediction=dynamic_target",
+      "--outputFile=../../../../build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/VexRiscv"
+    ],
+    "generator_repository": {
+      "generator_commit": "642ecfed1c84460555d6d803d660cc60cfc1ecb6",
+      "submodule_commit": "b6118e5cc2a33323425df6455697139021d50c72",
+      "sbt": "1.9.7",
+      "scala": "2.11.12",
+      "spinalhdl": "1.9.4"
+    },
+    "tool_versions": {
+      "java": "1.8.0_432",
+      "java_executable": ".tools/java-8u432/jdk8u432-b06/bin/java",
+      "java_sha256": "abaaa90deadf51bd28921453baf2992b3dff6171bb7142f5bdd14ef269f7b245",
+      "sbt": "1.9.7",
+      "sbt_executable": ".tools/bin/sbt",
+      "sbt_sha256": "23543bc4597b552e8e2c27d695fe672ec235ab8a64f766b37828fb68c6d9d910",
+      "scala": "2.11.12",
+      "spinalhdl": "1.9.4"
+    },
+    "compiler_flags": [
+      "-march=rv32i2p0_m",
+      "-mabi=ilp32"
+    ]
+  },
+  "build": {
+    "profile": "standard",
+    "memory_mode": "onchip",
+    "cpu_candidate": "icache-2048_dcache-4096_rv32im",
+    "cpu_profile_selection": null,
+    "liteX_variant": "projectim",
+    "sys_clk_hz": 48000000,
+    "uart_baud": 115200,
+    "status": "passed",
+    "source_fingerprint": "71638dfddbafc1e793df051da64c213ef3d4d996d462128a131384d09ba2825b",
+    "started_utc": "2026-10-01T23:13:21.163714+00:00",
+    "locked_repositories": {
+      "litex": "58322a1d239a9eca8b93a8497f8945855d965f4f",
+      "migen": "e19524c963a8342952840983047557707fbe0b6a",
+      "litex-boards": "c0d9cdf11e20c8b774f4ee1154fddac6e1dca03a",
+      "litedram": "4c979d195aa0c60adcaf70374a52872028aaca63",
+      "liteeth": "013a6ad38c26317ac9588acd0660922981cc2a73",
+      "liteiclink": "ad793817302490b04b3abc5c4de669594d3958e8",
+      "pythondata-cpu-vexriscv": "642ecfed1c84460555d6d803d660cc60cfc1ecb6",
+      "pythondata-software-picolibc": "6a13ccce7c575b32c102dd9dc52178505b81fe39",
+      "pythondata-software-compiler_rt": "6eb76609c9627bf26635e57c63fb22cda7115887",
+      "coremark": "1f483d5b8316753a742cbf5590caf5bd0a4e4777"
+    },
+    "tool_versions": {
+      "python": "3.12.14",
+      "riscv_gcc": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+      "gowin": "V1.9.12.04",
+      "openfpgaloader": "openFPGALoader v0.13.1"
+    },
+    "firmware": {
+      "elf": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/firmware/demo.elf",
+      "binary": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/firmware/demo.bin",
+      "binary_bytes": 6312,
+      "working_sram_bytes": 384,
+      "reserved_stack_bytes": 2048,
+      "sections": {
+        "NULL": {
+          "type": "00000000",
+          "size": 0
+        },
+        ".text": {
+          "type": "PROGBITS",
+          "size": 5480
+        },
+        ".rodata": {
+          "type": "PROGBITS",
+          "size": 816
+        },
+        ".preinit_array": {
+          "type": "PREINIT_ARRAY",
+          "size": 0
+        },
+        ".init_array": {
+          "type": "INIT_ARRAY",
+          "size": 0
+        },
+        ".fini_array": {
+          "type": "FINI_ARRAY",
+          "size": 0
+        },
+        ".data": {
+          "type": "PROGBITS",
+          "size": 16
+        },
+        ".bss": {
+          "type": "NOBITS",
+          "size": 368
+        },
+        ".stack": {
+          "type": "NOBITS",
+          "size": 2048
+        },
+        ".riscv.attributes": {
+          "type": "RISCV_ATTRIBUTES",
+          "size": 67
+        },
+        ".comment": {
+          "type": "PROGBITS",
+          "size": 51
+        },
+        ".debug_line": {
+          "type": "PROGBITS",
+          "size": 16163
+        },
+        ".debug_line_str": {
+          "type": "PROGBITS",
+          "size": 5673
+        },
+        ".debug_info": {
+          "type": "PROGBITS",
+          "size": 12705
+        },
+        ".debug_abbrev": {
+          "type": "PROGBITS",
+          "size": 5513
+        },
+        ".debug_aranges": {
+          "type": "PROGBITS",
+          "size": 672
+        },
+        ".debug_str": {
+          "type": "PROGBITS",
+          "size": 67187
+        },
+        ".debug_loclists": {
+          "type": "PROGBITS",
+          "size": 6072
+        },
+        ".debug_rnglists": {
+          "type": "PROGBITS",
+          "size": 1100
+        },
+        ".debug_macro": {
+          "type": "PROGBITS",
+          "size": 27980
+        },
+        ".symtab": {
+          "type": "SYMTAB",
+          "size": 2240
+        },
+        ".strtab": {
+          "type": "STRTAB",
+          "size": 1237
+        },
+        ".shstrtab": {
+          "type": "STRTAB",
+          "size": 250
+        }
+      },
+      "main_ram_base": 1073741824,
+      "main_ram_size": 32768
+    },
+    "bios_size": 24576,
+    "bitstream": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/bitstream.fs",
+    "bitstream_bytes": 7261998,
+    "bitstream_sha256": "3c4695ba9b64fe8eb95829b5d8f2f1c80fd3e1d7b1cc46b6ee3df859a2bd076c",
+    "cpu_variant": "projectim",
+    "cpu_configuration": {
+      "liteX_variant": "projectim",
+      "isa": "rv32i2p0_m",
+      "instruction_cache_bytes": 2048,
+      "data_cache_bytes": 4096,
+      "prediction": "dynamic_target",
+      "compressed": false,
+      "cpu_variant": "projectim",
+      "mul_div": true,
+      "single_cycle_mul_div": true,
+      "single_cycle_shift": true,
+      "bypass": true,
+      "csr_plugin_config": "small",
+      "atomics": false,
+      "debug": false,
+      "cfu": false,
+      "pmp_regions": 0,
+      "clock_hz": 48000000,
+      "rtl_sha256": "464e12900014a125ccbe904e8959f4c1409b8e1583b3f13387957c08bf46319d",
+      "candidate_generation": {
+        "schema": 1,
+        "candidate_id": "icache-2048_dcache-4096_rv32im",
+        "memory_mode": "onchip",
+        "cpu_configuration": {
+          "cpu_variant": "projectim",
+          "isa": "rv32i2p0_m",
+          "instruction_cache_bytes": 2048,
+          "data_cache_bytes": 4096,
+          "compressed": false,
+          "prediction": "dynamic_target",
+          "mul_div": true,
+          "single_cycle_mul_div": true,
+          "single_cycle_shift": true,
+          "bypass": true,
+          "csr_plugin_config": "small",
+          "atomics": false,
+          "debug": false,
+          "cfu": false,
+          "pmp_regions": 0,
+          "clock_hz": 48000000
+        },
+        "status": "generated",
+        "generator_command": [
+          "sbt",
+          "--no-server",
+          "compile",
+          "runMain vexriscv.GenCoreDefault --hardwareBreakpointCount=0 --iCacheSize=2048 --dCacheSize=4096 --pmpRegions=0 --pmpGranularity=256 --pmpAddressMatchingModes=na4,napot,tor --mulDiv=true --cfu=false --singleCycleMulDiv=true --singleCycleShift=true --relaxedPcCalculation=false --bypass=true --externalInterruptArray=true --csrPluginConfig=small --atomics=false --compressedGen=false --dBusCachedRelaxedMemoryTranslationRegister=false --dBusCachedEarlyWaysHits=true --prediction=dynamic_target --outputFile=../../../../build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/VexRiscv"
+        ],
+        "generator_arguments": [
+          "--hardwareBreakpointCount=0",
+          "--iCacheSize=2048",
+          "--dCacheSize=4096",
+          "--pmpRegions=0",
+          "--pmpGranularity=256",
+          "--pmpAddressMatchingModes=na4,napot,tor",
+          "--mulDiv=true",
+          "--cfu=false",
+          "--singleCycleMulDiv=true",
+          "--singleCycleShift=true",
+          "--relaxedPcCalculation=false",
+          "--bypass=true",
+          "--externalInterruptArray=true",
+          "--csrPluginConfig=small",
+          "--atomics=false",
+          "--compressedGen=false",
+          "--dBusCachedRelaxedMemoryTranslationRegister=false",
+          "--dBusCachedEarlyWaysHits=true",
+          "--prediction=dynamic_target",
+          "--outputFile=../../../../build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/VexRiscv"
+        ],
+        "generator_repository": {
+          "generator_commit": "642ecfed1c84460555d6d803d660cc60cfc1ecb6",
+          "submodule_commit": "b6118e5cc2a33323425df6455697139021d50c72",
+          "sbt": "1.9.7",
+          "scala": "2.11.12",
+          "spinalhdl": "1.9.4"
+        },
+        "tool_versions": {
+          "java": "1.8.0_432",
+          "java_executable": ".tools/java-8u432/jdk8u432-b06/bin/java",
+          "java_sha256": "abaaa90deadf51bd28921453baf2992b3dff6171bb7142f5bdd14ef269f7b245",
+          "sbt": "1.9.7",
+          "sbt_executable": ".tools/bin/sbt",
+          "sbt_sha256": "23543bc4597b552e8e2c27d695fe672ec235ab8a64f766b37828fb68c6d9d910",
+          "scala": "2.11.12",
+          "spinalhdl": "1.9.4"
+        },
+        "generator_lock_sha256": "751d39859ca19a72e1126c8001586fdacc9724f4cd12437290524d73146103ff",
+        "rtl": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/VexRiscv.v",
+        "rtl_sha256": "464e12900014a125ccbe904e8959f4c1409b8e1583b3f13387957c08bf46319d",
+        "compiler_flags": [
+          "-march=rv32i2p0_m",
+          "-mabi=ilp32"
+        ],
+        "generated_utc": "2026-10-01T23:13:21.127577+00:00"
+      }
+    },
+    "memory": {
+      "mode": "onchip",
+      "main_ram_base": 1073741824,
+      "main_ram_bytes": 32768,
+      "ddr_physical_bytes": 0,
+      "l2_cache_bytes": 0,
+      "ddr_ck_hz": null,
+      "uncached_alias_base": null,
+      "diagnostic_ram": null
+    },
+    "device": "GW2A-LV18PG256C8/I7",
+    "cpu_rtl": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/VexRiscv.v",
+    "finished_utc": "2026-10-01T23:13:58.267984+00:00"
+  },
+  "resources_and_timing": {
+    "profile": "standard",
+    "memory_mode": "onchip",
+    "device": "GW2A-LV18PG256C8/I7",
+    "resources": {
+      "logic": {
+        "used": 4321,
+        "capacity": 20736
+      },
+      "lut": {
+        "used": 3584,
+        "source": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/gateware/impl/pnr/project.rpt.txt"
+      },
+      "alu": {
+        "used": 521,
+        "source": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/gateware/impl/pnr/project.rpt.txt"
+      },
+      "registers": {
+        "used": 2038,
+        "capacity": 16173
+      },
+      "bsram": {
+        "used": 46,
+        "capacity": 46
+      },
+      "dsp": {
+        "used": null,
+        "status": "unavailable",
+        "detail": "Gowin synthesis resource report lists '-' for DSP NUMBER",
+        "source": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/gateware/impl/gwsynthesis/project_syn_resource.html"
+      }
+    },
+    "timing": {
+      "constraint_mhz": 48.0,
+      "actual_fmax_mhz": 65.721,
+      "worst_setup_slack_ns": 5.617,
+      "worst_hold_slack_ns": 0.323,
+      "worst_recovery_slack_ns": 18.318,
+      "worst_removal_slack_ns": 1.504,
+      "setup_violated_endpoints": 0,
+      "analyzed_paths": 13147,
+      "analyzed_endpoints": 6679,
+      "no_timing_path_messages": [
+        "No timing paths to get frequency of rPLL/CLKOUTP.default_gen_clk!",
+        "No timing paths to get frequency of rPLL/CLKOUTD.default_gen_clk!",
+        "No timing paths to get frequency of rPLL/CLKOUTD3.default_gen_clk!"
+      ],
+      "generated_clocks": {
+        "sys_clk": {
+          "period_ns": 20.833,
+          "target_mhz": 48.0,
+          "frequency_mhz": 48.0
+        },
+        "rPLL/CLKOUTP.default_gen_clk": {
+          "period_ns": 20.833,
+          "target_mhz": 48.0,
+          "frequency_mhz": 48.0
+        },
+        "rPLL/CLKOUTD.default_gen_clk": {
+          "period_ns": 41.667,
+          "target_mhz": 24.0,
+          "frequency_mhz": 24.0
+        },
+        "rPLL/CLKOUTD3.default_gen_clk": {
+          "period_ns": 62.5,
+          "target_mhz": 16.0,
+          "frequency_mhz": 16.0
+        }
+      }
+    },
+    "evidence": {
+      "pnr_resource_report": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/gateware/impl/pnr/project.rpt.txt",
+      "timing_report": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/gateware/impl/pnr/project.tr",
+      "synthesis_resource_report": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/gateware/impl/gwsynthesis/project_syn_resource.html"
+    }
+  },
+  "benchmark_firmware": {
+    "status": "passed",
+    "profile": "standard",
+    "identity_schema_version": 2,
+    "fingerprint_payload": {
+      "profile": "standard",
+      "cpu_variant": "projectim",
+      "cpu_candidate": "icache-2048_dcache-4096_rv32im",
+      "memory_mode": "onchip",
+      "coremark_commit": "1f483d5b8316753a742cbf5590caf5bd0a4e4777",
+      "source_hashes": {
+        "firmware/linker.ld": "359df89319fcce4ff0cb0a3f6ccdee2589a075b5479e7457d04fa0a8a50f4463",
+        "scripts/benchmark_build.py": "d46b760d0200c12ec4e01c9b7ffacbe32860a345bf92bb492a5703ab566e6dd8",
+        "scripts/benchmark_identity.py": "91c1086608354cebf16c5a270304d1b1a7735c300de21a9dc30242ed267c199f",
+        "scripts/benchmark_evidence.py": "0c4e3fd6aa1b6193c5c4d5daa832cd51f2ba70aa2255d2234b2ddc4c20bcb8c6",
+        "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/firmware/crt0.o": "08773a0eb6f2e6b3eefa98eeae51066e54f5fcaaf9a01abb48f225bc6371f1fd",
+        "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/libbase/libbase.a": "f0d0bb8456298d02117375d77454ddfbadc9d890714989320c0b7d528b4f5988",
+        "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/VexRiscv.v": "464e12900014a125ccbe904e8959f4c1409b8e1583b3f13387957c08bf46319d",
+        "firmware/benchmark/core_portme.h": "fb1b12bd01f419fdb4e79f2af281d8305a9f6eb2d9efd18054f3bd6d2c8aba30",
+        "firmware/benchmark/core_portme.c": "63daa04421626423befc221a6e59dac254353a5436e3a4999eaedcf2ee444bb6",
+        "firmware/benchmark/benchmark_main.c": "036f5563931d0c654393f04582bd9e2844f4c82aabb4c89399ab652666ffda85",
+        "firmware/benchmark/benchmark_port.h": "605fdb044e2e24c20ad02db3f6fd0eaf336886e916669ee30c6fb534e25f782e",
+        "firmware/benchmark/ee_printf.c": "707dcce8c5de7d717f97b3bdd166efc377b2eb6a63bcfc9ed42faf4bc926ea83",
+        ".deps/litex/litex/soc/software/libbase/uart.c": "c7f7e33a4148302a9963ce0696dd5d261280c42ccc32ff5fd5a12a42c146d5d7",
+        ".deps/litex/litex/soc/software/include/system.h": "06ee90723b7a626d04d919d35d3bfec3a94b07d8f994866f2db9e1a161f71ef3",
+        ".deps/litex/litex/soc/cores/cpu/vexriscv/system.h": "db79f2b406dd5c254387193d782a53eaa1ef969550963a6b5f16f507a5360910",
+        ".deps/coremark/core_list_join.c": "ca00e4e010ece47d7f040cb92aa50a95345a00d3171b59d088f6b243be06ce7b",
+        ".deps/coremark/core_main.c": "17884c93c5b94378eb0ff02b4df3725756cf2addb9b8cbcaa6200a4649ff5ca7",
+        ".deps/coremark/core_matrix.c": "ecdff717b5a5c4907d221a606760e25499899cbf617582c05d40db71c91351e4",
+        ".deps/coremark/core_state.c": "f4b84bb0a3452c45a4daa664ab502bfdccbd31cb57d93e9ac490c60937717a4e",
+        ".deps/coremark/core_util.c": "a3fbfcb9bb943b638624b8ece01c5836dd56a96d7bcde2697b248d077447327f",
+        ".deps/coremark/coremark.h": "42642b9a06c7ed2b3bd9eda971b7c3868c4f5d27bf7ef6c4bba11291a0c2598a",
+        ".deps/coremark/coremark.md5": "dad92861212f8f012e75974e23ea97f7a275a375e0d3bc1d3b216423ba6b6306",
+        ".deps/coremark/LICENSE.md": "9577b9c846f61fd69a0d8ac965998c6450c7d8969f71f0bb4a931b91aebad28a",
+        "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/include/generated/variables.mak": "cb3ed917f6334d8edaa4e00ff09b6816ba2f9b849a78327ab2a5f3aa649729e1",
+        "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/include/generated/soc.h": "e2041a2bf615f0df0a9f32bd5a0c0b797d3832ced343f83b29b21a46f97a8d89",
+        "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/include/generated/csr.h": "cd5a9acdae87874f4a93e96670b50b4cd5b09a8329eaf2e0c69653a0999473ae",
+        "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/include/generated/mem.h": "cde730cb651b306f0a0c8aa8b4fe2b3c6134ce316a3b0b8a8c8624c4b3879ef8"
+      },
+      "bitstream_sha256": "3c4695ba9b64fe8eb95829b5d8f2f1c80fd3e1d7b1cc46b6ee3df859a2bd076c",
+      "compiler": "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-gcc",
+      "compiler_version": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+      "compiler_flags": [
+        "-std=gnu99",
+        "-O2",
+        "-march=rv32i2p0_m",
+        "-mabi=ilp32",
+        "-D__vexriscv__",
+        "-g3",
+        "-no-pie",
+        "-fomit-frame-pointer",
+        "-Wall",
+        "-fno-builtin",
+        "-fno-stack-protector",
+        "-U_FORTIFY_SOURCE",
+        "-D_FORTIFY_SOURCE=0",
+        "-ffunction-sections",
+        "-fdata-sections",
+        "-fno-lto"
+      ],
+      "include_flags": [
+        "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+        "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+        "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark",
+        "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/include",
+        "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+        "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+        "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+        "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+        "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/libc",
+        "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include"
+      ],
+      "system_clock_hz": 48000000,
+      "cpu_configuration": {
+        "liteX_variant": "projectim",
+        "isa": "rv32i2p0_m",
+        "instruction_cache_bytes": 2048,
+        "data_cache_bytes": 4096,
+        "prediction": "dynamic_target",
+        "compressed": false,
+        "cpu_variant": "projectim",
+        "mul_div": true,
+        "single_cycle_mul_div": true,
+        "single_cycle_shift": true,
+        "bypass": true,
+        "csr_plugin_config": "small",
+        "atomics": false,
+        "debug": false,
+        "cfu": false,
+        "pmp_regions": 0,
+        "clock_hz": 48000000,
+        "rtl_sha256": "464e12900014a125ccbe904e8959f4c1409b8e1583b3f13387957c08bf46319d",
+        "candidate_generation": {
+          "schema": 1,
+          "candidate_id": "icache-2048_dcache-4096_rv32im",
+          "memory_mode": "onchip",
+          "cpu_configuration": {
+            "cpu_variant": "projectim",
+            "isa": "rv32i2p0_m",
+            "instruction_cache_bytes": 2048,
+            "data_cache_bytes": 4096,
+            "compressed": false,
+            "prediction": "dynamic_target",
+            "mul_div": true,
+            "single_cycle_mul_div": true,
+            "single_cycle_shift": true,
+            "bypass": true,
+            "csr_plugin_config": "small",
+            "atomics": false,
+            "debug": false,
+            "cfu": false,
+            "pmp_regions": 0,
+            "clock_hz": 48000000
+          },
+          "status": "generated",
+          "generator_command": [
+            "sbt",
+            "--no-server",
+            "compile",
+            "runMain vexriscv.GenCoreDefault --hardwareBreakpointCount=0 --iCacheSize=2048 --dCacheSize=4096 --pmpRegions=0 --pmpGranularity=256 --pmpAddressMatchingModes=na4,napot,tor --mulDiv=true --cfu=false --singleCycleMulDiv=true --singleCycleShift=true --relaxedPcCalculation=false --bypass=true --externalInterruptArray=true --csrPluginConfig=small --atomics=false --compressedGen=false --dBusCachedRelaxedMemoryTranslationRegister=false --dBusCachedEarlyWaysHits=true --prediction=dynamic_target --outputFile=../../../../build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/VexRiscv"
+          ],
+          "generator_arguments": [
+            "--hardwareBreakpointCount=0",
+            "--iCacheSize=2048",
+            "--dCacheSize=4096",
+            "--pmpRegions=0",
+            "--pmpGranularity=256",
+            "--pmpAddressMatchingModes=na4,napot,tor",
+            "--mulDiv=true",
+            "--cfu=false",
+            "--singleCycleMulDiv=true",
+            "--singleCycleShift=true",
+            "--relaxedPcCalculation=false",
+            "--bypass=true",
+            "--externalInterruptArray=true",
+            "--csrPluginConfig=small",
+            "--atomics=false",
+            "--compressedGen=false",
+            "--dBusCachedRelaxedMemoryTranslationRegister=false",
+            "--dBusCachedEarlyWaysHits=true",
+            "--prediction=dynamic_target",
+            "--outputFile=../../../../build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/VexRiscv"
+          ],
+          "generator_repository": {
+            "generator_commit": "642ecfed1c84460555d6d803d660cc60cfc1ecb6",
+            "submodule_commit": "b6118e5cc2a33323425df6455697139021d50c72",
+            "sbt": "1.9.7",
+            "scala": "2.11.12",
+            "spinalhdl": "1.9.4"
+          },
+          "tool_versions": {
+            "java": "1.8.0_432",
+            "java_executable": ".tools/java-8u432/jdk8u432-b06/bin/java",
+            "java_sha256": "abaaa90deadf51bd28921453baf2992b3dff6171bb7142f5bdd14ef269f7b245",
+            "sbt": "1.9.7",
+            "sbt_executable": ".tools/bin/sbt",
+            "sbt_sha256": "23543bc4597b552e8e2c27d695fe672ec235ab8a64f766b37828fb68c6d9d910",
+            "scala": "2.11.12",
+            "spinalhdl": "1.9.4"
+          },
+          "generator_lock_sha256": "751d39859ca19a72e1126c8001586fdacc9724f4cd12437290524d73146103ff",
+          "rtl": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/VexRiscv.v",
+          "rtl_sha256": "464e12900014a125ccbe904e8959f4c1409b8e1583b3f13387957c08bf46319d",
+          "compiler_flags": [
+            "-march=rv32i2p0_m",
+            "-mabi=ilp32"
+          ],
+          "generated_utc": "2026-10-01T23:13:21.127577+00:00"
+        }
+      },
+      "memory_configuration": {
+        "mode": "onchip",
+        "main_ram_base": 1073741824,
+        "main_ram_bytes": 32768,
+        "ddr_physical_bytes": 0,
+        "l2_cache_bytes": 0,
+        "ddr_ck_hz": null,
+        "uncached_alias_base": null,
+        "diagnostic_ram": null
+      },
+      "identity_schema_version": 2
+    },
+    "cpu_variant": "projectim",
+    "cpu_candidate": "icache-2048_dcache-4096_rv32im",
+    "cpu_profile_selection": null,
+    "memory_mode": "onchip",
+    "build_id": "69ed50ce26b30080",
+    "source_fingerprint": "69ed50ce26b30080b8c1a0c011a4c695a04d62c5483696664a4e2b4a5d1fc032",
+    "source_hashes": {
+      "firmware/linker.ld": "359df89319fcce4ff0cb0a3f6ccdee2589a075b5479e7457d04fa0a8a50f4463",
+      "scripts/benchmark_build.py": "d46b760d0200c12ec4e01c9b7ffacbe32860a345bf92bb492a5703ab566e6dd8",
+      "scripts/benchmark_identity.py": "91c1086608354cebf16c5a270304d1b1a7735c300de21a9dc30242ed267c199f",
+      "scripts/benchmark_evidence.py": "0c4e3fd6aa1b6193c5c4d5daa832cd51f2ba70aa2255d2234b2ddc4c20bcb8c6",
+      "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/firmware/crt0.o": "08773a0eb6f2e6b3eefa98eeae51066e54f5fcaaf9a01abb48f225bc6371f1fd",
+      "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/libbase/libbase.a": "f0d0bb8456298d02117375d77454ddfbadc9d890714989320c0b7d528b4f5988",
+      "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/VexRiscv.v": "464e12900014a125ccbe904e8959f4c1409b8e1583b3f13387957c08bf46319d",
+      "firmware/benchmark/core_portme.h": "fb1b12bd01f419fdb4e79f2af281d8305a9f6eb2d9efd18054f3bd6d2c8aba30",
+      "firmware/benchmark/core_portme.c": "63daa04421626423befc221a6e59dac254353a5436e3a4999eaedcf2ee444bb6",
+      "firmware/benchmark/benchmark_main.c": "036f5563931d0c654393f04582bd9e2844f4c82aabb4c89399ab652666ffda85",
+      "firmware/benchmark/benchmark_port.h": "605fdb044e2e24c20ad02db3f6fd0eaf336886e916669ee30c6fb534e25f782e",
+      "firmware/benchmark/ee_printf.c": "707dcce8c5de7d717f97b3bdd166efc377b2eb6a63bcfc9ed42faf4bc926ea83",
+      ".deps/litex/litex/soc/software/libbase/uart.c": "c7f7e33a4148302a9963ce0696dd5d261280c42ccc32ff5fd5a12a42c146d5d7",
+      ".deps/litex/litex/soc/software/include/system.h": "06ee90723b7a626d04d919d35d3bfec3a94b07d8f994866f2db9e1a161f71ef3",
+      ".deps/litex/litex/soc/cores/cpu/vexriscv/system.h": "db79f2b406dd5c254387193d782a53eaa1ef969550963a6b5f16f507a5360910",
+      ".deps/coremark/core_list_join.c": "ca00e4e010ece47d7f040cb92aa50a95345a00d3171b59d088f6b243be06ce7b",
+      ".deps/coremark/core_main.c": "17884c93c5b94378eb0ff02b4df3725756cf2addb9b8cbcaa6200a4649ff5ca7",
+      ".deps/coremark/core_matrix.c": "ecdff717b5a5c4907d221a606760e25499899cbf617582c05d40db71c91351e4",
+      ".deps/coremark/core_state.c": "f4b84bb0a3452c45a4daa664ab502bfdccbd31cb57d93e9ac490c60937717a4e",
+      ".deps/coremark/core_util.c": "a3fbfcb9bb943b638624b8ece01c5836dd56a96d7bcde2697b248d077447327f",
+      ".deps/coremark/coremark.h": "42642b9a06c7ed2b3bd9eda971b7c3868c4f5d27bf7ef6c4bba11291a0c2598a",
+      ".deps/coremark/coremark.md5": "dad92861212f8f012e75974e23ea97f7a275a375e0d3bc1d3b216423ba6b6306",
+      ".deps/coremark/LICENSE.md": "9577b9c846f61fd69a0d8ac965998c6450c7d8969f71f0bb4a931b91aebad28a",
+      "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/include/generated/variables.mak": "cb3ed917f6334d8edaa4e00ff09b6816ba2f9b849a78327ab2a5f3aa649729e1",
+      "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/include/generated/soc.h": "e2041a2bf615f0df0a9f32bd5a0c0b797d3832ced343f83b29b21a46f97a8d89",
+      "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/include/generated/csr.h": "cd5a9acdae87874f4a93e96670b50b4cd5b09a8329eaf2e0c69653a0999473ae",
+      "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/include/generated/mem.h": "cde730cb651b306f0a0c8aa8b4fe2b3c6134ce316a3b0b8a8c8624c4b3879ef8"
+    },
+    "coremark": {
+      "repository": "https://github.com/eembc/coremark.git",
+      "commit": "1f483d5b8316753a742cbf5590caf5bd0a4e4777"
+    },
+    "upstream_verification": null,
+    "bitstream": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/bitstream.fs",
+    "bitstream_sha256": "3c4695ba9b64fe8eb95829b5d8f2f1c80fd3e1d7b1cc46b6ee3df859a2bd076c",
+    "clock_hz": 48000000,
+    "compiler": "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-gcc",
+    "compiler_version": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+    "compiler_flags": [
+      "-std=gnu99",
+      "-O2",
+      "-march=rv32i2p0_m",
+      "-mabi=ilp32",
+      "-D__vexriscv__",
+      "-g3",
+      "-no-pie",
+      "-fomit-frame-pointer",
+      "-Wall",
+      "-fno-builtin",
+      "-fno-stack-protector",
+      "-U_FORTIFY_SOURCE",
+      "-D_FORTIFY_SOURCE=0",
+      "-ffunction-sections",
+      "-fdata-sections",
+      "-fno-lto"
+    ],
+    "iteration_calibration": {
+      "method": "fixed_iteration_port_calibration_with_fresh_upstream_initialization",
+      "calibration_iterations": 1000,
+      "target_seconds": 20,
+      "formula": "ceil(calibration_iterations * target_seconds * clock_hz / calibration_ticks)",
+      "scored_pass_reinitializes_static_algorithm_data": true,
+      "scored_interval_index": 2
+    },
+    "cache_maintenance": {
+      "function": "portable_init",
+      "sequence": [
+        "compiler_and_memory_fence",
+        "flush_cpu_dcache",
+        "compiler_and_memory_fence",
+        "flush_l2_cache_by_configured_eviction_reads_when_present",
+        "flush_cpu_dcache_again_to_remove_eviction_probe_lines",
+        "compiler_and_memory_fence",
+        "flush_cpu_icache",
+        "compiler_and_memory_fence"
+      ],
+      "timing": "before_each_upstream_invocation_and_outside_timed_workload",
+      "api_headers": [
+        ".deps/litex/litex/soc/software/include/system.h",
+        ".deps/litex/litex/soc/cores/cpu/vexriscv/system.h"
+      ]
+    },
+    "runtime_preflight": {
+      "ram_probe": {
+        "storage": "volatile BSS array of 64 union words",
+        "bytes": 256,
+        "alignment_bytes": 32,
+        "phases": [
+          "two 32-bit write/read patterns cached and after cache maintenance",
+          "low/high halfword writes checking neighboring-half preservation and unsigned/signed reads",
+          "four byte-lane writes checking neighboring-byte preservation and unsigned/signed reads",
+          "halfword patterns include 0x0000, 0x7fff, 0x8000, 0xffff; byte patterns include 0x00, 0x7f, 0x80, 0xff",
+          "tight volatile back-to-back SH/LH and SB/LB sequences with same-location load-modify-store checks and neighbor preservation",
+          "alternating volatile SRAM stores and read-only linked-image loads at matching low-12 address bits (a D-cache index conflict when that cache is enabled), followed by SRAM/code checks"
+        ],
+        "cache_maintenance_after_patterns": "fence, flush_cpu_dcache, fence, flush_cpu_icache, fence",
+        "storage_limit": "existing 64-word array; 256 bytes total"
+      },
+      "image_integrity_rechecks": {
+        "phases": [
+          "calibration",
+          "scored"
+        ],
+        "sequence": [
+          "CRC32 linked image through cached reads",
+          "fence, flush_cpu_dcache, fence, flush_cpu_icache, fence",
+          "CRC32 linked image after cache maintenance"
+        ],
+        "comparison": "both values and image sizes must match initial preflight values",
+        "failure": "BENCHMARK_PORT_ERROR and halt",
+        "timing": "after_each_upstream_invocation_and_outside_timed_workload"
+      },
+      "runtime_seed_checks": {
+        "inputs": [
+          "seed1_volatile",
+          "seed2_volatile",
+          "seed3_volatile",
+          "seed4_volatile"
+        ],
+        "expected_seed_values": "mode constants and fixed or derived iteration count",
+        "emits": "BENCHMARK_RUNTIME_SEEDS",
+        "failure": "BENCHMARK_PORT_ERROR and halt before upstream invocation"
+      },
+      "wrapper_optimization": "benchmark_main.c is compiled with -Os to fit untimed diagnostics in 32-KiB main RAM; CoreMark sources retain the profile-wide -O2 flag",
+      "timing": "initial image, SRAM, and seed checks run before timed CoreMark work; image rechecks run after each interval"
+    },
+    "include_flags": [
+      "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+      "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+      "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark",
+      "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/include",
+      "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+      "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+      "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+      "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+      "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/libc",
+      "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include"
+    ],
+    "cache": {
+      "instruction_cache": "enabled",
+      "instruction_cache_bytes": 2048,
+      "data_cache": "enabled",
+      "data_cache_bytes": 4096,
+      "configuration_source": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/include/generated/soc.h"
+    },
+    "link_inputs": {
+      "startup_object": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/firmware/crt0.o",
+      "startup_object_sha256": "08773a0eb6f2e6b3eefa98eeae51066e54f5fcaaf9a01abb48f225bc6371f1fd",
+      "litex_libbase_archive": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/libbase/libbase.a",
+      "litex_libbase_archive_sha256": "f0d0bb8456298d02117375d77454ddfbadc9d890714989320c0b7d528b4f5988"
+    },
+    "cpu_configuration": {
+      "liteX_variant": "projectim",
+      "isa": "rv32i2p0_m",
+      "instruction_cache_bytes": 2048,
+      "data_cache_bytes": 4096,
+      "prediction": "dynamic_target",
+      "compressed": false,
+      "cpu_variant": "projectim",
+      "mul_div": true,
+      "single_cycle_mul_div": true,
+      "single_cycle_shift": true,
+      "bypass": true,
+      "csr_plugin_config": "small",
+      "atomics": false,
+      "debug": false,
+      "cfu": false,
+      "pmp_regions": 0,
+      "clock_hz": 48000000,
+      "rtl_sha256": "464e12900014a125ccbe904e8959f4c1409b8e1583b3f13387957c08bf46319d",
+      "candidate_generation": {
+        "schema": 1,
+        "candidate_id": "icache-2048_dcache-4096_rv32im",
+        "memory_mode": "onchip",
+        "cpu_configuration": {
+          "cpu_variant": "projectim",
+          "isa": "rv32i2p0_m",
+          "instruction_cache_bytes": 2048,
+          "data_cache_bytes": 4096,
+          "compressed": false,
+          "prediction": "dynamic_target",
+          "mul_div": true,
+          "single_cycle_mul_div": true,
+          "single_cycle_shift": true,
+          "bypass": true,
+          "csr_plugin_config": "small",
+          "atomics": false,
+          "debug": false,
+          "cfu": false,
+          "pmp_regions": 0,
+          "clock_hz": 48000000
+        },
+        "status": "generated",
+        "generator_command": [
+          "sbt",
+          "--no-server",
+          "compile",
+          "runMain vexriscv.GenCoreDefault --hardwareBreakpointCount=0 --iCacheSize=2048 --dCacheSize=4096 --pmpRegions=0 --pmpGranularity=256 --pmpAddressMatchingModes=na4,napot,tor --mulDiv=true --cfu=false --singleCycleMulDiv=true --singleCycleShift=true --relaxedPcCalculation=false --bypass=true --externalInterruptArray=true --csrPluginConfig=small --atomics=false --compressedGen=false --dBusCachedRelaxedMemoryTranslationRegister=false --dBusCachedEarlyWaysHits=true --prediction=dynamic_target --outputFile=../../../../build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/VexRiscv"
+        ],
+        "generator_arguments": [
+          "--hardwareBreakpointCount=0",
+          "--iCacheSize=2048",
+          "--dCacheSize=4096",
+          "--pmpRegions=0",
+          "--pmpGranularity=256",
+          "--pmpAddressMatchingModes=na4,napot,tor",
+          "--mulDiv=true",
+          "--cfu=false",
+          "--singleCycleMulDiv=true",
+          "--singleCycleShift=true",
+          "--relaxedPcCalculation=false",
+          "--bypass=true",
+          "--externalInterruptArray=true",
+          "--csrPluginConfig=small",
+          "--atomics=false",
+          "--compressedGen=false",
+          "--dBusCachedRelaxedMemoryTranslationRegister=false",
+          "--dBusCachedEarlyWaysHits=true",
+          "--prediction=dynamic_target",
+          "--outputFile=../../../../build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/VexRiscv"
+        ],
+        "generator_repository": {
+          "generator_commit": "642ecfed1c84460555d6d803d660cc60cfc1ecb6",
+          "submodule_commit": "b6118e5cc2a33323425df6455697139021d50c72",
+          "sbt": "1.9.7",
+          "scala": "2.11.12",
+          "spinalhdl": "1.9.4"
+        },
+        "tool_versions": {
+          "java": "1.8.0_432",
+          "java_executable": ".tools/java-8u432/jdk8u432-b06/bin/java",
+          "java_sha256": "abaaa90deadf51bd28921453baf2992b3dff6171bb7142f5bdd14ef269f7b245",
+          "sbt": "1.9.7",
+          "sbt_executable": ".tools/bin/sbt",
+          "sbt_sha256": "23543bc4597b552e8e2c27d695fe672ec235ab8a64f766b37828fb68c6d9d910",
+          "scala": "2.11.12",
+          "spinalhdl": "1.9.4"
+        },
+        "generator_lock_sha256": "751d39859ca19a72e1126c8001586fdacc9724f4cd12437290524d73146103ff",
+        "rtl": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/VexRiscv.v",
+        "rtl_sha256": "464e12900014a125ccbe904e8959f4c1409b8e1583b3f13387957c08bf46319d",
+        "compiler_flags": [
+          "-march=rv32i2p0_m",
+          "-mabi=ilp32"
+        ],
+        "generated_utc": "2026-10-01T23:13:21.127577+00:00"
+      }
+    },
+    "cpu_rtl": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/VexRiscv.v",
+    "memory": {
+      "mode": "onchip",
+      "main_ram_base": "0x40000000",
+      "main_ram_bytes": 32768,
+      "ddr_physical_bytes": 0,
+      "l2_cache_bytes": 0,
+      "ddr_ck_hz": null,
+      "uncached_alias_base": null,
+      "diagnostic_ram": null,
+      "code_and_read_only_data": "main_ram",
+      "algorithm_data_bss_and_reserved_stack": "sram",
+      "sram_base": "0x10000000",
+      "sram_bytes": 8192
+    },
+    "started_utc": "2026-10-01T23:13:58.299600+00:00",
+    "images": {
+      "performance": {
+        "profile": "standard",
+        "mode": "performance",
+        "build_id": "69ed50ce26b30080",
+        "elf": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance/benchmark.elf",
+        "elf_sha256": "23702ac8dedb55829cdacb1d5a0e43ebbeffeafe2789c6b2a6257627f0717733",
+        "map": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance/benchmark.elf.map",
+        "binary": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance/benchmark.bin",
+        "binary_sha256": "06b324c5fd186367cf1bd27e977882f39826f7cdbab46ebbfae45f25ee972fc2",
+        "binary_crc32": "c4d285bc",
+        "binary_bytes": 28376,
+        "working_sram_bytes": 2592,
+        "sram_section_bytes": 2592,
+        "sram_alignment_padding_bytes": 0,
+        "sram_boundaries": {
+          "_fdata": 268435456,
+          "_end": 268438048,
+          "_stack_bottom": 268441600,
+          "_stack_top": 268443648
+        },
+        "reserved_stack_bytes": 2048,
+        "remaining_sram_bytes": 3552,
+        "main_ram_capacity_bytes": 32768,
+        "sections": {
+          "NULL": {
+            "type": "00000000",
+            "size": 0
+          },
+          ".text": {
+            "type": "PROGBITS",
+            "size": 22328
+          },
+          ".rodata": {
+            "type": "PROGBITS",
+            "size": 6016
+          },
+          ".preinit_array": {
+            "type": "PREINIT_ARRAY",
+            "size": 0
+          },
+          ".init_array": {
+            "type": "INIT_ARRAY",
+            "size": 0
+          },
+          ".fini_array": {
+            "type": "FINI_ARRAY",
+            "size": 0
+          },
+          ".data": {
+            "type": "PROGBITS",
+            "size": 32
+          },
+          ".bss": {
+            "type": "NOBITS",
+            "size": 2560
+          },
+          ".stack": {
+            "type": "NOBITS",
+            "size": 2048
+          },
+          ".riscv.attributes": {
+            "type": "RISCV_ATTRIBUTES",
+            "size": 67
+          },
+          ".comment": {
+            "type": "PROGBITS",
+            "size": 51
+          },
+          ".debug_line": {
+            "type": "PROGBITS",
+            "size": 48936
+          },
+          ".debug_line_str": {
+            "type": "PROGBITS",
+            "size": 5981
+          },
+          ".debug_info": {
+            "type": "PROGBITS",
+            "size": 34294
+          },
+          ".debug_abbrev": {
+            "type": "PROGBITS",
+            "size": 9671
+          },
+          ".debug_aranges": {
+            "type": "PROGBITS",
+            "size": 1080
+          },
+          ".debug_str": {
+            "type": "PROGBITS",
+            "size": 70484
+          },
+          ".debug_loclists": {
+            "type": "PROGBITS",
+            "size": 39094
+          },
+          ".debug_rnglists": {
+            "type": "PROGBITS",
+            "size": 3133
+          },
+          ".debug_macro": {
+            "type": "PROGBITS",
+            "size": 36376
+          },
+          ".debug_frame": {
+            "type": "PROGBITS",
+            "size": 1836
+          },
+          ".symtab": {
+            "type": "SYMTAB",
+            "size": 3568
+          },
+          ".strtab": {
+            "type": "STRTAB",
+            "size": 1685
+          },
+          ".shstrtab": {
+            "type": "STRTAB",
+            "size": 263
+          }
+        },
+        "stack_usage": {
+          "largest_static_frame_bytes": 1152,
+          "reported_function_frames": 55,
+          "top_frames": [
+            {
+              "function": "ee_printf",
+              "bytes": 1152,
+              "classification": "static",
+              "source": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance/obj/ee_printf.su"
+            },
+            {
+              "function": "coremark_main",
+              "bytes": 144,
+              "classification": "static",
+              "source": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance/obj/core_main.su"
+            },
+            {
+              "function": "main",
+              "bytes": 128,
+              "classification": "static",
+              "source": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance/obj/benchmark_main.su"
+            },
+            {
+              "function": "core_bench_state",
+              "bytes": 128,
+              "classification": "static",
+              "source": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance/obj/core_state.su"
+            },
+            {
+              "function": "number",
+              "bytes": 96,
+              "classification": "static",
+              "source": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance/obj/ee_printf.su"
+            },
+            {
+              "function": "verify_loaded_image",
+              "bytes": 64,
+              "classification": "static",
+              "source": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance/obj/benchmark_main.su"
+            },
+            {
+              "function": "core_list_mergesort",
+              "bytes": 48,
+              "classification": "static",
+              "source": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance/obj/core_list_join.su"
+            },
+            {
+              "function": "core_bench_list",
+              "bytes": 48,
+              "classification": "static",
+              "source": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance/obj/core_list_join.su"
+            },
+            {
+              "function": "matrix_test",
+              "bytes": 48,
+              "classification": "static",
+              "source": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance/obj/core_matrix.su"
+            },
+            {
+              "function": "verify_runtime_seeds",
+              "bytes": 32,
+              "classification": "static",
+              "source": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance/obj/benchmark_main.su"
+            },
+            {
+              "function": "calc_func",
+              "bytes": 32,
+              "classification": "static",
+              "source": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance/obj/core_list_join.su"
+            },
+            {
+              "function": "cmp_complex",
+              "bytes": 32,
+              "classification": "static",
+              "source": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance/obj/core_list_join.su"
+            }
+          ],
+          "interpretation": "GCC per-function static frames; the firmware reserves 2048 stack bytes. The report is not a runtime stack high-water measurement."
+        },
+        "stack_usage_reports": [
+          "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance/obj/benchmark_main.su",
+          "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance/obj/core_list_join.su",
+          "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance/obj/core_main.su",
+          "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance/obj/core_matrix.su",
+          "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance/obj/core_portme.su",
+          "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance/obj/core_state.su",
+          "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance/obj/core_util.su",
+          "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance/obj/ee_printf.su",
+          "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance/obj/litex_uart_polling.su"
+        ],
+        "commands": {
+          "core_list_join.c": {
+            "source": ".deps/coremark/core_list_join.c",
+            "flags": [
+              "-std=gnu99",
+              "-O2",
+              "-march=rv32i2p0_m",
+              "-mabi=ilp32",
+              "-D__vexriscv__",
+              "-g3",
+              "-no-pie",
+              "-fomit-frame-pointer",
+              "-Wall",
+              "-fno-builtin",
+              "-fno-stack-protector",
+              "-U_FORTIFY_SOURCE",
+              "-D_FORTIFY_SOURCE=0",
+              "-ffunction-sections",
+              "-fdata-sections",
+              "-fno-lto",
+              "-DITERATIONS=1000",
+              "-DTOTAL_DATA_SIZE=2000",
+              "-DMEM_METHOD=MEM_STATIC",
+              "-DMULTITHREAD=1",
+              "-DPERFORMANCE_RUN=1",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/libc",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance"
+            ]
+          },
+          "core_main.c": {
+            "source": ".deps/coremark/core_main.c",
+            "flags": [
+              "-std=gnu99",
+              "-O2",
+              "-march=rv32i2p0_m",
+              "-mabi=ilp32",
+              "-D__vexriscv__",
+              "-g3",
+              "-no-pie",
+              "-fomit-frame-pointer",
+              "-Wall",
+              "-fno-builtin",
+              "-fno-stack-protector",
+              "-U_FORTIFY_SOURCE",
+              "-D_FORTIFY_SOURCE=0",
+              "-ffunction-sections",
+              "-fdata-sections",
+              "-fno-lto",
+              "-DITERATIONS=1000",
+              "-DTOTAL_DATA_SIZE=2000",
+              "-DMEM_METHOD=MEM_STATIC",
+              "-DMULTITHREAD=1",
+              "-DPERFORMANCE_RUN=1",
+              "-Dmain=coremark_main",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/libc",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance"
+            ]
+          },
+          "core_matrix.c": {
+            "source": ".deps/coremark/core_matrix.c",
+            "flags": [
+              "-std=gnu99",
+              "-O2",
+              "-march=rv32i2p0_m",
+              "-mabi=ilp32",
+              "-D__vexriscv__",
+              "-g3",
+              "-no-pie",
+              "-fomit-frame-pointer",
+              "-Wall",
+              "-fno-builtin",
+              "-fno-stack-protector",
+              "-U_FORTIFY_SOURCE",
+              "-D_FORTIFY_SOURCE=0",
+              "-ffunction-sections",
+              "-fdata-sections",
+              "-fno-lto",
+              "-DITERATIONS=1000",
+              "-DTOTAL_DATA_SIZE=2000",
+              "-DMEM_METHOD=MEM_STATIC",
+              "-DMULTITHREAD=1",
+              "-DPERFORMANCE_RUN=1",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/libc",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance"
+            ]
+          },
+          "core_state.c": {
+            "source": ".deps/coremark/core_state.c",
+            "flags": [
+              "-std=gnu99",
+              "-O2",
+              "-march=rv32i2p0_m",
+              "-mabi=ilp32",
+              "-D__vexriscv__",
+              "-g3",
+              "-no-pie",
+              "-fomit-frame-pointer",
+              "-Wall",
+              "-fno-builtin",
+              "-fno-stack-protector",
+              "-U_FORTIFY_SOURCE",
+              "-D_FORTIFY_SOURCE=0",
+              "-ffunction-sections",
+              "-fdata-sections",
+              "-fno-lto",
+              "-DITERATIONS=1000",
+              "-DTOTAL_DATA_SIZE=2000",
+              "-DMEM_METHOD=MEM_STATIC",
+              "-DMULTITHREAD=1",
+              "-DPERFORMANCE_RUN=1",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/libc",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance"
+            ]
+          },
+          "core_util.c": {
+            "source": ".deps/coremark/core_util.c",
+            "flags": [
+              "-std=gnu99",
+              "-O2",
+              "-march=rv32i2p0_m",
+              "-mabi=ilp32",
+              "-D__vexriscv__",
+              "-g3",
+              "-no-pie",
+              "-fomit-frame-pointer",
+              "-Wall",
+              "-fno-builtin",
+              "-fno-stack-protector",
+              "-U_FORTIFY_SOURCE",
+              "-D_FORTIFY_SOURCE=0",
+              "-ffunction-sections",
+              "-fdata-sections",
+              "-fno-lto",
+              "-DITERATIONS=1000",
+              "-DTOTAL_DATA_SIZE=2000",
+              "-DMEM_METHOD=MEM_STATIC",
+              "-DMULTITHREAD=1",
+              "-DPERFORMANCE_RUN=1",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/libc",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance"
+            ]
+          },
+          "core_portme.c": {
+            "source": "firmware/benchmark/core_portme.c",
+            "flags": [
+              "-std=gnu99",
+              "-O2",
+              "-march=rv32i2p0_m",
+              "-mabi=ilp32",
+              "-D__vexriscv__",
+              "-g3",
+              "-no-pie",
+              "-fomit-frame-pointer",
+              "-Wall",
+              "-fno-builtin",
+              "-fno-stack-protector",
+              "-U_FORTIFY_SOURCE",
+              "-D_FORTIFY_SOURCE=0",
+              "-ffunction-sections",
+              "-fdata-sections",
+              "-fno-lto",
+              "-DITERATIONS=1000",
+              "-DTOTAL_DATA_SIZE=2000",
+              "-DMEM_METHOD=MEM_STATIC",
+              "-DMULTITHREAD=1",
+              "-DPERFORMANCE_RUN=1",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/libc",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance"
+            ]
+          },
+          "benchmark_main.c": {
+            "source": "firmware/benchmark/benchmark_main.c",
+            "flags": [
+              "-std=gnu99",
+              "-O2",
+              "-march=rv32i2p0_m",
+              "-mabi=ilp32",
+              "-D__vexriscv__",
+              "-g3",
+              "-no-pie",
+              "-fomit-frame-pointer",
+              "-Wall",
+              "-fno-builtin",
+              "-fno-stack-protector",
+              "-U_FORTIFY_SOURCE",
+              "-D_FORTIFY_SOURCE=0",
+              "-ffunction-sections",
+              "-fdata-sections",
+              "-fno-lto",
+              "-DITERATIONS=1000",
+              "-DTOTAL_DATA_SIZE=2000",
+              "-DMEM_METHOD=MEM_STATIC",
+              "-DMULTITHREAD=1",
+              "-DPERFORMANCE_RUN=1",
+              "-Os",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/libc",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance"
+            ]
+          },
+          "ee_printf.c": {
+            "source": "firmware/benchmark/ee_printf.c",
+            "flags": [
+              "-std=gnu99",
+              "-O2",
+              "-march=rv32i2p0_m",
+              "-mabi=ilp32",
+              "-D__vexriscv__",
+              "-g3",
+              "-no-pie",
+              "-fomit-frame-pointer",
+              "-Wall",
+              "-fno-builtin",
+              "-fno-stack-protector",
+              "-U_FORTIFY_SOURCE",
+              "-D_FORTIFY_SOURCE=0",
+              "-ffunction-sections",
+              "-fdata-sections",
+              "-fno-lto",
+              "-DITERATIONS=1000",
+              "-DTOTAL_DATA_SIZE=2000",
+              "-DMEM_METHOD=MEM_STATIC",
+              "-DMULTITHREAD=1",
+              "-DPERFORMANCE_RUN=1",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/libc",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance"
+            ]
+          },
+          "litex_uart_polling.c": {
+            "source": ".deps/litex/litex/soc/software/libbase/uart.c",
+            "flags": [
+              "-std=gnu99",
+              "-O2",
+              "-march=rv32i2p0_m",
+              "-mabi=ilp32",
+              "-D__vexriscv__",
+              "-g3",
+              "-no-pie",
+              "-fomit-frame-pointer",
+              "-Wall",
+              "-fno-builtin",
+              "-fno-stack-protector",
+              "-U_FORTIFY_SOURCE",
+              "-D_FORTIFY_SOURCE=0",
+              "-ffunction-sections",
+              "-fdata-sections",
+              "-fno-lto",
+              "-DITERATIONS=1000",
+              "-DTOTAL_DATA_SIZE=2000",
+              "-DMEM_METHOD=MEM_STATIC",
+              "-DMULTITHREAD=1",
+              "-DPERFORMANCE_RUN=1",
+              "-DUART_POLLING",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/libc",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance"
+            ]
+          }
+        },
+        "link_flags": [
+          "-nostdlib",
+          "-nodefaultlibs",
+          "-Wl,--no-dynamic-linker",
+          "-Wl,--build-id=none",
+          "-std=gnu99",
+          "-O2",
+          "-march=rv32i2p0_m",
+          "-mabi=ilp32",
+          "-D__vexriscv__",
+          "-g3",
+          "-no-pie",
+          "-fomit-frame-pointer",
+          "-Wall",
+          "-fno-builtin",
+          "-fno-stack-protector",
+          "-U_FORTIFY_SOURCE",
+          "-D_FORTIFY_SOURCE=0",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-fno-lto",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/libc",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance",
+          "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/include",
+          "-T",
+          "/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/linker.ld",
+          "-N",
+          "-o",
+          "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance/benchmark.elf",
+          "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/firmware/crt0.o",
+          "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance/obj/core_list_join.o",
+          "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance/obj/core_main.o",
+          "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance/obj/core_matrix.o",
+          "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance/obj/core_state.o",
+          "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance/obj/core_util.o",
+          "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance/obj/core_portme.o",
+          "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance/obj/benchmark_main.o",
+          "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance/obj/ee_printf.o",
+          "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance/obj/litex_uart_polling.o",
+          "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/libc",
+          "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/libcompiler_rt",
+          "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/libbase",
+          "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/libfatfs",
+          "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/liblitespi",
+          "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/liblitedram",
+          "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/libliteeth",
+          "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/liblitesdcard",
+          "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/liblitesata",
+          "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/bios",
+          "-Wl,--start-group",
+          "-lc",
+          "-lcompiler_rt",
+          "-lbase",
+          "-lfatfs",
+          "-llitespi",
+          "-llitedram",
+          "-lliteeth",
+          "-llitesdcard",
+          "-llitesata",
+          "-lgcc",
+          "-Wl,--end-group",
+          "-Wl,--gc-sections",
+          "-Wl,-Map,/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/performance/benchmark.elf.map"
+        ]
+      },
+      "validation": {
+        "profile": "standard",
+        "mode": "validation",
+        "build_id": "69ed50ce26b30080",
+        "elf": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation/benchmark.elf",
+        "elf_sha256": "16ee703bd25b939918e8fd6c714fa4b9f65907032f01cc5e968adc7c08eec904",
+        "map": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation/benchmark.elf.map",
+        "binary": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation/benchmark.bin",
+        "binary_sha256": "f3c7fd32f3327084e63f21d4f996da5edf35e7fed9ba4bcda663e26eb58be13b",
+        "binary_crc32": "02b9683f",
+        "binary_bytes": 28400,
+        "working_sram_bytes": 2624,
+        "sram_section_bytes": 2600,
+        "sram_alignment_padding_bytes": 24,
+        "sram_boundaries": {
+          "_fdata": 268435456,
+          "_end": 268438080,
+          "_stack_bottom": 268441600,
+          "_stack_top": 268443648
+        },
+        "reserved_stack_bytes": 2048,
+        "remaining_sram_bytes": 3520,
+        "main_ram_capacity_bytes": 32768,
+        "sections": {
+          "NULL": {
+            "type": "00000000",
+            "size": 0
+          },
+          ".text": {
+            "type": "PROGBITS",
+            "size": 22348
+          },
+          ".rodata": {
+            "type": "PROGBITS",
+            "size": 6012
+          },
+          ".preinit_array": {
+            "type": "PREINIT_ARRAY",
+            "size": 0
+          },
+          ".init_array": {
+            "type": "INIT_ARRAY",
+            "size": 0
+          },
+          ".fini_array": {
+            "type": "FINI_ARRAY",
+            "size": 0
+          },
+          ".data": {
+            "type": "PROGBITS",
+            "size": 40
+          },
+          ".bss": {
+            "type": "NOBITS",
+            "size": 2560
+          },
+          ".stack": {
+            "type": "NOBITS",
+            "size": 2048
+          },
+          ".riscv.attributes": {
+            "type": "RISCV_ATTRIBUTES",
+            "size": 67
+          },
+          ".comment": {
+            "type": "PROGBITS",
+            "size": 51
+          },
+          ".debug_line": {
+            "type": "PROGBITS",
+            "size": 48936
+          },
+          ".debug_line_str": {
+            "type": "PROGBITS",
+            "size": 5980
+          },
+          ".debug_info": {
+            "type": "PROGBITS",
+            "size": 34302
+          },
+          ".debug_abbrev": {
+            "type": "PROGBITS",
+            "size": 9671
+          },
+          ".debug_aranges": {
+            "type": "PROGBITS",
+            "size": 1080
+          },
+          ".debug_str": {
+            "type": "PROGBITS",
+            "size": 70489
+          },
+          ".debug_loclists": {
+            "type": "PROGBITS",
+            "size": 39094
+          },
+          ".debug_rnglists": {
+            "type": "PROGBITS",
+            "size": 3133
+          },
+          ".debug_macro": {
+            "type": "PROGBITS",
+            "size": 36376
+          },
+          ".debug_frame": {
+            "type": "PROGBITS",
+            "size": 1836
+          },
+          ".symtab": {
+            "type": "SYMTAB",
+            "size": 3568
+          },
+          ".strtab": {
+            "type": "STRTAB",
+            "size": 1685
+          },
+          ".shstrtab": {
+            "type": "STRTAB",
+            "size": 263
+          }
+        },
+        "stack_usage": {
+          "largest_static_frame_bytes": 1152,
+          "reported_function_frames": 55,
+          "top_frames": [
+            {
+              "function": "ee_printf",
+              "bytes": 1152,
+              "classification": "static",
+              "source": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation/obj/ee_printf.su"
+            },
+            {
+              "function": "coremark_main",
+              "bytes": 144,
+              "classification": "static",
+              "source": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation/obj/core_main.su"
+            },
+            {
+              "function": "main",
+              "bytes": 128,
+              "classification": "static",
+              "source": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation/obj/benchmark_main.su"
+            },
+            {
+              "function": "core_bench_state",
+              "bytes": 128,
+              "classification": "static",
+              "source": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation/obj/core_state.su"
+            },
+            {
+              "function": "number",
+              "bytes": 96,
+              "classification": "static",
+              "source": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation/obj/ee_printf.su"
+            },
+            {
+              "function": "verify_loaded_image",
+              "bytes": 64,
+              "classification": "static",
+              "source": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation/obj/benchmark_main.su"
+            },
+            {
+              "function": "core_list_mergesort",
+              "bytes": 48,
+              "classification": "static",
+              "source": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation/obj/core_list_join.su"
+            },
+            {
+              "function": "core_bench_list",
+              "bytes": 48,
+              "classification": "static",
+              "source": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation/obj/core_list_join.su"
+            },
+            {
+              "function": "matrix_test",
+              "bytes": 48,
+              "classification": "static",
+              "source": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation/obj/core_matrix.su"
+            },
+            {
+              "function": "verify_runtime_seeds",
+              "bytes": 32,
+              "classification": "static",
+              "source": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation/obj/benchmark_main.su"
+            },
+            {
+              "function": "calc_func",
+              "bytes": 32,
+              "classification": "static",
+              "source": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation/obj/core_list_join.su"
+            },
+            {
+              "function": "cmp_complex",
+              "bytes": 32,
+              "classification": "static",
+              "source": "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation/obj/core_list_join.su"
+            }
+          ],
+          "interpretation": "GCC per-function static frames; the firmware reserves 2048 stack bytes. The report is not a runtime stack high-water measurement."
+        },
+        "stack_usage_reports": [
+          "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation/obj/benchmark_main.su",
+          "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation/obj/core_list_join.su",
+          "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation/obj/core_main.su",
+          "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation/obj/core_matrix.su",
+          "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation/obj/core_portme.su",
+          "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation/obj/core_state.su",
+          "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation/obj/core_util.su",
+          "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation/obj/ee_printf.su",
+          "build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation/obj/litex_uart_polling.su"
+        ],
+        "commands": {
+          "core_list_join.c": {
+            "source": ".deps/coremark/core_list_join.c",
+            "flags": [
+              "-std=gnu99",
+              "-O2",
+              "-march=rv32i2p0_m",
+              "-mabi=ilp32",
+              "-D__vexriscv__",
+              "-g3",
+              "-no-pie",
+              "-fomit-frame-pointer",
+              "-Wall",
+              "-fno-builtin",
+              "-fno-stack-protector",
+              "-U_FORTIFY_SOURCE",
+              "-D_FORTIFY_SOURCE=0",
+              "-ffunction-sections",
+              "-fdata-sections",
+              "-fno-lto",
+              "-DITERATIONS=1000",
+              "-DTOTAL_DATA_SIZE=2000",
+              "-DMEM_METHOD=MEM_STATIC",
+              "-DMULTITHREAD=1",
+              "-DVALIDATION_RUN=1",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/libc",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation"
+            ]
+          },
+          "core_main.c": {
+            "source": ".deps/coremark/core_main.c",
+            "flags": [
+              "-std=gnu99",
+              "-O2",
+              "-march=rv32i2p0_m",
+              "-mabi=ilp32",
+              "-D__vexriscv__",
+              "-g3",
+              "-no-pie",
+              "-fomit-frame-pointer",
+              "-Wall",
+              "-fno-builtin",
+              "-fno-stack-protector",
+              "-U_FORTIFY_SOURCE",
+              "-D_FORTIFY_SOURCE=0",
+              "-ffunction-sections",
+              "-fdata-sections",
+              "-fno-lto",
+              "-DITERATIONS=1000",
+              "-DTOTAL_DATA_SIZE=2000",
+              "-DMEM_METHOD=MEM_STATIC",
+              "-DMULTITHREAD=1",
+              "-DVALIDATION_RUN=1",
+              "-Dmain=coremark_main",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/libc",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation"
+            ]
+          },
+          "core_matrix.c": {
+            "source": ".deps/coremark/core_matrix.c",
+            "flags": [
+              "-std=gnu99",
+              "-O2",
+              "-march=rv32i2p0_m",
+              "-mabi=ilp32",
+              "-D__vexriscv__",
+              "-g3",
+              "-no-pie",
+              "-fomit-frame-pointer",
+              "-Wall",
+              "-fno-builtin",
+              "-fno-stack-protector",
+              "-U_FORTIFY_SOURCE",
+              "-D_FORTIFY_SOURCE=0",
+              "-ffunction-sections",
+              "-fdata-sections",
+              "-fno-lto",
+              "-DITERATIONS=1000",
+              "-DTOTAL_DATA_SIZE=2000",
+              "-DMEM_METHOD=MEM_STATIC",
+              "-DMULTITHREAD=1",
+              "-DVALIDATION_RUN=1",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/libc",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation"
+            ]
+          },
+          "core_state.c": {
+            "source": ".deps/coremark/core_state.c",
+            "flags": [
+              "-std=gnu99",
+              "-O2",
+              "-march=rv32i2p0_m",
+              "-mabi=ilp32",
+              "-D__vexriscv__",
+              "-g3",
+              "-no-pie",
+              "-fomit-frame-pointer",
+              "-Wall",
+              "-fno-builtin",
+              "-fno-stack-protector",
+              "-U_FORTIFY_SOURCE",
+              "-D_FORTIFY_SOURCE=0",
+              "-ffunction-sections",
+              "-fdata-sections",
+              "-fno-lto",
+              "-DITERATIONS=1000",
+              "-DTOTAL_DATA_SIZE=2000",
+              "-DMEM_METHOD=MEM_STATIC",
+              "-DMULTITHREAD=1",
+              "-DVALIDATION_RUN=1",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/libc",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation"
+            ]
+          },
+          "core_util.c": {
+            "source": ".deps/coremark/core_util.c",
+            "flags": [
+              "-std=gnu99",
+              "-O2",
+              "-march=rv32i2p0_m",
+              "-mabi=ilp32",
+              "-D__vexriscv__",
+              "-g3",
+              "-no-pie",
+              "-fomit-frame-pointer",
+              "-Wall",
+              "-fno-builtin",
+              "-fno-stack-protector",
+              "-U_FORTIFY_SOURCE",
+              "-D_FORTIFY_SOURCE=0",
+              "-ffunction-sections",
+              "-fdata-sections",
+              "-fno-lto",
+              "-DITERATIONS=1000",
+              "-DTOTAL_DATA_SIZE=2000",
+              "-DMEM_METHOD=MEM_STATIC",
+              "-DMULTITHREAD=1",
+              "-DVALIDATION_RUN=1",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/libc",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation"
+            ]
+          },
+          "core_portme.c": {
+            "source": "firmware/benchmark/core_portme.c",
+            "flags": [
+              "-std=gnu99",
+              "-O2",
+              "-march=rv32i2p0_m",
+              "-mabi=ilp32",
+              "-D__vexriscv__",
+              "-g3",
+              "-no-pie",
+              "-fomit-frame-pointer",
+              "-Wall",
+              "-fno-builtin",
+              "-fno-stack-protector",
+              "-U_FORTIFY_SOURCE",
+              "-D_FORTIFY_SOURCE=0",
+              "-ffunction-sections",
+              "-fdata-sections",
+              "-fno-lto",
+              "-DITERATIONS=1000",
+              "-DTOTAL_DATA_SIZE=2000",
+              "-DMEM_METHOD=MEM_STATIC",
+              "-DMULTITHREAD=1",
+              "-DVALIDATION_RUN=1",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/libc",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation"
+            ]
+          },
+          "benchmark_main.c": {
+            "source": "firmware/benchmark/benchmark_main.c",
+            "flags": [
+              "-std=gnu99",
+              "-O2",
+              "-march=rv32i2p0_m",
+              "-mabi=ilp32",
+              "-D__vexriscv__",
+              "-g3",
+              "-no-pie",
+              "-fomit-frame-pointer",
+              "-Wall",
+              "-fno-builtin",
+              "-fno-stack-protector",
+              "-U_FORTIFY_SOURCE",
+              "-D_FORTIFY_SOURCE=0",
+              "-ffunction-sections",
+              "-fdata-sections",
+              "-fno-lto",
+              "-DITERATIONS=1000",
+              "-DTOTAL_DATA_SIZE=2000",
+              "-DMEM_METHOD=MEM_STATIC",
+              "-DMULTITHREAD=1",
+              "-DVALIDATION_RUN=1",
+              "-Os",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/libc",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation"
+            ]
+          },
+          "ee_printf.c": {
+            "source": "firmware/benchmark/ee_printf.c",
+            "flags": [
+              "-std=gnu99",
+              "-O2",
+              "-march=rv32i2p0_m",
+              "-mabi=ilp32",
+              "-D__vexriscv__",
+              "-g3",
+              "-no-pie",
+              "-fomit-frame-pointer",
+              "-Wall",
+              "-fno-builtin",
+              "-fno-stack-protector",
+              "-U_FORTIFY_SOURCE",
+              "-D_FORTIFY_SOURCE=0",
+              "-ffunction-sections",
+              "-fdata-sections",
+              "-fno-lto",
+              "-DITERATIONS=1000",
+              "-DTOTAL_DATA_SIZE=2000",
+              "-DMEM_METHOD=MEM_STATIC",
+              "-DMULTITHREAD=1",
+              "-DVALIDATION_RUN=1",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/libc",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation"
+            ]
+          },
+          "litex_uart_polling.c": {
+            "source": ".deps/litex/litex/soc/software/libbase/uart.c",
+            "flags": [
+              "-std=gnu99",
+              "-O2",
+              "-march=rv32i2p0_m",
+              "-mabi=ilp32",
+              "-D__vexriscv__",
+              "-g3",
+              "-no-pie",
+              "-fomit-frame-pointer",
+              "-Wall",
+              "-fno-builtin",
+              "-fno-stack-protector",
+              "-U_FORTIFY_SOURCE",
+              "-D_FORTIFY_SOURCE=0",
+              "-ffunction-sections",
+              "-fdata-sections",
+              "-fno-lto",
+              "-DITERATIONS=1000",
+              "-DTOTAL_DATA_SIZE=2000",
+              "-DMEM_METHOD=MEM_STATIC",
+              "-DMULTITHREAD=1",
+              "-DVALIDATION_RUN=1",
+              "-DUART_POLLING",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/libc",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+              "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation"
+            ]
+          }
+        },
+        "link_flags": [
+          "-nostdlib",
+          "-nodefaultlibs",
+          "-Wl,--no-dynamic-linker",
+          "-Wl,--build-id=none",
+          "-std=gnu99",
+          "-O2",
+          "-march=rv32i2p0_m",
+          "-mabi=ilp32",
+          "-D__vexriscv__",
+          "-g3",
+          "-no-pie",
+          "-fomit-frame-pointer",
+          "-Wall",
+          "-fno-builtin",
+          "-fno-stack-protector",
+          "-U_FORTIFY_SOURCE",
+          "-D_FORTIFY_SOURCE=0",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-fno-lto",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/libc",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation",
+          "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/include",
+          "-T",
+          "/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/linker.ld",
+          "-N",
+          "-o",
+          "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation/benchmark.elf",
+          "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/firmware/crt0.o",
+          "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation/obj/core_list_join.o",
+          "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation/obj/core_main.o",
+          "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation/obj/core_matrix.o",
+          "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation/obj/core_state.o",
+          "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation/obj/core_util.o",
+          "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation/obj/core_portme.o",
+          "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation/obj/benchmark_main.o",
+          "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation/obj/ee_printf.o",
+          "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation/obj/litex_uart_polling.o",
+          "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/libc",
+          "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/libcompiler_rt",
+          "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/libbase",
+          "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/libfatfs",
+          "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/liblitespi",
+          "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/liblitedram",
+          "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/libliteeth",
+          "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/liblitesdcard",
+          "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/liblitesata",
+          "-L/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/software/bios",
+          "-Wl,--start-group",
+          "-lc",
+          "-lcompiler_rt",
+          "-lbase",
+          "-lfatfs",
+          "-llitespi",
+          "-llitedram",
+          "-lliteeth",
+          "-llitesdcard",
+          "-llitesata",
+          "-lgcc",
+          "-Wl,--end-group",
+          "-Wl,--gc-sections",
+          "-Wl,-Map,/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-2048_dcache-4096_rv32im/soc/benchmark/validation/benchmark.elf.map"
+        ]
+      }
+    },
+    "finished_utc": "2026-10-01T23:14:00.881935+00:00",
+    "evidence_bundle": {
+      "path": "build/validation/benchmark-evidence/onchip/standard/69ed50ce26b30080b8c1a0c011a4c695a04d62c5483696664a4e2b4a5d1fc032/manifest.json",
+      "sha256": "7f61f811a7c79d4c1a766d6132fabee7d974abb9616ae45c7686a0664f5d4020"
+    }
+  },
+  "finished_utc": "2026-10-01T23:14:00.922542+00:00"
+}

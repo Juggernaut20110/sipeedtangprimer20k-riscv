@@ -23,6 +23,7 @@ from memory import profile_build_dir, validate_memory  # noqa: E402
 
 THOROUGH_TRAINING_RUNS = 10
 THOROUGH_STRESS_SECONDS = 1800
+DEFAULT_TRIAL_TIMEOUT_SECONDS = 14400.0
 SYS_CLK_HZ = 48_000_000
 ANSI_ESCAPE = re.compile(rb"\x1b\[[0-?]*[ -/]*[@-~]")
 
@@ -667,7 +668,7 @@ def main(argv=None):
     parser.add_argument("--training-runs", type=int, default=10)
     parser.add_argument("--stress-seconds", type=int, default=1800)
     parser.add_argument("--handshake-timeout", type=float, default=45.0)
-    parser.add_argument("--trial-timeout", type=float, default=14400.0)
+    parser.add_argument("--trial-timeout", type=float, default=DEFAULT_TRIAL_TIMEOUT_SECONDS)
     args = parser.parse_args(argv)
     if not args.port:
         parser.error("an explicit PORT is required; the runner never selects a serial device automatically")

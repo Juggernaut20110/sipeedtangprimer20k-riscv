@@ -1,0 +1,606 @@
+{
+  "schema_version": 1,
+  "batch_id": "20261001T234402.160025Z-onchip-candidate8-control",
+  "control": "candidate8 4KiB/4KiB RV32IMC; differs from candidate6 only in D-cache size",
+  "status": "failed",
+  "fresh_performance_baseline_mean": 119.3239155434707,
+  "baseline_bitstream_sha256": "6b33147dee92a623d1756cd023ffdf603e2cebdd49c4b1e9ca0eaec8ba66fcb9",
+  "candidate": {
+    "case": "candidate8-control",
+    "profile": "standard",
+    "candidate_id": "icache-4096_dcache-4096_rv32imc",
+    "memory_mode": "onchip",
+    "status": "failed",
+    "clock_hz": 48000000,
+    "identity": {
+      "repository_revision": "cfc1d350aa5e20498a33b886abda9ae3bedef3d3",
+      "repository_dirty": true,
+      "source_fingerprint": "bb455d97765496dd6ce294c52044f824741fddfbe08a6221d8490a4f77dffe43",
+      "identity_schema_version": 2,
+      "fingerprint_payload": {
+        "profile": "standard",
+        "cpu_variant": "projectimc",
+        "cpu_candidate": "icache-4096_dcache-4096_rv32imc",
+        "memory_mode": "onchip",
+        "coremark_commit": "1f483d5b8316753a742cbf5590caf5bd0a4e4777",
+        "source_hashes": {
+          "firmware/linker.ld": "359df89319fcce4ff0cb0a3f6ccdee2589a075b5479e7457d04fa0a8a50f4463",
+          "scripts/benchmark_build.py": "d46b760d0200c12ec4e01c9b7ffacbe32860a345bf92bb492a5703ab566e6dd8",
+          "scripts/benchmark_identity.py": "91c1086608354cebf16c5a270304d1b1a7735c300de21a9dc30242ed267c199f",
+          "scripts/benchmark_evidence.py": "0c4e3fd6aa1b6193c5c4d5daa832cd51f2ba70aa2255d2234b2ddc4c20bcb8c6",
+          "build/maxperf-candidates/onchip/icache-4096_dcache-4096_rv32imc/soc/firmware/crt0.o": "ba21a39b2e43ca46cfe2809fd71686d6f20785382f138c9c9f97534fa93f691b",
+          "build/maxperf-candidates/onchip/icache-4096_dcache-4096_rv32imc/soc/software/libbase/libbase.a": "4728fec4b32e83052976ef0ec6d1a72710fff8abe4e4f1360cc8fabd191a6b0a",
+          "build/maxperf-candidates/onchip/icache-4096_dcache-4096_rv32imc/VexRiscv.v": "a2f2a92e7ff330c3b6f28c41765b859f771e97bf88df2744967c2ac4e0c96ae6",
+          "firmware/benchmark/core_portme.h": "fb1b12bd01f419fdb4e79f2af281d8305a9f6eb2d9efd18054f3bd6d2c8aba30",
+          "firmware/benchmark/core_portme.c": "63daa04421626423befc221a6e59dac254353a5436e3a4999eaedcf2ee444bb6",
+          "firmware/benchmark/benchmark_main.c": "036f5563931d0c654393f04582bd9e2844f4c82aabb4c89399ab652666ffda85",
+          "firmware/benchmark/benchmark_port.h": "605fdb044e2e24c20ad02db3f6fd0eaf336886e916669ee30c6fb534e25f782e",
+          "firmware/benchmark/ee_printf.c": "707dcce8c5de7d717f97b3bdd166efc377b2eb6a63bcfc9ed42faf4bc926ea83",
+          ".deps/litex/litex/soc/software/libbase/uart.c": "c7f7e33a4148302a9963ce0696dd5d261280c42ccc32ff5fd5a12a42c146d5d7",
+          ".deps/litex/litex/soc/software/include/system.h": "06ee90723b7a626d04d919d35d3bfec3a94b07d8f994866f2db9e1a161f71ef3",
+          ".deps/litex/litex/soc/cores/cpu/vexriscv/system.h": "db79f2b406dd5c254387193d782a53eaa1ef969550963a6b5f16f507a5360910",
+          ".deps/coremark/core_list_join.c": "ca00e4e010ece47d7f040cb92aa50a95345a00d3171b59d088f6b243be06ce7b",
+          ".deps/coremark/core_main.c": "17884c93c5b94378eb0ff02b4df3725756cf2addb9b8cbcaa6200a4649ff5ca7",
+          ".deps/coremark/core_matrix.c": "ecdff717b5a5c4907d221a606760e25499899cbf617582c05d40db71c91351e4",
+          ".deps/coremark/core_state.c": "f4b84bb0a3452c45a4daa664ab502bfdccbd31cb57d93e9ac490c60937717a4e",
+          ".deps/coremark/core_util.c": "a3fbfcb9bb943b638624b8ece01c5836dd56a96d7bcde2697b248d077447327f",
+          ".deps/coremark/coremark.h": "42642b9a06c7ed2b3bd9eda971b7c3868c4f5d27bf7ef6c4bba11291a0c2598a",
+          ".deps/coremark/coremark.md5": "dad92861212f8f012e75974e23ea97f7a275a375e0d3bc1d3b216423ba6b6306",
+          ".deps/coremark/LICENSE.md": "9577b9c846f61fd69a0d8ac965998c6450c7d8969f71f0bb4a931b91aebad28a",
+          "build/maxperf-candidates/onchip/icache-4096_dcache-4096_rv32imc/soc/software/include/generated/variables.mak": "6fb21ffdf034fa29b913408b9e8359095c380b71cdab0bd52d4750543375fc24",
+          "build/maxperf-candidates/onchip/icache-4096_dcache-4096_rv32imc/soc/software/include/generated/soc.h": "1f5ef516acf43c31b8bc17d36aa16754dd6e1a5c48ca090ca35c46f6d1f92131",
+          "build/maxperf-candidates/onchip/icache-4096_dcache-4096_rv32imc/soc/software/include/generated/csr.h": "9ccce5c21045d1869964d13768f6a59bd099efdba4938befe6b5da4fe7d23d54",
+          "build/maxperf-candidates/onchip/icache-4096_dcache-4096_rv32imc/soc/software/include/generated/mem.h": "d23a4d8d9ae0152da134e337ad4cb56be676bc97b83f0aec83ad6397153ea9fb"
+        },
+        "bitstream_sha256": "69463bc78a361df1297cf255439225f2a9f28ca44a5f924e34cf254f472f7221",
+        "compiler": "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-gcc",
+        "compiler_version": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+        "compiler_flags": [
+          "-std=gnu99",
+          "-O2",
+          "-march=rv32i2p0_mc",
+          "-mabi=ilp32",
+          "-D__vexriscv__",
+          "-g3",
+          "-no-pie",
+          "-fomit-frame-pointer",
+          "-Wall",
+          "-fno-builtin",
+          "-fno-stack-protector",
+          "-U_FORTIFY_SOURCE",
+          "-D_FORTIFY_SOURCE=0",
+          "-ffunction-sections",
+          "-fdata-sections",
+          "-fno-lto"
+        ],
+        "include_flags": [
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-4096_dcache-4096_rv32imc/soc/benchmark",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-4096_dcache-4096_rv32imc/soc/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-4096_dcache-4096_rv32imc/soc/software/libc",
+          "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include"
+        ],
+        "system_clock_hz": 48000000,
+        "cpu_configuration": {
+          "liteX_variant": "projectimc",
+          "isa": "rv32i2p0_mc",
+          "instruction_cache_bytes": 4096,
+          "data_cache_bytes": 4096,
+          "prediction": "dynamic_target",
+          "compressed": true,
+          "cpu_variant": "projectimc",
+          "mul_div": true,
+          "single_cycle_mul_div": true,
+          "single_cycle_shift": true,
+          "bypass": true,
+          "csr_plugin_config": "small",
+          "atomics": false,
+          "debug": false,
+          "cfu": false,
+          "pmp_regions": 0,
+          "clock_hz": 48000000,
+          "rtl_sha256": "a2f2a92e7ff330c3b6f28c41765b859f771e97bf88df2744967c2ac4e0c96ae6",
+          "candidate_generation": {
+            "schema": 1,
+            "candidate_id": "icache-4096_dcache-4096_rv32imc",
+            "memory_mode": "onchip",
+            "cpu_configuration": {
+              "cpu_variant": "projectimc",
+              "isa": "rv32i2p0_mc",
+              "instruction_cache_bytes": 4096,
+              "data_cache_bytes": 4096,
+              "compressed": true,
+              "prediction": "dynamic_target",
+              "mul_div": true,
+              "single_cycle_mul_div": true,
+              "single_cycle_shift": true,
+              "bypass": true,
+              "csr_plugin_config": "small",
+              "atomics": false,
+              "debug": false,
+              "cfu": false,
+              "pmp_regions": 0,
+              "clock_hz": 48000000
+            },
+            "status": "generated",
+            "generator_command": [
+              "sbt",
+              "--no-server",
+              "compile",
+              "runMain vexriscv.GenCoreDefault --hardwareBreakpointCount=0 --iCacheSize=4096 --dCacheSize=4096 --pmpRegions=0 --pmpGranularity=256 --pmpAddressMatchingModes=na4,napot,tor --mulDiv=true --cfu=false --singleCycleMulDiv=true --singleCycleShift=true --relaxedPcCalculation=false --bypass=true --externalInterruptArray=true --csrPluginConfig=small --atomics=false --compressedGen=true --dBusCachedRelaxedMemoryTranslationRegister=false --dBusCachedEarlyWaysHits=true --prediction=dynamic_target --outputFile=../../../../build/maxperf-candidates/onchip/icache-4096_dcache-4096_rv32imc/VexRiscv"
+            ],
+            "generator_arguments": [
+              "--hardwareBreakpointCount=0",
+              "--iCacheSize=4096",
+              "--dCacheSize=4096",
+              "--pmpRegions=0",
+              "--pmpGranularity=256",
+              "--pmpAddressMatchingModes=na4,napot,tor",
+              "--mulDiv=true",
+              "--cfu=false",
+              "--singleCycleMulDiv=true",
+              "--singleCycleShift=true",
+              "--relaxedPcCalculation=false",
+              "--bypass=true",
+              "--externalInterruptArray=true",
+              "--csrPluginConfig=small",
+              "--atomics=false",
+              "--compressedGen=true",
+              "--dBusCachedRelaxedMemoryTranslationRegister=false",
+              "--dBusCachedEarlyWaysHits=true",
+              "--prediction=dynamic_target",
+              "--outputFile=../../../../build/maxperf-candidates/onchip/icache-4096_dcache-4096_rv32imc/VexRiscv"
+            ],
+            "generator_repository": {
+              "generator_commit": "642ecfed1c84460555d6d803d660cc60cfc1ecb6",
+              "submodule_commit": "b6118e5cc2a33323425df6455697139021d50c72",
+              "sbt": "1.9.7",
+              "scala": "2.11.12",
+              "spinalhdl": "1.9.4"
+            },
+            "tool_versions": {
+              "java": "1.8.0_432",
+              "java_executable": ".tools/java-8u432/jdk8u432-b06/bin/java",
+              "java_sha256": "abaaa90deadf51bd28921453baf2992b3dff6171bb7142f5bdd14ef269f7b245",
+              "sbt": "1.9.7",
+              "sbt_executable": ".tools/bin/sbt",
+              "sbt_sha256": "23543bc4597b552e8e2c27d695fe672ec235ab8a64f766b37828fb68c6d9d910",
+              "scala": "2.11.12",
+              "spinalhdl": "1.9.4"
+            },
+            "generator_lock_sha256": "751d39859ca19a72e1126c8001586fdacc9724f4cd12437290524d73146103ff",
+            "rtl": "build/maxperf-candidates/onchip/icache-4096_dcache-4096_rv32imc/VexRiscv.v",
+            "rtl_sha256": "a2f2a92e7ff330c3b6f28c41765b859f771e97bf88df2744967c2ac4e0c96ae6",
+            "compiler_flags": [
+              "-march=rv32i2p0_mc",
+              "-mabi=ilp32"
+            ],
+            "generated_utc": "2026-10-01T23:17:36.622925+00:00"
+          }
+        },
+        "memory_configuration": {
+          "mode": "onchip",
+          "main_ram_base": 1073741824,
+          "main_ram_bytes": 32768,
+          "ddr_physical_bytes": 0,
+          "l2_cache_bytes": 0,
+          "ddr_ck_hz": null,
+          "uncached_alias_base": null,
+          "diagnostic_ram": null
+        },
+        "identity_schema_version": 2
+      },
+      "evidence_bundle": {
+        "path": "build/validation/benchmark-evidence/onchip/standard/bb455d97765496dd6ce294c52044f824741fddfbe08a6221d8490a4f77dffe43/manifest.json",
+        "sha256": "0b345f43e9d8a56dfb253b3d3f1f82c2cd88d32d0e62c57826b420710578907e"
+      },
+      "profile": "standard",
+      "cpu_variant": "projectimc",
+      "cpu_candidate": "icache-4096_dcache-4096_rv32imc",
+      "cpu_profile_selection": null,
+      "memory_mode": "onchip",
+      "memory_placement": {
+        "mode": "onchip",
+        "main_ram_base": "0x40000000",
+        "main_ram_bytes": 32768,
+        "ddr_physical_bytes": 0,
+        "l2_cache_bytes": 0,
+        "ddr_ck_hz": null,
+        "uncached_alias_base": null,
+        "diagnostic_ram": null,
+        "code_and_read_only_data": "main_ram",
+        "algorithm_data_bss_and_reserved_stack": "sram",
+        "sram_base": "0x10000000",
+        "sram_bytes": 8192
+      },
+      "cpu_rtl": "build/maxperf-candidates/onchip/icache-4096_dcache-4096_rv32imc/VexRiscv.v",
+      "cpu_configuration": {
+        "liteX_variant": "projectimc",
+        "isa": "rv32i2p0_mc",
+        "instruction_cache_bytes": 4096,
+        "data_cache_bytes": 4096,
+        "prediction": "dynamic_target",
+        "compressed": true,
+        "cpu_variant": "projectimc",
+        "mul_div": true,
+        "single_cycle_mul_div": true,
+        "single_cycle_shift": true,
+        "bypass": true,
+        "csr_plugin_config": "small",
+        "atomics": false,
+        "debug": false,
+        "cfu": false,
+        "pmp_regions": 0,
+        "clock_hz": 48000000,
+        "rtl_sha256": "a2f2a92e7ff330c3b6f28c41765b859f771e97bf88df2744967c2ac4e0c96ae6",
+        "candidate_generation": {
+          "schema": 1,
+          "candidate_id": "icache-4096_dcache-4096_rv32imc",
+          "memory_mode": "onchip",
+          "cpu_configuration": {
+            "cpu_variant": "projectimc",
+            "isa": "rv32i2p0_mc",
+            "instruction_cache_bytes": 4096,
+            "data_cache_bytes": 4096,
+            "compressed": true,
+            "prediction": "dynamic_target",
+            "mul_div": true,
+            "single_cycle_mul_div": true,
+            "single_cycle_shift": true,
+            "bypass": true,
+            "csr_plugin_config": "small",
+            "atomics": false,
+            "debug": false,
+            "cfu": false,
+            "pmp_regions": 0,
+            "clock_hz": 48000000
+          },
+          "status": "generated",
+          "generator_command": [
+            "sbt",
+            "--no-server",
+            "compile",
+            "runMain vexriscv.GenCoreDefault --hardwareBreakpointCount=0 --iCacheSize=4096 --dCacheSize=4096 --pmpRegions=0 --pmpGranularity=256 --pmpAddressMatchingModes=na4,napot,tor --mulDiv=true --cfu=false --singleCycleMulDiv=true --singleCycleShift=true --relaxedPcCalculation=false --bypass=true --externalInterruptArray=true --csrPluginConfig=small --atomics=false --compressedGen=true --dBusCachedRelaxedMemoryTranslationRegister=false --dBusCachedEarlyWaysHits=true --prediction=dynamic_target --outputFile=../../../../build/maxperf-candidates/onchip/icache-4096_dcache-4096_rv32imc/VexRiscv"
+          ],
+          "generator_arguments": [
+            "--hardwareBreakpointCount=0",
+            "--iCacheSize=4096",
+            "--dCacheSize=4096",
+            "--pmpRegions=0",
+            "--pmpGranularity=256",
+            "--pmpAddressMatchingModes=na4,napot,tor",
+            "--mulDiv=true",
+            "--cfu=false",
+            "--singleCycleMulDiv=true",
+            "--singleCycleShift=true",
+            "--relaxedPcCalculation=false",
+            "--bypass=true",
+            "--externalInterruptArray=true",
+            "--csrPluginConfig=small",
+            "--atomics=false",
+            "--compressedGen=true",
+            "--dBusCachedRelaxedMemoryTranslationRegister=false",
+            "--dBusCachedEarlyWaysHits=true",
+            "--prediction=dynamic_target",
+            "--outputFile=../../../../build/maxperf-candidates/onchip/icache-4096_dcache-4096_rv32imc/VexRiscv"
+          ],
+          "generator_repository": {
+            "generator_commit": "642ecfed1c84460555d6d803d660cc60cfc1ecb6",
+            "submodule_commit": "b6118e5cc2a33323425df6455697139021d50c72",
+            "sbt": "1.9.7",
+            "scala": "2.11.12",
+            "spinalhdl": "1.9.4"
+          },
+          "tool_versions": {
+            "java": "1.8.0_432",
+            "java_executable": ".tools/java-8u432/jdk8u432-b06/bin/java",
+            "java_sha256": "abaaa90deadf51bd28921453baf2992b3dff6171bb7142f5bdd14ef269f7b245",
+            "sbt": "1.9.7",
+            "sbt_executable": ".tools/bin/sbt",
+            "sbt_sha256": "23543bc4597b552e8e2c27d695fe672ec235ab8a64f766b37828fb68c6d9d910",
+            "scala": "2.11.12",
+            "spinalhdl": "1.9.4"
+          },
+          "generator_lock_sha256": "751d39859ca19a72e1126c8001586fdacc9724f4cd12437290524d73146103ff",
+          "rtl": "build/maxperf-candidates/onchip/icache-4096_dcache-4096_rv32imc/VexRiscv.v",
+          "rtl_sha256": "a2f2a92e7ff330c3b6f28c41765b859f771e97bf88df2744967c2ac4e0c96ae6",
+          "compiler_flags": [
+            "-march=rv32i2p0_mc",
+            "-mabi=ilp32"
+          ],
+          "generated_utc": "2026-10-01T23:17:36.622925+00:00"
+        }
+      },
+      "l2_cache_bytes": 0,
+      "ddr_training_status": null,
+      "clock_hz": 48000000,
+      "coremark": {
+        "repository": "https://github.com/eembc/coremark.git",
+        "commit": "1f483d5b8316753a742cbf5590caf5bd0a4e4777"
+      },
+      "compiler": "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-gcc",
+      "compiler_version": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+      "compiler_flags": [
+        "-std=gnu99",
+        "-O2",
+        "-march=rv32i2p0_mc",
+        "-mabi=ilp32",
+        "-D__vexriscv__",
+        "-g3",
+        "-no-pie",
+        "-fomit-frame-pointer",
+        "-Wall",
+        "-fno-builtin",
+        "-fno-stack-protector",
+        "-U_FORTIFY_SOURCE",
+        "-D_FORTIFY_SOURCE=0",
+        "-ffunction-sections",
+        "-fdata-sections",
+        "-fno-lto"
+      ],
+      "compiler_flags_complete": [
+        "-std=gnu99",
+        "-O2",
+        "-march=rv32i2p0_mc",
+        "-mabi=ilp32",
+        "-D__vexriscv__",
+        "-g3",
+        "-no-pie",
+        "-fomit-frame-pointer",
+        "-Wall",
+        "-fno-builtin",
+        "-fno-stack-protector",
+        "-U_FORTIFY_SOURCE",
+        "-D_FORTIFY_SOURCE=0",
+        "-ffunction-sections",
+        "-fdata-sections",
+        "-fno-lto",
+        "-DITERATIONS=1000",
+        "-DTOTAL_DATA_SIZE=2000",
+        "-DMEM_METHOD=MEM_STATIC",
+        "-DMULTITHREAD=1",
+        "-DPERFORMANCE_RUN=1",
+        "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/benchmark",
+        "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/coremark",
+        "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-4096_dcache-4096_rv32imc/soc/benchmark",
+        "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-4096_dcache-4096_rv32imc/soc/software/include",
+        "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software",
+        "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include",
+        "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase",
+        "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv",
+        "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-4096_dcache-4096_rv32imc/soc/software/libc",
+        "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include",
+        "-I/home/user/git/fpga/sipeedtangprimer20k-riscv/build/maxperf-candidates/onchip/icache-4096_dcache-4096_rv32imc/soc/benchmark/performance"
+      ],
+      "tool_versions": {
+        "python": "3.12.14",
+        "riscv_gcc": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+        "gowin": "V1.9.12.04",
+        "openfpgaloader": "openFPGALoader v0.13.1"
+      },
+      "cache": {
+        "instruction_cache": "enabled",
+        "instruction_cache_bytes": 4096,
+        "data_cache": "enabled",
+        "data_cache_bytes": 4096,
+        "configuration_source": "build/maxperf-candidates/onchip/icache-4096_dcache-4096_rv32imc/soc/software/include/generated/soc.h"
+      },
+      "iteration_calibration": {
+        "method": "fixed_iteration_port_calibration_with_fresh_upstream_initialization",
+        "calibration_iterations": 1000,
+        "target_seconds": 20,
+        "formula": "ceil(calibration_iterations * target_seconds * clock_hz / calibration_ticks)",
+        "scored_pass_reinitializes_static_algorithm_data": true,
+        "scored_interval_index": 2
+      },
+      "cache_maintenance": {
+        "function": "portable_init",
+        "sequence": [
+          "compiler_and_memory_fence",
+          "flush_cpu_dcache",
+          "compiler_and_memory_fence",
+          "flush_l2_cache_by_configured_eviction_reads_when_present",
+          "flush_cpu_dcache_again_to_remove_eviction_probe_lines",
+          "compiler_and_memory_fence",
+          "flush_cpu_icache",
+          "compiler_and_memory_fence"
+        ],
+        "timing": "before_each_upstream_invocation_and_outside_timed_workload",
+        "api_headers": [
+          ".deps/litex/litex/soc/software/include/system.h",
+          ".deps/litex/litex/soc/cores/cpu/vexriscv/system.h"
+        ]
+      },
+      "runtime_preflight": {
+        "ram_probe": {
+          "storage": "volatile BSS array of 64 union words",
+          "bytes": 256,
+          "alignment_bytes": 32,
+          "phases": [
+            "two 32-bit write/read patterns cached and after cache maintenance",
+            "low/high halfword writes checking neighboring-half preservation and unsigned/signed reads",
+            "four byte-lane writes checking neighboring-byte preservation and unsigned/signed reads",
+            "halfword patterns include 0x0000, 0x7fff, 0x8000, 0xffff; byte patterns include 0x00, 0x7f, 0x80, 0xff",
+            "tight volatile back-to-back SH/LH and SB/LB sequences with same-location load-modify-store checks and neighbor preservation",
+            "alternating volatile SRAM stores and read-only linked-image loads at matching low-12 address bits (a D-cache index conflict when that cache is enabled), followed by SRAM/code checks"
+          ],
+          "cache_maintenance_after_patterns": "fence, flush_cpu_dcache, fence, flush_cpu_icache, fence",
+          "storage_limit": "existing 64-word array; 256 bytes total"
+        },
+        "image_integrity_rechecks": {
+          "phases": [
+            "calibration",
+            "scored"
+          ],
+          "sequence": [
+            "CRC32 linked image through cached reads",
+            "fence, flush_cpu_dcache, fence, flush_cpu_icache, fence",
+            "CRC32 linked image after cache maintenance"
+          ],
+          "comparison": "both values and image sizes must match initial preflight values",
+          "failure": "BENCHMARK_PORT_ERROR and halt",
+          "timing": "after_each_upstream_invocation_and_outside_timed_workload"
+        },
+        "runtime_seed_checks": {
+          "inputs": [
+            "seed1_volatile",
+            "seed2_volatile",
+            "seed3_volatile",
+            "seed4_volatile"
+          ],
+          "expected_seed_values": "mode constants and fixed or derived iteration count",
+          "emits": "BENCHMARK_RUNTIME_SEEDS",
+          "failure": "BENCHMARK_PORT_ERROR and halt before upstream invocation"
+        },
+        "wrapper_optimization": "benchmark_main.c is compiled with -Os to fit untimed diagnostics in 32-KiB main RAM; CoreMark sources retain the profile-wide -O2 flag",
+        "timing": "initial image, SRAM, and seed checks run before timed CoreMark work; image rechecks run after each interval"
+      },
+      "memory": {
+        "mode": "onchip",
+        "main_ram_base": "0x40000000",
+        "main_ram_bytes": 32768,
+        "ddr_physical_bytes": 0,
+        "l2_cache_bytes": 0,
+        "ddr_ck_hz": null,
+        "uncached_alias_base": null,
+        "diagnostic_ram": null,
+        "code_and_read_only_data": "main_ram",
+        "algorithm_data_bss_and_reserved_stack": "sram",
+        "sram_base": "0x10000000",
+        "sram_bytes": 8192
+      },
+      "uart_device_requested": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+      "uart_device_selected": "/dev/ttyUSB1",
+      "bitstream": {
+        "path": "build/maxperf-candidates/onchip/icache-4096_dcache-4096_rv32imc/soc/bitstream.fs",
+        "sha256": "69463bc78a361df1297cf255439225f2a9f28ca44a5f924e34cf254f472f7221"
+      },
+      "firmware": {
+        "performance": {
+          "path": "build/maxperf-candidates/onchip/icache-4096_dcache-4096_rv32imc/soc/benchmark/performance/benchmark.bin",
+          "sha256": "8063a01ed5c7d43591b3bab6fe051e984de76270c6c753c645aec401692c7375",
+          "crc32": "0753083b",
+          "bytes": 22456
+        },
+        "validation": {
+          "path": "build/maxperf-candidates/onchip/icache-4096_dcache-4096_rv32imc/soc/benchmark/validation/benchmark.bin",
+          "sha256": "61dcf93bbaabebb54727323783cf4e76afc9789a19b234d7e0f42b23ff108a46",
+          "crc32": "d4f14ff2",
+          "bytes": 22488
+        }
+      }
+    },
+    "resources_and_timing": {
+      "profile": "standard",
+      "memory_mode": "onchip",
+      "device": "GW2A-LV18PG256C8/I7",
+      "resources": {
+        "logic": {
+          "used": 5045,
+          "capacity": 20736
+        },
+        "lut": {
+          "used": 3995,
+          "source": "build/maxperf-candidates/onchip/icache-4096_dcache-4096_rv32imc/soc/gateware/impl/pnr/project.rpt.txt"
+        },
+        "alu": {
+          "used": 546,
+          "source": "build/maxperf-candidates/onchip/icache-4096_dcache-4096_rv32imc/soc/gateware/impl/pnr/project.rpt.txt"
+        },
+        "registers": {
+          "used": 2122,
+          "capacity": 16173
+        },
+        "bsram": {
+          "used": 46,
+          "capacity": 46
+        },
+        "dsp": {
+          "used": null,
+          "status": "unavailable",
+          "detail": "Gowin synthesis resource report lists '-' for DSP NUMBER",
+          "source": "build/maxperf-candidates/onchip/icache-4096_dcache-4096_rv32imc/soc/gateware/impl/gwsynthesis/project_syn_resource.html"
+        }
+      },
+      "timing": {
+        "constraint_mhz": 48.0,
+        "actual_fmax_mhz": 48.565,
+        "worst_setup_slack_ns": 0.242,
+        "worst_hold_slack_ns": 0.203,
+        "worst_recovery_slack_ns": 16.842,
+        "worst_removal_slack_ns": 2.206,
+        "setup_violated_endpoints": 0,
+        "analyzed_paths": 14371,
+        "analyzed_endpoints": 7294,
+        "no_timing_path_messages": [
+          "No timing paths to get frequency of rPLL/CLKOUTP.default_gen_clk!",
+          "No timing paths to get frequency of rPLL/CLKOUTD.default_gen_clk!",
+          "No timing paths to get frequency of rPLL/CLKOUTD3.default_gen_clk!"
+        ],
+        "generated_clocks": {
+          "sys_clk": {
+            "period_ns": 20.833,
+            "target_mhz": 48.0,
+            "frequency_mhz": 48.0
+          },
+          "rPLL/CLKOUTP.default_gen_clk": {
+            "period_ns": 20.833,
+            "target_mhz": 48.0,
+            "frequency_mhz": 48.0
+          },
+          "rPLL/CLKOUTD.default_gen_clk": {
+            "period_ns": 41.667,
+            "target_mhz": 24.0,
+            "frequency_mhz": 24.0
+          },
+          "rPLL/CLKOUTD3.default_gen_clk": {
+            "period_ns": 62.5,
+            "target_mhz": 16.0,
+            "frequency_mhz": 16.0
+          }
+        }
+      },
+      "evidence": {
+        "pnr_resource_report": "build/maxperf-candidates/onchip/icache-4096_dcache-4096_rv32imc/soc/gateware/impl/pnr/project.rpt.txt",
+        "timing_report": "build/maxperf-candidates/onchip/icache-4096_dcache-4096_rv32imc/soc/gateware/impl/pnr/project.tr",
+        "synthesis_resource_report": "build/maxperf-candidates/onchip/icache-4096_dcache-4096_rv32imc/soc/gateware/impl/gwsynthesis/project_syn_resource.html"
+      }
+    },
+    "trials": [
+      {
+        "mode": "validation",
+        "attempt": 0,
+        "status": "failed",
+        "uart_device": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+        "programming_status": "started",
+        "firmware_sha256": "61dcf93bbaabebb54727323783cf4e76afc9789a19b234d7e0f42b23ff108a46",
+        "raw_uart_log": "docs/performance/maxperf-evaluation/20261001T234402.160025Z-onchip-candidate8-control/candidate8-control/20261001T234402.160025Z-onchip-candidate8-control-candidate8-control-validation.uart.bin",
+        "text_uart_log": "docs/performance/maxperf-evaluation/20261001T234402.160025Z-onchip-candidate8-control/candidate8-control/20261001T234402.160025Z-onchip-candidate8-control-candidate8-control-validation.uart.log",
+        "transmitted_uart_log": "docs/performance/maxperf-evaluation/20261001T234402.160025Z-onchip-candidate8-control/candidate8-control/20261001T234402.160025Z-onchip-candidate8-control-candidate8-control-validation.uart.tx.bin",
+        "started_utc": "2026-10-01T23:44:02.279065+00:00",
+        "error": "FileNotFoundError: [Errno 2] No such file or directory: 'openFPGALoader'",
+        "application_end_seen": false,
+        "application_halt_seen": false,
+        "raw_uart_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "raw_uart_bytes": 0,
+        "transmitted_uart_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "transmitted_uart_bytes": 0,
+        "decode_errors_present": false,
+        "session_raw_uart_log": "build/benchmarks/20261001T234402.160025Z-onchip-candidate8-control-candidate8-control/validation.uart.bin",
+        "session_text_uart_log": "build/benchmarks/20261001T234402.160025Z-onchip-candidate8-control-candidate8-control/validation.uart.log",
+        "session_transmitted_uart_log": "build/benchmarks/20261001T234402.160025Z-onchip-candidate8-control-candidate8-control/validation.uart.tx.bin",
+        "finished_utc": "2026-10-01T23:44:02.346679+00:00"
+      }
+    ],
+    "batch_continuation_safe": false,
+    "validation_passes": 0,
+    "scored_repetitions": 0,
+    "aggregate": null
+  },
+  "evidence_directory": "docs/performance/maxperf-evaluation/20261001T234402.160025Z-onchip-candidate8-control"
+}

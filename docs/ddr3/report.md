@@ -1,6 +1,6 @@
 # DDR3 training and integrity report
 
-**Latest batch status: failed.**
+Updated 2026-10-02. **Latest acceptance batch status: failed. Latest diagnostic: persistent data corruption reproduced.**
 
 The receive patch and current integrity investigation are recorded in [DDR3 training handoff](training-handoff.md), with the original experiments retained in [DDR3 failure diagnosis](diagnosis.md). Diagnostic experiments do not count as acceptance passes.
 
@@ -16,6 +16,14 @@ Batch `20261001T201828.617667Z-ddr3` uses the configured 256 MiB DDR3 geometry a
 - Resources and timing: LUT 8860, ALU 1066, registers 4650, BSRAM 46; operating clock 48.0 MHz, estimated Fmax 48.321 MHz, worst setup slack 0.138 ns.
 - Evidence: [training 1 UART](evidence/20261001T201828.617667Z-ddr3-linux/training-01.uart.bin)
 - Revalidation errors: recorded 1 training trials; requested 10, one or more fresh SRAM reconfiguration/training/smoke trials failed revalidation, full destructive memory and sustained stress evidence did not pass revalidation
+
+## Current integrity reproduction (diagnostic only)
+
+The later `dll-off-integrity` diagnostic image used a fresh 48 MHz system / 96 MHz DDR CK route. Timing passed with setup slack +0.112 ns, hold +0.318 ns, recovery +1.779 ns, removal +1.207 ns, and estimated Fmax 49.959 MHz. It trained both read lanes (lane 0: bitslip 2, window 221, center 110; lane 1: bitslip 2, window 218, center 108), but BIOS Memtest still failed. The diagnostic image SHA256 is `073d774225b51c58b77abef5ceb9739b33ce58ba0278f13400780078f3bd9ca6`.
+
+The [read-only follow-up](diagnosis/20261001T230928.211880Z-read-only-probe/result.json) ran `mem_verify` three times through the uncached `0xc0000000` alias and three times through the cached `0x40000000` base. All six checks reported the same word at offset `0x000b64f4`: expected `0xb4de6cd9`, actual `0xb4ce6cd9`, XOR `0x00100000`. No writes were issued during this follow-up; the corruption persisted across both access paths. This confirms DDR3 remains unsafe for benchmark acceptance but does not identify the failing write, timing path, or physical component. The [diagnostic build manifest](diagnosis/20261001T230918.180452Z-dll-off-integrity/manifest.json) and raw [UART capture](diagnosis/20261001T230918.180452Z-dll-off-integrity/uart.bin) are retained separately from acceptance evidence.
+
+The final on-chip batch ended with the FPGA explicitly reset to an unconfigured safe-idle state; pre- and post-reset UART reads were empty, and JTAG detection succeeded. See the [current recovery evidence](../performance/maxperf-evaluation/recovery/20261002T004311Z-final-onchip/recovery.json). The diagnostic image is not a public DDR profile, does not qualify any matrix candidate, and does not count toward the ten-run or stress gates.
 
 ## Standalone diagnostic probes
 
@@ -68,7 +76,3 @@ litex>
 Thorough status requires at least 10 successful reconfiguration/training/smoke runs and 1800 seconds of measured stress per profile, full 256 MiB coverage, passing uncached bypass tests, cached visibility checks that evict both CPU and LiteDRAM L2 caches, zero errors, and complete UART captures. Shorter runs are marked partial. These records describe SRAM reconfigurations, not power-cycle or cold-boot tests.
 
 Machine-readable results and capture identities: [results.json](results.json).
-
-## Maxperf DDR3 matrix status
-
-The complete 18-candidate DDR3 build matrix is recorded in [the maxperf build evidence](../performance/maxperf-evaluation/20261001T202139.975865Z-ddr3-maxperf-build/candidate-build.json). Four candidates passed build, placement, and timing; two missed timing, six 8 KiB I-cache candidates failed placement, and six 16 KiB I-cache candidates exceeded the FPGA logic limit. No DDR3 candidate was programmed or scored. The required fresh `performance` DDR3 reference has not passed BIOS Memtest, so the candidate hardware-evaluation gate remains closed. The candidate matrix is also indexed in [results.json](results.json).

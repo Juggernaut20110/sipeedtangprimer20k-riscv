@@ -1,0 +1,40 @@
+
+[1m        __   _ __      _  __[0m
+[1m       / /  (_) /____ | |/_/[0m
+[1m      / /__/ / __/ -_)>  <[0m
+[1m     /____/_/\__/\__/_/|_|[0m
+[1m   Build your hardware, easily![0m
+
+ (c) Copyright 2012-2026 Enjoy-Digital
+ (c) Copyright 2007-2015 M-Labs
+
+ BIOS CRC passed (ae3365a6)
+
+ LiteX git sha1: 58322a1d2
+
+--================ [1mSoC[0m =================--
+[1mCPU[0m:		VexRiscv_Lite @ 48MHz
+[1mBUS[0m:		wishbone 32-bit data/32-bit addr
+[1mCSR[0m:		32-bit data big ordering
+[1mROM[0m:		32.0KiB
+[1mSRAM[0m:		8.0KiB
+[1mMAIN RAM[0m:	32.0KiB
+
+--=========== [1mInitialization[0m ===========--
+Memtest at 0x40000000 (32.0KiB)...
+  Write: 0x40000000-0x40000000 0B     Write: 0x40000000-0x40008000 32.0KiB   
+   Read: 0x40000000-0x40000000 0B      Read: 0x40000000-0x40008000 32.0KiB   
+Memtest OK
+Memspeed at 0x40000000 (Sequential, 32.0KiB)...
+  Write speed: 50.2MiB/s
+   Read speed: 46.8MiB/s
+--================ [1mBoot[0m ================--
+Booting from serial...
+Press Q or ESC to abort boot completely.
+sL5DdSMmkekro
+KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKExecuting booted program at 0x40000000
+
+--============== [1mLiftoff![0m ==============--
+BENCHMARK_IMAGE_CRC32 build_id=aa0507a102303991 value=56fe1a43 size=27760
+BENCHMARK_RAM_CHECK status=failed phase=tight_stores_flushed firstaddr=10000940 expected=43a88462 actual=f3b27130 errors=1 failmask=80000000 bytes=256
+BENCHMARK_PORT_ERROR on-chip SRAM preflight failed

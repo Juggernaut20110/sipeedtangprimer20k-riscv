@@ -10,6 +10,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 from benchmark_run import RecordingPort, SerialOwner, clear_uart_input_buffer  # noqa: E402
 import benchmark_run as runner  # noqa: E402
+import maxperf_run  # noqa: E402
 from litex.tools.litex_term import LiteXTerm  # noqa: E402
 
 
@@ -75,20 +76,36 @@ class BenchmarkRunnerTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory, patch.object(runner, "ROOT", Path(directory)), \
                 patch.object(runner, "discover_candidate_ports", return_value=[]), \
                 patch.object(runner, "discover_usb_nodes", return_value=[]), \
-                patch.object(runner, "load_selected_artifacts", return_value=({}, {})), \
+                patch.object(runner, "load_selected_artifacts", return_value=({"bios_size": 24576}, {"identity": "selected"})), \
                 patch.object(runner, "selected_artifact_identity", return_value={}), \
                 patch.object(runner, "run_trial", return_value={"mode": "validation", "attempt": 0,
                     "status": "failed", "programming_status": "completed", "error": "bad CRC",
                     "application_end_seen": True}) as trial, \
                 patch.object(runner, "append_public_session") as append, patch("sys.stdout", io.StringIO()):
             self.assertEqual(runner.run_profile("minimal", "/dev/test-dock", 45, 300, "batch-all"), 1)
-            trial.assert_called_once()
+            trial.assert_called_once_with(
+                "minimal", {"bios_size": 24576}, {"identity": "selected"}, "validation", 0,
+                "/dev/test-dock", "batch-all-minimal", 45, 300,
+            )
             session = append.call_args.args[0]
             self.assertEqual(session["batch_id"], "batch-all")
             self.assertEqual(session["requested_profiles"], ["minimal", "lite", "standard", "performance", "linux"])
             self.assertEqual([t["status"] for t in session["trials"]], ["failed", "not_run", "not_run", "not_run"])
             self.assertIsNone(session["aggregate"])
             self.assertTrue((Path(directory) / session["evidence"]).is_file())
+
+    def test_maxperf_case_passes_soc_metadata_to_each_trial(self):
+        build = {"bios_size": 16384}
+        firmware = {"clock_hz": 48000000, "images": {}}
+        with tempfile.TemporaryDirectory() as directory, \
+                patch.object(runner, "load_selected_artifacts", return_value=(build, firmware)), \
+                patch.object(runner, "selected_artifact_identity", return_value={}), \
+                patch.object(maxperf_run.compare, "parse_profile", return_value={}), \
+                patch.object(runner, "run_trial", return_value={"mode": "validation", "status": "failed",
+                    "programming_status": "not_attempted"}) as trial:
+            maxperf_run.run_case("baseline", "performance", Path(directory), "onchip",
+                                 "/dev/test-dock", "batch", Path(directory))
+        self.assertEqual(trial.call_args.args[:3], ("performance", build, firmware))
 
     def test_recording_port_preserves_uart_receive_and_transmit_bytes(self):
         class Port:

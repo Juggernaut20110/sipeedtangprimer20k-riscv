@@ -1,0 +1,248 @@
+{
+  "profile": "standard",
+  "memory_mode": "onchip",
+  "cpu_candidate": "icache-4096_dcache-4096_rv32im",
+  "cpu_profile_selection": null,
+  "liteX_variant": "projectim",
+  "sys_clk_hz": 48000000,
+  "uart_baud": 115200,
+  "status": "passed",
+  "source_fingerprint": "c4bc03e425ea23a54ec47ce5274c146dd24c23ed0196b4fd635f87098ad5e016",
+  "started_utc": "2026-10-01T23:16:47.740302+00:00",
+  "locked_repositories": {
+    "litex": "58322a1d239a9eca8b93a8497f8945855d965f4f",
+    "migen": "e19524c963a8342952840983047557707fbe0b6a",
+    "litex-boards": "c0d9cdf11e20c8b774f4ee1154fddac6e1dca03a",
+    "litedram": "4c979d195aa0c60adcaf70374a52872028aaca63",
+    "liteeth": "013a6ad38c26317ac9588acd0660922981cc2a73",
+    "liteiclink": "ad793817302490b04b3abc5c4de669594d3958e8",
+    "pythondata-cpu-vexriscv": "642ecfed1c84460555d6d803d660cc60cfc1ecb6",
+    "pythondata-software-picolibc": "6a13ccce7c575b32c102dd9dc52178505b81fe39",
+    "pythondata-software-compiler_rt": "6eb76609c9627bf26635e57c63fb22cda7115887",
+    "coremark": "1f483d5b8316753a742cbf5590caf5bd0a4e4777"
+  },
+  "tool_versions": {
+    "python": "3.12.14",
+    "riscv_gcc": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+    "gowin": "V1.9.12.04",
+    "openfpgaloader": "openFPGALoader v0.13.1"
+  },
+  "firmware": {
+    "elf": "build/maxperf-candidates/onchip/icache-4096_dcache-4096_rv32im/soc/firmware/demo.elf",
+    "binary": "build/maxperf-candidates/onchip/icache-4096_dcache-4096_rv32im/soc/firmware/demo.bin",
+    "binary_bytes": 6312,
+    "working_sram_bytes": 384,
+    "reserved_stack_bytes": 2048,
+    "sections": {
+      "NULL": {
+        "type": "00000000",
+        "size": 0
+      },
+      ".text": {
+        "type": "PROGBITS",
+        "size": 5480
+      },
+      ".rodata": {
+        "type": "PROGBITS",
+        "size": 816
+      },
+      ".preinit_array": {
+        "type": "PREINIT_ARRAY",
+        "size": 0
+      },
+      ".init_array": {
+        "type": "INIT_ARRAY",
+        "size": 0
+      },
+      ".fini_array": {
+        "type": "FINI_ARRAY",
+        "size": 0
+      },
+      ".data": {
+        "type": "PROGBITS",
+        "size": 16
+      },
+      ".bss": {
+        "type": "NOBITS",
+        "size": 368
+      },
+      ".stack": {
+        "type": "NOBITS",
+        "size": 2048
+      },
+      ".riscv.attributes": {
+        "type": "RISCV_ATTRIBUTES",
+        "size": 67
+      },
+      ".comment": {
+        "type": "PROGBITS",
+        "size": 51
+      },
+      ".debug_line": {
+        "type": "PROGBITS",
+        "size": 16163
+      },
+      ".debug_line_str": {
+        "type": "PROGBITS",
+        "size": 5673
+      },
+      ".debug_info": {
+        "type": "PROGBITS",
+        "size": 12705
+      },
+      ".debug_abbrev": {
+        "type": "PROGBITS",
+        "size": 5513
+      },
+      ".debug_aranges": {
+        "type": "PROGBITS",
+        "size": 672
+      },
+      ".debug_str": {
+        "type": "PROGBITS",
+        "size": 67187
+      },
+      ".debug_loclists": {
+        "type": "PROGBITS",
+        "size": 6072
+      },
+      ".debug_rnglists": {
+        "type": "PROGBITS",
+        "size": 1100
+      },
+      ".debug_macro": {
+        "type": "PROGBITS",
+        "size": 27980
+      },
+      ".symtab": {
+        "type": "SYMTAB",
+        "size": 2240
+      },
+      ".strtab": {
+        "type": "STRTAB",
+        "size": 1237
+      },
+      ".shstrtab": {
+        "type": "STRTAB",
+        "size": 250
+      }
+    },
+    "main_ram_base": 1073741824,
+    "main_ram_size": 32768
+  },
+  "bios_size": 24576,
+  "bitstream": "build/maxperf-candidates/onchip/icache-4096_dcache-4096_rv32im/soc/bitstream.fs",
+  "bitstream_bytes": 7261998,
+  "bitstream_sha256": "93d0144809a3d0f8184c028e343c4d1583ce78b4a06608ea608eceaa3b16c603",
+  "cpu_variant": "projectim",
+  "cpu_configuration": {
+    "liteX_variant": "projectim",
+    "isa": "rv32i2p0_m",
+    "instruction_cache_bytes": 4096,
+    "data_cache_bytes": 4096,
+    "prediction": "dynamic_target",
+    "compressed": false,
+    "cpu_variant": "projectim",
+    "mul_div": true,
+    "single_cycle_mul_div": true,
+    "single_cycle_shift": true,
+    "bypass": true,
+    "csr_plugin_config": "small",
+    "atomics": false,
+    "debug": false,
+    "cfu": false,
+    "pmp_regions": 0,
+    "clock_hz": 48000000,
+    "rtl_sha256": "771f520fcf3ff8f66cd168eaea84bc5924b39fa0e470cd5b1e35640a4809c252",
+    "candidate_generation": {
+      "schema": 1,
+      "candidate_id": "icache-4096_dcache-4096_rv32im",
+      "memory_mode": "onchip",
+      "cpu_configuration": {
+        "cpu_variant": "projectim",
+        "isa": "rv32i2p0_m",
+        "instruction_cache_bytes": 4096,
+        "data_cache_bytes": 4096,
+        "compressed": false,
+        "prediction": "dynamic_target",
+        "mul_div": true,
+        "single_cycle_mul_div": true,
+        "single_cycle_shift": true,
+        "bypass": true,
+        "csr_plugin_config": "small",
+        "atomics": false,
+        "debug": false,
+        "cfu": false,
+        "pmp_regions": 0,
+        "clock_hz": 48000000
+      },
+      "status": "generated",
+      "generator_command": [
+        "sbt",
+        "--no-server",
+        "compile",
+        "runMain vexriscv.GenCoreDefault --hardwareBreakpointCount=0 --iCacheSize=4096 --dCacheSize=4096 --pmpRegions=0 --pmpGranularity=256 --pmpAddressMatchingModes=na4,napot,tor --mulDiv=true --cfu=false --singleCycleMulDiv=true --singleCycleShift=true --relaxedPcCalculation=false --bypass=true --externalInterruptArray=true --csrPluginConfig=small --atomics=false --compressedGen=false --dBusCachedRelaxedMemoryTranslationRegister=false --dBusCachedEarlyWaysHits=true --prediction=dynamic_target --outputFile=../../../../build/maxperf-candidates/onchip/icache-4096_dcache-4096_rv32im/VexRiscv"
+      ],
+      "generator_arguments": [
+        "--hardwareBreakpointCount=0",
+        "--iCacheSize=4096",
+        "--dCacheSize=4096",
+        "--pmpRegions=0",
+        "--pmpGranularity=256",
+        "--pmpAddressMatchingModes=na4,napot,tor",
+        "--mulDiv=true",
+        "--cfu=false",
+        "--singleCycleMulDiv=true",
+        "--singleCycleShift=true",
+        "--relaxedPcCalculation=false",
+        "--bypass=true",
+        "--externalInterruptArray=true",
+        "--csrPluginConfig=small",
+        "--atomics=false",
+        "--compressedGen=false",
+        "--dBusCachedRelaxedMemoryTranslationRegister=false",
+        "--dBusCachedEarlyWaysHits=true",
+        "--prediction=dynamic_target",
+        "--outputFile=../../../../build/maxperf-candidates/onchip/icache-4096_dcache-4096_rv32im/VexRiscv"
+      ],
+      "generator_repository": {
+        "generator_commit": "642ecfed1c84460555d6d803d660cc60cfc1ecb6",
+        "submodule_commit": "b6118e5cc2a33323425df6455697139021d50c72",
+        "sbt": "1.9.7",
+        "scala": "2.11.12",
+        "spinalhdl": "1.9.4"
+      },
+      "tool_versions": {
+        "java": "1.8.0_432",
+        "java_executable": ".tools/java-8u432/jdk8u432-b06/bin/java",
+        "java_sha256": "abaaa90deadf51bd28921453baf2992b3dff6171bb7142f5bdd14ef269f7b245",
+        "sbt": "1.9.7",
+        "sbt_executable": ".tools/bin/sbt",
+        "sbt_sha256": "23543bc4597b552e8e2c27d695fe672ec235ab8a64f766b37828fb68c6d9d910",
+        "scala": "2.11.12",
+        "spinalhdl": "1.9.4"
+      },
+      "generator_lock_sha256": "751d39859ca19a72e1126c8001586fdacc9724f4cd12437290524d73146103ff",
+      "rtl": "build/maxperf-candidates/onchip/icache-4096_dcache-4096_rv32im/VexRiscv.v",
+      "rtl_sha256": "771f520fcf3ff8f66cd168eaea84bc5924b39fa0e470cd5b1e35640a4809c252",
+      "compiler_flags": [
+        "-march=rv32i2p0_m",
+        "-mabi=ilp32"
+      ],
+      "generated_utc": "2026-10-01T23:16:47.706064+00:00"
+    }
+  },
+  "memory": {
+    "mode": "onchip",
+    "main_ram_base": 1073741824,
+    "main_ram_bytes": 32768,
+    "ddr_physical_bytes": 0,
+    "l2_cache_bytes": 0,
+    "ddr_ck_hz": null,
+    "uncached_alias_base": null,
+    "diagnostic_ram": null
+  },
+  "device": "GW2A-LV18PG256C8/I7",
+  "cpu_rtl": "build/maxperf-candidates/onchip/icache-4096_dcache-4096_rv32im/VexRiscv.v",
+  "finished_utc": "2026-10-01T23:17:25.141022+00:00"
+}

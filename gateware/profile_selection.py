@@ -275,6 +275,9 @@ def validate_mode_acceptance(root, mode, item):
                 or baseline_session.get("profile") != "performance"
                 or baseline_session.get("memory_mode") != "ddr3"
                 or baseline_session.get("build_identity", {}).get("bitstream_sha256")
+                   != baseline.get("identity", {}).get("bitstream", {}).get("sha256")
+                or preflight.get("identity_matches_scored_baseline") is not True
+                or preflight.get("expected_bitstream_sha256")
                    != baseline.get("identity", {}).get("bitstream", {}).get("sha256")):
             raise ValueError("DDR3 preflight does not identify the freshly measured performance baseline")
         baseline_trials = baseline_session.get("trials", [])
@@ -329,13 +332,18 @@ def validate_mode_acceptance(root, mode, item):
         _, qualification_session = _hashed_json(
             root, qualification.get("session_evidence"), "DDR3 qualification session",
         )
+        final_identity = verification.get("identity", {})
+        final_bitstream_sha256 = final_identity.get("bitstream", {}).get("sha256")
         if (qualification_session.get("status") != "passed"
                 or qualification_session.get("acceptance") != "thorough"
+                or qualification_session.get("profile") != "maxperf"
                 or qualification_session.get("memory_mode") != "ddr3"
                 or qualification_session.get("cpu_candidate") != candidate_id
                 or qualification_session.get("build_identity", {}).get("bitstream_sha256")
-                   != candidate_identity.get("bitstream", {}).get("sha256")):
-            raise ValueError("DDR3 qualification evidence does not match the measured candidate bitstream")
+                   != final_bitstream_sha256
+                or qualification_session.get("build_identity", {}).get("cpu_configuration")
+                   != final_identity.get("cpu_configuration")):
+            raise ValueError("DDR3 qualification evidence does not match the final maxperf bitstream and CPU identity")
         trials = qualification_session.get("trials", [])
         smoke_trials = [trial for trial in trials if trial.get("mode") == "training"]
         full_trials = [trial for trial in trials if trial.get("mode") == "full"]

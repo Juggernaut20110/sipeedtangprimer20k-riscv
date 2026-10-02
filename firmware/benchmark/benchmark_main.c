@@ -411,10 +411,13 @@ static void run_ram_preflight(void)
     for (unsigned int index = 0; index < 64u; index++) {
         /* A post-flush word read also checks that the final stores reached the
          * visible SRAM state without a stale cache-line value. */
-        uint32_t expected = index == 0u ?
-            ((uint32_t)(uint16_t)(0x43d7u ^ 127u) << 16) |
-                (uint16_t)(0x8a01u ^ (127u * 29u)) :
-            0xf3b27130u;
+        uint32_t expected = 0xf3b27130u;
+#if BENCHMARK_DCACHE_BYTES > 0
+        if (index == 0u) {
+            expected = ((uint32_t)(uint16_t)(0x43d7u ^ 127u) << 16) |
+                (uint16_t)(0x8a01u ^ (127u * 29u));
+        }
+#endif
         uint32_t actual = ram_check[index].word;
         record_ram_check(&failure, "tight_stores_flushed",
             (uintptr_t)&ram_check[index].word, expected, actual);

@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "reason": "final safe-idle verification after current-source public on-chip batch",
+  "uart_requested": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+  "uart_resolved": "/dev/ttyUSB1",
+  "flash_programming": false,
+  "fuser_exit_code": 1,
+  "fuser_output": "",
+  "pre_reset_uart_rx_bytes": 0,
+  "pre_reset_uart_rx_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "reset_command": [
+    "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/bin/openFPGALoader",
+    "--board",
+    "tangprimer20k",
+    "--detect",
+    "--reset"
+  ],
+  "reset_exit_code": 0,
+  "reset_sha256": "a7151966980283ac2988b96cfced2be220a8c2ffa7624a242805369f5ae40c6f",
+  "post_reset_detect_exit_code": 0,
+  "post_reset_detect_sha256": "a7151966980283ac2988b96cfced2be220a8c2ffa7624a242805369f5ae40c6f",
+  "post_reset_uart_rx_bytes": 0,
+  "post_reset_uart_rx_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "recovery_status": "safe_idle_confirmed_after_explicit_fpga_reset"
+}

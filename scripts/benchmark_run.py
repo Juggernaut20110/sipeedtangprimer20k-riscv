@@ -22,6 +22,8 @@ ANSI_ESCAPE = re.compile(rb"\x1b\[[0-?]*[ -/]*[@-~]")
 from gateware.soc import MEMORY_MODES, PROFILES, SYS_CLK_FREQ, ProjectSoC  # noqa: E402
 from benchmark_results import CaptureValidationError, parse_capture  # noqa: E402
 from benchmark_build import build_module, sha256  # noqa: E402
+from benchmark_identity import fingerprint_matches  # noqa: E402
+from benchmark_evidence import bundle_is_current  # noqa: E402
 from scripts.memory import profile_build_dir, validate_memory  # noqa: E402
 
 
@@ -218,6 +220,15 @@ def load_selected_artifacts(profile, memory="onchip", build_dir=None, cpu_candid
         raise RuntimeError("SoC and CoreMark metadata select different CPU candidates")
     if build.get("cpu_variant") != benchmark.get("cpu_variant"):
         raise RuntimeError("SoC and CoreMark metadata select different CPU variants")
+    if build.get("cpu_profile_selection") != benchmark.get("cpu_profile_selection"):
+        raise RuntimeError("SoC and CoreMark metadata select different profile-selection identities")
+    if build.get("cpu_configuration") != benchmark.get("cpu_configuration"):
+        raise RuntimeError("SoC and CoreMark metadata contain different CPU configurations")
+    if not fingerprint_matches(benchmark, build):
+        raise RuntimeError("CoreMark fingerprint does not match its CPU, memory, or selection identity")
+    if (benchmark.get("identity_schema_version", 1) >= 2
+            and not bundle_is_current(benchmark.get("evidence_bundle"), benchmark.get("source_fingerprint"), ROOT)):
+        raise RuntimeError("immutable benchmark evidence bundle is missing, changed, or mismatched")
     if profile == "performance":
         selection = build_module.read_performance_selection()
         if (build.get("cpu_candidate") != selection.get("candidate")
@@ -335,8 +346,13 @@ def selected_artifact_identity(build, benchmark, port):
         "repository_revision": state["revision"],
         "repository_dirty": state["dirty"],
         "source_fingerprint": benchmark.get("source_fingerprint"),
+        "identity_schema_version": benchmark.get("identity_schema_version"),
+        "fingerprint_payload": benchmark.get("fingerprint_payload"),
+        "evidence_bundle": benchmark.get("evidence_bundle"),
         "profile": benchmark["profile"],
+        "cpu_variant": benchmark.get("cpu_variant"),
         "cpu_candidate": benchmark.get("cpu_candidate"),
+        "cpu_profile_selection": benchmark.get("cpu_profile_selection"),
         "memory_mode": benchmark.get("memory_mode", "onchip"),
         "memory_placement": benchmark.get("memory", {}),
         "cpu_rtl": benchmark.get("cpu_rtl"),
@@ -366,7 +382,7 @@ def selected_artifact_identity(build, benchmark, port):
     }
 
 
-def run_trial(profile, benchmark, mode, attempt, port, session_id, handshake_timeout, trial_timeout,
+def run_trial(profile, build, benchmark, mode, attempt, port, session_id, handshake_timeout, trial_timeout,
               evidence_root=None):
     from litex.tools import litex_term
 
@@ -614,7 +630,7 @@ def run_profile(profile, port, handshake_timeout, trial_timeout, batch_id=None, 
         session["identity"] = selected_artifact_identity(build, benchmark, port)
         for mode, attempt in [("validation", 0), ("performance", 1), ("performance", 2), ("performance", 3)]:
             record = run_trial(
-                profile, benchmark, mode, attempt, port, session_id,
+                profile, build, benchmark, mode, attempt, port, session_id,
                 handshake_timeout, trial_timeout,
             )
             session["trials"].append(record)

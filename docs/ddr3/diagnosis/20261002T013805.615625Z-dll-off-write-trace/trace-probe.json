@@ -1,0 +1,1484 @@
+{
+  "diagnostic_only": true,
+  "acceptance_credit": false,
+  "bitstream_sha256": "ee9637f906f95ff014e0badeec29f92eb9d91b8a8f925b81b61e1118bea76768",
+  "probe_source_sha256": "99e6ab739034325d2a822d78263f0884fb20e12b3f724ef79828308dde4a89ae",
+  "records": [
+    {
+      "command": "",
+      "output": "\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xc00b64f0 16",
+      "output": "mem_read 0xc00b64f0 16\n\nMemory dump:\n0xc00b64f0  b5 d9 fc 69 d9 6c ce b4 6f 36 4f da 34 9b 07 ed  ...i.l..o6O.4...\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf0001810 4",
+      "output": "mem_read 0xf0001810 4\n\nMemory dump:\n0xf0001810  03 00 00 00                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_read 0xf0001814 4",
+      "output": "mem_read 0xf0001814 4\n\nMemory dump:\n0xf0001814  ea c6 fb 07                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x0",
+      "output": "mem_write 0xf0001818 0x0\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  e0 09 14 00 00 00 ff 1f 00 00 00 00 ff ff 00 00  ................\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x1",
+      "output": "mem_write 0xf0001818 0x1\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  00 09 74 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..t.............\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x2",
+      "output": "mem_write 0xf0001818 0x2\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  00 09 74 00 00 00 ff 04 00 00 00 00 00 00 00 00  ..t.............\n0xf000182c  34 9b 07 ed 6f 36 4f da d9 6c de b4 b5 d9 fc 69  4...o6O..l.....i\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x3",
+      "output": "mem_write 0xf0001818 0x3\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  00 09 74 00 de b4 00 00 fc 69 d9 6c ff ff b5 d9  ..t......i.l....\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x4",
+      "output": "mem_write 0xf0001818 0x4\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  00 09 74 00 07 ed 00 00 4f da 34 9b ff ff 6f 36  ..t.....O.4...o6\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x5",
+      "output": "mem_write 0xf0001818 0x5\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  00 09 74 00 00 00 ff 0b 00 00 00 00 ff ff 00 00  ..t.............\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x6",
+      "output": "mem_write 0xf0001818 0x6\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  00 09 74 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..t.............\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x7",
+      "output": "mem_write 0xf0001818 0x7\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  00 09 74 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..t.............\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000186c 4",
+      "output": "mem_read 0xf000186c 4\n\nMemory dump:\n0xf000186c  02 00 00 00                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000183c 16",
+      "output": "mem_read 0xf000183c 16\n\nMemory dump:\n0xf000183c  d9 6c ce b4 b5 d9 fc 69 b5 d9 fc 69 1f d9 99 69  .l.....i...i...i\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000184c 16",
+      "output": "mem_read 0xf000184c 16\n\nMemory dump:\n0xf000184c  34 9b 07 ed 6f 36 4f da d9 6c ce b4 b5 d9 fc 69  4...o6O..l.....i\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000185c 16",
+      "output": "mem_read 0xf000185c 16\n\nMemory dump:\n0xf000185c  42 9b 4d 9e 42 9b 4d 9e 34 9b 07 ed 6f 36 4f da  B.M.B.M.4...o6O.\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001804 0x2d",
+      "output": "mem_write 0xf0001804 0x2d\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001800 0x4",
+      "output": "mem_write 0xf0001800 0x4\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001808 0x278",
+      "output": "mem_write 0xf0001808 0x278\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf000180c 0x1",
+      "output": "mem_write 0xf000180c 0x1\n\nlitex> "
+    },
+    {
+      "command": "mem_test 0xc0000000 0x200000",
+      "output": "mem_test 0xc0000000 0x200000\n\nMemtest at 0xc0000000 (2.0MiB)...\n  Write: 0xc0000000-0xc0000000 0B     Write: 0xc0000000-0xc0020000 128.0KiB     Write: 0xc0000000-0xc0040000 256.0KiB     Write: 0xc0000000-0xc0060000 384.0KiB     Write: 0xc0000000-0xc0080000 512.0KiB     Write: 0xc0000000-0xc00a0000 640.0KiB     Write: 0xc0000000-0xc00c0000 768.0KiB     Write: 0xc0000000-0xc00e0000 896.0KiB     Write: 0xc0000000-0xc0100000 1.0MiB     Write: 0xc0000000-0xc0120000 1.1MiB     Write: 0xc0000000-0xc0140000 1.2MiB     Write: 0xc0000000-0xc0160000 1.3MiB     Write: 0xc0000000-0xc0180000 1.5MiB     Write: 0xc0000000-0xc01a0000 1.6MiB     Write: 0xc0000000-0xc01c0000 1.7MiB     Write: 0xc0000000-0xc01e0000 1.8MiB     Write: 0xc0000000-0xc0200000 2.0MiB   \n   Read: 0xc0000000-0xc0000000 0B      Read: 0xc0000000-0xc0020000 128.0KiB      Read: 0xc0000000-0xc0040000 256.0KiB      Read: 0xc0000000-0xc0060000 384.0KiB      Read: 0xc0000000-0xc0080000 512.0KiB      Read: 0xc0000000-0xc00a0000 640.0KiB   memtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9\n   Read: 0xc0000000-0xc00c0000 768.0KiB      Read: 0xc0000000-0xc00e0000 896.0KiB      Read: 0xc0000000-0xc0100000 1.0MiB      Read: 0xc0000000-0xc0120000 1.1MiB      Read: 0xc0000000-0xc0140000 1.2MiB      Read: 0xc0000000-0xc0160000 1.3MiB      Read: 0xc0000000-0xc0180000 1.5MiB      Read: 0xc0000000-0xc01a0000 1.6MiB      Read: 0xc0000000-0xc01c0000 1.7MiB      Read: 0xc0000000-0xc01e0000 1.8MiB      Read: 0xc0000000-0xc0200000 2.0MiB   \n  bus errors:  0/256\n  addr errors: 0/8192\n  data errors: 1/524288\nMemtest KO\nlitex> "
+    },
+    {
+      "command": "mem_read 0xc00b64f0 16",
+      "output": "mem_read 0xc00b64f0 16\n\nMemory dump:\n0xc00b64f0  b5 d9 fc 69 d9 6c ce b4 6f 36 4f da 34 9b 07 ed  ...i.l..o6O.4...\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf0001810 4",
+      "output": "mem_read 0xf0001810 4\n\nMemory dump:\n0xf0001810  03 00 00 00                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_read 0xf0001814 4",
+      "output": "mem_read 0xf0001814 4\n\nMemory dump:\n0xf0001814  6b 18 64 18                                      k.d.            \nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x0",
+      "output": "mem_write 0xf0001818 0x0\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  e0 09 14 00 00 00 ff 1f 00 00 00 00 ff ff 00 00  ................\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x1",
+      "output": "mem_write 0xf0001818 0x1\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  a0 09 74 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..t.............\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x2",
+      "output": "mem_write 0xf0001818 0x2\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  a0 09 74 00 00 00 ff 04 00 00 00 00 f0 ff 00 00  ..t.............\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 b5 d9 fc 69  ...............i\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x3",
+      "output": "mem_write 0xf0001818 0x3\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  a0 09 74 00 00 00 f0 00 fc 69 00 00 ff ff b5 d9  ..t......i......\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x4",
+      "output": "mem_write 0xf0001818 0x4\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  a0 09 74 00 00 00 ff 00 00 00 00 00 ff ff 00 00  ..t.............\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x5",
+      "output": "mem_write 0xf0001818 0x5\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  a0 09 74 00 00 00 ff 0b 00 00 00 00 ff ff 00 00  ..t.............\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x6",
+      "output": "mem_write 0xf0001818 0x6\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  a0 09 74 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..t.............\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x7",
+      "output": "mem_write 0xf0001818 0x7\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  a0 09 74 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..t.............\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000186c 4",
+      "output": "mem_read 0xf000186c 4\n\nMemory dump:\n0xf000186c  02 00 00 00                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000183c 16",
+      "output": "mem_read 0xf000183c 16\n\nMemory dump:\n0xf000183c  d9 6c ce b4 b5 d9 fc 69 b5 d9 fc 69 42 d9 4d 69  .l.....i...iB.Mi\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000184c 16",
+      "output": "mem_read 0xf000184c 16\n\nMemory dump:\n0xf000184c  34 9b 07 ed 6f 36 4f da d9 6c ce b4 b5 d9 fc 69  4...o6O..l.....i\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000185c 16",
+      "output": "mem_read 0xf000185c 16\n\nMemory dump:\n0xf000185c  42 9b 4d 9e 42 9b 4d 9e 34 9b 07 ed 6f 36 4f da  B.M.B.M.4...o6O.\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001804 0x2d",
+      "output": "mem_write 0xf0001804 0x2d\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001800 0x4",
+      "output": "mem_write 0xf0001800 0x4\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001808 0x278",
+      "output": "mem_write 0xf0001808 0x278\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf000180c 0x1",
+      "output": "mem_write 0xf000180c 0x1\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xc00b64f4 0xb4de6cd9",
+      "output": "mem_write 0xc00b64f4 0xb4de6cd9\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xc00b64f0 16",
+      "output": "mem_read 0xc00b64f0 16\n\nMemory dump:\n0xc00b64f0  b5 d9 fc 69 d9 6c de b4 6f 36 4f da 34 9b 07 ed  ...i.l..o6O.4...\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf0001810 4",
+      "output": "mem_read 0xf0001810 4\n\nMemory dump:\n0xf0001810  03 00 00 00                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_read 0xf0001814 4",
+      "output": "mem_read 0xf0001814 4\n\nMemory dump:\n0xf0001814  7f 87 58 25                                      ..X%            \nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x0",
+      "output": "mem_write 0xf0001818 0x0\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  e0 09 14 00 00 00 ff 1f 00 00 00 00 ff ff 00 00  ................\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x1",
+      "output": "mem_write 0xf0001818 0x1\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  e0 09 74 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..t.............\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x2",
+      "output": "mem_write 0xf0001818 0x2\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  e0 09 74 00 00 00 ff 04 00 00 00 00 0f ff 00 00  ..t.............\n0xf000182c  00 00 00 00 00 00 00 00 d9 6c de b4 00 00 00 00  .........l......\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x3",
+      "output": "mem_write 0xf0001818 0x3\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  e0 09 74 00 de b4 0f 00 00 00 d9 6c ff ff 00 00  ..t........l....\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x4",
+      "output": "mem_write 0xf0001818 0x4\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  e0 09 74 00 00 00 ff 00 00 00 00 00 ff ff 00 00  ..t.............\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x5",
+      "output": "mem_write 0xf0001818 0x5\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  e0 09 74 00 00 00 ff 0b 00 00 00 00 ff ff 00 00  ..t.............\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x6",
+      "output": "mem_write 0xf0001818 0x6\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  e0 09 74 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..t.............\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x7",
+      "output": "mem_write 0xf0001818 0x7\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  e0 09 74 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..t.............\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000186c 4",
+      "output": "mem_read 0xf000186c 4\n\nMemory dump:\n0xf000186c  02 00 00 00                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000183c 16",
+      "output": "mem_read 0xf000183c 16\n\nMemory dump:\n0xf000183c  d9 6c de b4 b5 d9 fc 69 b5 d9 fc 69 b5 d9 fc 69  .l.....i...i...i\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000184c 16",
+      "output": "mem_read 0xf000184c 16\n\nMemory dump:\n0xf000184c  34 9b 07 ed 6f 36 4f da d9 6c de b4 b5 d9 fc 69  4...o6O..l.....i\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000185c 16",
+      "output": "mem_read 0xf000185c 16\n\nMemory dump:\n0xf000185c  b5 d9 fc 69 b5 d9 fc 69 34 9b 07 ed 6f 36 4f da  ...i...i4...o6O.\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001804 0x5a",
+      "output": "mem_write 0xf0001804 0x5a\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001800 0x2",
+      "output": "mem_write 0xf0001800 0x2\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001808 0x3b8",
+      "output": "mem_write 0xf0001808 0x3b8\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf000180c 0x1",
+      "output": "mem_write 0xf000180c 0x1\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xc0000000 0xffffffff 524288",
+      "output": "mem_write 0xc0000000 0xffffffff 524288\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xc0169770 16",
+      "output": "mem_read 0xc0169770 16\n\nMemory dump:\n0xc0169770  ff ff ef ff ff ff ff ff ff ff ff ff ff ff ff ff  ................\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf0001810 4",
+      "output": "mem_read 0xf0001810 4\n\nMemory dump:\n0xf0001810  03 00 00 00                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_read 0xf0001814 4",
+      "output": "mem_read 0xf0001814 4\n\nMemory dump:\n0xf0001814  dc 0d 85 2a                                      ...*            \nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x0",
+      "output": "mem_write 0xf0001818 0x0\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  e0 0e 12 00 00 00 ff 1f 00 00 00 00 ff ff 00 00  ................\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x1",
+      "output": "mem_write 0xf0001818 0x1\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  a0 0e 72 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..r.............\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x2",
+      "output": "mem_write 0xf0001818 0x2\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  a0 0e 72 00 00 00 ff 04 00 00 00 00 f0 ff 00 00  ..r.............\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff  ................\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x3",
+      "output": "mem_write 0xf0001818 0x3\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  a0 0e 72 00 00 00 f0 00 ff ff 00 00 ff ff ff ff  ..r.............\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x4",
+      "output": "mem_write 0xf0001818 0x4\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  a0 0e 72 00 00 00 ff 00 00 00 00 00 ff ff 00 00  ..r.............\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x5",
+      "output": "mem_write 0xf0001818 0x5\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  a0 0e 72 00 00 00 ff 0b 00 00 00 00 ff ff 00 00  ..r.............\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x6",
+      "output": "mem_write 0xf0001818 0x6\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  a0 0e 72 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..r.............\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x7",
+      "output": "mem_write 0xf0001818 0x7\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  a0 0e 72 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..r.............\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000186c 4",
+      "output": "mem_read 0xf000186c 4\n\nMemory dump:\n0xf000186c  02 00 00 00                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000183c 16",
+      "output": "mem_read 0xf000183c 16\n\nMemory dump:\n0xf000183c  ff ff ff ff ff ff ef ff ff ff ef ff b5 ff fc ff  ................\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000184c 16",
+      "output": "mem_read 0xf000184c 16\n\nMemory dump:\n0xf000184c  ff ff ff ff ff ff ff ff ff ff ff ff ff ff ef ff  ................\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000185c 16",
+      "output": "mem_read 0xf000185c 16\n\nMemory dump:\n0xf000185c  b5 d9 fc 69 b5 d9 fc 69 ff ff ff ff ff ff ff ff  ...i...i........\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001804 0x5a",
+      "output": "mem_write 0xf0001804 0x5a\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001800 0x2",
+      "output": "mem_write 0xf0001800 0x2\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001808 0x3b8",
+      "output": "mem_write 0xf0001808 0x3b8\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf000180c 0x1",
+      "output": "mem_write 0xf000180c 0x1\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xc0169700 0xffffffff 64",
+      "output": "mem_write 0xc0169700 0xffffffff 64\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xc0169770 16",
+      "output": "mem_read 0xc0169770 16\n\nMemory dump:\n0xc0169770  ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff  ................\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf0001810 4",
+      "output": "mem_read 0xf0001810 4\n\nMemory dump:\n0xf0001810  03 00 00 00                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_read 0xf0001814 4",
+      "output": "mem_read 0xf0001814 4\n\nMemory dump:\n0xf0001814  90 ef 07 2f                                      .../            \nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x0",
+      "output": "mem_write 0xf0001818 0x0\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  e0 0e 12 00 00 00 ff 1f 00 00 00 00 ff ff 00 00  ................\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x1",
+      "output": "mem_write 0xf0001818 0x1\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  a0 0e 72 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..r.............\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x2",
+      "output": "mem_write 0xf0001818 0x2\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  a0 0e 72 00 00 00 ff 04 00 00 00 00 f0 ff 00 00  ..r.............\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff  ................\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x3",
+      "output": "mem_write 0xf0001818 0x3\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  a0 0e 72 00 00 00 f0 00 ff ff 00 00 ff ff ff ff  ..r.............\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x4",
+      "output": "mem_write 0xf0001818 0x4\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  a0 0e 72 00 00 00 ff 00 00 00 00 00 ff ff 00 00  ..r.............\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x5",
+      "output": "mem_write 0xf0001818 0x5\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  a0 0e 72 00 00 00 ff 0b 00 00 00 00 ff ff 00 00  ..r.............\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x6",
+      "output": "mem_write 0xf0001818 0x6\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  a0 0e 72 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..r.............\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x7",
+      "output": "mem_write 0xf0001818 0x7\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  a0 0e 72 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..r.............\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000186c 4",
+      "output": "mem_read 0xf000186c 4\n\nMemory dump:\n0xf000186c  02 00 00 00                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000183c 16",
+      "output": "mem_read 0xf000183c 16\n\nMemory dump:\n0xf000183c  ff ff ff ff ff ff ff ff ff ff ff ff ff ff ef ff  ................\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000184c 16",
+      "output": "mem_read 0xf000184c 16\n\nMemory dump:\n0xf000184c  ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff  ................\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000185c 16",
+      "output": "mem_read 0xf000185c 16\n\nMemory dump:\n0xf000185c  ff ff ef ff ff ff ef ff ff ff ff ff ff ff ff ff  ................\nlitex> "
+    }
+  ],
+  "traces": [
+    {
+      "label": "boot_cached_prng",
+      "offset": "0xb64f4",
+      "geometry": {
+        "row": 45,
+        "bank": 4,
+        "column": 632,
+        "word_lane": 1
+      },
+      "status": 3,
+      "write_complete": true,
+      "read_complete": true,
+      "physical_words": [
+        "0x69fcd9b5",
+        "0xb4ce6cd9",
+        "0xda4f366f",
+        "0xed079b34"
+      ],
+      "frames": [
+        {
+          "slot": 0,
+          "raw": "001409e01fff0000000000000000ffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x3",
+          "dqs_tx": "0x3",
+          "write_enable": "0x1",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x278",
+          "command_bank": "0x4",
+          "command_signals": "0x2"
+        },
+        {
+          "slot": 1,
+          "raw": "007409000fff0000000000000000ffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x3",
+          "dqs_tx": "0x3",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x240",
+          "command_bank": "0x4",
+          "command_signals": "0xe"
+        },
+        {
+          "slot": 2,
+          "raw": "0074090004ff00000000000000000000ed079b34da4f366fb4de6cd969fcd9b5",
+          "write_data": "0xed079b34da4f366fb4de6cd969fcd9b5",
+          "write_mask": "0x0",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x0",
+          "dqs_tx": "0x1",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x240",
+          "command_bank": "0x4",
+          "command_signals": "0xe"
+        },
+        {
+          "slot": 3,
+          "raw": "007409000000b4de6cd969fcd9b5ffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0xb4de6cd969fcd9b5",
+          "serializer_mask": "0x0",
+          "dq_tx": "0x0",
+          "dqs_tx": "0x0",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x240",
+          "command_bank": "0x4",
+          "command_signals": "0xe"
+        },
+        {
+          "slot": 4,
+          "raw": "007409000000ed079b34da4f366fffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0xed079b34da4f366f",
+          "serializer_mask": "0x0",
+          "dq_tx": "0x0",
+          "dqs_tx": "0x0",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x240",
+          "command_bank": "0x4",
+          "command_signals": "0xe"
+        },
+        {
+          "slot": 5,
+          "raw": "007409000bff0000000000000000ffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x3",
+          "dqs_tx": "0x2",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x240",
+          "command_bank": "0x4",
+          "command_signals": "0xe"
+        },
+        {
+          "slot": 6,
+          "raw": "007409000fff0000000000000000ffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x3",
+          "dqs_tx": "0x3",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x240",
+          "command_bank": "0x4",
+          "command_signals": "0xe"
+        },
+        {
+          "slot": 7,
+          "raw": "007409000fff0000000000000000ffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x3",
+          "dqs_tx": "0x3",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x240",
+          "command_bank": "0x4",
+          "command_signals": "0xe"
+        }
+      ],
+      "expected_words": [
+        "0x69fcd9b5",
+        "0xb4de6cd9",
+        "0xda4f366f",
+        "0xed079b34"
+      ],
+      "hit_cycle": 133940970,
+      "read_valid": 2,
+      "read_early": "b4ce6cd969fcd9b569fcd9b56999d91f",
+      "read_early_words": [
+        "0x6999d91f",
+        "0x69fcd9b5",
+        "0x69fcd9b5",
+        "0xb4ce6cd9"
+      ],
+      "read_nominal": "ed079b34da4f366fb4ce6cd969fcd9b5",
+      "read_nominal_words": [
+        "0x69fcd9b5",
+        "0xb4ce6cd9",
+        "0xda4f366f",
+        "0xed079b34"
+      ],
+      "read_late": "9e4d9b429e4d9b42ed079b34da4f366f",
+      "read_late_words": [
+        "0xda4f366f",
+        "0xed079b34",
+        "0x9e4d9b42",
+        "0x9e4d9b42"
+      ]
+    },
+    {
+      "label": "uncached_prng_sweep",
+      "offset": "0xb64f4",
+      "geometry": {
+        "row": 45,
+        "bank": 4,
+        "column": 632,
+        "word_lane": 1
+      },
+      "status": 3,
+      "write_complete": true,
+      "read_complete": true,
+      "physical_words": [
+        "0x69fcd9b5",
+        "0xb4ce6cd9",
+        "0xda4f366f",
+        "0xed079b34"
+      ],
+      "frames": [
+        {
+          "slot": 0,
+          "raw": "001409e01fff0000000000000000ffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x3",
+          "dqs_tx": "0x3",
+          "write_enable": "0x1",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x278",
+          "command_bank": "0x4",
+          "command_signals": "0x2"
+        },
+        {
+          "slot": 1,
+          "raw": "007409a00fff0000000000000000ffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x3",
+          "dqs_tx": "0x3",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x268",
+          "command_bank": "0x4",
+          "command_signals": "0xe"
+        },
+        {
+          "slot": 2,
+          "raw": "007409a004ff0000000000000000fff000000000000000000000000069fcd9b5",
+          "write_data": "0x69fcd9b5",
+          "write_mask": "0xfff0",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x0",
+          "dqs_tx": "0x1",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x268",
+          "command_bank": "0x4",
+          "command_signals": "0xe"
+        },
+        {
+          "slot": 3,
+          "raw": "007409a000f00000000069fcd9b5ffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0x69fcd9b5",
+          "serializer_mask": "0xf0",
+          "dq_tx": "0x0",
+          "dqs_tx": "0x0",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x268",
+          "command_bank": "0x4",
+          "command_signals": "0xe"
+        },
+        {
+          "slot": 4,
+          "raw": "007409a000ff0000000000000000ffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x0",
+          "dqs_tx": "0x0",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x268",
+          "command_bank": "0x4",
+          "command_signals": "0xe"
+        },
+        {
+          "slot": 5,
+          "raw": "007409a00bff0000000000000000ffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x3",
+          "dqs_tx": "0x2",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x268",
+          "command_bank": "0x4",
+          "command_signals": "0xe"
+        },
+        {
+          "slot": 6,
+          "raw": "007409a00fff0000000000000000ffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x3",
+          "dqs_tx": "0x3",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x268",
+          "command_bank": "0x4",
+          "command_signals": "0xe"
+        },
+        {
+          "slot": 7,
+          "raw": "007409a00fff0000000000000000ffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x3",
+          "dqs_tx": "0x3",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x268",
+          "command_bank": "0x4",
+          "command_signals": "0xe"
+        }
+      ],
+      "expected_words": [
+        "0x69fcd9b5",
+        "0xb4de6cd9",
+        "0xda4f366f",
+        "0xed079b34"
+      ],
+      "hit_cycle": 409213035,
+      "read_valid": 2,
+      "read_early": "b4ce6cd969fcd9b569fcd9b5694dd942",
+      "read_early_words": [
+        "0x694dd942",
+        "0x69fcd9b5",
+        "0x69fcd9b5",
+        "0xb4ce6cd9"
+      ],
+      "read_nominal": "ed079b34da4f366fb4ce6cd969fcd9b5",
+      "read_nominal_words": [
+        "0x69fcd9b5",
+        "0xb4ce6cd9",
+        "0xda4f366f",
+        "0xed079b34"
+      ],
+      "read_late": "9e4d9b429e4d9b42ed079b34da4f366f",
+      "read_late_words": [
+        "0xda4f366f",
+        "0xed079b34",
+        "0x9e4d9b42",
+        "0x9e4d9b42"
+      ]
+    },
+    {
+      "label": "isolated_correct_rewrite",
+      "offset": "0xb64f4",
+      "geometry": {
+        "row": 45,
+        "bank": 4,
+        "column": 632,
+        "word_lane": 1
+      },
+      "status": 3,
+      "write_complete": true,
+      "read_complete": true,
+      "physical_words": [
+        "0x69fcd9b5",
+        "0xb4de6cd9",
+        "0xda4f366f",
+        "0xed079b34"
+      ],
+      "frames": [
+        {
+          "slot": 0,
+          "raw": "001409e01fff0000000000000000ffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x3",
+          "dqs_tx": "0x3",
+          "write_enable": "0x1",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x278",
+          "command_bank": "0x4",
+          "command_signals": "0x2"
+        },
+        {
+          "slot": 1,
+          "raw": "007409e00fff0000000000000000ffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x3",
+          "dqs_tx": "0x3",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x278",
+          "command_bank": "0x4",
+          "command_signals": "0xe"
+        },
+        {
+          "slot": 2,
+          "raw": "007409e004ff0000000000000000ff0f0000000000000000b4de6cd900000000",
+          "write_data": "0xb4de6cd900000000",
+          "write_mask": "0xff0f",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x0",
+          "dqs_tx": "0x1",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x278",
+          "command_bank": "0x4",
+          "command_signals": "0xe"
+        },
+        {
+          "slot": 3,
+          "raw": "007409e0000fb4de6cd900000000ffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0xb4de6cd900000000",
+          "serializer_mask": "0xf",
+          "dq_tx": "0x0",
+          "dqs_tx": "0x0",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x278",
+          "command_bank": "0x4",
+          "command_signals": "0xe"
+        },
+        {
+          "slot": 4,
+          "raw": "007409e000ff0000000000000000ffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x0",
+          "dqs_tx": "0x0",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x278",
+          "command_bank": "0x4",
+          "command_signals": "0xe"
+        },
+        {
+          "slot": 5,
+          "raw": "007409e00bff0000000000000000ffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x3",
+          "dqs_tx": "0x2",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x278",
+          "command_bank": "0x4",
+          "command_signals": "0xe"
+        },
+        {
+          "slot": 6,
+          "raw": "007409e00fff0000000000000000ffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x3",
+          "dqs_tx": "0x3",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x278",
+          "command_bank": "0x4",
+          "command_signals": "0xe"
+        },
+        {
+          "slot": 7,
+          "raw": "007409e00fff0000000000000000ffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x3",
+          "dqs_tx": "0x3",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x278",
+          "command_bank": "0x4",
+          "command_signals": "0xe"
+        }
+      ],
+      "hit_cycle": 626558847,
+      "read_valid": 2,
+      "read_early": "b4de6cd969fcd9b569fcd9b569fcd9b5",
+      "read_early_words": [
+        "0x69fcd9b5",
+        "0x69fcd9b5",
+        "0x69fcd9b5",
+        "0xb4de6cd9"
+      ],
+      "read_nominal": "ed079b34da4f366fb4de6cd969fcd9b5",
+      "read_nominal_words": [
+        "0x69fcd9b5",
+        "0xb4de6cd9",
+        "0xda4f366f",
+        "0xed079b34"
+      ],
+      "read_late": "69fcd9b569fcd9b5ed079b34da4f366f",
+      "read_late_words": [
+        "0xda4f366f",
+        "0xed079b34",
+        "0x69fcd9b5",
+        "0x69fcd9b5"
+      ]
+    },
+    {
+      "label": "uncached_all_ones_2mib",
+      "offset": "0x169770",
+      "geometry": {
+        "row": 90,
+        "bank": 2,
+        "column": 952,
+        "word_lane": 0
+      },
+      "status": 3,
+      "write_complete": true,
+      "read_complete": true,
+      "physical_words": [
+        "0xffefffff",
+        "0xffffffff",
+        "0xffffffff",
+        "0xffffffff"
+      ],
+      "frames": [
+        {
+          "slot": 0,
+          "raw": "00120ee01fff0000000000000000ffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x3",
+          "dqs_tx": "0x3",
+          "write_enable": "0x1",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x3b8",
+          "command_bank": "0x2",
+          "command_signals": "0x2"
+        },
+        {
+          "slot": 1,
+          "raw": "00720ea00fff0000000000000000ffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x3",
+          "dqs_tx": "0x3",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x3a8",
+          "command_bank": "0x2",
+          "command_signals": "0xe"
+        },
+        {
+          "slot": 2,
+          "raw": "00720ea004ff0000000000000000fff0000000000000000000000000ffffffff",
+          "write_data": "0xffffffff",
+          "write_mask": "0xfff0",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x0",
+          "dqs_tx": "0x1",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x3a8",
+          "command_bank": "0x2",
+          "command_signals": "0xe"
+        },
+        {
+          "slot": 3,
+          "raw": "00720ea000f000000000ffffffffffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0xffffffff",
+          "serializer_mask": "0xf0",
+          "dq_tx": "0x0",
+          "dqs_tx": "0x0",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x3a8",
+          "command_bank": "0x2",
+          "command_signals": "0xe"
+        },
+        {
+          "slot": 4,
+          "raw": "00720ea000ff0000000000000000ffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x0",
+          "dqs_tx": "0x0",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x3a8",
+          "command_bank": "0x2",
+          "command_signals": "0xe"
+        },
+        {
+          "slot": 5,
+          "raw": "00720ea00bff0000000000000000ffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x3",
+          "dqs_tx": "0x2",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x3a8",
+          "command_bank": "0x2",
+          "command_signals": "0xe"
+        },
+        {
+          "slot": 6,
+          "raw": "00720ea00fff0000000000000000ffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x3",
+          "dqs_tx": "0x3",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x3a8",
+          "command_bank": "0x2",
+          "command_signals": "0xe"
+        },
+        {
+          "slot": 7,
+          "raw": "00720ea00fff0000000000000000ffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x3",
+          "dqs_tx": "0x3",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x3a8",
+          "command_bank": "0x2",
+          "command_signals": "0xe"
+        }
+      ],
+      "expected_words": [
+        "0xffffffff",
+        "0xffffffff",
+        "0xffffffff",
+        "0xffffffff"
+      ],
+      "hit_cycle": 713362908,
+      "read_valid": 2,
+      "read_early": "ffffffffffefffffffeffffffffcffb5",
+      "read_early_words": [
+        "0xfffcffb5",
+        "0xffefffff",
+        "0xffefffff",
+        "0xffffffff"
+      ],
+      "read_nominal": "ffffffffffffffffffffffffffefffff",
+      "read_nominal_words": [
+        "0xffefffff",
+        "0xffffffff",
+        "0xffffffff",
+        "0xffffffff"
+      ],
+      "read_late": "69fcd9b569fcd9b5ffffffffffffffff",
+      "read_late_words": [
+        "0xffffffff",
+        "0xffffffff",
+        "0x69fcd9b5",
+        "0x69fcd9b5"
+      ]
+    },
+    {
+      "label": "uncached_all_ones_256byte_window",
+      "offset": "0x169770",
+      "geometry": {
+        "row": 90,
+        "bank": 2,
+        "column": 952,
+        "word_lane": 0
+      },
+      "status": 3,
+      "write_complete": true,
+      "read_complete": true,
+      "physical_words": [
+        "0xffffffff",
+        "0xffffffff",
+        "0xffffffff",
+        "0xffffffff"
+      ],
+      "frames": [
+        {
+          "slot": 0,
+          "raw": "00120ee01fff0000000000000000ffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x3",
+          "dqs_tx": "0x3",
+          "write_enable": "0x1",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x3b8",
+          "command_bank": "0x2",
+          "command_signals": "0x2"
+        },
+        {
+          "slot": 1,
+          "raw": "00720ea00fff0000000000000000ffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x3",
+          "dqs_tx": "0x3",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x3a8",
+          "command_bank": "0x2",
+          "command_signals": "0xe"
+        },
+        {
+          "slot": 2,
+          "raw": "00720ea004ff0000000000000000fff0000000000000000000000000ffffffff",
+          "write_data": "0xffffffff",
+          "write_mask": "0xfff0",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x0",
+          "dqs_tx": "0x1",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x3a8",
+          "command_bank": "0x2",
+          "command_signals": "0xe"
+        },
+        {
+          "slot": 3,
+          "raw": "00720ea000f000000000ffffffffffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0xffffffff",
+          "serializer_mask": "0xf0",
+          "dq_tx": "0x0",
+          "dqs_tx": "0x0",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x3a8",
+          "command_bank": "0x2",
+          "command_signals": "0xe"
+        },
+        {
+          "slot": 4,
+          "raw": "00720ea000ff0000000000000000ffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x0",
+          "dqs_tx": "0x0",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x3a8",
+          "command_bank": "0x2",
+          "command_signals": "0xe"
+        },
+        {
+          "slot": 5,
+          "raw": "00720ea00bff0000000000000000ffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x3",
+          "dqs_tx": "0x2",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x3a8",
+          "command_bank": "0x2",
+          "command_signals": "0xe"
+        },
+        {
+          "slot": 6,
+          "raw": "00720ea00fff0000000000000000ffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x3",
+          "dqs_tx": "0x3",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x3a8",
+          "command_bank": "0x2",
+          "command_signals": "0xe"
+        },
+        {
+          "slot": 7,
+          "raw": "00720ea00fff0000000000000000ffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x3",
+          "dqs_tx": "0x3",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x3a8",
+          "command_bank": "0x2",
+          "command_signals": "0xe"
+        }
+      ],
+      "expected_words": [
+        "0xffffffff",
+        "0xffffffff",
+        "0xffffffff",
+        "0xffffffff"
+      ],
+      "hit_cycle": 789049232,
+      "read_valid": 2,
+      "read_early": "ffffffffffffffffffffffffffefffff",
+      "read_early_words": [
+        "0xffefffff",
+        "0xffffffff",
+        "0xffffffff",
+        "0xffffffff"
+      ],
+      "read_nominal": "ffffffffffffffffffffffffffffffff",
+      "read_nominal_words": [
+        "0xffffffff",
+        "0xffffffff",
+        "0xffffffff",
+        "0xffffffff"
+      ],
+      "read_late": "ffefffffffefffffffffffffffffffff",
+      "read_late_words": [
+        "0xffffffff",
+        "0xffffffff",
+        "0xffefffff",
+        "0xffefffff"
+      ]
+    }
+  ],
+  "console_confirmed": true,
+  "training": {
+    "status": "passed",
+    "start_records": [
+      "SDRAM_TRAINING_START phy=GW2DDRPHY read_leveling=1 bitslips=4 delays=256"
+    ],
+    "result_records": [
+      "SDRAM_TRAINING_RESULT status=passed"
+    ],
+    "expected_lane_count": 2,
+    "lane_count": 2,
+    "phy_configuration": {
+      "SDRAM_PHY_BITSLIPS": 4,
+      "SDRAM_PHY_DELAYS": 256,
+      "SDRAM_PHY_MODULES": 2,
+      "SDRAM_PHY_DQ_DQS_RATIO": 8
+    },
+    "lanes": [
+      {
+        "module": 0,
+        "dq_line": 0,
+        "bitslip": 2,
+        "status": "passed",
+        "window_start": 0,
+        "window_length": 95,
+        "delay_center": 47,
+        "delay_half_window": 47,
+        "raw": "SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=95 delay_center=47 delay_half_window=47"
+      },
+      {
+        "module": 1,
+        "dq_line": 0,
+        "bitslip": 2,
+        "status": "passed",
+        "window_start": 0,
+        "window_length": 216,
+        "delay_center": 107,
+        "delay_half_window": 107,
+        "raw": "SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=0 window_length=216 delay_center=107 delay_half_window=107"
+      }
+    ],
+    "errors": []
+  },
+  "completed": true,
+  "trace.uart.bin_sha256": "0f1e76ddb5fc84870dfa445cfa6b348d84c4bd0db59bb43b6429f3af6765c8e8",
+  "trace.uart.tx.bin_sha256": "ddfe8ea78d2ee56a1bea85706500172a843db199cb8bd8aaaee212c3e11bbffc"
+}

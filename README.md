@@ -47,4 +47,6 @@ On 2026-10-02, the current-source `PROFILE=ALL MEMORY=onchip` batch passed valid
 
 Build and run the destructive DDR3 checks with `make ddr-test-build PROFILE=ALL`, then `make ddr-test-run PROFILE=ALL PORT=<verified-UART>` and `make ddr-test-report`. The defaults are ten fresh SRAM reconfigurations and 1,800 seconds of stress per profile. See [the DDR3 evidence report](docs/ddr3/report.md).
 
+The later [DDR3 write-disturbance investigation](docs/ddr3/write-disturbance.md) captured correct digital write inputs and reproduced corruption at two untouched victim addresses after writes to another row. Longer controller row spacing and ODT-low did not resolve it. DDR remains unqualified; the board was reset to safe idle after these SRAM-only probes. [Current recovery evidence](docs/ddr3/diagnosis/20261002T020045.394626Z-integrity-recovery/recovery.json).
+
 `make cpu-candidate-build` generates and routes the two standard-derived branch-prediction candidates. `make cpu-candidate-run PORT=<verified-UART>` measures a fresh standard baseline and viable candidates. The public `performance` CPU profile is added only after a candidate beats that baseline at 48 MHz. HDMI, Ethernet, and flash boot remain outside the current scope; see [docs/bringup.md](docs/bringup.md) for existing pin-sharing notes.

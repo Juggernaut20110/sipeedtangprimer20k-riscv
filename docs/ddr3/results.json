@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "report_generated_utc": "2026-10-02T00:47:14+00:00",
+  "report_generated_utc": "2026-10-02T02:08:44.672052+00:00",
   "latest_batch_id": "20261001T201828.617667Z-ddr3",
   "latest_batch_status": "failed",
   "batches": [
@@ -1416,96 +1416,209 @@
       "manifest": "docs/ddr3/evidence/20261001T003751.798780Z-latency-calibration/latency-calibration.json"
     },
     {
-      "status": "diagnostic_only_not_acceptance_trial",
+      "status": "diagnostic_only_write_disturbance_probe",
+      "acceptance_credit": false,
+      "experiment": "dll-off-write-trace",
+      "suite": "initial",
+      "manifest": "docs/ddr3/diagnosis/20261002T013805.615625Z-dll-off-write-trace/manifest.json",
+      "result": "docs/ddr3/diagnosis/20261002T013805.615625Z-dll-off-write-trace/trace-probe.json",
+      "audit": "passed",
+      "bitstream_sha256": "ee9637f906f95ff014e0badeec29f92eb9d91b8a8f925b81b61e1118bea76768",
       "profile": "minimal",
-      "memory_mode": "ddr3",
-      "experiment": "dll-off-integrity",
-      "captured_utc": "2026-10-01T23:09:18.180452+00:00",
-      "console_confirmed": true,
-      "bitstream": "build/ddr3/diagnosis/dll-off-integrity/gateware/impl/pnr/project.fs",
-      "bitstream_sha256": "073d774225b51c58b77abef5ceb9739b33ce58ba0278f13400780078f3bd9ca6",
-      "trained_lanes": [
-        {
-          "lane": 0,
-          "bitslip": 2,
-          "window_length": 221,
-          "center": 110
-        },
-        {
-          "lane": 1,
-          "bitslip": 2,
-          "window_length": 218,
-          "center": 108
-        }
-      ],
-      "bios_memtest": "failed",
-      "timing": {
-        "sys_clock_mhz": 48.0,
-        "ddr_ck_mhz": 96.0,
-        "worst_setup_slack_ns": 0.112,
-        "worst_hold_slack_ns": 0.318,
-        "worst_recovery_slack_ns": 1.779,
-        "worst_removal_slack_ns": 1.207,
-        "estimated_fmax_mhz": 49.959
-      },
-      "raw_uart": "docs/ddr3/diagnosis/20261001T230918.180452Z-dll-off-integrity/uart.bin",
-      "raw_uart_sha256": "d81c01ec1bca691f7829f1f9228bca0d614fe424acefe385eebac2ad7c93c9cf",
-      "result": "docs/ddr3/diagnosis/20261001T230918.180452Z-dll-off-integrity/result.json",
-      "manifest": "docs/ddr3/diagnosis/20261001T230918.180452Z-dll-off-integrity/manifest.json"
+      "raw_uart": "docs/ddr3/diagnosis/20261002T013805.615625Z-dll-off-write-trace/trace.uart.bin",
+      "raw_uart_bytes": 17843,
+      "capture_validation": "passed"
     },
     {
-      "status": "diagnostic_only_read_only_integrity_reproduction",
+      "status": "diagnostic_only_write_disturbance_probe",
+      "acceptance_credit": false,
+      "experiment": "dll-off-write-trace",
+      "suite": "write-order",
+      "manifest": "docs/ddr3/diagnosis/20261002T014157.751746Z-dll-off-write-trace/manifest.json",
+      "result": "docs/ddr3/diagnosis/20261002T014157.751746Z-dll-off-write-trace/trace-probe.json",
+      "audit": "passed",
+      "bitstream_sha256": "ee9637f906f95ff014e0badeec29f92eb9d91b8a8f925b81b61e1118bea76768",
       "profile": "minimal",
-      "memory_mode": "ddr3",
-      "experiment": "dll-off-integrity",
-      "captured_utc": "2026-10-01T23:09:28.211880+00:00",
-      "console_confirmed": true,
-      "cached_base": "0x40000000",
-      "uncached_alias": "0xc0000000",
-      "verification_bytes_per_pass": 2097152,
-      "verification_passes": {
-        "uncached_alias": 3,
-        "cached_base": 3
-      },
-      "errors_per_pass": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1
-      ],
-      "first_error": {
-        "address_cached": "0x400b64f4",
-        "address_uncached": "0xc00b64f4",
-        "expected": "0xb4de6cd9",
-        "actual": "0xb4ce6cd9",
-        "xor": "0x00100000"
-      },
-      "interpretation": "The same stored bit-20 corruption persisted across repeated cached and uncached reads; reads were diagnostic only and did not repair memory.",
-      "raw_uart": "docs/ddr3/diagnosis/20261001T230928.211880Z-read-only-probe/uart.bin",
-      "raw_uart_sha256": "2504ad61c8e41d8f89fa611a7b7b9c95d3ee9a4fdb8cba8c0ff3a9df4f9dcbc3",
-      "transmitted_uart_sha256": "5b1cfe400c505e93fe6fe33ea008bd5aa962b309c49aae16e1437fa0c8781902",
-      "result": "docs/ddr3/diagnosis/20261001T230928.211880Z-read-only-probe/result.json",
-      "manifest": "docs/ddr3/diagnosis/20261001T230928.211880Z-read-only-probe/manifest.json"
+      "raw_uart": "docs/ddr3/diagnosis/20261002T014157.751746Z-dll-off-write-trace/trace.uart.bin",
+      "raw_uart_bytes": 24857,
+      "capture_validation": "passed"
+    },
+    {
+      "status": "diagnostic_only_write_disturbance_probe",
+      "acceptance_credit": false,
+      "experiment": "dll-off-write-trace",
+      "suite": "disturbance-search",
+      "manifest": "docs/ddr3/diagnosis/20261002T014610.163681Z-dll-off-write-trace/manifest.json",
+      "result": "docs/ddr3/diagnosis/20261002T014610.163681Z-dll-off-write-trace/trace-probe.json",
+      "audit": "passed",
+      "bitstream_sha256": "ee9637f906f95ff014e0badeec29f92eb9d91b8a8f925b81b61e1118bea76768",
+      "profile": "minimal",
+      "raw_uart": "docs/ddr3/diagnosis/20261002T014610.163681Z-dll-off-write-trace/trace.uart.bin",
+      "raw_uart_bytes": 38384,
+      "capture_validation": "passed"
+    },
+    {
+      "status": "diagnostic_only_write_disturbance_probe",
+      "acceptance_credit": false,
+      "experiment": "dll-off-write-trace",
+      "suite": "disturbance-controls",
+      "manifest": "docs/ddr3/diagnosis/20261002T014855.731212Z-dll-off-write-trace/manifest.json",
+      "result": "docs/ddr3/diagnosis/20261002T014855.731212Z-dll-off-write-trace/trace-probe.json",
+      "audit": "passed",
+      "bitstream_sha256": "ee9637f906f95ff014e0badeec29f92eb9d91b8a8f925b81b61e1118bea76768",
+      "profile": "minimal",
+      "raw_uart": "docs/ddr3/diagnosis/20261002T014855.731212Z-dll-off-write-trace/trace.uart.bin",
+      "raw_uart_bytes": 26603,
+      "capture_validation": "passed"
+    },
+    {
+      "status": "diagnostic_only_write_disturbance_probe",
+      "acceptance_credit": false,
+      "experiment": "dll-off-write-trace",
+      "suite": "neighbor-read",
+      "manifest": "docs/ddr3/diagnosis/20261002T015148.226324Z-dll-off-write-trace/manifest.json",
+      "result": "docs/ddr3/diagnosis/20261002T015148.226324Z-dll-off-write-trace/trace-probe.json",
+      "audit": "passed",
+      "bitstream_sha256": "ee9637f906f95ff014e0badeec29f92eb9d91b8a8f925b81b61e1118bea76768",
+      "profile": "minimal",
+      "raw_uart": "docs/ddr3/diagnosis/20261002T015148.226324Z-dll-off-write-trace/trace.uart.bin",
+      "raw_uart_bytes": 39947,
+      "capture_validation": "passed"
+    },
+    {
+      "status": "diagnostic_only_write_disturbance_probe",
+      "acceptance_credit": false,
+      "experiment": "dll-off-row-timing",
+      "suite": "neighbor-read",
+      "manifest": "docs/ddr3/diagnosis/20261002T015224.879824Z-dll-off-row-timing/manifest.json",
+      "result": "docs/ddr3/diagnosis/20261002T015224.879824Z-dll-off-row-timing/trace-probe.json",
+      "audit": "passed",
+      "bitstream_sha256": "392264fc48afb83ad9e91fbcb417367e5f51630048d8762041ac64a8fa213d67",
+      "profile": "minimal",
+      "raw_uart": "docs/ddr3/diagnosis/20261002T015224.879824Z-dll-off-row-timing/trace.uart.bin",
+      "raw_uart_bytes": 39947,
+      "capture_validation": "passed"
+    },
+    {
+      "status": "diagnostic_only_write_disturbance_probe",
+      "acceptance_credit": false,
+      "experiment": "dll-off-odt-low",
+      "suite": "neighbor-read",
+      "manifest": "docs/ddr3/diagnosis/20261002T015614.337611Z-dll-off-odt-low/manifest.json",
+      "result": "docs/ddr3/diagnosis/20261002T015614.337611Z-dll-off-odt-low/trace-probe.json",
+      "audit": "passed",
+      "bitstream_sha256": "e8a8cbd5cda50575ca40137bc250ae9115f49d3df3a3105c2ad9e4781c4f0d08",
+      "profile": "minimal",
+      "raw_uart": "docs/ddr3/diagnosis/20261002T015614.337611Z-dll-off-odt-low/trace.uart.bin",
+      "raw_uart_bytes": 39947,
+      "capture_validation": "passed"
     }
   ],
-  "latest_diagnostic_id": "20261001T230928.211880Z-read-only-probe",
-  "latest_diagnostic_status": "diagnostic_only_read_only_integrity_reproduction",
+  "integrity_investigation": "docs/ddr3/diagnosis/20261002-integrity-investigation.json",
+  "latest_diagnostic_id": "20261002T015614.337611Z-dll-off-odt-low",
+  "latest_diagnostic_status": "diagnostic_only_write_disturbance_reproduced",
   "diagnostic_summary": {
-    "status": "persistent_integrity_failure_reproduced",
-    "bitstream_sha256": "073d774225b51c58b77abef5ceb9739b33ce58ba0278f13400780078f3bd9ca6",
-    "fault_address": "0x400b64f4 / 0xc00b64f4",
-    "expected": "0xb4de6cd9",
-    "actual": "0xb4ce6cd9",
-    "xor": "0x00100000",
-    "read_only_repetitions": 6,
+    "status": "write_disturbance_reproduced_integrity_still_failed",
     "acceptance_credit": false,
-    "evidence": "docs/ddr3/diagnosis/20261001T230928.211880Z-read-only-probe/result.json"
+    "victims": [
+      {
+        "offset": "0x169770",
+        "expected": "0xffffffff",
+        "actual": "0xffefffff",
+        "xor": "0x00100000",
+        "row": 90,
+        "bank": 2,
+        "word_lane": 0,
+        "neighbor_range": [
+          "0x16d000",
+          "0x16d800"
+        ]
+      },
+      {
+        "offset": "0x64011ac",
+        "expected": "0xfffff7ff",
+        "actual": "0x7ffff7ff",
+        "xor": "0x80000000",
+        "row": 6400,
+        "bank": 2,
+        "word_lane": 3,
+        "neighbor_range": [
+          "0x6405000",
+          "0x6405800"
+        ]
+      }
+    ],
+    "report": "docs/ddr3/write-disturbance.md",
+    "evidence": "docs/ddr3/diagnosis/20261002-integrity-investigation.json",
+    "audit": [
+      {
+        "evidence": "docs/ddr3/diagnosis/20261002T013805.615625Z-dll-off-write-trace",
+        "audit": "passed",
+        "suite": "initial",
+        "bitstream_sha256": "ee9637f906f95ff014e0badeec29f92eb9d91b8a8f925b81b61e1118bea76768",
+        "trace_count": 5,
+        "decoded_frame_count": 40,
+        "acceptance_credit": false
+      },
+      {
+        "evidence": "docs/ddr3/diagnosis/20261002T014157.751746Z-dll-off-write-trace",
+        "audit": "passed",
+        "suite": "write-order",
+        "bitstream_sha256": "ee9637f906f95ff014e0badeec29f92eb9d91b8a8f925b81b61e1118bea76768",
+        "trace_count": 9,
+        "decoded_frame_count": 56,
+        "acceptance_credit": false
+      },
+      {
+        "evidence": "docs/ddr3/diagnosis/20261002T014610.163681Z-dll-off-write-trace",
+        "audit": "passed",
+        "suite": "disturbance-search",
+        "bitstream_sha256": "ee9637f906f95ff014e0badeec29f92eb9d91b8a8f925b81b61e1118bea76768",
+        "trace_count": 16,
+        "decoded_frame_count": 8,
+        "acceptance_credit": false
+      },
+      {
+        "evidence": "docs/ddr3/diagnosis/20261002T014855.731212Z-dll-off-write-trace",
+        "audit": "passed",
+        "suite": "disturbance-controls",
+        "bitstream_sha256": "ee9637f906f95ff014e0badeec29f92eb9d91b8a8f925b81b61e1118bea76768",
+        "trace_count": 11,
+        "decoded_frame_count": 8,
+        "acceptance_credit": false
+      },
+      {
+        "evidence": "docs/ddr3/diagnosis/20261002T015148.226324Z-dll-off-write-trace",
+        "audit": "passed",
+        "suite": "neighbor-read",
+        "bitstream_sha256": "ee9637f906f95ff014e0badeec29f92eb9d91b8a8f925b81b61e1118bea76768",
+        "trace_count": 10,
+        "decoded_frame_count": 8,
+        "acceptance_credit": false
+      },
+      {
+        "evidence": "docs/ddr3/diagnosis/20261002T015224.879824Z-dll-off-row-timing",
+        "audit": "passed",
+        "suite": "neighbor-read",
+        "bitstream_sha256": "392264fc48afb83ad9e91fbcb417367e5f51630048d8762041ac64a8fa213d67",
+        "trace_count": 10,
+        "decoded_frame_count": 8,
+        "acceptance_credit": false
+      },
+      {
+        "evidence": "docs/ddr3/diagnosis/20261002T015614.337611Z-dll-off-odt-low",
+        "audit": "passed",
+        "suite": "neighbor-read",
+        "bitstream_sha256": "e8a8cbd5cda50575ca40137bc250ae9115f49d3df3a3105c2ad9e4781c4f0d08",
+        "trace_count": 10,
+        "decoded_frame_count": 8,
+        "acceptance_credit": false
+      }
+    ]
   },
   "current_board_recovery": {
     "status": "safe_idle_confirmed_after_explicit_fpga_reset",
-    "evidence": "docs/performance/maxperf-evaluation/recovery/20261002T004311Z-final-onchip/recovery.json",
+    "evidence": "docs/ddr3/diagnosis/20261002T020045.394626Z-integrity-recovery/recovery.json",
     "pre_reset_uart_rx_bytes": 0,
     "post_reset_uart_rx_bytes": 0,
     "jtag_reset_exit_code": 0,

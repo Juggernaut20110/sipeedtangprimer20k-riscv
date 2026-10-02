@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "updated_utc": "2026-10-02T02:04:02.121684+00:00",
+  "status": "diagnostic_only_write_disturbance_reproduced",
+  "acceptance_credit": false,
+  "system_clock_hz": 48000000,
+  "ddr_clock_hz": 96000000,
+  "dll_off": true,
+  "cl": 6,
+  "cwl": 6,
+  "geometry_bytes": 268435456,
+  "public_configuration_changed": false,
+  "flash_programming": false,
+  "victims": [
+    {
+      "offset": "0x169770",
+      "expected": "0xffffffff",
+      "actual": "0xffefffff",
+      "xor": "0x00100000",
+      "row": 90,
+      "bank": 2,
+      "word_lane": 0,
+      "neighbor_range": [
+        "0x16d000",
+        "0x16d800"
+      ]
+    },
+    {
+      "offset": "0x64011ac",
+      "expected": "0xfffff7ff",
+      "actual": "0x7ffff7ff",
+      "xor": "0x80000000",
+      "row": 6400,
+      "bank": 2,
+      "word_lane": 3,
+      "neighbor_range": [
+        "0x6405000",
+        "0x6405800"
+      ]
+    }
+  ],
+  "bisection": {
+    "range_start": "0x16cff0",
+    "range_end": "0x16d4a4",
+    "bytes": 1204,
+    "complete_range_failures": 2,
+    "separate_halves_failed": false,
+    "single_aggressor_isolated": false
+  },
+  "attempted_fixes": [
+    {
+      "experiment": "dll-off-row-timing",
+      "outcome": "BIOS_Memtest_KO_and_same_neighbor_disturbances",
+      "manifest": "docs/ddr3/diagnosis/20261002T015224.879824Z-dll-off-row-timing/manifest.json",
+      "probe": "docs/ddr3/diagnosis/20261002T015224.879824Z-dll-off-row-timing/trace-probe.json"
+    },
+    {
+      "experiment": "dll-off-odt-low",
+      "outcome": "BIOS_Memtest_KO_and_same_neighbor_disturbances",
+      "manifest": "docs/ddr3/diagnosis/20261002T015614.337611Z-dll-off-odt-low/manifest.json",
+      "probe": "docs/ddr3/diagnosis/20261002T015614.337611Z-dll-off-odt-low/trace-probe.json"
+    }
+  ],
+  "audit": [
+    {
+      "evidence": "docs/ddr3/diagnosis/20261002T013805.615625Z-dll-off-write-trace",
+      "audit": "passed",
+      "suite": "initial",
+      "bitstream_sha256": "ee9637f906f95ff014e0badeec29f92eb9d91b8a8f925b81b61e1118bea76768",
+      "trace_count": 5,
+      "decoded_frame_count": 40,
+      "acceptance_credit": false
+    },
+    {
+      "evidence": "docs/ddr3/diagnosis/20261002T014157.751746Z-dll-off-write-trace",
+      "audit": "passed",
+      "suite": "write-order",
+      "bitstream_sha256": "ee9637f906f95ff014e0badeec29f92eb9d91b8a8f925b81b61e1118bea76768",
+      "trace_count": 9,
+      "decoded_frame_count": 56,
+      "acceptance_credit": false
+    },
+    {
+      "evidence": "docs/ddr3/diagnosis/20261002T014610.163681Z-dll-off-write-trace",
+      "audit": "passed",
+      "suite": "disturbance-search",
+      "bitstream_sha256": "ee9637f906f95ff014e0badeec29f92eb9d91b8a8f925b81b61e1118bea76768",
+      "trace_count": 16,
+      "decoded_frame_count": 8,
+      "acceptance_credit": false
+    },
+    {
+      "evidence": "docs/ddr3/diagnosis/20261002T014855.731212Z-dll-off-write-trace",
+      "audit": "passed",
+      "suite": "disturbance-controls",
+      "bitstream_sha256": "ee9637f906f95ff014e0badeec29f92eb9d91b8a8f925b81b61e1118bea76768",
+      "trace_count": 11,
+      "decoded_frame_count": 8,
+      "acceptance_credit": false
+    },
+    {
+      "evidence": "docs/ddr3/diagnosis/20261002T015148.226324Z-dll-off-write-trace",
+      "audit": "passed",
+      "suite": "neighbor-read",
+      "bitstream_sha256": "ee9637f906f95ff014e0badeec29f92eb9d91b8a8f925b81b61e1118bea76768",
+      "trace_count": 10,
+      "decoded_frame_count": 8,
+      "acceptance_credit": false
+    },
+    {
+      "evidence": "docs/ddr3/diagnosis/20261002T015224.879824Z-dll-off-row-timing",
+      "audit": "passed",
+      "suite": "neighbor-read",
+      "bitstream_sha256": "392264fc48afb83ad9e91fbcb417367e5f51630048d8762041ac64a8fa213d67",
+      "trace_count": 10,
+      "decoded_frame_count": 8,
+      "acceptance_credit": false
+    },
+    {
+      "evidence": "docs/ddr3/diagnosis/20261002T015614.337611Z-dll-off-odt-low",
+      "audit": "passed",
+      "suite": "neighbor-read",
+      "bitstream_sha256": "e8a8cbd5cda50575ca40137bc250ae9115f49d3df3a3105c2ad9e4781c4f0d08",
+      "trace_count": 10,
+      "decoded_frame_count": 8,
+      "acceptance_credit": false
+    }
+  ],
+  "audit_total_snapshots": 71,
+  "audit_total_frames": 136,
+  "host_tests_passed": 97,
+  "generated_design_checks": "passed",
+  "host_test_log_sha256": "215f586825ff9a95ae32a3fd34b611014798d3efff66edc11c595a8b830200cf",
+  "limitations": [
+    "Recorder observes primitive inputs, not pin waveforms.",
+    "First matching native WRITE may mask the failing word; boot full-burst trace covers it.",
+    "Range/data history matters; a single aggressor and physical component are not identified.",
+    "No second-board comparison or pin-level observation performed."
+  ],
+  "next_discriminator": "Repeat exact retained images on a second board and observe DDR command/address, DQS/DQ/DM and supplies/VREF at pins.",
+  "current_board_recovery": "docs/ddr3/diagnosis/20261002T020045.394626Z-integrity-recovery/recovery.json",
+  "report": "docs/ddr3/write-disturbance.md",
+  "audit_source_sha256": "e3cdcd886332f278d0c4cc43a00b3cf3969f0f26b5311550995b67037f3a9438"
+}

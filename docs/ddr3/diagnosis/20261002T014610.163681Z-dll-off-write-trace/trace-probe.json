@@ -1,0 +1,1283 @@
+{
+  "diagnostic_only": true,
+  "acceptance_credit": false,
+  "suite": "disturbance-search",
+  "bitstream_sha256": "ee9637f906f95ff014e0badeec29f92eb9d91b8a8f925b81b61e1118bea76768",
+  "probe_source_sha256": "a91a5b37a557b33eead541712894f9c4e30822a7120d08405f2314490d1f4d57",
+  "records": [
+    {
+      "command": "",
+      "output": "\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xc00b64f0 16",
+      "output": "mem_read 0xc00b64f0 16\n\nMemory dump:\n0xc00b64f0  b5 d9 fc 69 d9 6c ce b4 6f 36 4f da 34 9b 07 ed  ...i.l..o6O.4...\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf0001810 4",
+      "output": "mem_read 0xf0001810 4\n\nMemory dump:\n0xf0001810  03 00 00 00                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_read 0xf0001814 4",
+      "output": "mem_read 0xf0001814 4\n\nMemory dump:\n0xf0001814  a9 bc fb 07                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x0",
+      "output": "mem_write 0xf0001818 0x0\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  e0 09 14 00 00 00 ff 1f 00 00 00 00 ff ff 00 00  ................\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x1",
+      "output": "mem_write 0xf0001818 0x1\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  00 09 74 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..t.............\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x2",
+      "output": "mem_write 0xf0001818 0x2\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  00 09 74 00 00 00 ff 04 00 00 00 00 00 00 00 00  ..t.............\n0xf000182c  34 9b 07 ed 6f 36 4f da d9 6c de b4 b5 d9 fc 69  4...o6O..l.....i\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x3",
+      "output": "mem_write 0xf0001818 0x3\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  00 09 74 00 de b4 00 00 fc 69 d9 6c ff ff b5 d9  ..t......i.l....\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x4",
+      "output": "mem_write 0xf0001818 0x4\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  00 09 74 00 07 ed 00 00 4f da 34 9b ff ff 6f 36  ..t.....O.4...o6\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x5",
+      "output": "mem_write 0xf0001818 0x5\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  00 09 74 00 00 00 ff 0b 00 00 00 00 ff ff 00 00  ..t.............\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x6",
+      "output": "mem_write 0xf0001818 0x6\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  00 09 74 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..t.............\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001818 0x7",
+      "output": "mem_write 0xf0001818 0x7\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000181c 32",
+      "output": "mem_read 0xf000181c 32\n\nMemory dump:\n0xf000181c  00 09 74 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..t.............\n0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000186c 4",
+      "output": "mem_read 0xf000186c 4\n\nMemory dump:\n0xf000186c  02 00 00 00                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000183c 16",
+      "output": "mem_read 0xf000183c 16\n\nMemory dump:\n0xf000183c  d9 6c ce b4 b5 d9 fc 69 b5 d9 fc 69 1f d9 99 69  .l.....i...i...i\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000184c 16",
+      "output": "mem_read 0xf000184c 16\n\nMemory dump:\n0xf000184c  34 9b 07 ed 6f 36 4f da d9 6c ce b4 b5 d9 fc 69  4...o6O..l.....i\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf000185c 16",
+      "output": "mem_read 0xf000185c 16\n\nMemory dump:\n0xf000185c  42 9b 4d 9e 42 9b 4d 9e 34 9b 07 ed 6f 36 4f da  B.M.B.M.4...o6O.\nlitex> "
+    },
+    {
+      "command": "mem_test 0xc0000000 0x200000",
+      "output": "mem_test 0xc0000000 0x200000\n\nMemtest at 0xc0000000 (2.0MiB)...\n  Write: 0xc0000000-0xc0000000 0B     Write: 0xc0000000-0xc0020000 128.0KiB     Write: 0xc0000000-0xc0040000 256.0KiB     Write: 0xc0000000-0xc0060000 384.0KiB     Write: 0xc0000000-0xc0080000 512.0KiB     Write: 0xc0000000-0xc00a0000 640.0KiB     Write: 0xc0000000-0xc00c0000 768.0KiB     Write: 0xc0000000-0xc00e0000 896.0KiB     Write: 0xc0000000-0xc0100000 1.0MiB     Write: 0xc0000000-0xc0120000 1.1MiB     Write: 0xc0000000-0xc0140000 1.2MiB     Write: 0xc0000000-0xc0160000 1.3MiB     Write: 0xc0000000-0xc0180000 1.5MiB     Write: 0xc0000000-0xc01a0000 1.6MiB     Write: 0xc0000000-0xc01c0000 1.7MiB     Write: 0xc0000000-0xc01e0000 1.8MiB     Write: 0xc0000000-0xc0200000 2.0MiB   \n   Read: 0xc0000000-0xc0000000 0B      Read: 0xc0000000-0xc0020000 128.0KiB      Read: 0xc0000000-0xc0040000 256.0KiB      Read: 0xc0000000-0xc0060000 384.0KiB      Read: 0xc0000000-0xc0080000 512.0KiB      Read: 0xc0000000-0xc00a0000 640.0KiB   memtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9\n   Read: 0xc0000000-0xc00c0000 768.0KiB      Read: 0xc0000000-0xc00e0000 896.0KiB      Read: 0xc0000000-0xc0100000 1.0MiB      Read: 0xc0000000-0xc0120000 1.1MiB      Read: 0xc0000000-0xc0140000 1.2MiB      Read: 0xc0000000-0xc0160000 1.3MiB      Read: 0xc0000000-0xc0180000 1.5MiB      Read: 0xc0000000-0xc01a0000 1.6MiB      Read: 0xc0000000-0xc01c0000 1.7MiB      Read: 0xc0000000-0xc01e0000 1.8MiB      Read: 0xc0000000-0xc0200000 2.0MiB   \n  bus errors:  0/256\n  addr errors: 0/8192\n  data errors: 1/524288\nMemtest KO\nlitex> "
+    },
+    {
+      "command": "mem_write 0xc0169700 0xffffffff 64",
+      "output": "mem_write 0xc0169700 0xffffffff 64\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xc0169770 4",
+      "output": "mem_read 0xc0169770 4\n\nMemory dump:\n0xc0169770  ff ff ff ff                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001804 0x5a",
+      "output": "mem_write 0xf0001804 0x5a\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001800 0x2",
+      "output": "mem_write 0xf0001800 0x2\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001808 0x3b8",
+      "output": "mem_write 0xf0001808 0x3b8\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf000180c 0x1",
+      "output": "mem_write 0xf000180c 0x1\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xc0169780 0xffffffff 154144",
+      "output": "mem_write 0xc0169780 0xffffffff 154144\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xc0169770 16",
+      "output": "mem_read 0xc0169770 16\n\nMemory dump:\n0xc0169770  ff ff ef ff ff ff ff ff ff ff ff ff ff ff ff ff  ................\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf0001810 4",
+      "output": "mem_read 0xf0001810 4\n\nMemory dump:\n0xf0001810  18 00 00 00                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_test 0xc0000000 0x200000",
+      "output": "mem_test 0xc0000000 0x200000\n\nMemtest at 0xc0000000 (2.0MiB)...\n  Write: 0xc0000000-0xc0000000 0B     Write: 0xc0000000-0xc0020000 128.0KiB     Write: 0xc0000000-0xc0040000 256.0KiB     Write: 0xc0000000-0xc0060000 384.0KiB     Write: 0xc0000000-0xc0080000 512.0KiB     Write: 0xc0000000-0xc00a0000 640.0KiB     Write: 0xc0000000-0xc00c0000 768.0KiB     Write: 0xc0000000-0xc00e0000 896.0KiB     Write: 0xc0000000-0xc0100000 1.0MiB     Write: 0xc0000000-0xc0120000 1.1MiB     Write: 0xc0000000-0xc0140000 1.2MiB     Write: 0xc0000000-0xc0160000 1.3MiB     Write: 0xc0000000-0xc0180000 1.5MiB     Write: 0xc0000000-0xc01a0000 1.6MiB     Write: 0xc0000000-0xc01c0000 1.7MiB     Write: 0xc0000000-0xc01e0000 1.8MiB     Write: 0xc0000000-0xc0200000 2.0MiB   \n   Read: 0xc0000000-0xc0000000 0B      Read: 0xc0000000-0xc0020000 128.0KiB      Read: 0xc0000000-0xc0040000 256.0KiB      Read: 0xc0000000-0xc0060000 384.0KiB      Read: 0xc0000000-0xc0080000 512.0KiB      Read: 0xc0000000-0xc00a0000 640.0KiB   memtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9\n   Read: 0xc0000000-0xc00c0000 768.0KiB      Read: 0xc0000000-0xc00e0000 896.0KiB      Read: 0xc0000000-0xc0100000 1.0MiB      Read: 0xc0000000-0xc0120000 1.1MiB      Read: 0xc0000000-0xc0140000 1.2MiB      Read: 0xc0000000-0xc0160000 1.3MiB      Read: 0xc0000000-0xc0180000 1.5MiB      Read: 0xc0000000-0xc01a0000 1.6MiB      Read: 0xc0000000-0xc01c0000 1.7MiB      Read: 0xc0000000-0xc01e0000 1.8MiB      Read: 0xc0000000-0xc0200000 2.0MiB   \n  bus errors:  0/256\n  addr errors: 0/8192\n  data errors: 1/524288\nMemtest KO\nlitex> "
+    },
+    {
+      "command": "mem_write 0xc0169700 0xffffffff 64",
+      "output": "mem_write 0xc0169700 0xffffffff 64\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xc0169770 4",
+      "output": "mem_read 0xc0169770 4\n\nMemory dump:\n0xc0169770  ff ff ff ff                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001804 0x5a",
+      "output": "mem_write 0xf0001804 0x5a\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001800 0x2",
+      "output": "mem_write 0xf0001800 0x2\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001808 0x3b8",
+      "output": "mem_write 0xf0001808 0x3b8\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf000180c 0x1",
+      "output": "mem_write 0xf000180c 0x1\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xc0169780 0xffffffff 77072",
+      "output": "mem_write 0xc0169780 0xffffffff 77072\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xc0169770 16",
+      "output": "mem_read 0xc0169770 16\n\nMemory dump:\n0xc0169770  ff ff ef ff ff ff ff ff ff ff ff ff ff ff ff ff  ................\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf0001810 4",
+      "output": "mem_read 0xf0001810 4\n\nMemory dump:\n0xf0001810  18 00 00 00                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_test 0xc0000000 0x200000",
+      "output": "mem_test 0xc0000000 0x200000\n\nMemtest at 0xc0000000 (2.0MiB)...\n  Write: 0xc0000000-0xc0000000 0B     Write: 0xc0000000-0xc0020000 128.0KiB     Write: 0xc0000000-0xc0040000 256.0KiB     Write: 0xc0000000-0xc0060000 384.0KiB     Write: 0xc0000000-0xc0080000 512.0KiB     Write: 0xc0000000-0xc00a0000 640.0KiB     Write: 0xc0000000-0xc00c0000 768.0KiB     Write: 0xc0000000-0xc00e0000 896.0KiB     Write: 0xc0000000-0xc0100000 1.0MiB     Write: 0xc0000000-0xc0120000 1.1MiB     Write: 0xc0000000-0xc0140000 1.2MiB     Write: 0xc0000000-0xc0160000 1.3MiB     Write: 0xc0000000-0xc0180000 1.5MiB     Write: 0xc0000000-0xc01a0000 1.6MiB     Write: 0xc0000000-0xc01c0000 1.7MiB     Write: 0xc0000000-0xc01e0000 1.8MiB     Write: 0xc0000000-0xc0200000 2.0MiB   \n   Read: 0xc0000000-0xc0000000 0B      Read: 0xc0000000-0xc0020000 128.0KiB      Read: 0xc0000000-0xc0040000 256.0KiB      Read: 0xc0000000-0xc0060000 384.0KiB      Read: 0xc0000000-0xc0080000 512.0KiB      Read: 0xc0000000-0xc00a0000 640.0KiB   memtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9\n   Read: 0xc0000000-0xc00c0000 768.0KiB      Read: 0xc0000000-0xc00e0000 896.0KiB      Read: 0xc0000000-0xc0100000 1.0MiB      Read: 0xc0000000-0xc0120000 1.1MiB      Read: 0xc0000000-0xc0140000 1.2MiB      Read: 0xc0000000-0xc0160000 1.3MiB      Read: 0xc0000000-0xc0180000 1.5MiB      Read: 0xc0000000-0xc01a0000 1.6MiB      Read: 0xc0000000-0xc01c0000 1.7MiB      Read: 0xc0000000-0xc01e0000 1.8MiB      Read: 0xc0000000-0xc0200000 2.0MiB   \n  bus errors:  0/256\n  addr errors: 0/8192\n  data errors: 1/524288\nMemtest KO\nlitex> "
+    },
+    {
+      "command": "mem_write 0xc0169700 0xffffffff 64",
+      "output": "mem_write 0xc0169700 0xffffffff 64\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xc0169770 4",
+      "output": "mem_read 0xc0169770 4\n\nMemory dump:\n0xc0169770  ff ff ff ff                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001804 0x5a",
+      "output": "mem_write 0xf0001804 0x5a\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001800 0x2",
+      "output": "mem_write 0xf0001800 0x2\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001808 0x3b8",
+      "output": "mem_write 0xf0001808 0x3b8\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf000180c 0x1",
+      "output": "mem_write 0xf000180c 0x1\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xc0169780 0xffffffff 38536",
+      "output": "mem_write 0xc0169780 0xffffffff 38536\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xc0169770 16",
+      "output": "mem_read 0xc0169770 16\n\nMemory dump:\n0xc0169770  ff ff ef ff ff ff ff ff ff ff ff ff ff ff ff ff  ................\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf0001810 4",
+      "output": "mem_read 0xf0001810 4\n\nMemory dump:\n0xf0001810  18 00 00 00                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_test 0xc0000000 0x200000",
+      "output": "mem_test 0xc0000000 0x200000\n\nMemtest at 0xc0000000 (2.0MiB)...\n  Write: 0xc0000000-0xc0000000 0B     Write: 0xc0000000-0xc0020000 128.0KiB     Write: 0xc0000000-0xc0040000 256.0KiB     Write: 0xc0000000-0xc0060000 384.0KiB     Write: 0xc0000000-0xc0080000 512.0KiB     Write: 0xc0000000-0xc00a0000 640.0KiB     Write: 0xc0000000-0xc00c0000 768.0KiB     Write: 0xc0000000-0xc00e0000 896.0KiB     Write: 0xc0000000-0xc0100000 1.0MiB     Write: 0xc0000000-0xc0120000 1.1MiB     Write: 0xc0000000-0xc0140000 1.2MiB     Write: 0xc0000000-0xc0160000 1.3MiB     Write: 0xc0000000-0xc0180000 1.5MiB     Write: 0xc0000000-0xc01a0000 1.6MiB     Write: 0xc0000000-0xc01c0000 1.7MiB     Write: 0xc0000000-0xc01e0000 1.8MiB     Write: 0xc0000000-0xc0200000 2.0MiB   \n   Read: 0xc0000000-0xc0000000 0B      Read: 0xc0000000-0xc0020000 128.0KiB      Read: 0xc0000000-0xc0040000 256.0KiB      Read: 0xc0000000-0xc0060000 384.0KiB      Read: 0xc0000000-0xc0080000 512.0KiB      Read: 0xc0000000-0xc00a0000 640.0KiB   memtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9\n   Read: 0xc0000000-0xc00c0000 768.0KiB      Read: 0xc0000000-0xc00e0000 896.0KiB      Read: 0xc0000000-0xc0100000 1.0MiB      Read: 0xc0000000-0xc0120000 1.1MiB      Read: 0xc0000000-0xc0140000 1.2MiB      Read: 0xc0000000-0xc0160000 1.3MiB      Read: 0xc0000000-0xc0180000 1.5MiB      Read: 0xc0000000-0xc01a0000 1.6MiB      Read: 0xc0000000-0xc01c0000 1.7MiB      Read: 0xc0000000-0xc01e0000 1.8MiB      Read: 0xc0000000-0xc0200000 2.0MiB   \n  bus errors:  0/256\n  addr errors: 0/8192\n  data errors: 1/524288\nMemtest KO\nlitex> "
+    },
+    {
+      "command": "mem_write 0xc0169700 0xffffffff 64",
+      "output": "mem_write 0xc0169700 0xffffffff 64\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xc0169770 4",
+      "output": "mem_read 0xc0169770 4\n\nMemory dump:\n0xc0169770  ff ff ff ff                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001804 0x5a",
+      "output": "mem_write 0xf0001804 0x5a\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001800 0x2",
+      "output": "mem_write 0xf0001800 0x2\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001808 0x3b8",
+      "output": "mem_write 0xf0001808 0x3b8\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf000180c 0x1",
+      "output": "mem_write 0xf000180c 0x1\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xc0169780 0xffffffff 19268",
+      "output": "mem_write 0xc0169780 0xffffffff 19268\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xc0169770 16",
+      "output": "mem_read 0xc0169770 16\n\nMemory dump:\n0xc0169770  ff ff ef ff ff ff ff ff ff ff ff ff ff ff ff ff  ................\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf0001810 4",
+      "output": "mem_read 0xf0001810 4\n\nMemory dump:\n0xf0001810  18 00 00 00                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_test 0xc0000000 0x200000",
+      "output": "mem_test 0xc0000000 0x200000\n\nMemtest at 0xc0000000 (2.0MiB)...\n  Write: 0xc0000000-0xc0000000 0B     Write: 0xc0000000-0xc0020000 128.0KiB     Write: 0xc0000000-0xc0040000 256.0KiB     Write: 0xc0000000-0xc0060000 384.0KiB     Write: 0xc0000000-0xc0080000 512.0KiB     Write: 0xc0000000-0xc00a0000 640.0KiB     Write: 0xc0000000-0xc00c0000 768.0KiB     Write: 0xc0000000-0xc00e0000 896.0KiB     Write: 0xc0000000-0xc0100000 1.0MiB     Write: 0xc0000000-0xc0120000 1.1MiB     Write: 0xc0000000-0xc0140000 1.2MiB     Write: 0xc0000000-0xc0160000 1.3MiB     Write: 0xc0000000-0xc0180000 1.5MiB     Write: 0xc0000000-0xc01a0000 1.6MiB     Write: 0xc0000000-0xc01c0000 1.7MiB     Write: 0xc0000000-0xc01e0000 1.8MiB     Write: 0xc0000000-0xc0200000 2.0MiB   \n   Read: 0xc0000000-0xc0000000 0B      Read: 0xc0000000-0xc0020000 128.0KiB      Read: 0xc0000000-0xc0040000 256.0KiB      Read: 0xc0000000-0xc0060000 384.0KiB      Read: 0xc0000000-0xc0080000 512.0KiB      Read: 0xc0000000-0xc00a0000 640.0KiB   memtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9\n   Read: 0xc0000000-0xc00c0000 768.0KiB      Read: 0xc0000000-0xc00e0000 896.0KiB      Read: 0xc0000000-0xc0100000 1.0MiB      Read: 0xc0000000-0xc0120000 1.1MiB      Read: 0xc0000000-0xc0140000 1.2MiB      Read: 0xc0000000-0xc0160000 1.3MiB      Read: 0xc0000000-0xc0180000 1.5MiB      Read: 0xc0000000-0xc01a0000 1.6MiB      Read: 0xc0000000-0xc01c0000 1.7MiB      Read: 0xc0000000-0xc01e0000 1.8MiB      Read: 0xc0000000-0xc0200000 2.0MiB   \n  bus errors:  0/256\n  addr errors: 0/8192\n  data errors: 1/524288\nMemtest KO\nlitex> "
+    },
+    {
+      "command": "mem_write 0xc0169700 0xffffffff 64",
+      "output": "mem_write 0xc0169700 0xffffffff 64\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xc0169770 4",
+      "output": "mem_read 0xc0169770 4\n\nMemory dump:\n0xc0169770  ff ff ff ff                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001804 0x5a",
+      "output": "mem_write 0xf0001804 0x5a\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001800 0x2",
+      "output": "mem_write 0xf0001800 0x2\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001808 0x3b8",
+      "output": "mem_write 0xf0001808 0x3b8\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf000180c 0x1",
+      "output": "mem_write 0xf000180c 0x1\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xc0169780 0xffffffff 9634",
+      "output": "mem_write 0xc0169780 0xffffffff 9634\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xc0169770 16",
+      "output": "mem_read 0xc0169770 16\n\nMemory dump:\n0xc0169770  ff ff ef ff ff ff ff ff ff ff ff ff ff ff ff ff  ................\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf0001810 4",
+      "output": "mem_read 0xf0001810 4\n\nMemory dump:\n0xf0001810  18 00 00 00                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_test 0xc0000000 0x200000",
+      "output": "mem_test 0xc0000000 0x200000\n\nMemtest at 0xc0000000 (2.0MiB)...\n  Write: 0xc0000000-0xc0000000 0B     Write: 0xc0000000-0xc0020000 128.0KiB     Write: 0xc0000000-0xc0040000 256.0KiB     Write: 0xc0000000-0xc0060000 384.0KiB     Write: 0xc0000000-0xc0080000 512.0KiB     Write: 0xc0000000-0xc00a0000 640.0KiB     Write: 0xc0000000-0xc00c0000 768.0KiB     Write: 0xc0000000-0xc00e0000 896.0KiB     Write: 0xc0000000-0xc0100000 1.0MiB     Write: 0xc0000000-0xc0120000 1.1MiB     Write: 0xc0000000-0xc0140000 1.2MiB     Write: 0xc0000000-0xc0160000 1.3MiB     Write: 0xc0000000-0xc0180000 1.5MiB     Write: 0xc0000000-0xc01a0000 1.6MiB     Write: 0xc0000000-0xc01c0000 1.7MiB     Write: 0xc0000000-0xc01e0000 1.8MiB     Write: 0xc0000000-0xc0200000 2.0MiB   \n   Read: 0xc0000000-0xc0000000 0B      Read: 0xc0000000-0xc0020000 128.0KiB      Read: 0xc0000000-0xc0040000 256.0KiB      Read: 0xc0000000-0xc0060000 384.0KiB      Read: 0xc0000000-0xc0080000 512.0KiB      Read: 0xc0000000-0xc00a0000 640.0KiB   memtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9\n   Read: 0xc0000000-0xc00c0000 768.0KiB      Read: 0xc0000000-0xc00e0000 896.0KiB      Read: 0xc0000000-0xc0100000 1.0MiB      Read: 0xc0000000-0xc0120000 1.1MiB      Read: 0xc0000000-0xc0140000 1.2MiB      Read: 0xc0000000-0xc0160000 1.3MiB      Read: 0xc0000000-0xc0180000 1.5MiB      Read: 0xc0000000-0xc01a0000 1.6MiB      Read: 0xc0000000-0xc01c0000 1.7MiB      Read: 0xc0000000-0xc01e0000 1.8MiB      Read: 0xc0000000-0xc0200000 2.0MiB   \n  bus errors:  0/256\n  addr errors: 0/8192\n  data errors: 1/524288\nMemtest KO\nlitex> "
+    },
+    {
+      "command": "mem_write 0xc0169700 0xffffffff 64",
+      "output": "mem_write 0xc0169700 0xffffffff 64\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xc0169770 4",
+      "output": "mem_read 0xc0169770 4\n\nMemory dump:\n0xc0169770  ff ff ff ff                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001804 0x5a",
+      "output": "mem_write 0xf0001804 0x5a\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001800 0x2",
+      "output": "mem_write 0xf0001800 0x2\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001808 0x3b8",
+      "output": "mem_write 0xf0001808 0x3b8\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf000180c 0x1",
+      "output": "mem_write 0xf000180c 0x1\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xc0169780 0xffffffff 4817",
+      "output": "mem_write 0xc0169780 0xffffffff 4817\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xc0169770 16",
+      "output": "mem_read 0xc0169770 16\n\nMemory dump:\n0xc0169770  ff ff ef ff ff ff ff ff ff ff ff ff ff ff ff ff  ................\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf0001810 4",
+      "output": "mem_read 0xf0001810 4\n\nMemory dump:\n0xf0001810  18 00 00 00                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_test 0xc0000000 0x200000",
+      "output": "mem_test 0xc0000000 0x200000\n\nMemtest at 0xc0000000 (2.0MiB)...\n  Write: 0xc0000000-0xc0000000 0B     Write: 0xc0000000-0xc0020000 128.0KiB     Write: 0xc0000000-0xc0040000 256.0KiB     Write: 0xc0000000-0xc0060000 384.0KiB     Write: 0xc0000000-0xc0080000 512.0KiB     Write: 0xc0000000-0xc00a0000 640.0KiB     Write: 0xc0000000-0xc00c0000 768.0KiB     Write: 0xc0000000-0xc00e0000 896.0KiB     Write: 0xc0000000-0xc0100000 1.0MiB     Write: 0xc0000000-0xc0120000 1.1MiB     Write: 0xc0000000-0xc0140000 1.2MiB     Write: 0xc0000000-0xc0160000 1.3MiB     Write: 0xc0000000-0xc0180000 1.5MiB     Write: 0xc0000000-0xc01a0000 1.6MiB     Write: 0xc0000000-0xc01c0000 1.7MiB     Write: 0xc0000000-0xc01e0000 1.8MiB     Write: 0xc0000000-0xc0200000 2.0MiB   \n   Read: 0xc0000000-0xc0000000 0B      Read: 0xc0000000-0xc0020000 128.0KiB      Read: 0xc0000000-0xc0040000 256.0KiB      Read: 0xc0000000-0xc0060000 384.0KiB      Read: 0xc0000000-0xc0080000 512.0KiB      Read: 0xc0000000-0xc00a0000 640.0KiB   memtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9\n   Read: 0xc0000000-0xc00c0000 768.0KiB      Read: 0xc0000000-0xc00e0000 896.0KiB      Read: 0xc0000000-0xc0100000 1.0MiB      Read: 0xc0000000-0xc0120000 1.1MiB      Read: 0xc0000000-0xc0140000 1.2MiB      Read: 0xc0000000-0xc0160000 1.3MiB      Read: 0xc0000000-0xc0180000 1.5MiB      Read: 0xc0000000-0xc01a0000 1.6MiB      Read: 0xc0000000-0xc01c0000 1.7MiB      Read: 0xc0000000-0xc01e0000 1.8MiB      Read: 0xc0000000-0xc0200000 2.0MiB   \n  bus errors:  0/256\n  addr errors: 0/8192\n  data errors: 1/524288\nMemtest KO\nlitex> "
+    },
+    {
+      "command": "mem_write 0xc0169700 0xffffffff 64",
+      "output": "mem_write 0xc0169700 0xffffffff 64\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xc0169770 4",
+      "output": "mem_read 0xc0169770 4\n\nMemory dump:\n0xc0169770  ff ff ff ff                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001804 0x5a",
+      "output": "mem_write 0xf0001804 0x5a\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001800 0x2",
+      "output": "mem_write 0xf0001800 0x2\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001808 0x3b8",
+      "output": "mem_write 0xf0001808 0x3b8\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf000180c 0x1",
+      "output": "mem_write 0xf000180c 0x1\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xc0169780 0xffffffff 2408",
+      "output": "mem_write 0xc0169780 0xffffffff 2408\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xc0169770 16",
+      "output": "mem_read 0xc0169770 16\n\nMemory dump:\n0xc0169770  ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff  ................\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf0001810 4",
+      "output": "mem_read 0xf0001810 4\n\nMemory dump:\n0xf0001810  18 00 00 00                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_test 0xc0000000 0x200000",
+      "output": "mem_test 0xc0000000 0x200000\n\nMemtest at 0xc0000000 (2.0MiB)...\n  Write: 0xc0000000-0xc0000000 0B     Write: 0xc0000000-0xc0020000 128.0KiB     Write: 0xc0000000-0xc0040000 256.0KiB     Write: 0xc0000000-0xc0060000 384.0KiB     Write: 0xc0000000-0xc0080000 512.0KiB     Write: 0xc0000000-0xc00a0000 640.0KiB     Write: 0xc0000000-0xc00c0000 768.0KiB     Write: 0xc0000000-0xc00e0000 896.0KiB     Write: 0xc0000000-0xc0100000 1.0MiB     Write: 0xc0000000-0xc0120000 1.1MiB     Write: 0xc0000000-0xc0140000 1.2MiB     Write: 0xc0000000-0xc0160000 1.3MiB     Write: 0xc0000000-0xc0180000 1.5MiB     Write: 0xc0000000-0xc01a0000 1.6MiB     Write: 0xc0000000-0xc01c0000 1.7MiB     Write: 0xc0000000-0xc01e0000 1.8MiB     Write: 0xc0000000-0xc0200000 2.0MiB   \n   Read: 0xc0000000-0xc0000000 0B      Read: 0xc0000000-0xc0020000 128.0KiB      Read: 0xc0000000-0xc0040000 256.0KiB      Read: 0xc0000000-0xc0060000 384.0KiB      Read: 0xc0000000-0xc0080000 512.0KiB      Read: 0xc0000000-0xc00a0000 640.0KiB   memtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9\n   Read: 0xc0000000-0xc00c0000 768.0KiB      Read: 0xc0000000-0xc00e0000 896.0KiB      Read: 0xc0000000-0xc0100000 1.0MiB      Read: 0xc0000000-0xc0120000 1.1MiB      Read: 0xc0000000-0xc0140000 1.2MiB      Read: 0xc0000000-0xc0160000 1.3MiB      Read: 0xc0000000-0xc0180000 1.5MiB      Read: 0xc0000000-0xc01a0000 1.6MiB      Read: 0xc0000000-0xc01c0000 1.7MiB      Read: 0xc0000000-0xc01e0000 1.8MiB      Read: 0xc0000000-0xc0200000 2.0MiB   \n  bus errors:  0/256\n  addr errors: 0/8192\n  data errors: 1/524288\nMemtest KO\nlitex> "
+    },
+    {
+      "command": "mem_write 0xc0169700 0xffffffff 64",
+      "output": "mem_write 0xc0169700 0xffffffff 64\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xc0169770 4",
+      "output": "mem_read 0xc0169770 4\n\nMemory dump:\n0xc0169770  ff ff ff ff                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001804 0x5a",
+      "output": "mem_write 0xf0001804 0x5a\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001800 0x2",
+      "output": "mem_write 0xf0001800 0x2\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001808 0x3b8",
+      "output": "mem_write 0xf0001808 0x3b8\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf000180c 0x1",
+      "output": "mem_write 0xf000180c 0x1\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xc016bd20 0xffffffff 2409",
+      "output": "mem_write 0xc016bd20 0xffffffff 2409\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xc0169770 16",
+      "output": "mem_read 0xc0169770 16\n\nMemory dump:\n0xc0169770  ff ff ef ff ff ff ff ff ff ff ff ff ff ff ff ff  ................\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf0001810 4",
+      "output": "mem_read 0xf0001810 4\n\nMemory dump:\n0xf0001810  18 00 00 00                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_test 0xc0000000 0x200000",
+      "output": "mem_test 0xc0000000 0x200000\n\nMemtest at 0xc0000000 (2.0MiB)...\n  Write: 0xc0000000-0xc0000000 0B     Write: 0xc0000000-0xc0020000 128.0KiB     Write: 0xc0000000-0xc0040000 256.0KiB     Write: 0xc0000000-0xc0060000 384.0KiB     Write: 0xc0000000-0xc0080000 512.0KiB     Write: 0xc0000000-0xc00a0000 640.0KiB     Write: 0xc0000000-0xc00c0000 768.0KiB     Write: 0xc0000000-0xc00e0000 896.0KiB     Write: 0xc0000000-0xc0100000 1.0MiB     Write: 0xc0000000-0xc0120000 1.1MiB     Write: 0xc0000000-0xc0140000 1.2MiB     Write: 0xc0000000-0xc0160000 1.3MiB     Write: 0xc0000000-0xc0180000 1.5MiB     Write: 0xc0000000-0xc01a0000 1.6MiB     Write: 0xc0000000-0xc01c0000 1.7MiB     Write: 0xc0000000-0xc01e0000 1.8MiB     Write: 0xc0000000-0xc0200000 2.0MiB   \n   Read: 0xc0000000-0xc0000000 0B      Read: 0xc0000000-0xc0020000 128.0KiB      Read: 0xc0000000-0xc0040000 256.0KiB      Read: 0xc0000000-0xc0060000 384.0KiB      Read: 0xc0000000-0xc0080000 512.0KiB      Read: 0xc0000000-0xc00a0000 640.0KiB   memtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9\n   Read: 0xc0000000-0xc00c0000 768.0KiB      Read: 0xc0000000-0xc00e0000 896.0KiB      Read: 0xc0000000-0xc0100000 1.0MiB      Read: 0xc0000000-0xc0120000 1.1MiB      Read: 0xc0000000-0xc0140000 1.2MiB      Read: 0xc0000000-0xc0160000 1.3MiB      Read: 0xc0000000-0xc0180000 1.5MiB      Read: 0xc0000000-0xc01a0000 1.6MiB      Read: 0xc0000000-0xc01c0000 1.7MiB      Read: 0xc0000000-0xc01e0000 1.8MiB      Read: 0xc0000000-0xc0200000 2.0MiB   \n  bus errors:  0/256\n  addr errors: 0/8192\n  data errors: 1/524288\nMemtest KO\nlitex> "
+    },
+    {
+      "command": "mem_write 0xc0169700 0xffffffff 64",
+      "output": "mem_write 0xc0169700 0xffffffff 64\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xc0169770 4",
+      "output": "mem_read 0xc0169770 4\n\nMemory dump:\n0xc0169770  ff ff ff ff                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001804 0x5a",
+      "output": "mem_write 0xf0001804 0x5a\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001800 0x2",
+      "output": "mem_write 0xf0001800 0x2\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001808 0x3b8",
+      "output": "mem_write 0xf0001808 0x3b8\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf000180c 0x1",
+      "output": "mem_write 0xf000180c 0x1\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xc016bd20 0xffffffff 1204",
+      "output": "mem_write 0xc016bd20 0xffffffff 1204\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xc0169770 16",
+      "output": "mem_read 0xc0169770 16\n\nMemory dump:\n0xc0169770  ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff  ................\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf0001810 4",
+      "output": "mem_read 0xf0001810 4\n\nMemory dump:\n0xf0001810  18 00 00 00                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_test 0xc0000000 0x200000",
+      "output": "mem_test 0xc0000000 0x200000\n\nMemtest at 0xc0000000 (2.0MiB)...\n  Write: 0xc0000000-0xc0000000 0B     Write: 0xc0000000-0xc0020000 128.0KiB     Write: 0xc0000000-0xc0040000 256.0KiB     Write: 0xc0000000-0xc0060000 384.0KiB     Write: 0xc0000000-0xc0080000 512.0KiB     Write: 0xc0000000-0xc00a0000 640.0KiB     Write: 0xc0000000-0xc00c0000 768.0KiB     Write: 0xc0000000-0xc00e0000 896.0KiB     Write: 0xc0000000-0xc0100000 1.0MiB     Write: 0xc0000000-0xc0120000 1.1MiB     Write: 0xc0000000-0xc0140000 1.2MiB     Write: 0xc0000000-0xc0160000 1.3MiB     Write: 0xc0000000-0xc0180000 1.5MiB     Write: 0xc0000000-0xc01a0000 1.6MiB     Write: 0xc0000000-0xc01c0000 1.7MiB     Write: 0xc0000000-0xc01e0000 1.8MiB     Write: 0xc0000000-0xc0200000 2.0MiB   \n   Read: 0xc0000000-0xc0000000 0B      Read: 0xc0000000-0xc0020000 128.0KiB      Read: 0xc0000000-0xc0040000 256.0KiB      Read: 0xc0000000-0xc0060000 384.0KiB      Read: 0xc0000000-0xc0080000 512.0KiB      Read: 0xc0000000-0xc00a0000 640.0KiB   memtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9\n   Read: 0xc0000000-0xc00c0000 768.0KiB      Read: 0xc0000000-0xc00e0000 896.0KiB      Read: 0xc0000000-0xc0100000 1.0MiB      Read: 0xc0000000-0xc0120000 1.1MiB      Read: 0xc0000000-0xc0140000 1.2MiB      Read: 0xc0000000-0xc0160000 1.3MiB      Read: 0xc0000000-0xc0180000 1.5MiB      Read: 0xc0000000-0xc01a0000 1.6MiB      Read: 0xc0000000-0xc01c0000 1.7MiB      Read: 0xc0000000-0xc01e0000 1.8MiB      Read: 0xc0000000-0xc0200000 2.0MiB   \n  bus errors:  0/256\n  addr errors: 0/8192\n  data errors: 1/524288\nMemtest KO\nlitex> "
+    },
+    {
+      "command": "mem_write 0xc0169700 0xffffffff 64",
+      "output": "mem_write 0xc0169700 0xffffffff 64\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xc0169770 4",
+      "output": "mem_read 0xc0169770 4\n\nMemory dump:\n0xc0169770  ff ff ff ff                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001804 0x5a",
+      "output": "mem_write 0xf0001804 0x5a\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001800 0x2",
+      "output": "mem_write 0xf0001800 0x2\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001808 0x3b8",
+      "output": "mem_write 0xf0001808 0x3b8\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf000180c 0x1",
+      "output": "mem_write 0xf000180c 0x1\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xc016cff0 0xffffffff 1205",
+      "output": "mem_write 0xc016cff0 0xffffffff 1205\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xc0169770 16",
+      "output": "mem_read 0xc0169770 16\n\nMemory dump:\n0xc0169770  ff ff ef ff ff ff ff ff ff ff ff ff ff ff ff ff  ................\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf0001810 4",
+      "output": "mem_read 0xf0001810 4\n\nMemory dump:\n0xf0001810  18 00 00 00                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_test 0xc0000000 0x200000",
+      "output": "mem_test 0xc0000000 0x200000\n\nMemtest at 0xc0000000 (2.0MiB)...\n  Write: 0xc0000000-0xc0000000 0B     Write: 0xc0000000-0xc0020000 128.0KiB     Write: 0xc0000000-0xc0040000 256.0KiB     Write: 0xc0000000-0xc0060000 384.0KiB     Write: 0xc0000000-0xc0080000 512.0KiB     Write: 0xc0000000-0xc00a0000 640.0KiB     Write: 0xc0000000-0xc00c0000 768.0KiB     Write: 0xc0000000-0xc00e0000 896.0KiB     Write: 0xc0000000-0xc0100000 1.0MiB     Write: 0xc0000000-0xc0120000 1.1MiB     Write: 0xc0000000-0xc0140000 1.2MiB     Write: 0xc0000000-0xc0160000 1.3MiB     Write: 0xc0000000-0xc0180000 1.5MiB     Write: 0xc0000000-0xc01a0000 1.6MiB     Write: 0xc0000000-0xc01c0000 1.7MiB     Write: 0xc0000000-0xc01e0000 1.8MiB     Write: 0xc0000000-0xc0200000 2.0MiB   \n   Read: 0xc0000000-0xc0000000 0B      Read: 0xc0000000-0xc0020000 128.0KiB      Read: 0xc0000000-0xc0040000 256.0KiB      Read: 0xc0000000-0xc0060000 384.0KiB      Read: 0xc0000000-0xc0080000 512.0KiB      Read: 0xc0000000-0xc00a0000 640.0KiB   memtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9\n   Read: 0xc0000000-0xc00c0000 768.0KiB      Read: 0xc0000000-0xc00e0000 896.0KiB      Read: 0xc0000000-0xc0100000 1.0MiB      Read: 0xc0000000-0xc0120000 1.1MiB      Read: 0xc0000000-0xc0140000 1.2MiB      Read: 0xc0000000-0xc0160000 1.3MiB      Read: 0xc0000000-0xc0180000 1.5MiB      Read: 0xc0000000-0xc01a0000 1.6MiB      Read: 0xc0000000-0xc01c0000 1.7MiB      Read: 0xc0000000-0xc01e0000 1.8MiB      Read: 0xc0000000-0xc0200000 2.0MiB   \n  bus errors:  0/256\n  addr errors: 0/8192\n  data errors: 1/524288\nMemtest KO\nlitex> "
+    },
+    {
+      "command": "mem_write 0xc0169700 0xffffffff 64",
+      "output": "mem_write 0xc0169700 0xffffffff 64\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xc0169770 4",
+      "output": "mem_read 0xc0169770 4\n\nMemory dump:\n0xc0169770  ff ff ff ff                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001804 0x5a",
+      "output": "mem_write 0xf0001804 0x5a\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001800 0x2",
+      "output": "mem_write 0xf0001800 0x2\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001808 0x3b8",
+      "output": "mem_write 0xf0001808 0x3b8\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf000180c 0x1",
+      "output": "mem_write 0xf000180c 0x1\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xc016cff0 0xffffffff 602",
+      "output": "mem_write 0xc016cff0 0xffffffff 602\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xc0169770 16",
+      "output": "mem_read 0xc0169770 16\n\nMemory dump:\n0xc0169770  ff ff ef ff ff ff ff ff ff ff ff ff ff ff ff ff  ................\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf0001810 4",
+      "output": "mem_read 0xf0001810 4\n\nMemory dump:\n0xf0001810  18 00 00 00                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_test 0xc0000000 0x200000",
+      "output": "mem_test 0xc0000000 0x200000\n\nMemtest at 0xc0000000 (2.0MiB)...\n  Write: 0xc0000000-0xc0000000 0B     Write: 0xc0000000-0xc0020000 128.0KiB     Write: 0xc0000000-0xc0040000 256.0KiB     Write: 0xc0000000-0xc0060000 384.0KiB     Write: 0xc0000000-0xc0080000 512.0KiB     Write: 0xc0000000-0xc00a0000 640.0KiB     Write: 0xc0000000-0xc00c0000 768.0KiB     Write: 0xc0000000-0xc00e0000 896.0KiB     Write: 0xc0000000-0xc0100000 1.0MiB     Write: 0xc0000000-0xc0120000 1.1MiB     Write: 0xc0000000-0xc0140000 1.2MiB     Write: 0xc0000000-0xc0160000 1.3MiB     Write: 0xc0000000-0xc0180000 1.5MiB     Write: 0xc0000000-0xc01a0000 1.6MiB     Write: 0xc0000000-0xc01c0000 1.7MiB     Write: 0xc0000000-0xc01e0000 1.8MiB     Write: 0xc0000000-0xc0200000 2.0MiB   \n   Read: 0xc0000000-0xc0000000 0B      Read: 0xc0000000-0xc0020000 128.0KiB      Read: 0xc0000000-0xc0040000 256.0KiB      Read: 0xc0000000-0xc0060000 384.0KiB      Read: 0xc0000000-0xc0080000 512.0KiB      Read: 0xc0000000-0xc00a0000 640.0KiB   memtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9\n   Read: 0xc0000000-0xc00c0000 768.0KiB      Read: 0xc0000000-0xc00e0000 896.0KiB      Read: 0xc0000000-0xc0100000 1.0MiB      Read: 0xc0000000-0xc0120000 1.1MiB      Read: 0xc0000000-0xc0140000 1.2MiB      Read: 0xc0000000-0xc0160000 1.3MiB      Read: 0xc0000000-0xc0180000 1.5MiB      Read: 0xc0000000-0xc01a0000 1.6MiB      Read: 0xc0000000-0xc01c0000 1.7MiB      Read: 0xc0000000-0xc01e0000 1.8MiB      Read: 0xc0000000-0xc0200000 2.0MiB   \n  bus errors:  0/256\n  addr errors: 0/8192\n  data errors: 1/524288\nMemtest KO\nlitex> "
+    },
+    {
+      "command": "mem_write 0xc0169700 0xffffffff 64",
+      "output": "mem_write 0xc0169700 0xffffffff 64\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xc0169770 4",
+      "output": "mem_read 0xc0169770 4\n\nMemory dump:\n0xc0169770  ff ff ff ff                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001804 0x5a",
+      "output": "mem_write 0xf0001804 0x5a\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001800 0x2",
+      "output": "mem_write 0xf0001800 0x2\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001808 0x3b8",
+      "output": "mem_write 0xf0001808 0x3b8\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf000180c 0x1",
+      "output": "mem_write 0xf000180c 0x1\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xc016cff0 0xffffffff 301",
+      "output": "mem_write 0xc016cff0 0xffffffff 301\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xc0169770 16",
+      "output": "mem_read 0xc0169770 16\n\nMemory dump:\n0xc0169770  ff ff ef ff ff ff ff ff ff ff ff ff ff ff ff ff  ................\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf0001810 4",
+      "output": "mem_read 0xf0001810 4\n\nMemory dump:\n0xf0001810  18 00 00 00                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_test 0xc0000000 0x200000",
+      "output": "mem_test 0xc0000000 0x200000\n\nMemtest at 0xc0000000 (2.0MiB)...\n  Write: 0xc0000000-0xc0000000 0B     Write: 0xc0000000-0xc0020000 128.0KiB     Write: 0xc0000000-0xc0040000 256.0KiB     Write: 0xc0000000-0xc0060000 384.0KiB     Write: 0xc0000000-0xc0080000 512.0KiB     Write: 0xc0000000-0xc00a0000 640.0KiB     Write: 0xc0000000-0xc00c0000 768.0KiB     Write: 0xc0000000-0xc00e0000 896.0KiB     Write: 0xc0000000-0xc0100000 1.0MiB     Write: 0xc0000000-0xc0120000 1.1MiB     Write: 0xc0000000-0xc0140000 1.2MiB     Write: 0xc0000000-0xc0160000 1.3MiB     Write: 0xc0000000-0xc0180000 1.5MiB     Write: 0xc0000000-0xc01a0000 1.6MiB     Write: 0xc0000000-0xc01c0000 1.7MiB     Write: 0xc0000000-0xc01e0000 1.8MiB     Write: 0xc0000000-0xc0200000 2.0MiB   \n   Read: 0xc0000000-0xc0000000 0B      Read: 0xc0000000-0xc0020000 128.0KiB      Read: 0xc0000000-0xc0040000 256.0KiB      Read: 0xc0000000-0xc0060000 384.0KiB      Read: 0xc0000000-0xc0080000 512.0KiB      Read: 0xc0000000-0xc00a0000 640.0KiB   memtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9\n   Read: 0xc0000000-0xc00c0000 768.0KiB      Read: 0xc0000000-0xc00e0000 896.0KiB      Read: 0xc0000000-0xc0100000 1.0MiB      Read: 0xc0000000-0xc0120000 1.1MiB      Read: 0xc0000000-0xc0140000 1.2MiB      Read: 0xc0000000-0xc0160000 1.3MiB      Read: 0xc0000000-0xc0180000 1.5MiB      Read: 0xc0000000-0xc01a0000 1.6MiB      Read: 0xc0000000-0xc01c0000 1.7MiB      Read: 0xc0000000-0xc01e0000 1.8MiB      Read: 0xc0000000-0xc0200000 2.0MiB   \n  bus errors:  0/256\n  addr errors: 0/8192\n  data errors: 1/524288\nMemtest KO\nlitex> "
+    },
+    {
+      "command": "mem_write 0xc0169700 0xffffffff 64",
+      "output": "mem_write 0xc0169700 0xffffffff 64\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xc0169770 4",
+      "output": "mem_read 0xc0169770 4\n\nMemory dump:\n0xc0169770  ff ff ff ff                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001804 0x5a",
+      "output": "mem_write 0xf0001804 0x5a\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001800 0x2",
+      "output": "mem_write 0xf0001800 0x2\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001808 0x3b8",
+      "output": "mem_write 0xf0001808 0x3b8\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf000180c 0x1",
+      "output": "mem_write 0xf000180c 0x1\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xc016cff0 0xffffffff 150",
+      "output": "mem_write 0xc016cff0 0xffffffff 150\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xc0169770 16",
+      "output": "mem_read 0xc0169770 16\n\nMemory dump:\n0xc0169770  ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff  ................\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf0001810 4",
+      "output": "mem_read 0xf0001810 4\n\nMemory dump:\n0xf0001810  18 00 00 00                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_test 0xc0000000 0x200000",
+      "output": "mem_test 0xc0000000 0x200000\n\nMemtest at 0xc0000000 (2.0MiB)...\n  Write: 0xc0000000-0xc0000000 0B     Write: 0xc0000000-0xc0020000 128.0KiB     Write: 0xc0000000-0xc0040000 256.0KiB     Write: 0xc0000000-0xc0060000 384.0KiB     Write: 0xc0000000-0xc0080000 512.0KiB     Write: 0xc0000000-0xc00a0000 640.0KiB     Write: 0xc0000000-0xc00c0000 768.0KiB     Write: 0xc0000000-0xc00e0000 896.0KiB     Write: 0xc0000000-0xc0100000 1.0MiB     Write: 0xc0000000-0xc0120000 1.1MiB     Write: 0xc0000000-0xc0140000 1.2MiB     Write: 0xc0000000-0xc0160000 1.3MiB     Write: 0xc0000000-0xc0180000 1.5MiB     Write: 0xc0000000-0xc01a0000 1.6MiB     Write: 0xc0000000-0xc01c0000 1.7MiB     Write: 0xc0000000-0xc01e0000 1.8MiB     Write: 0xc0000000-0xc0200000 2.0MiB   \n   Read: 0xc0000000-0xc0000000 0B      Read: 0xc0000000-0xc0020000 128.0KiB      Read: 0xc0000000-0xc0040000 256.0KiB      Read: 0xc0000000-0xc0060000 384.0KiB      Read: 0xc0000000-0xc0080000 512.0KiB      Read: 0xc0000000-0xc00a0000 640.0KiB   memtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9\n   Read: 0xc0000000-0xc00c0000 768.0KiB      Read: 0xc0000000-0xc00e0000 896.0KiB      Read: 0xc0000000-0xc0100000 1.0MiB      Read: 0xc0000000-0xc0120000 1.1MiB      Read: 0xc0000000-0xc0140000 1.2MiB      Read: 0xc0000000-0xc0160000 1.3MiB      Read: 0xc0000000-0xc0180000 1.5MiB      Read: 0xc0000000-0xc01a0000 1.6MiB      Read: 0xc0000000-0xc01c0000 1.7MiB      Read: 0xc0000000-0xc01e0000 1.8MiB      Read: 0xc0000000-0xc0200000 2.0MiB   \n  bus errors:  0/256\n  addr errors: 0/8192\n  data errors: 1/524288\nMemtest KO\nlitex> "
+    },
+    {
+      "command": "mem_write 0xc0169700 0xffffffff 64",
+      "output": "mem_write 0xc0169700 0xffffffff 64\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xc0169770 4",
+      "output": "mem_read 0xc0169770 4\n\nMemory dump:\n0xc0169770  ff ff ff ff                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001804 0x5a",
+      "output": "mem_write 0xf0001804 0x5a\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001800 0x2",
+      "output": "mem_write 0xf0001800 0x2\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001808 0x3b8",
+      "output": "mem_write 0xf0001808 0x3b8\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf000180c 0x1",
+      "output": "mem_write 0xf000180c 0x1\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xc016d248 0xffffffff 151",
+      "output": "mem_write 0xc016d248 0xffffffff 151\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xc0169770 16",
+      "output": "mem_read 0xc0169770 16\n\nMemory dump:\n0xc0169770  ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff  ................\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf0001810 4",
+      "output": "mem_read 0xf0001810 4\n\nMemory dump:\n0xf0001810  18 00 00 00                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_test 0xc0000000 0x200000",
+      "output": "mem_test 0xc0000000 0x200000\n\nMemtest at 0xc0000000 (2.0MiB)...\n  Write: 0xc0000000-0xc0000000 0B     Write: 0xc0000000-0xc0020000 128.0KiB     Write: 0xc0000000-0xc0040000 256.0KiB     Write: 0xc0000000-0xc0060000 384.0KiB     Write: 0xc0000000-0xc0080000 512.0KiB     Write: 0xc0000000-0xc00a0000 640.0KiB     Write: 0xc0000000-0xc00c0000 768.0KiB     Write: 0xc0000000-0xc00e0000 896.0KiB     Write: 0xc0000000-0xc0100000 1.0MiB     Write: 0xc0000000-0xc0120000 1.1MiB     Write: 0xc0000000-0xc0140000 1.2MiB     Write: 0xc0000000-0xc0160000 1.3MiB     Write: 0xc0000000-0xc0180000 1.5MiB     Write: 0xc0000000-0xc01a0000 1.6MiB     Write: 0xc0000000-0xc01c0000 1.7MiB     Write: 0xc0000000-0xc01e0000 1.8MiB     Write: 0xc0000000-0xc0200000 2.0MiB   \n   Read: 0xc0000000-0xc0000000 0B      Read: 0xc0000000-0xc0020000 128.0KiB      Read: 0xc0000000-0xc0040000 256.0KiB      Read: 0xc0000000-0xc0060000 384.0KiB      Read: 0xc0000000-0xc0080000 512.0KiB      Read: 0xc0000000-0xc00a0000 640.0KiB   memtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9\n   Read: 0xc0000000-0xc00c0000 768.0KiB      Read: 0xc0000000-0xc00e0000 896.0KiB      Read: 0xc0000000-0xc0100000 1.0MiB      Read: 0xc0000000-0xc0120000 1.1MiB      Read: 0xc0000000-0xc0140000 1.2MiB      Read: 0xc0000000-0xc0160000 1.3MiB      Read: 0xc0000000-0xc0180000 1.5MiB      Read: 0xc0000000-0xc01a0000 1.6MiB      Read: 0xc0000000-0xc01c0000 1.7MiB      Read: 0xc0000000-0xc01e0000 1.8MiB      Read: 0xc0000000-0xc0200000 2.0MiB   \n  bus errors:  0/256\n  addr errors: 0/8192\n  data errors: 1/524288\nMemtest KO\nlitex> "
+    },
+    {
+      "command": "mem_write 0xc0169700 0xffffffff 64",
+      "output": "mem_write 0xc0169700 0xffffffff 64\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xc0169770 4",
+      "output": "mem_read 0xc0169770 4\n\nMemory dump:\n0xc0169770  ff ff ff ff                                      ....            \nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001804 0x5a",
+      "output": "mem_write 0xf0001804 0x5a\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001800 0x2",
+      "output": "mem_write 0xf0001800 0x2\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf0001808 0x3b8",
+      "output": "mem_write 0xf0001808 0x3b8\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xf000180c 0x1",
+      "output": "mem_write 0xf000180c 0x1\n\nlitex> "
+    },
+    {
+      "command": "mem_write 0xc016cff0 0xffffffff 301",
+      "output": "mem_write 0xc016cff0 0xffffffff 301\n\nlitex> "
+    },
+    {
+      "command": "mem_read 0xc0169770 16",
+      "output": "mem_read 0xc0169770 16\n\nMemory dump:\n0xc0169770  ff ff ef ff ff ff ff ff ff ff ff ff ff ff ff ff  ................\nlitex> "
+    },
+    {
+      "command": "mem_read 0xf0001810 4",
+      "output": "mem_read 0xf0001810 4\n\nMemory dump:\n0xf0001810  18 00 00 00                                      ....            \nlitex> "
+    }
+  ],
+  "traces": [
+    {
+      "label": "boot_cached_prng",
+      "offset": "0xb64f4",
+      "geometry": {
+        "row": 45,
+        "bank": 4,
+        "column": 632,
+        "word_lane": 1
+      },
+      "status": 3,
+      "write_complete": true,
+      "read_complete": true,
+      "physical_words": [
+        "0x69fcd9b5",
+        "0xb4ce6cd9",
+        "0xda4f366f",
+        "0xed079b34"
+      ],
+      "frames": [
+        {
+          "slot": 0,
+          "raw": "001409e01fff0000000000000000ffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x3",
+          "dqs_tx": "0x3",
+          "write_enable": "0x1",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x278",
+          "command_bank": "0x4",
+          "command_signals": "0x2"
+        },
+        {
+          "slot": 1,
+          "raw": "007409000fff0000000000000000ffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x3",
+          "dqs_tx": "0x3",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x240",
+          "command_bank": "0x4",
+          "command_signals": "0xe"
+        },
+        {
+          "slot": 2,
+          "raw": "0074090004ff00000000000000000000ed079b34da4f366fb4de6cd969fcd9b5",
+          "write_data": "0xed079b34da4f366fb4de6cd969fcd9b5",
+          "write_mask": "0x0",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x0",
+          "dqs_tx": "0x1",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x240",
+          "command_bank": "0x4",
+          "command_signals": "0xe"
+        },
+        {
+          "slot": 3,
+          "raw": "007409000000b4de6cd969fcd9b5ffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0xb4de6cd969fcd9b5",
+          "serializer_mask": "0x0",
+          "dq_tx": "0x0",
+          "dqs_tx": "0x0",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x240",
+          "command_bank": "0x4",
+          "command_signals": "0xe"
+        },
+        {
+          "slot": 4,
+          "raw": "007409000000ed079b34da4f366fffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0xed079b34da4f366f",
+          "serializer_mask": "0x0",
+          "dq_tx": "0x0",
+          "dqs_tx": "0x0",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x240",
+          "command_bank": "0x4",
+          "command_signals": "0xe"
+        },
+        {
+          "slot": 5,
+          "raw": "007409000bff0000000000000000ffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x3",
+          "dqs_tx": "0x2",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x240",
+          "command_bank": "0x4",
+          "command_signals": "0xe"
+        },
+        {
+          "slot": 6,
+          "raw": "007409000fff0000000000000000ffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x3",
+          "dqs_tx": "0x3",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x240",
+          "command_bank": "0x4",
+          "command_signals": "0xe"
+        },
+        {
+          "slot": 7,
+          "raw": "007409000fff0000000000000000ffff00000000000000000000000000000000",
+          "write_data": "0x0",
+          "write_mask": "0xffff",
+          "serializer_data": "0x0",
+          "serializer_mask": "0xff",
+          "dq_tx": "0x3",
+          "dqs_tx": "0x3",
+          "write_enable": "0x0",
+          "read_enable": "0x0",
+          "read_valid": "0x0",
+          "command_address": "0x240",
+          "command_bank": "0x4",
+          "command_signals": "0xe"
+        }
+      ],
+      "expected_words": [
+        "0x69fcd9b5",
+        "0xb4de6cd9",
+        "0xda4f366f",
+        "0xed079b34"
+      ],
+      "hit_cycle": 133938345,
+      "read_valid": 2,
+      "read_early": "b4ce6cd969fcd9b569fcd9b56999d91f",
+      "read_early_words": [
+        "0x6999d91f",
+        "0x69fcd9b5",
+        "0x69fcd9b5",
+        "0xb4ce6cd9"
+      ],
+      "read_nominal": "ed079b34da4f366fb4ce6cd969fcd9b5",
+      "read_nominal_words": [
+        "0x69fcd9b5",
+        "0xb4ce6cd9",
+        "0xda4f366f",
+        "0xed079b34"
+      ],
+      "read_late": "9e4d9b429e4d9b42ed079b34da4f366f",
+      "read_late_words": [
+        "0xda4f366f",
+        "0xed079b34",
+        "0x9e4d9b42",
+        "0x9e4d9b42"
+      ]
+    },
+    {
+      "label": "range_00169780_00200000",
+      "offset": "0x169770",
+      "geometry": {
+        "row": 90,
+        "bank": 2,
+        "column": 952,
+        "word_lane": 0
+      },
+      "status": 24,
+      "write_complete": false,
+      "read_complete": false,
+      "physical_words": [
+        "0xffefffff",
+        "0xffffffff",
+        "0xffffffff",
+        "0xffffffff"
+      ],
+      "frames": [],
+      "aggressor_start": "0x169780",
+      "aggressor_end": "0x200000",
+      "before_word": "0xffffffff"
+    },
+    {
+      "label": "range_00169780_001b4bc0",
+      "offset": "0x169770",
+      "geometry": {
+        "row": 90,
+        "bank": 2,
+        "column": 952,
+        "word_lane": 0
+      },
+      "status": 24,
+      "write_complete": false,
+      "read_complete": false,
+      "physical_words": [
+        "0xffefffff",
+        "0xffffffff",
+        "0xffffffff",
+        "0xffffffff"
+      ],
+      "frames": [],
+      "aggressor_start": "0x169780",
+      "aggressor_end": "0x1b4bc0",
+      "before_word": "0xffffffff"
+    },
+    {
+      "label": "range_00169780_0018f1a0",
+      "offset": "0x169770",
+      "geometry": {
+        "row": 90,
+        "bank": 2,
+        "column": 952,
+        "word_lane": 0
+      },
+      "status": 24,
+      "write_complete": false,
+      "read_complete": false,
+      "physical_words": [
+        "0xffefffff",
+        "0xffffffff",
+        "0xffffffff",
+        "0xffffffff"
+      ],
+      "frames": [],
+      "aggressor_start": "0x169780",
+      "aggressor_end": "0x18f1a0",
+      "before_word": "0xffffffff"
+    },
+    {
+      "label": "range_00169780_0017c490",
+      "offset": "0x169770",
+      "geometry": {
+        "row": 90,
+        "bank": 2,
+        "column": 952,
+        "word_lane": 0
+      },
+      "status": 24,
+      "write_complete": false,
+      "read_complete": false,
+      "physical_words": [
+        "0xffefffff",
+        "0xffffffff",
+        "0xffffffff",
+        "0xffffffff"
+      ],
+      "frames": [],
+      "aggressor_start": "0x169780",
+      "aggressor_end": "0x17c490",
+      "before_word": "0xffffffff"
+    },
+    {
+      "label": "range_00169780_00172e08",
+      "offset": "0x169770",
+      "geometry": {
+        "row": 90,
+        "bank": 2,
+        "column": 952,
+        "word_lane": 0
+      },
+      "status": 24,
+      "write_complete": false,
+      "read_complete": false,
+      "physical_words": [
+        "0xffefffff",
+        "0xffffffff",
+        "0xffffffff",
+        "0xffffffff"
+      ],
+      "frames": [],
+      "aggressor_start": "0x169780",
+      "aggressor_end": "0x172e08",
+      "before_word": "0xffffffff"
+    },
+    {
+      "label": "range_00169780_0016e2c4",
+      "offset": "0x169770",
+      "geometry": {
+        "row": 90,
+        "bank": 2,
+        "column": 952,
+        "word_lane": 0
+      },
+      "status": 24,
+      "write_complete": false,
+      "read_complete": false,
+      "physical_words": [
+        "0xffefffff",
+        "0xffffffff",
+        "0xffffffff",
+        "0xffffffff"
+      ],
+      "frames": [],
+      "aggressor_start": "0x169780",
+      "aggressor_end": "0x16e2c4",
+      "before_word": "0xffffffff"
+    },
+    {
+      "label": "range_00169780_0016bd20",
+      "offset": "0x169770",
+      "geometry": {
+        "row": 90,
+        "bank": 2,
+        "column": 952,
+        "word_lane": 0
+      },
+      "status": 24,
+      "write_complete": false,
+      "read_complete": false,
+      "physical_words": [
+        "0xffffffff",
+        "0xffffffff",
+        "0xffffffff",
+        "0xffffffff"
+      ],
+      "frames": [],
+      "aggressor_start": "0x169780",
+      "aggressor_end": "0x16bd20",
+      "before_word": "0xffffffff"
+    },
+    {
+      "label": "range_0016bd20_0016e2c4",
+      "offset": "0x169770",
+      "geometry": {
+        "row": 90,
+        "bank": 2,
+        "column": 952,
+        "word_lane": 0
+      },
+      "status": 24,
+      "write_complete": false,
+      "read_complete": false,
+      "physical_words": [
+        "0xffefffff",
+        "0xffffffff",
+        "0xffffffff",
+        "0xffffffff"
+      ],
+      "frames": [],
+      "aggressor_start": "0x16bd20",
+      "aggressor_end": "0x16e2c4",
+      "before_word": "0xffffffff"
+    },
+    {
+      "label": "range_0016bd20_0016cff0",
+      "offset": "0x169770",
+      "geometry": {
+        "row": 90,
+        "bank": 2,
+        "column": 952,
+        "word_lane": 0
+      },
+      "status": 24,
+      "write_complete": false,
+      "read_complete": false,
+      "physical_words": [
+        "0xffffffff",
+        "0xffffffff",
+        "0xffffffff",
+        "0xffffffff"
+      ],
+      "frames": [],
+      "aggressor_start": "0x16bd20",
+      "aggressor_end": "0x16cff0",
+      "before_word": "0xffffffff"
+    },
+    {
+      "label": "range_0016cff0_0016e2c4",
+      "offset": "0x169770",
+      "geometry": {
+        "row": 90,
+        "bank": 2,
+        "column": 952,
+        "word_lane": 0
+      },
+      "status": 24,
+      "write_complete": false,
+      "read_complete": false,
+      "physical_words": [
+        "0xffefffff",
+        "0xffffffff",
+        "0xffffffff",
+        "0xffffffff"
+      ],
+      "frames": [],
+      "aggressor_start": "0x16cff0",
+      "aggressor_end": "0x16e2c4",
+      "before_word": "0xffffffff"
+    },
+    {
+      "label": "range_0016cff0_0016d958",
+      "offset": "0x169770",
+      "geometry": {
+        "row": 90,
+        "bank": 2,
+        "column": 952,
+        "word_lane": 0
+      },
+      "status": 24,
+      "write_complete": false,
+      "read_complete": false,
+      "physical_words": [
+        "0xffefffff",
+        "0xffffffff",
+        "0xffffffff",
+        "0xffffffff"
+      ],
+      "frames": [],
+      "aggressor_start": "0x16cff0",
+      "aggressor_end": "0x16d958",
+      "before_word": "0xffffffff"
+    },
+    {
+      "label": "range_0016cff0_0016d4a4",
+      "offset": "0x169770",
+      "geometry": {
+        "row": 90,
+        "bank": 2,
+        "column": 952,
+        "word_lane": 0
+      },
+      "status": 24,
+      "write_complete": false,
+      "read_complete": false,
+      "physical_words": [
+        "0xffefffff",
+        "0xffffffff",
+        "0xffffffff",
+        "0xffffffff"
+      ],
+      "frames": [],
+      "aggressor_start": "0x16cff0",
+      "aggressor_end": "0x16d4a4",
+      "before_word": "0xffffffff"
+    },
+    {
+      "label": "range_0016cff0_0016d248",
+      "offset": "0x169770",
+      "geometry": {
+        "row": 90,
+        "bank": 2,
+        "column": 952,
+        "word_lane": 0
+      },
+      "status": 24,
+      "write_complete": false,
+      "read_complete": false,
+      "physical_words": [
+        "0xffffffff",
+        "0xffffffff",
+        "0xffffffff",
+        "0xffffffff"
+      ],
+      "frames": [],
+      "aggressor_start": "0x16cff0",
+      "aggressor_end": "0x16d248",
+      "before_word": "0xffffffff"
+    },
+    {
+      "label": "range_0016d248_0016d4a4",
+      "offset": "0x169770",
+      "geometry": {
+        "row": 90,
+        "bank": 2,
+        "column": 952,
+        "word_lane": 0
+      },
+      "status": 24,
+      "write_complete": false,
+      "read_complete": false,
+      "physical_words": [
+        "0xffffffff",
+        "0xffffffff",
+        "0xffffffff",
+        "0xffffffff"
+      ],
+      "frames": [],
+      "aggressor_start": "0x16d248",
+      "aggressor_end": "0x16d4a4",
+      "before_word": "0xffffffff"
+    },
+    {
+      "label": "range_0016cff0_0016d4a4",
+      "offset": "0x169770",
+      "geometry": {
+        "row": 90,
+        "bank": 2,
+        "column": 952,
+        "word_lane": 0
+      },
+      "status": 24,
+      "write_complete": false,
+      "read_complete": false,
+      "physical_words": [
+        "0xffefffff",
+        "0xffffffff",
+        "0xffffffff",
+        "0xffffffff"
+      ],
+      "frames": [],
+      "aggressor_start": "0x16cff0",
+      "aggressor_end": "0x16d4a4",
+      "before_word": "0xffffffff"
+    }
+  ],
+  "console_confirmed": true,
+  "training": {
+    "status": "passed",
+    "start_records": [
+      "SDRAM_TRAINING_START phy=GW2DDRPHY read_leveling=1 bitslips=4 delays=256"
+    ],
+    "result_records": [
+      "SDRAM_TRAINING_RESULT status=passed"
+    ],
+    "expected_lane_count": 2,
+    "lane_count": 2,
+    "phy_configuration": {
+      "SDRAM_PHY_BITSLIPS": 4,
+      "SDRAM_PHY_DELAYS": 256,
+      "SDRAM_PHY_MODULES": 2,
+      "SDRAM_PHY_DQ_DQS_RATIO": 8
+    },
+    "lanes": [
+      {
+        "module": 0,
+        "dq_line": 0,
+        "bitslip": 2,
+        "status": "passed",
+        "window_start": 0,
+        "window_length": 94,
+        "delay_center": 46,
+        "delay_half_window": 46,
+        "raw": "SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=94 delay_center=46 delay_half_window=46"
+      },
+      {
+        "module": 1,
+        "dq_line": 0,
+        "bitslip": 2,
+        "status": "passed",
+        "window_start": 0,
+        "window_length": 213,
+        "delay_center": 106,
+        "delay_half_window": 106,
+        "raw": "SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=0 window_length=213 delay_center=106 delay_half_window=106"
+      }
+    ],
+    "errors": []
+  },
+  "disturbance_reproduced": true,
+  "bisection_stopped": "neither half reproduced; range/history dependent",
+  "disturbance_range": {
+    "start": "0x16cff0",
+    "end": "0x16d4a4"
+  },
+  "final_range_repeat": true,
+  "completed": true,
+  "trace.uart.bin_sha256": "189b52be34514fe6f7abdab9320dfa145f2bba5173a68da2393714f7c7921a0a",
+  "trace.uart.tx.bin_sha256": "3c0804ca1750049eb09da0fe0c86a87f5b72e84da74d2cf9bd2aaf744f1aa29f"
+}

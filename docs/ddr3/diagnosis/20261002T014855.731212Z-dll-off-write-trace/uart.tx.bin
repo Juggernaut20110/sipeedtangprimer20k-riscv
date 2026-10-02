@@ -1,0 +1,4 @@
+mem_read 0xf0001000 4
+mem_read 0xf0001004 4
+mem_read 0xf0001008 4
+mem_read 0xf000201c 4

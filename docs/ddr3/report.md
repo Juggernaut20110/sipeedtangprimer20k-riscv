@@ -1,6 +1,6 @@
 # DDR3 training and integrity report
 
-Updated 2026-10-02. **Latest acceptance batch status: failed. Latest diagnostic: persistent data corruption reproduced.**
+**Latest batch status: failed.**
 
 The receive patch and current integrity investigation are recorded in [DDR3 training handoff](training-handoff.md), with the original experiments retained in [DDR3 failure diagnosis](diagnosis.md). Diagnostic experiments do not count as acceptance passes.
 
@@ -17,13 +17,12 @@ Batch `20261001T201828.617667Z-ddr3` uses the configured 256 MiB DDR3 geometry a
 - Evidence: [training 1 UART](evidence/20261001T201828.617667Z-ddr3-linux/training-01.uart.bin)
 - Revalidation errors: recorded 1 training trials; requested 10, one or more fresh SRAM reconfiguration/training/smoke trials failed revalidation, full destructive memory and sustained stress evidence did not pass revalidation
 
-## Current integrity reproduction (diagnostic only)
+## Write-disturbance investigation
 
-The later `dll-off-integrity` diagnostic image used a fresh 48 MHz system / 96 MHz DDR CK route. Timing passed with setup slack +0.112 ns, hold +0.318 ns, recovery +1.779 ns, removal +1.207 ns, and estimated Fmax 49.959 MHz. It trained both read lanes (lane 0: bitslip 2, window 221, center 110; lane 1: bitslip 2, window 218, center 108), but BIOS Memtest still failed. The diagnostic image SHA256 is `073d774225b51c58b77abef5ceb9739b33ce58ba0278f13400780078f3bd9ca6`.
+The [retained investigation](write-disturbance.md) captured correct digital write inputs for the original BIOS error and reproduced bit-20 and bit-31 corruption at untouched victims after writes to another row. Conservative controller row timing and ODT-low did not resolve those failures. All probes remain diagnostic-only; public configuration and acceptance requirements are unchanged.
 
-The [read-only follow-up](diagnosis/20261001T230928.211880Z-read-only-probe/result.json) ran `mem_verify` three times through the uncached `0xc0000000` alias and three times through the cached `0x40000000` base. All six checks reported the same word at offset `0x000b64f4`: expected `0xb4de6cd9`, actual `0xb4ce6cd9`, XOR `0x00100000`. No writes were issued during this follow-up; the corruption persisted across both access paths. This confirms DDR3 remains unsafe for benchmark acceptance but does not identify the failing write, timing path, or physical component. The [diagnostic build manifest](diagnosis/20261001T230918.180452Z-dll-off-integrity/manifest.json) and raw [UART capture](diagnosis/20261001T230918.180452Z-dll-off-integrity/uart.bin) are retained separately from acceptance evidence.
+An independent raw-UART and artifact audit verified 71 snapshots and 136 frames. The [machine-readable investigation](diagnosis/20261002-integrity-investigation.json) links the exact images, captures, attempted fixes, limitations and post-investigation board recovery. DDR integrity remains failed; pin-level observations and comparison on another board are the next hardware discriminators.
 
-The final on-chip batch ended with the FPGA explicitly reset to an unconfigured safe-idle state; pre- and post-reset UART reads were empty, and JTAG detection succeeded. See the [current recovery evidence](../performance/maxperf-evaluation/recovery/20261002T004311Z-final-onchip/recovery.json). The diagnostic image is not a public DDR profile, does not qualify any matrix candidate, and does not count toward the ten-run or stress gates.
 
 ## Standalone diagnostic probes
 
@@ -69,6 +68,13 @@ litex> sdram_cal
   best: m0, b02 SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=failed window_start=-1 window_length=0
 litex> 
 ```
+- `diagnostic_only_write_disturbance_probe` for `minimal`; 17843 UART bytes; capture hash validation: **passed**; [raw UART capture](diagnosis/20261002T013805.615625Z-dll-off-write-trace/trace.uart.bin). Manifest: `docs/ddr3/diagnosis/20261002T013805.615625Z-dll-off-write-trace/manifest.json`.
+- `diagnostic_only_write_disturbance_probe` for `minimal`; 24857 UART bytes; capture hash validation: **passed**; [raw UART capture](diagnosis/20261002T014157.751746Z-dll-off-write-trace/trace.uart.bin). Manifest: `docs/ddr3/diagnosis/20261002T014157.751746Z-dll-off-write-trace/manifest.json`.
+- `diagnostic_only_write_disturbance_probe` for `minimal`; 38384 UART bytes; capture hash validation: **passed**; [raw UART capture](diagnosis/20261002T014610.163681Z-dll-off-write-trace/trace.uart.bin). Manifest: `docs/ddr3/diagnosis/20261002T014610.163681Z-dll-off-write-trace/manifest.json`.
+- `diagnostic_only_write_disturbance_probe` for `minimal`; 26603 UART bytes; capture hash validation: **passed**; [raw UART capture](diagnosis/20261002T014855.731212Z-dll-off-write-trace/trace.uart.bin). Manifest: `docs/ddr3/diagnosis/20261002T014855.731212Z-dll-off-write-trace/manifest.json`.
+- `diagnostic_only_write_disturbance_probe` for `minimal`; 39947 UART bytes; capture hash validation: **passed**; [raw UART capture](diagnosis/20261002T015148.226324Z-dll-off-write-trace/trace.uart.bin). Manifest: `docs/ddr3/diagnosis/20261002T015148.226324Z-dll-off-write-trace/manifest.json`.
+- `diagnostic_only_write_disturbance_probe` for `minimal`; 39947 UART bytes; capture hash validation: **passed**; [raw UART capture](diagnosis/20261002T015224.879824Z-dll-off-row-timing/trace.uart.bin). Manifest: `docs/ddr3/diagnosis/20261002T015224.879824Z-dll-off-row-timing/manifest.json`.
+- `diagnostic_only_write_disturbance_probe` for `minimal`; 39947 UART bytes; capture hash validation: **passed**; [raw UART capture](diagnosis/20261002T015614.337611Z-dll-off-odt-low/trace.uart.bin). Manifest: `docs/ddr3/diagnosis/20261002T015614.337611Z-dll-off-odt-low/manifest.json`.
 
 
 ## Acceptance criteria

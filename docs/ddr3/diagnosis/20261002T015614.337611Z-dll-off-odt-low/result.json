@@ -1,0 +1,10 @@
+{
+  "experiment": "dll-off-odt-low",
+  "dll_mode_probe": false,
+  "console_confirmed": true,
+  "ddr_debug_clock": "mem_read 0xf0001000 4\n\r\n\rMemory dump:\n\r0xf0001000  7a 03 00 00                                      z...            \n\rlitex> ",
+  "ddr_debug_lanes": "mem_read 0xf0001004 4\n\r\n\rMemory dump:\n\r0xf0001004  00 00 00 00                                      ....            \n\rlitex> ",
+  "ddr_debug_valid": "mem_read 0xf0001008 4\n\r\n\rMemory dump:\n\r0xf0001008  03 00 00 00                                      ....            \n\rlitex> ",
+  "ddrphy_burstdet_seen": "mem_read 0xf000201c 4\n\r\n\rMemory dump:\n\r0xf000201c  03 00 00 00                                      ....            \n\rlitex> ",
+  "uart_sha256": "1bbd5efd57de9022176e8729c446c9430a659d63b4f975af8e657aa1b57f880a"
+}

@@ -1,0 +1,9 @@
+{
+  "uart": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+  "resolved": "/dev/ttyUSB1",
+  "fuser_exit": 1,
+  "rx_bytes": 0,
+  "rx_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "prior_stop_evidence": "docs/performance/maxperf-evaluation/recovery/20261002T004311Z-final-onchip/recovery.json",
+  "flash_programming": false
+}

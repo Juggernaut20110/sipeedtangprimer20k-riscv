@@ -289,6 +289,54 @@ def create_report():
         "batches": historical,
         "diagnostic_probes": diagnostic_probes(),
     }
+    investigation_section = ""
+    investigations = sorted((ROOT / "docs/ddr3/diagnosis").glob("*-integrity-investigation.json"))
+    if investigations:
+        from scripts.ddr_trace_audit import audit
+        investigation_path = investigations[-1]
+        investigation = json.loads(investigation_path.read_text())
+        if investigation.get("acceptance_credit") is not False:
+            raise ValueError("write-disturbance investigation must remain diagnostic-only")
+        audited = [audit(ROOT / item["evidence"]) for item in investigation["audit"]]
+        data["integrity_investigation"] = str(investigation_path.relative_to(ROOT))
+        data["latest_diagnostic_id"] = Path(audited[-1]["evidence"]).name
+        data["latest_diagnostic_status"] = investigation["status"]
+        data["diagnostic_summary"] = {
+            "status": "write_disturbance_reproduced_integrity_still_failed",
+            "acceptance_credit": False, "victims": investigation["victims"],
+            "report": investigation["report"], "evidence": data["integrity_investigation"],
+            "audit": audited,
+        }
+        for item in audited:
+            manifest = json.loads((ROOT / item["evidence"] / "manifest.json").read_text())
+            data["diagnostic_probes"].append({
+                "status": "diagnostic_only_write_disturbance_probe", "acceptance_credit": False,
+                "experiment": manifest["experiment"], "suite": item["suite"],
+                "manifest": item["evidence"] + "/manifest.json",
+                "result": item["evidence"] + "/trace-probe.json", "audit": item["audit"],
+                "bitstream_sha256": item["bitstream_sha256"],
+                "profile": "minimal", "raw_uart": item["evidence"] + "/trace.uart.bin",
+                "raw_uart_bytes": (ROOT / item["evidence"] / "trace.uart.bin").stat().st_size,
+                "capture_validation": "passed",
+            })
+        recovery_path = ROOT / investigation["current_board_recovery"]
+        recovery = json.loads(recovery_path.read_text())
+        data["current_board_recovery"] = {
+            "status": recovery["recovery_status"],
+            "evidence": str(recovery_path.relative_to(ROOT)),
+            "pre_reset_uart_rx_bytes": recovery["pre_reset_uart_rx_bytes"],
+            "post_reset_uart_rx_bytes": recovery["post_reset_uart_rx_bytes"],
+            "jtag_reset_exit_code": recovery["reset_exit_code"],
+            "post_reset_jtag_detect_exit_code": recovery["post_reset_detect_exit_code"],
+            "flash_programming": recovery["flash_programming"],
+        }
+        investigation_section = f"""## Write-disturbance investigation
+
+The [retained investigation](write-disturbance.md) captured correct digital write inputs for the original BIOS error and reproduced bit-20 and bit-31 corruption at untouched victims after writes to another row. Conservative controller row timing and ODT-low did not resolve those failures. All probes remain diagnostic-only; public configuration and acceptance requirements are unchanged.
+
+An independent raw-UART and artifact audit verified {sum(item['trace_count'] for item in audited)} snapshots and {sum(item['decoded_frame_count'] for item in audited)} frames. The [machine-readable investigation](diagnosis/{investigation_path.name}) links the exact images, captures, attempted fixes, limitations and post-investigation board recovery. DDR integrity remains failed; pin-level observations and comparison on another board are the next hardware discriminators.
+
+"""
     results_path.write_text(json.dumps(data, indent=2) + "\n")
 
     resources = read_resource_data()
@@ -352,7 +400,7 @@ Each diagnostic image runs from the 16 KiB on-chip diagnostic RAM and reserves a
 
 Run `make ddr-test-build PROFILE=ALL`, then `make ddr-test-run PROFILE=ALL PORT=<verified UART>`, and regenerate this report with `make ddr-test-report`.
 """
-        (ROOT / "docs/ddr3/report.md").write_text(report)
+        (ROOT / "docs/ddr3/report.md").write_text(report + "\n" + investigation_section)
         return data
 
     profile_sections = []
@@ -449,6 +497,7 @@ Batch `{latest_batch}` uses the configured 256 MiB DDR3 geometry at a 48 MHz sys
 ## Per-profile evidence
 
 {''.join(profile_sections)}
+{investigation_section}
 ## Standalone diagnostic probes
 
 These console probes were captured outside the acceptance runner and do not count as training or memory-test passes. They are retained to show the startup failure and subsequent read-only CSR observations.

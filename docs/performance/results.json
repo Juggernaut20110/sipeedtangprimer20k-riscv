@@ -18448,7 +18448,7 @@
   },
   "current_board_recovery": {
     "status": "safe_idle_confirmed_after_explicit_fpga_reset",
-    "evidence": "docs/performance/maxperf-evaluation/recovery/20261002T004311Z-final-onchip/recovery.json",
+    "evidence": "docs/ddr3/diagnosis/20261002T020045.394626Z-integrity-recovery/recovery.json",
     "pre_reset_uart_rx_bytes": 0,
     "post_reset_uart_rx_bytes": 0,
     "jtag_reset_exit_code": 0,

@@ -1,0 +1,597 @@
+
+
+litex> mem_read 0xc00b64f0 16
+
+Memory dump:
+0xc00b64f0  b5 d9 fc 69 d9 6c ce b4 6f 36 4f da 34 9b 07 ed  ...i.l..o6O.4...
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  03 00 00 00                                      ....            
+litex> mem_read 0xf0001814 4
+
+Memory dump:
+0xf0001814  a9 bc fb 07                                      ....            
+litex> mem_write 0xf0001818 0x0
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  e0 09 14 00 00 00 ff 1f 00 00 00 00 ff ff 00 00  ................
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x1
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 09 74 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..t.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x2
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 09 74 00 00 00 ff 04 00 00 00 00 00 00 00 00  ..t.............
+0xf000182c  34 9b 07 ed 6f 36 4f da d9 6c de b4 b5 d9 fc 69  4...o6O..l.....i
+litex> mem_write 0xf0001818 0x3
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 09 74 00 de b4 00 00 fc 69 d9 6c ff ff b5 d9  ..t......i.l....
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x4
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 09 74 00 07 ed 00 00 4f da 34 9b ff ff 6f 36  ..t.....O.4...o6
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x5
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 09 74 00 00 00 ff 0b 00 00 00 00 ff ff 00 00  ..t.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x6
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 09 74 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..t.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_write 0xf0001818 0x7
+
+litex> mem_read 0xf000181c 32
+
+Memory dump:
+0xf000181c  00 09 74 00 00 00 ff 0f 00 00 00 00 ff ff 00 00  ..t.............
+0xf000182c  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+litex> mem_read 0xf000186c 4
+
+Memory dump:
+0xf000186c  02 00 00 00                                      ....            
+litex> mem_read 0xf000183c 16
+
+Memory dump:
+0xf000183c  d9 6c ce b4 b5 d9 fc 69 b5 d9 fc 69 1f d9 99 69  .l.....i...i...i
+litex> mem_read 0xf000184c 16
+
+Memory dump:
+0xf000184c  34 9b 07 ed 6f 36 4f da d9 6c ce b4 b5 d9 fc 69  4...o6O..l.....i
+litex> mem_read 0xf000185c 16
+
+Memory dump:
+0xf000185c  42 9b 4d 9e 42 9b 4d 9e 34 9b 07 ed 6f 36 4f da  B.M.B.M.4...o6O.
+litex> mem_test 0xc0000000 0x200000
+
+Memtest at 0xc0000000 (2.0MiB)...
+  Write: 0xc0000000-0xc0000000 0B     Write: 0xc0000000-0xc0020000 128.0KiB     Write: 0xc0000000-0xc0040000 256.0KiB     Write: 0xc0000000-0xc0060000 384.0KiB     Write: 0xc0000000-0xc0080000 512.0KiB     Write: 0xc0000000-0xc00a0000 640.0KiB     Write: 0xc0000000-0xc00c0000 768.0KiB     Write: 0xc0000000-0xc00e0000 896.0KiB     Write: 0xc0000000-0xc0100000 1.0MiB     Write: 0xc0000000-0xc0120000 1.1MiB     Write: 0xc0000000-0xc0140000 1.2MiB     Write: 0xc0000000-0xc0160000 1.3MiB     Write: 0xc0000000-0xc0180000 1.5MiB     Write: 0xc0000000-0xc01a0000 1.6MiB     Write: 0xc0000000-0xc01c0000 1.7MiB     Write: 0xc0000000-0xc01e0000 1.8MiB     Write: 0xc0000000-0xc0200000 2.0MiB   
+   Read: 0xc0000000-0xc0000000 0B      Read: 0xc0000000-0xc0020000 128.0KiB      Read: 0xc0000000-0xc0040000 256.0KiB      Read: 0xc0000000-0xc0060000 384.0KiB      Read: 0xc0000000-0xc0080000 512.0KiB      Read: 0xc0000000-0xc00a0000 640.0KiB   memtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9
+   Read: 0xc0000000-0xc00c0000 768.0KiB      Read: 0xc0000000-0xc00e0000 896.0KiB      Read: 0xc0000000-0xc0100000 1.0MiB      Read: 0xc0000000-0xc0120000 1.1MiB      Read: 0xc0000000-0xc0140000 1.2MiB      Read: 0xc0000000-0xc0160000 1.3MiB      Read: 0xc0000000-0xc0180000 1.5MiB      Read: 0xc0000000-0xc01a0000 1.6MiB      Read: 0xc0000000-0xc01c0000 1.7MiB      Read: 0xc0000000-0xc01e0000 1.8MiB      Read: 0xc0000000-0xc0200000 2.0MiB   
+  bus errors:  0/256
+  addr errors: 0/8192
+  data errors: 1/524288
+Memtest KO
+litex> mem_write 0xc0169700 0xffffffff 64
+
+litex> mem_read 0xc0169770 4
+
+Memory dump:
+0xc0169770  ff ff ff ff                                      ....            
+litex> mem_write 0xf0001804 0x5a
+
+litex> mem_write 0xf0001800 0x2
+
+litex> mem_write 0xf0001808 0x3b8
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc0169780 0xffffffff 154144
+
+litex> mem_read 0xc0169770 16
+
+Memory dump:
+0xc0169770  ff ff ef ff ff ff ff ff ff ff ff ff ff ff ff ff  ................
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  18 00 00 00                                      ....            
+litex> mem_test 0xc0000000 0x200000
+
+Memtest at 0xc0000000 (2.0MiB)...
+  Write: 0xc0000000-0xc0000000 0B     Write: 0xc0000000-0xc0020000 128.0KiB     Write: 0xc0000000-0xc0040000 256.0KiB     Write: 0xc0000000-0xc0060000 384.0KiB     Write: 0xc0000000-0xc0080000 512.0KiB     Write: 0xc0000000-0xc00a0000 640.0KiB     Write: 0xc0000000-0xc00c0000 768.0KiB     Write: 0xc0000000-0xc00e0000 896.0KiB     Write: 0xc0000000-0xc0100000 1.0MiB     Write: 0xc0000000-0xc0120000 1.1MiB     Write: 0xc0000000-0xc0140000 1.2MiB     Write: 0xc0000000-0xc0160000 1.3MiB     Write: 0xc0000000-0xc0180000 1.5MiB     Write: 0xc0000000-0xc01a0000 1.6MiB     Write: 0xc0000000-0xc01c0000 1.7MiB     Write: 0xc0000000-0xc01e0000 1.8MiB     Write: 0xc0000000-0xc0200000 2.0MiB   
+   Read: 0xc0000000-0xc0000000 0B      Read: 0xc0000000-0xc0020000 128.0KiB      Read: 0xc0000000-0xc0040000 256.0KiB      Read: 0xc0000000-0xc0060000 384.0KiB      Read: 0xc0000000-0xc0080000 512.0KiB      Read: 0xc0000000-0xc00a0000 640.0KiB   memtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9
+   Read: 0xc0000000-0xc00c0000 768.0KiB      Read: 0xc0000000-0xc00e0000 896.0KiB      Read: 0xc0000000-0xc0100000 1.0MiB      Read: 0xc0000000-0xc0120000 1.1MiB      Read: 0xc0000000-0xc0140000 1.2MiB      Read: 0xc0000000-0xc0160000 1.3MiB      Read: 0xc0000000-0xc0180000 1.5MiB      Read: 0xc0000000-0xc01a0000 1.6MiB      Read: 0xc0000000-0xc01c0000 1.7MiB      Read: 0xc0000000-0xc01e0000 1.8MiB      Read: 0xc0000000-0xc0200000 2.0MiB   
+  bus errors:  0/256
+  addr errors: 0/8192
+  data errors: 1/524288
+Memtest KO
+litex> mem_write 0xc0169700 0xffffffff 64
+
+litex> mem_read 0xc0169770 4
+
+Memory dump:
+0xc0169770  ff ff ff ff                                      ....            
+litex> mem_write 0xf0001804 0x5a
+
+litex> mem_write 0xf0001800 0x2
+
+litex> mem_write 0xf0001808 0x3b8
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc0169780 0xffffffff 77072
+
+litex> mem_read 0xc0169770 16
+
+Memory dump:
+0xc0169770  ff ff ef ff ff ff ff ff ff ff ff ff ff ff ff ff  ................
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  18 00 00 00                                      ....            
+litex> mem_test 0xc0000000 0x200000
+
+Memtest at 0xc0000000 (2.0MiB)...
+  Write: 0xc0000000-0xc0000000 0B     Write: 0xc0000000-0xc0020000 128.0KiB     Write: 0xc0000000-0xc0040000 256.0KiB     Write: 0xc0000000-0xc0060000 384.0KiB     Write: 0xc0000000-0xc0080000 512.0KiB     Write: 0xc0000000-0xc00a0000 640.0KiB     Write: 0xc0000000-0xc00c0000 768.0KiB     Write: 0xc0000000-0xc00e0000 896.0KiB     Write: 0xc0000000-0xc0100000 1.0MiB     Write: 0xc0000000-0xc0120000 1.1MiB     Write: 0xc0000000-0xc0140000 1.2MiB     Write: 0xc0000000-0xc0160000 1.3MiB     Write: 0xc0000000-0xc0180000 1.5MiB     Write: 0xc0000000-0xc01a0000 1.6MiB     Write: 0xc0000000-0xc01c0000 1.7MiB     Write: 0xc0000000-0xc01e0000 1.8MiB     Write: 0xc0000000-0xc0200000 2.0MiB   
+   Read: 0xc0000000-0xc0000000 0B      Read: 0xc0000000-0xc0020000 128.0KiB      Read: 0xc0000000-0xc0040000 256.0KiB      Read: 0xc0000000-0xc0060000 384.0KiB      Read: 0xc0000000-0xc0080000 512.0KiB      Read: 0xc0000000-0xc00a0000 640.0KiB   memtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9
+   Read: 0xc0000000-0xc00c0000 768.0KiB      Read: 0xc0000000-0xc00e0000 896.0KiB      Read: 0xc0000000-0xc0100000 1.0MiB      Read: 0xc0000000-0xc0120000 1.1MiB      Read: 0xc0000000-0xc0140000 1.2MiB      Read: 0xc0000000-0xc0160000 1.3MiB      Read: 0xc0000000-0xc0180000 1.5MiB      Read: 0xc0000000-0xc01a0000 1.6MiB      Read: 0xc0000000-0xc01c0000 1.7MiB      Read: 0xc0000000-0xc01e0000 1.8MiB      Read: 0xc0000000-0xc0200000 2.0MiB   
+  bus errors:  0/256
+  addr errors: 0/8192
+  data errors: 1/524288
+Memtest KO
+litex> mem_write 0xc0169700 0xffffffff 64
+
+litex> mem_read 0xc0169770 4
+
+Memory dump:
+0xc0169770  ff ff ff ff                                      ....            
+litex> mem_write 0xf0001804 0x5a
+
+litex> mem_write 0xf0001800 0x2
+
+litex> mem_write 0xf0001808 0x3b8
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc0169780 0xffffffff 38536
+
+litex> mem_read 0xc0169770 16
+
+Memory dump:
+0xc0169770  ff ff ef ff ff ff ff ff ff ff ff ff ff ff ff ff  ................
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  18 00 00 00                                      ....            
+litex> mem_test 0xc0000000 0x200000
+
+Memtest at 0xc0000000 (2.0MiB)...
+  Write: 0xc0000000-0xc0000000 0B     Write: 0xc0000000-0xc0020000 128.0KiB     Write: 0xc0000000-0xc0040000 256.0KiB     Write: 0xc0000000-0xc0060000 384.0KiB     Write: 0xc0000000-0xc0080000 512.0KiB     Write: 0xc0000000-0xc00a0000 640.0KiB     Write: 0xc0000000-0xc00c0000 768.0KiB     Write: 0xc0000000-0xc00e0000 896.0KiB     Write: 0xc0000000-0xc0100000 1.0MiB     Write: 0xc0000000-0xc0120000 1.1MiB     Write: 0xc0000000-0xc0140000 1.2MiB     Write: 0xc0000000-0xc0160000 1.3MiB     Write: 0xc0000000-0xc0180000 1.5MiB     Write: 0xc0000000-0xc01a0000 1.6MiB     Write: 0xc0000000-0xc01c0000 1.7MiB     Write: 0xc0000000-0xc01e0000 1.8MiB     Write: 0xc0000000-0xc0200000 2.0MiB   
+   Read: 0xc0000000-0xc0000000 0B      Read: 0xc0000000-0xc0020000 128.0KiB      Read: 0xc0000000-0xc0040000 256.0KiB      Read: 0xc0000000-0xc0060000 384.0KiB      Read: 0xc0000000-0xc0080000 512.0KiB      Read: 0xc0000000-0xc00a0000 640.0KiB   memtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9
+   Read: 0xc0000000-0xc00c0000 768.0KiB      Read: 0xc0000000-0xc00e0000 896.0KiB      Read: 0xc0000000-0xc0100000 1.0MiB      Read: 0xc0000000-0xc0120000 1.1MiB      Read: 0xc0000000-0xc0140000 1.2MiB      Read: 0xc0000000-0xc0160000 1.3MiB      Read: 0xc0000000-0xc0180000 1.5MiB      Read: 0xc0000000-0xc01a0000 1.6MiB      Read: 0xc0000000-0xc01c0000 1.7MiB      Read: 0xc0000000-0xc01e0000 1.8MiB      Read: 0xc0000000-0xc0200000 2.0MiB   
+  bus errors:  0/256
+  addr errors: 0/8192
+  data errors: 1/524288
+Memtest KO
+litex> mem_write 0xc0169700 0xffffffff 64
+
+litex> mem_read 0xc0169770 4
+
+Memory dump:
+0xc0169770  ff ff ff ff                                      ....            
+litex> mem_write 0xf0001804 0x5a
+
+litex> mem_write 0xf0001800 0x2
+
+litex> mem_write 0xf0001808 0x3b8
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc0169780 0xffffffff 19268
+
+litex> mem_read 0xc0169770 16
+
+Memory dump:
+0xc0169770  ff ff ef ff ff ff ff ff ff ff ff ff ff ff ff ff  ................
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  18 00 00 00                                      ....            
+litex> mem_test 0xc0000000 0x200000
+
+Memtest at 0xc0000000 (2.0MiB)...
+  Write: 0xc0000000-0xc0000000 0B     Write: 0xc0000000-0xc0020000 128.0KiB     Write: 0xc0000000-0xc0040000 256.0KiB     Write: 0xc0000000-0xc0060000 384.0KiB     Write: 0xc0000000-0xc0080000 512.0KiB     Write: 0xc0000000-0xc00a0000 640.0KiB     Write: 0xc0000000-0xc00c0000 768.0KiB     Write: 0xc0000000-0xc00e0000 896.0KiB     Write: 0xc0000000-0xc0100000 1.0MiB     Write: 0xc0000000-0xc0120000 1.1MiB     Write: 0xc0000000-0xc0140000 1.2MiB     Write: 0xc0000000-0xc0160000 1.3MiB     Write: 0xc0000000-0xc0180000 1.5MiB     Write: 0xc0000000-0xc01a0000 1.6MiB     Write: 0xc0000000-0xc01c0000 1.7MiB     Write: 0xc0000000-0xc01e0000 1.8MiB     Write: 0xc0000000-0xc0200000 2.0MiB   
+   Read: 0xc0000000-0xc0000000 0B      Read: 0xc0000000-0xc0020000 128.0KiB      Read: 0xc0000000-0xc0040000 256.0KiB      Read: 0xc0000000-0xc0060000 384.0KiB      Read: 0xc0000000-0xc0080000 512.0KiB      Read: 0xc0000000-0xc00a0000 640.0KiB   memtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9
+   Read: 0xc0000000-0xc00c0000 768.0KiB      Read: 0xc0000000-0xc00e0000 896.0KiB      Read: 0xc0000000-0xc0100000 1.0MiB      Read: 0xc0000000-0xc0120000 1.1MiB      Read: 0xc0000000-0xc0140000 1.2MiB      Read: 0xc0000000-0xc0160000 1.3MiB      Read: 0xc0000000-0xc0180000 1.5MiB      Read: 0xc0000000-0xc01a0000 1.6MiB      Read: 0xc0000000-0xc01c0000 1.7MiB      Read: 0xc0000000-0xc01e0000 1.8MiB      Read: 0xc0000000-0xc0200000 2.0MiB   
+  bus errors:  0/256
+  addr errors: 0/8192
+  data errors: 1/524288
+Memtest KO
+litex> mem_write 0xc0169700 0xffffffff 64
+
+litex> mem_read 0xc0169770 4
+
+Memory dump:
+0xc0169770  ff ff ff ff                                      ....            
+litex> mem_write 0xf0001804 0x5a
+
+litex> mem_write 0xf0001800 0x2
+
+litex> mem_write 0xf0001808 0x3b8
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc0169780 0xffffffff 9634
+
+litex> mem_read 0xc0169770 16
+
+Memory dump:
+0xc0169770  ff ff ef ff ff ff ff ff ff ff ff ff ff ff ff ff  ................
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  18 00 00 00                                      ....            
+litex> mem_test 0xc0000000 0x200000
+
+Memtest at 0xc0000000 (2.0MiB)...
+  Write: 0xc0000000-0xc0000000 0B     Write: 0xc0000000-0xc0020000 128.0KiB     Write: 0xc0000000-0xc0040000 256.0KiB     Write: 0xc0000000-0xc0060000 384.0KiB     Write: 0xc0000000-0xc0080000 512.0KiB     Write: 0xc0000000-0xc00a0000 640.0KiB     Write: 0xc0000000-0xc00c0000 768.0KiB     Write: 0xc0000000-0xc00e0000 896.0KiB     Write: 0xc0000000-0xc0100000 1.0MiB     Write: 0xc0000000-0xc0120000 1.1MiB     Write: 0xc0000000-0xc0140000 1.2MiB     Write: 0xc0000000-0xc0160000 1.3MiB     Write: 0xc0000000-0xc0180000 1.5MiB     Write: 0xc0000000-0xc01a0000 1.6MiB     Write: 0xc0000000-0xc01c0000 1.7MiB     Write: 0xc0000000-0xc01e0000 1.8MiB     Write: 0xc0000000-0xc0200000 2.0MiB   
+   Read: 0xc0000000-0xc0000000 0B      Read: 0xc0000000-0xc0020000 128.0KiB      Read: 0xc0000000-0xc0040000 256.0KiB      Read: 0xc0000000-0xc0060000 384.0KiB      Read: 0xc0000000-0xc0080000 512.0KiB      Read: 0xc0000000-0xc00a0000 640.0KiB   memtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9
+   Read: 0xc0000000-0xc00c0000 768.0KiB      Read: 0xc0000000-0xc00e0000 896.0KiB      Read: 0xc0000000-0xc0100000 1.0MiB      Read: 0xc0000000-0xc0120000 1.1MiB      Read: 0xc0000000-0xc0140000 1.2MiB      Read: 0xc0000000-0xc0160000 1.3MiB      Read: 0xc0000000-0xc0180000 1.5MiB      Read: 0xc0000000-0xc01a0000 1.6MiB      Read: 0xc0000000-0xc01c0000 1.7MiB      Read: 0xc0000000-0xc01e0000 1.8MiB      Read: 0xc0000000-0xc0200000 2.0MiB   
+  bus errors:  0/256
+  addr errors: 0/8192
+  data errors: 1/524288
+Memtest KO
+litex> mem_write 0xc0169700 0xffffffff 64
+
+litex> mem_read 0xc0169770 4
+
+Memory dump:
+0xc0169770  ff ff ff ff                                      ....            
+litex> mem_write 0xf0001804 0x5a
+
+litex> mem_write 0xf0001800 0x2
+
+litex> mem_write 0xf0001808 0x3b8
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc0169780 0xffffffff 4817
+
+litex> mem_read 0xc0169770 16
+
+Memory dump:
+0xc0169770  ff ff ef ff ff ff ff ff ff ff ff ff ff ff ff ff  ................
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  18 00 00 00                                      ....            
+litex> mem_test 0xc0000000 0x200000
+
+Memtest at 0xc0000000 (2.0MiB)...
+  Write: 0xc0000000-0xc0000000 0B     Write: 0xc0000000-0xc0020000 128.0KiB     Write: 0xc0000000-0xc0040000 256.0KiB     Write: 0xc0000000-0xc0060000 384.0KiB     Write: 0xc0000000-0xc0080000 512.0KiB     Write: 0xc0000000-0xc00a0000 640.0KiB     Write: 0xc0000000-0xc00c0000 768.0KiB     Write: 0xc0000000-0xc00e0000 896.0KiB     Write: 0xc0000000-0xc0100000 1.0MiB     Write: 0xc0000000-0xc0120000 1.1MiB     Write: 0xc0000000-0xc0140000 1.2MiB     Write: 0xc0000000-0xc0160000 1.3MiB     Write: 0xc0000000-0xc0180000 1.5MiB     Write: 0xc0000000-0xc01a0000 1.6MiB     Write: 0xc0000000-0xc01c0000 1.7MiB     Write: 0xc0000000-0xc01e0000 1.8MiB     Write: 0xc0000000-0xc0200000 2.0MiB   
+   Read: 0xc0000000-0xc0000000 0B      Read: 0xc0000000-0xc0020000 128.0KiB      Read: 0xc0000000-0xc0040000 256.0KiB      Read: 0xc0000000-0xc0060000 384.0KiB      Read: 0xc0000000-0xc0080000 512.0KiB      Read: 0xc0000000-0xc00a0000 640.0KiB   memtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9
+   Read: 0xc0000000-0xc00c0000 768.0KiB      Read: 0xc0000000-0xc00e0000 896.0KiB      Read: 0xc0000000-0xc0100000 1.0MiB      Read: 0xc0000000-0xc0120000 1.1MiB      Read: 0xc0000000-0xc0140000 1.2MiB      Read: 0xc0000000-0xc0160000 1.3MiB      Read: 0xc0000000-0xc0180000 1.5MiB      Read: 0xc0000000-0xc01a0000 1.6MiB      Read: 0xc0000000-0xc01c0000 1.7MiB      Read: 0xc0000000-0xc01e0000 1.8MiB      Read: 0xc0000000-0xc0200000 2.0MiB   
+  bus errors:  0/256
+  addr errors: 0/8192
+  data errors: 1/524288
+Memtest KO
+litex> mem_write 0xc0169700 0xffffffff 64
+
+litex> mem_read 0xc0169770 4
+
+Memory dump:
+0xc0169770  ff ff ff ff                                      ....            
+litex> mem_write 0xf0001804 0x5a
+
+litex> mem_write 0xf0001800 0x2
+
+litex> mem_write 0xf0001808 0x3b8
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc0169780 0xffffffff 2408
+
+litex> mem_read 0xc0169770 16
+
+Memory dump:
+0xc0169770  ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff  ................
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  18 00 00 00                                      ....            
+litex> mem_test 0xc0000000 0x200000
+
+Memtest at 0xc0000000 (2.0MiB)...
+  Write: 0xc0000000-0xc0000000 0B     Write: 0xc0000000-0xc0020000 128.0KiB     Write: 0xc0000000-0xc0040000 256.0KiB     Write: 0xc0000000-0xc0060000 384.0KiB     Write: 0xc0000000-0xc0080000 512.0KiB     Write: 0xc0000000-0xc00a0000 640.0KiB     Write: 0xc0000000-0xc00c0000 768.0KiB     Write: 0xc0000000-0xc00e0000 896.0KiB     Write: 0xc0000000-0xc0100000 1.0MiB     Write: 0xc0000000-0xc0120000 1.1MiB     Write: 0xc0000000-0xc0140000 1.2MiB     Write: 0xc0000000-0xc0160000 1.3MiB     Write: 0xc0000000-0xc0180000 1.5MiB     Write: 0xc0000000-0xc01a0000 1.6MiB     Write: 0xc0000000-0xc01c0000 1.7MiB     Write: 0xc0000000-0xc01e0000 1.8MiB     Write: 0xc0000000-0xc0200000 2.0MiB   
+   Read: 0xc0000000-0xc0000000 0B      Read: 0xc0000000-0xc0020000 128.0KiB      Read: 0xc0000000-0xc0040000 256.0KiB      Read: 0xc0000000-0xc0060000 384.0KiB      Read: 0xc0000000-0xc0080000 512.0KiB      Read: 0xc0000000-0xc00a0000 640.0KiB   memtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9
+   Read: 0xc0000000-0xc00c0000 768.0KiB      Read: 0xc0000000-0xc00e0000 896.0KiB      Read: 0xc0000000-0xc0100000 1.0MiB      Read: 0xc0000000-0xc0120000 1.1MiB      Read: 0xc0000000-0xc0140000 1.2MiB      Read: 0xc0000000-0xc0160000 1.3MiB      Read: 0xc0000000-0xc0180000 1.5MiB      Read: 0xc0000000-0xc01a0000 1.6MiB      Read: 0xc0000000-0xc01c0000 1.7MiB      Read: 0xc0000000-0xc01e0000 1.8MiB      Read: 0xc0000000-0xc0200000 2.0MiB   
+  bus errors:  0/256
+  addr errors: 0/8192
+  data errors: 1/524288
+Memtest KO
+litex> mem_write 0xc0169700 0xffffffff 64
+
+litex> mem_read 0xc0169770 4
+
+Memory dump:
+0xc0169770  ff ff ff ff                                      ....            
+litex> mem_write 0xf0001804 0x5a
+
+litex> mem_write 0xf0001800 0x2
+
+litex> mem_write 0xf0001808 0x3b8
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc016bd20 0xffffffff 2409
+
+litex> mem_read 0xc0169770 16
+
+Memory dump:
+0xc0169770  ff ff ef ff ff ff ff ff ff ff ff ff ff ff ff ff  ................
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  18 00 00 00                                      ....            
+litex> mem_test 0xc0000000 0x200000
+
+Memtest at 0xc0000000 (2.0MiB)...
+  Write: 0xc0000000-0xc0000000 0B     Write: 0xc0000000-0xc0020000 128.0KiB     Write: 0xc0000000-0xc0040000 256.0KiB     Write: 0xc0000000-0xc0060000 384.0KiB     Write: 0xc0000000-0xc0080000 512.0KiB     Write: 0xc0000000-0xc00a0000 640.0KiB     Write: 0xc0000000-0xc00c0000 768.0KiB     Write: 0xc0000000-0xc00e0000 896.0KiB     Write: 0xc0000000-0xc0100000 1.0MiB     Write: 0xc0000000-0xc0120000 1.1MiB     Write: 0xc0000000-0xc0140000 1.2MiB     Write: 0xc0000000-0xc0160000 1.3MiB     Write: 0xc0000000-0xc0180000 1.5MiB     Write: 0xc0000000-0xc01a0000 1.6MiB     Write: 0xc0000000-0xc01c0000 1.7MiB     Write: 0xc0000000-0xc01e0000 1.8MiB     Write: 0xc0000000-0xc0200000 2.0MiB   
+   Read: 0xc0000000-0xc0000000 0B      Read: 0xc0000000-0xc0020000 128.0KiB      Read: 0xc0000000-0xc0040000 256.0KiB      Read: 0xc0000000-0xc0060000 384.0KiB      Read: 0xc0000000-0xc0080000 512.0KiB      Read: 0xc0000000-0xc00a0000 640.0KiB   memtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9
+   Read: 0xc0000000-0xc00c0000 768.0KiB      Read: 0xc0000000-0xc00e0000 896.0KiB      Read: 0xc0000000-0xc0100000 1.0MiB      Read: 0xc0000000-0xc0120000 1.1MiB      Read: 0xc0000000-0xc0140000 1.2MiB      Read: 0xc0000000-0xc0160000 1.3MiB      Read: 0xc0000000-0xc0180000 1.5MiB      Read: 0xc0000000-0xc01a0000 1.6MiB      Read: 0xc0000000-0xc01c0000 1.7MiB      Read: 0xc0000000-0xc01e0000 1.8MiB      Read: 0xc0000000-0xc0200000 2.0MiB   
+  bus errors:  0/256
+  addr errors: 0/8192
+  data errors: 1/524288
+Memtest KO
+litex> mem_write 0xc0169700 0xffffffff 64
+
+litex> mem_read 0xc0169770 4
+
+Memory dump:
+0xc0169770  ff ff ff ff                                      ....            
+litex> mem_write 0xf0001804 0x5a
+
+litex> mem_write 0xf0001800 0x2
+
+litex> mem_write 0xf0001808 0x3b8
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc016bd20 0xffffffff 1204
+
+litex> mem_read 0xc0169770 16
+
+Memory dump:
+0xc0169770  ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff  ................
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  18 00 00 00                                      ....            
+litex> mem_test 0xc0000000 0x200000
+
+Memtest at 0xc0000000 (2.0MiB)...
+  Write: 0xc0000000-0xc0000000 0B     Write: 0xc0000000-0xc0020000 128.0KiB     Write: 0xc0000000-0xc0040000 256.0KiB     Write: 0xc0000000-0xc0060000 384.0KiB     Write: 0xc0000000-0xc0080000 512.0KiB     Write: 0xc0000000-0xc00a0000 640.0KiB     Write: 0xc0000000-0xc00c0000 768.0KiB     Write: 0xc0000000-0xc00e0000 896.0KiB     Write: 0xc0000000-0xc0100000 1.0MiB     Write: 0xc0000000-0xc0120000 1.1MiB     Write: 0xc0000000-0xc0140000 1.2MiB     Write: 0xc0000000-0xc0160000 1.3MiB     Write: 0xc0000000-0xc0180000 1.5MiB     Write: 0xc0000000-0xc01a0000 1.6MiB     Write: 0xc0000000-0xc01c0000 1.7MiB     Write: 0xc0000000-0xc01e0000 1.8MiB     Write: 0xc0000000-0xc0200000 2.0MiB   
+   Read: 0xc0000000-0xc0000000 0B      Read: 0xc0000000-0xc0020000 128.0KiB      Read: 0xc0000000-0xc0040000 256.0KiB      Read: 0xc0000000-0xc0060000 384.0KiB      Read: 0xc0000000-0xc0080000 512.0KiB      Read: 0xc0000000-0xc00a0000 640.0KiB   memtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9
+   Read: 0xc0000000-0xc00c0000 768.0KiB      Read: 0xc0000000-0xc00e0000 896.0KiB      Read: 0xc0000000-0xc0100000 1.0MiB      Read: 0xc0000000-0xc0120000 1.1MiB      Read: 0xc0000000-0xc0140000 1.2MiB      Read: 0xc0000000-0xc0160000 1.3MiB      Read: 0xc0000000-0xc0180000 1.5MiB      Read: 0xc0000000-0xc01a0000 1.6MiB      Read: 0xc0000000-0xc01c0000 1.7MiB      Read: 0xc0000000-0xc01e0000 1.8MiB      Read: 0xc0000000-0xc0200000 2.0MiB   
+  bus errors:  0/256
+  addr errors: 0/8192
+  data errors: 1/524288
+Memtest KO
+litex> mem_write 0xc0169700 0xffffffff 64
+
+litex> mem_read 0xc0169770 4
+
+Memory dump:
+0xc0169770  ff ff ff ff                                      ....            
+litex> mem_write 0xf0001804 0x5a
+
+litex> mem_write 0xf0001800 0x2
+
+litex> mem_write 0xf0001808 0x3b8
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc016cff0 0xffffffff 1205
+
+litex> mem_read 0xc0169770 16
+
+Memory dump:
+0xc0169770  ff ff ef ff ff ff ff ff ff ff ff ff ff ff ff ff  ................
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  18 00 00 00                                      ....            
+litex> mem_test 0xc0000000 0x200000
+
+Memtest at 0xc0000000 (2.0MiB)...
+  Write: 0xc0000000-0xc0000000 0B     Write: 0xc0000000-0xc0020000 128.0KiB     Write: 0xc0000000-0xc0040000 256.0KiB     Write: 0xc0000000-0xc0060000 384.0KiB     Write: 0xc0000000-0xc0080000 512.0KiB     Write: 0xc0000000-0xc00a0000 640.0KiB     Write: 0xc0000000-0xc00c0000 768.0KiB     Write: 0xc0000000-0xc00e0000 896.0KiB     Write: 0xc0000000-0xc0100000 1.0MiB     Write: 0xc0000000-0xc0120000 1.1MiB     Write: 0xc0000000-0xc0140000 1.2MiB     Write: 0xc0000000-0xc0160000 1.3MiB     Write: 0xc0000000-0xc0180000 1.5MiB     Write: 0xc0000000-0xc01a0000 1.6MiB     Write: 0xc0000000-0xc01c0000 1.7MiB     Write: 0xc0000000-0xc01e0000 1.8MiB     Write: 0xc0000000-0xc0200000 2.0MiB   
+   Read: 0xc0000000-0xc0000000 0B      Read: 0xc0000000-0xc0020000 128.0KiB      Read: 0xc0000000-0xc0040000 256.0KiB      Read: 0xc0000000-0xc0060000 384.0KiB      Read: 0xc0000000-0xc0080000 512.0KiB      Read: 0xc0000000-0xc00a0000 640.0KiB   memtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9
+   Read: 0xc0000000-0xc00c0000 768.0KiB      Read: 0xc0000000-0xc00e0000 896.0KiB      Read: 0xc0000000-0xc0100000 1.0MiB      Read: 0xc0000000-0xc0120000 1.1MiB      Read: 0xc0000000-0xc0140000 1.2MiB      Read: 0xc0000000-0xc0160000 1.3MiB      Read: 0xc0000000-0xc0180000 1.5MiB      Read: 0xc0000000-0xc01a0000 1.6MiB      Read: 0xc0000000-0xc01c0000 1.7MiB      Read: 0xc0000000-0xc01e0000 1.8MiB      Read: 0xc0000000-0xc0200000 2.0MiB   
+  bus errors:  0/256
+  addr errors: 0/8192
+  data errors: 1/524288
+Memtest KO
+litex> mem_write 0xc0169700 0xffffffff 64
+
+litex> mem_read 0xc0169770 4
+
+Memory dump:
+0xc0169770  ff ff ff ff                                      ....            
+litex> mem_write 0xf0001804 0x5a
+
+litex> mem_write 0xf0001800 0x2
+
+litex> mem_write 0xf0001808 0x3b8
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc016cff0 0xffffffff 602
+
+litex> mem_read 0xc0169770 16
+
+Memory dump:
+0xc0169770  ff ff ef ff ff ff ff ff ff ff ff ff ff ff ff ff  ................
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  18 00 00 00                                      ....            
+litex> mem_test 0xc0000000 0x200000
+
+Memtest at 0xc0000000 (2.0MiB)...
+  Write: 0xc0000000-0xc0000000 0B     Write: 0xc0000000-0xc0020000 128.0KiB     Write: 0xc0000000-0xc0040000 256.0KiB     Write: 0xc0000000-0xc0060000 384.0KiB     Write: 0xc0000000-0xc0080000 512.0KiB     Write: 0xc0000000-0xc00a0000 640.0KiB     Write: 0xc0000000-0xc00c0000 768.0KiB     Write: 0xc0000000-0xc00e0000 896.0KiB     Write: 0xc0000000-0xc0100000 1.0MiB     Write: 0xc0000000-0xc0120000 1.1MiB     Write: 0xc0000000-0xc0140000 1.2MiB     Write: 0xc0000000-0xc0160000 1.3MiB     Write: 0xc0000000-0xc0180000 1.5MiB     Write: 0xc0000000-0xc01a0000 1.6MiB     Write: 0xc0000000-0xc01c0000 1.7MiB     Write: 0xc0000000-0xc01e0000 1.8MiB     Write: 0xc0000000-0xc0200000 2.0MiB   
+   Read: 0xc0000000-0xc0000000 0B      Read: 0xc0000000-0xc0020000 128.0KiB      Read: 0xc0000000-0xc0040000 256.0KiB      Read: 0xc0000000-0xc0060000 384.0KiB      Read: 0xc0000000-0xc0080000 512.0KiB      Read: 0xc0000000-0xc00a0000 640.0KiB   memtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9
+   Read: 0xc0000000-0xc00c0000 768.0KiB      Read: 0xc0000000-0xc00e0000 896.0KiB      Read: 0xc0000000-0xc0100000 1.0MiB      Read: 0xc0000000-0xc0120000 1.1MiB      Read: 0xc0000000-0xc0140000 1.2MiB      Read: 0xc0000000-0xc0160000 1.3MiB      Read: 0xc0000000-0xc0180000 1.5MiB      Read: 0xc0000000-0xc01a0000 1.6MiB      Read: 0xc0000000-0xc01c0000 1.7MiB      Read: 0xc0000000-0xc01e0000 1.8MiB      Read: 0xc0000000-0xc0200000 2.0MiB   
+  bus errors:  0/256
+  addr errors: 0/8192
+  data errors: 1/524288
+Memtest KO
+litex> mem_write 0xc0169700 0xffffffff 64
+
+litex> mem_read 0xc0169770 4
+
+Memory dump:
+0xc0169770  ff ff ff ff                                      ....            
+litex> mem_write 0xf0001804 0x5a
+
+litex> mem_write 0xf0001800 0x2
+
+litex> mem_write 0xf0001808 0x3b8
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc016cff0 0xffffffff 301
+
+litex> mem_read 0xc0169770 16
+
+Memory dump:
+0xc0169770  ff ff ef ff ff ff ff ff ff ff ff ff ff ff ff ff  ................
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  18 00 00 00                                      ....            
+litex> mem_test 0xc0000000 0x200000
+
+Memtest at 0xc0000000 (2.0MiB)...
+  Write: 0xc0000000-0xc0000000 0B     Write: 0xc0000000-0xc0020000 128.0KiB     Write: 0xc0000000-0xc0040000 256.0KiB     Write: 0xc0000000-0xc0060000 384.0KiB     Write: 0xc0000000-0xc0080000 512.0KiB     Write: 0xc0000000-0xc00a0000 640.0KiB     Write: 0xc0000000-0xc00c0000 768.0KiB     Write: 0xc0000000-0xc00e0000 896.0KiB     Write: 0xc0000000-0xc0100000 1.0MiB     Write: 0xc0000000-0xc0120000 1.1MiB     Write: 0xc0000000-0xc0140000 1.2MiB     Write: 0xc0000000-0xc0160000 1.3MiB     Write: 0xc0000000-0xc0180000 1.5MiB     Write: 0xc0000000-0xc01a0000 1.6MiB     Write: 0xc0000000-0xc01c0000 1.7MiB     Write: 0xc0000000-0xc01e0000 1.8MiB     Write: 0xc0000000-0xc0200000 2.0MiB   
+   Read: 0xc0000000-0xc0000000 0B      Read: 0xc0000000-0xc0020000 128.0KiB      Read: 0xc0000000-0xc0040000 256.0KiB      Read: 0xc0000000-0xc0060000 384.0KiB      Read: 0xc0000000-0xc0080000 512.0KiB      Read: 0xc0000000-0xc00a0000 640.0KiB   memtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9
+   Read: 0xc0000000-0xc00c0000 768.0KiB      Read: 0xc0000000-0xc00e0000 896.0KiB      Read: 0xc0000000-0xc0100000 1.0MiB      Read: 0xc0000000-0xc0120000 1.1MiB      Read: 0xc0000000-0xc0140000 1.2MiB      Read: 0xc0000000-0xc0160000 1.3MiB      Read: 0xc0000000-0xc0180000 1.5MiB      Read: 0xc0000000-0xc01a0000 1.6MiB      Read: 0xc0000000-0xc01c0000 1.7MiB      Read: 0xc0000000-0xc01e0000 1.8MiB      Read: 0xc0000000-0xc0200000 2.0MiB   
+  bus errors:  0/256
+  addr errors: 0/8192
+  data errors: 1/524288
+Memtest KO
+litex> mem_write 0xc0169700 0xffffffff 64
+
+litex> mem_read 0xc0169770 4
+
+Memory dump:
+0xc0169770  ff ff ff ff                                      ....            
+litex> mem_write 0xf0001804 0x5a
+
+litex> mem_write 0xf0001800 0x2
+
+litex> mem_write 0xf0001808 0x3b8
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc016cff0 0xffffffff 150
+
+litex> mem_read 0xc0169770 16
+
+Memory dump:
+0xc0169770  ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff  ................
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  18 00 00 00                                      ....            
+litex> mem_test 0xc0000000 0x200000
+
+Memtest at 0xc0000000 (2.0MiB)...
+  Write: 0xc0000000-0xc0000000 0B     Write: 0xc0000000-0xc0020000 128.0KiB     Write: 0xc0000000-0xc0040000 256.0KiB     Write: 0xc0000000-0xc0060000 384.0KiB     Write: 0xc0000000-0xc0080000 512.0KiB     Write: 0xc0000000-0xc00a0000 640.0KiB     Write: 0xc0000000-0xc00c0000 768.0KiB     Write: 0xc0000000-0xc00e0000 896.0KiB     Write: 0xc0000000-0xc0100000 1.0MiB     Write: 0xc0000000-0xc0120000 1.1MiB     Write: 0xc0000000-0xc0140000 1.2MiB     Write: 0xc0000000-0xc0160000 1.3MiB     Write: 0xc0000000-0xc0180000 1.5MiB     Write: 0xc0000000-0xc01a0000 1.6MiB     Write: 0xc0000000-0xc01c0000 1.7MiB     Write: 0xc0000000-0xc01e0000 1.8MiB     Write: 0xc0000000-0xc0200000 2.0MiB   
+   Read: 0xc0000000-0xc0000000 0B      Read: 0xc0000000-0xc0020000 128.0KiB      Read: 0xc0000000-0xc0040000 256.0KiB      Read: 0xc0000000-0xc0060000 384.0KiB      Read: 0xc0000000-0xc0080000 512.0KiB      Read: 0xc0000000-0xc00a0000 640.0KiB   memtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9
+   Read: 0xc0000000-0xc00c0000 768.0KiB      Read: 0xc0000000-0xc00e0000 896.0KiB      Read: 0xc0000000-0xc0100000 1.0MiB      Read: 0xc0000000-0xc0120000 1.1MiB      Read: 0xc0000000-0xc0140000 1.2MiB      Read: 0xc0000000-0xc0160000 1.3MiB      Read: 0xc0000000-0xc0180000 1.5MiB      Read: 0xc0000000-0xc01a0000 1.6MiB      Read: 0xc0000000-0xc01c0000 1.7MiB      Read: 0xc0000000-0xc01e0000 1.8MiB      Read: 0xc0000000-0xc0200000 2.0MiB   
+  bus errors:  0/256
+  addr errors: 0/8192
+  data errors: 1/524288
+Memtest KO
+litex> mem_write 0xc0169700 0xffffffff 64
+
+litex> mem_read 0xc0169770 4
+
+Memory dump:
+0xc0169770  ff ff ff ff                                      ....            
+litex> mem_write 0xf0001804 0x5a
+
+litex> mem_write 0xf0001800 0x2
+
+litex> mem_write 0xf0001808 0x3b8
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc016d248 0xffffffff 151
+
+litex> mem_read 0xc0169770 16
+
+Memory dump:
+0xc0169770  ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff  ................
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  18 00 00 00                                      ....            
+litex> mem_test 0xc0000000 0x200000
+
+Memtest at 0xc0000000 (2.0MiB)...
+  Write: 0xc0000000-0xc0000000 0B     Write: 0xc0000000-0xc0020000 128.0KiB     Write: 0xc0000000-0xc0040000 256.0KiB     Write: 0xc0000000-0xc0060000 384.0KiB     Write: 0xc0000000-0xc0080000 512.0KiB     Write: 0xc0000000-0xc00a0000 640.0KiB     Write: 0xc0000000-0xc00c0000 768.0KiB     Write: 0xc0000000-0xc00e0000 896.0KiB     Write: 0xc0000000-0xc0100000 1.0MiB     Write: 0xc0000000-0xc0120000 1.1MiB     Write: 0xc0000000-0xc0140000 1.2MiB     Write: 0xc0000000-0xc0160000 1.3MiB     Write: 0xc0000000-0xc0180000 1.5MiB     Write: 0xc0000000-0xc01a0000 1.6MiB     Write: 0xc0000000-0xc01c0000 1.7MiB     Write: 0xc0000000-0xc01e0000 1.8MiB     Write: 0xc0000000-0xc0200000 2.0MiB   
+   Read: 0xc0000000-0xc0000000 0B      Read: 0xc0000000-0xc0020000 128.0KiB      Read: 0xc0000000-0xc0040000 256.0KiB      Read: 0xc0000000-0xc0060000 384.0KiB      Read: 0xc0000000-0xc0080000 512.0KiB      Read: 0xc0000000-0xc00a0000 640.0KiB   memtest_data error @ 0xc00b64f4: 0xb4ce6cd9 vs 0xb4de6cd9
+   Read: 0xc0000000-0xc00c0000 768.0KiB      Read: 0xc0000000-0xc00e0000 896.0KiB      Read: 0xc0000000-0xc0100000 1.0MiB      Read: 0xc0000000-0xc0120000 1.1MiB      Read: 0xc0000000-0xc0140000 1.2MiB      Read: 0xc0000000-0xc0160000 1.3MiB      Read: 0xc0000000-0xc0180000 1.5MiB      Read: 0xc0000000-0xc01a0000 1.6MiB      Read: 0xc0000000-0xc01c0000 1.7MiB      Read: 0xc0000000-0xc01e0000 1.8MiB      Read: 0xc0000000-0xc0200000 2.0MiB   
+  bus errors:  0/256
+  addr errors: 0/8192
+  data errors: 1/524288
+Memtest KO
+litex> mem_write 0xc0169700 0xffffffff 64
+
+litex> mem_read 0xc0169770 4
+
+Memory dump:
+0xc0169770  ff ff ff ff                                      ....            
+litex> mem_write 0xf0001804 0x5a
+
+litex> mem_write 0xf0001800 0x2
+
+litex> mem_write 0xf0001808 0x3b8
+
+litex> mem_write 0xf000180c 0x1
+
+litex> mem_write 0xc016cff0 0xffffffff 301
+
+litex> mem_read 0xc0169770 16
+
+Memory dump:
+0xc0169770  ff ff ef ff ff ff ff ff ff ff ff ff ff ff ff ff  ................
+litex> mem_read 0xf0001810 4
+
+Memory dump:
+0xf0001810  18 00 00 00                                      ....            
+litex> 

@@ -28,13 +28,13 @@ def build(experiment):
     output = ROOT / 'build/ddr3/diagnosis' / experiment
     output.mkdir(parents=True, exist_ok=True)
     if experiment not in ('current-status', 'baseline-reproduction', 'legacy-reset', 'legacy-rclksel', 'legacy-both',
-                          'dll-on-6-6', 'latency-8-7', 'read-gate-early', 'dll-off-read-sweep', 'dll-off-fixed', 'dll-off-integrity', 'dll-off-write-sweep', 'dll-off-wr-recovery'):
+                          'dll-on-6-6', 'latency-8-7', 'read-gate-early', 'dll-off-read-sweep', 'dll-off-fixed', 'dll-off-integrity', 'dll-off-write-sweep', 'dll-off-wr-recovery', 'dll-off-write-trace', 'dll-off-row-timing', 'dll-off-odt-low'):
         raise ValueError('unsupported experiment')
     if experiment in ('baseline-reproduction', 'legacy-reset', 'legacy-rclksel', 'legacy-both',
                        'read-gate-early', 'dll-off-read-sweep'):
         from scripts.ddr_read_sweep import make_sweep_soc
         soc = make_sweep_soc()
-    elif experiment == 'dll-off-wr-recovery':
+    elif experiment in ('dll-off-wr-recovery', 'dll-off-row-timing'):
         from litex_boards.targets import sipeed_tang_primer_20k as target
         original_module = target.IMD128M16R39CG8GNF
 
@@ -43,7 +43,11 @@ def build(experiment):
                 super().__init__(*args, **kwargs)
                 # Original controller tWR=2 sys (4 CK), while MR0 nWR=5 CK.
                 # Round the programmed recovery floor up to 3 sys (6 CK).
-                self.timing_settings.tWR = max(self.timing_settings.tWR, 3)
+                floors = {'tWR': 3} if experiment == 'dll-off-wr-recovery' else {
+                    'tRP': 4, 'tRCD': 4, 'tRAS': 8, 'tRC': 12,
+                    'tWR': 4, 'tWTR': 4}
+                for name, floor in floors.items():
+                    setattr(self.timing_settings, name, max(getattr(self.timing_settings, name), floor))
         target.IMD128M16R39CG8GNF = RecoveryModule
         try:
             soc = ProjectSoC(profile='minimal', memory='ddr3')
@@ -68,9 +72,9 @@ def build(experiment):
         soc = ProjectSoC(profile='minimal', memory='ddr3')
 
     changes = []
-    if experiment in ('dll-off-fixed', 'dll-off-integrity', 'dll-off-write-sweep', 'dll-off-wr-recovery'):
+    if experiment in ('dll-off-fixed', 'dll-off-integrity', 'dll-off-write-sweep', 'dll-off-wr-recovery', 'dll-off-write-trace', 'dll-off-row-timing', 'dll-off-odt-low'):
         soc.add_constant('MEMTEST_DATA_DEBUG', 1)
-        if experiment in ('dll-off-integrity', 'dll-off-write-sweep', 'dll-off-wr-recovery'):
+        if experiment in ('dll-off-integrity', 'dll-off-write-sweep', 'dll-off-wr-recovery', 'dll-off-write-trace', 'dll-off-row-timing', 'dll-off-odt-low'):
             soc.add_constant('MEMTEST_READ_ONLY_DIAGNOSTIC', 1)
         soc.add_constant('MEMTEST_DEBUG_MAX_ERRORS', 16)
         soc.platform.toolchain.additional_cst_commands.extend([
@@ -80,6 +84,8 @@ def build(experiment):
         changes.append('Fixed DLL-off READ slot1 advance/RCLKSEL3/read_latency11; matching controller; error-address logging')
     if experiment == 'dll-off-wr-recovery':
         changes.append('Diagnostic controller tWR3 sys/6 CK vs original2 sys/4 CK; MR0 recovery remains5 CK; clocks/CL/CWL/receive/ODT unchanged')
+    if experiment == 'dll-off-row-timing':
+        changes.append('Diagnostic controller floors in sys cycles: tRP4/tRCD4/tRAS8/tRC12/tWR4/tWTR4; clocks/CL/CWL/receive/ODT unchanged')
     if experiment in ('dll-on-6-6', 'latency-8-7'):
         changes.append('Diagnostic DRAM DLL-on mode at 96 MHz; outside the required DLL-off acceptance configuration')
         if experiment == 'latency-8-7':
@@ -183,7 +189,29 @@ def build(experiment):
             self.sync += self.valid.status.eq(self.valid.status | soc.ddrphy.datavalid)
 
     soc.ddr_debug = Status()
+    if experiment == 'dll-off-odt-low':
+        changed = 0
+        for instance in soc.ddrphy._fragment.specials:
+            if not isinstance(instance, Instance) or instance.of != 'OSER4':
+                continue
+            inputs = {item.name: item for item in instance.items if isinstance(item, Instance.Input)}
+            if getattr(inputs['D0'].expr, 'value', None) is soc.ddrphy.dfi.phases[0].odt:
+                for edge in range(4):
+                    inputs[f'D{edge}'].expr = Constant(0, 1)
+                changed += 1
+        if changed != 1:
+            raise RuntimeError('expected exactly one ODT command serializer')
+        changes.append('Diagnostic ODT ball held low throughout initialization and operation; RTT_NOM/RTT_WR remain disabled; clocks/row timing/CL/CWL unchanged')
     sweep_configuration = None
+    trace_configuration = None
+    if experiment in ('dll-off-write-trace', 'dll-off-row-timing', 'dll-off-odt-low'):
+        from gateware.ddr_trace import add_burst_trace
+        trace_configuration = add_burst_trace(soc)
+        trace_configuration['controller_timings_sys_cycles'] = {
+            name: getattr(soc.sdram.controller.settings.timing, name)
+            for name in ('tRP', 'tRCD', 'tRAS', 'tRC', 'tWR', 'tWTR', 'tCCD', 'tREFI', 'tRFC')}
+        trace_configuration['odt_forced_low'] = experiment == 'dll-off-odt-low'
+        changes.append('Diagnostic-only target-burst DFI and OSER4_MEM input recorder; recorder feeds no functional signals')
     if experiment == 'dll-off-read-sweep':
         from scripts.build import apply_project_patches
         from scripts.ddr_read_sweep import add_read_sweep
@@ -195,10 +223,10 @@ def build(experiment):
     soc.platform.toolchain.additional_sdc_commands.append(
         'set_false_path -to [get_pins {ddr_debug_clock_meta*/D ddr_debug_lanes_meta*/D}]')
     builder_for(soc, output).build(run=True, build_name='ddr_diagnosis')
-    finalize(experiment, changes, sweep_configuration)
+    finalize(experiment, changes, sweep_configuration, trace_configuration)
 
 
-def finalize(experiment, changes=None, sweep_configuration=None):
+def finalize(experiment, changes=None, sweep_configuration=None, trace_configuration=None):
     from scripts.compare import parse_profile
     output = ROOT / 'build/ddr3/diagnosis' / experiment
     if changes is None:
@@ -212,6 +240,9 @@ def finalize(experiment, changes=None, sweep_configuration=None):
                    'dll-off-fixed': ['DLL-off READ slot1 advance/RCLKSEL3/read_latency11; matching controller'],
                    'dll-off-wr-recovery': ['Diagnostic controller tWR3 sys/6 CK; MR0 recovery5 CK unchanged'],
                    'dll-off-write-sweep': ['Fixed DLL-off receive; diagnostic DQ/DM write-clock delay controls'],
+                   'dll-off-write-trace': ['Fixed DLL-off receive; diagnostic-only target-burst DFI/serializer input recorder'],
+                   'dll-off-row-timing': ['Fixed DLL-off receive; conservative diagnostic controller row timing; target-burst recorder'],
+                   'dll-off-odt-low': ['Fixed DLL-off receive; diagnostic ODT ball forced low; target-burst recorder'],
                    'dll-off-integrity': ['Fixed DLL-off receive configuration; read-only PRNG diagnostic'],
                    'dll-off-read-sweep': ['Diagnostic READ/RCLKSEL/DFII latency sweep; fixed controller latency12'],
                    'read-gate-early': ['DQS READ gate uses taps 1,2,3; DLL-off CL6/CWL6 unchanged']}[experiment]
@@ -237,6 +268,13 @@ def finalize(experiment, changes=None, sweep_configuration=None):
         manifest['receive_sweep'] = sweep_configuration
         manifest['sweep_source_sha256'] = sha(ROOT / 'scripts/ddr_read_sweep.py')
         manifest['diagnostic_patch_sha256'] = sha(ROOT / 'patches/litex-sdram-read-capture-diagnostic.patch')
+    if experiment in ('dll-off-write-trace', 'dll-off-row-timing', 'dll-off-odt-low'):
+        if trace_configuration is None and (output / 'manifest.json').is_file():
+            trace_configuration = json.loads((output / 'manifest.json').read_text()).get('write_trace')
+        if trace_configuration is None:
+            raise RuntimeError('write-trace finalization requires its recorded build configuration')
+        manifest['write_trace'] = trace_configuration
+        manifest['trace_source_sha256'] = sha(ROOT / 'gateware/ddr_trace.py')
     (output / 'manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
     print(json.dumps(manifest, indent=2))
 

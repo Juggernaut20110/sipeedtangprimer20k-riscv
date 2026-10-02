@@ -304,6 +304,8 @@ The DDR3 matrix contains four routed candidates, two timing failures, six placem
 
 The final on-chip run was followed by an explicit FPGA reset. Pre- and post-reset UART observations were empty, JTAG detection passed, and flash programming was not used. [Final recovery evidence](performance/maxperf-evaluation/recovery/20261002T004311Z-final-onchip/recovery.json).
 
+The subsequent [DDR write-disturbance investigation](ddr3/write-disturbance.md) reproduced two untouched-victim errors after writes to another row. Neither conservative row timing nor ODT-low resolved them, and no public configuration changed. DDR scoring remains blocked. The board was explicitly reset to safe idle again after those probes; [current recovery evidence](ddr3/diagnosis/20261002T020045.394626Z-integrity-recovery/recovery.json).
+
 ## Evidence and reproduction
 
 - [Machine-readable results and artifact hashes](performance/results.json)

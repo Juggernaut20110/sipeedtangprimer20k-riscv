@@ -51,6 +51,19 @@ Two attempted configuration fixes repeated the entire neighbor-access suite with
 
 All three routes had zero violated setup endpoints and verified 48/96 MHz clocks. Conservative controller floors were tRP=4, tRCD=4, tRAS=8, tRC=12, tWR=4 and tWTR=4 system cycles, versus the baseline 2/2/3/3/2/2. Mode registers and receive settings were unchanged. ODT-low used baseline controller timing and forced the actual ODT serializer inputs low throughout initialization and operation; MR1=`0x3` and MR2=`0x8` already disable RTT_NOM and RTT_WR. The [ICMAX datasheet, DLL Disable Mode, pages 123–125](https://atta.szlcsc.com/upload/public/pdf/source/20220309/96D421F163B8527A26AFCBB2BF4A8780.pdf) motivates that experiment, although its transition figures also permit static HIGH when both termination settings are disabled. ODT-low is not a demonstrated integrity fix.
 
+## DLL-on images fail at the same word
+
+The earlier DLL-on comparison images ([diagnosis](diagnosis.md)) reported only error counts. Both were rebuilt with BIOS data-error address logging and no other change. Each passed routed timing with zero violated setup endpoints (CL6/CWL6: setup +0.026 ns, hold +0.319 ns; CL8/CWL7: setup +0.319 ns, hold +0.316 ns). Each was then loaded into FPGA SRAM three times.
+
+| Image | DRAM DLL | Two-lane training | BIOS 2 MiB result, every boot |
+|---|---|---|---|
+| `dll-on-6-6` | on, CL6/CWL6 | 3 / 3; windows 54–55 taps | 1 error: `0x400b64f4` `0xb4ce6cd9` vs `0xb4de6cd9` |
+| `latency-8-7` | on, CL8/CWL7 | 3 / 3; windows 56–57 taps | 1 error: `0x400b64f4` `0xb4ce6cd9` vs `0xb4de6cd9` |
+
+Captures: CL6 [1](diagnosis/20261002T022928.120313Z-dll-on-6-6/uart.log), [2](diagnosis/20261002T023001.597561Z-dll-on-6-6/uart.log), [3](diagnosis/20261002T023021.918421Z-dll-on-6-6/uart.log); CL8 [1](diagnosis/20261002T022944.911572Z-latency-8-7/uart.log), [2](diagnosis/20261002T023011.755951Z-latency-8-7/uart.log), [3](diagnosis/20261002T023032.065877Z-latency-8-7/uart.log).
+
+The DLL-off public and diagnostic images fail at the same address, with the same value and the same bit-20 loss. These images change the DRAM DLL mode, CAS latency, PHY receive path (original DLL-on gate, RCLKSEL 0, read latency CL+9), and placement; none of those changes moves the failure. That makes the receive patch, DLL-off operation and the read-capture configuration very unlikely causes. It supports a storage-level fault that the BIOS write sequence reproduces deterministically. The earlier CL8/CWL7 capture with two errors was not reproduced and its second address remains unknown. DLL-on at 96 MHz is outside the JEDEC DLL-on frequency range and remains a diagnostic comparison only.
+
 ## Reproduction and evidence audit
 
 ```sh

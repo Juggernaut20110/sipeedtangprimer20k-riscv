@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "session_id": "20261006T113227.803370Z-ddr3-sd-spi_eth-none-standard",
+  "status": "passed",
+  "started_utc": "2026-10-06T11:32:27.973533+00:00",
+  "finished_utc": "2026-10-06T12:06:13.151719+00:00",
+  "board": {
+    "model": "Sipeed Tang Primer 20K",
+    "revision": "core-v3961_Dock-v3714",
+    "serial": null,
+    "serial_status": "not_printed_user_confirmed",
+    "identity_basis": "user_confirmed_attached_board_revision"
+  },
+  "build": {
+    "profile": "standard",
+    "memory": "ddr3",
+    "sdcard": "spi",
+    "ethernet": "none",
+    "source_fingerprint": "86918583a3399c308d880305dfc8eced807989e06a59c4d1945a92f80821130c",
+    "bitstream_sha256": "2059e523ad232a75276bb64f5532a295c69ad815df55f0440944a22cef801fab",
+    "firmware_sha256": "eb10ecda58de6eb9e1192a558b37f0300c491bb02b2582781b8bcedaf05eae83"
+  },
+  "criteria": {
+    "ddr_qualification": {
+      "status": "passed",
+      "measurements": {
+        "training_passes": 10,
+        "tested_bytes": 134217728,
+        "pattern_errors": 0,
+        "cache_visibility_errors": 0,
+        "stress_seconds": 1800.0518347291666,
+        "stress_seconds_requested": 1800,
+        "board_serial": "unavailable",
+        "board_revision": "core-v3961_Dock-v3714"
+      },
+      "evidence": [
+        "uart_rx",
+        "uart_tx",
+        "programmer_log",
+        "ddr_session"
+      ]
+    },
+    "final_recovery": {
+      "status": "passed",
+      "measurements": {
+        "sram_programmed": true,
+        "ddr_held_in_reset": true,
+        "sd_deselected": true,
+        "sd_clock_stopped": true,
+        "phy_held_in_reset": true,
+        "idle_bitstream_sha256": "20c4f1f7be50e692b53371dba25c833522562db445c2b75e6c9cf2cf1d6d3784",
+        "uart_quiet_seconds": 5.007411751954351,
+        "uart_bytes": 0
+      },
+      "evidence": [
+        "recovery_programmer",
+        "recovery_uart",
+        "recovery_record",
+        "recovery_bitstream"
+      ]
+    }
+  },
+  "artifacts": [
+    {
+      "name": "uart_rx",
+      "path": "uart_rx.bin",
+      "bytes": 45129,
+      "sha256": "2c4c01ddc20bd23cfe54a7d23faea98efd163a87d4738f7584835b38727b6f67"
+    },
+    {
+      "name": "uart_tx",
+      "path": "uart_tx.bin",
+      "bytes": 71106,
+      "sha256": "e478477a9cf3c002836e19642c52a2debfaa7090375661371f77284b2713d939"
+    },
+    {
+      "name": "programmer_log",
+      "path": "programmer.log",
+      "bytes": 8272,
+      "sha256": "be92700000b2d1353bd949bf2ee6b31e45dbb556e498b482650ed7caeca1363a"
+    },
+    {
+      "name": "ddr_session",
+      "path": "ddr_session.json",
+      "bytes": 48212,
+      "sha256": "8d687f67991422db879293905ee499cfa77cc1f2666b4f196404a38e07d3f42a"
+    },
+    {
+      "name": "recovery_programmer",
+      "path": "recovery-programmer.log",
+      "bytes": 447,
+      "sha256": "8c3852a9440bad62eb3dac7c79b7570e1ceb2910c92bdadbc51598b484c86f1e"
+    },
+    {
+      "name": "recovery_uart",
+      "path": "recovery-uart.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "recovery_record",
+      "path": "recovery.json",
+      "bytes": 1099,
+      "sha256": "93daa241b07f00e95133ffc3f9a44c4c32df1a8f9afefa5ab4be227147bd85ef"
+    },
+    {
+      "name": "recovery_bitstream",
+      "path": "recovery-idle.fs",
+      "bytes": 4619310,
+      "sha256": "20c4f1f7be50e692b53371dba25c833522562db445c2b75e6c9cf2cf1d6d3784"
+    }
+  ],
+  "session_record": "build/peripherals/ddr3/standard/sd-spi_eth-none/diagnostics/sessions/20261006T113227.803370Z-ddr3-sd-spi_eth-none-standard/session.json"
+}

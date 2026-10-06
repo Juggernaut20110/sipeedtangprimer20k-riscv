@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "started_utc": "2026-10-06T13:26:50.469319+00:00",
+  "board": {
+    "model": "Sipeed Tang Primer 20K",
+    "revision": "core-v3961_Dock-v3714",
+    "serial": null,
+    "serial_status": "not_printed_user_confirmed",
+    "identity_basis": "user_confirmed_attached_board_revision"
+  },
+  "status": "completed_diagnostic_observations",
+  "criteria": {
+    "final_recovery": {
+      "status": "passed",
+      "measurements": {
+        "sram_programmed": true,
+        "ddr_held_in_reset": true,
+        "sd_deselected": true,
+        "sd_clock_stopped": true,
+        "phy_held_in_reset": true,
+        "idle_bitstream_sha256": "20c4f1f7be50e692b53371dba25c833522562db445c2b75e6c9cf2cf1d6d3784",
+        "uart_quiet_seconds": 5.006826292024925,
+        "uart_bytes": 0
+      },
+      "evidence": [
+        "recovery_programmer",
+        "recovery_uart",
+        "recovery_record",
+        "recovery_bitstream"
+      ]
+    }
+  },
+  "build": {
+    "profile": "minimal",
+    "memory": "onchip",
+    "sdcard": "spi",
+    "ethernet": "rmii",
+    "source_fingerprint": "b9fe65ddbcd23d90cb17e590139ad43091ed1bbf0a384e0008f69d91119158a8",
+    "bitstream_sha256": "f6d0ae186c28cfc32b1b2dcdfcadf2a7f73639b97049b5469eb5cb457658fb87",
+    "firmware_sha256": "20951cdb8d842590f8625a0c8f06377215252b12b657440518f21eb0cdae52c8"
+  },
+  "diagnostic_observation": {
+    "status": "passed",
+    "response": "Peripheral diagnostic: profile=minimal SD_SPI=1 ETHERNET_RMII=1\n\rLiteX SPI SD controller: present (CSR generated)\n\rLiteEth MAC: present at 0x80000000; RX slots=2 TX slots=2 slot bytes=2048\n\rgpio> ",
+    "capability": "controller presence and UART execution only; filesystem/network services are not linked"
+  },
+  "workload_closed": true,
+  "finished_utc": "2026-10-06T13:26:55.783917+00:00",
+  "artifacts": [
+    {
+      "name": "uart_rx",
+      "path": "uart_rx.bin",
+      "bytes": 1922,
+      "sha256": "1374d1c34a69c18085c152a1cc5e6f9e8b43dc606bf78b62740fe9c82dded924"
+    },
+    {
+      "name": "uart_tx",
+      "path": "uart_tx.bin",
+      "bytes": 8044,
+      "sha256": "47415337aab1f6a1814328e449871ce5af7e6501cb6f2b9464f650cf52dcf882"
+    },
+    {
+      "name": "programmer_log",
+      "path": "programmer.log",
+      "bytes": 754,
+      "sha256": "97c4ca4c88abadab886175967d018503da7a8e24c6fe2a6908ad56a404a7a66b"
+    },
+    {
+      "name": "host_log",
+      "path": "host.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "name": "events",
+      "path": "events.jsonl",
+      "bytes": 671,
+      "sha256": "3b183d83baeff66549ff8afd027d8c4c452721cff32779a6b07a24bc6c58e5c7"
+    },
+    {
+      "name": "recovery_programmer",
+      "path": "recovery-programmer.log",
+      "bytes": 447,
+      "sha256": "8c3852a9440bad62eb3dac7c79b7570e1ceb2910c92bdadbc51598b484c86f1e"
+    },
+    {
+      "name": "recovery_uart",
+      "path": "recovery-uart.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "recovery_record",
+      "path": "recovery.json",
+      "bytes": 1099,
+      "sha256": "b082a15d993722929816b9eaf721e3f7ea11e310ea2c781c27aaa8daa0189e01"
+    },
+    {
+      "name": "recovery_bitstream",
+      "path": "recovery-idle.fs",
+      "bytes": 4619310,
+      "sha256": "20c4f1f7be50e692b53371dba25c833522562db445c2b75e6c9cf2cf1d6d3784"
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "started_utc": "2026-10-06T13:10:49.448575+00:00",
+  "board": {
+    "model": "Sipeed Tang Primer 20K",
+    "revision": "core-v3961_Dock-v3714",
+    "serial": null,
+    "serial_status": "not_printed_user_confirmed",
+    "identity_basis": "user_confirmed_attached_board_revision"
+  },
+  "status": "failed",
+  "criteria": {
+    "final_recovery": {
+      "status": "passed",
+      "measurements": {
+        "sram_programmed": true,
+        "ddr_held_in_reset": true,
+        "sd_deselected": true,
+        "sd_clock_stopped": true,
+        "phy_held_in_reset": true,
+        "idle_bitstream_sha256": "20c4f1f7be50e692b53371dba25c833522562db445c2b75e6c9cf2cf1d6d3784",
+        "uart_quiet_seconds": 5.00724560796516,
+        "uart_bytes": 0
+      },
+      "evidence": [
+        "recovery_programmer",
+        "recovery_uart",
+        "recovery_record",
+        "recovery_bitstream"
+      ]
+    }
+  },
+  "build": {
+    "profile": "minimal",
+    "memory": "ddr3",
+    "sdcard": "none",
+    "ethernet": "rmii",
+    "source_fingerprint": "04c9b3c87da57f1806c82eafbba20380cb2e5f582bedbbaf34af9f98cda59118",
+    "bitstream_sha256": "44ce860c38445521e88b681c5d22f8791a39a331273d0d17b14496729bb143a8",
+    "firmware_sha256": "d23271df9c8a3a493f6068c79f57fccffc947199b56f4d6a32fdd8e77f51eca8"
+  },
+  "ddr_qualification_session": "docs/peripherals/evidence/20261006T121956.915181Z-ddr3-sd-none_eth-rmii-minimal",
+  "network_observation": {
+    "initial_status": "Ethernet: phy=not found\n\rMAC=02:20:20:00:00:01\n\rIPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=static/unconfigured\n\rframes rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2\n\rgpio> "
+  },
+  "error": "TimeoutError: DHCP lease not obtained within 120 seconds",
+  "workload_closed": true,
+  "finished_utc": "2026-10-06T13:13:08.571441+00:00",
+  "artifacts": [
+    {
+      "name": "uart_rx",
+      "path": "uart_rx.bin",
+      "bytes": 35016,
+      "sha256": "a895e1ed8d850b7158aa7808c873ed4705c156398abd7d8b5fb85f6253c65bc3"
+    },
+    {
+      "name": "uart_tx",
+      "path": "uart_tx.bin",
+      "bytes": 79580,
+      "sha256": "e0d32d4a6fab9dcebda1d381ac1e5311129e8f8889ca30b28a0295b0df89a639"
+    },
+    {
+      "name": "programmer_log",
+      "path": "programmer.log",
+      "bytes": 752,
+      "sha256": "08981bde2b0bf2565570de8071ad83661d1e70163efeb24a74dd278b233b4e88"
+    },
+    {
+      "name": "host_log",
+      "path": "host.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "name": "events",
+      "path": "events.jsonl",
+      "bytes": 34911,
+      "sha256": "ee99aaad4f4235b40a896425a6ca8f8b1080c65bea082972ee32af971b4d420b"
+    },
+    {
+      "name": "recovery_programmer",
+      "path": "recovery-programmer.log",
+      "bytes": 447,
+      "sha256": "8c3852a9440bad62eb3dac7c79b7570e1ceb2910c92bdadbc51598b484c86f1e"
+    },
+    {
+      "name": "recovery_uart",
+      "path": "recovery-uart.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "recovery_record",
+      "path": "recovery.json",
+      "bytes": 1098,
+      "sha256": "c9f7c9ed2ad81a1c03ce2f6e4a5de96dcf8b8f2b13f1720ef5078bafcab228f9"
+    },
+    {
+      "name": "recovery_bitstream",
+      "path": "recovery-idle.fs",
+      "bytes": 4619310,
+      "sha256": "20c4f1f7be50e692b53371dba25c833522562db445c2b75e6c9cf2cf1d6d3784"
+    }
+  ]
+}

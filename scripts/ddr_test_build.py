@@ -183,10 +183,16 @@ def compile_image(profile, memory_dir, output_dir, variant, stress_seconds, *, r
     }
 
 
-def build_profile_diagnostics(profile, stress_seconds, force=False, candidate_id=None, build_dir=None):
+def build_profile_diagnostics(profile, stress_seconds, force=False, candidate_id=None, build_dir=None,
+                              sdcard="none", ethernet="none"):
     if profile not in PROFILES and profile != "maxperf":
         raise ValueError(f"unknown CPU profile {profile!r}; choose from {', '.join(PROFILES)}")
     validate_memory("ddr3")
+    from scripts.peripheral_config import peripheral_build_dir, validate_features
+    validate_features(sdcard, ethernet)
+    peripheral_design = sdcard != "none" or ethernet != "none"
+    if peripheral_design and candidate_id is not None:
+        raise ValueError("peripheral DDR diagnostics do not accept provisional CPU candidates")
     candidate_manifest = None
     if candidate_id is not None:
         candidate_root = ROOT / "build/maxperf-candidates/ddr3" / candidate_id
@@ -226,6 +232,21 @@ def build_profile_diagnostics(profile, stress_seconds, force=False, candidate_id
                 or sha256(rtl_path) != candidate_manifest.get("rtl_sha256")
                 or build.get("cpu_configuration", {}).get("rtl_sha256") != candidate_manifest.get("rtl_sha256")):
             raise RuntimeError("DDR candidate SoC build no longer matches its generated CPU identity")
+    elif peripheral_design:
+        memory_dir = (Path(build_dir).resolve() if build_dir is not None else
+                      peripheral_build_dir(ROOT, "ddr3", profile, sdcard, ethernet))
+        build_dir = memory_dir
+        build_path = build_dir / "build-metadata.json"
+        if not build_path.is_file():
+            raise RuntimeError("build the matching peripheral image before its DDR qualification image")
+        build = build_module.build_profile(
+            profile, memory="ddr3", output_dir=memory_dir,
+            sdcard=sdcard, ethernet=ethernet,
+        )
+        if (build.get("status") != "passed" or build.get("timing_gate") != "passed"
+                or build.get("profile") != profile or build.get("memory_mode") != "ddr3"
+                or build.get("peripherals") != {"sdcard": sdcard, "ethernet": ethernet}):
+            raise RuntimeError("peripheral DDR qualification requires the exact current feature build with passing routed timing")
     else:
         build_dir = profile_build_dir(ROOT, profile, "ddr3")
         memory_dir = build_dir
@@ -245,7 +266,11 @@ def build_profile_diagnostics(profile, stress_seconds, force=False, candidate_id
         "patches/litedram-gw2ddrphy-dll-off-read.patch": sha256(ROOT / "patches/litedram-gw2ddrphy-dll-off-read.patch"),
         "patches/litex-ddr-diagnostic-boot.patch": sha256(ROOT / "patches/litex-ddr-diagnostic-boot.patch"),
         "patches/litedram-gw2ddrphy-cdc.patch": sha256(ROOT / "patches/litedram-gw2ddrphy-cdc.patch"),
+        "scripts/ddr_test_build.py": sha256(ROOT / "scripts/ddr_test_build.py"),
+        "scripts/ddr_test_run.py": sha256(ROOT / "scripts/ddr_test_run.py"),
         "bitstream": sha256(ROOT / build["bitstream"]),
+        "peripherals": build.get("peripherals", {"sdcard": "none", "ethernet": "none"}),
+        "source_fingerprint": build.get("source_fingerprint"),
     }
     if candidate_manifest is not None:
         source_identity["candidate_manifest"] = sha256(candidate_root / "candidate.json")
@@ -266,6 +291,8 @@ def build_profile_diagnostics(profile, stress_seconds, force=False, candidate_id
     metadata = {
         "status": "in_progress",
         "profile": profile,
+        "memory_mode": "ddr3",
+        "peripherals": {"sdcard": sdcard, "ethernet": ethernet},
         "cpu_candidate": candidate_id,
         "candidate_rtl_sha256": candidate_manifest.get("rtl_sha256") if candidate_manifest else None,
         "memory_mode": "ddr3",
@@ -305,22 +332,33 @@ def main(argv=None):
     parser.add_argument("profile", type=str.lower, choices=[*PROFILES, "maxperf", "all"], nargs="?", default="all")
     parser.add_argument("--stress-seconds", type=int, default=1800)
     parser.add_argument("--force", action="store_true")
+    parser.add_argument("--sdcard", choices=("none", "spi"), default="none")
+    parser.add_argument("--ethernet", choices=("none", "rmii"), default="none")
     args = parser.parse_args(argv)
     if args.profile == "maxperf" and args.profile not in PROFILES:
         parser.error("maxperf is provisional until both memory modes qualify; use the maxperf candidate workflow")
     if args.stress_seconds < 1:
         parser.error("STRESS_SECONDS must be a positive integer")
     profiles = list(PROFILES) if args.profile == "all" else [args.profile]
+    from scripts.peripheral_config import feature_slug, peripheral_build_dir, validate_features
+    validate_features(args.sdcard, args.ethernet)
     result = {"status": "in_progress", "stress_seconds": args.stress_seconds, "profiles": {}}
-    destination = ROOT / "build/ddr3/ddr-test-build.json"
+    peripheral_design = args.sdcard != "none" or args.ethernet != "none"
+    destination = (ROOT / f"build/peripherals/ddr3/ddr-test-build-{feature_slug(args.sdcard, args.ethernet)}.json"
+                   if peripheral_design else ROOT / "build/ddr3/ddr-test-build.json")
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text(json.dumps(result, indent=2) + "\n")
     try:
         for profile in profiles:
             print(f"Building DDR3 diagnostic firmware for {profile}", flush=True)
             result["profiles"][profile] = build_profile_diagnostics(
-                profile, args.stress_seconds, force=args.force
+                profile, args.stress_seconds, force=args.force,
+                build_dir=(peripheral_build_dir(ROOT, "ddr3", profile, args.sdcard, args.ethernet)
+                           if peripheral_design else None),
+                sdcard=args.sdcard, ethernet=args.ethernet,
             )
+        result["sdcard"] = args.sdcard
+        result["ethernet"] = args.ethernet
         result["status"] = "passed"
     except (OSError, RuntimeError, ValueError, subprocess.CalledProcessError) as error:
         result["status"] = "failed"

@@ -1,0 +1,52 @@
+{
+  "usb_tree": {
+    "command": [
+      "lsusb",
+      "-t"
+    ],
+    "exit_code": 0,
+    "output": "/:  Bus 001.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/16p, 480M\n    |__ Port 001: Dev 042, If 0, Class=Vendor Specific Class, Driver=ftdi_sio, 12M\n    |__ Port 002: Dev 036, If 0, Class=Vendor Specific Class, Driver=[none], 480M\n    |__ Port 003: Dev 003, If 0, Class=Communications, Driver=cdc_acm, 12M\n    |__ Port 003: Dev 003, If 1, Class=CDC Data, Driver=cdc_acm, 12M\n    |__ Port 009: Dev 043, If 0, Class=Vendor Specific Class, Driver=[none], 12M\n    |__ Port 009: Dev 043, If 1, Class=Vendor Specific Class, Driver=ftdi_sio, 12M\n/:  Bus 002.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/10p, 5000M\n"
+  },
+  "debugger_descriptor": {
+    "command": [
+      "lsusb",
+      "-v",
+      "-d",
+      "0403:6010"
+    ],
+    "exit_code": 0,
+    "output": "\nBus 001 Device 043: ID 0403:6010 Future Technology Devices International, Ltd FT2232C/D/H Dual UART/FIFO IC\nNegotiated speed: Full Speed (12Mbps)\nDevice Descriptor:\n  bLength                18\n  bDescriptorType         1\n  bcdUSB               2.00\n  bDeviceClass            0 [unknown]\n  bDeviceSubClass         0 [unknown]\n  bDeviceProtocol         0 \n  bMaxPacketSize0        64\n  idVendor           0x0403 Future Technology Devices International, Ltd\n  idProduct          0x6010 FT2232C/D/H Dual UART/FIFO IC\n  bcdDevice            5.00\n  iManufacturer           1 SIPEED\n  iProduct                2 JTAG Debugger\n  iSerial                 3 FactoryAIOT Pro\n  bNumConfigurations      1\n  Configuration Descriptor:\n    bLength                 9\n    bDescriptorType         2\n    wTotalLength       0x0037\n    bNumInterfaces          2\n    bConfigurationValue     1\n    iConfiguration          0 \n    bmAttributes         0xa0\n      (Bus Powered)\n      Remote Wakeup\n    MaxPower               90mA\n    Interface Descriptor:\n      bLength                 9\n      bDescriptorType         4\n      bInterfaceNumber        0\n      bAlternateSetting       0\n      bNumEndpoints           2\n      bInterfaceClass       255 Vendor Specific Class\n      bInterfaceSubClass    255 Vendor Specific Subclass\n      bInterfaceProtocol    255 Vendor Specific Protocol\n      iInterface              2 (error)\n      Endpoint Descriptor:\n        bLength                 7\n        bDescriptorType         5\n        bEndpointAddress     0x81  EP 1 IN\n        bmAttributes            2\n          Transfer Type            Bulk\n          Synch Type               None\n          Usage Type               Data\n        wMaxPacketSize     0x0040  1x 64 bytes\n        bInterval               1\n      Endpoint Descriptor:\n        bLength                 7\n        bDescriptorType         5\n        bEndpointAddress     0x02  EP 2 OUT\n        bmAttributes            2\n          Transfer Type            Bulk\n          Synch Type               None\n          Usage Type               Data\n        wMaxPacketSize     0x0040  1x 64 bytes\n        bInterval               1\n    Interface Descriptor:\n      bLength                 9\n      bDescriptorType         4\n      bInterfaceNumber        1\n      bAlternateSetting       0\n      bNumEndpoints           2\n      bInterfaceClass       255 Vendor Specific Class\n      bInterfaceSubClass    255 Vendor Specific Subclass\n      bInterfaceProtocol    255 Vendor Specific Protocol\n      iInterface              0 \n      Endpoint Descriptor:\n        bLength                 7\n        bDescriptorType         5\n        bEndpointAddress     0x83  EP 3 IN\n        bmAttributes            2\n          Transfer Type            Bulk\n          Synch Type               None\n          Usage Type               Data\n        wMaxPacketSize     0x0040  1x 64 bytes\n        bInterval               1\n      Endpoint Descriptor:\n        bLength                 7\n        bDescriptorType         5\n        bEndpointAddress     0x04  EP 4 OUT\n        bmAttributes            2\n          Transfer Type            Bulk\n          Synch Type               None\n          Usage Type               Data\n        wMaxPacketSize     0x0040  1x 64 bytes\n        bInterval               1\ncannot read device status, Resource temporarily unavailable (11)\n"
+  },
+  "uart_driver": {
+    "command": [
+      "udevadm",
+      "info",
+      "-q",
+      "property",
+      "-n",
+      "/dev/ttyUSB1"
+    ],
+    "exit_code": 0,
+    "output": "DEVPATH=/devices/pci0000:00/0000:00:14.0/usb1/1-9/1-9:1.1/ttyUSB1/tty/ttyUSB1\nDEVNAME=/dev/ttyUSB1\nMAJOR=188\nMINOR=1\nSUBSYSTEM=tty\nUSEC_INITIALIZED=380782122086\nID_BUS=usb\nID_MODEL=JTAG_Debugger\nID_MODEL_ENC=JTAG\\x20Debugger\nID_MODEL_ID=6010\nID_SERIAL=SIPEED_JTAG_Debugger_FactoryAIOT_Pro\nID_SERIAL_SHORT=FactoryAIOT_Pro\nID_VENDOR=SIPEED\nID_VENDOR_ENC=SIPEED\nID_VENDOR_ID=0403\nID_REVISION=0500\nID_TYPE=generic\nID_USB_MODEL=JTAG_Debugger\nID_USB_MODEL_ENC=JTAG\\x20Debugger\nID_USB_MODEL_ID=6010\nID_USB_SERIAL=SIPEED_JTAG_Debugger_FactoryAIOT_Pro\nID_USB_SERIAL_SHORT=FactoryAIOT_Pro\nID_USB_VENDOR=SIPEED\nID_USB_VENDOR_ENC=SIPEED\nID_USB_VENDOR_ID=0403\nID_USB_REVISION=0500\nID_USB_TYPE=generic\nID_USB_INTERFACES=:ffffff:\nID_USB_INTERFACE_NUM=01\nID_USB_DRIVER=ftdi_sio\nID_VENDOR_FROM_DATABASE=Future Technology Devices International, Ltd\nID_MODEL_FROM_DATABASE=FT2232C/D/H Dual UART/FIFO IC\nID_PATH_WITH_USB_REVISION=pci-0000:00:14.0-usbv2-0:9:1.1\nID_PATH=pci-0000:00:14.0-usb-0:9:1.1\nID_PATH_TAG=pci-0000_00_14_0-usb-0_9_1_1\nID_MM_CANDIDATE=1\nID_MM_DEVICE_IGNORE=1\nID_MM_PORT_IGNORE=1\nDEVLINKS=/dev/serial/by-path/pci-0000:00:14.0-usb-0:9:1.1-port0 /dev/serial/by-path/pci-0000:00:14.0-usbv2-0:9:1.1-port0 /dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0\nTAGS=:uaccess:systemd:\nCURRENT_TAGS=:uaccess:systemd:\n"
+  },
+  "uart_termios": {
+    "command": [
+      "stty",
+      "-F",
+      "/dev/ttyUSB1",
+      "-a"
+    ],
+    "exit_code": 0,
+    "output": "speed 115200 baud; rows 0; columns 0; line = 0;\nintr = ^C; quit = ^\\; erase = ^?; kill = ^U; eof = ^D; eol = <undef>;\neol2 = <undef>; swtch = <undef>; start = ^Q; stop = ^S; susp = ^Z; rprnt = ^R;\nwerase = ^W; lnext = ^V; discard = ^O; min = 0; time = 0;\n-parenb -parodd -cmspar cs8 hupcl -cstopb cread clocal -crtscts\n-ignbrk -brkint -ignpar -parmrk -inpck -istrip -inlcr -igncr -icrnl -ixoff\n-tandem -ixon -ixany -imaxbel -iutf8\n-opost -olcuc -ocrnl -onlcr -onocr -onlret -ofdel nl0 cr0 tab0 bs0 vt0 ff0\n-isig -icanon -iexten -echo -echoe -echok -echonl -noflsh -tostop -echoprt\n-echoctl -echoke -flusho -extproc\n"
+  },
+  "jtag_detect": {
+    "command": [
+      ".tools/bin/openFPGALoader",
+      "--board",
+      "tangprimer20k",
+      "--detect"
+    ],
+    "exit_code": 1,
+    "output": "empty\nunable to open ftdi device: -6 (ftdi_usb_reset failed)\nJTAG init failed with: unable to open ftdi device\n"
+  }
+}

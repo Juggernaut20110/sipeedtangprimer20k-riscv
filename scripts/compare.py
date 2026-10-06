@@ -70,7 +70,7 @@ def read_dsp_metric(path):
     }
 
 
-def parse_profile(profile, memory="onchip", build_dir=None):
+def parse_profile(profile, memory="onchip", build_dir=None, require_timing_pass=True):
     validate_memory(memory)
     profile_dir = Path(build_dir).resolve() if build_dir is not None else profile_build_dir(ROOT, profile, memory)
     base = profile_dir / "gateware/impl"
@@ -140,7 +140,7 @@ def parse_profile(profile, memory="onchip", build_dir=None):
     setup_violations = int(violated.group(1))
     if abs(constraint_mhz - SYS_CLK_FREQ / 1e6) > 0.001:
         raise RuntimeError(f"{profile} timing report constrains {constraint_mhz} MHz instead of 48 MHz")
-    if (
+    if require_timing_pass and (
         actual_fmax_mhz < constraint_mhz
         or any(value is not None and value < 0 for value in (
             worst_slack_ns, worst_hold_slack_ns, worst_recovery_slack_ns, worst_removal_slack_ns

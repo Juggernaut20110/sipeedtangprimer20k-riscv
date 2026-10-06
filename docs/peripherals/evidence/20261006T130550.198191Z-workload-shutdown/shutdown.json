@@ -1,0 +1,12 @@
+{
+  "board": {
+    "model": "Sipeed Tang Primer 20K",
+    "revision": "core-v3961_Dock-v3714",
+    "serial": null,
+    "serial_status": "not_printed_user_confirmed",
+    "identity_basis": "user_confirmed_attached_board_revision"
+  },
+  "status": "stopped",
+  "previous_application_session": "docs/peripherals/evidence/20261006T125856.205675Z-app-minimal",
+  "finished_utc": "2026-10-06T13:05:50.300291+00:00"
+}

@@ -28,10 +28,14 @@ PROJECT_PATCHES = {
         ROOT / "patches/litex-ddr-diagnostic-boot.patch",
         ROOT / "patches/litex-project-vexriscv-isa-variants.patch",
         ROOT / "patches/litex-gowin-extra-sdc.patch",
+        ROOT / "patches/litex-bios-no-ethernet-autoinit.patch",
     ),
     "litedram": (
         ROOT / "patches/litedram-gw2ddrphy-cdc.patch",
         ROOT / "patches/litedram-gw2ddrphy-dll-off-read.patch",
+    ),
+    "lwip": (
+        ROOT / "patches/lwip-tcp-option-bounds.patch",
     ),
 }
 

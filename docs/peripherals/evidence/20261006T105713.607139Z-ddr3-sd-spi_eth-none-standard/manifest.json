@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "session_id": "20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard",
+  "status": "incomplete_programmer_capture",
+  "started_utc": "2026-10-06T10:57:13.774348+00:00",
+  "finished_utc": "2026-10-06T11:30:59.926880+00:00",
+  "board": {
+    "model": "Sipeed Tang Primer 20K",
+    "revision": "core-v3961_Dock-v3714",
+    "serial": null,
+    "serial_status": "not_printed_user_confirmed",
+    "identity_basis": "user_confirmed_attached_board_revision"
+  },
+  "build": {
+    "profile": "standard",
+    "memory": "ddr3",
+    "sdcard": "spi",
+    "ethernet": "none",
+    "source_fingerprint": "1ce33dde02e51266722fbd89905490f62ec1b4729303ed49d09193dae797dc5f",
+    "bitstream_sha256": "7bd6d39fed396aa72d36eca61f77b4c977f8b3eb94c4c232676cc194c8bab674",
+    "firmware_sha256": "f19df9a0e53574c7b48820516bf45937e8cee8688de842b646ce6c2f81d5947c"
+  },
+  "criteria": {
+    "ddr_qualification": {
+      "status": "incomplete_programmer_capture",
+      "measurements": {
+        "training_passes": 10,
+        "tested_bytes": 134217728,
+        "pattern_errors": 0,
+        "cache_visibility_errors": 0,
+        "stress_seconds": 1800.0518347291666,
+        "stress_seconds_requested": 1800,
+        "board_serial": "unavailable",
+        "board_revision": "core-v3961_Dock-v3714"
+      },
+      "evidence": [
+        "uart_rx",
+        "uart_tx",
+        "programmer_log",
+        "ddr_session"
+      ]
+    },
+    "final_recovery": {
+      "status": "passed",
+      "measurements": {
+        "sram_programmed": true,
+        "ddr_held_in_reset": true,
+        "sd_deselected": true,
+        "sd_clock_stopped": true,
+        "phy_held_in_reset": true,
+        "idle_bitstream_sha256": "20c4f1f7be50e692b53371dba25c833522562db445c2b75e6c9cf2cf1d6d3784",
+        "uart_quiet_seconds": 5.007568283996079,
+        "uart_bytes": 0
+      },
+      "evidence": [
+        "recovery_programmer",
+        "recovery_uart",
+        "recovery_record",
+        "recovery_bitstream"
+      ]
+    }
+  },
+  "artifacts": [
+    {
+      "name": "uart_rx",
+      "path": "uart_rx.bin",
+      "bytes": 45129,
+      "sha256": "7277164ae019fef158edf690fcc8b3352abf5931fb90b656f7c64e8377d428f3"
+    },
+    {
+      "name": "uart_tx",
+      "path": "uart_tx.bin",
+      "bytes": 71106,
+      "sha256": "e478477a9cf3c002836e19642c52a2debfaa7090375661371f77284b2713d939"
+    },
+    {
+      "name": "programmer_log",
+      "path": "programmer.log",
+      "bytes": 1639,
+      "sha256": "9b020f0f2914ab97939a52b6395ec6836e32f681df4fdab2e737fd5588155f8f"
+    },
+    {
+      "name": "ddr_session",
+      "path": "ddr_session.json",
+      "bytes": 44834,
+      "sha256": "22d485d48a6a0d180d76e7798090a9f0396e5098decea09e1374afcd3caba2b8"
+    },
+    {
+      "name": "recovery_programmer",
+      "path": "recovery-programmer.log",
+      "bytes": 447,
+      "sha256": "8c3852a9440bad62eb3dac7c79b7570e1ceb2910c92bdadbc51598b484c86f1e"
+    },
+    {
+      "name": "recovery_uart",
+      "path": "recovery-uart.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "recovery_record",
+      "path": "recovery.json",
+      "bytes": 992,
+      "sha256": "8cf430f1c45f0d0c4b729d7cd42323d007cef25e12cb6e547afbdad761e6fc0e"
+    },
+    {
+      "name": "recovery_bitstream",
+      "path": "recovery-idle.fs",
+      "bytes": 4619310,
+      "sha256": "20c4f1f7be50e692b53371dba25c833522562db445c2b75e6c9cf2cf1d6d3784"
+    }
+  ],
+  "session_record": "build/peripherals/ddr3/standard/sd-spi_eth-none/diagnostics/sessions/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/session.json",
+  "capture_limitation": "Raw UART shows ten training passes and full 128 MiB / 1800-second stress pass with zero errors. Programmer logs captured the launch command but omitted child-process output. Current routed bitstream differs; a new complete matching session is required."
+}

@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "started_utc": "2026-10-06T12:14:44.057268+00:00",
+  "board": {
+    "model": "Sipeed Tang Primer 20K",
+    "revision": "core-v3961_Dock-v3714",
+    "serial": null,
+    "serial_status": "not_printed_user_confirmed",
+    "identity_basis": "user_confirmed_attached_board_revision"
+  },
+  "status": "failed",
+  "criteria": {},
+  "build": {
+    "profile": "standard",
+    "memory": "ddr3",
+    "sdcard": "spi",
+    "ethernet": "none",
+    "source_fingerprint": "c92f9662618046dc56dcf489daf04ae7c3c904bf8f912fc0bda0086d6f6c69a4",
+    "bitstream_sha256": "2059e523ad232a75276bb64f5532a295c69ad815df55f0440944a22cef801fab",
+    "firmware_sha256": "976898aa27f6cf78e9f65aa3128c0482ceb40707337efc6dbb4ecae6264e0536"
+  },
+  "ddr_qualification_session": "docs/peripherals/evidence/20261006T113227.803370Z-ddr3-sd-spi_eth-none-standard",
+  "sd_observation": {
+    "status": "SD init failed: stage=ACMD41 command=41 response=63 SPI_status=1 divider=120\n\rSD status: unavailable (initialization timed out or card is missing)\n\rgpio> ",
+    "listing": "SD init failed: stage=CMD0 command=0 response=-1 SPI_status=1 divider=120\n\rSD error: no card or initialization failed (bounded timeout)\n\rgpio> ",
+    "writes_attempted": false
+  },
+  "error": "RuntimeError: card initialization or supported filesystem mount/list failed; no test writes attempted",
+  "finished_utc": "2026-10-06T12:14:53.184973+00:00",
+  "artifacts": [
+    {
+      "name": "uart_rx",
+      "path": "uart_rx.bin",
+      "bytes": 4230,
+      "sha256": "8f8320176929aed02e10ce33ed3960d55753f35e55cbeec74fb33336876b4256"
+    },
+    {
+      "name": "uart_tx",
+      "path": "uart_tx.bin",
+      "bytes": 39662,
+      "sha256": "3b0e497bdf495a2717ca0ae1827cffe19eb30462e862377d62a95ab5a289b8f0"
+    },
+    {
+      "name": "programmer_log",
+      "path": "programmer.log",
+      "bytes": 752,
+      "sha256": "00cfdd409a97fd9551dcdf4cd6b1d5ed8edccfee6f3c3f02eec35569aa0466f6"
+    },
+    {
+      "name": "host_log",
+      "path": "host.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "name": "events",
+      "path": "events.jsonl",
+      "bytes": 919,
+      "sha256": "3d2193a7f36db558c2229b725ee89def79ed0c7276d8137049488c14639aae14"
+    }
+  ]
+}

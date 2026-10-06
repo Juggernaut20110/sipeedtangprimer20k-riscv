@@ -1,0 +1,533 @@
+
+Í
+[1m        __   _ __      _  __[0m
+[1m       / /  (_) /____ | |/_/[0m
+[1m      / /__/ / __/ -_)>  <[0m
+[1m     /____/_/\__/\__/_/|_|[0m
+[1m   Build your hardware, easily![0m
+
+ (c) Copyright 2012-2026 Enjoy-Digital
+ (c) Copyright 2007-2015 M-Labs
+
+ BIOS CRC passed (400d579d)
+
+ LiteX git sha1: 58322a1d2
+
+--================ [1mSoC[0m =================--
+[1mCPU[0m:		VexRiscv_Min @ 48MHz
+[1mBUS[0m:		wishbone 32-bit data/32-bit addr
+[1mCSR[0m:		32-bit data big ordering
+[1mROM[0m:		32.0KiB
+[1mSRAM[0m:		8.0KiB
+[1mL2[0m:		8.0KiB
+[1mSDRAM[0m:		128.0MiB 16-bit @ 192MT/s (CL-6 CWL-6)
+[1mMAIN RAM[0m:	128.0MiB
+
+--=========== [1mInitialization[0m ===========--
+Initializing SDRAM @0x40000000...
+Switching SDRAM to software control.
+SDRAM_TRAINING_START phy=GW2DDRPHY read_leveling=1 bitslips=4 delays=256
+Read leveling:
+  m0, b02: |11111111111110000000000000000000| 
+  best: m0, b02 delays: 48+-48
+SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=97 delay_center=48 delay_half_window=48
+  m1, b02: |11111111111111111111111111100000| 
+  best: m1, b02 delays: 107+-107
+SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=0 window_length=215 delay_center=107 delay_half_window=107
+Switching SDRAM to hardware control.
+SDRAM_TRAINING_RESULT status=passed
+Memtest at 0x40000000 (2.0MiB)...
+  Write: 0x40000000-0x40000000 0B     Write: 0x40000000-0x40020000 128.0KiB     Write: 0x40000000-0x40040000 256.0KiB     Write: 0x40000000-0x40060000 384.0KiB     Write: 0x40000000-0x40080000 512.0KiB     Write: 0x40000000-0x400a0000 640.0KiB     Write: 0x40000000-0x400c0000 768.0KiB     Write: 0x40000000-0x400e0000 896.0KiB     Write: 0x40000000-0x40100000 1.0MiB     Write: 0x40000000-0x40120000 1.1MiB     Write: 0x40000000-0x40140000 1.2MiB     Write: 0x40000000-0x40160000 1.3MiB     Write: 0x40000000-0x40180000 1.5MiB     Write: 0x40000000-0x401a0000 1.6MiB     Write: 0x40000000-0x401c0000 1.7MiB     Write: 0x40000000-0x401e0000 1.8MiB     Write: 0x40000000-0x40200000 2.0MiB   
+   Read: 0x40000000-0x40000000 0B      Read: 0x40000000-0x40020000 128.0KiB      Read: 0x40000000-0x40040000 256.0KiB      Read: 0x40000000-0x40060000 384.0KiB      Read: 0x40000000-0x40080000 512.0KiB      Read: 0x40000000-0x400a0000 640.0KiB      Read: 0x40000000-0x400c0000 768.0KiB      Read: 0x40000000-0x400e0000 896.0KiB      Read: 0x40000000-0x40100000 1.0MiB      Read: 0x40000000-0x40120000 1.1MiB      Read: 0x40000000-0x40140000 1.2MiB      Read: 0x40000000-0x40160000 1.3MiB      Read: 0x40000000-0x40180000 1.5MiB      Read: 0x40000000-0x401a0000 1.6MiB      Read: 0x40000000-0x401c0000 1.7MiB      Read: 0x40000000-0x401e0000 1.8MiB      Read: 0x40000000-0x40200000 2.0MiB   
+Memtest OK
+Memspeed at 0x40000000 (Sequential, 2.0MiB)...
+  Write speed: 10.2MiB/s
+   Read speed: 14.9MiB/s
+--================ [1mBoot[0m ================--
+Booting from serial...
+Press Q or ESC to abort boot completely.
+sL5DdSMmkekro
+KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKExecuting booted program at 0x40000000
+
+--============== [1mLiftoff![0m ==============--
+Sipeed Tang Primer 20K with standard Dock
+CPU profile: minimal
+System clock: 48 MHz; UART: 115200 baud
+Commands:
+  help            show commands
+  buttons         show synchronized and debounced S0-S3 masks
+  leds <hex-mask> set LEDs 0-5 (0x00 through 0x3f), manual mode
+  demo            mirror S0-S3 to LEDs 0-3; LED 5 heartbeats
+  net status      show PHY, link, address and packet/error counters
+  net restart     restart PHY negotiation and clear power-down/isolation
+  net static IP MASK GATEWAY | net dhcp | net mac XX:XX:XX:XX:XX:XX
+GPIO demo ready
+Ethernet services: UDP echo 5001, TCP echo 5002, SD upload 0
+gpio> Ethernet: phy=not found
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=static/unconfigured
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> DHCP started; use net status to check for a lease
+gpio> Ethernet: phy=not found
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet PHY addr=0 id=001c:c816
+Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001
+MAC=02:20:20:00:00:01
+IPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=DHCP pending
+frames rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2
+gpio> Ethernet stopped; upload file closed; SRAM reload required to restart services
+gpio> 

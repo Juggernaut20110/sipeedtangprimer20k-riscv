@@ -1,0 +1,1133 @@
+{
+  "schema_version": 1,
+  "session_id": "20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard",
+  "batch_id": "20261006T105713.607139Z-ddr3-sd-spi_eth-none",
+  "profile": "standard",
+  "cpu_candidate": null,
+  "requested_profiles": [
+    "standard"
+  ],
+  "memory_mode": "ddr3",
+  "status": "passed",
+  "created_utc": "2026-10-06T10:57:13.774348+00:00",
+  "board": {
+    "model": "Sipeed Tang Primer 20K",
+    "revision": "core-v3961_Dock-v3714",
+    "serial": null,
+    "serial_status": "not_printed_user_confirmed",
+    "identity_basis": "user_confirmed_attached_board_revision"
+  },
+  "clock_hz": 48000000,
+  "uart_device_requested": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+  "uart_device_selected": "/dev/ttyUSB0",
+  "uart_candidates_at_start": [
+    "/dev/serial/by-id/usb-1a86_USB_Single_Serial_599D114570-if00",
+    "/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A6005EXR-if00-port0",
+    "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if00-port0",
+    "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0"
+  ],
+  "usb_device_nodes_at_start": [
+    "/dev/bus/usb/001/001",
+    "/dev/bus/usb/001/003",
+    "/dev/bus/usb/001/036",
+    "/dev/bus/usb/001/042",
+    "/dev/bus/usb/001/043",
+    "/dev/bus/usb/002/001"
+  ],
+  "requested_training_runs": 10,
+  "actual_training_runs": 10,
+  "requested_stress_seconds": 1800,
+  "training_criteria_runs": 10,
+  "stress_criteria_seconds": 1800,
+  "build_identity": {
+    "build_metadata": "build/peripherals/ddr3/standard/sd-spi_eth-none/build-metadata.json",
+    "bitstream": "build/peripherals/ddr3/standard/sd-spi_eth-none/bitstream.fs",
+    "bitstream_sha256": "7bd6d39fed396aa72d36eca61f77b4c977f8b3eb94c4c232676cc194c8bab674",
+    "build_fingerprint": "1ce33dde02e51266722fbd89905490f62ec1b4729303ed49d09193dae797dc5f",
+    "cpu_configuration": {
+      "liteX_variant": "standard",
+      "isa": "rv32i2p0_m",
+      "instruction_cache_bytes": 4096,
+      "data_cache_bytes": 4096,
+      "prediction": "static",
+      "compressed": false
+    },
+    "bios_bytes": 32768,
+    "l2_cache_bytes": 8192,
+    "geometry_bytes": 134217728,
+    "uncached_alias": "0xc0000000",
+    "diagnostic_images": {
+      "smoke": {
+        "binary": "build/peripherals/ddr3/standard/sd-spi_eth-none/diagnostics/smoke/ddr_test.bin",
+        "sha256": "818a2d74448dd50d70c6bd640dfc0f6ae2449c423f6b61dafa844e801d8a714b",
+        "stress_seconds": 1800
+      },
+      "full": {
+        "binary": "build/peripherals/ddr3/standard/sd-spi_eth-none/diagnostics/full/ddr_test.bin",
+        "sha256": "2227d638128720cebf765e013be369118f122e7ab2d0a12d667cd24fea478005",
+        "stress_seconds": 1800
+      }
+    }
+  },
+  "training_phy_configuration": {
+    "SDRAM_PHY_MODULES": 2,
+    "SDRAM_PHY_DQ_DQS_RATIO": 8,
+    "SDRAM_PHY_DELAYS": 256,
+    "SDRAM_PHY_BITSLIPS": 4,
+    "SDRAM_DELAY_PER_DQ": false
+  },
+  "expected_read_lanes": 2,
+  "trials": [
+    {
+      "mode": "training",
+      "diagnostic_only": false,
+      "attempt": 1,
+      "status": "passed",
+      "programming_status": "completed",
+      "image_sha256": "818a2d74448dd50d70c6bd640dfc0f6ae2449c423f6b61dafa844e801d8a714b",
+      "bitstream_sha256": "7bd6d39fed396aa72d36eca61f77b4c977f8b3eb94c4c232676cc194c8bab674",
+      "raw_uart_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-01.uart.bin",
+      "text_uart_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-01.uart.log",
+      "transmitted_uart_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-01.uart.tx.bin",
+      "started_utc": "2026-10-06T10:57:13.809524+00:00",
+      "uart_input_buffer_cleared_before_programming": true,
+      "programmer_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-01.programmer.log",
+      "programmer_log_sha256": "7c1bf6e2171c5af992b04d2feafe3daae4b43c0b01f03b0c85bc8c428b0d2321",
+      "training": {
+        "status": "passed",
+        "start_records": [
+          "SDRAM_TRAINING_START phy=GW2DDRPHY read_leveling=1 bitslips=4 delays=256"
+        ],
+        "result_records": [
+          "SDRAM_TRAINING_RESULT status=passed"
+        ],
+        "expected_lane_count": 2,
+        "lane_count": 2,
+        "phy_configuration": {
+          "SDRAM_PHY_MODULES": 2,
+          "SDRAM_PHY_DQ_DQS_RATIO": 8,
+          "SDRAM_PHY_DELAYS": 256,
+          "SDRAM_PHY_BITSLIPS": 4,
+          "SDRAM_DELAY_PER_DQ": false
+        },
+        "lanes": [
+          {
+            "module": 0,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 93,
+            "delay_center": 46,
+            "delay_half_window": 46,
+            "raw": "SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=93 delay_center=46 delay_half_window=46"
+          },
+          {
+            "module": 1,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 211,
+            "delay_center": 105,
+            "delay_half_window": 105,
+            "raw": "SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=0 window_length=211 delay_center=105 delay_half_window=105"
+          }
+        ],
+        "errors": []
+      },
+      "bios_memtest": {
+        "status": "passed",
+        "records": [
+          "Memtest OK"
+        ],
+        "errors": []
+      },
+      "smoke_test": {
+        "status": "passed",
+        "tested_bytes": "16384"
+      },
+      "application_end_seen": true,
+      "application_failure": null,
+      "bios_training_status_seen": true,
+      "raw_uart_sha256": "9daa691de3f9c0c9827e2a7b5c8f38e0251c6773b7b8ceecef9e40d408786292",
+      "raw_uart_bytes": 3827,
+      "transmitted_uart_sha256": "801ff09e12dcad347bf84e75e97cdc38e3fabad8958a3fe6c3d54c09e887d346",
+      "transmitted_uart_bytes": 6006,
+      "decode_errors_present": true,
+      "training_status_from_bios": true,
+      "finished_utc": "2026-10-06T10:57:20.070123+00:00"
+    },
+    {
+      "mode": "training",
+      "diagnostic_only": false,
+      "attempt": 2,
+      "status": "passed",
+      "programming_status": "completed",
+      "image_sha256": "818a2d74448dd50d70c6bd640dfc0f6ae2449c423f6b61dafa844e801d8a714b",
+      "bitstream_sha256": "7bd6d39fed396aa72d36eca61f77b4c977f8b3eb94c4c232676cc194c8bab674",
+      "raw_uart_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-02.uart.bin",
+      "text_uart_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-02.uart.log",
+      "transmitted_uart_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-02.uart.tx.bin",
+      "started_utc": "2026-10-06T10:57:20.086361+00:00",
+      "uart_input_buffer_cleared_before_programming": true,
+      "programmer_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-02.programmer.log",
+      "programmer_log_sha256": "7c1bf6e2171c5af992b04d2feafe3daae4b43c0b01f03b0c85bc8c428b0d2321",
+      "training": {
+        "status": "passed",
+        "start_records": [
+          "SDRAM_TRAINING_START phy=GW2DDRPHY read_leveling=1 bitslips=4 delays=256"
+        ],
+        "result_records": [
+          "SDRAM_TRAINING_RESULT status=passed"
+        ],
+        "expected_lane_count": 2,
+        "lane_count": 2,
+        "phy_configuration": {
+          "SDRAM_PHY_MODULES": 2,
+          "SDRAM_PHY_DQ_DQS_RATIO": 8,
+          "SDRAM_PHY_DELAYS": 256,
+          "SDRAM_PHY_BITSLIPS": 4,
+          "SDRAM_DELAY_PER_DQ": false
+        },
+        "lanes": [
+          {
+            "module": 0,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 94,
+            "delay_center": 46,
+            "delay_half_window": 46,
+            "raw": "SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=94 delay_center=46 delay_half_window=46"
+          },
+          {
+            "module": 1,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 211,
+            "delay_center": 105,
+            "delay_half_window": 105,
+            "raw": "SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=0 window_length=211 delay_center=105 delay_half_window=105"
+          }
+        ],
+        "errors": []
+      },
+      "bios_memtest": {
+        "status": "passed",
+        "records": [
+          "Memtest OK"
+        ],
+        "errors": []
+      },
+      "smoke_test": {
+        "status": "passed",
+        "tested_bytes": "16384"
+      },
+      "application_end_seen": true,
+      "application_failure": null,
+      "bios_training_status_seen": true,
+      "raw_uart_sha256": "48432a6002bcbbfe7e2b3332688599a8d917a73115a7f05d0bae36a660b33d2f",
+      "raw_uart_bytes": 3827,
+      "transmitted_uart_sha256": "801ff09e12dcad347bf84e75e97cdc38e3fabad8958a3fe6c3d54c09e887d346",
+      "transmitted_uart_bytes": 6006,
+      "decode_errors_present": true,
+      "training_status_from_bios": true,
+      "finished_utc": "2026-10-06T10:57:26.344075+00:00"
+    },
+    {
+      "mode": "training",
+      "diagnostic_only": false,
+      "attempt": 3,
+      "status": "passed",
+      "programming_status": "completed",
+      "image_sha256": "818a2d74448dd50d70c6bd640dfc0f6ae2449c423f6b61dafa844e801d8a714b",
+      "bitstream_sha256": "7bd6d39fed396aa72d36eca61f77b4c977f8b3eb94c4c232676cc194c8bab674",
+      "raw_uart_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-03.uart.bin",
+      "text_uart_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-03.uart.log",
+      "transmitted_uart_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-03.uart.tx.bin",
+      "started_utc": "2026-10-06T10:57:26.360131+00:00",
+      "uart_input_buffer_cleared_before_programming": true,
+      "programmer_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-03.programmer.log",
+      "programmer_log_sha256": "7c1bf6e2171c5af992b04d2feafe3daae4b43c0b01f03b0c85bc8c428b0d2321",
+      "training": {
+        "status": "passed",
+        "start_records": [
+          "SDRAM_TRAINING_START phy=GW2DDRPHY read_leveling=1 bitslips=4 delays=256"
+        ],
+        "result_records": [
+          "SDRAM_TRAINING_RESULT status=passed"
+        ],
+        "expected_lane_count": 2,
+        "lane_count": 2,
+        "phy_configuration": {
+          "SDRAM_PHY_MODULES": 2,
+          "SDRAM_PHY_DQ_DQS_RATIO": 8,
+          "SDRAM_PHY_DELAYS": 256,
+          "SDRAM_PHY_BITSLIPS": 4,
+          "SDRAM_DELAY_PER_DQ": false
+        },
+        "lanes": [
+          {
+            "module": 0,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 93,
+            "delay_center": 46,
+            "delay_half_window": 46,
+            "raw": "SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=93 delay_center=46 delay_half_window=46"
+          },
+          {
+            "module": 1,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 212,
+            "delay_center": 105,
+            "delay_half_window": 105,
+            "raw": "SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=0 window_length=212 delay_center=105 delay_half_window=105"
+          }
+        ],
+        "errors": []
+      },
+      "bios_memtest": {
+        "status": "passed",
+        "records": [
+          "Memtest OK"
+        ],
+        "errors": []
+      },
+      "smoke_test": {
+        "status": "passed",
+        "tested_bytes": "16384"
+      },
+      "application_end_seen": true,
+      "application_failure": null,
+      "bios_training_status_seen": true,
+      "raw_uart_sha256": "1143e02a66312509f0b515c41765a9b46ca40aaee2304850dfc09208a230fde3",
+      "raw_uart_bytes": 3827,
+      "transmitted_uart_sha256": "801ff09e12dcad347bf84e75e97cdc38e3fabad8958a3fe6c3d54c09e887d346",
+      "transmitted_uart_bytes": 6006,
+      "decode_errors_present": true,
+      "training_status_from_bios": true,
+      "finished_utc": "2026-10-06T10:57:32.662907+00:00"
+    },
+    {
+      "mode": "training",
+      "diagnostic_only": false,
+      "attempt": 4,
+      "status": "passed",
+      "programming_status": "completed",
+      "image_sha256": "818a2d74448dd50d70c6bd640dfc0f6ae2449c423f6b61dafa844e801d8a714b",
+      "bitstream_sha256": "7bd6d39fed396aa72d36eca61f77b4c977f8b3eb94c4c232676cc194c8bab674",
+      "raw_uart_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-04.uart.bin",
+      "text_uart_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-04.uart.log",
+      "transmitted_uart_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-04.uart.tx.bin",
+      "started_utc": "2026-10-06T10:57:32.679728+00:00",
+      "uart_input_buffer_cleared_before_programming": true,
+      "programmer_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-04.programmer.log",
+      "programmer_log_sha256": "7c1bf6e2171c5af992b04d2feafe3daae4b43c0b01f03b0c85bc8c428b0d2321",
+      "training": {
+        "status": "passed",
+        "start_records": [
+          "SDRAM_TRAINING_START phy=GW2DDRPHY read_leveling=1 bitslips=4 delays=256"
+        ],
+        "result_records": [
+          "SDRAM_TRAINING_RESULT status=passed"
+        ],
+        "expected_lane_count": 2,
+        "lane_count": 2,
+        "phy_configuration": {
+          "SDRAM_PHY_MODULES": 2,
+          "SDRAM_PHY_DQ_DQS_RATIO": 8,
+          "SDRAM_PHY_DELAYS": 256,
+          "SDRAM_PHY_BITSLIPS": 4,
+          "SDRAM_DELAY_PER_DQ": false
+        },
+        "lanes": [
+          {
+            "module": 0,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 93,
+            "delay_center": 46,
+            "delay_half_window": 46,
+            "raw": "SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=93 delay_center=46 delay_half_window=46"
+          },
+          {
+            "module": 1,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 211,
+            "delay_center": 105,
+            "delay_half_window": 105,
+            "raw": "SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=0 window_length=211 delay_center=105 delay_half_window=105"
+          }
+        ],
+        "errors": []
+      },
+      "bios_memtest": {
+        "status": "passed",
+        "records": [
+          "Memtest OK"
+        ],
+        "errors": []
+      },
+      "smoke_test": {
+        "status": "passed",
+        "tested_bytes": "16384"
+      },
+      "application_end_seen": true,
+      "application_failure": null,
+      "bios_training_status_seen": true,
+      "raw_uart_sha256": "fa52f1c5080e35bdd05160c83f7c02ff77596961fbf3b7f1637c12c3ce8e565b",
+      "raw_uart_bytes": 3827,
+      "transmitted_uart_sha256": "801ff09e12dcad347bf84e75e97cdc38e3fabad8958a3fe6c3d54c09e887d346",
+      "transmitted_uart_bytes": 6006,
+      "decode_errors_present": true,
+      "training_status_from_bios": true,
+      "finished_utc": "2026-10-06T10:57:39.016375+00:00"
+    },
+    {
+      "mode": "training",
+      "diagnostic_only": false,
+      "attempt": 5,
+      "status": "passed",
+      "programming_status": "completed",
+      "image_sha256": "818a2d74448dd50d70c6bd640dfc0f6ae2449c423f6b61dafa844e801d8a714b",
+      "bitstream_sha256": "7bd6d39fed396aa72d36eca61f77b4c977f8b3eb94c4c232676cc194c8bab674",
+      "raw_uart_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-05.uart.bin",
+      "text_uart_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-05.uart.log",
+      "transmitted_uart_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-05.uart.tx.bin",
+      "started_utc": "2026-10-06T10:57:39.032250+00:00",
+      "uart_input_buffer_cleared_before_programming": true,
+      "programmer_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-05.programmer.log",
+      "programmer_log_sha256": "7c1bf6e2171c5af992b04d2feafe3daae4b43c0b01f03b0c85bc8c428b0d2321",
+      "training": {
+        "status": "passed",
+        "start_records": [
+          "SDRAM_TRAINING_START phy=GW2DDRPHY read_leveling=1 bitslips=4 delays=256"
+        ],
+        "result_records": [
+          "SDRAM_TRAINING_RESULT status=passed"
+        ],
+        "expected_lane_count": 2,
+        "lane_count": 2,
+        "phy_configuration": {
+          "SDRAM_PHY_MODULES": 2,
+          "SDRAM_PHY_DQ_DQS_RATIO": 8,
+          "SDRAM_PHY_DELAYS": 256,
+          "SDRAM_PHY_BITSLIPS": 4,
+          "SDRAM_DELAY_PER_DQ": false
+        },
+        "lanes": [
+          {
+            "module": 0,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 94,
+            "delay_center": 46,
+            "delay_half_window": 46,
+            "raw": "SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=94 delay_center=46 delay_half_window=46"
+          },
+          {
+            "module": 1,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 211,
+            "delay_center": 105,
+            "delay_half_window": 105,
+            "raw": "SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=0 window_length=211 delay_center=105 delay_half_window=105"
+          }
+        ],
+        "errors": []
+      },
+      "bios_memtest": {
+        "status": "passed",
+        "records": [
+          "Memtest OK"
+        ],
+        "errors": []
+      },
+      "smoke_test": {
+        "status": "passed",
+        "tested_bytes": "16384"
+      },
+      "application_end_seen": true,
+      "application_failure": null,
+      "bios_training_status_seen": true,
+      "raw_uart_sha256": "48432a6002bcbbfe7e2b3332688599a8d917a73115a7f05d0bae36a660b33d2f",
+      "raw_uart_bytes": 3827,
+      "transmitted_uart_sha256": "801ff09e12dcad347bf84e75e97cdc38e3fabad8958a3fe6c3d54c09e887d346",
+      "transmitted_uart_bytes": 6006,
+      "decode_errors_present": true,
+      "training_status_from_bios": true,
+      "finished_utc": "2026-10-06T10:57:45.471690+00:00"
+    },
+    {
+      "mode": "training",
+      "diagnostic_only": false,
+      "attempt": 6,
+      "status": "passed",
+      "programming_status": "completed",
+      "image_sha256": "818a2d74448dd50d70c6bd640dfc0f6ae2449c423f6b61dafa844e801d8a714b",
+      "bitstream_sha256": "7bd6d39fed396aa72d36eca61f77b4c977f8b3eb94c4c232676cc194c8bab674",
+      "raw_uart_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-06.uart.bin",
+      "text_uart_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-06.uart.log",
+      "transmitted_uart_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-06.uart.tx.bin",
+      "started_utc": "2026-10-06T10:57:45.490038+00:00",
+      "uart_input_buffer_cleared_before_programming": true,
+      "programmer_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-06.programmer.log",
+      "programmer_log_sha256": "7c1bf6e2171c5af992b04d2feafe3daae4b43c0b01f03b0c85bc8c428b0d2321",
+      "training": {
+        "status": "passed",
+        "start_records": [
+          "SDRAM_TRAINING_START phy=GW2DDRPHY read_leveling=1 bitslips=4 delays=256"
+        ],
+        "result_records": [
+          "SDRAM_TRAINING_RESULT status=passed"
+        ],
+        "expected_lane_count": 2,
+        "lane_count": 2,
+        "phy_configuration": {
+          "SDRAM_PHY_MODULES": 2,
+          "SDRAM_PHY_DQ_DQS_RATIO": 8,
+          "SDRAM_PHY_DELAYS": 256,
+          "SDRAM_PHY_BITSLIPS": 4,
+          "SDRAM_DELAY_PER_DQ": false
+        },
+        "lanes": [
+          {
+            "module": 0,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 94,
+            "delay_center": 46,
+            "delay_half_window": 46,
+            "raw": "SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=94 delay_center=46 delay_half_window=46"
+          },
+          {
+            "module": 1,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 211,
+            "delay_center": 105,
+            "delay_half_window": 105,
+            "raw": "SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=0 window_length=211 delay_center=105 delay_half_window=105"
+          }
+        ],
+        "errors": []
+      },
+      "bios_memtest": {
+        "status": "passed",
+        "records": [
+          "Memtest OK"
+        ],
+        "errors": []
+      },
+      "smoke_test": {
+        "status": "passed",
+        "tested_bytes": "16384"
+      },
+      "application_end_seen": true,
+      "application_failure": null,
+      "bios_training_status_seen": true,
+      "raw_uart_sha256": "d3a33bcd73fb82014695f4a1aadafc7b8f1fddeb6c51074c1cbfc7504f89f873",
+      "raw_uart_bytes": 3827,
+      "transmitted_uart_sha256": "801ff09e12dcad347bf84e75e97cdc38e3fabad8958a3fe6c3d54c09e887d346",
+      "transmitted_uart_bytes": 6006,
+      "decode_errors_present": true,
+      "training_status_from_bios": true,
+      "finished_utc": "2026-10-06T10:57:51.862980+00:00"
+    },
+    {
+      "mode": "training",
+      "diagnostic_only": false,
+      "attempt": 7,
+      "status": "passed",
+      "programming_status": "completed",
+      "image_sha256": "818a2d74448dd50d70c6bd640dfc0f6ae2449c423f6b61dafa844e801d8a714b",
+      "bitstream_sha256": "7bd6d39fed396aa72d36eca61f77b4c977f8b3eb94c4c232676cc194c8bab674",
+      "raw_uart_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-07.uart.bin",
+      "text_uart_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-07.uart.log",
+      "transmitted_uart_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-07.uart.tx.bin",
+      "started_utc": "2026-10-06T10:57:51.880162+00:00",
+      "uart_input_buffer_cleared_before_programming": true,
+      "programmer_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-07.programmer.log",
+      "programmer_log_sha256": "7c1bf6e2171c5af992b04d2feafe3daae4b43c0b01f03b0c85bc8c428b0d2321",
+      "training": {
+        "status": "passed",
+        "start_records": [
+          "SDRAM_TRAINING_START phy=GW2DDRPHY read_leveling=1 bitslips=4 delays=256"
+        ],
+        "result_records": [
+          "SDRAM_TRAINING_RESULT status=passed"
+        ],
+        "expected_lane_count": 2,
+        "lane_count": 2,
+        "phy_configuration": {
+          "SDRAM_PHY_MODULES": 2,
+          "SDRAM_PHY_DQ_DQS_RATIO": 8,
+          "SDRAM_PHY_DELAYS": 256,
+          "SDRAM_PHY_BITSLIPS": 4,
+          "SDRAM_DELAY_PER_DQ": false
+        },
+        "lanes": [
+          {
+            "module": 0,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 94,
+            "delay_center": 46,
+            "delay_half_window": 46,
+            "raw": "SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=94 delay_center=46 delay_half_window=46"
+          },
+          {
+            "module": 1,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 212,
+            "delay_center": 105,
+            "delay_half_window": 105,
+            "raw": "SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=0 window_length=212 delay_center=105 delay_half_window=105"
+          }
+        ],
+        "errors": []
+      },
+      "bios_memtest": {
+        "status": "passed",
+        "records": [
+          "Memtest OK"
+        ],
+        "errors": []
+      },
+      "smoke_test": {
+        "status": "passed",
+        "tested_bytes": "16384"
+      },
+      "application_end_seen": true,
+      "application_failure": null,
+      "bios_training_status_seen": true,
+      "raw_uart_sha256": "f4ed790e55f711d312281c2c30f817802b6fbfd0bfdfe12b441124043811ea29",
+      "raw_uart_bytes": 3827,
+      "transmitted_uart_sha256": "801ff09e12dcad347bf84e75e97cdc38e3fabad8958a3fe6c3d54c09e887d346",
+      "transmitted_uart_bytes": 6006,
+      "decode_errors_present": true,
+      "training_status_from_bios": true,
+      "finished_utc": "2026-10-06T10:57:58.261278+00:00"
+    },
+    {
+      "mode": "training",
+      "diagnostic_only": false,
+      "attempt": 8,
+      "status": "passed",
+      "programming_status": "completed",
+      "image_sha256": "818a2d74448dd50d70c6bd640dfc0f6ae2449c423f6b61dafa844e801d8a714b",
+      "bitstream_sha256": "7bd6d39fed396aa72d36eca61f77b4c977f8b3eb94c4c232676cc194c8bab674",
+      "raw_uart_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-08.uart.bin",
+      "text_uart_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-08.uart.log",
+      "transmitted_uart_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-08.uart.tx.bin",
+      "started_utc": "2026-10-06T10:57:58.278934+00:00",
+      "uart_input_buffer_cleared_before_programming": true,
+      "programmer_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-08.programmer.log",
+      "programmer_log_sha256": "7c1bf6e2171c5af992b04d2feafe3daae4b43c0b01f03b0c85bc8c428b0d2321",
+      "training": {
+        "status": "passed",
+        "start_records": [
+          "SDRAM_TRAINING_START phy=GW2DDRPHY read_leveling=1 bitslips=4 delays=256"
+        ],
+        "result_records": [
+          "SDRAM_TRAINING_RESULT status=passed"
+        ],
+        "expected_lane_count": 2,
+        "lane_count": 2,
+        "phy_configuration": {
+          "SDRAM_PHY_MODULES": 2,
+          "SDRAM_PHY_DQ_DQS_RATIO": 8,
+          "SDRAM_PHY_DELAYS": 256,
+          "SDRAM_PHY_BITSLIPS": 4,
+          "SDRAM_DELAY_PER_DQ": false
+        },
+        "lanes": [
+          {
+            "module": 0,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 94,
+            "delay_center": 46,
+            "delay_half_window": 46,
+            "raw": "SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=94 delay_center=46 delay_half_window=46"
+          },
+          {
+            "module": 1,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 211,
+            "delay_center": 105,
+            "delay_half_window": 105,
+            "raw": "SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=0 window_length=211 delay_center=105 delay_half_window=105"
+          }
+        ],
+        "errors": []
+      },
+      "bios_memtest": {
+        "status": "passed",
+        "records": [
+          "Memtest OK"
+        ],
+        "errors": []
+      },
+      "smoke_test": {
+        "status": "passed",
+        "tested_bytes": "16384"
+      },
+      "application_end_seen": true,
+      "application_failure": null,
+      "bios_training_status_seen": true,
+      "raw_uart_sha256": "28781a649bee21bba90417e04faefe2a7fed37ad2db5231d3b3e1f2ccc0bf0b3",
+      "raw_uart_bytes": 3827,
+      "transmitted_uart_sha256": "801ff09e12dcad347bf84e75e97cdc38e3fabad8958a3fe6c3d54c09e887d346",
+      "transmitted_uart_bytes": 6006,
+      "decode_errors_present": true,
+      "training_status_from_bios": true,
+      "finished_utc": "2026-10-06T10:58:04.727648+00:00"
+    },
+    {
+      "mode": "training",
+      "diagnostic_only": false,
+      "attempt": 9,
+      "status": "passed",
+      "programming_status": "completed",
+      "image_sha256": "818a2d74448dd50d70c6bd640dfc0f6ae2449c423f6b61dafa844e801d8a714b",
+      "bitstream_sha256": "7bd6d39fed396aa72d36eca61f77b4c977f8b3eb94c4c232676cc194c8bab674",
+      "raw_uart_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-09.uart.bin",
+      "text_uart_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-09.uart.log",
+      "transmitted_uart_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-09.uart.tx.bin",
+      "started_utc": "2026-10-06T10:58:04.747995+00:00",
+      "uart_input_buffer_cleared_before_programming": true,
+      "programmer_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-09.programmer.log",
+      "programmer_log_sha256": "7c1bf6e2171c5af992b04d2feafe3daae4b43c0b01f03b0c85bc8c428b0d2321",
+      "training": {
+        "status": "passed",
+        "start_records": [
+          "SDRAM_TRAINING_START phy=GW2DDRPHY read_leveling=1 bitslips=4 delays=256"
+        ],
+        "result_records": [
+          "SDRAM_TRAINING_RESULT status=passed"
+        ],
+        "expected_lane_count": 2,
+        "lane_count": 2,
+        "phy_configuration": {
+          "SDRAM_PHY_MODULES": 2,
+          "SDRAM_PHY_DQ_DQS_RATIO": 8,
+          "SDRAM_PHY_DELAYS": 256,
+          "SDRAM_PHY_BITSLIPS": 4,
+          "SDRAM_DELAY_PER_DQ": false
+        },
+        "lanes": [
+          {
+            "module": 0,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 94,
+            "delay_center": 46,
+            "delay_half_window": 46,
+            "raw": "SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=94 delay_center=46 delay_half_window=46"
+          },
+          {
+            "module": 1,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 211,
+            "delay_center": 105,
+            "delay_half_window": 105,
+            "raw": "SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=0 window_length=211 delay_center=105 delay_half_window=105"
+          }
+        ],
+        "errors": []
+      },
+      "bios_memtest": {
+        "status": "passed",
+        "records": [
+          "Memtest OK"
+        ],
+        "errors": []
+      },
+      "smoke_test": {
+        "status": "passed",
+        "tested_bytes": "16384"
+      },
+      "application_end_seen": true,
+      "application_failure": null,
+      "bios_training_status_seen": true,
+      "raw_uart_sha256": "7696a428b67b6b5166cdf4260e761aca30a36bcd4ff72cf3c40267426fd08134",
+      "raw_uart_bytes": 3827,
+      "transmitted_uart_sha256": "801ff09e12dcad347bf84e75e97cdc38e3fabad8958a3fe6c3d54c09e887d346",
+      "transmitted_uart_bytes": 6006,
+      "decode_errors_present": true,
+      "training_status_from_bios": true,
+      "finished_utc": "2026-10-06T10:58:11.192405+00:00"
+    },
+    {
+      "mode": "training",
+      "diagnostic_only": false,
+      "attempt": 10,
+      "status": "passed",
+      "programming_status": "completed",
+      "image_sha256": "818a2d74448dd50d70c6bd640dfc0f6ae2449c423f6b61dafa844e801d8a714b",
+      "bitstream_sha256": "7bd6d39fed396aa72d36eca61f77b4c977f8b3eb94c4c232676cc194c8bab674",
+      "raw_uart_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-10.uart.bin",
+      "text_uart_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-10.uart.log",
+      "transmitted_uart_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-10.uart.tx.bin",
+      "started_utc": "2026-10-06T10:58:11.208768+00:00",
+      "uart_input_buffer_cleared_before_programming": true,
+      "programmer_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/training-10.programmer.log",
+      "programmer_log_sha256": "7c1bf6e2171c5af992b04d2feafe3daae4b43c0b01f03b0c85bc8c428b0d2321",
+      "training": {
+        "status": "passed",
+        "start_records": [
+          "SDRAM_TRAINING_START phy=GW2DDRPHY read_leveling=1 bitslips=4 delays=256"
+        ],
+        "result_records": [
+          "SDRAM_TRAINING_RESULT status=passed"
+        ],
+        "expected_lane_count": 2,
+        "lane_count": 2,
+        "phy_configuration": {
+          "SDRAM_PHY_MODULES": 2,
+          "SDRAM_PHY_DQ_DQS_RATIO": 8,
+          "SDRAM_PHY_DELAYS": 256,
+          "SDRAM_PHY_BITSLIPS": 4,
+          "SDRAM_DELAY_PER_DQ": false
+        },
+        "lanes": [
+          {
+            "module": 0,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 94,
+            "delay_center": 46,
+            "delay_half_window": 46,
+            "raw": "SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=94 delay_center=46 delay_half_window=46"
+          },
+          {
+            "module": 1,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 211,
+            "delay_center": 104,
+            "delay_half_window": 104,
+            "raw": "SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=0 window_length=211 delay_center=104 delay_half_window=104"
+          }
+        ],
+        "errors": []
+      },
+      "bios_memtest": {
+        "status": "passed",
+        "records": [
+          "Memtest OK"
+        ],
+        "errors": []
+      },
+      "smoke_test": {
+        "status": "passed",
+        "tested_bytes": "16384"
+      },
+      "application_end_seen": true,
+      "application_failure": null,
+      "bios_training_status_seen": true,
+      "raw_uart_sha256": "99b1028bb6b486acc61dc5204106d058966d2891a5786ec8684e0a77f9889234",
+      "raw_uart_bytes": 3827,
+      "transmitted_uart_sha256": "801ff09e12dcad347bf84e75e97cdc38e3fabad8958a3fe6c3d54c09e887d346",
+      "transmitted_uart_bytes": 6006,
+      "decode_errors_present": true,
+      "training_status_from_bios": true,
+      "finished_utc": "2026-10-06T10:58:17.885568+00:00"
+    },
+    {
+      "mode": "full",
+      "diagnostic_only": false,
+      "attempt": 1,
+      "status": "passed",
+      "programming_status": "completed",
+      "image_sha256": "2227d638128720cebf765e013be369118f122e7ab2d0a12d667cd24fea478005",
+      "bitstream_sha256": "7bd6d39fed396aa72d36eca61f77b4c977f8b3eb94c4c232676cc194c8bab674",
+      "raw_uart_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/full-01.uart.bin",
+      "text_uart_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/full-01.uart.log",
+      "transmitted_uart_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/full-01.uart.tx.bin",
+      "started_utc": "2026-10-06T10:58:17.903232+00:00",
+      "uart_input_buffer_cleared_before_programming": true,
+      "programmer_log": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/full-01.programmer.log",
+      "programmer_log_sha256": "7c1bf6e2171c5af992b04d2feafe3daae4b43c0b01f03b0c85bc8c428b0d2321",
+      "training": {
+        "status": "passed",
+        "start_records": [
+          "SDRAM_TRAINING_START phy=GW2DDRPHY read_leveling=1 bitslips=4 delays=256"
+        ],
+        "result_records": [
+          "SDRAM_TRAINING_RESULT status=passed"
+        ],
+        "expected_lane_count": 2,
+        "lane_count": 2,
+        "phy_configuration": {
+          "SDRAM_PHY_MODULES": 2,
+          "SDRAM_PHY_DQ_DQS_RATIO": 8,
+          "SDRAM_PHY_DELAYS": 256,
+          "SDRAM_PHY_BITSLIPS": 4,
+          "SDRAM_DELAY_PER_DQ": false
+        },
+        "lanes": [
+          {
+            "module": 0,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 94,
+            "delay_center": 46,
+            "delay_half_window": 46,
+            "raw": "SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=94 delay_center=46 delay_half_window=46"
+          },
+          {
+            "module": 1,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 211,
+            "delay_center": 105,
+            "delay_half_window": 105,
+            "raw": "SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=0 window_length=211 delay_center=105 delay_half_window=105"
+          }
+        ],
+        "errors": []
+      },
+      "bios_memtest": {
+        "status": "passed",
+        "records": [
+          "Memtest OK"
+        ],
+        "errors": []
+      },
+      "result": {
+        "status": "passed",
+        "profile": "standard",
+        "memory_mode": "ddr3",
+        "geometry_bytes": 134217728,
+        "clock_hz": 48000000,
+        "cache": {
+          "cpu_dcache": "profile-dependent",
+          "l2_bytes": 8192
+        },
+        "phases": {
+          "walking_ones": {
+            "range_start": 3221225472,
+            "range_end": 3355443200,
+            "coverage_bytes": 134217728,
+            "sample_stride_bytes": null,
+            "samples": null,
+            "samples_per_page": null,
+            "alias_offsets": null,
+            "cache_maintenance": null,
+            "bytes": 134217728,
+            "operations": 33554432,
+            "elapsed_ticks": 1153213429,
+            "errors": 0
+          },
+          "walking_zeros": {
+            "range_start": 3221225472,
+            "range_end": 3355443200,
+            "coverage_bytes": 134217728,
+            "sample_stride_bytes": null,
+            "samples": null,
+            "samples_per_page": null,
+            "alias_offsets": null,
+            "cache_maintenance": null,
+            "bytes": 134217728,
+            "operations": 33554432,
+            "elapsed_ticks": 1209685428,
+            "errors": 0
+          },
+          "fixed_pattern": {
+            "range_start": 3221225472,
+            "range_end": 3355443200,
+            "coverage_bytes": 134217728,
+            "sample_stride_bytes": null,
+            "samples": null,
+            "samples_per_page": null,
+            "alias_offsets": null,
+            "cache_maintenance": null,
+            "bytes": 134217728,
+            "operations": 33554432,
+            "elapsed_ticks": 1108040423,
+            "errors": 0
+          },
+          "inverted_pattern": {
+            "range_start": 3221225472,
+            "range_end": 3355443200,
+            "coverage_bytes": 134217728,
+            "sample_stride_bytes": null,
+            "samples": null,
+            "samples_per_page": null,
+            "alias_offsets": null,
+            "cache_maintenance": null,
+            "bytes": 134217728,
+            "operations": 33554432,
+            "elapsed_ticks": 1108040402,
+            "errors": 0
+          },
+          "address_pattern": {
+            "range_start": 3221225472,
+            "range_end": 3355443200,
+            "coverage_bytes": 134217728,
+            "sample_stride_bytes": null,
+            "samples": null,
+            "samples_per_page": null,
+            "alias_offsets": null,
+            "cache_maintenance": null,
+            "bytes": 134217728,
+            "operations": 33554432,
+            "elapsed_ticks": 1338002073,
+            "errors": 0
+          },
+          "deterministic_pseudorandom": {
+            "range_start": 3221225472,
+            "range_end": 3355443200,
+            "coverage_bytes": 134217728,
+            "sample_stride_bytes": null,
+            "samples": null,
+            "samples_per_page": null,
+            "alias_offsets": null,
+            "cache_maintenance": null,
+            "bytes": 134217728,
+            "operations": 33554432,
+            "elapsed_ticks": 1485312130,
+            "errors": 0
+          },
+          "address_bank_row_column_alias": {
+            "range_start": 3221225472,
+            "range_end": 3355443200,
+            "coverage_bytes": 100,
+            "sample_stride_bytes": null,
+            "samples": null,
+            "samples_per_page": null,
+            "alias_offsets": 25,
+            "cache_maintenance": null,
+            "bytes": 100,
+            "operations": 25,
+            "elapsed_ticks": 661108,
+            "errors": 0
+          },
+          "byte_halfword_neighbor_preservation": {
+            "range_start": 3221225472,
+            "range_end": 3355443200,
+            "coverage_bytes": 134217728,
+            "sample_stride_bytes": 4096,
+            "samples": null,
+            "samples_per_page": 5,
+            "alias_offsets": null,
+            "cache_maintenance": null,
+            "bytes": 134217728,
+            "operations": 163840,
+            "elapsed_ticks": 13107557,
+            "errors": 0
+          },
+          "cached_uncached_visibility": {
+            "range_start": 3222274048,
+            "range_end": 3355443200,
+            "coverage_bytes": 512,
+            "sample_stride_bytes": 2097152,
+            "samples": 64,
+            "samples_per_page": null,
+            "alias_offsets": null,
+            "cache_maintenance": "fence,dflush,l2flush",
+            "bytes": 512,
+            "operations": 128,
+            "elapsed_ticks": 6509855,
+            "errors": 0
+          },
+          "sustained_delayed_readback_stress": {
+            "range_start": 3221225472,
+            "range_end": 3355443200,
+            "coverage_bytes": 134217728,
+            "sample_stride_bytes": null,
+            "samples": null,
+            "samples_per_page": null,
+            "alias_offsets": null,
+            "cache_maintenance": null,
+            "bytes": 134217728,
+            "operations": 1874329600,
+            "elapsed_ticks": 86402488067,
+            "errors": 0
+          }
+        },
+        "stress_seconds_requested": 1800,
+        "stress_elapsed_ticks": 86402488067,
+        "stress_seconds_actual": 1800.0518347291666,
+        "bandwidth": {
+          "path": "uncached_controller_alias",
+          "transfer_bytes": 1048576,
+          "clock_hz": 48000000,
+          "read_bytes": 7497318400,
+          "write_bytes": 7497318400,
+          "elapsed_ticks": 86402488067,
+          "read_bytes_per_second": 4165056,
+          "write_bytes_per_second": 4165056,
+          "sweeps": 56
+        }
+      },
+      "application_end_seen": true,
+      "application_failure": null,
+      "bios_training_status_seen": true,
+      "raw_uart_sha256": "c0064c7a7b30c8fa685cc2af506a43c5243fb864938053c9cc7e4b1c213960ba",
+      "raw_uart_bytes": 6859,
+      "transmitted_uart_sha256": "ee0d98cccc4a3aee0a0ae82d759e306238624011d182bd35fff0fadf0491a97f",
+      "transmitted_uart_bytes": 11046,
+      "decode_errors_present": true,
+      "training_status_from_bios": true,
+      "finished_utc": "2026-10-06T11:30:59.925866+00:00"
+    }
+  ],
+  "acceptance": "thorough",
+  "stress_seconds": 1800.0518347291666,
+  "full_range_bytes": 134217728,
+  "error_count": 0,
+  "uncached_smoke_passed": true,
+  "finished_utc": "2026-10-06T11:30:59.926880+00:00",
+  "uart_evidence_directory": "docs/peripherals/evidence/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard",
+  "evidence": "build/peripherals/ddr3/standard/sd-spi_eth-none/diagnostics/sessions/20261006T105713.607139Z-ddr3-sd-spi_eth-none-standard/session.json"
+}

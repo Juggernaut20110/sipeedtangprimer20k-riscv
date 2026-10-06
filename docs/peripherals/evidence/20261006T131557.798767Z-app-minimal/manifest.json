@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "started_utc": "2026-10-06T13:15:57.798881+00:00",
+  "board": {
+    "model": "Sipeed Tang Primer 20K",
+    "revision": "core-v3961_Dock-v3714",
+    "serial": null,
+    "serial_status": "not_printed_user_confirmed",
+    "identity_basis": "user_confirmed_attached_board_revision"
+  },
+  "status": "failed",
+  "criteria": {
+    "final_recovery": {
+      "status": "passed",
+      "measurements": {
+        "sram_programmed": true,
+        "ddr_held_in_reset": true,
+        "sd_deselected": true,
+        "sd_clock_stopped": true,
+        "phy_held_in_reset": true,
+        "idle_bitstream_sha256": "20c4f1f7be50e692b53371dba25c833522562db445c2b75e6c9cf2cf1d6d3784",
+        "uart_quiet_seconds": 5.00827523303451,
+        "uart_bytes": 0
+      },
+      "evidence": [
+        "recovery_programmer",
+        "recovery_uart",
+        "recovery_record",
+        "recovery_bitstream"
+      ]
+    }
+  },
+  "build": {
+    "profile": "minimal",
+    "memory": "ddr3",
+    "sdcard": "none",
+    "ethernet": "rmii",
+    "source_fingerprint": "f3e5373f30dae7724cb76118430f27d262ba0fc75db23e4b6c89b9c31332690c",
+    "bitstream_sha256": "44ce860c38445521e88b681c5d22f8791a39a331273d0d17b14496729bb143a8",
+    "firmware_sha256": "d23271df9c8a3a493f6068c79f57fccffc947199b56f4d6a32fdd8e77f51eca8"
+  },
+  "ddr_qualification_session": "docs/peripherals/evidence/20261006T121956.915181Z-ddr3-sd-none_eth-rmii-minimal",
+  "network_observation": {
+    "initial_status": "Ethernet: phy=not found\n\rMAC=02:20:20:00:00:01\n\rIPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=static/unconfigured\n\rframes rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2\n\rgpio> ",
+    "identified_status": "Ethernet: phy=identified addr=0 id=001c:c816 link=down bmsr=7849 bmcr=1000 anar=01e1 lpa=0001\n\rMAC=02:20:20:00:00:01\n\rIPv4=0.0.0.0 mask=0.0.0.0 gateway=0.0.0.0 mode=static/unconfigured\n\rframes rx=0 tx=0 rx_queue_drop=0 rx_bad=0 tx_error=0 hw_drop=0 crc=0 preamble=2\n\rgpio> ",
+    "restart": "Ethernet negotiation restarted: bmcr=1000 anar=01e1\n\rgpio> "
+  },
+  "error": "TimeoutError: DHCP lease not obtained within 120 seconds",
+  "workload_closed": true,
+  "finished_utc": "2026-10-06T13:18:18.174922+00:00",
+  "artifacts": [
+    {
+      "name": "uart_rx",
+      "path": "uart_rx.bin",
+      "bytes": 35418,
+      "sha256": "6143b2897d876b1c45b7428111bb118e29e57a3c4361b80bf6c8b3f4c81cf86f"
+    },
+    {
+      "name": "uart_tx",
+      "path": "uart_tx.bin",
+      "bytes": 79603,
+      "sha256": "7ed1415f3df2cf8d2bb36a626ff0c0ee949e4f5e96445c4914886ea08f465266"
+    },
+    {
+      "name": "programmer_log",
+      "path": "programmer.log",
+      "bytes": 752,
+      "sha256": "08981bde2b0bf2565570de8071ad83661d1e70163efeb24a74dd278b233b4e88"
+    },
+    {
+      "name": "host_log",
+      "path": "host.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "name": "events",
+      "path": "events.jsonl",
+      "bytes": 35499,
+      "sha256": "1183b97ca8e78dccf3afb743d68e7d120decdd4d60a6dba31489953b0b357148"
+    },
+    {
+      "name": "recovery_programmer",
+      "path": "recovery-programmer.log",
+      "bytes": 447,
+      "sha256": "8c3852a9440bad62eb3dac7c79b7570e1ceb2910c92bdadbc51598b484c86f1e"
+    },
+    {
+      "name": "recovery_uart",
+      "path": "recovery-uart.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "recovery_record",
+      "path": "recovery.json",
+      "bytes": 1098,
+      "sha256": "86ece0ad6023241d285459b790594d177f96105cc4c059915cc01380241aaec1"
+    },
+    {
+      "name": "recovery_bitstream",
+      "path": "recovery-idle.fs",
+      "bytes": 4619310,
+      "sha256": "20c4f1f7be50e692b53371dba25c833522562db445c2b75e6c9cf2cf1d6d3784"
+    }
+  ]
+}

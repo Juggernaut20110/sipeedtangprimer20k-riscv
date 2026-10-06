@@ -6,6 +6,7 @@
     {"name": "litex-boards", "url": "https://github.com/litex-hub/litex-boards.git", "commit": "c0d9cdf11e20c8b774f4ee1154fddac6e1dca03a"},
     {"name": "litedram", "url": "https://github.com/enjoy-digital/litedram.git", "commit": "4c979d195aa0c60adcaf70374a52872028aaca63"},
     {"name": "liteeth", "url": "https://github.com/enjoy-digital/liteeth.git", "commit": "013a6ad38c26317ac9588acd0660922981cc2a73"},
+    {"name": "lwip", "url": "https://git.savannah.nongnu.org/git/lwip.git", "commit": "77dcd25a72509eb83f72b033d219b1d40cd8eb95", "version": "STABLE-2_2_1_RELEASE", "license": "BSD-3-Clause"},
     {"name": "liteiclink", "url": "https://github.com/enjoy-digital/liteiclink.git", "commit": "ad793817302490b04b3abc5c4de669594d3958e8"},
     {"name": "pythondata-cpu-vexriscv", "url": "https://github.com/litex-hub/pythondata-cpu-vexriscv.git", "commit": "642ecfed1c84460555d6d803d660cc60cfc1ecb6", "submodules": {"pythondata_cpu_vexriscv/verilog/ext/VexRiscv": "b6118e5cc2a33323425df6455697139021d50c72"}},
     {"name": "pythondata-software-picolibc", "url": "https://github.com/litex-hub/pythondata-software-picolibc.git", "commit": "6a13ccce7c575b32c102dd9dc52178505b81fe39", "submodules": {"pythondata_software_picolibc/data": "16ff442da4b92e28d0753fabed18ad4a15254498"}},

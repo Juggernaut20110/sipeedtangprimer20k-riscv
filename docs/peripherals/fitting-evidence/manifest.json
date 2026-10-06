@@ -1,0 +1,919 @@
+{
+  "schema_version": 1,
+  "trials": [
+    {
+      "configuration": "build/peripheral-fit-trials/linux/sd-none_eth-rmii-1rx1tx",
+      "profile": "linux",
+      "features": {
+        "sdcard": "none",
+        "ethernet": "rmii"
+      },
+      "status": "failed",
+      "timing_gate": null,
+      "source_fingerprint": "c464457391936dd322f55ee68f2e1e48682e05ce34d9fcea8e8c68ef59c8c028",
+      "cpu_configuration": {
+        "liteX_variant": "linux",
+        "isa": "rv32i2p0_ma",
+        "instruction_cache_bytes": 4096,
+        "data_cache_bytes": 4096,
+        "prediction": "static",
+        "compressed": false,
+        "mmu": true,
+        "supervisor": true,
+        "atomics": true,
+        "os_boot": "deferred; shipped Linux-capable RTL used for bare-metal tests",
+        "rtl_sha256": "c19a1b07f799100869dc49646c328e83d9970a2f81076824393a677a60f61240",
+        "rtl": ".deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.v",
+        "generator_commit": "pythondata-cpu-vexriscv@642ecfed1c84460555d6d803d660cc60cfc1ecb6"
+      },
+      "experimental_not_registered": true,
+      "captures": [
+        {
+          "kind": "metadata",
+          "path": "docs/peripherals/fitting-evidence/linux-sd-none_eth-rmii-1rx1tx-metadata.json",
+          "bytes": 4221,
+          "sha256": "bb40705592c7c00a0235095cae3d4d6d4a5dac1bbb07f5540ebc31d73219a4dc"
+        },
+        {
+          "kind": "pnr",
+          "path": "docs/peripherals/fitting-evidence/linux-sd-none_eth-rmii-1rx1tx-pnr.txt",
+          "bytes": 62671,
+          "sha256": "e1591e31a188a4cd2e4e5517bb49de293cfbb4b5e79982ad6b74f1f6c0911254"
+        },
+        {
+          "kind": "synthesis",
+          "path": "docs/peripherals/fitting-evidence/linux-sd-none_eth-rmii-1rx1tx-synthesis.html",
+          "bytes": 2797,
+          "sha256": "a4769b09f8a2d384bc3e6df2aaa696ae806e073b06b396d84856b53f697ab40c"
+        }
+      ],
+      "override": "one RX and one TX slot, 2048 bytes each",
+      "placement_error": "ERROR  (PR0003) : Failed to place with '6 SSRAM(s) unPlaced ' in the device 'GW2A-18C-PBGA256-8'"
+    },
+    {
+      "configuration": "build/peripheral-fit-trials/linux/sd-none_eth-rmii-bios24k",
+      "profile": "linux",
+      "features": {
+        "sdcard": "none",
+        "ethernet": "rmii"
+      },
+      "status": "failed",
+      "timing_gate": null,
+      "source_fingerprint": "e59c1f434ee2c12f6d8910b2357cc2271b62c6ca43a5586b1997891efb5b4410",
+      "cpu_configuration": {
+        "liteX_variant": "linux",
+        "isa": "rv32i2p0_ma",
+        "instruction_cache_bytes": 4096,
+        "data_cache_bytes": 4096,
+        "prediction": "static",
+        "compressed": false,
+        "mmu": true,
+        "supervisor": true,
+        "atomics": true,
+        "os_boot": "deferred; shipped Linux-capable RTL used for bare-metal tests",
+        "rtl_sha256": "c19a1b07f799100869dc49646c328e83d9970a2f81076824393a677a60f61240",
+        "rtl": ".deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.v",
+        "generator_commit": "pythondata-cpu-vexriscv@642ecfed1c84460555d6d803d660cc60cfc1ecb6"
+      },
+      "experimental_not_registered": true,
+      "captures": [
+        {
+          "kind": "metadata",
+          "path": "docs/peripherals/fitting-evidence/linux-sd-none_eth-rmii-bios24k-metadata.json",
+          "bytes": 4062,
+          "sha256": "9616f7a2f80fb8292aa84fd7b6747154fa8132e96589e53bff119b7943e576be"
+        },
+        {
+          "kind": "pnr",
+          "path": "docs/peripherals/fitting-evidence/linux-sd-none_eth-rmii-bios24k-pnr.txt",
+          "bytes": 62698,
+          "sha256": "c72f9ce27aead94349cdfffe02e479c16dd857e0754377874e1bc18b9c3f0822"
+        },
+        {
+          "kind": "synthesis",
+          "path": "docs/peripherals/fitting-evidence/linux-sd-none_eth-rmii-bios24k-synthesis.html",
+          "bytes": 2799,
+          "sha256": "17b13093734e14b7de4bd64b1def50dc87c9443d391b83e62d99541b1c4e990a"
+        }
+      ],
+      "override": "24 KiB BIOS ROM reservation",
+      "placement_error": "ERROR  (PR0003) : Failed to place with '2 SSRAM(s) unPlaced, 4111 REG(s) unPlaced ' in the device 'GW2A-18C-PBGA256-8'"
+    },
+    {
+      "configuration": "build/peripheral-fit-trials/linux/sd-none_eth-rmii-sram4k",
+      "profile": "linux",
+      "features": {
+        "sdcard": "none",
+        "ethernet": "rmii"
+      },
+      "status": "failed",
+      "timing_gate": null,
+      "source_fingerprint": "e59c1f434ee2c12f6d8910b2357cc2271b62c6ca43a5586b1997891efb5b4410",
+      "cpu_configuration": {
+        "liteX_variant": "linux",
+        "isa": "rv32i2p0_ma",
+        "instruction_cache_bytes": 4096,
+        "data_cache_bytes": 4096,
+        "prediction": "static",
+        "compressed": false,
+        "mmu": true,
+        "supervisor": true,
+        "atomics": true,
+        "os_boot": "deferred; shipped Linux-capable RTL used for bare-metal tests",
+        "rtl_sha256": "c19a1b07f799100869dc49646c328e83d9970a2f81076824393a677a60f61240",
+        "rtl": ".deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.v",
+        "generator_commit": "pythondata-cpu-vexriscv@642ecfed1c84460555d6d803d660cc60cfc1ecb6"
+      },
+      "experimental_not_registered": true,
+      "captures": [
+        {
+          "kind": "metadata",
+          "path": "docs/peripherals/fitting-evidence/linux-sd-none_eth-rmii-sram4k-metadata.json",
+          "bytes": 4062,
+          "sha256": "3c5aa21df656baaaa7b047d9e3455bd216ffbb09b14eb1f8108aaf14b7037b5b"
+        },
+        {
+          "kind": "pnr",
+          "path": "docs/peripherals/fitting-evidence/linux-sd-none_eth-rmii-sram4k-pnr.txt",
+          "bytes": 62671,
+          "sha256": "46c755b51a0dd8cbc25588a509e328151f486bfea1caf8985cab7886424956ef"
+        },
+        {
+          "kind": "synthesis",
+          "path": "docs/peripherals/fitting-evidence/linux-sd-none_eth-rmii-sram4k-synthesis.html",
+          "bytes": 2797,
+          "sha256": "f41485f947bb42a1bf9b7d44ebdd4924b82ce1b24beedb6c8bd9641c2da2d0c4"
+        }
+      ],
+      "override": "4 KiB BIOS working SRAM",
+      "placement_error": "ERROR  (PR0003) : Failed to place with '6 SSRAM(s) unPlaced ' in the device 'GW2A-18C-PBGA256-8'"
+    },
+    {
+      "configuration": "build/peripheral-fit-trials/linux/sd-spi_eth-rmii-1rx1tx",
+      "profile": "linux",
+      "features": {
+        "sdcard": "spi",
+        "ethernet": "rmii"
+      },
+      "status": "failed",
+      "timing_gate": null,
+      "source_fingerprint": "58e9ae7c27d3bf6f19b0af593ec740125573605c46b8f5adf79b4ef0347eacb7",
+      "cpu_configuration": {
+        "liteX_variant": "linux",
+        "isa": "rv32i2p0_ma",
+        "instruction_cache_bytes": 4096,
+        "data_cache_bytes": 4096,
+        "prediction": "static",
+        "compressed": false,
+        "mmu": true,
+        "supervisor": true,
+        "atomics": true,
+        "os_boot": "deferred; shipped Linux-capable RTL used for bare-metal tests",
+        "rtl_sha256": "c19a1b07f799100869dc49646c328e83d9970a2f81076824393a677a60f61240",
+        "rtl": ".deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.v",
+        "generator_commit": "pythondata-cpu-vexriscv@642ecfed1c84460555d6d803d660cc60cfc1ecb6"
+      },
+      "experimental_not_registered": true,
+      "captures": [
+        {
+          "kind": "metadata",
+          "path": "docs/peripherals/fitting-evidence/linux-sd-spi_eth-rmii-1rx1tx-metadata.json",
+          "bytes": 4219,
+          "sha256": "ef4d7e5d7865d13a96467ca2dc0b6296bf9a3254f3d5ddba1face0a8791000f7"
+        },
+        {
+          "kind": "pnr",
+          "path": "docs/peripherals/fitting-evidence/linux-sd-spi_eth-rmii-1rx1tx-pnr.txt",
+          "bytes": 63583,
+          "sha256": "5640631170fd2c1e728658401af2e5f0d6e22dcbb43765cea9a25510e790c11e"
+        },
+        {
+          "kind": "synthesis",
+          "path": "docs/peripherals/fitting-evidence/linux-sd-spi_eth-rmii-1rx1tx-synthesis.html",
+          "bytes": 2795,
+          "sha256": "bbabe65a900fd5f4e2420536683836f64c556493c7d35fe5231821b34149050c"
+        }
+      ],
+      "override": "one RX and one TX slot, 2048 bytes each",
+      "placement_error": "ERROR  (PR0003) : Failed to place with '6 SSRAM(s) unPlaced ' in the device 'GW2A-18C-PBGA256-8'"
+    },
+    {
+      "configuration": "build/peripheral-fit-trials/linux/sd-spi_eth-rmii-bios24k",
+      "profile": "linux",
+      "features": {
+        "sdcard": "spi",
+        "ethernet": "rmii"
+      },
+      "status": "failed",
+      "timing_gate": null,
+      "source_fingerprint": "3886537d12658ee55466e5366a47f5d67a2ad89b68223f91388e245be9bd55d6",
+      "cpu_configuration": {
+        "liteX_variant": "linux",
+        "isa": "rv32i2p0_ma",
+        "instruction_cache_bytes": 4096,
+        "data_cache_bytes": 4096,
+        "prediction": "static",
+        "compressed": false,
+        "mmu": true,
+        "supervisor": true,
+        "atomics": true,
+        "os_boot": "deferred; shipped Linux-capable RTL used for bare-metal tests",
+        "rtl_sha256": "c19a1b07f799100869dc49646c328e83d9970a2f81076824393a677a60f61240",
+        "rtl": ".deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.v",
+        "generator_commit": "pythondata-cpu-vexriscv@642ecfed1c84460555d6d803d660cc60cfc1ecb6"
+      },
+      "experimental_not_registered": true,
+      "captures": [
+        {
+          "kind": "metadata",
+          "path": "docs/peripherals/fitting-evidence/linux-sd-spi_eth-rmii-bios24k-metadata.json",
+          "bytes": 4060,
+          "sha256": "0415b4bd4eb321c584faaa2ca91b6b9eb035cb6edec396bb7ebc7c33ca7abcb7"
+        },
+        {
+          "kind": "pnr",
+          "path": "docs/peripherals/fitting-evidence/linux-sd-spi_eth-rmii-bios24k-pnr.txt",
+          "bytes": 63612,
+          "sha256": "3a0ef06a92cd8b249b926441d83867bde5bed4cc928bcb7827cd8b9387ff20c5"
+        },
+        {
+          "kind": "synthesis",
+          "path": "docs/peripherals/fitting-evidence/linux-sd-spi_eth-rmii-bios24k-synthesis.html",
+          "bytes": 2797,
+          "sha256": "53b2a05c33365637e08355b1515fe03c0c9223c3878e7c0b73de3978c485e4b9"
+        }
+      ],
+      "override": "24 KiB BIOS ROM reservation",
+      "placement_error": "ERROR  (PR0003) : Failed to place with '48 SSRAM(s) unPlaced, 4100 REG(s) unPlaced ' in the device 'GW2A-18C-PBGA256-8'"
+    },
+    {
+      "configuration": "build/peripheral-fit-trials/linux/sd-spi_eth-rmii-sram4k",
+      "profile": "linux",
+      "features": {
+        "sdcard": "spi",
+        "ethernet": "rmii"
+      },
+      "status": "failed",
+      "timing_gate": null,
+      "source_fingerprint": "3886537d12658ee55466e5366a47f5d67a2ad89b68223f91388e245be9bd55d6",
+      "cpu_configuration": {
+        "liteX_variant": "linux",
+        "isa": "rv32i2p0_ma",
+        "instruction_cache_bytes": 4096,
+        "data_cache_bytes": 4096,
+        "prediction": "static",
+        "compressed": false,
+        "mmu": true,
+        "supervisor": true,
+        "atomics": true,
+        "os_boot": "deferred; shipped Linux-capable RTL used for bare-metal tests",
+        "rtl_sha256": "c19a1b07f799100869dc49646c328e83d9970a2f81076824393a677a60f61240",
+        "rtl": ".deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.v",
+        "generator_commit": "pythondata-cpu-vexriscv@642ecfed1c84460555d6d803d660cc60cfc1ecb6"
+      },
+      "experimental_not_registered": true,
+      "captures": [
+        {
+          "kind": "metadata",
+          "path": "docs/peripherals/fitting-evidence/linux-sd-spi_eth-rmii-sram4k-metadata.json",
+          "bytes": 4060,
+          "sha256": "56f962eee92d9be1a82d68557c2c1b56e0a95a2a766b96bbbd12155c0e07c97d"
+        },
+        {
+          "kind": "pnr",
+          "path": "docs/peripherals/fitting-evidence/linux-sd-spi_eth-rmii-sram4k-pnr.txt",
+          "bytes": 63586,
+          "sha256": "ab74ad02c6f3c5b111a3439dca4888ebd6c06a2fb8336a7212508444184275d5"
+        },
+        {
+          "kind": "synthesis",
+          "path": "docs/peripherals/fitting-evidence/linux-sd-spi_eth-rmii-sram4k-synthesis.html",
+          "bytes": 2795,
+          "sha256": "7ce975ee5a91c0eeff74ed9ffd220494fb18fd423c259bb3283aaf112a4676c9"
+        }
+      ],
+      "override": "4 KiB BIOS working SRAM",
+      "placement_error": "ERROR  (PR0003) : Failed to place with '6 SSRAM(s) unPlaced ' in the device 'GW2A-18C-PBGA256-8'"
+    },
+    {
+      "configuration": "build/peripheral-fit-trials/performance/sd-spi_eth-none-bios24k",
+      "profile": "performance",
+      "features": {
+        "sdcard": "spi",
+        "ethernet": "none"
+      },
+      "status": "failed",
+      "timing_gate": null,
+      "source_fingerprint": "e2ce44f859e16236d1ed2ba058b29bbbb449d8af7922e1ccd9cefc8a7ef88c1d",
+      "cpu_configuration": {
+        "liteX_variant": "standard",
+        "isa": "rv32im/ILP32",
+        "instruction_cache_bytes": 4096,
+        "data_cache_bytes": 4096,
+        "prediction": "dynamic_target",
+        "compressed": false,
+        "mul_div": true,
+        "single_cycle_mul_div": true,
+        "single_cycle_shift": true,
+        "bypass": true,
+        "debug": false,
+        "hardware_breakpoints": 0,
+        "csr_plugin_config": "small",
+        "pmp_regions": 0,
+        "pmp_granularity_bytes": 256,
+        "pmp_address_matching_modes": "na4,napot,tor",
+        "relaxed_pc_calculation": false,
+        "external_interrupt_array": true,
+        "dcache_relaxed_memory_translation_register": false,
+        "dcache_early_way_hits": true,
+        "atomics": false,
+        "cfu": false,
+        "clock_hz": 48000000,
+        "profile_basis": "standard",
+        "rtl_sha256": "771f520fcf3ff8f66cd168eaea84bc5924b39fa0e470cd5b1e35640a4809c252",
+        "candidate_generation": {
+          "schema": 1,
+          "candidate": "dynamic_target",
+          "status": "generated",
+          "generator_command": [
+            "sbt",
+            "--no-server",
+            "compile",
+            "runMain vexriscv.GenCoreDefault --hardwareBreakpointCount=0 --iCacheSize=4096 --dCacheSize=4096 --pmpRegions=0 --pmpGranularity=256 --pmpAddressMatchingModes=na4,napot,tor --mulDiv=true --cfu=false --singleCycleMulDiv=true --singleCycleShift=true --relaxedPcCalculation=false --bypass=true --externalInterruptArray=true --csrPluginConfig=small --atomics=false --compressedGen=false --dBusCachedRelaxedMemoryTranslationRegister=false --dBusCachedEarlyWaysHits=true --prediction=dynamic_target --outputFile=../../../../build/cpu-candidates/dynamic_target/VexRiscv"
+          ],
+          "generator_arguments": [
+            "--hardwareBreakpointCount=0",
+            "--iCacheSize=4096",
+            "--dCacheSize=4096",
+            "--pmpRegions=0",
+            "--pmpGranularity=256",
+            "--pmpAddressMatchingModes=na4,napot,tor",
+            "--mulDiv=true",
+            "--cfu=false",
+            "--singleCycleMulDiv=true",
+            "--singleCycleShift=true",
+            "--relaxedPcCalculation=false",
+            "--bypass=true",
+            "--externalInterruptArray=true",
+            "--csrPluginConfig=small",
+            "--atomics=false",
+            "--compressedGen=false",
+            "--dBusCachedRelaxedMemoryTranslationRegister=false",
+            "--dBusCachedEarlyWaysHits=true",
+            "--prediction=dynamic_target",
+            "--outputFile=../../../../build/cpu-candidates/dynamic_target/VexRiscv"
+          ],
+          "generator_revisions": {
+            "generator_commit": "642ecfed1c84460555d6d803d660cc60cfc1ecb6",
+            "submodule_commit": "b6118e5cc2a33323425df6455697139021d50c72",
+            "sbt": "1.9.7",
+            "scala": "2.11.12",
+            "spinalhdl": "1.9.4"
+          },
+          "tool_versions": {
+            "java": "1.8.0_432",
+            "java_executable": ".tools/java-8u432/jdk8u432-b06/bin/java",
+            "java_sha256": "abaaa90deadf51bd28921453baf2992b3dff6171bb7142f5bdd14ef269f7b245",
+            "sbt": "1.9.7",
+            "sbt_executable": ".tools/bin/sbt",
+            "sbt_sha256": "23543bc4597b552e8e2c27d695fe672ec235ab8a64f766b37828fb68c6d9d910",
+            "scala": "2.11.12",
+            "spinalhdl": "1.9.4"
+          },
+          "cpu_configuration": {
+            "isa": "rv32im/ILP32",
+            "instruction_cache_bytes": 4096,
+            "data_cache_bytes": 4096,
+            "mul_div": true,
+            "single_cycle_mul_div": true,
+            "single_cycle_shift": true,
+            "bypass": true,
+            "debug": false,
+            "hardware_breakpoints": 0,
+            "csr_plugin_config": "small",
+            "pmp_regions": 0,
+            "pmp_granularity_bytes": 256,
+            "pmp_address_matching_modes": "na4,napot,tor",
+            "relaxed_pc_calculation": false,
+            "external_interrupt_array": true,
+            "dcache_relaxed_memory_translation_register": false,
+            "dcache_early_way_hits": true,
+            "atomics": false,
+            "compressed": false,
+            "cfu": false,
+            "prediction": "dynamic_target",
+            "clock_hz": 48000000,
+            "profile_basis": "standard"
+          },
+          "rtl": "build/cpu-candidates/dynamic_target/VexRiscv.v",
+          "rtl_sha256": "771f520fcf3ff8f66cd168eaea84bc5924b39fa0e470cd5b1e35640a4809c252",
+          "generated_utc": "2026-10-01T01:18:34.881350+00:00"
+        }
+      },
+      "experimental_not_registered": true,
+      "captures": [
+        {
+          "kind": "metadata",
+          "path": "docs/peripherals/fitting-evidence/performance-sd-spi_eth-none-bios24k-metadata.json",
+          "bytes": 9210,
+          "sha256": "9e9675ce9992d932c7a6d1b58f65f54454e8c0c277e327fe8f63486900deedd9"
+        },
+        {
+          "kind": "pnr",
+          "path": "docs/peripherals/fitting-evidence/performance-sd-spi_eth-none-bios24k-pnr.txt",
+          "bytes": 60026,
+          "sha256": "c2ea9cdc9466f34bce40a3b6d9df12f52860574c94065e1e6e8da9e1cb8eaedc"
+        },
+        {
+          "kind": "synthesis",
+          "path": "docs/peripherals/fitting-evidence/performance-sd-spi_eth-none-bios24k-synthesis.html",
+          "bytes": 2806,
+          "sha256": "6f296eae65077826401c5964cffafb5ffe46043342f956db5175c4b6c3adb060"
+        }
+      ],
+      "override": "24 KiB BIOS ROM reservation",
+      "placement_error": "ERROR  (PR0003) : Failed to place with '6 SSRAM(s) unPlaced ' in the device 'GW2A-18C-PBGA256-8'"
+    },
+    {
+      "configuration": "build/peripheral-fit-trials/performance/sd-spi_eth-none-sram4k",
+      "profile": "performance",
+      "features": {
+        "sdcard": "spi",
+        "ethernet": "none"
+      },
+      "status": "passed",
+      "timing_gate": "passed",
+      "source_fingerprint": "e2ce44f859e16236d1ed2ba058b29bbbb449d8af7922e1ccd9cefc8a7ef88c1d",
+      "cpu_configuration": {
+        "liteX_variant": "standard",
+        "isa": "rv32im/ILP32",
+        "instruction_cache_bytes": 4096,
+        "data_cache_bytes": 4096,
+        "prediction": "dynamic_target",
+        "compressed": false,
+        "mul_div": true,
+        "single_cycle_mul_div": true,
+        "single_cycle_shift": true,
+        "bypass": true,
+        "debug": false,
+        "hardware_breakpoints": 0,
+        "csr_plugin_config": "small",
+        "pmp_regions": 0,
+        "pmp_granularity_bytes": 256,
+        "pmp_address_matching_modes": "na4,napot,tor",
+        "relaxed_pc_calculation": false,
+        "external_interrupt_array": true,
+        "dcache_relaxed_memory_translation_register": false,
+        "dcache_early_way_hits": true,
+        "atomics": false,
+        "cfu": false,
+        "clock_hz": 48000000,
+        "profile_basis": "standard",
+        "rtl_sha256": "771f520fcf3ff8f66cd168eaea84bc5924b39fa0e470cd5b1e35640a4809c252",
+        "candidate_generation": {
+          "schema": 1,
+          "candidate": "dynamic_target",
+          "status": "generated",
+          "generator_command": [
+            "sbt",
+            "--no-server",
+            "compile",
+            "runMain vexriscv.GenCoreDefault --hardwareBreakpointCount=0 --iCacheSize=4096 --dCacheSize=4096 --pmpRegions=0 --pmpGranularity=256 --pmpAddressMatchingModes=na4,napot,tor --mulDiv=true --cfu=false --singleCycleMulDiv=true --singleCycleShift=true --relaxedPcCalculation=false --bypass=true --externalInterruptArray=true --csrPluginConfig=small --atomics=false --compressedGen=false --dBusCachedRelaxedMemoryTranslationRegister=false --dBusCachedEarlyWaysHits=true --prediction=dynamic_target --outputFile=../../../../build/cpu-candidates/dynamic_target/VexRiscv"
+          ],
+          "generator_arguments": [
+            "--hardwareBreakpointCount=0",
+            "--iCacheSize=4096",
+            "--dCacheSize=4096",
+            "--pmpRegions=0",
+            "--pmpGranularity=256",
+            "--pmpAddressMatchingModes=na4,napot,tor",
+            "--mulDiv=true",
+            "--cfu=false",
+            "--singleCycleMulDiv=true",
+            "--singleCycleShift=true",
+            "--relaxedPcCalculation=false",
+            "--bypass=true",
+            "--externalInterruptArray=true",
+            "--csrPluginConfig=small",
+            "--atomics=false",
+            "--compressedGen=false",
+            "--dBusCachedRelaxedMemoryTranslationRegister=false",
+            "--dBusCachedEarlyWaysHits=true",
+            "--prediction=dynamic_target",
+            "--outputFile=../../../../build/cpu-candidates/dynamic_target/VexRiscv"
+          ],
+          "generator_revisions": {
+            "generator_commit": "642ecfed1c84460555d6d803d660cc60cfc1ecb6",
+            "submodule_commit": "b6118e5cc2a33323425df6455697139021d50c72",
+            "sbt": "1.9.7",
+            "scala": "2.11.12",
+            "spinalhdl": "1.9.4"
+          },
+          "tool_versions": {
+            "java": "1.8.0_432",
+            "java_executable": ".tools/java-8u432/jdk8u432-b06/bin/java",
+            "java_sha256": "abaaa90deadf51bd28921453baf2992b3dff6171bb7142f5bdd14ef269f7b245",
+            "sbt": "1.9.7",
+            "sbt_executable": ".tools/bin/sbt",
+            "sbt_sha256": "23543bc4597b552e8e2c27d695fe672ec235ab8a64f766b37828fb68c6d9d910",
+            "scala": "2.11.12",
+            "spinalhdl": "1.9.4"
+          },
+          "cpu_configuration": {
+            "isa": "rv32im/ILP32",
+            "instruction_cache_bytes": 4096,
+            "data_cache_bytes": 4096,
+            "mul_div": true,
+            "single_cycle_mul_div": true,
+            "single_cycle_shift": true,
+            "bypass": true,
+            "debug": false,
+            "hardware_breakpoints": 0,
+            "csr_plugin_config": "small",
+            "pmp_regions": 0,
+            "pmp_granularity_bytes": 256,
+            "pmp_address_matching_modes": "na4,napot,tor",
+            "relaxed_pc_calculation": false,
+            "external_interrupt_array": true,
+            "dcache_relaxed_memory_translation_register": false,
+            "dcache_early_way_hits": true,
+            "atomics": false,
+            "compressed": false,
+            "cfu": false,
+            "prediction": "dynamic_target",
+            "clock_hz": 48000000,
+            "profile_basis": "standard"
+          },
+          "rtl": "build/cpu-candidates/dynamic_target/VexRiscv.v",
+          "rtl_sha256": "771f520fcf3ff8f66cd168eaea84bc5924b39fa0e470cd5b1e35640a4809c252",
+          "generated_utc": "2026-10-01T01:18:34.881350+00:00"
+        }
+      },
+      "experimental_not_registered": true,
+      "captures": [
+        {
+          "kind": "metadata",
+          "path": "docs/peripherals/fitting-evidence/performance-sd-spi_eth-none-sram4k-metadata.json",
+          "bytes": 16969,
+          "sha256": "6238542970f5a28822ed869f5d17bdf1b060a058cd993948a65334cb20a0953d"
+        },
+        {
+          "kind": "pnr",
+          "path": "docs/peripherals/fitting-evidence/performance-sd-spi_eth-none-sram4k-pnr.txt",
+          "bytes": 61797,
+          "sha256": "d1a9d303e7bb0bdfba6ae7f332686d27f24bd78c44bafaa1bb3126adea6042a8"
+        },
+        {
+          "kind": "synthesis",
+          "path": "docs/peripherals/fitting-evidence/performance-sd-spi_eth-none-sram4k-synthesis.html",
+          "bytes": 2804,
+          "sha256": "7d89c627e517b8667cb8cb1aa617cb0f3d71bdadd93f5ae021af28b081a096d2"
+        }
+      ],
+      "override": "4 KiB BIOS working SRAM",
+      "placement_error": null,
+      "gateware_results": {
+        "profile": "performance",
+        "memory_mode": "ddr3",
+        "device": "GW2A-LV18PG256C8/I7",
+        "resources": {
+          "logic": {
+            "used": 12534,
+            "capacity": 20736
+          },
+          "lut": {
+            "used": 8267,
+            "source": "build/peripheral-fit-trials/performance/sd-spi_eth-none-sram4k/gateware/impl/pnr/project.rpt.txt"
+          },
+          "alu": {
+            "used": 883,
+            "source": "build/peripheral-fit-trials/performance/sd-spi_eth-none-sram4k/gateware/impl/pnr/project.rpt.txt"
+          },
+          "registers": {
+            "used": 4055,
+            "capacity": 16173
+          },
+          "bsram": {
+            "used": 46,
+            "capacity": 46
+          },
+          "dsp": {
+            "used": null,
+            "status": "unavailable",
+            "detail": "Gowin synthesis resource report lists '-' for DSP NUMBER",
+            "source": "build/peripheral-fit-trials/performance/sd-spi_eth-none-sram4k/gateware/impl/gwsynthesis/project_syn_resource.html"
+          }
+        },
+        "timing": {
+          "constraint_mhz": 48.0,
+          "actual_fmax_mhz": 52.568,
+          "worst_setup_slack_ns": 1.631,
+          "worst_hold_slack_ns": 0.215,
+          "worst_recovery_slack_ns": 1.767,
+          "worst_removal_slack_ns": 1.025,
+          "setup_violated_endpoints": 0,
+          "analyzed_paths": 64406,
+          "analyzed_endpoints": 16278,
+          "no_timing_path_messages": [
+            "No timing paths to get frequency of rPLL/CLKOUTP.default_gen_clk!",
+            "No timing paths to get frequency of rPLL/CLKOUTD.default_gen_clk!",
+            "No timing paths to get frequency of rPLL/CLKOUTD3.default_gen_clk!"
+          ],
+          "generated_clocks": {
+            "ddr_ck_96mhz": {
+              "period_ns": 10.417,
+              "target_mhz": 96.0,
+              "frequency_mhz": 96.0
+            },
+            "sys2x_clk": {
+              "period_ns": 10.417,
+              "target_mhz": 96.0,
+              "frequency_mhz": 96.0
+            },
+            "sys_clk": {
+              "period_ns": 20.833,
+              "target_mhz": 48.0,
+              "frequency_mhz": 48.0
+            },
+            "rPLL/CLKOUTP.default_gen_clk": {
+              "period_ns": 10.417,
+              "target_mhz": 96.0,
+              "frequency_mhz": 96.0
+            },
+            "rPLL/CLKOUTD.default_gen_clk": {
+              "period_ns": 20.833,
+              "target_mhz": 48.0,
+              "frequency_mhz": 48.0
+            },
+            "rPLL/CLKOUTD3.default_gen_clk": {
+              "period_ns": 31.25,
+              "target_mhz": 32.0,
+              "frequency_mhz": 32.0
+            }
+          }
+        },
+        "evidence": {
+          "pnr_resource_report": "build/peripheral-fit-trials/performance/sd-spi_eth-none-sram4k/gateware/impl/pnr/project.rpt.txt",
+          "timing_report": "build/peripheral-fit-trials/performance/sd-spi_eth-none-sram4k/gateware/impl/pnr/project.tr",
+          "synthesis_resource_report": "build/peripheral-fit-trials/performance/sd-spi_eth-none-sram4k/gateware/impl/gwsynthesis/project_syn_resource.html"
+        },
+        "rmii_clock_constraint": {
+          "period_ns": null,
+          "frequency_mhz": null
+        }
+      }
+    },
+    {
+      "configuration": "build/peripheral-fit-trials/standard/sd-none_eth-rmii-1rx1tx",
+      "profile": "standard",
+      "features": {
+        "sdcard": "none",
+        "ethernet": "rmii"
+      },
+      "status": "failed",
+      "timing_gate": null,
+      "source_fingerprint": "f2ad86db95b8239bd63ff83a46772446b1c67ea158512a70ebde963d696006da",
+      "cpu_configuration": {
+        "liteX_variant": "standard",
+        "isa": "rv32i2p0_m",
+        "instruction_cache_bytes": 4096,
+        "data_cache_bytes": 4096,
+        "prediction": "static",
+        "compressed": false
+      },
+      "experimental_not_registered": true,
+      "captures": [
+        {
+          "kind": "metadata",
+          "path": "docs/peripherals/fitting-evidence/standard-sd-none_eth-rmii-1rx1tx-metadata.json",
+          "bytes": 3816,
+          "sha256": "da7e3a0c054fdba68b99568fcdba771ed31694e56107e20304f951903eab0d2a"
+        },
+        {
+          "kind": "pnr",
+          "path": "docs/peripherals/fitting-evidence/standard-sd-none_eth-rmii-1rx1tx-pnr.txt",
+          "bytes": 62687,
+          "sha256": "a78ecf5d802027505563fc1ff94514b1b622f40fedd88fb85781e5e7cb40d04c"
+        },
+        {
+          "kind": "synthesis",
+          "path": "docs/peripherals/fitting-evidence/standard-sd-none_eth-rmii-1rx1tx-synthesis.html",
+          "bytes": 2798,
+          "sha256": "82fc1fc0e408b74a714936b244aacb1b3f60b975ad2e4eb95781c1715abda341"
+        }
+      ],
+      "override": "one RX and one TX slot, 2048 bytes each",
+      "placement_error": "ERROR  (PR0003) : Failed to place with '6 SSRAM(s) unPlaced ' in the device 'GW2A-18C-PBGA256-8'"
+    },
+    {
+      "configuration": "build/peripheral-fit-trials/standard/sd-none_eth-rmii-bios24k",
+      "profile": "standard",
+      "features": {
+        "sdcard": "none",
+        "ethernet": "rmii"
+      },
+      "status": "failed",
+      "timing_gate": null,
+      "source_fingerprint": "91bd1444767f6765d683cf66095483dbdcb92b7e6051e5a857d1b9168a7eddce",
+      "cpu_configuration": {
+        "liteX_variant": "standard",
+        "isa": "rv32i2p0_m",
+        "instruction_cache_bytes": 4096,
+        "data_cache_bytes": 4096,
+        "prediction": "static",
+        "compressed": false
+      },
+      "experimental_not_registered": true,
+      "captures": [
+        {
+          "kind": "metadata",
+          "path": "docs/peripherals/fitting-evidence/standard-sd-none_eth-rmii-bios24k-metadata.json",
+          "bytes": 3657,
+          "sha256": "9b62f440e7c1bc58f4341297128f9d2ca1899d176ebdf9c7bb330596b3ab43f2"
+        },
+        {
+          "kind": "pnr",
+          "path": "docs/peripherals/fitting-evidence/standard-sd-none_eth-rmii-bios24k-pnr.txt",
+          "bytes": 62713,
+          "sha256": "2c322168b46d548a222f69156dc55e9bbfbddd96d05cb9b7615b39342fa480c1"
+        },
+        {
+          "kind": "synthesis",
+          "path": "docs/peripherals/fitting-evidence/standard-sd-none_eth-rmii-bios24k-synthesis.html",
+          "bytes": 2801,
+          "sha256": "81d684995065333980a603c92c11be39fe878dcd479317d40e37de399178e81d"
+        }
+      ],
+      "override": "24 KiB BIOS ROM reservation",
+      "placement_error": "ERROR  (PR0003) : Failed to place with '2 SSRAM(s) unPlaced, 3356 REG(s) unPlaced ' in the device 'GW2A-18C-PBGA256-8'"
+    },
+    {
+      "configuration": "build/peripheral-fit-trials/standard/sd-none_eth-rmii-sram4k",
+      "profile": "standard",
+      "features": {
+        "sdcard": "none",
+        "ethernet": "rmii"
+      },
+      "status": "failed",
+      "timing_gate": null,
+      "source_fingerprint": "91bd1444767f6765d683cf66095483dbdcb92b7e6051e5a857d1b9168a7eddce",
+      "cpu_configuration": {
+        "liteX_variant": "standard",
+        "isa": "rv32i2p0_m",
+        "instruction_cache_bytes": 4096,
+        "data_cache_bytes": 4096,
+        "prediction": "static",
+        "compressed": false
+      },
+      "experimental_not_registered": true,
+      "captures": [
+        {
+          "kind": "metadata",
+          "path": "docs/peripherals/fitting-evidence/standard-sd-none_eth-rmii-sram4k-metadata.json",
+          "bytes": 3657,
+          "sha256": "422ba94df6cbe5565c52b1a0e4d03ea17eec082c7a9f5021f8fc929b8b987339"
+        },
+        {
+          "kind": "pnr",
+          "path": "docs/peripherals/fitting-evidence/standard-sd-none_eth-rmii-sram4k-pnr.txt",
+          "bytes": 62688,
+          "sha256": "205283b90ecace49c6edfaa4b512aa3b6d287e04d9bc8b82b34d2bdc34e6284e"
+        },
+        {
+          "kind": "synthesis",
+          "path": "docs/peripherals/fitting-evidence/standard-sd-none_eth-rmii-sram4k-synthesis.html",
+          "bytes": 2798,
+          "sha256": "caaf47f604e0197a8a64e4329ce36d8fa60e6768bcc440a952405b643183e60b"
+        }
+      ],
+      "override": "4 KiB BIOS working SRAM",
+      "placement_error": "ERROR  (PR0003) : Failed to place with '6 SSRAM(s) unPlaced ' in the device 'GW2A-18C-PBGA256-8'"
+    },
+    {
+      "configuration": "build/peripheral-fit-trials/standard/sd-spi_eth-rmii-1rx1tx",
+      "profile": "standard",
+      "features": {
+        "sdcard": "spi",
+        "ethernet": "rmii"
+      },
+      "status": "failed",
+      "timing_gate": null,
+      "source_fingerprint": "8f8ac79ffd023bdcf5ab0784e354fabd0e317806f3b2cc7d954ec1c4c8c467ac",
+      "cpu_configuration": {
+        "liteX_variant": "standard",
+        "isa": "rv32i2p0_m",
+        "instruction_cache_bytes": 4096,
+        "data_cache_bytes": 4096,
+        "prediction": "static",
+        "compressed": false
+      },
+      "experimental_not_registered": true,
+      "captures": [
+        {
+          "kind": "metadata",
+          "path": "docs/peripherals/fitting-evidence/standard-sd-spi_eth-rmii-1rx1tx-metadata.json",
+          "bytes": 3814,
+          "sha256": "1cfa7f13261899a6f37e30ed1c3e8345cf24fa0e999ca8f20d51df8ebc9365ce"
+        },
+        {
+          "kind": "pnr",
+          "path": "docs/peripherals/fitting-evidence/standard-sd-spi_eth-rmii-1rx1tx-pnr.txt",
+          "bytes": 63600,
+          "sha256": "2c97d29c26cc3d95aaf0d42e2338bf3521d8e78b457ee59c46a837a51f15392c"
+        },
+        {
+          "kind": "synthesis",
+          "path": "docs/peripherals/fitting-evidence/standard-sd-spi_eth-rmii-1rx1tx-synthesis.html",
+          "bytes": 2796,
+          "sha256": "fca3a9876c96193a5d01d2576113f06b429198056d4fe248a58e3bb63f349c6a"
+        }
+      ],
+      "override": "one RX and one TX slot, 2048 bytes each",
+      "placement_error": "ERROR  (PR0003) : Failed to place with '6 SSRAM(s) unPlaced ' in the device 'GW2A-18C-PBGA256-8'"
+    },
+    {
+      "configuration": "build/peripheral-fit-trials/standard/sd-spi_eth-rmii-bios24k",
+      "profile": "standard",
+      "features": {
+        "sdcard": "spi",
+        "ethernet": "rmii"
+      },
+      "status": "failed",
+      "timing_gate": null,
+      "source_fingerprint": "9e0a0d2d333b0475c7fd5c687e4c93688f43f2b2ca33205dd64975469e8348d4",
+      "cpu_configuration": {
+        "liteX_variant": "standard",
+        "isa": "rv32i2p0_m",
+        "instruction_cache_bytes": 4096,
+        "data_cache_bytes": 4096,
+        "prediction": "static",
+        "compressed": false
+      },
+      "experimental_not_registered": true,
+      "captures": [
+        {
+          "kind": "metadata",
+          "path": "docs/peripherals/fitting-evidence/standard-sd-spi_eth-rmii-bios24k-metadata.json",
+          "bytes": 3655,
+          "sha256": "5debb2dcc70c2ae2866ca8af71bb0b7f201a0369835408c9e42a33b089402e8f"
+        },
+        {
+          "kind": "pnr",
+          "path": "docs/peripherals/fitting-evidence/standard-sd-spi_eth-rmii-bios24k-pnr.txt",
+          "bytes": 63618,
+          "sha256": "02898f2b25ed1c27d6a8311dae1bb8b8e304b5dae7c920b526f189dd89679d24"
+        },
+        {
+          "kind": "synthesis",
+          "path": "docs/peripherals/fitting-evidence/standard-sd-spi_eth-rmii-bios24k-synthesis.html",
+          "bytes": 2799,
+          "sha256": "51e3da26b68becbd82e58b4eb06ab96de734dfba9b9bd4fe0d5f4ff4fa1a461d"
+        }
+      ],
+      "override": "24 KiB BIOS ROM reservation",
+      "placement_error": "ERROR  (PR0003) : Failed to place with '2 SSRAM(s) unPlaced, 3549 REG(s) unPlaced ' in the device 'GW2A-18C-PBGA256-8'"
+    },
+    {
+      "configuration": "build/peripheral-fit-trials/standard/sd-spi_eth-rmii-sram4k",
+      "profile": "standard",
+      "features": {
+        "sdcard": "spi",
+        "ethernet": "rmii"
+      },
+      "status": "failed",
+      "timing_gate": null,
+      "source_fingerprint": "9e0a0d2d333b0475c7fd5c687e4c93688f43f2b2ca33205dd64975469e8348d4",
+      "cpu_configuration": {
+        "liteX_variant": "standard",
+        "isa": "rv32i2p0_m",
+        "instruction_cache_bytes": 4096,
+        "data_cache_bytes": 4096,
+        "prediction": "static",
+        "compressed": false
+      },
+      "experimental_not_registered": true,
+      "captures": [
+        {
+          "kind": "metadata",
+          "path": "docs/peripherals/fitting-evidence/standard-sd-spi_eth-rmii-sram4k-metadata.json",
+          "bytes": 3655,
+          "sha256": "b2a7dae424ae7c359fffca5c40e612e6771d73da99a720e8ac51dfe7d355826b"
+        },
+        {
+          "kind": "pnr",
+          "path": "docs/peripherals/fitting-evidence/standard-sd-spi_eth-rmii-sram4k-pnr.txt",
+          "bytes": 63599,
+          "sha256": "34f773a61ea987aac5ce3750b06ffcc7d40a9b969933480f7e652499422378c1"
+        },
+        {
+          "kind": "synthesis",
+          "path": "docs/peripherals/fitting-evidence/standard-sd-spi_eth-rmii-sram4k-synthesis.html",
+          "bytes": 2796,
+          "sha256": "e79d30e7884fdd862f16bda951fea533db071cd3e7dda3eb0dd7d846445511e3"
+        }
+      ],
+      "override": "4 KiB BIOS working SRAM",
+      "placement_error": "ERROR  (PR0003) : Failed to place with '6 SSRAM(s) unPlaced ' in the device 'GW2A-18C-PBGA256-8'"
+    }
+  ]
+}

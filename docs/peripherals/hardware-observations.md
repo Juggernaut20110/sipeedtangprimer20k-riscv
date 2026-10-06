@@ -1,0 +1,15 @@
+# Attached hardware observations
+
+The user confirmed on October 6, 2026 that the attached Tang Primer 20K core is marked **v3961**, the Dock is marked **v3714**, and neither has a unique printed serial label. Sessions use `BOARD_SERIAL=unavailable` and record `serial: null`, the explicit user-confirmed absence, and both revision labels. The USB debugger identifier `FactoryAIOT Pro` is generic and is not represented as a unique board serial. Unit identity is limited to the user-confirmed attached board for these sessions.
+
+The Dock RJ45 is connected to a LAN with DHCP. The discovered host interface is `enp0s31f6`, IPv4 `192.168.1.108/22`, gateway `192.168.1.1`. Board IP addresses must come from actual DHCP/status output or an explicitly configured, conflict-checked static address.
+
+The installed microSD is reported by the user as **32 GB, exFAT**. The user selected **Add exFAT support**; the application now supports FAT16/FAT32/exFAT. Physical persistence acceptance remains pending successful SPI initialization. Formatting and repartitioning are disabled; writes are restricted to new files inside a unique test directory.
+
+The pinned platform mapping agrees with [Sipeed's standard Dock pin table](https://github.com/sipeed/TangPrimer-20K-example#tang-primer-20k-dock-pin-constrain): SPI SD CLK N10, CMD/MOSI R14, DAT3/CS N11, DAT0/MISO M8; RMII reference clock A9 (input, 50 MHz), PHY reset F10, TX D16/E14/E16, RX F15/C9/M6, MDIO F16/MDC F14. No revision-specific alternative pin assignment for v3714/v3961 was found in the official references consulted.
+
+The user selected **Add exFAT support** on October 6. Project FatFs configuration now enables exFAT and UTF-8 long names, with formatting still disabled. Host image tests verify create/sync/close/reopen, remount, unrelated-file preservation and filesystem consistency. Physical card tests will identify the actual mounted filesystem and free space before new-file writes.
+
+The standard SD-only application currently receives only `ff` bytes from CMD0, despite bounded retries. No new test-file writes have occurred. The user cannot reseat the card at present; physical file persistence and removal/reinsertion acceptance remain pending.
+
+The minimal Ethernet-only image passed exact-image DDR qualification, including ten fresh training runs, full 128 MiB patterns/cache checks and **1800.54455225 measured stress seconds**, with zero errors. Application session `evidence/20261006T132358.565230Z-app-minimal` identifies PHY address 0, `001c:c816`, and reads RMII register `0ffa` before and after checking mode. RMII and PHY-clock output are already selected. BMCR `1000` enables auto-negotiation without power-down or isolation; BMSR `7849` reports no link, partner abilities are `0001`, and DHCP cannot obtain a lease. Restarting negotiation did not establish link. A physical cable/switch/link-LED check has been requested; this observation does not prove a cable fault. No external packet acceptance is claimed.

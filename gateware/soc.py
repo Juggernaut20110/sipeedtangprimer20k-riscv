@@ -10,6 +10,7 @@ from litex_boards.targets import sipeed_tang_primer_20k
 from gateware.profile_selection import accepted_maxperf_selection
 from gateware.ddr_geometry import DDR_SIZE_BYTES, DDR_PART, DDR_ADDRESS_BITS
 from gateware.ddr3 import H5TQ1G63EFR
+from gateware.peripherals import ETH_RX_SLOTS, ETH_TX_SLOTS, ETH_SLOT_BYTES
 
 
 PROFILES = {
@@ -48,7 +49,8 @@ class ProjectSoC(sipeed_tang_primer_20k.BaseSoC):
     """Upstream board SoC with project-owned, ordered Dock GPIO CSRs."""
 
     def __init__(self, profile="minimal", memory="onchip", bios_size=None, cpu_rtl=None,
-                 cpu_variant=None, ddr_module=H5TQ1G63EFR, **kwargs):
+                 cpu_variant=None, ddr_module=H5TQ1G63EFR, sdcard="none", ethernet="none",
+                 **kwargs):
         provisional_maxperf = (profile == "maxperf" and profile not in PROFILES
                                and cpu_rtl is not None
                                and cpu_variant in ("projectim", "projectimc"))
@@ -56,6 +58,10 @@ class ProjectSoC(sipeed_tang_primer_20k.BaseSoC):
             raise ValueError(f"unknown CPU profile {profile!r}; choose from {', '.join(PROFILES)}")
         if memory not in MEMORY_MODES:
             raise ValueError(f"unknown memory mode {memory!r}; choose from {', '.join(MEMORY_MODES)}")
+        if sdcard not in ("none", "spi"):
+            raise ValueError("SDCARD must be 'none' or 'spi'")
+        if ethernet not in ("none", "rmii"):
+            raise ValueError("ETHERNET must be 'none' or 'rmii'")
 
         ddr3 = memory == "ddr3"
         self._project_ddr_module_class = ddr_module if ddr3 else None
@@ -77,13 +83,19 @@ class ProjectSoC(sipeed_tang_primer_20k.BaseSoC):
         # An integrated main RAM size of zero is the upstream target's documented
         # switch for its board-specific GW2DDRPHY path. add_sdram below replaces
         # the upstream 256 MiB module with the fitted 128 MiB Hynix part.
+        # Performance's SD-only peripheral image fits with a 4 KiB BIOS working
+        # SRAM. Its BIOS data/bss and stack remain separate from the
+        # unchanged 16 KiB destructive DDR diagnostic RAM. Public disabled
+        # images and the other fitted peripheral layouts retain 8 KiB.
+        working_sram_size = (4 * 1024 if ddr3 and profile == "performance"
+                             and sdcard == "spi" and ethernet == "none" else 8 * 1024)
         super().__init__(
             dock="standard",
             sys_clk_freq=SYS_CLK_FREQ,
             cpu_type="vexriscv",
             cpu_variant=cpu_variant or PROFILES[profile],
             integrated_rom_size=bios_size,
-            integrated_sram_size=8 * 1024,
+            integrated_sram_size=working_sram_size,
             integrated_main_ram_size=0 if ddr3 else 32 * 1024,
             l2_size=DDR_L2_SIZE,
             uart_name="serial",
@@ -95,6 +107,8 @@ class ProjectSoC(sipeed_tang_primer_20k.BaseSoC):
             with_buttons=False,
             with_lcd_backlight=False,
             with_rgb_led=False,
+            # Ethernet is integrated below so the project can control packet
+            # slot counts and add the RMII clock/CDC constraints explicitly.
             with_ethernet=False,
             with_etherbone=False,
             with_video_terminal=False,
@@ -155,6 +169,23 @@ class ProjectSoC(sipeed_tang_primer_20k.BaseSoC):
             self.platform.toolchain.additional_sdc_commands.append(
                 "set_false_path -to [get_pins {DQS/RESET DQS_1/RESET OSER4/RESET OSER4_*/RESET}] -setup"
             )
+            if sdcard != "none" or ethernet != "none":
+                # The existing PHY register to DQS/HOLD paths can become
+                # placement-sensitive when optional logic is present. These
+                # floorplans keep each synchronously registered control near
+                # its associated hard DQS primitive. They do not cut or relax
+                # any timing path; routed setup/hold/recovery/removal checks
+                # still gate every peripheral DDR image.
+                dqs_hold_prefix = "projectsoc_" if sdcard == "spi" else ""
+                self.platform.toolchain.additional_cst_commands.extend([
+                    f'INS_LOC "{dqs_hold_prefix}gw2ddrphy_dqs_hold_0_s0" R50C12;',
+                    f'INS_LOC "{dqs_hold_prefix}gw2ddrphy_dqs_hold_1_s0" R50C45;',
+                    # The last stage of LiteDRAM's clock-stop synchronizer
+                    # drives DHCEN/CE. It remains unconstrained here because
+                    # the edge-adjacent site near DHCEN is not a legal logic
+                    # location on this device. R27C16 is a legal nearby tile.
+                    'INS_LOC "multiregimpl11_s0" R27C16;',
+                ])
         else:
             # The on-chip CRG creates sys directly from the PLL and has a
             # duplicate PLL-helper reset synchronizer. Keep the board CRG's
@@ -168,6 +199,51 @@ class ProjectSoC(sipeed_tang_primer_20k.BaseSoC):
             if len(pll_syncs) != 1:
                 raise RuntimeError(f"expected one redundant PLL reset synchronizer, found {len(pll_syncs)}")
             pll_specials.remove(pll_syncs[0])
+
+        self.sdcard_mode = sdcard
+        self.ethernet_mode = ethernet
+        if sdcard == "spi":
+            # Peripheral applications are loaded through the BIOS serial
+            # loader. Do not auto-boot a card before the firmware can qualify
+            # it or select a newly created test directory.
+            self.add_constant("SDCARD_BOOT_DISABLE")
+            # LiteX's SPI master clamps the clock divider to at least two;
+            # the firmware selects the <=400 kHz initialization and <=12 MHz
+            # transfer dividers from generated system-clock constants.
+            self.add_spi_sdcard(name="spisdcard", spi_clk_freq=400_000)
+
+        if ethernet == "rmii":
+            # The application owns lwIP and PHY initialization. Keep the BIOS
+            # from launching its separate UDP/TFTP stack before serial loading.
+            self.add_constant("NET_BOOT_DISABLE")
+            self.add_constant("BIOS_NO_ETHERNET_INIT")
+            from liteeth.phy.rmii import LiteEthPHYRMII
+
+            self.ethphy = LiteEthPHYRMII(
+                clock_pads=self.platform.request("eth_clocks"),
+                pads=self.platform.request("eth"),
+                # The Tang Primer 20K standard Dock routes the PHY's 50 MHz
+                # RMII reference clock into CARD1:148.
+                refclk_cd=None,
+            )
+            self.add_ethernet(
+                phy=self.ethphy,
+                nrxslots=ETH_RX_SLOTS,
+                ntxslots=ETH_TX_SLOTS,
+                rxslots_read_only=True,
+                txslots_write_only=True,
+                with_timing_constraints=False,
+            )
+            if self.ethmac.slot_size.constant != ETH_SLOT_BYTES:
+                raise RuntimeError(
+                    f"LiteEth MAC slot is {self.ethmac.slot_size.constant} bytes; expected {ETH_SLOT_BYTES}"
+                )
+            eth_ref_clk = self.ethphy.crg.cd_eth_rx.clk
+            self.platform.add_period_constraint(eth_ref_clk, 20.0)
+            # RMII's PHY clock is asynchronous to sys. The PHY and MAC cross
+            # through LiteEth's clock-domain crossing FIFOs; only the direct
+            # clock-domain crossing paths are excluded here.
+            self.platform.add_false_path_constraints(self.crg.cd_sys.clk, eth_ref_clk)
 
         # LiteX creates the writable Wishbone RAMs with write-first ports. Gowin
         # V1.9.12.04 maps those to write-through SP block RAMs with WRE tied high
@@ -216,6 +292,8 @@ class ProjectSoC(sipeed_tang_primer_20k.BaseSoC):
         self.add_constant("PROJECT_MEMORY_MODE", memory)
         self.add_constant("PROJECT_GPIO_LED_COUNT", len(LED_RESOURCES))
         self.add_constant("PROJECT_GPIO_BUTTON_COUNT", len(BUTTON_RESOURCES))
+        self.add_constant("PROJECT_SDCARD_SPI", int(sdcard == "spi"))
+        self.add_constant("PROJECT_ETHERNET_RMII", int(ethernet == "rmii"))
 
         if not ddr3:
             # The upstream platform also retains its 27 MHz input-clock constraint.

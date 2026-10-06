@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "session_id": "20261006T105537.637706Z-ddr3-sd-spi_eth-none-standard",
+  "batch_id": "20261006T105537.637706Z-ddr3-sd-spi_eth-none",
+  "profile": "standard",
+  "cpu_candidate": null,
+  "requested_profiles": [
+    "standard"
+  ],
+  "memory_mode": "ddr3",
+  "status": "failed",
+  "created_utc": "2026-10-06T10:55:38.134940+00:00",
+  "board": {
+    "model": "Sipeed Tang Primer 20K",
+    "revision": "core-v3961_Dock-v3714",
+    "serial": null,
+    "serial_status": "not_printed_user_confirmed",
+    "identity_basis": "user_confirmed_attached_board_revision"
+  },
+  "clock_hz": 48000000,
+  "uart_device_requested": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+  "uart_device_selected": "/dev/ttyUSB1",
+  "uart_candidates_at_start": [
+    "/dev/serial/by-id/usb-1a86_USB_Single_Serial_599D114570-if00",
+    "/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A6005EXR-if00-port0",
+    "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if00-port0",
+    "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0"
+  ],
+  "usb_device_nodes_at_start": [
+    "/dev/bus/usb/001/001",
+    "/dev/bus/usb/001/003",
+    "/dev/bus/usb/001/036",
+    "/dev/bus/usb/001/042",
+    "/dev/bus/usb/001/043",
+    "/dev/bus/usb/002/001"
+  ],
+  "requested_training_runs": 10,
+  "actual_training_runs": 1,
+  "requested_stress_seconds": 1800,
+  "training_criteria_runs": 10,
+  "stress_criteria_seconds": 1800,
+  "build_identity": {
+    "build_metadata": "build/peripherals/ddr3/standard/sd-spi_eth-none/build-metadata.json",
+    "bitstream": "build/peripherals/ddr3/standard/sd-spi_eth-none/bitstream.fs",
+    "bitstream_sha256": "7bd6d39fed396aa72d36eca61f77b4c977f8b3eb94c4c232676cc194c8bab674",
+    "build_fingerprint": "1ce33dde02e51266722fbd89905490f62ec1b4729303ed49d09193dae797dc5f",
+    "cpu_configuration": {
+      "liteX_variant": "standard",
+      "isa": "rv32i2p0_m",
+      "instruction_cache_bytes": 4096,
+      "data_cache_bytes": 4096,
+      "prediction": "static",
+      "compressed": false
+    },
+    "bios_bytes": 32768,
+    "l2_cache_bytes": 8192,
+    "geometry_bytes": 134217728,
+    "uncached_alias": "0xc0000000",
+    "diagnostic_images": {
+      "smoke": {
+        "binary": "build/peripherals/ddr3/standard/sd-spi_eth-none/diagnostics/smoke/ddr_test.bin",
+        "sha256": "818a2d74448dd50d70c6bd640dfc0f6ae2449c423f6b61dafa844e801d8a714b",
+        "stress_seconds": 1800
+      },
+      "full": {
+        "binary": "build/peripherals/ddr3/standard/sd-spi_eth-none/diagnostics/full/ddr_test.bin",
+        "sha256": "2227d638128720cebf765e013be369118f122e7ab2d0a12d667cd24fea478005",
+        "stress_seconds": 1800
+      }
+    }
+  },
+  "training_phy_configuration": {
+    "SDRAM_PHY_MODULES": 2,
+    "SDRAM_PHY_DQ_DQS_RATIO": 8,
+    "SDRAM_PHY_DELAYS": 256,
+    "SDRAM_PHY_BITSLIPS": 4,
+    "SDRAM_DELAY_PER_DQ": false
+  },
+  "expected_read_lanes": 2,
+  "trials": [
+    {
+      "mode": "training",
+      "diagnostic_only": false,
+      "attempt": 1,
+      "status": "failed",
+      "programming_status": "not_attempted",
+      "image_sha256": "818a2d74448dd50d70c6bd640dfc0f6ae2449c423f6b61dafa844e801d8a714b",
+      "bitstream_sha256": "7bd6d39fed396aa72d36eca61f77b4c977f8b3eb94c4c232676cc194c8bab674",
+      "raw_uart_log": "docs/peripherals/evidence/20261006T105537.637706Z-ddr3-sd-spi_eth-none-standard/training-01.uart.bin",
+      "text_uart_log": "docs/peripherals/evidence/20261006T105537.637706Z-ddr3-sd-spi_eth-none-standard/training-01.uart.log",
+      "transmitted_uart_log": "docs/peripherals/evidence/20261006T105537.637706Z-ddr3-sd-spi_eth-none-standard/training-01.uart.tx.bin",
+      "started_utc": "2026-10-06T10:55:38.169116+00:00",
+      "error": "OSError: [Errno 5] Input/output error",
+      "raw_uart_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_uart_bytes": 0,
+      "transmitted_uart_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transmitted_uart_bytes": 0,
+      "decode_errors_present": false,
+      "bios_training_status_seen": false,
+      "training_status_from_bios": false,
+      "finished_utc": "2026-10-06T10:55:38.171919+00:00"
+    }
+  ],
+  "batch_continuation_safe": false,
+  "error": "RuntimeError: DDR training/smoke run 1 failed: OSError: [Errno 5] Input/output error",
+  "finished_utc": "2026-10-06T10:55:38.172128+00:00",
+  "uart_evidence_directory": "docs/peripherals/evidence/20261006T105537.637706Z-ddr3-sd-spi_eth-none-standard",
+  "evidence": "build/peripherals/ddr3/standard/sd-spi_eth-none/diagnostics/sessions/20261006T105537.637706Z-ddr3-sd-spi_eth-none-standard/session.json"
+}

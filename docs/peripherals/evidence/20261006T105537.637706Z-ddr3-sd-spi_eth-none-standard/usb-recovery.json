@@ -1,0 +1,11 @@
+{
+  "target": "/dev/bus/usb/001/043",
+  "sysfs": "1-9",
+  "vendor": "0403",
+  "product": "6010",
+  "operation": "USBDEVFS_RESET",
+  "started": 1791284214.291829,
+  "fpga_programming": false,
+  "status": "completed",
+  "finished": 1791284214.5310361
+}

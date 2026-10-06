@@ -1,0 +1,11 @@
+diff --git a/litex/soc/software/bios/main.c b/litex/soc/software/bios/main.c
+--- a/litex/soc/software/bios/main.c
++++ b/litex/soc/software/bios/main.c
+@@ -288,5 +288,7 @@
+ #ifdef CSR_ETHMAC_BASE
++#ifndef BIOS_NO_ETHERNET_INIT
+ 	eth_init();
+ 	net_init();
+ 	set_idle_hook(udp_service);
++#endif
+ #endif

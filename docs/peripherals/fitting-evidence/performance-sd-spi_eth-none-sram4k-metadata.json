@@ -1,0 +1,515 @@
+{
+  "profile": "performance",
+  "memory_mode": "ddr3",
+  "peripherals": {
+    "sdcard": "spi",
+    "ethernet": "none"
+  },
+  "feature_slug": "sd-spi_eth-none",
+  "software_capability": "full_application",
+  "peripheral_clocks": {
+    "sys_hz": 48000000,
+    "sd_init_divider": 120,
+    "sd_init_hz": 400000,
+    "sd_transfer_divider": 4,
+    "sd_transfer_hz": 12000000,
+    "rmii_ref_hz": null
+  },
+  "ethernet_buffers": {
+    "rx_slots": 0,
+    "tx_slots": 0,
+    "slot_bytes": 0,
+    "maximum_standard_frame_bytes": 0
+  },
+  "cpu_candidate": "dynamic_target",
+  "cpu_profile_selection": {
+    "schema": 1,
+    "profile": "performance",
+    "status": "accepted",
+    "candidate": "dynamic_target",
+    "clock_hz": 48000000,
+    "rtl_sha256": "771f520fcf3ff8f66cd168eaea84bc5924b39fa0e470cd5b1e35640a4809c252",
+    "evaluation": {
+      "batch_id": "20261001T005304.396625Z-cpu-eval",
+      "result_path": "docs/performance/cpu-evaluation/evaluations.json",
+      "result_sha256": "51912f510d1c8eb2e74714958be0bba7abf9b5e88dc5829baf09f47329b9d2e8",
+      "status": "candidate_beats_fresh_standard",
+      "clock_hz": 48000000,
+      "standard": {
+        "profile": "standard",
+        "repetitions": 3,
+        "coremark_mean": 109.12748165783437,
+        "coremark_per_mhz_mean": 2.2734892012048826,
+        "coremark_spread": 0.0,
+        "clock_hz": 48000000
+      },
+      "candidates": {
+        "dynamic": {
+          "status": "passed",
+          "repetitions": 3,
+          "coremark_mean": 111.48755404045154,
+          "coremark_per_mhz_mean": 2.3226573758427405,
+          "coremark_spread": 0.0,
+          "clock_hz": 48000000,
+          "rtl_sha256": "fbc1188d3db151ed57e44f81db17955f417cf977bb77b59abc3a177de1af2f4a"
+        },
+        "dynamic_target": {
+          "status": "passed",
+          "repetitions": 3,
+          "coremark_mean": 119.32391343090488,
+          "coremark_per_mhz_mean": 2.4859148631438517,
+          "coremark_spread": 0.0,
+          "clock_hz": 48000000,
+          "rtl_sha256": "771f520fcf3ff8f66cd168eaea84bc5924b39fa0e470cd5b1e35640a4809c252"
+        }
+      },
+      "winner": {
+        "coremark_mean": 119.32391343090488,
+        "standard_mean": 109.12748165783437,
+        "gain_coremark": 10.196431773070515,
+        "gain_percent": 9.346186570373593,
+        "bsram_used": 46,
+        "lut_used": 3656
+      }
+    },
+    "memory_budgets": {
+      "onchip_bios_rom_bytes": 24576,
+      "main_ram_bytes": 32768,
+      "sram_bytes": 8192,
+      "ddr3_l2_bytes": 8192
+    },
+    "generation_lock": "cpu-generator.lock.json"
+  },
+  "liteX_variant": "standard",
+  "sys_clk_hz": 48000000,
+  "uart_baud": 115200,
+  "status": "passed",
+  "base_source_fingerprint": "13514b43cf071198dad219374d1c2a5c8ab61e3c7ac04c2c3e52e8b8bd9f2411",
+  "source_fingerprint": "e2ce44f859e16236d1ed2ba058b29bbbb449d8af7922e1ccd9cefc8a7ef88c1d",
+  "started_utc": "2026-10-06T12:36:09.039163+00:00",
+  "locked_repositories": {
+    "litex": "58322a1d239a9eca8b93a8497f8945855d965f4f",
+    "migen": "e19524c963a8342952840983047557707fbe0b6a",
+    "litex-boards": "c0d9cdf11e20c8b774f4ee1154fddac6e1dca03a",
+    "litedram": "4c979d195aa0c60adcaf70374a52872028aaca63",
+    "liteeth": "013a6ad38c26317ac9588acd0660922981cc2a73",
+    "lwip": "77dcd25a72509eb83f72b033d219b1d40cd8eb95",
+    "liteiclink": "ad793817302490b04b3abc5c4de669594d3958e8",
+    "pythondata-cpu-vexriscv": "642ecfed1c84460555d6d803d660cc60cfc1ecb6",
+    "pythondata-software-picolibc": "6a13ccce7c575b32c102dd9dc52178505b81fe39",
+    "pythondata-software-compiler_rt": "6eb76609c9627bf26635e57c63fb22cda7115887",
+    "coremark": "1f483d5b8316753a742cbf5590caf5bd0a4e4777"
+  },
+  "tool_versions": {
+    "python": "3.12.14",
+    "riscv_gcc": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+    "gowin": "V1.9.12.04",
+    "openfpgaloader": "openFPGALoader v0.13.1"
+  },
+  "address_map": {
+    "bus_regions": {
+      "rom": {
+        "origin": "0x00000000",
+        "size_bytes": 32768,
+        "mode": "rx",
+        "cached": true,
+        "linker": false
+      },
+      "sram": {
+        "origin": "0x10000000",
+        "size_bytes": 4096,
+        "mode": "rwx",
+        "cached": true,
+        "linker": false
+      },
+      "main_ram": {
+        "origin": "0x40000000",
+        "size_bytes": 134217728,
+        "mode": "rwx",
+        "cached": true,
+        "linker": false
+      },
+      "ddr_diagnostic_ram": {
+        "origin": "0x20000000",
+        "size_bytes": 16384,
+        "mode": "rwx",
+        "cached": true,
+        "linker": false
+      },
+      "ddr_uncached": {
+        "origin": "0xc0000000",
+        "size_bytes": 134217728,
+        "mode": "rwx",
+        "cached": false,
+        "linker": false
+      }
+    },
+    "csr_locations": {}
+  },
+  "cpu_configuration": {
+    "liteX_variant": "standard",
+    "isa": "rv32im/ILP32",
+    "instruction_cache_bytes": 4096,
+    "data_cache_bytes": 4096,
+    "prediction": "dynamic_target",
+    "compressed": false,
+    "mul_div": true,
+    "single_cycle_mul_div": true,
+    "single_cycle_shift": true,
+    "bypass": true,
+    "debug": false,
+    "hardware_breakpoints": 0,
+    "csr_plugin_config": "small",
+    "pmp_regions": 0,
+    "pmp_granularity_bytes": 256,
+    "pmp_address_matching_modes": "na4,napot,tor",
+    "relaxed_pc_calculation": false,
+    "external_interrupt_array": true,
+    "dcache_relaxed_memory_translation_register": false,
+    "dcache_early_way_hits": true,
+    "atomics": false,
+    "cfu": false,
+    "clock_hz": 48000000,
+    "profile_basis": "standard",
+    "rtl_sha256": "771f520fcf3ff8f66cd168eaea84bc5924b39fa0e470cd5b1e35640a4809c252",
+    "candidate_generation": {
+      "schema": 1,
+      "candidate": "dynamic_target",
+      "status": "generated",
+      "generator_command": [
+        "sbt",
+        "--no-server",
+        "compile",
+        "runMain vexriscv.GenCoreDefault --hardwareBreakpointCount=0 --iCacheSize=4096 --dCacheSize=4096 --pmpRegions=0 --pmpGranularity=256 --pmpAddressMatchingModes=na4,napot,tor --mulDiv=true --cfu=false --singleCycleMulDiv=true --singleCycleShift=true --relaxedPcCalculation=false --bypass=true --externalInterruptArray=true --csrPluginConfig=small --atomics=false --compressedGen=false --dBusCachedRelaxedMemoryTranslationRegister=false --dBusCachedEarlyWaysHits=true --prediction=dynamic_target --outputFile=../../../../build/cpu-candidates/dynamic_target/VexRiscv"
+      ],
+      "generator_arguments": [
+        "--hardwareBreakpointCount=0",
+        "--iCacheSize=4096",
+        "--dCacheSize=4096",
+        "--pmpRegions=0",
+        "--pmpGranularity=256",
+        "--pmpAddressMatchingModes=na4,napot,tor",
+        "--mulDiv=true",
+        "--cfu=false",
+        "--singleCycleMulDiv=true",
+        "--singleCycleShift=true",
+        "--relaxedPcCalculation=false",
+        "--bypass=true",
+        "--externalInterruptArray=true",
+        "--csrPluginConfig=small",
+        "--atomics=false",
+        "--compressedGen=false",
+        "--dBusCachedRelaxedMemoryTranslationRegister=false",
+        "--dBusCachedEarlyWaysHits=true",
+        "--prediction=dynamic_target",
+        "--outputFile=../../../../build/cpu-candidates/dynamic_target/VexRiscv"
+      ],
+      "generator_revisions": {
+        "generator_commit": "642ecfed1c84460555d6d803d660cc60cfc1ecb6",
+        "submodule_commit": "b6118e5cc2a33323425df6455697139021d50c72",
+        "sbt": "1.9.7",
+        "scala": "2.11.12",
+        "spinalhdl": "1.9.4"
+      },
+      "tool_versions": {
+        "java": "1.8.0_432",
+        "java_executable": ".tools/java-8u432/jdk8u432-b06/bin/java",
+        "java_sha256": "abaaa90deadf51bd28921453baf2992b3dff6171bb7142f5bdd14ef269f7b245",
+        "sbt": "1.9.7",
+        "sbt_executable": ".tools/bin/sbt",
+        "sbt_sha256": "23543bc4597b552e8e2c27d695fe672ec235ab8a64f766b37828fb68c6d9d910",
+        "scala": "2.11.12",
+        "spinalhdl": "1.9.4"
+      },
+      "cpu_configuration": {
+        "isa": "rv32im/ILP32",
+        "instruction_cache_bytes": 4096,
+        "data_cache_bytes": 4096,
+        "mul_div": true,
+        "single_cycle_mul_div": true,
+        "single_cycle_shift": true,
+        "bypass": true,
+        "debug": false,
+        "hardware_breakpoints": 0,
+        "csr_plugin_config": "small",
+        "pmp_regions": 0,
+        "pmp_granularity_bytes": 256,
+        "pmp_address_matching_modes": "na4,napot,tor",
+        "relaxed_pc_calculation": false,
+        "external_interrupt_array": true,
+        "dcache_relaxed_memory_translation_register": false,
+        "dcache_early_way_hits": true,
+        "atomics": false,
+        "compressed": false,
+        "cfu": false,
+        "prediction": "dynamic_target",
+        "clock_hz": 48000000,
+        "profile_basis": "standard"
+      },
+      "rtl": "build/cpu-candidates/dynamic_target/VexRiscv.v",
+      "rtl_sha256": "771f520fcf3ff8f66cd168eaea84bc5924b39fa0e470cd5b1e35640a4809c252",
+      "generated_utc": "2026-10-01T01:18:34.881350+00:00"
+    }
+  },
+  "cpu_rtl": "build/cpu-candidates/dynamic_target/VexRiscv.v",
+  "synthesis_inputs": {
+    "run.tcl": "bc075be50aed55fdce38c60092da1e3c6198265341d2b712863199d0d11542a2",
+    "tang20k_performance_dynamic_target.cst": "2d278abec8526878bdacc61e3f17886249aa480339b3f3e7ef7ddba809b82a5c",
+    "tang20k_performance_dynamic_target.sdc": "b55b2198221bcfefe314e31116a1736eb4d0e647f0a7b9aa88898a8411f36181",
+    "tang20k_performance_dynamic_target.v": "51dc0b39f2aea820fec658cfe546c4a30000defc571ac8bf2a849c7b1f63cbdd",
+    "tang20k_performance_dynamic_target_ddr_diagnostic_ram.init": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tang20k_performance_dynamic_target_mem.init": "04263c7744fd42ac66ca095ce6e52b42f21f0ffdab2275f13906d264bf83ee1e",
+    "tang20k_performance_dynamic_target_rom.init": "518ad18d637738ecdc2e96dba291382c7f0076aa9f109657548c3aa7c467bb6b",
+    "tang20k_performance_dynamic_target_sram.init": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "build/cpu-candidates/dynamic_target/VexRiscv.v": "771f520fcf3ff8f66cd168eaea84bc5924b39fa0e470cd5b1e35640a4809c252"
+  },
+  "firmware": {
+    "elf": "build/peripheral-fit-trials/performance/sd-spi_eth-none-sram4k/firmware/demo.elf",
+    "binary": "build/peripheral-fit-trials/performance/sd-spi_eth-none-sram4k/firmware/demo.bin",
+    "binary_bytes": 38296,
+    "working_sram_bytes": 0,
+    "reserved_stack_bytes": 16384,
+    "sections": {
+      "NULL": {
+        "type": "00000000",
+        "address": 0,
+        "size": 0
+      },
+      ".text": {
+        "type": "PROGBITS",
+        "address": 1073741824,
+        "size": 33228
+      },
+      ".rodata": {
+        "type": "PROGBITS",
+        "address": 1073775052,
+        "size": 5020
+      },
+      ".preinit_array": {
+        "type": "PREINIT_ARRAY",
+        "address": 1073780072,
+        "size": 0
+      },
+      ".init_array": {
+        "type": "INIT_ARRAY",
+        "address": 1073780072,
+        "size": 0
+      },
+      ".fini_array": {
+        "type": "FINI_ARRAY",
+        "address": 1073780072,
+        "size": 0
+      },
+      ".data": {
+        "type": "PROGBITS",
+        "address": 1073780072,
+        "size": 48
+      },
+      ".bss": {
+        "type": "NOBITS",
+        "address": 1073780120,
+        "size": 2208
+      },
+      ".stack": {
+        "type": "NOBITS",
+        "address": 1207943168,
+        "size": 16384
+      },
+      ".riscv.attributes": {
+        "type": "RISCV_ATTRIBUTES",
+        "address": 0,
+        "size": 67
+      },
+      ".comment": {
+        "type": "PROGBITS",
+        "address": 0,
+        "size": 51
+      },
+      ".debug_line": {
+        "type": "PROGBITS",
+        "address": 0,
+        "size": 79308
+      },
+      ".debug_line_str": {
+        "type": "PROGBITS",
+        "address": 0,
+        "size": 7695
+      },
+      ".debug_info": {
+        "type": "PROGBITS",
+        "address": 0,
+        "size": 56169
+      },
+      ".debug_abbrev": {
+        "type": "PROGBITS",
+        "address": 0,
+        "size": 12331
+      },
+      ".debug_aranges": {
+        "type": "PROGBITS",
+        "address": 0,
+        "size": 1920
+      },
+      ".debug_str": {
+        "type": "PROGBITS",
+        "address": 0,
+        "size": 97879
+      },
+      ".debug_loclists": {
+        "type": "PROGBITS",
+        "address": 0,
+        "size": 39524
+      },
+      ".debug_rnglists": {
+        "type": "PROGBITS",
+        "address": 0,
+        "size": 3323
+      },
+      ".debug_macro": {
+        "type": "PROGBITS",
+        "address": 0,
+        "size": 36453
+      },
+      ".symtab": {
+        "type": "SYMTAB",
+        "address": 0,
+        "size": 6096
+      },
+      ".strtab": {
+        "type": "STRTAB",
+        "address": 0,
+        "size": 3087
+      },
+      ".shstrtab": {
+        "type": "STRTAB",
+        "address": 0,
+        "size": 250
+      }
+    },
+    "main_ram_base": 1073741824,
+    "main_ram_size": 134217728
+  },
+  "firmware_sha256": "ff658c08afb7d2fcb0e32e5d954a338777fb1cdcde05d302d32a109ca22cc0b1",
+  "bios_size": 32768,
+  "bitstream": "build/peripheral-fit-trials/performance/sd-spi_eth-none-sram4k/bitstream.fs",
+  "bitstream_bytes": 7261998,
+  "bitstream_sha256": "ea54fc70df751ea5073774079ea8351fa09b044d51d2fe48081c2b870528ec33",
+  "cpu_variant": "standard",
+  "memory": {
+    "mode": "ddr3",
+    "main_ram_base": 1073741824,
+    "main_ram_bytes": 134217728,
+    "ddr_physical_bytes": 134217728,
+    "ddr_part": "H5TQ1G63EFR",
+    "ddr_geometry": {
+      "row_bits": 13,
+      "bank_bits": 3,
+      "column_bits": 10
+    },
+    "l2_cache_bytes": 8192,
+    "ddr_ck_hz": 96000000,
+    "uncached_alias_base": "0xc0000000",
+    "diagnostic_ram": {
+      "base": "0x20000000",
+      "bytes": 16384
+    }
+  },
+  "device": "GW2A-LV18PG256C8/I7",
+  "gateware_results": {
+    "profile": "performance",
+    "memory_mode": "ddr3",
+    "device": "GW2A-LV18PG256C8/I7",
+    "resources": {
+      "logic": {
+        "used": 12534,
+        "capacity": 20736
+      },
+      "lut": {
+        "used": 8267,
+        "source": "build/peripheral-fit-trials/performance/sd-spi_eth-none-sram4k/gateware/impl/pnr/project.rpt.txt"
+      },
+      "alu": {
+        "used": 883,
+        "source": "build/peripheral-fit-trials/performance/sd-spi_eth-none-sram4k/gateware/impl/pnr/project.rpt.txt"
+      },
+      "registers": {
+        "used": 4055,
+        "capacity": 16173
+      },
+      "bsram": {
+        "used": 46,
+        "capacity": 46
+      },
+      "dsp": {
+        "used": null,
+        "status": "unavailable",
+        "detail": "Gowin synthesis resource report lists '-' for DSP NUMBER",
+        "source": "build/peripheral-fit-trials/performance/sd-spi_eth-none-sram4k/gateware/impl/gwsynthesis/project_syn_resource.html"
+      }
+    },
+    "timing": {
+      "constraint_mhz": 48.0,
+      "actual_fmax_mhz": 52.568,
+      "worst_setup_slack_ns": 1.631,
+      "worst_hold_slack_ns": 0.215,
+      "worst_recovery_slack_ns": 1.767,
+      "worst_removal_slack_ns": 1.025,
+      "setup_violated_endpoints": 0,
+      "analyzed_paths": 64406,
+      "analyzed_endpoints": 16278,
+      "no_timing_path_messages": [
+        "No timing paths to get frequency of rPLL/CLKOUTP.default_gen_clk!",
+        "No timing paths to get frequency of rPLL/CLKOUTD.default_gen_clk!",
+        "No timing paths to get frequency of rPLL/CLKOUTD3.default_gen_clk!"
+      ],
+      "generated_clocks": {
+        "ddr_ck_96mhz": {
+          "period_ns": 10.417,
+          "target_mhz": 96.0,
+          "frequency_mhz": 96.0
+        },
+        "sys2x_clk": {
+          "period_ns": 10.417,
+          "target_mhz": 96.0,
+          "frequency_mhz": 96.0
+        },
+        "sys_clk": {
+          "period_ns": 20.833,
+          "target_mhz": 48.0,
+          "frequency_mhz": 48.0
+        },
+        "rPLL/CLKOUTP.default_gen_clk": {
+          "period_ns": 10.417,
+          "target_mhz": 96.0,
+          "frequency_mhz": 96.0
+        },
+        "rPLL/CLKOUTD.default_gen_clk": {
+          "period_ns": 20.833,
+          "target_mhz": 48.0,
+          "frequency_mhz": 48.0
+        },
+        "rPLL/CLKOUTD3.default_gen_clk": {
+          "period_ns": 31.25,
+          "target_mhz": 32.0,
+          "frequency_mhz": 32.0
+        }
+      }
+    },
+    "evidence": {
+      "pnr_resource_report": "build/peripheral-fit-trials/performance/sd-spi_eth-none-sram4k/gateware/impl/pnr/project.rpt.txt",
+      "timing_report": "build/peripheral-fit-trials/performance/sd-spi_eth-none-sram4k/gateware/impl/pnr/project.tr",
+      "synthesis_resource_report": "build/peripheral-fit-trials/performance/sd-spi_eth-none-sram4k/gateware/impl/gwsynthesis/project_syn_resource.html"
+    },
+    "rmii_clock_constraint": {
+      "period_ns": null,
+      "frequency_mhz": null
+    }
+  },
+  "finished_utc": "2026-10-06T12:38:12.440090+00:00",
+  "timing_gate": "passed",
+  "experimental_override": {
+    "working_sram_size": 4096,
+    "registered_build": false,
+    "purpose": "isolated compact working SRAM fitting experiment"
+  }
+}

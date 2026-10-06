@@ -7,6 +7,17 @@
 #include <libbase/uart.h>
 #include <generated/csr.h>
 
+#if PROJECT_PERIPHERAL_DIAGNOSTIC
+#include "peripherals/peripheral_diag.h"
+#else
+#if PROJECT_SDCARD_SPI
+#include "peripherals/sdcard_app.h"
+#endif
+#if PROJECT_ETHERNET_RMII
+#include "peripherals/ethernet_lwip.h"
+#endif
+#endif
+
 #define SYS_CLOCK_HZ 48000000u
 #define SAMPLE_CYCLES (SYS_CLOCK_HZ / 1000u)
 
@@ -25,12 +36,47 @@ static void print_help(void)
     puts("  buttons         show synchronized and debounced S0-S3 masks");
     puts("  leds <hex-mask> set LEDs 0-5 (0x00 through 0x3f), manual mode");
     puts("  demo            mirror S0-S3 to LEDs 0-3; LED 5 heartbeats");
+#if PROJECT_PERIPHERAL_DIAGNOSTIC
+    puts("  periph status   show the fitted peripheral controller CSRs");
+#else
+#if PROJECT_SDCARD_SPI
+    puts("  sd status       initialize card and show CID/CSD/capacity/clocks");
+    puts("  sd ls [/path]   list a FAT16/FAT32/exFAT directory");
+    puts("  sd read /path   stream-read a file and report size/CRC32");
+    puts("  sd roundtrip N  create a new test file (N=512, 4096, or 1048576)");
+#endif
+#if PROJECT_ETHERNET_RMII
+    puts("  net status      show PHY, link, address and packet/error counters");
+    puts("  net restart     restart PHY negotiation and clear power-down/isolation");
+    puts("  net static IP MASK GATEWAY | net dhcp | net mac XX:XX:XX:XX:XX:XX");
+#endif
+#endif
 }
 
 static void handle_line(void)
 {
     uint8_t mask = 0;
     app_command_t command = app_parse_command(line_parser.text, &mask);
+
+#if PROJECT_PERIPHERAL_DIAGNOSTIC
+    if (peripheral_diag_command(line_parser.text)) {
+        fputs("gpio> ", stdout);
+        return;
+    }
+#else
+#if PROJECT_SDCARD_SPI
+    if (sdcard_app_command(line_parser.text)) {
+        fputs("gpio> ", stdout);
+        return;
+    }
+#endif
+#if PROJECT_ETHERNET_RMII
+    if (ethernet_app_command(line_parser.text)) {
+        fputs("gpio> ", stdout);
+        return;
+    }
+#endif
+#endif
 
     switch (command) {
     case APP_CMD_EMPTY:
@@ -98,6 +144,16 @@ int main(void)
     puts("System clock: 48 MHz; UART: 115200 baud");
     print_help();
     puts("GPIO demo ready");
+#if PROJECT_PERIPHERAL_DIAGNOSTIC
+    peripheral_diag_init();
+#else
+#if PROJECT_SDCARD_SPI
+    sdcard_app_init();
+#endif
+#if PROJECT_ETHERNET_RMII
+    ethernet_app_init();
+#endif
+#endif
     fputs("gpio> ", stdout);
 
     for (;;) {
@@ -109,6 +165,10 @@ int main(void)
         elapsed_cycles = previous_timer - current_timer;
         previous_timer = current_timer;
         sample_cycles += elapsed_cycles;
+
+#if PROJECT_ETHERNET_RMII && !PROJECT_PERIPHERAL_DIAGNOSTIC
+        ethernet_app_poll();
+#endif
 
         while (sample_cycles >= SAMPLE_CYCLES) {
             sample_cycles -= SAMPLE_CYCLES;

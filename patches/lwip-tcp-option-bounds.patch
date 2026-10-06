@@ -1,0 +1,21 @@
+diff --git a/src/core/tcp_in.c b/src/core/tcp_in.c
+--- a/src/core/tcp_in.c
++++ b/src/core/tcp_in.c
+@@ -1903,11 +1903,17 @@ static u8_t
+ tcp_get_next_optbyte(void)
+ {
+   u16_t optidx = tcp_optidx++;
++  /* A malformed option can request more bytes than tcphdr_optlen.  Some
++     option handlers read fields before checking the declared option length,
++     so reject each out-of-range byte before indexing either pbuf. */
++  if (optidx >= tcphdr_optlen) {
++    return LWIP_TCP_OPT_EOL;
++  }
+   if ((tcphdr_opt2 == NULL) || (optidx < tcphdr_opt1len)) {
+     u8_t *opts = (u8_t *)tcphdr + TCP_HLEN;
+     return opts[optidx];
+   } else {
+     u8_t idx = (u8_t)(optidx - tcphdr_opt1len);
+     return tcphdr_opt2[idx];
+   }
+ }

@@ -1,0 +1,7 @@
+{"utc": "2026-10-06T12:17:15.441652+00:00", "event": "sram_programming_started", "bitstream_sha256": "2059e523ad232a75276bb64f5532a295c69ad815df55f0440944a22cef801fab"}
+{"utc": "2026-10-06T12:17:19.413650+00:00", "event": "sram_programming_completed"}
+{"utc": "2026-10-06T12:17:24.478162+00:00", "event": "uart_command_started", "command": "sd status"}
+{"utc": "2026-10-06T12:17:25.531236+00:00", "event": "uart_command_completed", "command": "sd status", "response_sha256": "07c3a8d092772dff70221555a5b2fef8bad46c5685c1daa944d96170a6ea8d38"}
+{"utc": "2026-10-06T12:17:25.531327+00:00", "event": "uart_command_started", "command": "sd ls"}
+{"utc": "2026-10-06T12:17:26.584341+00:00", "event": "uart_command_completed", "command": "sd ls", "response_sha256": "9424fc202f0378a0348bebb966d228e88d8b48202d832eca2ca8440642af467c"}
+{"utc": "2026-10-06T12:17:26.585208+00:00", "event": "session_finished", "status": "failed"}

@@ -41,7 +41,7 @@ def tool_environment():
 def main(argv=None):
     args = list(sys.argv[1:] if argv is None else argv)
     if not args:
-        print("usage: make build|load|run|compare|test|benchmark-build|benchmark-run|benchmark-report|ddr-test-build|ddr-test-run|ddr-test-report", file=sys.stderr)
+        print("usage: make build|load|run|compare|test|peripheral-build|peripheral-run|peripheral-report|benchmark-build|benchmark-run|benchmark-report|ddr-test-build|ddr-test-run|ddr-test-report", file=sys.stderr)
         return 2
     command, *values = args
     targets = {
@@ -53,18 +53,43 @@ def main(argv=None):
         "benchmark-build": ("scripts/benchmark_build.py", ["--memory", (values[:1] or ["onchip"])[0], *( ["--profile", values[1]] if len(values) > 1 else [])]),
         "benchmark-run": ("scripts/benchmark_run.py", values),
         "benchmark-report": ("scripts/benchmark_report.py", []),
-        "ddr-test-build": ("scripts/ddr_test_build.py", [values[0].lower() if values else "all", "--stress-seconds", values[1] if len(values) > 1 else "1800"]),
+        "ddr-test-build": ("scripts/ddr_test_build.py", [
+            values[0].lower() if values else "all", "--stress-seconds", values[1] if len(values) > 1 else "1800",
+            "--sdcard", values[2] if len(values) > 2 else "none",
+            "--ethernet", values[3] if len(values) > 3 else "none",
+        ]),
         "ddr-test-run": ("scripts/ddr_test_run.py", [
             values[0].lower() if values else "all",
             values[1] if len(values) > 1 else "",
             "--training-runs", values[2] if len(values) > 2 else "10",
             "--stress-seconds", values[3] if len(values) > 3 else "1800",
+            "--sdcard", values[4] if len(values) > 4 else "none",
+            "--ethernet", values[5] if len(values) > 5 else "none",
+            *( ["--board-serial", values[6]] if len(values) > 6 and values[6] else []),
+            *( ["--board-revision", values[7]] if len(values) > 7 and values[7] else []),
         ]),
         "ddr-test-report": ("scripts/ddr_test_report.py", []),
         "cpu-candidate-build": ("scripts/cpu_candidate_build.py", []),
         "cpu-candidate-run": ("scripts/cpu_candidate_run.py", [values[0] if values else ""]),
         "maxperf-build": ("scripts/maxperf_candidates.py", ["--memory", (values[:1] or ["onchip"])[0]]),
         "maxperf-run": ("scripts/maxperf_run.py", [*(values[:1] or ["onchip"]), *(values[1:2] or [""])]),
+        "peripheral-build": ("scripts/peripheral_build.py", [
+            "--profile", (values[:1] or ["standard"])[0],
+            "--memory", (values[1:2] or ["ddr3"])[0],
+            "--sdcard", (values[2:3] or ["none"])[0],
+            "--ethernet", (values[3:4] or ["none"])[0],
+        ]),
+        "peripheral-run": ("scripts/peripheral_run.py", [
+            "--profile", (values[:1] or ["standard"])[0],
+            "--port", (values[1:2] or [""])[0],
+            "--memory", (values[2:3] or ["ddr3"])[0],
+            "--sdcard", (values[3:4] or ["none"])[0],
+            "--ethernet", (values[4:5] or ["none"])[0],
+            "--board-serial", (values[5:6] or [""])[0],
+            "--board-revision", (values[6:7] or [""])[0],
+            *(["--evidence-session", values[7]] if len(values) > 7 and values[7] else []),
+        ]),
+        "peripheral-report": ("scripts/peripheral_report.py", []),
     }
     if command not in targets:
         print(f"unknown command {command!r}", file=sys.stderr)
@@ -104,6 +129,12 @@ def main(argv=None):
         return 2
     if command == "maxperf-run" and not script_args[1]:
         print("make maxperf-run requires an explicit PORT", file=sys.stderr)
+        return 2
+    if command == "peripheral-run" and (len(values) < 2 or not values[1]):
+        print("make peripheral-run requires an explicit PORT", file=sys.stderr)
+        return 2
+    if command == "peripheral-run" and (len(values) < 7 or not values[5] or not values[6]):
+        print("make peripheral-run requires BOARD_SERIAL and BOARD_REVISION verified for the attached Dock", file=sys.stderr)
         return 2
     return subprocess.run([str(VENV_PYTHON), str(ROOT / script), *script_args], cwd=ROOT, env=env).returncode
 

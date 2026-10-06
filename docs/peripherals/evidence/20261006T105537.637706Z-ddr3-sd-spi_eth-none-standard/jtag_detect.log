@@ -1,0 +1,3 @@
+empty
+unable to open ftdi device: -6 (ftdi_usb_reset failed)
+JTAG init failed with: unable to open ftdi device

@@ -1,0 +1,11 @@
+openFPGALoader --cable ft2232 --bitstream /home/user/git/fpga/sipeedtangprimer20k-riscv/build/peripherals/ddr3/standard/sd-spi_eth-none/bitstream.fs
+openFPGALoader --cable ft2232 --bitstream /home/user/git/fpga/sipeedtangprimer20k-riscv/build/peripherals/ddr3/standard/sd-spi_eth-none/bitstream.fs
+openFPGALoader --cable ft2232 --bitstream /home/user/git/fpga/sipeedtangprimer20k-riscv/build/peripherals/ddr3/standard/sd-spi_eth-none/bitstream.fs
+openFPGALoader --cable ft2232 --bitstream /home/user/git/fpga/sipeedtangprimer20k-riscv/build/peripherals/ddr3/standard/sd-spi_eth-none/bitstream.fs
+openFPGALoader --cable ft2232 --bitstream /home/user/git/fpga/sipeedtangprimer20k-riscv/build/peripherals/ddr3/standard/sd-spi_eth-none/bitstream.fs
+openFPGALoader --cable ft2232 --bitstream /home/user/git/fpga/sipeedtangprimer20k-riscv/build/peripherals/ddr3/standard/sd-spi_eth-none/bitstream.fs
+openFPGALoader --cable ft2232 --bitstream /home/user/git/fpga/sipeedtangprimer20k-riscv/build/peripherals/ddr3/standard/sd-spi_eth-none/bitstream.fs
+openFPGALoader --cable ft2232 --bitstream /home/user/git/fpga/sipeedtangprimer20k-riscv/build/peripherals/ddr3/standard/sd-spi_eth-none/bitstream.fs
+openFPGALoader --cable ft2232 --bitstream /home/user/git/fpga/sipeedtangprimer20k-riscv/build/peripherals/ddr3/standard/sd-spi_eth-none/bitstream.fs
+openFPGALoader --cable ft2232 --bitstream /home/user/git/fpga/sipeedtangprimer20k-riscv/build/peripherals/ddr3/standard/sd-spi_eth-none/bitstream.fs
+openFPGALoader --cable ft2232 --bitstream /home/user/git/fpga/sipeedtangprimer20k-riscv/build/peripherals/ddr3/standard/sd-spi_eth-none/bitstream.fs

@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "session_id": "20261006T105537.637706Z-ddr3-sd-spi_eth-none-standard",
+  "status": "failed",
+  "started_utc": "2026-10-06T10:55:38.134940+00:00",
+  "finished_utc": "2026-10-06T10:55:38.172128+00:00",
+  "board": {
+    "model": "Sipeed Tang Primer 20K",
+    "revision": "core-v3961_Dock-v3714",
+    "serial": null,
+    "serial_status": "not_printed_user_confirmed",
+    "identity_basis": "user_confirmed_attached_board_revision"
+  },
+  "build": {
+    "profile": "standard",
+    "memory": "ddr3",
+    "sdcard": "spi",
+    "ethernet": "none",
+    "source_fingerprint": "1ce33dde02e51266722fbd89905490f62ec1b4729303ed49d09193dae797dc5f",
+    "bitstream_sha256": "7bd6d39fed396aa72d36eca61f77b4c977f8b3eb94c4c232676cc194c8bab674",
+    "firmware_sha256": "f19df9a0e53574c7b48820516bf45937e8cee8688de842b646ce6c2f81d5947c"
+  },
+  "criteria": {
+    "ddr_qualification": {
+      "status": "failed",
+      "measurements": {
+        "training_passes": 1,
+        "tested_bytes": 0,
+        "pattern_errors": 0,
+        "cache_visibility_errors": 0,
+        "stress_seconds": 0,
+        "stress_seconds_requested": 1800,
+        "board_serial": "unavailable",
+        "board_revision": "core-v3961_Dock-v3714"
+      },
+      "evidence": [
+        "uart_rx",
+        "uart_tx",
+        "programmer_log",
+        "ddr_session"
+      ]
+    }
+  },
+  "artifacts": [
+    {
+      "name": "uart_rx",
+      "path": "uart_rx.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "uart_tx",
+      "path": "uart_tx.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "programmer_log",
+      "path": "programmer.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "ddr_session",
+      "path": "ddr_session.json",
+      "bytes": 4674,
+      "sha256": "08264a8c1759078646e84cdb0bb405dc7f1dc3e6467b25d068ddceda832ce9a4"
+    }
+  ],
+  "session_record": "build/peripherals/ddr3/standard/sd-spi_eth-none/diagnostics/sessions/20261006T105537.637706Z-ddr3-sd-spi_eth-none-standard/session.json"
+}

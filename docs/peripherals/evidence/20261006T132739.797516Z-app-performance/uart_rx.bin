@@ -1,0 +1,52 @@
+
+[1m        __   _ __      _  __[0m
+[1m       / /  (_) /____ | |/_/[0m
+[1m      / /__/ / __/ -_)>  <[0m
+[1m     /____/_/\__/\__/_/|_|[0m
+[1m   Build your hardware, easily![0m
+
+ (c) Copyright 2012-2026 Enjoy-Digital
+ (c) Copyright 2007-2015 M-Labs
+
+ BIOS CRC passed (50a18e39)
+
+ LiteX git sha1: 58322a1d2
+
+--================ [1mSoC[0m =================--
+[1mCPU[0m:		VexRiscv @ 48MHz
+[1mBUS[0m:		wishbone 32-bit data/32-bit addr
+[1mCSR[0m:		32-bit data big ordering
+[1mROM[0m:		24.0KiB
+[1mSRAM[0m:		8.0KiB
+[1mMAIN RAM[0m:	32.0KiB
+
+--=========== [1mInitialization[0m ===========--
+Memtest at 0x40000000 (32.0KiB)...
+  Write: 0x40000000-0x40000000 0B     Write: 0x40000000-0x40008000 32.0KiB   
+   Read: 0x40000000-0x40000000 0B      Read: 0x40000000-0x40008000 32.0KiB   
+Memtest OK
+Memspeed at 0x40000000 (Sequential, 32.0KiB)...
+  Write speed: 84.1MiB/s
+   Read speed: 41.1MiB/s
+--================ [1mBoot[0m ================--
+Booting from serial...
+Press Q or ESC to abort boot completely.
+sL5DdSMmkekro
+KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKExecuting booted program at 0x40000000
+
+--============== [1mLiftoff![0m ==============--
+Sipeed Tang Primer 20K with standard Dock
+CPU profile: performance
+System clock: 48 MHz; UART: 115200 baud
+Commands:
+  help            show commands
+  buttons         show synchronized and debounced S0-S3 masks
+  leds <hex-mask> set LEDs 0-5 (0x00 through 0x3f), manual mode
+  demo            mirror S0-S3 to LEDs 0-3; LED 5 heartbeats
+  periph status   show the fitted peripheral controller CSRs
+GPIO demo ready
+Peripheral diagnostic firmware; full FAT/network services are not linked in this on-chip image.
+gpio> Peripheral diagnostic: profile=performance SD_SPI=1 ETHERNET_RMII=1
+LiteX SPI SD controller: present (CSR generated)
+LiteEth MAC: present at 0x80000000; RX slots=2 TX slots=2 slot bytes=2048
+gpio> 

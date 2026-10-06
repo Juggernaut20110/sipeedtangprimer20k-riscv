@@ -1,0 +1,239 @@
+{"utc": "2026-10-06T13:10:49.481778+00:00", "event": "sram_programming_started", "bitstream_sha256": "44ce860c38445521e88b681c5d22f8791a39a331273d0d17b14496729bb143a8"}
+{"utc": "2026-10-06T13:10:53.453249+00:00", "event": "sram_programming_completed"}
+{"utc": "2026-10-06T13:11:08.044110+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:08.094423+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3bb020dec6800d161f8ede48d927f3f6173c867e3d1fda3ab56d7393bf58e89b"}
+{"utc": "2026-10-06T13:11:08.094511+00:00", "event": "uart_command_started", "command": "net dhcp"}
+{"utc": "2026-10-06T13:11:08.144780+00:00", "event": "uart_command_completed", "command": "net dhcp", "response_sha256": "3c615096f91cd59c4336bd94766bbc195ff0454f36fe06ac44feae7c27b5ddac"}
+{"utc": "2026-10-06T13:11:08.144857+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:08.195108+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "eb2c222c51424f46d9070cd46635434b1a586e922a0fbb259ef3dcdb8039cacf"}
+{"utc": "2026-10-06T13:11:09.195631+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:09.245923+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:10.246201+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:10.296554+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:11.296773+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:11.347089+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:12.347324+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:12.397669+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:13.397921+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:13.448280+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:14.448539+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:14.498822+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:15.499073+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:15.599748+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:16.599954+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:16.650284+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:17.650488+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:17.700842+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:18.701075+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:18.751419+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:19.751668+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:19.802022+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:20.802250+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:20.852540+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:21.852739+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:21.903015+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:22.903268+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:22.953969+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:23.954166+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:24.004490+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:25.004780+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:25.105468+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:26.105809+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:26.156288+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:27.156582+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:27.207060+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:28.207338+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:28.257818+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:29.258116+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:29.308682+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:30.308976+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:30.359367+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:31.359617+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:31.410045+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:32.410331+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:32.460858+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:33.461339+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:33.511871+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:34.512160+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:34.562595+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:35.562932+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:35.613533+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:36.613825+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:36.664260+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:37.664543+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:37.714945+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:38.715195+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:38.765540+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:39.765768+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:39.816111+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:40.816354+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:40.866691+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:41.866972+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:41.917307+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:42.917572+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:42.968281+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:43.968515+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:44.068996+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:45.069234+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:45.119529+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:46.119754+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:46.170054+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:47.170300+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:47.220659+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:48.220892+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:48.271235+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:49.271478+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:49.321840+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:50.322060+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:50.372374+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:51.372630+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:51.422991+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:52.423202+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:52.473534+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:53.473796+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:53.574311+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:54.574581+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:54.624992+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:55.625242+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:55.675645+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:56.675938+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:56.726403+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:57.726672+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:57.776971+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:58.777176+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:58.827494+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:11:59.827733+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:11:59.878038+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:00.878291+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:00.928647+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:01.928874+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:01.979504+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:02.979786+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:03.080302+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:04.080565+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:04.130903+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:05.131142+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:05.181472+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:06.181721+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:06.232024+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:07.232267+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:07.282693+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:08.282938+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:08.333233+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:09.333462+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:09.384016+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:10.384243+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:10.434588+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:11.434841+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:11.485197+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:12.485434+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:12.585953+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:13.586230+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:13.636652+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:14.636929+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:14.687483+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:15.687771+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:15.738116+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:16.738350+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:16.788690+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:17.788933+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:17.839307+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:18.839511+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:18.889824+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:19.890041+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:19.940554+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:20.940787+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:20.991185+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:21.991450+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:22.091945+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:23.092196+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:23.142655+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:24.142954+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:24.193406+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:25.193683+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:25.244014+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:26.244245+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:26.294560+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:27.294770+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:27.345070+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:28.345324+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:28.395849+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:29.396067+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:29.446377+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:30.446594+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:30.496915+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:31.497114+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:31.597603+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:32.597829+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:32.648182+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:33.648428+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:33.698751+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:34.698990+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:34.749343+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:35.749580+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:35.799929+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:36.800179+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:36.850566+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:37.850840+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:37.901162+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:38.901406+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:38.951694+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:39.951915+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:40.002232+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:41.002455+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:41.103055+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:42.103354+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:42.153756+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:43.153998+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:43.204338+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:44.204519+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:44.254812+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:45.255039+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:45.305406+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:46.305675+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:46.356064+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:47.356313+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:47.406595+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:48.406809+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:48.457128+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:49.457376+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:49.507766+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:50.508009+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:50.608505+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:51.608763+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:51.659096+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:52.659327+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:52.709635+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:53.709877+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:53.760191+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:54.760393+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:54.810764+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:55.810980+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:55.861333+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:56.861562+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:56.912034+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:57.912314+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:57.962783+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:12:58.963087+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:12:59.013587+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:13:00.013805+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:13:00.114436+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:13:01.114788+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:13:01.165266+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:13:02.165459+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:13:02.216033+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:13:03.216408+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:13:03.266916+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:13:04.267278+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:13:04.317808+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:13:05.318136+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:13:05.368545+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:13:06.368814+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:13:06.419158+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:13:07.419428+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:13:07.469759+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:13:08.469971+00:00", "event": "uart_command_started", "command": "net status"}
+{"utc": "2026-10-06T13:13:08.520294+00:00", "event": "uart_command_completed", "command": "net status", "response_sha256": "3ec54f8dfa2c0b5841ab118dafc48ba422872759d39a7f2f826849014fe2dd48"}
+{"utc": "2026-10-06T13:13:08.520443+00:00", "event": "uart_command_started", "command": "net stop"}
+{"utc": "2026-10-06T13:13:08.570750+00:00", "event": "uart_command_completed", "command": "net stop", "response_sha256": "7fb5082eb0960dc849e49a94d3d6b340402e6d08b97ea329ed5fe9a78b8c4c04"}
+{"utc": "2026-10-06T13:13:08.571470+00:00", "event": "session_finished", "status": "failed"}

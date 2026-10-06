@@ -1,0 +1,39 @@
+{
+  "started_utc": "2026-10-06T13:13:08.883210+00:00",
+  "board": {
+    "model": "Sipeed Tang Primer 20K",
+    "revision": "core-v3961_Dock-v3714",
+    "serial": null,
+    "serial_status": "not_printed_user_confirmed",
+    "identity_basis": "user_confirmed_attached_board_revision"
+  },
+  "command": [
+    "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/bin/openFPGALoader",
+    "--board",
+    "tangprimer20k",
+    "--write-sram",
+    "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/peripheral-idle/impl/pnr/peripheral_idle.fs"
+  ],
+  "idle_bitstream_sha256": "20c4f1f7be50e692b53371dba25c833522562db445c2b75e6c9cf2cf1d6d3784",
+  "safe_outputs": {
+    "ddr_reset_n": 0,
+    "ddr_cke": 0,
+    "ddr_cs": 1,
+    "ddr_ck": 0,
+    "ddr_odt": 0,
+    "sd_cs": 1,
+    "sd_clk": 0,
+    "sd_mosi": 1,
+    "phy_reset_n": 0,
+    "eth_txen": 0,
+    "eth_txd": 0,
+    "eth_mdc": 0,
+    "uart_tx": 1
+  },
+  "flash_programming": false,
+  "status": "passed",
+  "programmer_exit_code": 0,
+  "uart_quiet_seconds": 5.00724560796516,
+  "uart_bytes": 0,
+  "finished_utc": "2026-10-06T13:13:16.424976+00:00"
+}

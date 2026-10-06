@@ -1,0 +1,124 @@
+{
+  "profile": "standard",
+  "memory_mode": "ddr3",
+  "peripherals": {
+    "sdcard": "spi",
+    "ethernet": "rmii"
+  },
+  "feature_slug": "sd-spi_eth-rmii",
+  "software_capability": "full_application",
+  "peripheral_clocks": {
+    "sys_hz": 48000000,
+    "sd_init_divider": 120,
+    "sd_init_hz": 400000,
+    "sd_transfer_divider": 4,
+    "sd_transfer_hz": 12000000,
+    "rmii_ref_hz": 50000000
+  },
+  "ethernet_buffers": {
+    "rx_slots": 2,
+    "tx_slots": 2,
+    "slot_bytes": 2048,
+    "maximum_standard_frame_bytes": 1518
+  },
+  "cpu_candidate": null,
+  "cpu_profile_selection": null,
+  "liteX_variant": "standard",
+  "sys_clk_hz": 48000000,
+  "uart_baud": 115200,
+  "status": "failed",
+  "base_source_fingerprint": "12383f98120ab8d314824bd15d183047bd989b8a1167bd5f9c5318ff23df1dd9",
+  "source_fingerprint": "9e0a0d2d333b0475c7fd5c687e4c93688f43f2b2ca33205dd64975469e8348d4",
+  "started_utc": "2026-10-06T12:26:40.585496+00:00",
+  "locked_repositories": {
+    "litex": "58322a1d239a9eca8b93a8497f8945855d965f4f",
+    "migen": "e19524c963a8342952840983047557707fbe0b6a",
+    "litex-boards": "c0d9cdf11e20c8b774f4ee1154fddac6e1dca03a",
+    "litedram": "4c979d195aa0c60adcaf70374a52872028aaca63",
+    "liteeth": "013a6ad38c26317ac9588acd0660922981cc2a73",
+    "lwip": "77dcd25a72509eb83f72b033d219b1d40cd8eb95",
+    "liteiclink": "ad793817302490b04b3abc5c4de669594d3958e8",
+    "pythondata-cpu-vexriscv": "642ecfed1c84460555d6d803d660cc60cfc1ecb6",
+    "pythondata-software-picolibc": "6a13ccce7c575b32c102dd9dc52178505b81fe39",
+    "pythondata-software-compiler_rt": "6eb76609c9627bf26635e57c63fb22cda7115887",
+    "coremark": "1f483d5b8316753a742cbf5590caf5bd0a4e4777"
+  },
+  "tool_versions": {
+    "python": "3.12.14",
+    "riscv_gcc": "exit 0: riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0",
+    "gowin": "version recorded from successful Gowin PnR report",
+    "openfpgaloader": "openFPGALoader v0.13.1"
+  },
+  "address_map": {
+    "bus_regions": {
+      "rom": {
+        "origin": "0x00000000",
+        "size_bytes": 24576,
+        "mode": "rx",
+        "cached": true,
+        "linker": false
+      },
+      "sram": {
+        "origin": "0x10000000",
+        "size_bytes": 8192,
+        "mode": "rwx",
+        "cached": true,
+        "linker": false
+      },
+      "main_ram": {
+        "origin": "0x40000000",
+        "size_bytes": 134217728,
+        "mode": "rwx",
+        "cached": true,
+        "linker": false
+      },
+      "ddr_diagnostic_ram": {
+        "origin": "0x20000000",
+        "size_bytes": 16384,
+        "mode": "rwx",
+        "cached": true,
+        "linker": false
+      },
+      "ddr_uncached": {
+        "origin": "0xc0000000",
+        "size_bytes": 134217728,
+        "mode": "rwx",
+        "cached": false,
+        "linker": false
+      },
+      "ethmac": {
+        "origin": "0x80000000",
+        "size_bytes": 8192,
+        "mode": "rw",
+        "cached": false,
+        "linker": true
+      },
+      "ethmac_rx": {
+        "origin": "0x80000000",
+        "size_bytes": 4096,
+        "mode": "r",
+        "cached": false,
+        "linker": false
+      },
+      "ethmac_tx": {
+        "origin": "0x80001000",
+        "size_bytes": 4096,
+        "mode": "w",
+        "cached": false,
+        "linker": false
+      }
+    },
+    "csr_locations": {}
+  },
+  "cpu_configuration": {
+    "liteX_variant": "standard",
+    "isa": "rv32i2p0_m",
+    "instruction_cache_bytes": 4096,
+    "data_cache_bytes": 4096,
+    "prediction": "static",
+    "compressed": false
+  },
+  "cpu_rtl": null,
+  "error": "OSError: Error occured during Gowin's script execution.",
+  "finished_utc": "2026-10-06T12:30:21.108464+00:00"
+}

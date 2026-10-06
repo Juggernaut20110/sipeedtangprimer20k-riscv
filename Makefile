@@ -1,4 +1,4 @@
-.PHONY: setup doctor build load run compare test benchmark-build benchmark-run benchmark-report ddr-test-build ddr-test-run ddr-test-report cpu-candidate-build cpu-candidate-run maxperf-build maxperf-run clean
+.PHONY: setup doctor build load run compare test benchmark-build benchmark-run benchmark-report ddr-test-build ddr-test-run ddr-test-report cpu-candidate-build cpu-candidate-run maxperf-build maxperf-run peripheral-build peripheral-run peripheral-report clean
 
 setup:
 	python3 scripts/setup.py
@@ -31,10 +31,10 @@ benchmark-report:
 	python3 scripts/project.py benchmark-report
 
 ddr-test-build:
-	python3 scripts/project.py ddr-test-build $(or $(PROFILE),ALL) $(or $(STRESS_SECONDS),1800)
+	python3 scripts/project.py ddr-test-build $(or $(PROFILE),ALL) $(or $(STRESS_SECONDS),1800) $(or $(SDCARD),none) $(or $(ETHERNET),none)
 
 ddr-test-run:
-	python3 scripts/project.py ddr-test-run $(or $(PROFILE),ALL) $(PORT) $(or $(TRAINING_RUNS),10) $(or $(STRESS_SECONDS),1800)
+	python3 scripts/project.py ddr-test-run $(or $(PROFILE),ALL) $(PORT) $(or $(TRAINING_RUNS),10) $(or $(STRESS_SECONDS),1800) $(or $(SDCARD),none) $(or $(ETHERNET),none) $(BOARD_SERIAL) $(BOARD_REVISION)
 
 ddr-test-report:
 	python3 scripts/project.py ddr-test-report
@@ -50,6 +50,15 @@ maxperf-build:
 
 maxperf-run:
 	python3 scripts/project.py maxperf-run $(or $(MEMORY),onchip) $(PORT)
+
+peripheral-build:
+	python3 scripts/project.py peripheral-build $(or $(PROFILE),standard) $(or $(MEMORY),ddr3) $(or $(SDCARD),none) $(or $(ETHERNET),none)
+
+peripheral-run:
+	python3 scripts/project.py peripheral-run $(or $(PROFILE),standard) $(PORT) $(or $(MEMORY),ddr3) $(or $(SDCARD),none) $(or $(ETHERNET),none) $(BOARD_SERIAL) $(BOARD_REVISION) $(EVIDENCE_SESSION)
+
+peripheral-report:
+	python3 scripts/project.py peripheral-report
 
 clean:
 	rm -rf build

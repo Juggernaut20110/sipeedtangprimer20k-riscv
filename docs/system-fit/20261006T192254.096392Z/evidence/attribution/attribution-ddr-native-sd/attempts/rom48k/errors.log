@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/system_fit.py", line 855, in _construct_and_build
+    _capture_build(builder, build_name)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/system_fit.py", line 645, in _capture_build
+    builder.build(run=True, build_name=build_name, hierarchical=True)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 521, in build
+    return self._build(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 592, in _build
+    self._generate_rom_software(compile_bios=use_bios)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 420, in _generate_rom_software
+    subprocess.check_call(["make", f"-j{cpu_count}", "-C", dst_dir, "-f", makefile])
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/python-3.12/python/lib/python3.12/subprocess.py", line 413, in check_call
+    raise CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command '['make', '-j8', '-C', '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/rom48k/soc/software/bios', '-f', '/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/bios/Makefile']' returned non-zero exit status 2.

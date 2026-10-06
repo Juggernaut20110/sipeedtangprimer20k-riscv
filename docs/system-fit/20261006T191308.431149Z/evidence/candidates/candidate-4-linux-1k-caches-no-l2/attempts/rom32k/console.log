@@ -1,0 +1,808 @@
+INFO:SoC:CSR Bridge [4mcsr[0m [32madded[0m.
+INFO:SoCBusHandler:[4mcsr[0m Region [32madded[0m at Origin: [1m0xf0000000[0m, Size: [1m0x00010000[0m, Mode:  [1mRW[0m, Cached: [1mFalse[0m, Linker: [1mFalse[0m.
+INFO:SoCBusHandler:[4mcsr[0m [32madded[0m as Bus Slave.
+INFO:SoCCSRHandler:[4mcsr[0m [32madded[0m as CSR Master.
+INFO:SoCBusHandler:Interconnect: [1mInterconnectShared[0m ([1m4[0m <-> [1m6[0m).
+INFO:SoCCSRHandler:[4mbuttons[0m CSR [36mallocated[0m at Location [1m0[0m.
+INFO:SoCCSRHandler:[4mctrl[0m CSR [36mallocated[0m at Location [1m1[0m.
+INFO:SoCCSRHandler:[4mddrphy[0m CSR [36mallocated[0m at Location [1m2[0m.
+INFO:SoCCSRHandler:[4methmac[0m CSR [36mallocated[0m at Location [1m3[0m.
+INFO:SoCCSRHandler:[4methphy[0m CSR [36mallocated[0m at Location [1m4[0m.
+INFO:SoCCSRHandler:[4midentifier_mem[0m CSR [36mallocated[0m at Location [1m5[0m.
+INFO:SoCCSRHandler:[4mleds[0m CSR [36mallocated[0m at Location [1m6[0m.
+INFO:SoCCSRHandler:[4msdcard[0m CSR [36mallocated[0m at Location [1m7[0m.
+INFO:SoCCSRHandler:[4msdram[0m CSR [36mallocated[0m at Location [1m8[0m.
+INFO:SoCCSRHandler:[4mtimer0[0m CSR [36mallocated[0m at Location [1m9[0m.
+INFO:SoCCSRHandler:[4muart[0m CSR [36mallocated[0m at Location [1m10[0m.
+INFO:SoC:[1m--------------------------------------------------------------------------------[0m
+INFO:SoC:[1mFinalized SoC:[0m
+INFO:SoC:[1m--------------------------------------------------------------------------------[0m
+INFO:SoC:[1m32[0m-bit [1mwishbone[0m Bus, [1m4.0[0mGiB Address Space.
+IO Regions: (1)
+[4mio0[0m                 : Origin: [1m0x80000000[0m, Size: [1m0x80000000[0m, Mode:  [1mRW[0m, Cached: [1mFalse[0m, Linker: [1mFalse[0m
+Bus Regions: (7)
+[4mrom[0m                 : Origin: [1m0x00000000[0m, Size: [1m0x00008000[0m, Mode:  [1mRX[0m, Cached:  [1mTrue[0m, Linker: [1mFalse[0m
+[4msram[0m                : Origin: [1m0x10000000[0m, Size: [1m0x00001000[0m, Mode: [1mRWX[0m, Cached:  [1mTrue[0m, Linker: [1mFalse[0m
+[4mmain_ram[0m            : Origin: [1m0x40000000[0m, Size: [1m0x08000000[0m, Mode: [1mRWX[0m, Cached:  [1mTrue[0m, Linker: [1mFalse[0m
+[4methmac[0m              : Origin: [1m0x80000000[0m, Size: [1m0x00001000[0m, Mode:  [1mRW[0m, Cached: [1mFalse[0m, Linker:  [1mTrue[0m
+[4methmac_rx[0m           : Origin: [1m0x80000000[0m, Size: [1m0x00000800[0m, Mode:   [1mR[0m, Cached: [1mFalse[0m, Linker: [1mFalse[0m
+[4methmac_tx[0m           : Origin: [1m0x80000800[0m, Size: [1m0x00000800[0m, Mode:   [1mW[0m, Cached: [1mFalse[0m, Linker: [1mFalse[0m
+[4mcsr[0m                 : Origin: [1m0xf0000000[0m, Size: [1m0x00010000[0m, Mode:  [1mRW[0m, Cached: [1mFalse[0m, Linker: [1mFalse[0m
+Bus Masters: (4)
+- [4mcpu_bus0[0m          : [1mrw[0m
+- [4mcpu_bus1[0m          : [1mrw[0m
+- [4msdcard_block2mem[0m  : [1mw[0m
+- [4msdcard_mem2block[0m  : [1mr[0m
+Bus Slaves: (6)
+- [4mrom[0m               : [1mr[0m
+- [4msram[0m              : [1mrw[0m
+- [4mmain_ram[0m          : [1mrw[0m
+- [4methmac_rx[0m         : [1mr[0m
+- [4methmac_tx[0m         : [1mw[0m
+- [4mcsr[0m               : [1mrw[0m
+INFO:SoC:[1m32[0m-bit CSR Bus, [1m32[0m-bit Aligned, [1m16.0[0mKiB Address Space, [1m2048[0mB Paging, [1mbig[0m Ordering (Up to [1m32[0m Locations).
+CSR Locations: (11)
+- [4mbuttons[0m        : [1m0[0m
+- [4mctrl[0m           : [1m1[0m
+- [4mddrphy[0m         : [1m2[0m
+- [4methmac[0m         : [1m3[0m
+- [4methphy[0m         : [1m4[0m
+- [4midentifier_mem[0m : [1m5[0m
+- [4mleds[0m           : [1m6[0m
+- [4msdcard[0m         : [1m7[0m
+- [4msdram[0m          : [1m8[0m
+- [4mtimer0[0m         : [1m9[0m
+- [4muart[0m           : [1m10[0m
+INFO:SoC:IRQ Handler (up to [1m32[0m Locations).
+IRQ Locations: (4)
+- [4muart[0m   : [1m0[0m
+- [4mtimer0[0m : [1m1[0m
+- [4methmac[0m : [1m2[0m
+- [4msdcard[0m : [1m3[0m
+INFO:SoC:[1m--------------------------------------------------------------------------------[0m
+INFO:SoC:[1m--------------------------------------------------------------------------------[0m
+INFO:SoC:[1mSoC Hierarchy:[0m
+INFO:SoC:[1m--------------------------------------------------------------------------------[0m
+INFO:SoC:
+[4mSystemFitSoC[0m
+├── [36mcrg[0m (_CRG)
+│    ├── [36mpll[0m (GW2APLL)
+│    │    └── [33m[BB:rPLL][0m
+│    ├── [33m[BB:DHCEN][0m
+│    └── [33m[BB:CLKDIV][0m
+├── [36mbus[0m (SoCBusHandler)
+│    └── [36m_interconnect[0m (InterconnectShared)
+│         ├── [36marbiter[0m (Arbiter)
+│         │    └── [36mrr[0m (RoundRobin)
+│         ├── [36mdecoder[0m (Decoder)
+│         └── [36mtimeout[0m (Timeout)
+│              └── [36mwaittimer_0[0m (WaitTimer) [Gen]
+├── [36mcsr[0m (SoCCSRHandler)
+├── [36mirq[0m (SoCIRQHandler)
+├── [36mctrl[0m (SoCController)
+├── [36mcpu[0m (VexRiscv)
+│    └── [33m[BB:VexRiscv][0m
+├── [36mrom[0m (SRAM)
+├── [36msram[0m (SRAM)
+├── [36midentifier[0m (Identifier)
+├── [36muart[0m (UART)
+│    ├── [36mev[0m (EventManager)
+│    │    ├── [36meventsourcelevel_0[0m (EventSourceLevel) [Gen]
+│    │    └── [36meventsourcelevel_1[0m (EventSourceLevel) [Gen]
+│    ├── [36mphy[0m (RS232PHY)
+│    │    ├── [36mtx[0m (RS232PHYTX)
+│    │    │    ├── [36mclk_phase_accum[0m (RS232ClkPhaseAccum)
+│    │    │    └── [36mfsm[0m (FSM)
+│    │    └── [36mrx[0m (RS232PHYRX)
+│    │         ├── [36mclk_phase_accum[0m (RS232ClkPhaseAccum)
+│    │         └── [36mfsm[0m (FSM)
+│    ├── [36mtx_fifo[0m (SyncFIFO)
+│    │    └── [36mfifo[0m (SyncFIFOBuffered)
+│    │         └── [36mfifo[0m (SyncFIFO)
+│    └── [36mrx_fifo[0m (SyncFIFO)
+│         └── [36mfifo[0m (SyncFIFOBuffered)
+│              └── [36mfifo[0m (SyncFIFO)
+├── [36mtimer0[0m (Timer)
+│    └── [36mev[0m (EventManager)
+│         └── [36meventsourceprocess_0[0m (EventSourceProcess) [Gen]
+├── [36mddrphy[0m (GW2DDRPHY)
+│    ├── [36minit[0m (GW2DDRPHYInit)
+│    │    └── [33m[BB:DLL][0m
+│    ├── [36mbitslip_0[0m (BitSlip) [Gen]
+│    ├── [36mbitslip_1[0m (BitSlip) [Gen]
+│    ├── [36mbitslip_2[0m (BitSlip) [Gen]
+│    ├── [36mbitslip_3[0m (BitSlip) [Gen]
+│    ├── [36mbitslip_4[0m (BitSlip) [Gen]
+│    ├── [36mbitslip_5[0m (BitSlip) [Gen]
+│    ├── [36mbitslip_6[0m (BitSlip) [Gen]
+│    ├── [36mbitslip_7[0m (BitSlip) [Gen]
+│    ├── [36mbitslip_8[0m (BitSlip) [Gen]
+│    ├── [36mbitslip_9[0m (BitSlip) [Gen]
+│    ├── [36mbitslip_10[0m (BitSlip) [Gen]
+│    ├── [36mbitslip_11[0m (BitSlip) [Gen]
+│    ├── [36mbitslip_12[0m (BitSlip) [Gen]
+│    ├── [36mbitslip_13[0m (BitSlip) [Gen]
+│    ├── [36mbitslip_14[0m (BitSlip) [Gen]
+│    ├── [36mbitslip_15[0m (BitSlip) [Gen]
+│    ├── [36mtappeddelayline_0[0m (TappedDelayLine) [Gen]
+│    ├── [36mtappeddelayline_1[0m (TappedDelayLine) [Gen]
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:IDES4_MEM][0m
+│    ├── [33m[BB:IOBUF][0m
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:IDES4_MEM][0m
+│    ├── [33m[BB:IOBUF][0m
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:IDES4_MEM][0m
+│    ├── [33m[BB:IOBUF][0m
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:IDES4_MEM][0m
+│    ├── [33m[BB:IOBUF][0m
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:IDES4_MEM][0m
+│    ├── [33m[BB:IOBUF][0m
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:IDES4_MEM][0m
+│    ├── [33m[BB:IOBUF][0m
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:IDES4_MEM][0m
+│    ├── [33m[BB:IOBUF][0m
+│    ├── [33m[BB:ELVDS_OBUF][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:DQS][0m
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:ELVDS_IOBUF][0m
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:IDES4_MEM][0m
+│    ├── [33m[BB:IOBUF][0m
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:IDES4_MEM][0m
+│    ├── [33m[BB:IOBUF][0m
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:IDES4_MEM][0m
+│    ├── [33m[BB:IOBUF][0m
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:IDES4_MEM][0m
+│    ├── [33m[BB:IOBUF][0m
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:IDES4_MEM][0m
+│    ├── [33m[BB:IOBUF][0m
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:IDES4_MEM][0m
+│    ├── [33m[BB:IOBUF][0m
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:IDES4_MEM][0m
+│    ├── [33m[BB:IOBUF][0m
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:IDES4_MEM][0m
+│    ├── [33m[BB:IOBUF][0m
+│    ├── [33m[BB:DQS][0m
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:ELVDS_IOBUF][0m
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:IDES4_MEM][0m
+│    └── [33m[BB:IOBUF][0m
+├── [36msdram[0m (LiteDRAMCore)
+│    ├── [36mdfii[0m (DFIInjector)
+│    │    ├── [36mpi0[0m (PhaseInjector)
+│    │    └── [36mpi1[0m (PhaseInjector)
+│    ├── [36mcontroller[0m (LiteDRAMController)
+│    │    ├── [36mrefresher[0m (Refresher)
+│    │    │    ├── [36mtimer[0m (RefreshTimer)
+│    │    │    ├── [36mpostponer[0m (RefreshPostponer)
+│    │    │    ├── [36msequencer[0m (RefreshSequencer)
+│    │    │    │    └── [36mrefreshexecuter_0[0m (RefreshExecuter) [Gen]
+│    │    │    ├── [36mzqcs_timer[0m (RefreshTimer)
+│    │    │    ├── [36mzqs_executer[0m (ZQCSExecuter)
+│    │    │    └── [36mfsm[0m (FSM)
+│    │    ├── [36mbankmachine_0[0m (BankMachine) [Gen]
+│    │    │    ├── [36msyncfifo_0[0m (SyncFIFO) [Gen]
+│    │    │    │    └── [36mfifo[0m (SyncFIFO)
+│    │    │    ├── [36mbuffer_0[0m (Buffer) [Gen]
+│    │    │    │    ├── [36mpipe_valid[0m (PipeValid)
+│    │    │    │    └── [36mpipeline[0m (Pipeline)
+│    │    │    ├── [36mtwtpcon[0m (tXXDController)
+│    │    │    ├── [36mtrccon[0m (tXXDController)
+│    │    │    ├── [36mtrascon[0m (tXXDController)
+│    │    │    └── [36mfsm[0m (FSM)
+│    │    ├── [36mbankmachine_1[0m (BankMachine) [Gen]
+│    │    │    ├── [36msyncfifo_0[0m (SyncFIFO) [Gen]
+│    │    │    │    └── [36mfifo[0m (SyncFIFO)
+│    │    │    ├── [36mbuffer_0[0m (Buffer) [Gen]
+│    │    │    │    ├── [36mpipe_valid[0m (PipeValid)
+│    │    │    │    └── [36mpipeline[0m (Pipeline)
+│    │    │    ├── [36mtwtpcon[0m (tXXDController)
+│    │    │    ├── [36mtrccon[0m (tXXDController)
+│    │    │    ├── [36mtrascon[0m (tXXDController)
+│    │    │    └── [36mfsm[0m (FSM)
+│    │    ├── [36mbankmachine_2[0m (BankMachine) [Gen]
+│    │    │    ├── [36msyncfifo_0[0m (SyncFIFO) [Gen]
+│    │    │    │    └── [36mfifo[0m (SyncFIFO)
+│    │    │    ├── [36mbuffer_0[0m (Buffer) [Gen]
+│    │    │    │    ├── [36mpipe_valid[0m (PipeValid)
+│    │    │    │    └── [36mpipeline[0m (Pipeline)
+│    │    │    ├── [36mtwtpcon[0m (tXXDController)
+│    │    │    ├── [36mtrccon[0m (tXXDController)
+│    │    │    ├── [36mtrascon[0m (tXXDController)
+│    │    │    └── [36mfsm[0m (FSM)
+│    │    ├── [36mbankmachine_3[0m (BankMachine) [Gen]
+│    │    │    ├── [36msyncfifo_0[0m (SyncFIFO) [Gen]
+│    │    │    │    └── [36mfifo[0m (SyncFIFO)
+│    │    │    ├── [36mbuffer_0[0m (Buffer) [Gen]
+│    │    │    │    ├── [36mpipe_valid[0m (PipeValid)
+│    │    │    │    └── [36mpipeline[0m (Pipeline)
+│    │    │    ├── [36mtwtpcon[0m (tXXDController)
+│    │    │    ├── [36mtrccon[0m (tXXDController)
+│    │    │    ├── [36mtrascon[0m (tXXDController)
+│    │    │    └── [36mfsm[0m (FSM)
+│    │    ├── [36mbankmachine_4[0m (BankMachine) [Gen]
+│    │    │    ├── [36msyncfifo_0[0m (SyncFIFO) [Gen]
+│    │    │    │    └── [36mfifo[0m (SyncFIFO)
+│    │    │    ├── [36mbuffer_0[0m (Buffer) [Gen]
+│    │    │    │    ├── [36mpipe_valid[0m (PipeValid)
+│    │    │    │    └── [36mpipeline[0m (Pipeline)
+│    │    │    ├── [36mtwtpcon[0m (tXXDController)
+│    │    │    ├── [36mtrccon[0m (tXXDController)
+│    │    │    ├── [36mtrascon[0m (tXXDController)
+│    │    │    └── [36mfsm[0m (FSM)
+│    │    ├── [36mbankmachine_5[0m (BankMachine) [Gen]
+│    │    │    ├── [36msyncfifo_0[0m (SyncFIFO) [Gen]
+│    │    │    │    └── [36mfifo[0m (SyncFIFO)
+│    │    │    ├── [36mbuffer_0[0m (Buffer) [Gen]
+│    │    │    │    ├── [36mpipe_valid[0m (PipeValid)
+│    │    │    │    └── [36mpipeline[0m (Pipeline)
+│    │    │    ├── [36mtwtpcon[0m (tXXDController)
+│    │    │    ├── [36mtrccon[0m (tXXDController)
+│    │    │    ├── [36mtrascon[0m (tXXDController)
+│    │    │    └── [36mfsm[0m (FSM)
+│    │    ├── [36mbankmachine_6[0m (BankMachine) [Gen]
+│    │    │    ├── [36msyncfifo_0[0m (SyncFIFO) [Gen]
+│    │    │    │    └── [36mfifo[0m (SyncFIFO)
+│    │    │    ├── [36mbuffer_0[0m (Buffer) [Gen]
+│    │    │    │    ├── [36mpipe_valid[0m (PipeValid)
+│    │    │    │    └── [36mpipeline[0m (Pipeline)
+│    │    │    ├── [36mtwtpcon[0m (tXXDController)
+│    │    │    ├── [36mtrccon[0m (tXXDController)
+│    │    │    ├── [36mtrascon[0m (tXXDController)
+│    │    │    └── [36mfsm[0m (FSM)
+│    │    ├── [36mbankmachine_7[0m (BankMachine) [Gen]
+│    │    │    ├── [36msyncfifo_0[0m (SyncFIFO) [Gen]
+│    │    │    │    └── [36mfifo[0m (SyncFIFO)
+│    │    │    ├── [36mbuffer_0[0m (Buffer) [Gen]
+│    │    │    │    ├── [36mpipe_valid[0m (PipeValid)
+│    │    │    │    └── [36mpipeline[0m (Pipeline)
+│    │    │    ├── [36mtwtpcon[0m (tXXDController)
+│    │    │    ├── [36mtrccon[0m (tXXDController)
+│    │    │    ├── [36mtrascon[0m (tXXDController)
+│    │    │    └── [36mfsm[0m (FSM)
+│    │    └── [36mmultiplexer[0m (Multiplexer)
+│    │         ├── [36mchoose_cmd[0m (_CommandChooser)
+│    │         │    └── [36mroundrobin_0[0m (RoundRobin) [Gen]
+│    │         ├── [36mchoose_req[0m (_CommandChooser)
+│    │         │    └── [36mroundrobin_0[0m (RoundRobin) [Gen]
+│    │         ├── [36m_steerer_0[0m (_Steerer) [Gen]
+│    │         ├── [36mtrrdcon[0m (tXXDController)
+│    │         ├── [36mtfawcon[0m (tFAWController)
+│    │         ├── [36mtccdcon[0m (tXXDController)
+│    │         ├── [36mtwtrcon[0m (tXXDController)
+│    │         └── [36mfsm[0m (FSM)
+│    └── [36mcrossbar[0m (LiteDRAMCrossbar)
+│         ├── [36mroundrobin_0[0m (RoundRobin) [Gen]
+│         ├── [36mroundrobin_1[0m (RoundRobin) [Gen]
+│         ├── [36mroundrobin_2[0m (RoundRobin) [Gen]
+│         ├── [36mroundrobin_3[0m (RoundRobin) [Gen]
+│         ├── [36mroundrobin_4[0m (RoundRobin) [Gen]
+│         ├── [36mroundrobin_5[0m (RoundRobin) [Gen]
+│         ├── [36mroundrobin_6[0m (RoundRobin) [Gen]
+│         └── [36mroundrobin_7[0m (RoundRobin) [Gen]
+├── [36mconverter_0[0m (Converter) [Gen]
+│    └── [36mupconverter_0[0m (UpConverter) [Gen]
+├── [36mwishbone_bridge[0m (LiteDRAMWishbone2Native)
+│    └── [36mfsm[0m (FSM)
+├── [36methphy[0m (LiteEthPHYRMII)
+│    ├── [36mcrg[0m (LiteEthPHYRMIICRG)
+│    │    └── [36mhw_reset[0m (LiteEthPHYHWReset)
+│    ├── [36mtx[0m (LiteEthPHYRMIITX)
+│    │    ├── [36mtimer[0m (LiteEthPHYRMIITimer)
+│    │    └── [36mconverter[0m (Converter)
+│    │         └── [36m_downconverter_0[0m (_DownConverter) [Gen]
+│    ├── [36mrx[0m (LiteEthPHYRMIIRX)
+│    │    ├── [36mtimer[0m (LiteEthPHYRMIITimer)
+│    │    ├── [36mconverter[0m (Converter)
+│    │    │    └── [36m_upconverter_0[0m (_UpConverter) [Gen]
+│    │    ├── [36mdelay[0m (Delay)
+│    │    │    ├── [36mbuffer_0[0m (Buffer) [Gen]
+│    │    │    │    ├── [36mpipe_valid[0m (PipeValid)
+│    │    │    │    └── [36mpipeline[0m (Pipeline)
+│    │    │    ├── [36mbuffer_1[0m (Buffer) [Gen]
+│    │    │    │    ├── [36mpipe_valid[0m (PipeValid)
+│    │    │    │    └── [36mpipeline[0m (Pipeline)
+│    │    │    └── [36mpipeline_0[0m (Pipeline) [Gen]
+│    │    └── [36mspeed_detect[0m (LiteEthPHYRMIISpeedDetect)
+│    │         └── [36mfsm[0m (FSM)
+│    └── [36mmdio[0m (LiteEthPHYMDIO)
+├── [36methmac[0m (LiteEthMAC)
+│    ├── [36mcore[0m (LiteEthMACCore)
+│    │    ├── [36mtx_datapath[0m (TXDatapath)
+│    │    │    ├── [36mclockdomaincrossing_0[0m (ClockDomainCrossing) [Gen]
+│    │    │    │    └── [36masyncfifo_0[0m (AsyncFIFO) [Gen]
+│    │    │    │         └── [36mfifo[0m (AsyncFIFO)
+│    │    │    │              ├── [36mgraycounter_0[0m (GrayCounter) [Gen]
+│    │    │    │              └── [36mgraycounter_1[0m (GrayCounter) [Gen]
+│    │    │    ├── [36mstrideconverter_0[0m (StrideConverter) [Gen]
+│    │    │    │    └── [36mconverter_0[0m (Converter) [Gen]
+│    │    │    │         └── [36m_downconverter_0[0m (_DownConverter) [Gen]
+│    │    │    ├── [36mliteethmacpaddinginserter_0[0m (LiteEthMACPaddingInserter) [Gen]
+│    │    │    │    └── [36mfsm[0m (FSM)
+│    │    │    ├── [36mliteethmaccrc32inserter_0[0m (LiteEthMACCRC32Inserter) [Gen]
+│    │    │    │    ├── [36mcrc[0m (LiteEthMACCRC32)
+│    │    │    │    │    └── [36mliteethmaccrcengine_0[0m (LiteEthMACCRCEngine) [Gen]
+│    │    │    │    ├── [36mfsm[0m (FSM)
+│    │    │    │    └── [36mbuffer_0[0m (Buffer) [Gen]
+│    │    │    │         ├── [36mpipe_valid[0m (PipeValid)
+│    │    │    │         └── [36mpipeline[0m (Pipeline)
+│    │    │    ├── [36mliteethmacpreambleinserter_0[0m (LiteEthMACPreambleInserter) [Gen]
+│    │    │    │    └── [36mfsm[0m (FSM)
+│    │    │    ├── [36mliteethmacgap_0[0m (LiteEthMACGap) [Gen]
+│    │    │    │    └── [36mfsm[0m (FSM)
+│    │    │    └── [36mpipeline_0[0m (Pipeline) [Gen]
+│    │    └── [36mrx_datapath[0m (RXDatapath)
+│    │         ├── [36mliteethmacpreamblechecker_0[0m (LiteEthMACPreambleChecker) [Gen]
+│    │         │    └── [36mfsm[0m (FSM)
+│    │         ├── [36mpulsesynchronizer_0[0m (PulseSynchronizer) [Gen]
+│    │         ├── [36mliteethmaccrc32checker_0[0m (LiteEthMACCRC32Checker) [Gen]
+│    │         │    ├── [36mcrc[0m (LiteEthMACCRC32Check)
+│    │         │    │    └── [36mengine[0m (LiteEthMACCRCEngine)
+│    │         │    ├── [36mfifo[0m (SyncFIFO)
+│    │         │    │    └── [36mfifo[0m (SyncFIFO)
+│    │         │    ├── [36mfsm[0m (FSM)
+│    │         │    └── [36mbuffer_0[0m (Buffer) [Gen]
+│    │         │         ├── [36mpipe_valid[0m (PipeValid)
+│    │         │         └── [36mpipeline[0m (Pipeline)
+│    │         ├── [36mpulsesynchronizer_1[0m (PulseSynchronizer) [Gen]
+│    │         ├── [36mliteethmacpaddingchecker_0[0m (LiteEthMACPaddingChecker) [Gen]
+│    │         ├── [36mstrideconverter_0[0m (StrideConverter) [Gen]
+│    │         │    └── [36mconverter_0[0m (Converter) [Gen]
+│    │         │         └── [36m_upconverter_0[0m (_UpConverter) [Gen]
+│    │         ├── [36mclockdomaincrossing_0[0m (ClockDomainCrossing) [Gen]
+│    │         │    └── [36masyncfifo_0[0m (AsyncFIFO) [Gen]
+│    │         │         └── [36mfifo[0m (AsyncFIFO)
+│    │         │              ├── [36mgraycounter_0[0m (GrayCounter) [Gen]
+│    │         │              └── [36mgraycounter_1[0m (GrayCounter) [Gen]
+│    │         └── [36mpipeline_0[0m (Pipeline) [Gen]
+│    ├── [36minterface[0m (LiteEthMACWishboneInterface)
+│    │    ├── [36msram[0m (LiteEthMACSRAM)
+│    │    │    ├── [36mwriter[0m (LiteEthMACSRAMWriter)
+│    │    │    │    ├── [36mev[0m (EventManager)
+│    │    │    │    │    └── [36meventsourcelevel_0[0m (EventSourceLevel) [Gen]
+│    │    │    │    ├── [36mpacket[0m (LiteEthMACPacketWriter)
+│    │    │    │    │    └── [36mfsm[0m (FSM)
+│    │    │    │    └── [36mstat_fifo[0m (SyncFIFO)
+│    │    │    │         └── [36mbuffer_0[0m (Buffer) [Gen]
+│    │    │    │              ├── [36mpipe_valid[0m (PipeValid)
+│    │    │    │              └── [36mpipeline[0m (Pipeline)
+│    │    │    ├── [36mreader[0m (LiteEthMACSRAMReader)
+│    │    │    │    ├── [36mev[0m (EventManager)
+│    │    │    │    │    └── [36meventsourcepulse_0[0m (EventSourcePulse) [Gen]
+│    │    │    │    ├── [36mpacket[0m (LiteEthMACPacketReader)
+│    │    │    │    │    └── [36mfsm[0m (FSM)
+│    │    │    │    ├── [36msyncfifo_0[0m (SyncFIFO) [Gen]
+│    │    │    │    │    └── [36mbuffer_0[0m (Buffer) [Gen]
+│    │    │    │    │         ├── [36mpipe_valid[0m (PipeValid)
+│    │    │    │    │         └── [36mpipeline[0m (Pipeline)
+│    │    │    │    └── [36mfsm[0m (FSM)
+│    │    │    └── [36mev[0m (SharedIRQ)
+│    │    ├── [36msram_0[0m (SRAM) [Gen]
+│    │    ├── [36mdecoder_0[0m (Decoder) [Gen]
+│    │    ├── [36msram_1[0m (SRAM) [Gen]
+│    │    └── [36mdecoder_1[0m (Decoder) [Gen]
+│    └── [36mev[0m (SharedIRQ)
+├── [36mleds[0m (GPIOOut)
+├── [36mbuttons[0m (GPIOIn)
+├── [36msdcard[0m (LiteSDCard)
+│    ├── [36mphy[0m (SDPHY)
+│    │    ├── [36mclocker[0m (SDPHYClocker)
+│    │    ├── [36minit[0m (SDPHYInit)
+│    │    │    └── [36mfsm[0m (FSM)
+│    │    ├── [36mcmdw[0m (SDPHYCMDW)
+│    │    │    └── [36mfsm[0m (FSM)
+│    │    ├── [36mcmdr[0m (SDPHYCMDR)
+│    │    │    ├── [36mcmdr[0m (SDPHYR)
+│    │    │    │    ├── [36mconverter[0m (Converter)
+│    │    │    │    │    └── [36m_upconverter_0[0m (_UpConverter) [Gen]
+│    │    │    │    └── [36mbuf[0m (Buffer)
+│    │    │    │         ├── [36mpipe_valid[0m (PipeValid)
+│    │    │    │         └── [36mpipeline[0m (Pipeline)
+│    │    │    └── [36mfsm[0m (FSM)
+│    │    ├── [36mdataw[0m (SDPHYDATAW)
+│    │    │    ├── [36mcrc[0m (SDPHYR)
+│    │    │    │    ├── [36mconverter[0m (Converter)
+│    │    │    │    │    └── [36m_upconverter_0[0m (_UpConverter) [Gen]
+│    │    │    │    └── [36mbuf[0m (Buffer)
+│    │    │    │         ├── [36mpipe_valid[0m (PipeValid)
+│    │    │    │         └── [36mpipeline[0m (Pipeline)
+│    │    │    ├── [36mcrc16[0m (CRC16)
+│    │    │    │    ├── [36mcrc_0[0m (CRC) [Gen]
+│    │    │    │    ├── [36mcrc_1[0m (CRC) [Gen]
+│    │    │    │    ├── [36mcrc_2[0m (CRC) [Gen]
+│    │    │    │    └── [36mcrc_3[0m (CRC) [Gen]
+│    │    │    └── [36mfsm[0m (FSM)
+│    │    ├── [36mdatar[0m (SDPHYDATAR)
+│    │    │    ├── [36mcrc16[0m (CRC16)
+│    │    │    │    ├── [36mcrc_0[0m (CRC) [Gen]
+│    │    │    │    ├── [36mcrc_1[0m (CRC) [Gen]
+│    │    │    │    ├── [36mcrc_2[0m (CRC) [Gen]
+│    │    │    │    └── [36mcrc_3[0m (CRC) [Gen]
+│    │    │    ├── [36mdatar_1x[0m (SDPHYR)
+│    │    │    │    ├── [36mconverter[0m (Converter)
+│    │    │    │    │    └── [36m_upconverter_0[0m (_UpConverter) [Gen]
+│    │    │    │    └── [36mbuf[0m (Buffer)
+│    │    │    │         ├── [36mpipe_valid[0m (PipeValid)
+│    │    │    │         └── [36mpipeline[0m (Pipeline)
+│    │    │    ├── [36mdatar_4x[0m (SDPHYR)
+│    │    │    │    ├── [36mconverter[0m (Converter)
+│    │    │    │    │    └── [36m_upconverter_0[0m (_UpConverter) [Gen]
+│    │    │    │    └── [36mbuf[0m (Buffer)
+│    │    │    │         ├── [36mpipe_valid[0m (PipeValid)
+│    │    │    │         └── [36mpipeline[0m (Pipeline)
+│    │    │    └── [36mfsm[0m (FSM)
+│    │    └── [36mio[0m (SDPHYIOGen)
+│    ├── [36mcore[0m (SDCore)
+│    │    ├── [36mcrc7_inserter[0m (CRC)
+│    │    ├── [36mdata_read_fifo[0m (SyncFIFO)
+│    │    │    └── [36mfifo[0m (SyncFIFO)
+│    │    └── [36mfsm[0m (FSM)
+│    ├── [36mblock2mem[0m (SDBlock2MemDMA)
+│    │    ├── [36msyncfifo_0[0m (SyncFIFO) [Gen]
+│    │    │    └── [36mfifo[0m (SyncFIFOBuffered)
+│    │    │         └── [36mfifo[0m (SyncFIFO)
+│    │    ├── [36mconverter_0[0m (Converter) [Gen]
+│    │    │    └── [36m_upconverter_0[0m (_UpConverter) [Gen]
+│    │    └── [36mdma[0m (WishboneDMAWriter)
+│    │         └── [36mfsm[0m (FSM)
+│    ├── [36mmem2block[0m (SDMem2BlockDMA)
+│    │    ├── [36mdma[0m (WishboneDMAReader)
+│    │    │    ├── [36mfifo[0m (SyncFIFO)
+│    │    │    │    └── [36mfifo[0m (SyncFIFO)
+│    │    │    └── [36mfsm[0m (FSM)
+│    │    ├── [36mconverter_0[0m (Converter) [Gen]
+│    │    │    └── [36m_downconverter_0[0m (_DownConverter) [Gen]
+│    │    └── [36msyncfifo_0[0m (SyncFIFO) [Gen]
+│    │         └── [36mfifo[0m (SyncFIFOBuffered)
+│    │              └── [36mfifo[0m (SyncFIFO)
+│    └── [36mev[0m (EventManager)
+│         ├── [36meventsourcepulse_0[0m (EventSourcePulse) [Gen]
+│         ├── [36meventsourcepulse_1[0m (EventSourcePulse) [Gen]
+│         ├── [36meventsourcepulse_2[0m (EventSourcePulse) [Gen]
+│         ├── [36meventsourcelevel_0[0m (EventSourceLevel) [Gen]
+│         └── [36meventsourcelevel_1[0m (EventSourceLevel) [Gen]
+├── [36mcsr_bridge[0m (Wishbone2CSR)
+│    └── [36mfsm[0m (FSM)
+├── [36mcsr_bankarray[0m (CSRBankArray)
+│    ├── [36mcsrbank_0[0m (CSRBank) [Gen]
+│    │    └── [36mcsrstatus_0[0m (CSRStatus) [Gen]
+│    ├── [36mcsrbank_1[0m (CSRBank) [Gen]
+│    │    ├── [36mcsrstorage_0[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_1[0m (CSRStorage) [Gen]
+│    │    └── [36mcsrstatus_0[0m (CSRStatus) [Gen]
+│    ├── [36mcsrbank_2[0m (CSRBank) [Gen]
+│    │    ├── [36mcsrstorage_0[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_1[0m (CSRStorage) [Gen]
+│    │    └── [36mcsrstatus_0[0m (CSRStatus) [Gen]
+│    ├── [36mcsrbank_3[0m (CSRBank) [Gen]
+│    │    ├── [36mcsrstatus_0[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstatus_1[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstatus_2[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstatus_3[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstatus_4[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstorage_0[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstatus_5[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstatus_6[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstorage_1[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_2[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstatus_7[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstatus_8[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstorage_3[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstatus_9[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstatus_10[0m (CSRStatus) [Gen]
+│    │    └── [36mcsrstatus_11[0m (CSRStatus) [Gen]
+│    ├── [36mcsrbank_4[0m (CSRBank) [Gen]
+│    │    ├── [36mcsrstorage_0[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_1[0m (CSRStorage) [Gen]
+│    │    └── [36mcsrstatus_0[0m (CSRStatus) [Gen]
+│    ├── [36msram_0[0m (SRAM) [Gen]
+│    ├── [36mcsrbank_5[0m (CSRBank) [Gen]
+│    │    └── [36mcsrstorage_0[0m (CSRStorage) [Gen]
+│    ├── [36mcsrbank_6[0m (CSRBank) [Gen]
+│    │    ├── [36mcsrstatus_0[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstorage_0[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_1[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstatus_1[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstorage_2[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_3[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_4[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_5[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_6[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstatus_2[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstatus_3[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstatus_4[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstorage_7[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_8[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_9[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_10[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_11[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstatus_5[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstorage_12[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstatus_6[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstatus_7[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstorage_13[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_14[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_15[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstatus_8[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstorage_16[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstatus_9[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstatus_10[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstatus_11[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstatus_12[0m (CSRStatus) [Gen]
+│    │    └── [36mcsrstorage_17[0m (CSRStorage) [Gen]
+│    ├── [36mcsrbank_7[0m (CSRBank) [Gen]
+│    │    ├── [36mcsrstorage_0[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_1[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_2[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_3[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_4[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstatus_0[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstorage_5[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_6[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_7[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_8[0m (CSRStorage) [Gen]
+│    │    └── [36mcsrstatus_1[0m (CSRStatus) [Gen]
+│    ├── [36mcsrbank_8[0m (CSRBank) [Gen]
+│    │    ├── [36mcsrstorage_0[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_1[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_2[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_3[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstatus_0[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstatus_1[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstatus_2[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstorage_4[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_5[0m (CSRStorage) [Gen]
+│    │    └── [36mcsrstatus_3[0m (CSRStatus) [Gen]
+│    └── [36mcsrbank_9[0m (CSRBank) [Gen]
+│         ├── [36mcsrstatus_0[0m (CSRStatus) [Gen]
+│         ├── [36mcsrstatus_1[0m (CSRStatus) [Gen]
+│         ├── [36mcsrstatus_2[0m (CSRStatus) [Gen]
+│         ├── [36mcsrstatus_3[0m (CSRStatus) [Gen]
+│         ├── [36mcsrstorage_0[0m (CSRStorage) [Gen]
+│         ├── [36mcsrstatus_4[0m (CSRStatus) [Gen]
+│         └── [36mcsrstatus_5[0m (CSRStatus) [Gen]
+└── [36mcsr_interconnect[0m (InterconnectShared)
+[1mLegend:[0m
+[36m  [Gen][0m: Auto-generated instance name.
+[33m  [BB:NAME][0m: Blackbox instance (verilog Instance).
+
+INFO:SoC:[1m--------------------------------------------------------------------------------[0m
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T191308.431149Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/libc'
+cp /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libc/picolibc-minimal.h /home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T191308.431149Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/libc/picolibc.h
+printf "#define FORMAT_DEFAULT_%s\n" "INTEGER" >> /home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T191308.431149Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/libc/picolibc.h
+rm -f -r /home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T191308.431149Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/include/../picolibc_src
+printf "#define __IO_DEFAULT '%s'\n" "i" >> /home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T191308.431149Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/libc/picolibc.h
+cp -a /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data /home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T191308.431149Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/include/../picolibc_src
+if [ -d "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libc/riscv" ]; then \
+	cp /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libc/riscv/* /home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T191308.431149Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/include/../picolibc_src/libc/machine/riscv/ ;\
+fi
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T191308.431149Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_ctype_ctype_.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T191308.431149Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_errno_errno.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T191308.431149Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_string_strchr.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T191308.431149Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_string_strncpy.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T191308.431149Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_string_strncmp.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T191308.431149Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_string_strnlen.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T191308.431149Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_stdio_fgetc.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T191308.431149Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_stdio_fputc.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T191308.431149Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_stdio_fputs.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T191308.431149Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_stdio_printf.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T191308.431149Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_stdio_puts.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T191308.431149Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_stdio_strtoul.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T191308.431149Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_stdio_strtoull.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T191308.431149Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_stdlib_lldiv.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T191308.431149Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_machine_riscv_memcpy-asm.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T191308.431149Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_machine_riscv_memmove.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T191308.431149Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_machine_riscv_memset.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T191308.431149Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_machine_riscv_strcmp.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T191308.431149Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_machine_riscv_strcpy.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T191308.431149Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_machine_riscv_strlen.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T191308.431149Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_stdio_vfiprintf.o
+ AR       __libc_minimal.a
+ CC       _libc_minimal.a
+ AR       _libc_minimal.a
+cp __libc_minimal.a _libc_minimal.a
+ CC       libc-minimal.a
+ AR       libc-minimal.a
+cp _libc_minimal.a libc-minimal.a
+cp libc-minimal.a libc.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T191308.431149Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/libc'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T191308.431149Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/libcompiler_rt'
+ CC       umodsi3.o
+ CC       udivsi3.o
+ CC       divsi3.o
+ CC       modsi3.o
+ CC       comparesf2.o
+ CC       comparedf2.o
+ CC       negsf2.o
+ CC       negdf2.o
+/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-compiler_rt/pythondata_software_compiler_rt/data/lib/builtins/comparesf2.c:85:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+   85 | FNALIAS(__cmpsf2, __lesf2);
+      | ^~~~~~~
+/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-compiler_rt/pythondata_software_compiler_rt/data/lib/builtins/comparedf2.c:85:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+   85 | FNALIAS(__cmpdf2, __ledf2);
+      | ^~~~~~~
+ CC       addsf3.o
+ CC       subsf3.o
+ CC       mulsf3.o
+ CC       divsf3.o
+ CC       extendsfdf2.o
+ CC       truncdfsf2.o
+ CC       lshrdi3.o
+ CC       muldi3.o
+ CC       divdi3.o
+ CC       ashldi3.o
+ CC       ashrdi3.o
+ CC       udivmoddi4.o
+ CC       floatsisf.o
+ CC       floatunsisf.o
+ CC       fixsfsi.o
+ CC       fixdfdi.o
+ CC       fixunssfsi.o
+ CC       fixunsdfdi.o
+ CC       adddf3.o
+ CC       subdf3.o
+ CC       muldf3.o
+ CC       divdf3.o
+ CC       floatsidf.o
+ CC       floatunsidf.o
+ CC       floatdidf.o
+ CC       fixdfsi.o
+ CC       fixunsdfsi.o
+ CC       clzsi2.o
+ CC       ctzsi2.o
+ CC       clzdi2.o
+ CC       ctzdi2.o
+ CC       udivdi3.o
+ CC       umoddi3.o
+ CC       moddi3.o
+ CC       ucmpdi2.o
+ CC       mulsi3.o
+ AR       libcompiler_rt.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T191308.431149Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/libcompiler_rt'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T191308.431149Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/libbase'
+ CC       crc16.o
+ CC       crc32.o
+ CC       console.o
+ CC       format.o
+ CC       parse.o
+ CC       timeout.o
+ CC       system.o
+ CC       progress.o
+ CC       memtest.o
+ CC       uart.o
+ CC       startup.o
+ CC       spiflash.o
+ CC       i2c.o
+ CC       isr.o
+ CC       hyperram.o
+ AR       libbase.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T191308.431149Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/libbase'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T191308.431149Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/libfatfs'
+ CC       ffunicode.o
+ CC       ff.o
+ AR       libfatfs.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T191308.431149Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/libfatfs'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T191308.431149Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/liblitespi'
+ CC       spiflash.o
+ CC       spiram.o
+ AR       liblitespi.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T191308.431149Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/liblitespi'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T191308.431149Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/liblitedram'
+ CC       sdram.o
+ CC       bist.o
+ CC       sdram_dbg.o
+ CC       sdram_spd.o
+ CC       utils.o
+ CC       accessors.o
+ AR       liblitedram.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T191308.431149Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/liblitedram'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T191308.431149Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/libliteeth'
+ CC       udp.o
+ CC       tftp.o
+ CC       mdio.o
+ CC       dhcp.o
+ CC       sfp.o
+/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libliteeth/sfp.c:816:6: warning: no previous prototype for 'sfp_init' [-Wmissing-prototypes]
+  816 | void sfp_init(void) {}
+      |      ^~~~~~~~
+ AR       libliteeth.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T191308.431149Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/libliteeth'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T191308.431149Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/liblitesdcard'
+ CC       sdcard.o
+ CC       spisdcard.o
+ AR       liblitesdcard.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T191308.431149Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/liblitesdcard'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T191308.431149Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/liblitesata'
+ CC       sata.o
+ AR       liblitesata.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T191308.431149Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/liblitesata'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T191308.431149Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/bios'
+ CC       crt0.o
+ CC       boot-helper.o
+ CC       boot.o
+ CC       helpers.o
+ CC       cmd_bios.o
+ CC       cmd_mem.o
+ CC       cmd_boot.o
+ CC       cmd_i2c.o
+ CC       cmd_spiflash.o
+ CC       cmd_litedram.o
+ CC       cmd_liteeth.o
+ CC       cmd_litesdcard.o
+ CC       cmd_litesata.o
+ CC       sim_debug.o
+ CC       main.o
+ CC       readline_simple.o
+ CC       bios.elf
+/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/bin/ld: bios.elf section `.text' will not fit in region `rom'
+/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/bin/ld: region `rom' overflowed by 18320 bytes
+/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/bin/ld: warning: bios.elf has a LOAD segment with RWX permissions
+collect2: error: ld returned 1 exit status
+make[1]: *** [/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/bios/Makefile:101: bios.elf] Error 1
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T191308.431149Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/bios'

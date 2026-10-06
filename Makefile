@@ -1,4 +1,4 @@
-.PHONY: setup doctor build load run compare test benchmark-build benchmark-run benchmark-report ddr-test-build ddr-test-run ddr-test-report cpu-candidate-build cpu-candidate-run maxperf-build maxperf-run peripheral-build peripheral-run peripheral-report clean
+.PHONY: setup doctor build load run compare test benchmark-build benchmark-run benchmark-report ddr-test-build ddr-test-run ddr-test-report cpu-candidate-build cpu-candidate-run maxperf-build maxperf-run peripheral-build peripheral-run peripheral-report system-fit system-fit-check clean
 
 setup:
 	python3 scripts/setup.py
@@ -59,6 +59,12 @@ peripheral-run:
 
 peripheral-report:
 	python3 scripts/project.py peripheral-report
+
+system-fit:
+	.venv/bin/python scripts/system_fit.py run
+
+system-fit-check:
+	.venv/bin/python scripts/system_fit.py check
 
 clean:
 	rm -rf build

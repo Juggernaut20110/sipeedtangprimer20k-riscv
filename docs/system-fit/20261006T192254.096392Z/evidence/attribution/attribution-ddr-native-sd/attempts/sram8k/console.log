@@ -1,0 +1,1162 @@
+INFO:SoC:CSR Bridge [4mcsr[0m [32madded[0m.
+INFO:SoCBusHandler:[4mcsr[0m Region [32madded[0m at Origin: [1m0xf0000000[0m, Size: [1m0x00010000[0m, Mode:  [1mRW[0m, Cached: [1mFalse[0m, Linker: [1mFalse[0m.
+INFO:SoCBusHandler:[4mcsr[0m [32madded[0m as Bus Slave.
+INFO:SoCCSRHandler:[4mcsr[0m [32madded[0m as CSR Master.
+INFO:SoCBusHandler:Interconnect: [1mInterconnectShared[0m ([1m4[0m <-> [1m4[0m).
+INFO:SoCCSRHandler:[4mbuttons[0m CSR [36mallocated[0m at Location [1m0[0m.
+INFO:SoCCSRHandler:[4mctrl[0m CSR [36mallocated[0m at Location [1m1[0m.
+INFO:SoCCSRHandler:[4mddrphy[0m CSR [36mallocated[0m at Location [1m2[0m.
+INFO:SoCCSRHandler:[4midentifier_mem[0m CSR [36mallocated[0m at Location [1m3[0m.
+INFO:SoCCSRHandler:[4mleds[0m CSR [36mallocated[0m at Location [1m4[0m.
+INFO:SoCCSRHandler:[4msdcard[0m CSR [36mallocated[0m at Location [1m5[0m.
+INFO:SoCCSRHandler:[4msdram[0m CSR [36mallocated[0m at Location [1m6[0m.
+INFO:SoCCSRHandler:[4mtimer0[0m CSR [36mallocated[0m at Location [1m7[0m.
+INFO:SoCCSRHandler:[4muart[0m CSR [36mallocated[0m at Location [1m8[0m.
+INFO:SoC:[1m--------------------------------------------------------------------------------[0m
+INFO:SoC:[1mFinalized SoC:[0m
+INFO:SoC:[1m--------------------------------------------------------------------------------[0m
+INFO:SoC:[1m32[0m-bit [1mwishbone[0m Bus, [1m4.0[0mGiB Address Space.
+IO Regions: (1)
+[4mio0[0m                 : Origin: [1m0x80000000[0m, Size: [1m0x80000000[0m, Mode:  [1mRW[0m, Cached: [1mFalse[0m, Linker: [1mFalse[0m
+Bus Regions: (4)
+[4mrom[0m                 : Origin: [1m0x00000000[0m, Size: [1m0x0000c000[0m, Mode:  [1mRX[0m, Cached:  [1mTrue[0m, Linker: [1mFalse[0m
+[4msram[0m                : Origin: [1m0x10000000[0m, Size: [1m0x00002000[0m, Mode: [1mRWX[0m, Cached:  [1mTrue[0m, Linker: [1mFalse[0m
+[4mmain_ram[0m            : Origin: [1m0x40000000[0m, Size: [1m0x08000000[0m, Mode: [1mRWX[0m, Cached:  [1mTrue[0m, Linker: [1mFalse[0m
+[4mcsr[0m                 : Origin: [1m0xf0000000[0m, Size: [1m0x00010000[0m, Mode:  [1mRW[0m, Cached: [1mFalse[0m, Linker: [1mFalse[0m
+Bus Masters: (4)
+- [4mcpu_bus0[0m          : [1mrw[0m
+- [4mcpu_bus1[0m          : [1mrw[0m
+- [4msdcard_block2mem[0m  : [1mw[0m
+- [4msdcard_mem2block[0m  : [1mr[0m
+Bus Slaves: (4)
+- [4mrom[0m               : [1mr[0m
+- [4msram[0m              : [1mrw[0m
+- [4mmain_ram[0m          : [1mrw[0m
+- [4mcsr[0m               : [1mrw[0m
+INFO:SoC:[1m32[0m-bit CSR Bus, [1m32[0m-bit Aligned, [1m16.0[0mKiB Address Space, [1m2048[0mB Paging, [1mbig[0m Ordering (Up to [1m32[0m Locations).
+CSR Locations: (9)
+- [4mbuttons[0m        : [1m0[0m
+- [4mctrl[0m           : [1m1[0m
+- [4mddrphy[0m         : [1m2[0m
+- [4midentifier_mem[0m : [1m3[0m
+- [4mleds[0m           : [1m4[0m
+- [4msdcard[0m         : [1m5[0m
+- [4msdram[0m          : [1m6[0m
+- [4mtimer0[0m         : [1m7[0m
+- [4muart[0m           : [1m8[0m
+INFO:SoC:IRQ Handler (up to [1m32[0m Locations).
+IRQ Locations: (3)
+- [4muart[0m   : [1m0[0m
+- [4mtimer0[0m : [1m1[0m
+- [4msdcard[0m : [1m2[0m
+INFO:SoC:[1m--------------------------------------------------------------------------------[0m
+INFO:SoC:[1m--------------------------------------------------------------------------------[0m
+INFO:SoC:[1mSoC Hierarchy:[0m
+INFO:SoC:[1m--------------------------------------------------------------------------------[0m
+INFO:SoC:
+[4mSystemFitSoC[0m
+├── [36mcrg[0m (_CRG)
+│    ├── [36mpll[0m (GW2APLL)
+│    │    └── [33m[BB:rPLL][0m
+│    ├── [33m[BB:DHCEN][0m
+│    └── [33m[BB:CLKDIV][0m
+├── [36mbus[0m (SoCBusHandler)
+│    └── [36m_interconnect[0m (InterconnectShared)
+│         ├── [36marbiter[0m (Arbiter)
+│         │    └── [36mrr[0m (RoundRobin)
+│         ├── [36mdecoder[0m (Decoder)
+│         └── [36mtimeout[0m (Timeout)
+│              └── [36mwaittimer_0[0m (WaitTimer) [Gen]
+├── [36mcsr[0m (SoCCSRHandler)
+├── [36mirq[0m (SoCIRQHandler)
+├── [36mctrl[0m (SoCController)
+├── [36mcpu[0m (VexRiscv)
+│    └── [33m[BB:VexRiscv][0m
+├── [36mrom[0m (SRAM)
+├── [36msram[0m (SRAM)
+├── [36midentifier[0m (Identifier)
+├── [36muart[0m (UART)
+│    ├── [36mev[0m (EventManager)
+│    │    ├── [36meventsourcelevel_0[0m (EventSourceLevel) [Gen]
+│    │    └── [36meventsourcelevel_1[0m (EventSourceLevel) [Gen]
+│    ├── [36mphy[0m (RS232PHY)
+│    │    ├── [36mtx[0m (RS232PHYTX)
+│    │    │    ├── [36mclk_phase_accum[0m (RS232ClkPhaseAccum)
+│    │    │    └── [36mfsm[0m (FSM)
+│    │    └── [36mrx[0m (RS232PHYRX)
+│    │         ├── [36mclk_phase_accum[0m (RS232ClkPhaseAccum)
+│    │         └── [36mfsm[0m (FSM)
+│    ├── [36mtx_fifo[0m (SyncFIFO)
+│    │    └── [36mfifo[0m (SyncFIFOBuffered)
+│    │         └── [36mfifo[0m (SyncFIFO)
+│    └── [36mrx_fifo[0m (SyncFIFO)
+│         └── [36mfifo[0m (SyncFIFOBuffered)
+│              └── [36mfifo[0m (SyncFIFO)
+├── [36mtimer0[0m (Timer)
+│    └── [36mev[0m (EventManager)
+│         └── [36meventsourceprocess_0[0m (EventSourceProcess) [Gen]
+├── [36mddrphy[0m (GW2DDRPHY)
+│    ├── [36minit[0m (GW2DDRPHYInit)
+│    │    └── [33m[BB:DLL][0m
+│    ├── [36mbitslip_0[0m (BitSlip) [Gen]
+│    ├── [36mbitslip_1[0m (BitSlip) [Gen]
+│    ├── [36mbitslip_2[0m (BitSlip) [Gen]
+│    ├── [36mbitslip_3[0m (BitSlip) [Gen]
+│    ├── [36mbitslip_4[0m (BitSlip) [Gen]
+│    ├── [36mbitslip_5[0m (BitSlip) [Gen]
+│    ├── [36mbitslip_6[0m (BitSlip) [Gen]
+│    ├── [36mbitslip_7[0m (BitSlip) [Gen]
+│    ├── [36mbitslip_8[0m (BitSlip) [Gen]
+│    ├── [36mbitslip_9[0m (BitSlip) [Gen]
+│    ├── [36mbitslip_10[0m (BitSlip) [Gen]
+│    ├── [36mbitslip_11[0m (BitSlip) [Gen]
+│    ├── [36mbitslip_12[0m (BitSlip) [Gen]
+│    ├── [36mbitslip_13[0m (BitSlip) [Gen]
+│    ├── [36mbitslip_14[0m (BitSlip) [Gen]
+│    ├── [36mbitslip_15[0m (BitSlip) [Gen]
+│    ├── [36mtappeddelayline_0[0m (TappedDelayLine) [Gen]
+│    ├── [36mtappeddelayline_1[0m (TappedDelayLine) [Gen]
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:IDES4_MEM][0m
+│    ├── [33m[BB:IOBUF][0m
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:IDES4_MEM][0m
+│    ├── [33m[BB:IOBUF][0m
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:IDES4_MEM][0m
+│    ├── [33m[BB:IOBUF][0m
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:IDES4_MEM][0m
+│    ├── [33m[BB:IOBUF][0m
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:IDES4_MEM][0m
+│    ├── [33m[BB:IOBUF][0m
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:IDES4_MEM][0m
+│    ├── [33m[BB:IOBUF][0m
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:IDES4_MEM][0m
+│    ├── [33m[BB:IOBUF][0m
+│    ├── [33m[BB:ELVDS_OBUF][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:IODELAY][0m
+│    ├── [33m[BB:OSER4][0m
+│    ├── [33m[BB:DQS][0m
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:ELVDS_IOBUF][0m
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:IDES4_MEM][0m
+│    ├── [33m[BB:IOBUF][0m
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:IDES4_MEM][0m
+│    ├── [33m[BB:IOBUF][0m
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:IDES4_MEM][0m
+│    ├── [33m[BB:IOBUF][0m
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:IDES4_MEM][0m
+│    ├── [33m[BB:IOBUF][0m
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:IDES4_MEM][0m
+│    ├── [33m[BB:IOBUF][0m
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:IDES4_MEM][0m
+│    ├── [33m[BB:IOBUF][0m
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:IDES4_MEM][0m
+│    ├── [33m[BB:IOBUF][0m
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:IDES4_MEM][0m
+│    ├── [33m[BB:IOBUF][0m
+│    ├── [33m[BB:DQS][0m
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:ELVDS_IOBUF][0m
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:OSER4_MEM][0m
+│    ├── [33m[BB:IDES4_MEM][0m
+│    └── [33m[BB:IOBUF][0m
+├── [36msdram[0m (LiteDRAMCore)
+│    ├── [36mdfii[0m (DFIInjector)
+│    │    ├── [36mpi0[0m (PhaseInjector)
+│    │    └── [36mpi1[0m (PhaseInjector)
+│    ├── [36mcontroller[0m (LiteDRAMController)
+│    │    ├── [36mrefresher[0m (Refresher)
+│    │    │    ├── [36mtimer[0m (RefreshTimer)
+│    │    │    ├── [36mpostponer[0m (RefreshPostponer)
+│    │    │    ├── [36msequencer[0m (RefreshSequencer)
+│    │    │    │    └── [36mrefreshexecuter_0[0m (RefreshExecuter) [Gen]
+│    │    │    ├── [36mzqcs_timer[0m (RefreshTimer)
+│    │    │    ├── [36mzqs_executer[0m (ZQCSExecuter)
+│    │    │    └── [36mfsm[0m (FSM)
+│    │    ├── [36mbankmachine_0[0m (BankMachine) [Gen]
+│    │    │    ├── [36msyncfifo_0[0m (SyncFIFO) [Gen]
+│    │    │    │    └── [36mfifo[0m (SyncFIFO)
+│    │    │    ├── [36mbuffer_0[0m (Buffer) [Gen]
+│    │    │    │    ├── [36mpipe_valid[0m (PipeValid)
+│    │    │    │    └── [36mpipeline[0m (Pipeline)
+│    │    │    ├── [36mtwtpcon[0m (tXXDController)
+│    │    │    ├── [36mtrccon[0m (tXXDController)
+│    │    │    ├── [36mtrascon[0m (tXXDController)
+│    │    │    └── [36mfsm[0m (FSM)
+│    │    ├── [36mbankmachine_1[0m (BankMachine) [Gen]
+│    │    │    ├── [36msyncfifo_0[0m (SyncFIFO) [Gen]
+│    │    │    │    └── [36mfifo[0m (SyncFIFO)
+│    │    │    ├── [36mbuffer_0[0m (Buffer) [Gen]
+│    │    │    │    ├── [36mpipe_valid[0m (PipeValid)
+│    │    │    │    └── [36mpipeline[0m (Pipeline)
+│    │    │    ├── [36mtwtpcon[0m (tXXDController)
+│    │    │    ├── [36mtrccon[0m (tXXDController)
+│    │    │    ├── [36mtrascon[0m (tXXDController)
+│    │    │    └── [36mfsm[0m (FSM)
+│    │    ├── [36mbankmachine_2[0m (BankMachine) [Gen]
+│    │    │    ├── [36msyncfifo_0[0m (SyncFIFO) [Gen]
+│    │    │    │    └── [36mfifo[0m (SyncFIFO)
+│    │    │    ├── [36mbuffer_0[0m (Buffer) [Gen]
+│    │    │    │    ├── [36mpipe_valid[0m (PipeValid)
+│    │    │    │    └── [36mpipeline[0m (Pipeline)
+│    │    │    ├── [36mtwtpcon[0m (tXXDController)
+│    │    │    ├── [36mtrccon[0m (tXXDController)
+│    │    │    ├── [36mtrascon[0m (tXXDController)
+│    │    │    └── [36mfsm[0m (FSM)
+│    │    ├── [36mbankmachine_3[0m (BankMachine) [Gen]
+│    │    │    ├── [36msyncfifo_0[0m (SyncFIFO) [Gen]
+│    │    │    │    └── [36mfifo[0m (SyncFIFO)
+│    │    │    ├── [36mbuffer_0[0m (Buffer) [Gen]
+│    │    │    │    ├── [36mpipe_valid[0m (PipeValid)
+│    │    │    │    └── [36mpipeline[0m (Pipeline)
+│    │    │    ├── [36mtwtpcon[0m (tXXDController)
+│    │    │    ├── [36mtrccon[0m (tXXDController)
+│    │    │    ├── [36mtrascon[0m (tXXDController)
+│    │    │    └── [36mfsm[0m (FSM)
+│    │    ├── [36mbankmachine_4[0m (BankMachine) [Gen]
+│    │    │    ├── [36msyncfifo_0[0m (SyncFIFO) [Gen]
+│    │    │    │    └── [36mfifo[0m (SyncFIFO)
+│    │    │    ├── [36mbuffer_0[0m (Buffer) [Gen]
+│    │    │    │    ├── [36mpipe_valid[0m (PipeValid)
+│    │    │    │    └── [36mpipeline[0m (Pipeline)
+│    │    │    ├── [36mtwtpcon[0m (tXXDController)
+│    │    │    ├── [36mtrccon[0m (tXXDController)
+│    │    │    ├── [36mtrascon[0m (tXXDController)
+│    │    │    └── [36mfsm[0m (FSM)
+│    │    ├── [36mbankmachine_5[0m (BankMachine) [Gen]
+│    │    │    ├── [36msyncfifo_0[0m (SyncFIFO) [Gen]
+│    │    │    │    └── [36mfifo[0m (SyncFIFO)
+│    │    │    ├── [36mbuffer_0[0m (Buffer) [Gen]
+│    │    │    │    ├── [36mpipe_valid[0m (PipeValid)
+│    │    │    │    └── [36mpipeline[0m (Pipeline)
+│    │    │    ├── [36mtwtpcon[0m (tXXDController)
+│    │    │    ├── [36mtrccon[0m (tXXDController)
+│    │    │    ├── [36mtrascon[0m (tXXDController)
+│    │    │    └── [36mfsm[0m (FSM)
+│    │    ├── [36mbankmachine_6[0m (BankMachine) [Gen]
+│    │    │    ├── [36msyncfifo_0[0m (SyncFIFO) [Gen]
+│    │    │    │    └── [36mfifo[0m (SyncFIFO)
+│    │    │    ├── [36mbuffer_0[0m (Buffer) [Gen]
+│    │    │    │    ├── [36mpipe_valid[0m (PipeValid)
+│    │    │    │    └── [36mpipeline[0m (Pipeline)
+│    │    │    ├── [36mtwtpcon[0m (tXXDController)
+│    │    │    ├── [36mtrccon[0m (tXXDController)
+│    │    │    ├── [36mtrascon[0m (tXXDController)
+│    │    │    └── [36mfsm[0m (FSM)
+│    │    ├── [36mbankmachine_7[0m (BankMachine) [Gen]
+│    │    │    ├── [36msyncfifo_0[0m (SyncFIFO) [Gen]
+│    │    │    │    └── [36mfifo[0m (SyncFIFO)
+│    │    │    ├── [36mbuffer_0[0m (Buffer) [Gen]
+│    │    │    │    ├── [36mpipe_valid[0m (PipeValid)
+│    │    │    │    └── [36mpipeline[0m (Pipeline)
+│    │    │    ├── [36mtwtpcon[0m (tXXDController)
+│    │    │    ├── [36mtrccon[0m (tXXDController)
+│    │    │    ├── [36mtrascon[0m (tXXDController)
+│    │    │    └── [36mfsm[0m (FSM)
+│    │    └── [36mmultiplexer[0m (Multiplexer)
+│    │         ├── [36mchoose_cmd[0m (_CommandChooser)
+│    │         │    └── [36mroundrobin_0[0m (RoundRobin) [Gen]
+│    │         ├── [36mchoose_req[0m (_CommandChooser)
+│    │         │    └── [36mroundrobin_0[0m (RoundRobin) [Gen]
+│    │         ├── [36m_steerer_0[0m (_Steerer) [Gen]
+│    │         ├── [36mtrrdcon[0m (tXXDController)
+│    │         ├── [36mtfawcon[0m (tFAWController)
+│    │         ├── [36mtccdcon[0m (tXXDController)
+│    │         ├── [36mtwtrcon[0m (tXXDController)
+│    │         └── [36mfsm[0m (FSM)
+│    └── [36mcrossbar[0m (LiteDRAMCrossbar)
+│         ├── [36mroundrobin_0[0m (RoundRobin) [Gen]
+│         ├── [36mroundrobin_1[0m (RoundRobin) [Gen]
+│         ├── [36mroundrobin_2[0m (RoundRobin) [Gen]
+│         ├── [36mroundrobin_3[0m (RoundRobin) [Gen]
+│         ├── [36mroundrobin_4[0m (RoundRobin) [Gen]
+│         ├── [36mroundrobin_5[0m (RoundRobin) [Gen]
+│         ├── [36mroundrobin_6[0m (RoundRobin) [Gen]
+│         └── [36mroundrobin_7[0m (RoundRobin) [Gen]
+├── [36ml2_cache[0m (Cache)
+│    └── [36mfsm[0m (FSM)
+├── [36mwishbone_bridge[0m (LiteDRAMWishbone2Native)
+│    └── [36mfsm[0m (FSM)
+├── [36mleds[0m (GPIOOut)
+├── [36mbuttons[0m (GPIOIn)
+├── [36msdcard[0m (LiteSDCard)
+│    ├── [36mphy[0m (SDPHY)
+│    │    ├── [36mclocker[0m (SDPHYClocker)
+│    │    ├── [36minit[0m (SDPHYInit)
+│    │    │    └── [36mfsm[0m (FSM)
+│    │    ├── [36mcmdw[0m (SDPHYCMDW)
+│    │    │    └── [36mfsm[0m (FSM)
+│    │    ├── [36mcmdr[0m (SDPHYCMDR)
+│    │    │    ├── [36mcmdr[0m (SDPHYR)
+│    │    │    │    ├── [36mconverter[0m (Converter)
+│    │    │    │    │    └── [36m_upconverter_0[0m (_UpConverter) [Gen]
+│    │    │    │    └── [36mbuf[0m (Buffer)
+│    │    │    │         ├── [36mpipe_valid[0m (PipeValid)
+│    │    │    │         └── [36mpipeline[0m (Pipeline)
+│    │    │    └── [36mfsm[0m (FSM)
+│    │    ├── [36mdataw[0m (SDPHYDATAW)
+│    │    │    ├── [36mcrc[0m (SDPHYR)
+│    │    │    │    ├── [36mconverter[0m (Converter)
+│    │    │    │    │    └── [36m_upconverter_0[0m (_UpConverter) [Gen]
+│    │    │    │    └── [36mbuf[0m (Buffer)
+│    │    │    │         ├── [36mpipe_valid[0m (PipeValid)
+│    │    │    │         └── [36mpipeline[0m (Pipeline)
+│    │    │    ├── [36mcrc16[0m (CRC16)
+│    │    │    │    ├── [36mcrc_0[0m (CRC) [Gen]
+│    │    │    │    ├── [36mcrc_1[0m (CRC) [Gen]
+│    │    │    │    ├── [36mcrc_2[0m (CRC) [Gen]
+│    │    │    │    └── [36mcrc_3[0m (CRC) [Gen]
+│    │    │    └── [36mfsm[0m (FSM)
+│    │    ├── [36mdatar[0m (SDPHYDATAR)
+│    │    │    ├── [36mcrc16[0m (CRC16)
+│    │    │    │    ├── [36mcrc_0[0m (CRC) [Gen]
+│    │    │    │    ├── [36mcrc_1[0m (CRC) [Gen]
+│    │    │    │    ├── [36mcrc_2[0m (CRC) [Gen]
+│    │    │    │    └── [36mcrc_3[0m (CRC) [Gen]
+│    │    │    ├── [36mdatar_1x[0m (SDPHYR)
+│    │    │    │    ├── [36mconverter[0m (Converter)
+│    │    │    │    │    └── [36m_upconverter_0[0m (_UpConverter) [Gen]
+│    │    │    │    └── [36mbuf[0m (Buffer)
+│    │    │    │         ├── [36mpipe_valid[0m (PipeValid)
+│    │    │    │         └── [36mpipeline[0m (Pipeline)
+│    │    │    ├── [36mdatar_4x[0m (SDPHYR)
+│    │    │    │    ├── [36mconverter[0m (Converter)
+│    │    │    │    │    └── [36m_upconverter_0[0m (_UpConverter) [Gen]
+│    │    │    │    └── [36mbuf[0m (Buffer)
+│    │    │    │         ├── [36mpipe_valid[0m (PipeValid)
+│    │    │    │         └── [36mpipeline[0m (Pipeline)
+│    │    │    └── [36mfsm[0m (FSM)
+│    │    └── [36mio[0m (SDPHYIOGen)
+│    ├── [36mcore[0m (SDCore)
+│    │    ├── [36mcrc7_inserter[0m (CRC)
+│    │    ├── [36mdata_read_fifo[0m (SyncFIFO)
+│    │    │    └── [36mfifo[0m (SyncFIFO)
+│    │    └── [36mfsm[0m (FSM)
+│    ├── [36mblock2mem[0m (SDBlock2MemDMA)
+│    │    ├── [36msyncfifo_0[0m (SyncFIFO) [Gen]
+│    │    │    └── [36mfifo[0m (SyncFIFOBuffered)
+│    │    │         └── [36mfifo[0m (SyncFIFO)
+│    │    ├── [36mconverter_0[0m (Converter) [Gen]
+│    │    │    └── [36m_upconverter_0[0m (_UpConverter) [Gen]
+│    │    └── [36mdma[0m (WishboneDMAWriter)
+│    │         └── [36mfsm[0m (FSM)
+│    ├── [36mmem2block[0m (SDMem2BlockDMA)
+│    │    ├── [36mdma[0m (WishboneDMAReader)
+│    │    │    ├── [36mfifo[0m (SyncFIFO)
+│    │    │    │    └── [36mfifo[0m (SyncFIFO)
+│    │    │    └── [36mfsm[0m (FSM)
+│    │    ├── [36mconverter_0[0m (Converter) [Gen]
+│    │    │    └── [36m_downconverter_0[0m (_DownConverter) [Gen]
+│    │    └── [36msyncfifo_0[0m (SyncFIFO) [Gen]
+│    │         └── [36mfifo[0m (SyncFIFOBuffered)
+│    │              └── [36mfifo[0m (SyncFIFO)
+│    └── [36mev[0m (EventManager)
+│         ├── [36meventsourcepulse_0[0m (EventSourcePulse) [Gen]
+│         ├── [36meventsourcepulse_1[0m (EventSourcePulse) [Gen]
+│         ├── [36meventsourcepulse_2[0m (EventSourcePulse) [Gen]
+│         ├── [36meventsourcelevel_0[0m (EventSourceLevel) [Gen]
+│         └── [36meventsourcelevel_1[0m (EventSourceLevel) [Gen]
+├── [36mcsr_bridge[0m (Wishbone2CSR)
+│    └── [36mfsm[0m (FSM)
+├── [36mcsr_bankarray[0m (CSRBankArray)
+│    ├── [36mcsrbank_0[0m (CSRBank) [Gen]
+│    │    └── [36mcsrstatus_0[0m (CSRStatus) [Gen]
+│    ├── [36mcsrbank_1[0m (CSRBank) [Gen]
+│    │    ├── [36mcsrstorage_0[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_1[0m (CSRStorage) [Gen]
+│    │    └── [36mcsrstatus_0[0m (CSRStatus) [Gen]
+│    ├── [36mcsrbank_2[0m (CSRBank) [Gen]
+│    │    ├── [36mcsrstorage_0[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_1[0m (CSRStorage) [Gen]
+│    │    └── [36mcsrstatus_0[0m (CSRStatus) [Gen]
+│    ├── [36msram_0[0m (SRAM) [Gen]
+│    ├── [36mcsrbank_3[0m (CSRBank) [Gen]
+│    │    └── [36mcsrstorage_0[0m (CSRStorage) [Gen]
+│    ├── [36mcsrbank_4[0m (CSRBank) [Gen]
+│    │    ├── [36mcsrstatus_0[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstorage_0[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_1[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstatus_1[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstorage_2[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_3[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_4[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_5[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_6[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstatus_2[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstatus_3[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstatus_4[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstorage_7[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_8[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_9[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_10[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_11[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstatus_5[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstorage_12[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstatus_6[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstatus_7[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstorage_13[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_14[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_15[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstatus_8[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstorage_16[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstatus_9[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstatus_10[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstatus_11[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstatus_12[0m (CSRStatus) [Gen]
+│    │    └── [36mcsrstorage_17[0m (CSRStorage) [Gen]
+│    ├── [36mcsrbank_5[0m (CSRBank) [Gen]
+│    │    ├── [36mcsrstorage_0[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_1[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_2[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_3[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_4[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstatus_0[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstorage_5[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_6[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_7[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_8[0m (CSRStorage) [Gen]
+│    │    └── [36mcsrstatus_1[0m (CSRStatus) [Gen]
+│    ├── [36mcsrbank_6[0m (CSRBank) [Gen]
+│    │    ├── [36mcsrstorage_0[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_1[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_2[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_3[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstatus_0[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstatus_1[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstatus_2[0m (CSRStatus) [Gen]
+│    │    ├── [36mcsrstorage_4[0m (CSRStorage) [Gen]
+│    │    ├── [36mcsrstorage_5[0m (CSRStorage) [Gen]
+│    │    └── [36mcsrstatus_3[0m (CSRStatus) [Gen]
+│    └── [36mcsrbank_7[0m (CSRBank) [Gen]
+│         ├── [36mcsrstatus_0[0m (CSRStatus) [Gen]
+│         ├── [36mcsrstatus_1[0m (CSRStatus) [Gen]
+│         ├── [36mcsrstatus_2[0m (CSRStatus) [Gen]
+│         ├── [36mcsrstatus_3[0m (CSRStatus) [Gen]
+│         ├── [36mcsrstorage_0[0m (CSRStorage) [Gen]
+│         ├── [36mcsrstatus_4[0m (CSRStatus) [Gen]
+│         └── [36mcsrstatus_5[0m (CSRStatus) [Gen]
+└── [36mcsr_interconnect[0m (InterconnectShared)
+[1mLegend:[0m
+[36m  [Gen][0m: Auto-generated instance name.
+[33m  [BB:NAME][0m: Blackbox instance (verilog Instance).
+
+INFO:SoC:[1m--------------------------------------------------------------------------------[0m
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/software/libc'
+cp /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libc/picolibc-minimal.h /home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/software/libc/picolibc.h
+printf "#define FORMAT_DEFAULT_%s\n" "INTEGER" >> /home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/software/libc/picolibc.h
+rm -f -r /home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/software/include/../picolibc_src
+printf "#define __IO_DEFAULT '%s'\n" "i" >> /home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/software/libc/picolibc.h
+cp -a /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data /home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/software/include/../picolibc_src
+if [ -d "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libc/riscv" ]; then \
+	cp /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libc/riscv/* /home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/software/include/../picolibc_src/libc/machine/riscv/ ;\
+fi
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_attribution_attribution-ddr-native-sd_attempts_sram8k_soc_software_include_.._picolibc_src_libc_ctype_ctype_.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_attribution_attribution-ddr-native-sd_attempts_sram8k_soc_software_include_.._picolibc_src_libc_errno_errno.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_attribution_attribution-ddr-native-sd_attempts_sram8k_soc_software_include_.._picolibc_src_libc_string_strchr.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_attribution_attribution-ddr-native-sd_attempts_sram8k_soc_software_include_.._picolibc_src_libc_string_strncpy.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_attribution_attribution-ddr-native-sd_attempts_sram8k_soc_software_include_.._picolibc_src_libc_string_strncmp.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_attribution_attribution-ddr-native-sd_attempts_sram8k_soc_software_include_.._picolibc_src_libc_string_strnlen.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_attribution_attribution-ddr-native-sd_attempts_sram8k_soc_software_include_.._picolibc_src_libc_stdio_fgetc.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_attribution_attribution-ddr-native-sd_attempts_sram8k_soc_software_include_.._picolibc_src_libc_stdio_fputc.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_attribution_attribution-ddr-native-sd_attempts_sram8k_soc_software_include_.._picolibc_src_libc_stdio_fputs.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_attribution_attribution-ddr-native-sd_attempts_sram8k_soc_software_include_.._picolibc_src_libc_stdio_printf.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_attribution_attribution-ddr-native-sd_attempts_sram8k_soc_software_include_.._picolibc_src_libc_stdio_puts.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_attribution_attribution-ddr-native-sd_attempts_sram8k_soc_software_include_.._picolibc_src_libc_stdio_strtoul.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_attribution_attribution-ddr-native-sd_attempts_sram8k_soc_software_include_.._picolibc_src_libc_stdio_strtoull.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_attribution_attribution-ddr-native-sd_attempts_sram8k_soc_software_include_.._picolibc_src_libc_stdlib_lldiv.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_attribution_attribution-ddr-native-sd_attempts_sram8k_soc_software_include_.._picolibc_src_libc_machine_riscv_memcpy-asm.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_attribution_attribution-ddr-native-sd_attempts_sram8k_soc_software_include_.._picolibc_src_libc_machine_riscv_memmove.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_attribution_attribution-ddr-native-sd_attempts_sram8k_soc_software_include_.._picolibc_src_libc_machine_riscv_memset.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_attribution_attribution-ddr-native-sd_attempts_sram8k_soc_software_include_.._picolibc_src_libc_machine_riscv_strcmp.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_attribution_attribution-ddr-native-sd_attempts_sram8k_soc_software_include_.._picolibc_src_libc_machine_riscv_strcpy.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_attribution_attribution-ddr-native-sd_attempts_sram8k_soc_software_include_.._picolibc_src_libc_machine_riscv_strlen.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_attribution_attribution-ddr-native-sd_attempts_sram8k_soc_software_include_.._picolibc_src_libc_stdio_vfiprintf.o
+ AR       __libc_minimal.a
+ CC       _libc_minimal.a
+ AR       _libc_minimal.a
+cp __libc_minimal.a _libc_minimal.a
+ CC       libc-minimal.a
+ AR       libc-minimal.a
+cp _libc_minimal.a libc-minimal.a
+cp libc-minimal.a libc.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/software/libc'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/software/libcompiler_rt'
+ CC       umodsi3.o
+ CC       udivsi3.o
+ CC       divsi3.o
+ CC       modsi3.o
+ CC       comparesf2.o
+ CC       comparedf2.o
+ CC       negsf2.o
+ CC       negdf2.o
+/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-compiler_rt/pythondata_software_compiler_rt/data/lib/builtins/comparesf2.c:85:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+   85 | FNALIAS(__cmpsf2, __lesf2);
+      | ^~~~~~~
+/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-compiler_rt/pythondata_software_compiler_rt/data/lib/builtins/comparedf2.c:85:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+   85 | FNALIAS(__cmpdf2, __ledf2);
+      | ^~~~~~~
+ CC       addsf3.o
+ CC       subsf3.o
+ CC       mulsf3.o
+ CC       divsf3.o
+ CC       extendsfdf2.o
+ CC       truncdfsf2.o
+ CC       lshrdi3.o
+ CC       muldi3.o
+ CC       divdi3.o
+ CC       ashldi3.o
+ CC       ashrdi3.o
+ CC       udivmoddi4.o
+ CC       floatsisf.o
+ CC       floatunsisf.o
+ CC       fixsfsi.o
+ CC       fixdfdi.o
+ CC       fixunssfsi.o
+ CC       fixunsdfdi.o
+ CC       adddf3.o
+ CC       subdf3.o
+ CC       muldf3.o
+ CC       divdf3.o
+ CC       floatsidf.o
+ CC       floatunsidf.o
+ CC       floatdidf.o
+ CC       fixdfsi.o
+ CC       fixunsdfsi.o
+ CC       clzsi2.o
+ CC       ctzsi2.o
+ CC       clzdi2.o
+ CC       ctzdi2.o
+ CC       udivdi3.o
+ CC       umoddi3.o
+ CC       moddi3.o
+ CC       ucmpdi2.o
+ CC       mulsi3.o
+ AR       libcompiler_rt.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/software/libcompiler_rt'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/software/libbase'
+ CC       crc16.o
+ CC       crc32.o
+ CC       console.o
+ CC       format.o
+ CC       parse.o
+ CC       timeout.o
+ CC       system.o
+ CC       progress.o
+ CC       memtest.o
+ CC       uart.o
+ CC       startup.o
+ CC       spiflash.o
+ CC       i2c.o
+ CC       isr.o
+ CC       hyperram.o
+ AR       libbase.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/software/libbase'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/software/libfatfs'
+ CC       ffunicode.o
+ CC       ff.o
+ AR       libfatfs.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/software/libfatfs'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/software/liblitespi'
+ CC       spiflash.o
+ CC       spiram.o
+ AR       liblitespi.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/software/liblitespi'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/software/liblitedram'
+ CC       sdram.o
+ CC       bist.o
+ CC       sdram_dbg.o
+ CC       sdram_spd.o
+ CC       utils.o
+ CC       accessors.o
+ AR       liblitedram.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/software/liblitedram'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/software/libliteeth'
+ CC       udp.o
+ CC       tftp.o
+ CC       mdio.o
+ CC       dhcp.o
+ CC       sfp.o
+/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libliteeth/sfp.c:816:6: warning: no previous prototype for 'sfp_init' [-Wmissing-prototypes]
+  816 | void sfp_init(void) {}
+      |      ^~~~~~~~
+ AR       libliteeth.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/software/libliteeth'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/software/liblitesdcard'
+ CC       sdcard.o
+ CC       spisdcard.o
+ AR       liblitesdcard.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/software/liblitesdcard'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/software/liblitesata'
+ CC       sata.o
+ AR       liblitesata.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/software/liblitesata'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/software/bios'
+ CC       crt0.o
+ CC       boot-helper.o
+ CC       boot.o
+ CC       helpers.o
+ CC       cmd_bios.o
+ CC       cmd_mem.o
+ CC       cmd_boot.o
+ CC       cmd_i2c.o
+ CC       cmd_spiflash.o
+ CC       cmd_litedram.o
+ CC       cmd_liteeth.o
+ CC       cmd_litesdcard.o
+ CC       cmd_litesata.o
+ CC       sim_debug.o
+ CC       main.o
+ CC       readline_simple.o
+ CC       bios.elf
+/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/bin/ld: warning: bios.elf has a LOAD segment with RWX permissions
+chmod -x bios.elf
+ OBJCOPY  bios.bin
+chmod -x bios.bin
+python3 -m litex.soc.software.crcfbigen bios.bin --little
+python3 -m litex.soc.software.memusage --fail-stack-margin 2048 bios.elf /home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/software/bios/../include/generated/regions.ld riscv-none-elf
+
+ROM usage: 41.83KiB 	(87.15%)
+SRAM usage: 2.95KiB 	(36.91%)
+  .data: 0.05KiB
+  .bss: 2.90KiB
+  stack margin: 5.05KiB
+
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/software/bios'
+INFO:SoC:Initializing ROM [1mrom[0m with contents (Size: [1m0xa75c[0m).
+INFO:SoC:Auto-Resizing ROM [1mrom[0m from [1m0xc000[0m to [1m0xa75c[0m.
+*** GOWIN Tcl Command Line Console  *** 
+current device: GW2A-18C  GW2A-LV18PG256C8/I7
+add new file: "system_fit_candidate_2_compact_memory.cst"
+add new file: "system_fit_candidate_2_compact_memory.sdc"
+add new file: "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.v"
+add new file: "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v"
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file '/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.v'
+Analyzing Verilog file '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v'
+Compiling module 'system_fit_candidate_2_compact_memory'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":30255)
+WARN  (EX3780) : Using initial value of 'por_rst' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":30716)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_vexriscv' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":30950)
+Compiling module 'system_fit_candidate_2_compact_memory__bus'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":1143)
+Compiling module 'system_fit_candidate_2_compact_memory__bus___interconnect'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":852)
+Compiling module 'system_fit_candidate_2_compact_memory__bus___interconnect__arbiter'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":586)
+Compiling module 'system_fit_candidate_2_compact_memory__bus___interconnect__arbiter__rr'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":479)
+Compiling module 'system_fit_candidate_2_compact_memory__csr'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":1415)
+Compiling module 'system_fit_candidate_2_compact_memory__irq'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":1451)
+Compiling module 'system_fit_candidate_2_compact_memory__rom'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":1487)
+Extracting RAM for identifier 'rom'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":1542)
+Compiling module 'system_fit_candidate_2_compact_memory__sram'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":1559)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_ram_adr_burst' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":1578)
+Extracting RAM for identifier 'sram'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":1627)
+Compiling module 'system_fit_candidate_2_compact_memory__identifier'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":1648)
+Extracting RAM for identifier 'mem'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":1684)
+Compiling module 'system_fit_candidate_2_compact_memory__uart'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":2482)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_uart_core_rx_fifo_replace' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":2553)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_uart_core_tx_fifo_replace' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":2593)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_uart_core_tx_fifo_sink_first' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":2594)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_uart_core_tx_fifo_sink_last' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":2595)
+Extracting RAM for identifier 'storage'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":2847)
+Extracting RAM for identifier 'storage_1'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":2866)
+Compiling module 'system_fit_candidate_2_compact_memory__uart__ev'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":1781)
+Compiling module 'system_fit_candidate_2_compact_memory__uart__ev__eventsourcelevel_0'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":1701)
+Compiling module 'system_fit_candidate_2_compact_memory__uart__ev__eventsourcelevel_1'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":1741)
+Compiling module 'system_fit_candidate_2_compact_memory__uart__phy'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":2360)
+Compiling module 'system_fit_candidate_2_compact_memory__uart__phy__tx'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":2023)
+Compiling module 'system_fit_candidate_2_compact_memory__uart__phy__tx__clk_phase_accum'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":1861)
+Compiling module 'system_fit_candidate_2_compact_memory__uart__phy__tx__fsm'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":1911)
+Compiling module 'system_fit_candidate_2_compact_memory__uart__phy__rx'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":2263)
+Compiling module 'system_fit_candidate_2_compact_memory__uart__phy__rx__clk_phase_accum'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":2105)
+Compiling module 'system_fit_candidate_2_compact_memory__uart__phy__rx__fsm'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":2155)
+Compiling module 'system_fit_candidate_2_compact_memory__timer0'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":3011)
+Compiling module 'system_fit_candidate_2_compact_memory__timer0__ev'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":2943)
+Compiling module 'system_fit_candidate_2_compact_memory__timer0__ev__eventsourceprocess_0'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":2886)
+Compiling module 'system_fit_candidate_2_compact_memory__ddrphy'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":4586)
+Compiling module 'system_fit_candidate_2_compact_memory__ddrphy__init'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":3111)
+Compiling module 'system_fit_candidate_2_compact_memory__ddrphy__bitslip_0'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":3263)
+Compiling module 'system_fit_candidate_2_compact_memory__ddrphy__bitslip_1'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":3337)
+Compiling module 'system_fit_candidate_2_compact_memory__ddrphy__bitslip_2'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":3411)
+Compiling module 'system_fit_candidate_2_compact_memory__ddrphy__bitslip_3'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":3485)
+Compiling module 'system_fit_candidate_2_compact_memory__ddrphy__bitslip_4'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":3559)
+Compiling module 'system_fit_candidate_2_compact_memory__ddrphy__bitslip_5'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":3633)
+Compiling module 'system_fit_candidate_2_compact_memory__ddrphy__bitslip_6'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":3707)
+Compiling module 'system_fit_candidate_2_compact_memory__ddrphy__bitslip_7'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":3781)
+Compiling module 'system_fit_candidate_2_compact_memory__ddrphy__bitslip_8'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":3855)
+Compiling module 'system_fit_candidate_2_compact_memory__ddrphy__bitslip_9'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":3929)
+Compiling module 'system_fit_candidate_2_compact_memory__ddrphy__bitslip_10'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":4003)
+Compiling module 'system_fit_candidate_2_compact_memory__ddrphy__bitslip_11'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":4077)
+Compiling module 'system_fit_candidate_2_compact_memory__ddrphy__bitslip_12'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":4151)
+Compiling module 'system_fit_candidate_2_compact_memory__ddrphy__bitslip_13'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":4225)
+Compiling module 'system_fit_candidate_2_compact_memory__ddrphy__bitslip_14'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":4299)
+Compiling module 'system_fit_candidate_2_compact_memory__ddrphy__bitslip_15'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":4373)
+Compiling module 'system_fit_candidate_2_compact_memory__ddrphy__tappeddelayline_0'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":4447)
+Compiling module 'system_fit_candidate_2_compact_memory__ddrphy__tappeddelayline_1'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":4524)
+WARN  (EX3670) : Actual bit length 2 differs from formal bit length 3 for port 'RCLKSEL'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":6901)
+WARN  (EX3670) : Actual bit length 2 differs from formal bit length 3 for port 'RCLKSEL'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":7491)
+Compiling module 'system_fit_candidate_2_compact_memory__sdram'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":8817)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_bankmachine0_replace' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9013)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_bankmachine0_sink_first' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9027)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_bankmachine0_sink_last' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9028)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_bankmachine1_replace' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9108)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_bankmachine1_sink_first' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9122)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_bankmachine1_sink_last' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9123)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_bankmachine2_replace' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9203)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_bankmachine2_sink_first' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9217)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_bankmachine2_sink_last' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9218)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_bankmachine3_replace' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9298)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_bankmachine3_sink_first' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9312)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_bankmachine3_sink_last' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9313)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_bankmachine4_replace' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9393)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_bankmachine4_sink_first' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9407)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_bankmachine4_sink_last' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9408)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_bankmachine5_replace' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9488)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_bankmachine5_sink_first' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9502)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_bankmachine5_sink_last' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9503)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_bankmachine6_replace' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9583)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_bankmachine6_sink_first' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9597)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_bankmachine6_sink_last' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9598)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_bankmachine7_replace' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9678)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_bankmachine7_sink_first' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9692)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_bankmachine7_sink_last' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9693)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_choose_cmd_want_cmds' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9750)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_choose_cmd_want_reads' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9751)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_choose_cmd_want_writes' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9752)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_choose_req_want_activates' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9767)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_choose_req_want_cmds' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9768)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_cmd_payload_is_read' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9775)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_cmd_payload_is_write' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9776)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_csr_dfi_p0_act_n' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9781)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_csr_dfi_p1_act_n' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9797)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_dfi_p0_act_n' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9813)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_dfi_p1_act_n' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9829)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_ext_dfi_p0_act_n' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9847)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_ext_dfi_p0_address' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9848)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_ext_dfi_p0_bank' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9849)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_ext_dfi_p0_cas_n' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9850)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_ext_dfi_p0_cke' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9851)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_ext_dfi_p0_cs_n' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9852)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_ext_dfi_p0_odt' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9853)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_ext_dfi_p0_ras_n' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9854)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_ext_dfi_p0_rddata_en' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9856)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_ext_dfi_p0_reset_n' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9858)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_ext_dfi_p0_we_n' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9859)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_ext_dfi_p0_wrdata' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9860)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_ext_dfi_p0_wrdata_en' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9861)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_ext_dfi_p0_wrdata_mask' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9862)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_ext_dfi_p1_act_n' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9863)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_ext_dfi_p1_address' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9864)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_ext_dfi_p1_bank' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9865)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_ext_dfi_p1_cas_n' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9866)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_ext_dfi_p1_cke' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9867)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_ext_dfi_p1_cs_n' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9868)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_ext_dfi_p1_odt' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9869)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_ext_dfi_p1_ras_n' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9870)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_ext_dfi_p1_rddata_en' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9872)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_ext_dfi_p1_reset_n' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9874)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_ext_dfi_p1_we_n' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9875)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_ext_dfi_p1_wrdata' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9876)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_ext_dfi_p1_wrdata_en' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9877)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_ext_dfi_p1_wrdata_mask' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9878)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_ext_dfi_sel' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9879)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_nop_a' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9974)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_nop_ba' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":9975)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_steerer2' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":10021)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_steerer3' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":10022)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_steerer4' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":10023)
+WARN  (EX3780) : Using initial value of 'systemfitsoc_sdram_steerer5' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":10024)
+Extracting RAM for identifier 'storage_2'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":14405)
+Extracting RAM for identifier 'storage_3'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":14420)
+Extracting RAM for identifier 'storage_4'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":14435)
+Extracting RAM for identifier 'storage_5'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":14450)
+Extracting RAM for identifier 'storage_6'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":14465)
+Extracting RAM for identifier 'storage_7'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":14480)
+Extracting RAM for identifier 'storage_8'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":14495)
+Extracting RAM for identifier 'storage_9'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":14510)
+Compiling module 'system_fit_candidate_2_compact_memory__sdram__crossbar'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":8333)
+WARN  (EX3780) : Using initial value of 'locked0' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":8435)
+WARN  (EX3780) : Using initial value of 'locked1' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":8436)
+WARN  (EX3780) : Using initial value of 'locked2' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":8437)
+WARN  (EX3780) : Using initial value of 'locked3' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":8438)
+WARN  (EX3780) : Using initial value of 'locked4' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":8439)
+WARN  (EX3780) : Using initial value of 'locked5' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":8440)
+WARN  (EX3780) : Using initial value of 'locked6' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":8441)
+WARN  (EX3780) : Using initial value of 'locked7' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":8442)
+Compiling module 'system_fit_candidate_2_compact_memory__sdram__crossbar__roundrobin_1'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":8074)
+Compiling module 'system_fit_candidate_2_compact_memory__sdram__crossbar__roundrobin_2'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":8111)
+Compiling module 'system_fit_candidate_2_compact_memory__sdram__crossbar__roundrobin_3'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":8148)
+Compiling module 'system_fit_candidate_2_compact_memory__sdram__crossbar__roundrobin_4'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":8185)
+Compiling module 'system_fit_candidate_2_compact_memory__sdram__crossbar__roundrobin_5'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":8222)
+Compiling module 'system_fit_candidate_2_compact_memory__sdram__crossbar__roundrobin_6'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":8259)
+Compiling module 'system_fit_candidate_2_compact_memory__sdram__crossbar__roundrobin_7'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":8296)
+WARN  (EX3791) : Expression size 2 truncated to fit in target size 1("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":10388)
+WARN  (EX3791) : Expression size 2 truncated to fit in target size 1("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":10419)
+WARN  (EX3791) : Expression size 4 truncated to fit in target size 3("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":14207)
+Compiling module 'system_fit_candidate_2_compact_memory__l2_cache'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":14654)
+Extracting RAM for identifier 'tag_mem'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":14786)
+Extracting RAM for identifier 'data_mem_grain0'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":14803)
+Extracting RAM for identifier 'data_mem_grain1'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":14820)
+Extracting RAM for identifier 'data_mem_grain2'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":14837)
+Extracting RAM for identifier 'data_mem_grain3'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":14854)
+Extracting RAM for identifier 'data_mem_grain4'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":14871)
+Extracting RAM for identifier 'data_mem_grain5'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":14888)
+Extracting RAM for identifier 'data_mem_grain6'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":14905)
+Extracting RAM for identifier 'data_mem_grain7'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":14922)
+Extracting RAM for identifier 'data_mem_grain8'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":14939)
+Extracting RAM for identifier 'data_mem_grain9'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":14956)
+Extracting RAM for identifier 'data_mem_grain10'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":14973)
+Extracting RAM for identifier 'data_mem_grain11'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":14990)
+Extracting RAM for identifier 'data_mem_grain12'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15007)
+Extracting RAM for identifier 'data_mem_grain13'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15024)
+Extracting RAM for identifier 'data_mem_grain14'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15041)
+Extracting RAM for identifier 'data_mem_grain15'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15058)
+Compiling module 'system_fit_candidate_2_compact_memory__l2_cache__fsm'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":14526)
+WARN  (EX3791) : Expression size 30 truncated to fit in target size 28("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":14764)
+Compiling module 'system_fit_candidate_2_compact_memory__wishbone_bridge'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15237)
+Compiling module 'system_fit_candidate_2_compact_memory__wishbone_bridge__fsm'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15077)
+WARN  (EX3791) : Expression size 28 truncated to fit in target size 23("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15298)
+Compiling module 'system_fit_candidate_2_compact_memory__leds'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15331)
+Compiling module 'system_fit_candidate_2_compact_memory__buttons'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15369)
+Compiling module 'system_fit_candidate_2_compact_memory__sdcard'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":19334)
+WARN  (EX3780) : Using initial value of 'block2mem_fifo_replace' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":19466)
+WARN  (EX3780) : Using initial value of 'core_syncfifo_replace' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":19626)
+WARN  (EX3780) : Using initial value of 'mem2block_dma_fifo_replace' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":19711)
+WARN  (EX3780) : Using initial value of 'mem2block_dma_fifo_sink_first' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":19712)
+WARN  (EX3780) : Using initial value of 'mem2block_fifo_replace' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":19768)
+Extracting RAM for identifier 'storage_10'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":21917)
+Extracting RAM for identifier 'storage_11'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":21932)
+Extracting RAM for identifier 'storage_12'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":21951)
+Extracting RAM for identifier 'storage_13'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":21966)
+Compiling module 'system_fit_candidate_2_compact_memory__sdcard__phy'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15595)
+WARN  (EX3780) : Using initial value of 'cmdr_cmdr_converter_converter_sink_first' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15697)
+WARN  (EX3780) : Using initial value of 'cmdr_cmdr_converter_converter_sink_last' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15698)
+WARN  (EX3780) : Using initial value of 'cmdr_cmdr_pads_in_ready' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15724)
+WARN  (EX3780) : Using initial value of 'cmdr_pads_in_pads_in_first' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15742)
+WARN  (EX3780) : Using initial value of 'cmdr_pads_in_pads_in_last' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15743)
+WARN  (EX3780) : Using initial value of 'cmdr_pads_in_pads_in_payload_clk' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15744)
+WARN  (EX3780) : Using initial value of 'cmdr_pads_in_pads_in_payload_cmd_o' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15746)
+WARN  (EX3780) : Using initial value of 'cmdr_pads_in_pads_in_payload_cmd_oe' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15747)
+WARN  (EX3780) : Using initial value of 'cmdr_pads_in_pads_in_payload_data_i_ce' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15749)
+WARN  (EX3780) : Using initial value of 'cmdr_pads_in_pads_in_payload_data_o' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15750)
+WARN  (EX3780) : Using initial value of 'cmdr_pads_in_pads_in_payload_data_oe' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15751)
+WARN  (EX3780) : Using initial value of 'cmdr_pads_out_payload_data_o' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15757)
+WARN  (EX3780) : Using initial value of 'cmdr_pads_out_payload_data_oe' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15758)
+WARN  (EX3780) : Using initial value of 'cmdw_pads_out_payload_data_o' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15774)
+WARN  (EX3780) : Using initial value of 'cmdw_pads_out_payload_data_oe' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15775)
+WARN  (EX3780) : Using initial value of 'datar_datar_1x_converter_converter_sink_first' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15841)
+WARN  (EX3780) : Using initial value of 'datar_datar_1x_converter_converter_sink_last' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15842)
+WARN  (EX3780) : Using initial value of 'datar_datar_1x_pads_in_ready' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15868)
+WARN  (EX3780) : Using initial value of 'datar_datar_4x_converter_converter_sink_first' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15900)
+WARN  (EX3780) : Using initial value of 'datar_datar_4x_converter_converter_sink_last' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15901)
+WARN  (EX3780) : Using initial value of 'datar_datar_4x_pads_in_ready' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15927)
+WARN  (EX3780) : Using initial value of 'datar_pads_in_pads_in_first' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15946)
+WARN  (EX3780) : Using initial value of 'datar_pads_in_pads_in_last' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15947)
+WARN  (EX3780) : Using initial value of 'datar_pads_in_pads_in_payload_clk' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15948)
+WARN  (EX3780) : Using initial value of 'datar_pads_in_pads_in_payload_cmd_o' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15950)
+WARN  (EX3780) : Using initial value of 'datar_pads_in_pads_in_payload_cmd_oe' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15951)
+WARN  (EX3780) : Using initial value of 'datar_pads_in_pads_in_payload_data_i_ce' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15953)
+WARN  (EX3780) : Using initial value of 'datar_pads_in_pads_in_payload_data_o' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15954)
+WARN  (EX3780) : Using initial value of 'datar_pads_in_pads_in_payload_data_oe' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15955)
+WARN  (EX3780) : Using initial value of 'datar_pads_out_payload_cmd_o' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15959)
+WARN  (EX3780) : Using initial value of 'datar_pads_out_payload_cmd_oe' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15960)
+WARN  (EX3780) : Using initial value of 'datar_pads_out_payload_data_o' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15961)
+WARN  (EX3780) : Using initial value of 'datar_pads_out_payload_data_oe' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15962)
+WARN  (EX3780) : Using initial value of 'dataw_crc_converter_converter_sink_first' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":16024)
+WARN  (EX3780) : Using initial value of 'dataw_crc_converter_converter_sink_last' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":16025)
+WARN  (EX3780) : Using initial value of 'dataw_crc_source_ready' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":16061)
+WARN  (EX3780) : Using initial value of 'dataw_pads_in_pads_in_first' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":16064)
+WARN  (EX3780) : Using initial value of 'dataw_pads_in_pads_in_last' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":16065)
+WARN  (EX3780) : Using initial value of 'dataw_pads_in_pads_in_payload_clk' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":16066)
+WARN  (EX3780) : Using initial value of 'dataw_pads_in_pads_in_payload_cmd_o' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":16068)
+WARN  (EX3780) : Using initial value of 'dataw_pads_in_pads_in_payload_cmd_oe' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":16069)
+WARN  (EX3780) : Using initial value of 'dataw_pads_in_pads_in_payload_data_i_ce' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":16071)
+WARN  (EX3780) : Using initial value of 'dataw_pads_in_pads_in_payload_data_o' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":16072)
+WARN  (EX3780) : Using initial value of 'dataw_pads_in_pads_in_payload_data_oe' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":16073)
+WARN  (EX3780) : Using initial value of 'dataw_pads_in_pads_in_ready' since it is never assigned("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":16074)
+Compiling module 'system_fit_candidate_2_compact_memory__sdcard__phy__io'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":15416)
+Compiling module 'system_fit_candidate_2_compact_memory__sdcard__ev'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":19186)
+Compiling module 'system_fit_candidate_2_compact_memory__sdcard__ev__eventsourcepulse_0'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":18944)
+Compiling module 'system_fit_candidate_2_compact_memory__sdcard__ev__eventsourcepulse_1'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":18998)
+Compiling module 'system_fit_candidate_2_compact_memory__sdcard__ev__eventsourcepulse_2'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":19052)
+Compiling module 'system_fit_candidate_2_compact_memory__sdcard__ev__eventsourcelevel_0'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":19106)
+Compiling module 'system_fit_candidate_2_compact_memory__sdcard__ev__eventsourcelevel_1'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":19146)
+WARN  (EX3791) : Expression size 136 truncated to fit in target size 128("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":20396)
+WARN  (EX3791) : Expression size 136 truncated to fit in target size 128("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":20399)
+WARN  (EX3791) : Expression size 62 truncated to fit in target size 30("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":21208)
+WARN  (EX3791) : Expression size 62 truncated to fit in target size 30("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":21413)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bridge'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":22136)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bridge__fsm'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":21986)
+WARN  (EX3791) : Expression size 30 truncated to fit in target size 14("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":22075)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":28799)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_0'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":22269)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_0__csrstatus_0'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":22217)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_1'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":22522)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_1__csrstorage_0'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":22353)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_1__csrstorage_1'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":22416)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_1__csrstatus_0'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":22470)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_2'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":22824)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_2__csrstorage_0'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":22664)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_2__csrstorage_1'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":22718)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_2__csrstatus_0'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":22772)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__sram_0'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":23042)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_3'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":23154)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_3__csrstorage_0'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":23100)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":24987)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstatus_0'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":23236)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstorage_0'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":23288)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstorage_1'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":23342)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstatus_1'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":23396)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstorage_2'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":23457)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstorage_3'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":23511)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstorage_4'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":23567)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstorage_5'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":23621)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstorage_6'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":23683)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstatus_2'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":23737)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstatus_3'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":23795)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstatus_4'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":23858)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstorage_7'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":23921)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstorage_8'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":23975)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstorage_9'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":24029)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstorage_10'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":24090)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstorage_11'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":24144)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstatus_5'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":24198)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstorage_12'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":24250)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstatus_6'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":24304)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstatus_7'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":24356)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstorage_13'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":24408)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstorage_14'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":24469)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstorage_15'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":24523)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstatus_8'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":24577)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstorage_16'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":24629)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstatus_9'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":24683)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstatus_10'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":24735)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstatus_11'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":24787)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstatus_12'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":24852)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstorage_17'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":24923)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_5'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":26717)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_5__csrstorage_0'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":26075)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_5__csrstorage_1'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":26137)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_5__csrstorage_2'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":26207)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_5__csrstorage_3'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":26260)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_5__csrstorage_4'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":26313)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_5__csrstatus_0'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":26373)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_5__csrstorage_5'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":26427)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_5__csrstorage_6'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":26497)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_5__csrstorage_7'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":26550)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_5__csrstorage_8'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":26603)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_5__csrstatus_1'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":26663)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_6'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":27763)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_6__csrstorage_0'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":27217)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_6__csrstorage_1'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":27271)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_6__csrstorage_2'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":27325)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_6__csrstorage_3'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":27379)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_6__csrstatus_0'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":27433)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_6__csrstatus_1'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":27485)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_6__csrstatus_2'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":27539)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_6__csrstorage_4'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":27599)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_6__csrstorage_5'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":27655)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_6__csrstatus_3'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":27709)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_7'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":28512)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_7__csrstatus_0'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":28122)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_7__csrstatus_1'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":28174)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_7__csrstatus_2'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":28226)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_7__csrstatus_3'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":28285)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_7__csrstorage_0'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":28350)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_7__csrstatus_4'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":28408)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_7__csrstatus_5'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":28460)
+Compiling module 'system_fit_candidate_2_compact_memory__csr_interconnect'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":30123)
+Compiling module 'VexRiscv'("/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.v":7)
+Extracting RAM for identifier 'RegFilePlugin_regFile'("/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.v":1817)
+Compiling module 'InstructionCache'("/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.v":8326)
+Extracting RAM for identifier 'banks_0'("/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.v":8448)
+Extracting RAM for identifier 'ways_0_tags'("/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.v":8449)
+Compiling module 'DataCache'("/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.v":7318)
+Extracting RAM for identifier 'ways_0_tags'("/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.v":7575)
+Extracting RAM for identifier 'ways_0_data_symbol0'("/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.v":7576)
+Extracting RAM for identifier 'ways_0_data_symbol1'("/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.v":7577)
+Extracting RAM for identifier 'ways_0_data_symbol2'("/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.v":7578)
+Extracting RAM for identifier 'ways_0_data_symbol3'("/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.v":7579)
+WARN  (EX3858) : System task 'display' is ignored for synthesis("/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.v":8298)
+WARN  (EX1998) : Net 'IBusCachedPlugin_cache_io_cpu_fetch_isRemoved' does not have a driver("/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.v":73)
+WARN  (EX1998) : Net 'dataCache_1_io_cpu_writeBack_fence_SW' does not have a driver("/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.v":92)
+WARN  (EX1998) : Net 'dataCache_1_io_cpu_writeBack_fence_SR' does not have a driver("/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.v":93)
+WARN  (EX1998) : Net 'dataCache_1_io_cpu_writeBack_fence_SO' does not have a driver("/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.v":94)
+WARN  (EX1998) : Net 'dataCache_1_io_cpu_writeBack_fence_SI' does not have a driver("/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.v":95)
+WARN  (EX1998) : Net 'dataCache_1_io_cpu_writeBack_fence_PW' does not have a driver("/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.v":96)
+WARN  (EX1998) : Net 'dataCache_1_io_cpu_writeBack_fence_PR' does not have a driver("/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.v":97)
+WARN  (EX1998) : Net 'dataCache_1_io_cpu_writeBack_fence_PO' does not have a driver("/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.v":98)
+WARN  (EX1998) : Net 'dataCache_1_io_cpu_writeBack_fence_PI' does not have a driver("/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.v":99)
+WARN  (EX1998) : Net 'dataCache_1_io_cpu_writeBack_fence_FM[3]' does not have a driver("/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.v":100)
+WARN  (EX1998) : Net 'dBus_rsp_payload_last' does not have a driver("/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.v":731)
+WARN  (EX1998) : Net 'CsrPlugin_mtvec_mode[1]' does not have a driver("/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.v":1281)
+WARN  (EX1998) : Net 'CsrPlugin_stvec_mode[1]' does not have a driver("/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.v":1332)
+WARN  (EX1998) : Net 'gw2ddrphy_burstdet_clr_w' does not have a driver("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":30573)
+WARN  (EX1998) : Net 'gw2ddrphy_rdly_dq_bitslip_rst_w' does not have a driver("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":30616)
+WARN  (EX1998) : Net 'gw2ddrphy_rdly_dq_bitslip_w' does not have a driver("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":30618)
+WARN  (EX1998) : Net 'gw2ddrphy_rdly_dq_inc_w' does not have a driver("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":30624)
+WARN  (EX1998) : Net 'gw2ddrphy_rdly_dq_rst_w' does not have a driver("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":30628)
+WARN  (EX1998) : Net 'init_initialize_w' does not have a driver("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":30641)
+WARN  (EX1998) : Net 'interface0_bus_bte[1]' does not have a driver("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":30649)
+WARN  (EX1998) : Net 'interface0_bus_cti[2]' does not have a driver("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":30650)
+WARN  (EX1998) : Net 'interface0_err' does not have a driver("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":30662)
+WARN  (EX1998) : Net 'interface1_bus_bte[1]' does not have a driver("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":30669)
+WARN  (EX1998) : Net 'interface1_bus_cti[2]' does not have a driver("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":30670)
+WARN  (EX1998) : Net 'interface1_bus_dat_w[31]' does not have a driver("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":30673)
+WARN  (EX1998) : Net 'systemfitsoc_ram_bus_ram_bus_err' does not have a driver("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":30789)
+WARN  (EX1998) : Net 'systemfitsoc_sdram_phaseinjector0_command_issue_w' does not have a driver("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":30807)
+WARN  (EX1998) : Net 'systemfitsoc_sdram_phaseinjector1_command_issue_w' does not have a driver("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":30830)
+WARN  (EX1998) : Net 'systemfitsoc_systemfitsoc_adr_burst' does not have a driver("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":30852)
+WARN  (EX1998) : Net 'systemfitsoc_systemfitsoc_ram_bus_err' does not have a driver("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":30861)
+WARN  (EX1998) : Net 'systemfitsoc_uart_core_rx_source_first' does not have a driver("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":30907)
+WARN  (EX1998) : Net 'systemfitsoc_uart_core_rx_source_last' does not have a driver("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":30908)
+WARN  (EX1998) : Net 'systemfitsoc_wb_sdram_err' does not have a driver("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":30958)
+NOTE  (EX0101) : Current top module is "system_fit_candidate_2_compact_memory"
+WARN  (EX0211) : The output port "io_cpu_writesPending" of module "DataCache" has no driver, assigning undriven bits to Z, simulation mismatch possible("/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.v":7379)
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+WARN  (NL0002) : The module "system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_0__csrstatus_0" instantiated to "csrstatus_0" is swept in optimizing("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":22306)
+WARN  (NL0002) : The module "system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_1__csrstatus_0" instantiated to "csrstatus_0" is swept in optimizing("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":22593)
+WARN  (NL0002) : The module "system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_2__csrstatus_0" instantiated to "csrstatus_0" is swept in optimizing("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":22911)
+WARN  (NL0002) : The module "system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstatus_0" instantiated to "csrstatus_0" is swept in optimizing("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":25272)
+WARN  (NL0002) : The module "system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstatus_1" instantiated to "csrstatus_1" is swept in optimizing("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":25303)
+WARN  (NL0002) : The module "system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstatus_10" instantiated to "csrstatus_10" is swept in optimizing("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":25550)
+WARN  (NL0002) : The module "system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstatus_11" instantiated to "csrstatus_11" is swept in optimizing("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":25565)
+WARN  (NL0002) : The module "system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstatus_2" instantiated to "csrstatus_2" is swept in optimizing("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":25366)
+WARN  (NL0002) : The module "system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstatus_3" instantiated to "csrstatus_3" is swept in optimizing("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":25380)
+WARN  (NL0002) : The module "system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstatus_4" instantiated to "csrstatus_4" is swept in optimizing("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":25394)
+WARN  (NL0002) : The module "system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstatus_5" instantiated to "csrstatus_5" is swept in optimizing("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":25452)
+WARN  (NL0002) : The module "system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstatus_6" instantiated to "csrstatus_6" is swept in optimizing("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":25471)
+WARN  (NL0002) : The module "system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstatus_7" instantiated to "csrstatus_7" is swept in optimizing("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":25481)
+WARN  (NL0002) : The module "system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstatus_8" instantiated to "csrstatus_8" is swept in optimizing("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":25521)
+WARN  (NL0002) : The module "system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_4__csrstatus_9" instantiated to "csrstatus_9" is swept in optimizing("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":25540)
+WARN  (NL0002) : The module "system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_5__csrstatus_0" instantiated to "csrstatus_0" is swept in optimizing("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":26920)
+WARN  (NL0002) : The module "system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_5__csrstatus_1" instantiated to "csrstatus_1" is swept in optimizing("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":26978)
+WARN  (NL0002) : The module "system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_6__csrstatus_0" instantiated to "csrstatus_0" is swept in optimizing("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":27901)
+WARN  (NL0002) : The module "system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_6__csrstatus_1" instantiated to "csrstatus_1" is swept in optimizing("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":27912)
+WARN  (NL0002) : The module "system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_6__csrstatus_3" instantiated to "csrstatus_3" is swept in optimizing("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":27955)
+WARN  (NL0002) : The module "system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_7__csrstatus_0" instantiated to "csrstatus_0" is swept in optimizing("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":28601)
+WARN  (NL0002) : The module "system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_7__csrstatus_1" instantiated to "csrstatus_1" is swept in optimizing("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":28611)
+WARN  (NL0002) : The module "system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_7__csrstatus_2" instantiated to "csrstatus_2" is swept in optimizing("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":28623)
+WARN  (NL0002) : The module "system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_7__csrstatus_4" instantiated to "csrstatus_4" is swept in optimizing("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":28658)
+WARN  (NL0002) : The module "system_fit_candidate_2_compact_memory__csr_bankarray__csrbank_7__csrstatus_5" instantiated to "csrstatus_5" is swept in optimizing("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":28668)
+WARN  (NL0002) : The module "system_fit_candidate_2_compact_memory__csr_interconnect" instantiated to "csr_interconnect" is swept in optimizing("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":31953)
+WARN  (NL0002) : The module "system_fit_candidate_2_compact_memory__leds" instantiated to "leds" is swept in optimizing("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":31472)
+WARN  (NL0002) : The module "system_fit_candidate_2_compact_memory__sdcard__ev__eventsourcelevel_0" instantiated to "eventsourcelevel_0" is swept in optimizing("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":19264)
+WARN  (NL0002) : The module "system_fit_candidate_2_compact_memory__sdcard__ev__eventsourcelevel_1" instantiated to "eventsourcelevel_1" is swept in optimizing("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":19269)
+WARN  (NL0002) : The module "system_fit_candidate_2_compact_memory__sdram__crossbar__roundrobin_1" instantiated to "roundrobin_1" is swept in optimizing("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":8489)
+WARN  (NL0002) : The module "system_fit_candidate_2_compact_memory__sdram__crossbar__roundrobin_2" instantiated to "roundrobin_2" is swept in optimizing("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":8492)
+WARN  (NL0002) : The module "system_fit_candidate_2_compact_memory__sdram__crossbar__roundrobin_3" instantiated to "roundrobin_3" is swept in optimizing("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":8495)
+WARN  (NL0002) : The module "system_fit_candidate_2_compact_memory__sdram__crossbar__roundrobin_4" instantiated to "roundrobin_4" is swept in optimizing("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":8498)
+WARN  (NL0002) : The module "system_fit_candidate_2_compact_memory__sdram__crossbar__roundrobin_5" instantiated to "roundrobin_5" is swept in optimizing("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":8501)
+WARN  (NL0002) : The module "system_fit_candidate_2_compact_memory__sdram__crossbar__roundrobin_6" instantiated to "roundrobin_6" is swept in optimizing("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":8504)
+WARN  (NL0002) : The module "system_fit_candidate_2_compact_memory__sdram__crossbar__roundrobin_7" instantiated to "roundrobin_7" is swept in optimizing("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":8507)
+WARN  (NL0002) : The module "system_fit_candidate_2_compact_memory__uart__ev__eventsourcelevel_0" instantiated to "eventsourcelevel_0" is swept in optimizing("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":1815)
+WARN  (NL0002) : The module "system_fit_candidate_2_compact_memory__uart__ev__eventsourcelevel_1" instantiated to "eventsourcelevel_1" is swept in optimizing("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.v":1820)
+[95%] Generate netlist file "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/impl/gwsynthesis/project.vg" completed
+[100%] Generate report file "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/impl/gwsynthesis/project_syn.rpt.html" completed
+GowinSynthesis finish
+Reading netlist file: "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/impl/gwsynthesis/project.vg"
+Parsing netlist file "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/impl/gwsynthesis/project.vg" completed
+Processing netlist completed
+Reading constraint file: "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/system_fit_candidate_2_compact_memory.cst"
+Physical Constraint parsed completed
+Running placement......
+[10%] Placement Phase 0 completed
+[20%] Placement Phase 1 completed
+[30%] Placement Phase 2 completed
+[50%] Placement Phase 3 completed
+Running routing......
+[60%] Routing Phase 0 completed
+[70%] Routing Phase 1 completed
+[80%] Routing Phase 2 completed
+[90%] Routing Phase 3 completed
+Running timing analysis......
+[95%] Timing analysis completed
+Placement and routing completed
+Bitstream generation in progress......
+Bitstream generation completed
+Running power analysis......
+[100%] Power analysis completed
+Generate file "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/impl/pnr/project.power.html" completed
+Generate file "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/impl/pnr/project.pin.html" completed
+Generate file "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/impl/pnr/project.rpt.html" completed
+Generate file "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/impl/pnr/project.rpt.txt" completed
+Generate file "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/impl/pnr/project.tr.html" completed
+Generate file "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/attribution/attribution-ddr-native-sd/attempts/sram8k/soc/gateware/impl/pnr/project.tr" completed
+Tue Oct  6 15:29:09 2026
+

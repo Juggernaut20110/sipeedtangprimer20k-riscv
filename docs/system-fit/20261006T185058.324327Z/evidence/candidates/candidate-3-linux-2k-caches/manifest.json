@@ -1,0 +1,23 @@
+{
+  "attempt_dir": "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T185058.324327Z/candidates/candidate-3-linux-2k-caches",
+  "classification": "tool failure",
+  "config": {
+    "candidate": {
+      "cpu_source": "generated-linux-minimal",
+      "d_cache_bytes": 2048,
+      "ethernet_rx_slots": 1,
+      "ethernet_tx_slots": 1,
+      "i_cache_bytes": 2048,
+      "id": "candidate-3-linux-2k-caches",
+      "l2_bytes": 2048,
+      "working_sram_bytes": 4096
+    }
+  },
+  "error": "StudyError: pinned VexRiscv Linux generator failed with exit 2; see /home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T185058.324327Z/candidates/candidate-3-linux-2k-caches/cpu/generator.log",
+  "id": "candidate-3-linux-2k-caches",
+  "manifest_path": "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T185058.324327Z/candidates/candidate-3-linux-2k-caches/manifest.json",
+  "phases": {
+    "cpu": "failed"
+  },
+  "status": "failed"
+}

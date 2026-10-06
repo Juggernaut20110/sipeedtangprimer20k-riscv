@@ -1,0 +1,195 @@
+{
+  "classification": "integration failure",
+  "config": {
+    "attempt_dir": "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T184931.666393Z/attribution/attribution-ddr-native-sd/attempts/rom32k",
+    "candidate": {
+      "cpu_source": "pinned-linux-rtl",
+      "d_cache_bytes": 4096,
+      "ethernet_rx_slots": 1,
+      "ethernet_tx_slots": 1,
+      "i_cache_bytes": 4096,
+      "id": "candidate-2-compact-memory",
+      "l2_bytes": 2048,
+      "working_sram_bytes": 4096
+    },
+    "cpu": {
+      "cache_sizes": {
+        "d_cache_bytes": 4096,
+        "i_cache_bytes": 4096
+      },
+      "features": {
+        "interrupt_ports": true,
+        "lr_sc_and_amo": true,
+        "mmu": true,
+        "supervisor_csrs": true,
+        "wishbone_instruction_and_data": true
+      },
+      "generator_arguments": [
+        "Makefile target VexRiscv_Linux.v",
+        "--csrPluginConfig linux-minimal"
+      ],
+      "generator_revisions": {
+        "generator_commit": "642ecfed1c84460555d6d803d660cc60cfc1ecb6",
+        "sbt": "1.9.7",
+        "scala": "2.11.12",
+        "spinalhdl": "1.9.4",
+        "submodule_commit": "b6118e5cc2a33323425df6455697139021d50c72"
+      },
+      "generator_source_sha256": "6710fdcae5ba443ec48d0c0b9206f29e77af8a30bd4ffa2754dc8eb6ce4c13bb",
+      "linux_recipe_sha256": "b29974e961899fc38bae75c1750753739de8dbd2ee7d352ca9e0879176763fd6",
+      "module": "VexRiscv",
+      "ports": [
+        "clk",
+        "dBusWishbone_ACK",
+        "dBusWishbone_ADR",
+        "dBusWishbone_BTE",
+        "dBusWishbone_CTI",
+        "dBusWishbone_CYC",
+        "dBusWishbone_DAT_MISO",
+        "dBusWishbone_DAT_MOSI",
+        "dBusWishbone_ERR",
+        "dBusWishbone_SEL",
+        "dBusWishbone_STB",
+        "dBusWishbone_WE",
+        "externalInterruptArray",
+        "externalResetVector",
+        "iBusWishbone_ACK",
+        "iBusWishbone_ADR",
+        "iBusWishbone_BTE",
+        "iBusWishbone_CTI",
+        "iBusWishbone_CYC",
+        "iBusWishbone_DAT_MISO",
+        "iBusWishbone_DAT_MOSI",
+        "iBusWishbone_ERR",
+        "iBusWishbone_SEL",
+        "iBusWishbone_STB",
+        "iBusWishbone_WE",
+        "reset",
+        "softwareInterrupt",
+        "timerInterrupt"
+      ],
+      "rtl_path": "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.v",
+      "rtl_sha256": "c19a1b07f799100869dc49646c328e83d9970a2f81076824393a677a60f61240",
+      "source": "pinned VexRiscv_Linux.v from the locked pythondata-cpu-vexriscv checkout",
+      "yaml_path": "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.yaml",
+      "yaml_reported_cache_sizes": {
+        "d_cache_bytes": null,
+        "i_cache_bytes": 4096
+      },
+      "yaml_sha256": "583d95d18f997da1c4972315d01f6042a8cc8fe842d11f50f76f782dc045486e"
+    },
+    "created_utc": "2026-10-06T18:49:35.215958+00:00",
+    "dependency_revisions": {
+      "coremark": {
+        "present": true,
+        "requested_commit": "1f483d5b8316753a742cbf5590caf5bd0a4e4777",
+        "resolved_commit": "1f483d5b8316753a742cbf5590caf5bd0a4e4777"
+      },
+      "litedram": {
+        "present": true,
+        "requested_commit": "4c979d195aa0c60adcaf70374a52872028aaca63",
+        "resolved_commit": "4c979d195aa0c60adcaf70374a52872028aaca63"
+      },
+      "liteeth": {
+        "present": true,
+        "requested_commit": "013a6ad38c26317ac9588acd0660922981cc2a73",
+        "resolved_commit": "013a6ad38c26317ac9588acd0660922981cc2a73"
+      },
+      "liteiclink": {
+        "present": true,
+        "requested_commit": "ad793817302490b04b3abc5c4de669594d3958e8",
+        "resolved_commit": "ad793817302490b04b3abc5c4de669594d3958e8"
+      },
+      "litesdcard": {
+        "present": false,
+        "requested_commit": "227d61b",
+        "resolved_commit": null
+      },
+      "litex": {
+        "present": true,
+        "requested_commit": "58322a1d239a9eca8b93a8497f8945855d965f4f",
+        "resolved_commit": "58322a1d239a9eca8b93a8497f8945855d965f4f"
+      },
+      "litex-boards": {
+        "present": true,
+        "requested_commit": "c0d9cdf11e20c8b774f4ee1154fddac6e1dca03a",
+        "resolved_commit": "c0d9cdf11e20c8b774f4ee1154fddac6e1dca03a"
+      },
+      "lwip": {
+        "present": true,
+        "requested_commit": "77dcd25a72509eb83f72b033d219b1d40cd8eb95",
+        "resolved_commit": "77dcd25a72509eb83f72b033d219b1d40cd8eb95"
+      },
+      "migen": {
+        "present": true,
+        "requested_commit": "e19524c963a8342952840983047557707fbe0b6a",
+        "resolved_commit": "e19524c963a8342952840983047557707fbe0b6a"
+      },
+      "pythondata-cpu-vexriscv": {
+        "present": true,
+        "requested_commit": "642ecfed1c84460555d6d803d660cc60cfc1ecb6",
+        "resolved_commit": "642ecfed1c84460555d6d803d660cc60cfc1ecb6"
+      },
+      "pythondata-software-compiler_rt": {
+        "present": true,
+        "requested_commit": "6eb76609c9627bf26635e57c63fb22cda7115887",
+        "resolved_commit": "6eb76609c9627bf26635e57c63fb22cda7115887"
+      },
+      "pythondata-software-picolibc": {
+        "present": true,
+        "requested_commit": "6a13ccce7c575b32c102dd9dc52178505b81fe39",
+        "resolved_commit": "6a13ccce7c575b32c102dd9dc52178505b81fe39"
+      }
+    },
+    "ethernet": "none",
+    "ethernet_rx_slots": 1,
+    "ethernet_slot_bytes": 2048,
+    "ethernet_tx_slots": 1,
+    "l2_bytes": 2048,
+    "native_sd": true,
+    "requested_rom_bytes": 32768,
+    "source_fingerprints": {
+      "files": {
+        "Makefile": "183f1b17dd3f0ef4d571e1cba7a6b1feedc179c5880f7e5378a1591e29aa1a6d",
+        "cpu-generator.lock.json": "751d39859ca19a72e1126c8001586fdacc9724f4cd12437290524d73146103ff",
+        "dependencies.lock.json": "91474469eddf67a98350fada56282e76f52cdbb9f8034ed240f9ab39a75277c7",
+        "gateware/ddr3.py": "2133b4b308f3af3c7c8b95ecfc84a5ce6cec7b163b0bdac4d53db6fcbdcbbde2",
+        "gateware/ddr_geometry.py": "a560747cf2d231da7e4f4380e73510b604f5d7398fb3749def7765709c8833ec",
+        "gateware/peripherals.py": "3e4d0d3a7a896e413fa782e37969f8cebb2cbb270bb971f293b2b33a997e24b4",
+        "gateware/soc.py": "5f42d35c29d7e16661acb0aba0db20d0619325c7b315aeb003175bb425f19f87",
+        "gateware/system_fit.py": "b1bb7ce6b078dae96af2111ccb937e0a69e105ff9c33672ca15bd88a0c26ac45",
+        "scripts/build.py": "91da6d76f9543d16131dbde8f4485423ad7a8122d0cfeae3232a9e9e8999292f",
+        "scripts/cpu_candidates.py": "9d1603f8fed7e5d90de08ad3caded1660a52f8f77d3d5a31dad555e6b18d9ea9",
+        "scripts/setup.py": "18f70932654ce4bb7a0d36757014d2aa4cdb277636be4f04738872803cc64c28",
+        "scripts/system_fit.py": "a2484a7687252de94c40d5925d984be3ad316e8b2719aaf53b41c2f2336a41e8",
+        "scripts/system_fit_reports.py": "db0600fecd03cb986166908a43356560f1d30fef337a177ddf6cb83c3a79096f"
+      },
+      "repository_patches": {
+        "patches/litedram-gw2ddrphy-cdc.patch": "71229b174b5d5f637379c059b0dcf4d9643252341056c92c832faf99722bac92",
+        "patches/litedram-gw2ddrphy-dll-off-read.patch": "df5a3e3451bc43aae1910633a51c7ee38e37d6c7e8c8cb2bb00e4464e449efb1",
+        "patches/litex-bios-no-ethernet-autoinit.patch": "402a4e3af37553d904dd5ad8869274429d3494e10c62d86a602f72f2839b3ced",
+        "patches/litex-ddr-diagnostic-boot.patch": "5aaa1ff59cbe6d4cbbf8349c9c2f951f6fb01783ab0b34d5abd18f5ed2cfe0f1",
+        "patches/litex-gowin-extra-sdc.patch": "84e41d7d1b78d54e13a6e528d7b9600a95b9ffb75ec99b00e9bddaaf11ddfe85",
+        "patches/litex-memtest-read-only-diagnostic.patch": "cd5f38d8ffa19a9e3818df9e506b7085d0564b5767ff5bd60ff9f0ad991f3614",
+        "patches/litex-project-vexriscv-isa-variants.patch": "f8c86512ddf96a15de419a9a5f855e9a497533fe2aa2c7ff0cae3fdfb7917d36",
+        "patches/litex-sdram-read-capture-diagnostic.patch": "282232cc7d0c16f6fef14f9216cfb3e9803dad4eb265d25f3cfecf0c71716332",
+        "patches/litex-sdram-training-status.patch": "7cfc35b269fb7123dbedf32ca4a1ea3a6a59d809f1fd834ba0ac4399916d6635",
+        "patches/lwip-tcp-option-bounds.patch": "2aa7c59c5628771e1b08c80a5b39694d61541b1eb436e397d9436de4c584d9a4"
+      }
+    },
+    "working_sram_bytes": 4096
+  },
+  "error": "ModuleNotFoundError: No module named 'litesdcard'",
+  "error_log_tail": "Traceback (most recent call last):\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/system_fit.py\", line 761, in _construct_and_build\n    soc = SystemFitSoC(\n          ^^^^^^^^^^^^^\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/gateware/system_fit.py\", line 40, in __init__\n    self.add_sdcard(name=\"sdcard\", mode=\"read+write\")\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py\", line 3161, in add_sdcard\n    from litesdcard.emulator import SDEmulator\nModuleNotFoundError: No module named 'litesdcard'\n",
+  "failure_log_paths": [
+    "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T184931.666393Z/attribution/attribution-ddr-native-sd/attempts/rom32k/errors.log"
+  ],
+  "phases": {
+    "bios": "failed",
+    "cpu": "passed",
+    "pnr": "failed",
+    "soc": "failed",
+    "synthesis": "failed"
+  },
+  "status": "failed"
+}

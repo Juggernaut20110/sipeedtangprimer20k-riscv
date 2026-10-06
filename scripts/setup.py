@@ -34,6 +34,7 @@ PROJECT_PATCHES = {
         ROOT / "patches/litedram-gw2ddrphy-cdc.patch",
         ROOT / "patches/litedram-gw2ddrphy-dll-off-read.patch",
     ),
+    "litesdcard": (),
     "lwip": (
         ROOT / "patches/lwip-tcp-option-bounds.patch",
     ),
@@ -106,18 +107,30 @@ def checkout_repositories():
         if dirty:
             raise RuntimeError(f"dependency checkout has local changes; inspect {path} before setup can update it")
         current = subprocess.check_output(["git", "-C", str(path), "rev-parse", "HEAD"], text=True).strip()
-        if current != entry["commit"]:
-            has_commit = subprocess.run(["git", "-C", str(path), "cat-file", "-e", entry["commit"]], check=False).returncode == 0
-            if not has_commit:
-                run(["git", "-C", str(path), "fetch", "origin", entry["commit"]])
-            run(["git", "-C", str(path), "checkout", "--detach", entry["commit"]])
+        expected = subprocess.run(
+            ["git", "-C", str(path), "rev-parse", "--verify", f"{entry['commit']}^{{commit}}"],
+            capture_output=True, text=True,
+        )
+        if expected.returncode:
+            run(["git", "-C", str(path), "fetch", "origin", entry["commit"]])
+            expected = subprocess.run(
+                ["git", "-C", str(path), "rev-parse", "--verify", f"{entry['commit']}^{{commit}}"],
+                capture_output=True, text=True,
+            )
+        if expected.returncode:
+            raise RuntimeError(
+                f"locked revision {entry['commit']} for {entry['name']} did not resolve to a commit"
+            )
+        expected_commit = expected.stdout.strip()
+        if current != expected_commit:
+            run(["git", "-C", str(path), "checkout", "--detach", expected_commit])
         if entry.get("submodules"):
             run(["git", "-C", str(path), "submodule", "update", "--init", "--recursive"])
             for subpath, commit in entry["submodules"].items():
                 actual = subprocess.check_output(["git", "-C", str(path / subpath), "rev-parse", "HEAD"], text=True).strip()
                 if actual != commit:
                     raise RuntimeError(f"submodule {entry['name']}/{subpath} is {actual}, expected {commit}")
-        print(f"Locked {entry['name']} at {entry['commit']}")
+        print(f"Locked {entry['name']} at {expected_commit}")
 
     for name, patches in PROJECT_PATCHES.items():
         checkout = DEPS / name
@@ -243,7 +256,8 @@ def install_python_and_compiler():
     # external Python wheels, while source commits are pinned in dependencies.lock.json.
     for name in [
         "migen", "litex", "litedram", "liteiclink", "liteeth", "litex-boards",
-        "pythondata-cpu-vexriscv", "pythondata-software-picolibc", "pythondata-software-compiler_rt",
+        "litesdcard", "pythondata-cpu-vexriscv", "pythondata-software-picolibc",
+        "pythondata-software-compiler_rt",
     ]:
         run([str(venv_python), "-m", "pip", "install", "--no-deps", "--no-build-isolation", "--editable", str(DEPS / name)])
 

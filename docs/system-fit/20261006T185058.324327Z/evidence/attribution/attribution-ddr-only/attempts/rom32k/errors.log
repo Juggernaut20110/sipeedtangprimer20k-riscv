@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/system_fit.py", line 794, in _construct_and_build
+    _capture_build(builder, f"system_fit_{candidate['id']}")
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/system_fit.py", line 626, in _capture_build
+    builder.build(run=True, build_name=build_name, hierarchical=True)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 521, in build
+    return self._build(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 590, in _build
+    self._check_meson()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 402, in _check_meson
+    raise OSError(msg)
+OSError: Unable to find valid Meson build system, please install it with:
+- pip3 install meson.
+

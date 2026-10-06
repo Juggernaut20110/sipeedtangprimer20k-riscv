@@ -1,0 +1,873 @@
+# LiteX build log
+# Started: 2026-10-06T15:23:40
+# Command: scripts/system_fit.py run
+# Working directory: /home/user/git/fpga/sipeedtangprimer20k-riscv
+
+INFO:SoC:        __   _ __      _  __  
+INFO:SoC:       / /  (_) /____ | |/_/  
+INFO:SoC:      / /__/ / __/ -_)>  <    
+INFO:SoC:     /____/_/\__/\__/_/|_|  
+INFO:SoC:  Build your hardware, easily!
+INFO:SoC:--------------------------------------------------------------------------------
+INFO:SoC:Creating SoC... (2026-10-06 15:23:39)
+INFO:SoC:--------------------------------------------------------------------------------
+INFO:SoC:FPGA device : GW2A-LV18PG256C8/I7.
+INFO:SoC:System clock: 48.000MHz.
+INFO:SoCBusHandler:Creating Bus Handler...
+INFO:SoCBusHandler:32-bit wishbone Bus, 4.0GiB Address Space.
+INFO:SoCBusHandler:Adding reserved Bus Regions...
+INFO:SoCBusHandler:Bus Handler created.
+INFO:SoCCSRHandler:Creating CSR Handler...
+INFO:SoCCSRHandler:32-bit CSR Bus, 32-bit Aligned, 16.0KiB Address Space, 2048B Paging, big Ordering (Up to 32 Locations).
+INFO:SoCCSRHandler:Adding reserved CSRs...
+INFO:SoCCSRHandler:CSR Handler created.
+INFO:SoCIRQHandler:Creating IRQ Handler...
+INFO:SoCIRQHandler:IRQ Handler (up to 32 Locations).
+INFO:SoCIRQHandler:Adding reserved IRQs...
+INFO:SoCIRQHandler:IRQ Handler created.
+INFO:SoC:--------------------------------------------------------------------------------
+INFO:SoC:Initial SoC:
+INFO:SoC:--------------------------------------------------------------------------------
+INFO:SoC:32-bit wishbone Bus, 4.0GiB Address Space.
+INFO:SoC:32-bit CSR Bus, 32-bit Aligned, 16.0KiB Address Space, 2048B Paging, big Ordering (Up to 32 Locations).
+INFO:SoC:IRQ Handler (up to 32 Locations).
+INFO:SoC:--------------------------------------------------------------------------------
+INFO:SoC:Controller ctrl added.
+INFO:SoC:CPU vexriscv added.
+INFO:SoC:CPU vexriscv adding IO Region 0 at 0x80000000 (Size: 0x80000000).
+INFO:SoCBusHandler:io0 Region added at Origin: 0x80000000, Size: 0x80000000, Mode:  RW, Cached: False, Linker: False.
+INFO:SoC:CPU vexriscv overriding sram mapping from 0x01000000 to 0x10000000.
+INFO:SoC:CPU vexriscv setting reset address to 0x00000000.
+INFO:SoC:CPU vexriscv adding Bus Master(s).
+INFO:SoCBusHandler:cpu_bus0 added as Bus Master.
+INFO:SoCBusHandler:cpu_bus1 added as Bus Master.
+INFO:SoC:CPU vexriscv adding Interrupt(s).
+INFO:SoC:CPU vexriscv adding SoC components.
+INFO:SoCBusHandler:rom Region added at Origin: 0x00000000, Size: 0x00008000, Mode:  RX, Cached:  True, Linker: False.
+INFO:SoCBusHandler:rom added as Bus Slave.
+INFO:SoC:RAM rom added Origin: 0x00000000, Size: 0x00008000, Mode:  RX, Cached:  True, Linker: False.
+INFO:SoCBusHandler:sram Region added at Origin: 0x10000000, Size: 0x00001000, Mode: RWX, Cached:  True, Linker: False.
+INFO:SoCBusHandler:sram added as Bus Slave.
+INFO:SoC:RAM sram added Origin: 0x10000000, Size: 0x00001000, Mode: RWX, Cached:  True, Linker: False.
+INFO:SoCIRQHandler:uart IRQ allocated at Location 0.
+INFO:SoCIRQHandler:timer0 IRQ allocated at Location 1.
+INFO:SoCBusHandler:main_ram Region added at Origin: 0x40000000, Size: 0x08000000, Mode: RWX, Cached:  True, Linker: False.
+INFO:SoCBusHandler:main_ram added as Bus Slave.
+INFO:SoCBusHandler:Allocating IO Region of size 0x00001000...
+INFO:SoCBusHandler:ethmac Region allocated at Origin: 0x80000000, Size: 0x00001000, Mode:  RW, Cached: False, Linker:  True.
+INFO:SoCBusHandler:ethmac_rx Region added at Origin: 0x80000000, Size: 0x00000800, Mode:   R, Cached: False, Linker: False.
+INFO:SoCBusHandler:ethmac_rx added as Bus Slave.
+INFO:SoCBusHandler:ethmac_tx Region added at Origin: 0x80000800, Size: 0x00000800, Mode:   W, Cached: False, Linker: False.
+INFO:SoCBusHandler:ethmac_tx added as Bus Slave.
+INFO:SoCIRQHandler:ethmac IRQ allocated at Location 2.
+INFO:SoCBusHandler:sdcard_block2mem added as Bus Master.
+INFO:SoCBusHandler:sdcard_mem2block added as Bus Master.
+INFO:SoCIRQHandler:sdcard IRQ allocated at Location 3.
+INFO:SoC:CSR Bridge csr added.
+INFO:SoCBusHandler:csr Region added at Origin: 0xf0000000, Size: 0x00010000, Mode:  RW, Cached: False, Linker: False.
+INFO:SoCBusHandler:csr added as Bus Slave.
+INFO:SoCCSRHandler:csr added as CSR Master.
+INFO:SoCBusHandler:Interconnect: InterconnectShared (4 <-> 6).
+INFO:SoCCSRHandler:buttons CSR allocated at Location 0.
+INFO:SoCCSRHandler:ctrl CSR allocated at Location 1.
+INFO:SoCCSRHandler:ddrphy CSR allocated at Location 2.
+INFO:SoCCSRHandler:ethmac CSR allocated at Location 3.
+INFO:SoCCSRHandler:ethphy CSR allocated at Location 4.
+INFO:SoCCSRHandler:identifier_mem CSR allocated at Location 5.
+INFO:SoCCSRHandler:leds CSR allocated at Location 6.
+INFO:SoCCSRHandler:sdcard CSR allocated at Location 7.
+INFO:SoCCSRHandler:sdram CSR allocated at Location 8.
+INFO:SoCCSRHandler:timer0 CSR allocated at Location 9.
+INFO:SoCCSRHandler:uart CSR allocated at Location 10.
+INFO:SoC:--------------------------------------------------------------------------------
+INFO:SoC:Finalized SoC:
+INFO:SoC:--------------------------------------------------------------------------------
+INFO:SoC:32-bit wishbone Bus, 4.0GiB Address Space.
+IO Regions: (1)
+io0                 : Origin: 0x80000000, Size: 0x80000000, Mode:  RW, Cached: False, Linker: False
+Bus Regions: (7)
+rom                 : Origin: 0x00000000, Size: 0x00008000, Mode:  RX, Cached:  True, Linker: False
+sram                : Origin: 0x10000000, Size: 0x00001000, Mode: RWX, Cached:  True, Linker: False
+main_ram            : Origin: 0x40000000, Size: 0x08000000, Mode: RWX, Cached:  True, Linker: False
+ethmac              : Origin: 0x80000000, Size: 0x00001000, Mode:  RW, Cached: False, Linker:  True
+ethmac_rx           : Origin: 0x80000000, Size: 0x00000800, Mode:   R, Cached: False, Linker: False
+ethmac_tx           : Origin: 0x80000800, Size: 0x00000800, Mode:   W, Cached: False, Linker: False
+csr                 : Origin: 0xf0000000, Size: 0x00010000, Mode:  RW, Cached: False, Linker: False
+Bus Masters: (4)
+- cpu_bus0          : rw
+- cpu_bus1          : rw
+- sdcard_block2mem  : w
+- sdcard_mem2block  : r
+Bus Slaves: (6)
+- rom               : r
+- sram              : rw
+- main_ram          : rw
+- ethmac_rx         : r
+- ethmac_tx         : w
+- csr               : rw
+INFO:SoC:32-bit CSR Bus, 32-bit Aligned, 16.0KiB Address Space, 2048B Paging, big Ordering (Up to 32 Locations).
+CSR Locations: (11)
+- buttons        : 0
+- ctrl           : 1
+- ddrphy         : 2
+- ethmac         : 3
+- ethphy         : 4
+- identifier_mem : 5
+- leds           : 6
+- sdcard         : 7
+- sdram          : 8
+- timer0         : 9
+- uart           : 10
+INFO:SoC:IRQ Handler (up to 32 Locations).
+IRQ Locations: (4)
+- uart   : 0
+- timer0 : 1
+- ethmac : 2
+- sdcard : 3
+INFO:SoC:--------------------------------------------------------------------------------
+INFO:SoC:--------------------------------------------------------------------------------
+INFO:SoC:SoC Hierarchy:
+INFO:SoC:--------------------------------------------------------------------------------
+INFO:SoC:
+SystemFitSoC
+├── crg (_CRG)
+│    ├── pll (GW2APLL)
+│    │    └── [BB:rPLL]
+│    ├── [BB:DHCEN]
+│    └── [BB:CLKDIV]
+├── bus (SoCBusHandler)
+│    └── _interconnect (InterconnectShared)
+│         ├── arbiter (Arbiter)
+│         │    └── rr (RoundRobin)
+│         ├── decoder (Decoder)
+│         └── timeout (Timeout)
+│              └── waittimer_0 (WaitTimer) [Gen]
+├── csr (SoCCSRHandler)
+├── irq (SoCIRQHandler)
+├── ctrl (SoCController)
+├── cpu (VexRiscv)
+│    └── [BB:VexRiscv]
+├── rom (SRAM)
+├── sram (SRAM)
+├── identifier (Identifier)
+├── uart (UART)
+│    ├── ev (EventManager)
+│    │    ├── eventsourcelevel_0 (EventSourceLevel) [Gen]
+│    │    └── eventsourcelevel_1 (EventSourceLevel) [Gen]
+│    ├── phy (RS232PHY)
+│    │    ├── tx (RS232PHYTX)
+│    │    │    ├── clk_phase_accum (RS232ClkPhaseAccum)
+│    │    │    └── fsm (FSM)
+│    │    └── rx (RS232PHYRX)
+│    │         ├── clk_phase_accum (RS232ClkPhaseAccum)
+│    │         └── fsm (FSM)
+│    ├── tx_fifo (SyncFIFO)
+│    │    └── fifo (SyncFIFOBuffered)
+│    │         └── fifo (SyncFIFO)
+│    └── rx_fifo (SyncFIFO)
+│         └── fifo (SyncFIFOBuffered)
+│              └── fifo (SyncFIFO)
+├── timer0 (Timer)
+│    └── ev (EventManager)
+│         └── eventsourceprocess_0 (EventSourceProcess) [Gen]
+├── ddrphy (GW2DDRPHY)
+│    ├── init (GW2DDRPHYInit)
+│    │    └── [BB:DLL]
+│    ├── bitslip_0 (BitSlip) [Gen]
+│    ├── bitslip_1 (BitSlip) [Gen]
+│    ├── bitslip_2 (BitSlip) [Gen]
+│    ├── bitslip_3 (BitSlip) [Gen]
+│    ├── bitslip_4 (BitSlip) [Gen]
+│    ├── bitslip_5 (BitSlip) [Gen]
+│    ├── bitslip_6 (BitSlip) [Gen]
+│    ├── bitslip_7 (BitSlip) [Gen]
+│    ├── bitslip_8 (BitSlip) [Gen]
+│    ├── bitslip_9 (BitSlip) [Gen]
+│    ├── bitslip_10 (BitSlip) [Gen]
+│    ├── bitslip_11 (BitSlip) [Gen]
+│    ├── bitslip_12 (BitSlip) [Gen]
+│    ├── bitslip_13 (BitSlip) [Gen]
+│    ├── bitslip_14 (BitSlip) [Gen]
+│    ├── bitslip_15 (BitSlip) [Gen]
+│    ├── tappeddelayline_0 (TappedDelayLine) [Gen]
+│    ├── tappeddelayline_1 (TappedDelayLine) [Gen]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:ELVDS_OBUF]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:DQS]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:ELVDS_IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:DQS]
+│    ├── [BB:OSER4_MEM]
+│    └── [BB:ELVDS_IOBUF]
+├── sdram (LiteDRAMCore)
+│    ├── dfii (DFIInjector)
+│    │    ├── pi0 (PhaseInjector)
+│    │    └── pi1 (PhaseInjector)
+│    ├── controller (LiteDRAMController)
+│    │    ├── refresher (Refresher)
+│    │    │    ├── timer (RefreshTimer)
+│    │    │    ├── postponer (RefreshPostponer)
+│    │    │    ├── sequencer (RefreshSequencer)
+│    │    │    │    └── refreshexecuter_0 (RefreshExecuter) [Gen]
+│    │    │    ├── zqcs_timer (RefreshTimer)
+│    │    │    ├── zqs_executer (ZQCSExecuter)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_0 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_1 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_2 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_3 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_4 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_5 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_6 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_7 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    └── multiplexer (Multiplexer)
+│    │         ├── choose_cmd (_CommandChooser)
+│    │         │    └── roundrobin_0 (RoundRobin) [Gen]
+│    │         ├── choose_req (_CommandChooser)
+│    │         │    └── roundrobin_0 (RoundRobin) [Gen]
+│    │         ├── _steerer_0 (_Steerer) [Gen]
+│    │         ├── trrdcon (tXXDController)
+│    │         ├── tfawcon (tFAWController)
+│    │         ├── tccdcon (tXXDController)
+│    │         ├── twtrcon (tXXDController)
+│    │         └── fsm (FSM)
+│    └── crossbar (LiteDRAMCrossbar)
+│         ├── roundrobin_0 (RoundRobin) [Gen]
+│         ├── roundrobin_1 (RoundRobin) [Gen]
+│         ├── roundrobin_2 (RoundRobin) [Gen]
+│         ├── roundrobin_3 (RoundRobin) [Gen]
+│         ├── roundrobin_4 (RoundRobin) [Gen]
+│         ├── roundrobin_5 (RoundRobin) [Gen]
+│         ├── roundrobin_6 (RoundRobin) [Gen]
+│         └── roundrobin_7 (RoundRobin) [Gen]
+├── converter_0 (Converter) [Gen]
+│    └── upconverter_0 (UpConverter) [Gen]
+├── wishbone_bridge (LiteDRAMWishbone2Native)
+│    └── fsm (FSM)
+├── ethphy (LiteEthPHYRMII)
+│    ├── crg (LiteEthPHYRMIICRG)
+│    │    └── hw_reset (LiteEthPHYHWReset)
+│    ├── tx (LiteEthPHYRMIITX)
+│    │    ├── timer (LiteEthPHYRMIITimer)
+│    │    └── converter (Converter)
+│    │         └── _downconverter_0 (_DownConverter) [Gen]
+│    ├── rx (LiteEthPHYRMIIRX)
+│    │    ├── timer (LiteEthPHYRMIITimer)
+│    │    ├── converter (Converter)
+│    │    │    └── _upconverter_0 (_UpConverter) [Gen]
+│    │    ├── delay (Delay)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── buffer_1 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    └── pipeline_0 (Pipeline) [Gen]
+│    │    └── speed_detect (LiteEthPHYRMIISpeedDetect)
+│    │         └── fsm (FSM)
+│    └── mdio (LiteEthPHYMDIO)
+├── ethmac (LiteEthMAC)
+│    ├── core (LiteEthMACCore)
+│    │    ├── tx_datapath (TXDatapath)
+│    │    │    ├── clockdomaincrossing_0 (ClockDomainCrossing) [Gen]
+│    │    │    │    └── asyncfifo_0 (AsyncFIFO) [Gen]
+│    │    │    │         └── fifo (AsyncFIFO)
+│    │    │    │              ├── graycounter_0 (GrayCounter) [Gen]
+│    │    │    │              └── graycounter_1 (GrayCounter) [Gen]
+│    │    │    ├── strideconverter_0 (StrideConverter) [Gen]
+│    │    │    │    └── converter_0 (Converter) [Gen]
+│    │    │    │         └── _downconverter_0 (_DownConverter) [Gen]
+│    │    │    ├── liteethmacpaddinginserter_0 (LiteEthMACPaddingInserter) [Gen]
+│    │    │    │    └── fsm (FSM)
+│    │    │    ├── liteethmaccrc32inserter_0 (LiteEthMACCRC32Inserter) [Gen]
+│    │    │    │    ├── crc (LiteEthMACCRC32)
+│    │    │    │    │    └── liteethmaccrcengine_0 (LiteEthMACCRCEngine) [Gen]
+│    │    │    │    ├── fsm (FSM)
+│    │    │    │    └── buffer_0 (Buffer) [Gen]
+│    │    │    │         ├── pipe_valid (PipeValid)
+│    │    │    │         └── pipeline (Pipeline)
+│    │    │    ├── liteethmacpreambleinserter_0 (LiteEthMACPreambleInserter) [Gen]
+│    │    │    │    └── fsm (FSM)
+│    │    │    ├── liteethmacgap_0 (LiteEthMACGap) [Gen]
+│    │    │    │    └── fsm (FSM)
+│    │    │    └── pipeline_0 (Pipeline) [Gen]
+│    │    └── rx_datapath (RXDatapath)
+│    │         ├── liteethmacpreamblechecker_0 (LiteEthMACPreambleChecker) [Gen]
+│    │         │    └── fsm (FSM)
+│    │         ├── pulsesynchronizer_0 (PulseSynchronizer) [Gen]
+│    │         ├── liteethmaccrc32checker_0 (LiteEthMACCRC32Checker) [Gen]
+│    │         │    ├── crc (LiteEthMACCRC32Check)
+│    │         │    │    └── engine (LiteEthMACCRCEngine)
+│    │         │    ├── fifo (SyncFIFO)
+│    │         │    │    └── fifo (SyncFIFO)
+│    │         │    ├── fsm (FSM)
+│    │         │    └── buffer_0 (Buffer) [Gen]
+│    │         │         ├── pipe_valid (PipeValid)
+│    │         │         └── pipeline (Pipeline)
+│    │         ├── pulsesynchronizer_1 (PulseSynchronizer) [Gen]
+│    │         ├── liteethmacpaddingchecker_0 (LiteEthMACPaddingChecker) [Gen]
+│    │         ├── strideconverter_0 (StrideConverter) [Gen]
+│    │         │    └── converter_0 (Converter) [Gen]
+│    │         │         └── _upconverter_0 (_UpConverter) [Gen]
+│    │         ├── clockdomaincrossing_0 (ClockDomainCrossing) [Gen]
+│    │         │    └── asyncfifo_0 (AsyncFIFO) [Gen]
+│    │         │         └── fifo (AsyncFIFO)
+│    │         │              ├── graycounter_0 (GrayCounter) [Gen]
+│    │         │              └── graycounter_1 (GrayCounter) [Gen]
+│    │         └── pipeline_0 (Pipeline) [Gen]
+│    ├── interface (LiteEthMACWishboneInterface)
+│    │    ├── sram (LiteEthMACSRAM)
+│    │    │    ├── writer (LiteEthMACSRAMWriter)
+│    │    │    │    ├── ev (EventManager)
+│    │    │    │    │    └── eventsourcelevel_0 (EventSourceLevel) [Gen]
+│    │    │    │    ├── packet (LiteEthMACPacketWriter)
+│    │    │    │    │    └── fsm (FSM)
+│    │    │    │    └── stat_fifo (SyncFIFO)
+│    │    │    │         └── buffer_0 (Buffer) [Gen]
+│    │    │    │              ├── pipe_valid (PipeValid)
+│    │    │    │              └── pipeline (Pipeline)
+│    │    │    ├── reader (LiteEthMACSRAMReader)
+│    │    │    │    ├── ev (EventManager)
+│    │    │    │    │    └── eventsourcepulse_0 (EventSourcePulse) [Gen]
+│    │    │    │    ├── packet (LiteEthMACPacketReader)
+│    │    │    │    │    └── fsm (FSM)
+│    │    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    │    └── buffer_0 (Buffer) [Gen]
+│    │    │    │    │         ├── pipe_valid (PipeValid)
+│    │    │    │    │         └── pipeline (Pipeline)
+│    │    │    │    └── fsm (FSM)
+│    │    │    └── ev (SharedIRQ)
+│    │    ├── sram_0 (SRAM) [Gen]
+│    │    ├── decoder_0 (Decoder) [Gen]
+│    │    ├── sram_1 (SRAM) [Gen]
+│    │    └── decoder_1 (Decoder) [Gen]
+│    └── ev (SharedIRQ)
+├── leds (GPIOOut)
+├── buttons (GPIOIn)
+├── sdcard (LiteSDCard)
+│    ├── phy (SDPHY)
+│    │    ├── clocker (SDPHYClocker)
+│    │    ├── init (SDPHYInit)
+│    │    │    └── fsm (FSM)
+│    │    ├── cmdw (SDPHYCMDW)
+│    │    │    └── fsm (FSM)
+│    │    ├── cmdr (SDPHYCMDR)
+│    │    │    ├── cmdr (SDPHYR)
+│    │    │    │    ├── converter (Converter)
+│    │    │    │    │    └── _upconverter_0 (_UpConverter) [Gen]
+│    │    │    │    └── buf (Buffer)
+│    │    │    │         ├── pipe_valid (PipeValid)
+│    │    │    │         └── pipeline (Pipeline)
+│    │    │    └── fsm (FSM)
+│    │    ├── dataw (SDPHYDATAW)
+│    │    │    ├── crc (SDPHYR)
+│    │    │    │    ├── converter (Converter)
+│    │    │    │    │    └── _upconverter_0 (_UpConverter) [Gen]
+│    │    │    │    └── buf (Buffer)
+│    │    │    │         ├── pipe_valid (PipeValid)
+│    │    │    │         └── pipeline (Pipeline)
+│    │    │    ├── crc16 (CRC16)
+│    │    │    │    ├── crc_0 (CRC) [Gen]
+│    │    │    │    ├── crc_1 (CRC) [Gen]
+│    │    │    │    ├── crc_2 (CRC) [Gen]
+│    │    │    │    └── crc_3 (CRC) [Gen]
+│    │    │    └── fsm (FSM)
+│    │    ├── datar (SDPHYDATAR)
+│    │    │    ├── crc16 (CRC16)
+│    │    │    │    ├── crc_0 (CRC) [Gen]
+│    │    │    │    ├── crc_1 (CRC) [Gen]
+│    │    │    │    ├── crc_2 (CRC) [Gen]
+│    │    │    │    └── crc_3 (CRC) [Gen]
+│    │    │    ├── datar_1x (SDPHYR)
+│    │    │    │    ├── converter (Converter)
+│    │    │    │    │    └── _upconverter_0 (_UpConverter) [Gen]
+│    │    │    │    └── buf (Buffer)
+│    │    │    │         ├── pipe_valid (PipeValid)
+│    │    │    │         └── pipeline (Pipeline)
+│    │    │    ├── datar_4x (SDPHYR)
+│    │    │    │    ├── converter (Converter)
+│    │    │    │    │    └── _upconverter_0 (_UpConverter) [Gen]
+│    │    │    │    └── buf (Buffer)
+│    │    │    │         ├── pipe_valid (PipeValid)
+│    │    │    │         └── pipeline (Pipeline)
+│    │    │    └── fsm (FSM)
+│    │    └── io (SDPHYIOGen)
+│    ├── core (SDCore)
+│    │    ├── crc7_inserter (CRC)
+│    │    ├── data_read_fifo (SyncFIFO)
+│    │    │    └── fifo (SyncFIFO)
+│    │    └── fsm (FSM)
+│    ├── block2mem (SDBlock2MemDMA)
+│    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    └── fifo (SyncFIFOBuffered)
+│    │    │         └── fifo (SyncFIFO)
+│    │    ├── converter_0 (Converter) [Gen]
+│    │    │    └── _upconverter_0 (_UpConverter) [Gen]
+│    │    └── dma (WishboneDMAWriter)
+│    │         └── fsm (FSM)
+│    ├── mem2block (SDMem2BlockDMA)
+│    │    ├── dma (WishboneDMAReader)
+│    │    │    ├── fifo (SyncFIFO)
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    └── fsm (FSM)
+│    │    ├── converter_0 (Converter) [Gen]
+│    │    │    └── _downconverter_0 (_DownConverter) [Gen]
+│    │    └── syncfifo_0 (SyncFIFO) [Gen]
+│    │         └── fifo (SyncFIFOBuffered)
+│    │              └── fifo (SyncFIFO)
+│    └── ev (EventManager)
+│         ├── eventsourcepulse_0 (EventSourcePulse) [Gen]
+│         ├── eventsourcepulse_1 (EventSourcePulse) [Gen]
+│         ├── eventsourcepulse_2 (EventSourcePulse) [Gen]
+│         ├── eventsourcelevel_0 (EventSourceLevel) [Gen]
+│         └── eventsourcelevel_1 (EventSourceLevel) [Gen]
+├── csr_bridge (Wishbone2CSR)
+│    └── fsm (FSM)
+├── csr_bankarray (CSRBankArray)
+│    ├── csrbank_0 (CSRBank) [Gen]
+│    │    └── csrstatus_0 (CSRStatus) [Gen]
+│    ├── csrbank_1 (CSRBank) [Gen]
+│    │    ├── csrstorage_0 (CSRStorage) [Gen]
+│    │    ├── csrstorage_1 (CSRStorage) [Gen]
+│    │    └── csrstatus_0 (CSRStatus) [Gen]
+│    ├── csrbank_2 (CSRBank) [Gen]
+│    │    ├── csrstorage_0 (CSRStorage) [Gen]
+│    │    ├── csrstorage_1 (CSRStorage) [Gen]
+│    │    └── csrstatus_0 (CSRStatus) [Gen]
+│    ├── csrbank_3 (CSRBank) [Gen]
+│    │    ├── csrstatus_0 (CSRStatus) [Gen]
+│    │    ├── csrstatus_1 (CSRStatus) [Gen]
+│    │    ├── csrstatus_2 (CSRStatus) [Gen]
+│    │    ├── csrstatus_3 (CSRStatus) [Gen]
+│    │    ├── csrstatus_4 (CSRStatus) [Gen]
+│    │    ├── csrstorage_0 (CSRStorage) [Gen]
+│    │    ├── csrstatus_5 (CSRStatus) [Gen]
+│    │    ├── csrstatus_6 (CSRStatus) [Gen]
+│    │    ├── csrstorage_1 (CSRStorage) [Gen]
+│    │    ├── csrstorage_2 (CSRStorage) [Gen]
+│    │    ├── csrstatus_7 (CSRStatus) [Gen]
+│    │    ├── csrstatus_8 (CSRStatus) [Gen]
+│    │    ├── csrstorage_3 (CSRStorage) [Gen]
+│    │    ├── csrstatus_9 (CSRStatus) [Gen]
+│    │    ├── csrstatus_10 (CSRStatus) [Gen]
+│    │    └── csrstatus_11 (CSRStatus) [Gen]
+│    ├── csrbank_4 (CSRBank) [Gen]
+│    │    ├── csrstorage_0 (CSRStorage) [Gen]
+│    │    ├── csrstorage_1 (CSRStorage) [Gen]
+│    │    └── csrstatus_0 (CSRStatus) [Gen]
+│    ├── sram_0 (SRAM) [Gen]
+│    ├── csrbank_5 (CSRBank) [Gen]
+│    │    └── csrstorage_0 (CSRStorage) [Gen]
+│    ├── csrbank_6 (CSRBank) [Gen]
+│    │    ├── csrstatus_0 (CSRStatus) [Gen]
+│    │    ├── csrstorage_0 (CSRStorage) [Gen]
+│    │    ├── csrstorage_1 (CSRStorage) [Gen]
+│    │    ├── csrstatus_1 (CSRStatus) [Gen]
+│    │    ├── csrstorage_2 (CSRStorage) [Gen]
+│    │    ├── csrstorage_3 (CSRStorage) [Gen]
+│    │    ├── csrstorage_4 (CSRStorage) [Gen]
+│    │    ├── csrstorage_5 (CSRStorage) [Gen]
+│    │    ├── csrstorage_6 (CSRStorage) [Gen]
+│    │    ├── csrstatus_2 (CSRStatus) [Gen]
+│    │    ├── csrstatus_3 (CSRStatus) [Gen]
+│    │    ├── csrstatus_4 (CSRStatus) [Gen]
+│    │    ├── csrstorage_7 (CSRStorage) [Gen]
+│    │    ├── csrstorage_8 (CSRStorage) [Gen]
+│    │    ├── csrstorage_9 (CSRStorage) [Gen]
+│    │    ├── csrstorage_10 (CSRStorage) [Gen]
+│    │    ├── csrstorage_11 (CSRStorage) [Gen]
+│    │    ├── csrstatus_5 (CSRStatus) [Gen]
+│    │    ├── csrstorage_12 (CSRStorage) [Gen]
+│    │    ├── csrstatus_6 (CSRStatus) [Gen]
+│    │    ├── csrstatus_7 (CSRStatus) [Gen]
+│    │    ├── csrstorage_13 (CSRStorage) [Gen]
+│    │    ├── csrstorage_14 (CSRStorage) [Gen]
+│    │    ├── csrstorage_15 (CSRStorage) [Gen]
+│    │    ├── csrstatus_8 (CSRStatus) [Gen]
+│    │    ├── csrstorage_16 (CSRStorage) [Gen]
+│    │    ├── csrstatus_9 (CSRStatus) [Gen]
+│    │    ├── csrstatus_10 (CSRStatus) [Gen]
+│    │    ├── csrstatus_11 (CSRStatus) [Gen]
+│    │    ├── csrstatus_12 (CSRStatus) [Gen]
+│    │    └── csrstorage_17 (CSRStorage) [Gen]
+│    ├── csrbank_7 (CSRBank) [Gen]
+│    │    ├── csrstorage_0 (CSRStorage) [Gen]
+│    │    ├── csrstorage_1 (CSRStorage) [Gen]
+│    │    ├── csrstorage_2 (CSRStorage) [Gen]
+│    │    ├── csrstorage_3 (CSRStorage) [Gen]
+│    │    ├── csrstorage_4 (CSRStorage) [Gen]
+│    │    ├── csrstatus_0 (CSRStatus) [Gen]
+│    │    ├── csrstorage_5 (CSRStorage) [Gen]
+│    │    ├── csrstorage_6 (CSRStorage) [Gen]
+│    │    ├── csrstorage_7 (CSRStorage) [Gen]
+│    │    ├── csrstorage_8 (CSRStorage) [Gen]
+│    │    └── csrstatus_1 (CSRStatus) [Gen]
+│    ├── csrbank_8 (CSRBank) [Gen]
+│    │    ├── csrstorage_0 (CSRStorage) [Gen]
+│    │    ├── csrstorage_1 (CSRStorage) [Gen]
+│    │    ├── csrstorage_2 (CSRStorage) [Gen]
+│    │    ├── csrstorage_3 (CSRStorage) [Gen]
+│    │    ├── csrstatus_0 (CSRStatus) [Gen]
+│    │    ├── csrstatus_1 (CSRStatus) [Gen]
+│    │    ├── csrstatus_2 (CSRStatus) [Gen]
+│    │    ├── csrstorage_4 (CSRStorage) [Gen]
+│    │    ├── csrstorage_5 (CSRStorage) [Gen]
+│    │    └── csrstatus_3 (CSRStatus) [Gen]
+│    └── csrbank_9 (CSRBank) [Gen]
+│         ├── csrstatus_0 (CSRStatus) [Gen]
+│         ├── csrstatus_1 (CSRStatus) [Gen]
+│         ├── csrstatus_2 (CSRStatus) [Gen]
+│         ├── csrstatus_3 (CSRStatus) [Gen]
+│         ├── csrstorage_0 (CSRStorage) [Gen]
+│         ├── csrstatus_4 (CSRStatus) [Gen]
+│         └── csrstatus_5 (CSRStatus) [Gen]
+└── csr_interconnect (InterconnectShared)
+Legend:
+  [Gen]: Auto-generated instance name.
+  [BB:NAME]: Blackbox instance (verilog Instance).
+
+INFO:SoC:--------------------------------------------------------------------------------
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/libc'
+cp /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libc/picolibc-minimal.h /home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/libc/picolibc.h
+printf "#define FORMAT_DEFAULT_%s\n" "INTEGER" >> /home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/libc/picolibc.h
+rm -f -r /home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/include/../picolibc_src
+printf "#define __IO_DEFAULT '%s'\n" "i" >> /home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/libc/picolibc.h
+cp -a /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data /home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/include/../picolibc_src
+if [ -d "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libc/riscv" ]; then \
+	cp /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libc/riscv/* /home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/include/../picolibc_src/libc/machine/riscv/ ;\
+fi
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_ctype_ctype_.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_errno_errno.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_string_strchr.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_string_strncpy.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_string_strncmp.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_string_strnlen.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_stdio_fgetc.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_stdio_fputc.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_stdio_printf.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_stdio_fputs.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_stdio_puts.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_stdio_strtoul.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_stdio_strtoull.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_stdlib_lldiv.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_machine_riscv_memcpy-asm.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_machine_riscv_memmove.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_machine_riscv_memset.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_machine_riscv_strcmp.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_machine_riscv_strcpy.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_machine_riscv_strlen.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_system-fit_20261006T192254.096392Z_candidates_candidate-4-linux-1k-caches-no-l2_attempts_rom32k_soc_software_include_.._picolibc_src_libc_stdio_vfiprintf.o
+ AR       __libc_minimal.a
+ CC       _libc_minimal.a
+ AR       _libc_minimal.a
+cp __libc_minimal.a _libc_minimal.a
+ CC       libc-minimal.a
+ AR       libc-minimal.a
+cp _libc_minimal.a libc-minimal.a
+cp libc-minimal.a libc.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/libc'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/libcompiler_rt'
+ CC       umodsi3.o
+ CC       udivsi3.o
+ CC       divsi3.o
+ CC       modsi3.o
+ CC       comparesf2.o
+ CC       comparedf2.o
+ CC       negsf2.o
+ CC       negdf2.o
+/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-compiler_rt/pythondata_software_compiler_rt/data/lib/builtins/comparesf2.c:85:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+   85 | FNALIAS(__cmpsf2, __lesf2);
+      | ^~~~~~~
+/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-compiler_rt/pythondata_software_compiler_rt/data/lib/builtins/comparedf2.c:85:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+   85 | FNALIAS(__cmpdf2, __ledf2);
+      | ^~~~~~~
+ CC       addsf3.o
+ CC       subsf3.o
+ CC       mulsf3.o
+ CC       divsf3.o
+ CC       extendsfdf2.o
+ CC       lshrdi3.o
+ CC       truncdfsf2.o
+ CC       muldi3.o
+ CC       divdi3.o
+ CC       ashldi3.o
+ CC       ashrdi3.o
+ CC       udivmoddi4.o
+ CC       floatsisf.o
+ CC       floatunsisf.o
+ CC       fixsfsi.o
+ CC       fixdfdi.o
+ CC       fixunssfsi.o
+ CC       fixunsdfdi.o
+ CC       adddf3.o
+ CC       subdf3.o
+ CC       muldf3.o
+ CC       divdf3.o
+ CC       floatsidf.o
+ CC       floatunsidf.o
+ CC       floatdidf.o
+ CC       fixdfsi.o
+ CC       fixunsdfsi.o
+ CC       clzsi2.o
+ CC       ctzsi2.o
+ CC       clzdi2.o
+ CC       ctzdi2.o
+ CC       udivdi3.o
+ CC       umoddi3.o
+ CC       moddi3.o
+ CC       ucmpdi2.o
+ CC       mulsi3.o
+ AR       libcompiler_rt.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/libcompiler_rt'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/libbase'
+ CC       crc16.o
+ CC       crc32.o
+ CC       console.o
+ CC       format.o
+ CC       parse.o
+ CC       timeout.o
+ CC       system.o
+ CC       progress.o
+ CC       memtest.o
+ CC       uart.o
+ CC       startup.o
+ CC       spiflash.o
+ CC       i2c.o
+ CC       isr.o
+ CC       hyperram.o
+ AR       libbase.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/libbase'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/libfatfs'
+ CC       ffunicode.o
+ CC       ff.o
+ AR       libfatfs.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/libfatfs'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/liblitespi'
+ CC       spiflash.o
+ CC       spiram.o
+ AR       liblitespi.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/liblitespi'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/liblitedram'
+ CC       sdram.o
+ CC       bist.o
+ CC       sdram_dbg.o
+ CC       sdram_spd.o
+ CC       utils.o
+ CC       accessors.o
+ AR       liblitedram.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/liblitedram'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/libliteeth'
+ CC       udp.o
+ CC       tftp.o
+ CC       mdio.o
+ CC       dhcp.o
+ CC       sfp.o
+/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libliteeth/sfp.c:816:6: warning: no previous prototype for 'sfp_init' [-Wmissing-prototypes]
+  816 | void sfp_init(void) {}
+      |      ^~~~~~~~
+ AR       libliteeth.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/libliteeth'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/liblitesdcard'
+ CC       sdcard.o
+ CC       spisdcard.o
+ AR       liblitesdcard.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/liblitesdcard'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/liblitesata'
+ CC       sata.o
+ AR       liblitesata.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/liblitesata'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/bios'
+ CC       crt0.o
+ CC       boot-helper.o
+ CC       boot.o
+ CC       helpers.o
+ CC       cmd_bios.o
+ CC       cmd_mem.o
+ CC       cmd_boot.o
+ CC       cmd_i2c.o
+ CC       cmd_spiflash.o
+ CC       cmd_litedram.o
+ CC       cmd_liteeth.o
+ CC       cmd_litesdcard.o
+ CC       cmd_litesata.o
+ CC       sim_debug.o
+ CC       main.o
+ CC       readline_simple.o
+ CC       bios.elf
+/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/bin/ld: bios.elf section `.text' will not fit in region `rom'
+/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/bin/ld: region `rom' overflowed by 18320 bytes
+/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/bin/ld: warning: bios.elf has a LOAD segment with RWX permissions
+collect2: error: ld returned 1 exit status
+make[1]: *** [/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/bios/Makefile:101: bios.elf] Error 1
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T192254.096392Z/candidates/candidate-4-linux-1k-caches-no-l2/attempts/rom32k/soc/software/bios'

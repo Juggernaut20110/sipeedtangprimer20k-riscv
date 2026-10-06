@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/system_fit.py", line 761, in _construct_and_build
+    soc = SystemFitSoC(
+          ^^^^^^^^^^^^^
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/gateware/system_fit.py", line 40, in __init__
+    self.add_sdcard(name="sdcard", mode="read+write")
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 3161, in add_sdcard
+    from litesdcard.emulator import SDEmulator
+ModuleNotFoundError: No module named 'litesdcard'

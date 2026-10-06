@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_utc": "2026-10-06T13:28:09.836083+00:00",
+  "generated_utc": "2026-10-06T17:43:25.572429+00:00",
   "model_configuration": {
     "requested": {
       "model": "gpt-6-luna",
@@ -3994,15 +3994,50 @@
         "error": null,
         "path": "build/peripherals/ddr3/minimal/sd-spi_eth-none"
       },
-      "sessions": [],
+      "sessions": [
+        {
+          "status": "incomplete",
+          "session": "docs/peripherals/evidence/20261006T152004.091570Z-ddr3-sd-spi_eth-none-minimal",
+          "criteria": {
+            "sd": "incomplete_or_invalid",
+            "ddr_qualification": "passed",
+            "final_recovery": "passed"
+          },
+          "measurements": {
+            "sd": {},
+            "ddr_qualification": {
+              "training_passes": 10,
+              "tested_bytes": 134217728,
+              "pattern_errors": 0,
+              "cache_visibility_errors": 0,
+              "stress_seconds": 1800.5445499791667,
+              "stress_seconds_requested": 1800,
+              "board_serial": "unavailable",
+              "board_revision": "core-v3961_Dock-v3714"
+            },
+            "final_recovery": {
+              "sram_programmed": true,
+              "ddr_held_in_reset": true,
+              "sd_deselected": true,
+              "sd_clock_stopped": true,
+              "phy_held_in_reset": true,
+              "idle_bitstream_sha256": "20c4f1f7be50e692b53371dba25c833522562db445c2b75e6c9cf2cf1d6d3784",
+              "uart_quiet_seconds": 5.0083705600118265,
+              "uart_bytes": 0
+            }
+          },
+          "diagnostic_observation": null,
+          "errors": []
+        }
+      ],
       "hardware": {
-        "sd": "pending_board_and_test_volume",
+        "sd": "incomplete_evidence",
         "static_network": "not_applicable",
         "dhcp": "not_applicable",
         "udp_tcp": "not_applicable",
         "combined_1800s": "not_applicable",
-        "ddr_qualification": "historical_only_no_matching_peripheral_image_test",
-        "final_recovery": "pending_board_recovery"
+        "ddr_qualification": "passed",
+        "final_recovery": "passed"
       },
       "timing": {
         "status": "passed",
@@ -4625,15 +4660,58 @@
         "error": null,
         "path": "build/peripherals/ddr3/minimal/sd-spi_eth-rmii"
       },
-      "sessions": [],
+      "sessions": [
+        {
+          "status": "incomplete",
+          "session": "docs/peripherals/evidence/20261006T144056.791129Z-ddr3-sd-spi_eth-rmii-minimal",
+          "criteria": {
+            "sd": "incomplete_or_invalid",
+            "static_network": "incomplete_or_invalid",
+            "dhcp": "incomplete_or_invalid",
+            "udp_tcp": "incomplete_or_invalid",
+            "combined_1800s": "incomplete_or_invalid",
+            "ddr_qualification": "passed",
+            "final_recovery": "passed"
+          },
+          "measurements": {
+            "sd": {},
+            "static_network": {},
+            "dhcp": {},
+            "udp_tcp": {},
+            "combined_1800s": {},
+            "ddr_qualification": {
+              "training_passes": 10,
+              "tested_bytes": 134217728,
+              "pattern_errors": 0,
+              "cache_visibility_errors": 0,
+              "stress_seconds": 1800.5445499791667,
+              "stress_seconds_requested": 1800,
+              "board_serial": "unavailable",
+              "board_revision": "core-v3961_Dock-v3714"
+            },
+            "final_recovery": {
+              "sram_programmed": true,
+              "ddr_held_in_reset": true,
+              "sd_deselected": true,
+              "sd_clock_stopped": true,
+              "phy_held_in_reset": true,
+              "idle_bitstream_sha256": "20c4f1f7be50e692b53371dba25c833522562db445c2b75e6c9cf2cf1d6d3784",
+              "uart_quiet_seconds": 5.007670140010305,
+              "uart_bytes": 0
+            }
+          },
+          "diagnostic_observation": null,
+          "errors": []
+        }
+      ],
       "hardware": {
-        "sd": "pending_board_and_test_volume",
-        "static_network": "pending_board_and_test_host",
-        "dhcp": "pending_dhcp_service",
-        "udp_tcp": "pending_board_and_test_host",
-        "combined_1800s": "pending_board_media_and_network_peer",
-        "ddr_qualification": "historical_only_no_matching_peripheral_image_test",
-        "final_recovery": "pending_board_recovery"
+        "sd": "incomplete_evidence",
+        "static_network": "incomplete_evidence",
+        "dhcp": "incomplete_evidence",
+        "udp_tcp": "incomplete_evidence",
+        "combined_1800s": "incomplete_evidence",
+        "ddr_qualification": "passed",
+        "final_recovery": "passed"
       },
       "timing": {
         "status": "passed",
@@ -4841,15 +4919,50 @@
         "error": null,
         "path": "build/peripherals/ddr3/lite/sd-spi_eth-none"
       },
-      "sessions": [],
+      "sessions": [
+        {
+          "status": "incomplete",
+          "session": "docs/peripherals/evidence/20261006T155911.378676Z-ddr3-sd-spi_eth-none-lite",
+          "criteria": {
+            "sd": "incomplete_or_invalid",
+            "ddr_qualification": "passed",
+            "final_recovery": "passed"
+          },
+          "measurements": {
+            "sd": {},
+            "ddr_qualification": {
+              "training_passes": 10,
+              "tested_bytes": 134217728,
+              "pattern_errors": 0,
+              "cache_visibility_errors": 0,
+              "stress_seconds": 1800.2498814375,
+              "stress_seconds_requested": 1800,
+              "board_serial": "unavailable",
+              "board_revision": "core-v3961_Dock-v3714"
+            },
+            "final_recovery": {
+              "sram_programmed": true,
+              "ddr_held_in_reset": true,
+              "sd_deselected": true,
+              "sd_clock_stopped": true,
+              "phy_held_in_reset": true,
+              "idle_bitstream_sha256": "20c4f1f7be50e692b53371dba25c833522562db445c2b75e6c9cf2cf1d6d3784",
+              "uart_quiet_seconds": 5.007169880031142,
+              "uart_bytes": 0
+            }
+          },
+          "diagnostic_observation": null,
+          "errors": []
+        }
+      ],
       "hardware": {
-        "sd": "pending_board_and_test_volume",
+        "sd": "incomplete_evidence",
         "static_network": "not_applicable",
         "dhcp": "not_applicable",
         "udp_tcp": "not_applicable",
         "combined_1800s": "not_applicable",
-        "ddr_qualification": "historical_only_no_matching_peripheral_image_test",
-        "final_recovery": "pending_board_recovery"
+        "ddr_qualification": "passed",
+        "final_recovery": "passed"
       },
       "timing": {
         "status": "passed",
@@ -5079,15 +5192,54 @@
         "error": null,
         "path": "build/peripherals/ddr3/lite/sd-none_eth-rmii"
       },
-      "sessions": [],
+      "sessions": [
+        {
+          "status": "incomplete",
+          "session": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite",
+          "criteria": {
+            "static_network": "incomplete_or_invalid",
+            "dhcp": "incomplete_or_invalid",
+            "udp_tcp": "incomplete_or_invalid",
+            "ddr_qualification": "passed",
+            "final_recovery": "passed"
+          },
+          "measurements": {
+            "static_network": {},
+            "dhcp": {},
+            "udp_tcp": {},
+            "ddr_qualification": {
+              "training_passes": 10,
+              "tested_bytes": 134217728,
+              "pattern_errors": 0,
+              "cache_visibility_errors": 0,
+              "stress_seconds": 1800.2506600208333,
+              "stress_seconds_requested": 1800,
+              "board_serial": "unavailable",
+              "board_revision": "core-v3961_Dock-v3714"
+            },
+            "final_recovery": {
+              "sram_programmed": true,
+              "ddr_held_in_reset": true,
+              "sd_deselected": true,
+              "sd_clock_stopped": true,
+              "phy_held_in_reset": true,
+              "idle_bitstream_sha256": "20c4f1f7be50e692b53371dba25c833522562db445c2b75e6c9cf2cf1d6d3784",
+              "uart_quiet_seconds": 5.007781291031279,
+              "uart_bytes": 0
+            }
+          },
+          "diagnostic_observation": null,
+          "errors": []
+        }
+      ],
       "hardware": {
         "sd": "not_applicable",
-        "static_network": "pending_board_and_test_host",
-        "dhcp": "pending_dhcp_service",
-        "udp_tcp": "pending_board_and_test_host",
+        "static_network": "incomplete_evidence",
+        "dhcp": "incomplete_evidence",
+        "udp_tcp": "incomplete_evidence",
         "combined_1800s": "not_applicable",
-        "ddr_qualification": "historical_only_no_matching_peripheral_image_test",
-        "final_recovery": "pending_board_recovery"
+        "ddr_qualification": "passed",
+        "final_recovery": "passed"
       },
       "timing": {
         "status": "passed",
@@ -5317,15 +5469,58 @@
         "error": null,
         "path": "build/peripherals/ddr3/lite/sd-spi_eth-rmii"
       },
-      "sessions": [],
+      "sessions": [
+        {
+          "status": "incomplete",
+          "session": "docs/peripherals/evidence/20261006T140442.627421Z-ddr3-sd-spi_eth-rmii-lite",
+          "criteria": {
+            "sd": "incomplete_or_invalid",
+            "static_network": "incomplete_or_invalid",
+            "dhcp": "incomplete_or_invalid",
+            "udp_tcp": "incomplete_or_invalid",
+            "combined_1800s": "incomplete_or_invalid",
+            "ddr_qualification": "passed",
+            "final_recovery": "passed"
+          },
+          "measurements": {
+            "sd": {},
+            "static_network": {},
+            "dhcp": {},
+            "udp_tcp": {},
+            "combined_1800s": {},
+            "ddr_qualification": {
+              "training_passes": 10,
+              "tested_bytes": 134217728,
+              "pattern_errors": 0,
+              "cache_visibility_errors": 0,
+              "stress_seconds": 1800.25065925,
+              "stress_seconds_requested": 1800,
+              "board_serial": "unavailable",
+              "board_revision": "core-v3961_Dock-v3714"
+            },
+            "final_recovery": {
+              "sram_programmed": true,
+              "ddr_held_in_reset": true,
+              "sd_deselected": true,
+              "sd_clock_stopped": true,
+              "phy_held_in_reset": true,
+              "idle_bitstream_sha256": "20c4f1f7be50e692b53371dba25c833522562db445c2b75e6c9cf2cf1d6d3784",
+              "uart_quiet_seconds": 5.007417989021633,
+              "uart_bytes": 0
+            }
+          },
+          "diagnostic_observation": null,
+          "errors": []
+        }
+      ],
       "hardware": {
-        "sd": "pending_board_and_test_volume",
-        "static_network": "pending_board_and_test_host",
-        "dhcp": "pending_dhcp_service",
-        "udp_tcp": "pending_board_and_test_host",
-        "combined_1800s": "pending_board_media_and_network_peer",
-        "ddr_qualification": "historical_only_no_matching_peripheral_image_test",
-        "final_recovery": "pending_board_recovery"
+        "sd": "incomplete_evidence",
+        "static_network": "incomplete_evidence",
+        "dhcp": "incomplete_evidence",
+        "udp_tcp": "incomplete_evidence",
+        "combined_1800s": "incomplete_evidence",
+        "ddr_qualification": "passed",
+        "final_recovery": "passed"
       },
       "timing": {
         "status": "passed",
@@ -5754,8 +5949,8 @@
       "sdcard": "none",
       "ethernet": "rmii",
       "build": {
-        "status": "stale_source",
-        "source_fingerprint": "34ee75933ca46eb3fce2e0cc1acbcdebded2cb90513584c9ce88197edbfe6e76",
+        "status": "failed",
+        "source_fingerprint": "dd15ab8603fd9279a450f1d49809da53908466f35e4a87bc6519d931e65859b6",
         "current_source_fingerprint": "4f598736626a2b6f352ff3b82438b23dea38b81f96b9683c823860f10e300d46",
         "cpu_variant": null,
         "cpu_rtl": null,
@@ -5956,8 +6151,8 @@
       "sdcard": "spi",
       "ethernet": "rmii",
       "build": {
-        "status": "stale_source",
-        "source_fingerprint": "ca18db036a78dc9d54534752fa26c5ca0309b87ba36ae403f4c02f90e6626b5c",
+        "status": "failed",
+        "source_fingerprint": "aab4ca28bbaec2df4fca699604c4a451b336e5e043a80344a73e6dacab7ca7f8",
         "current_source_fingerprint": "4f598736626a2b6f352ff3b82438b23dea38b81f96b9683c823860f10e300d46",
         "cpu_variant": null,
         "cpu_rtl": null,
@@ -6454,15 +6649,50 @@
         "error": null,
         "path": "build/peripherals/ddr3/performance/sd-spi_eth-none"
       },
-      "sessions": [],
+      "sessions": [
+        {
+          "status": "incomplete",
+          "session": "docs/peripherals/evidence/20261006T170919.177315Z-ddr3-sd-spi_eth-none-performance",
+          "criteria": {
+            "sd": "incomplete_or_invalid",
+            "ddr_qualification": "passed",
+            "final_recovery": "passed"
+          },
+          "measurements": {
+            "sd": {},
+            "ddr_qualification": {
+              "training_passes": 10,
+              "tested_bytes": 134217728,
+              "pattern_errors": 0,
+              "cache_visibility_errors": 0,
+              "stress_seconds": 1800.0594566666666,
+              "stress_seconds_requested": 1800,
+              "board_serial": "unavailable",
+              "board_revision": "core-v3961_Dock-v3714"
+            },
+            "final_recovery": {
+              "sram_programmed": true,
+              "ddr_held_in_reset": true,
+              "sd_deselected": true,
+              "sd_clock_stopped": true,
+              "phy_held_in_reset": true,
+              "idle_bitstream_sha256": "20c4f1f7be50e692b53371dba25c833522562db445c2b75e6c9cf2cf1d6d3784",
+              "uart_quiet_seconds": 5.0079058919800445,
+              "uart_bytes": 0
+            }
+          },
+          "diagnostic_observation": null,
+          "errors": []
+        }
+      ],
       "hardware": {
-        "sd": "pending_board_and_test_volume",
+        "sd": "incomplete_evidence",
         "static_network": "not_applicable",
         "dhcp": "not_applicable",
         "udp_tcp": "not_applicable",
         "combined_1800s": "not_applicable",
-        "ddr_qualification": "historical_only_no_matching_peripheral_image_test",
-        "final_recovery": "pending_board_recovery"
+        "ddr_qualification": "passed",
+        "final_recovery": "passed"
       },
       "timing": {
         "status": "passed",
@@ -6479,8 +6709,8 @@
       "sdcard": "none",
       "ethernet": "rmii",
       "build": {
-        "status": "stale_source",
-        "source_fingerprint": "a896bd09086dfcc8b0c0a8e7b61631f4c9d137008e244190a34970a8f9aa7aea",
+        "status": "failed",
+        "source_fingerprint": "5f9520b4764248ff2208780d3abc8d76da19bb88ee2e22d1d54767029de94900",
         "current_source_fingerprint": "4f598736626a2b6f352ff3b82438b23dea38b81f96b9683c823860f10e300d46",
         "cpu_variant": null,
         "cpu_rtl": "build/cpu-candidates/dynamic_target/VexRiscv.v",
@@ -6773,8 +7003,8 @@
       "sdcard": "spi",
       "ethernet": "rmii",
       "build": {
-        "status": "stale_source",
-        "source_fingerprint": "6812ab9907cb6355f47f2498e8836df07c28384bc8495a029625f1e99ed3cbcb",
+        "status": "failed",
+        "source_fingerprint": "622f9c27c94b661ea534f6c2adfdc4b0f19ecd5cfd4d53b8e851f24e96b78447",
         "current_source_fingerprint": "4f598736626a2b6f352ff3b82438b23dea38b81f96b9683c823860f10e300d46",
         "cpu_variant": null,
         "cpu_rtl": "build/cpu-candidates/dynamic_target/VexRiscv.v",
@@ -7265,15 +7495,50 @@
         "error": null,
         "path": "build/peripherals/ddr3/linux/sd-spi_eth-none"
       },
-      "sessions": [],
+      "sessions": [
+        {
+          "status": "incomplete",
+          "session": "docs/peripherals/evidence/20261006T163525.406476Z-ddr3-sd-spi_eth-none-linux",
+          "criteria": {
+            "sd": "incomplete_or_invalid",
+            "ddr_qualification": "passed",
+            "final_recovery": "passed"
+          },
+          "measurements": {
+            "sd": {},
+            "ddr_qualification": {
+              "training_passes": 10,
+              "tested_bytes": 134217728,
+              "pattern_errors": 0,
+              "cache_visibility_errors": 0,
+              "stress_seconds": 1800.0518350625,
+              "stress_seconds_requested": 1800,
+              "board_serial": "unavailable",
+              "board_revision": "core-v3961_Dock-v3714"
+            },
+            "final_recovery": {
+              "sram_programmed": true,
+              "ddr_held_in_reset": true,
+              "sd_deselected": true,
+              "sd_clock_stopped": true,
+              "phy_held_in_reset": true,
+              "idle_bitstream_sha256": "20c4f1f7be50e692b53371dba25c833522562db445c2b75e6c9cf2cf1d6d3784",
+              "uart_quiet_seconds": 5.007894837006461,
+              "uart_bytes": 0
+            }
+          },
+          "diagnostic_observation": null,
+          "errors": []
+        }
+      ],
       "hardware": {
-        "sd": "pending_board_and_test_volume",
+        "sd": "incomplete_evidence",
         "static_network": "not_applicable",
         "dhcp": "not_applicable",
         "udp_tcp": "not_applicable",
         "combined_1800s": "not_applicable",
-        "ddr_qualification": "historical_only_no_matching_peripheral_image_test",
-        "final_recovery": "pending_board_recovery"
+        "ddr_qualification": "passed",
+        "final_recovery": "passed"
       },
       "timing": {
         "status": "passed",
@@ -7290,7 +7555,7 @@
       "sdcard": "none",
       "ethernet": "rmii",
       "build": {
-        "status": "in_progress",
+        "status": "failed",
         "source_fingerprint": "c7024536377a55ac3bd8275082aebd7bd08b5df1a558fd9bc29c9a64a3efe7f5",
         "current_source_fingerprint": "4f598736626a2b6f352ff3b82438b23dea38b81f96b9683c823860f10e300d46",
         "cpu_variant": null,
@@ -7471,7 +7736,7 @@
         "timing_gate": "failed_placement",
         "artifact_hashes": {},
         "artifacts": {},
-        "error": null,
+        "error": "OSError: Error occured during Gowin's script execution.",
         "path": "build/peripherals/ddr3/linux/sd-none_eth-rmii"
       },
       "sessions": [],
@@ -7499,8 +7764,8 @@
       "sdcard": "spi",
       "ethernet": "rmii",
       "build": {
-        "status": "stale_source",
-        "source_fingerprint": "c8775d7fe24e471eb2fc7124b193c88a420f6378d7f6c581b0a56fe278dd2dda",
+        "status": "failed",
+        "source_fingerprint": "899ae53ba28027e378b559e2510e1eebf016fc2d22c2cd5ddcd8515f708eb6e6",
         "current_source_fingerprint": "4f598736626a2b6f352ff3b82438b23dea38b81f96b9683c823860f10e300d46",
         "cpu_variant": null,
         "cpu_rtl": null,
@@ -8171,6 +8436,40 @@
     },
     {
       "status": "incomplete",
+      "session": "docs/peripherals/evidence/20261006T152004.091570Z-ddr3-sd-spi_eth-none-minimal",
+      "criteria": {
+        "sd": "incomplete_or_invalid",
+        "ddr_qualification": "passed",
+        "final_recovery": "passed"
+      },
+      "measurements": {
+        "sd": {},
+        "ddr_qualification": {
+          "training_passes": 10,
+          "tested_bytes": 134217728,
+          "pattern_errors": 0,
+          "cache_visibility_errors": 0,
+          "stress_seconds": 1800.5445499791667,
+          "stress_seconds_requested": 1800,
+          "board_serial": "unavailable",
+          "board_revision": "core-v3961_Dock-v3714"
+        },
+        "final_recovery": {
+          "sram_programmed": true,
+          "ddr_held_in_reset": true,
+          "sd_deselected": true,
+          "sd_clock_stopped": true,
+          "phy_held_in_reset": true,
+          "idle_bitstream_sha256": "20c4f1f7be50e692b53371dba25c833522562db445c2b75e6c9cf2cf1d6d3784",
+          "uart_quiet_seconds": 5.0083705600118265,
+          "uart_bytes": 0
+        }
+      },
+      "diagnostic_observation": null,
+      "errors": []
+    },
+    {
+      "status": "incomplete",
       "session": "docs/peripherals/evidence/20261006T121956.915181Z-ddr3-sd-none_eth-rmii-minimal",
       "criteria": {
         "static_network": "incomplete_or_invalid",
@@ -8317,6 +8616,162 @@
           "phy_held_in_reset": true,
           "idle_bitstream_sha256": "20c4f1f7be50e692b53371dba25c833522562db445c2b75e6c9cf2cf1d6d3784",
           "uart_quiet_seconds": 5.007610583968926,
+          "uart_bytes": 0
+        }
+      },
+      "diagnostic_observation": null,
+      "errors": []
+    },
+    {
+      "status": "incomplete",
+      "session": "docs/peripherals/evidence/20261006T144056.791129Z-ddr3-sd-spi_eth-rmii-minimal",
+      "criteria": {
+        "sd": "incomplete_or_invalid",
+        "static_network": "incomplete_or_invalid",
+        "dhcp": "incomplete_or_invalid",
+        "udp_tcp": "incomplete_or_invalid",
+        "combined_1800s": "incomplete_or_invalid",
+        "ddr_qualification": "passed",
+        "final_recovery": "passed"
+      },
+      "measurements": {
+        "sd": {},
+        "static_network": {},
+        "dhcp": {},
+        "udp_tcp": {},
+        "combined_1800s": {},
+        "ddr_qualification": {
+          "training_passes": 10,
+          "tested_bytes": 134217728,
+          "pattern_errors": 0,
+          "cache_visibility_errors": 0,
+          "stress_seconds": 1800.5445499791667,
+          "stress_seconds_requested": 1800,
+          "board_serial": "unavailable",
+          "board_revision": "core-v3961_Dock-v3714"
+        },
+        "final_recovery": {
+          "sram_programmed": true,
+          "ddr_held_in_reset": true,
+          "sd_deselected": true,
+          "sd_clock_stopped": true,
+          "phy_held_in_reset": true,
+          "idle_bitstream_sha256": "20c4f1f7be50e692b53371dba25c833522562db445c2b75e6c9cf2cf1d6d3784",
+          "uart_quiet_seconds": 5.007670140010305,
+          "uart_bytes": 0
+        }
+      },
+      "diagnostic_observation": null,
+      "errors": []
+    },
+    {
+      "status": "incomplete",
+      "session": "docs/peripherals/evidence/20261006T155911.378676Z-ddr3-sd-spi_eth-none-lite",
+      "criteria": {
+        "sd": "incomplete_or_invalid",
+        "ddr_qualification": "passed",
+        "final_recovery": "passed"
+      },
+      "measurements": {
+        "sd": {},
+        "ddr_qualification": {
+          "training_passes": 10,
+          "tested_bytes": 134217728,
+          "pattern_errors": 0,
+          "cache_visibility_errors": 0,
+          "stress_seconds": 1800.2498814375,
+          "stress_seconds_requested": 1800,
+          "board_serial": "unavailable",
+          "board_revision": "core-v3961_Dock-v3714"
+        },
+        "final_recovery": {
+          "sram_programmed": true,
+          "ddr_held_in_reset": true,
+          "sd_deselected": true,
+          "sd_clock_stopped": true,
+          "phy_held_in_reset": true,
+          "idle_bitstream_sha256": "20c4f1f7be50e692b53371dba25c833522562db445c2b75e6c9cf2cf1d6d3784",
+          "uart_quiet_seconds": 5.007169880031142,
+          "uart_bytes": 0
+        }
+      },
+      "diagnostic_observation": null,
+      "errors": []
+    },
+    {
+      "status": "incomplete",
+      "session": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite",
+      "criteria": {
+        "static_network": "incomplete_or_invalid",
+        "dhcp": "incomplete_or_invalid",
+        "udp_tcp": "incomplete_or_invalid",
+        "ddr_qualification": "passed",
+        "final_recovery": "passed"
+      },
+      "measurements": {
+        "static_network": {},
+        "dhcp": {},
+        "udp_tcp": {},
+        "ddr_qualification": {
+          "training_passes": 10,
+          "tested_bytes": 134217728,
+          "pattern_errors": 0,
+          "cache_visibility_errors": 0,
+          "stress_seconds": 1800.2506600208333,
+          "stress_seconds_requested": 1800,
+          "board_serial": "unavailable",
+          "board_revision": "core-v3961_Dock-v3714"
+        },
+        "final_recovery": {
+          "sram_programmed": true,
+          "ddr_held_in_reset": true,
+          "sd_deselected": true,
+          "sd_clock_stopped": true,
+          "phy_held_in_reset": true,
+          "idle_bitstream_sha256": "20c4f1f7be50e692b53371dba25c833522562db445c2b75e6c9cf2cf1d6d3784",
+          "uart_quiet_seconds": 5.007781291031279,
+          "uart_bytes": 0
+        }
+      },
+      "diagnostic_observation": null,
+      "errors": []
+    },
+    {
+      "status": "incomplete",
+      "session": "docs/peripherals/evidence/20261006T140442.627421Z-ddr3-sd-spi_eth-rmii-lite",
+      "criteria": {
+        "sd": "incomplete_or_invalid",
+        "static_network": "incomplete_or_invalid",
+        "dhcp": "incomplete_or_invalid",
+        "udp_tcp": "incomplete_or_invalid",
+        "combined_1800s": "incomplete_or_invalid",
+        "ddr_qualification": "passed",
+        "final_recovery": "passed"
+      },
+      "measurements": {
+        "sd": {},
+        "static_network": {},
+        "dhcp": {},
+        "udp_tcp": {},
+        "combined_1800s": {},
+        "ddr_qualification": {
+          "training_passes": 10,
+          "tested_bytes": 134217728,
+          "pattern_errors": 0,
+          "cache_visibility_errors": 0,
+          "stress_seconds": 1800.25065925,
+          "stress_seconds_requested": 1800,
+          "board_serial": "unavailable",
+          "board_revision": "core-v3961_Dock-v3714"
+        },
+        "final_recovery": {
+          "sram_programmed": true,
+          "ddr_held_in_reset": true,
+          "sd_deselected": true,
+          "sd_clock_stopped": true,
+          "phy_held_in_reset": true,
+          "idle_bitstream_sha256": "20c4f1f7be50e692b53371dba25c833522562db445c2b75e6c9cf2cf1d6d3784",
+          "uart_quiet_seconds": 5.007417989021633,
           "uart_bytes": 0
         }
       },
@@ -8512,6 +8967,74 @@
           "phy_held_in_reset": true,
           "idle_bitstream_sha256": "20c4f1f7be50e692b53371dba25c833522562db445c2b75e6c9cf2cf1d6d3784",
           "uart_quiet_seconds": 5.007198468025308,
+          "uart_bytes": 0
+        }
+      },
+      "diagnostic_observation": null,
+      "errors": []
+    },
+    {
+      "status": "incomplete",
+      "session": "docs/peripherals/evidence/20261006T170919.177315Z-ddr3-sd-spi_eth-none-performance",
+      "criteria": {
+        "sd": "incomplete_or_invalid",
+        "ddr_qualification": "passed",
+        "final_recovery": "passed"
+      },
+      "measurements": {
+        "sd": {},
+        "ddr_qualification": {
+          "training_passes": 10,
+          "tested_bytes": 134217728,
+          "pattern_errors": 0,
+          "cache_visibility_errors": 0,
+          "stress_seconds": 1800.0594566666666,
+          "stress_seconds_requested": 1800,
+          "board_serial": "unavailable",
+          "board_revision": "core-v3961_Dock-v3714"
+        },
+        "final_recovery": {
+          "sram_programmed": true,
+          "ddr_held_in_reset": true,
+          "sd_deselected": true,
+          "sd_clock_stopped": true,
+          "phy_held_in_reset": true,
+          "idle_bitstream_sha256": "20c4f1f7be50e692b53371dba25c833522562db445c2b75e6c9cf2cf1d6d3784",
+          "uart_quiet_seconds": 5.0079058919800445,
+          "uart_bytes": 0
+        }
+      },
+      "diagnostic_observation": null,
+      "errors": []
+    },
+    {
+      "status": "incomplete",
+      "session": "docs/peripherals/evidence/20261006T163525.406476Z-ddr3-sd-spi_eth-none-linux",
+      "criteria": {
+        "sd": "incomplete_or_invalid",
+        "ddr_qualification": "passed",
+        "final_recovery": "passed"
+      },
+      "measurements": {
+        "sd": {},
+        "ddr_qualification": {
+          "training_passes": 10,
+          "tested_bytes": 134217728,
+          "pattern_errors": 0,
+          "cache_visibility_errors": 0,
+          "stress_seconds": 1800.0518350625,
+          "stress_seconds_requested": 1800,
+          "board_serial": "unavailable",
+          "board_revision": "core-v3961_Dock-v3714"
+        },
+        "final_recovery": {
+          "sram_programmed": true,
+          "ddr_held_in_reset": true,
+          "sd_deselected": true,
+          "sd_clock_stopped": true,
+          "phy_held_in_reset": true,
+          "idle_bitstream_sha256": "20c4f1f7be50e692b53371dba25c833522562db445c2b75e6c9cf2cf1d6d3784",
+          "uart_quiet_seconds": 5.007894837006461,
           "uart_bytes": 0
         }
       },

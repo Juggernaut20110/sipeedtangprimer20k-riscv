@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/system_fit.py", line 810, in _construct_and_build
+    _capture_build(builder, build_name)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/system_fit.py", line 639, in _capture_build
+    builder.build(run=True, build_name=build_name, hierarchical=True)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 521, in build
+    return self._build(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 616, in _build
+    vns = self.soc.build(build_dir=self.gateware_dir, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2199, in build
+    return self.platform.build(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/build/gowin/platform.py", line 48, in build
+    return self.toolchain.build(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/build/generic_toolchain.py", line 126, in build
+    self.run_script(script)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/build/gowin/gowin.py", line 318, in run_script
+    raise OSError("Error occured during Gowin's script execution.")
+OSError: Error occured during Gowin's script execution.

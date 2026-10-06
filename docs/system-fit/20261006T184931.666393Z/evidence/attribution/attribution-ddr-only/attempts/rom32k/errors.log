@@ -1,0 +1,40 @@
+Traceback (most recent call last):
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/system_fit.py", line 785, in _construct_and_build
+    _capture_build(builder, f"system_fit_{candidate['id']}")
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/system_fit.py", line 619, in _capture_build
+    builder.build(run=True, build_name=build_name, hierarchical=True)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 521, in build
+    return self._build(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 567, in _build
+    self._generate_includes(with_bios=with_bios)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 301, in _generate_includes
+    variables_contents = self._get_variables_contents()
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 256, in _get_variables_contents
+    for k, v in export.get_cpu_mak(self.soc.cpu, self.compile_software):
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/export.py", line 98, in get_cpu_mak
+    selected_triple = select_triple(triple)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/export.py", line 96, in select_triple
+    raise OSError(msg)
+OSError: Unable to find any of the cross compilation toolchains:
+- riscv64-pc-linux-musl
+- riscv64-unknown-elf
+- riscv64-unknown-linux-gnu
+- riscv64-elf
+- riscv64-linux
+- riscv64-linux-gnu
+- riscv-sifive-elf
+- riscv64-none-elf
+- riscv32-pc-linux-musl
+- riscv32-unknown-elf
+- riscv32-unknown-linux-gnu
+- riscv32-elf
+- riscv32-linux
+- riscv32-linux-gnu
+- riscv32-none-elf
+- riscv-none-embed
+- riscv-none-elf
+

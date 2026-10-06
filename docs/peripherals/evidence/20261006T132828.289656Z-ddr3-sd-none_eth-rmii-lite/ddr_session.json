@@ -1,0 +1,1210 @@
+{
+  "schema_version": 1,
+  "session_id": "20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite",
+  "batch_id": "20261006T132828.289656Z-ddr3-sd-none_eth-rmii",
+  "profile": "lite",
+  "cpu_candidate": null,
+  "requested_profiles": [
+    "lite"
+  ],
+  "memory_mode": "ddr3",
+  "status": "passed",
+  "created_utc": "2026-10-06T13:28:28.807191+00:00",
+  "board": {
+    "model": "Sipeed Tang Primer 20K",
+    "revision": "core-v3961_Dock-v3714",
+    "serial": null,
+    "serial_status": "not_printed_user_confirmed",
+    "identity_basis": "user_confirmed_attached_board_revision"
+  },
+  "clock_hz": 48000000,
+  "uart_device_requested": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+  "uart_device_selected": "/dev/ttyUSB0",
+  "uart_candidates_at_start": [
+    "/dev/serial/by-id/usb-1a86_USB_Single_Serial_599D114570-if00",
+    "/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A6005EXR-if00-port0",
+    "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if00-port0",
+    "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0"
+  ],
+  "usb_device_nodes_at_start": [
+    "/dev/bus/usb/001/001",
+    "/dev/bus/usb/001/003",
+    "/dev/bus/usb/001/036",
+    "/dev/bus/usb/001/042",
+    "/dev/bus/usb/001/043",
+    "/dev/bus/usb/002/001"
+  ],
+  "requested_training_runs": 10,
+  "actual_training_runs": 10,
+  "requested_stress_seconds": 1800,
+  "training_criteria_runs": 10,
+  "stress_criteria_seconds": 1800,
+  "build_identity": {
+    "build_metadata": "build/peripherals/ddr3/lite/sd-none_eth-rmii/build-metadata.json",
+    "bitstream": "build/peripherals/ddr3/lite/sd-none_eth-rmii/bitstream.fs",
+    "bitstream_sha256": "4e141f277080e27205e486bbd7eaf5e0b2050c73136d4f070804f0b2aab80c3b",
+    "build_fingerprint": "edfd89b70a9e6cdfa5c3f886a5ff5362d012fd13ab6f171651f69e19ff29bc4c",
+    "cpu_configuration": {
+      "liteX_variant": "lite",
+      "isa": "rv32i2p0_m",
+      "instruction_cache_bytes": 2048,
+      "data_cache_bytes": 0,
+      "prediction": "static",
+      "compressed": false
+    },
+    "bios_bytes": 32768,
+    "l2_cache_bytes": 8192,
+    "geometry_bytes": 134217728,
+    "uncached_alias": "0xc0000000",
+    "diagnostic_images": {
+      "smoke": {
+        "binary": "build/peripherals/ddr3/lite/sd-none_eth-rmii/diagnostics/smoke/ddr_test.bin",
+        "sha256": "aead9bd76608b38f4fa29e07d59b6efb16083e36e0fcdc06cdf80e5c9b814f0d",
+        "stress_seconds": 1800
+      },
+      "full": {
+        "binary": "build/peripherals/ddr3/lite/sd-none_eth-rmii/diagnostics/full/ddr_test.bin",
+        "sha256": "a3eae84624ad932c65abd76f54e310c34ae4797b166a6e15eb6781f5efa4f3e7",
+        "stress_seconds": 1800
+      }
+    }
+  },
+  "training_phy_configuration": {
+    "SDRAM_PHY_MODULES": 2,
+    "SDRAM_PHY_DQ_DQS_RATIO": 8,
+    "SDRAM_PHY_DELAYS": 256,
+    "SDRAM_PHY_BITSLIPS": 4,
+    "SDRAM_DELAY_PER_DQ": false
+  },
+  "expected_read_lanes": 2,
+  "trials": [
+    {
+      "mode": "training",
+      "diagnostic_only": false,
+      "attempt": 1,
+      "status": "passed",
+      "programming_status": "completed",
+      "image_sha256": "aead9bd76608b38f4fa29e07d59b6efb16083e36e0fcdc06cdf80e5c9b814f0d",
+      "bitstream_sha256": "4e141f277080e27205e486bbd7eaf5e0b2050c73136d4f070804f0b2aab80c3b",
+      "raw_uart_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-01.uart.bin",
+      "text_uart_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-01.uart.log",
+      "transmitted_uart_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-01.uart.tx.bin",
+      "started_utc": "2026-10-06T13:28:28.840519+00:00",
+      "uart_input_buffer_cleared_before_programming": true,
+      "programmer_command": [
+        "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/bin/openFPGALoader",
+        "--board",
+        "tangprimer20k",
+        "--write-sram",
+        "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/peripherals/ddr3/lite/sd-none_eth-rmii/bitstream.fs"
+      ],
+      "programmer_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-01.programmer.log",
+      "programmer_log_sha256": "1608f40443e231c922c0bc9888cdf5c2b6146e873b89be6669a37309abae2ae1",
+      "training": {
+        "status": "passed",
+        "start_records": [
+          "SDRAM_TRAINING_START phy=GW2DDRPHY read_leveling=1 bitslips=4 delays=256"
+        ],
+        "result_records": [
+          "SDRAM_TRAINING_RESULT status=passed"
+        ],
+        "expected_lane_count": 2,
+        "lane_count": 2,
+        "phy_configuration": {
+          "SDRAM_PHY_MODULES": 2,
+          "SDRAM_PHY_DQ_DQS_RATIO": 8,
+          "SDRAM_PHY_DELAYS": 256,
+          "SDRAM_PHY_BITSLIPS": 4,
+          "SDRAM_DELAY_PER_DQ": false
+        },
+        "lanes": [
+          {
+            "module": 0,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 217,
+            "delay_center": 108,
+            "delay_half_window": 108,
+            "raw": "SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=217 delay_center=108 delay_half_window=108"
+          },
+          {
+            "module": 1,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 214,
+            "delay_center": 107,
+            "delay_half_window": 107,
+            "raw": "SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=0 window_length=214 delay_center=107 delay_half_window=107"
+          }
+        ],
+        "errors": []
+      },
+      "bios_memtest": {
+        "status": "passed",
+        "records": [
+          "Memtest OK"
+        ],
+        "errors": []
+      },
+      "smoke_test": {
+        "status": "passed",
+        "tested_bytes": "16384"
+      },
+      "application_end_seen": true,
+      "application_failure": null,
+      "bios_training_status_seen": true,
+      "raw_uart_sha256": "3d1542f6bf5e4df2cc2f1f6161bc73f93dfde98468c7c2d5938d49baf7e72127",
+      "raw_uart_bytes": 3830,
+      "transmitted_uart_sha256": "3daccc28ffe7d494d8be3107aa8ea68c42a8750820d06c900f3d0750152201d0",
+      "transmitted_uart_bytes": 6030,
+      "decode_errors_present": true,
+      "training_status_from_bios": true,
+      "finished_utc": "2026-10-06T13:28:37.747629+00:00"
+    },
+    {
+      "mode": "training",
+      "diagnostic_only": false,
+      "attempt": 2,
+      "status": "passed",
+      "programming_status": "completed",
+      "image_sha256": "aead9bd76608b38f4fa29e07d59b6efb16083e36e0fcdc06cdf80e5c9b814f0d",
+      "bitstream_sha256": "4e141f277080e27205e486bbd7eaf5e0b2050c73136d4f070804f0b2aab80c3b",
+      "raw_uart_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-02.uart.bin",
+      "text_uart_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-02.uart.log",
+      "transmitted_uart_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-02.uart.tx.bin",
+      "started_utc": "2026-10-06T13:28:37.764221+00:00",
+      "uart_input_buffer_cleared_before_programming": true,
+      "programmer_command": [
+        "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/bin/openFPGALoader",
+        "--board",
+        "tangprimer20k",
+        "--write-sram",
+        "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/peripherals/ddr3/lite/sd-none_eth-rmii/bitstream.fs"
+      ],
+      "programmer_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-02.programmer.log",
+      "programmer_log_sha256": "1608f40443e231c922c0bc9888cdf5c2b6146e873b89be6669a37309abae2ae1",
+      "training": {
+        "status": "passed",
+        "start_records": [
+          "SDRAM_TRAINING_START phy=GW2DDRPHY read_leveling=1 bitslips=4 delays=256"
+        ],
+        "result_records": [
+          "SDRAM_TRAINING_RESULT status=passed"
+        ],
+        "expected_lane_count": 2,
+        "lane_count": 2,
+        "phy_configuration": {
+          "SDRAM_PHY_MODULES": 2,
+          "SDRAM_PHY_DQ_DQS_RATIO": 8,
+          "SDRAM_PHY_DELAYS": 256,
+          "SDRAM_PHY_BITSLIPS": 4,
+          "SDRAM_DELAY_PER_DQ": false
+        },
+        "lanes": [
+          {
+            "module": 0,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 217,
+            "delay_center": 108,
+            "delay_half_window": 108,
+            "raw": "SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=217 delay_center=108 delay_half_window=108"
+          },
+          {
+            "module": 1,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 214,
+            "delay_center": 106,
+            "delay_half_window": 106,
+            "raw": "SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=0 window_length=214 delay_center=106 delay_half_window=106"
+          }
+        ],
+        "errors": []
+      },
+      "bios_memtest": {
+        "status": "passed",
+        "records": [
+          "Memtest OK"
+        ],
+        "errors": []
+      },
+      "smoke_test": {
+        "status": "passed",
+        "tested_bytes": "16384"
+      },
+      "application_end_seen": true,
+      "application_failure": null,
+      "bios_training_status_seen": true,
+      "raw_uart_sha256": "56fe32e86c1cb32d82be74cedacd0573f223f4f5c2a72ea4550df4765908dc52",
+      "raw_uart_bytes": 3830,
+      "transmitted_uart_sha256": "3daccc28ffe7d494d8be3107aa8ea68c42a8750820d06c900f3d0750152201d0",
+      "transmitted_uart_bytes": 6030,
+      "decode_errors_present": false,
+      "training_status_from_bios": true,
+      "finished_utc": "2026-10-06T13:28:46.653146+00:00"
+    },
+    {
+      "mode": "training",
+      "diagnostic_only": false,
+      "attempt": 3,
+      "status": "passed",
+      "programming_status": "completed",
+      "image_sha256": "aead9bd76608b38f4fa29e07d59b6efb16083e36e0fcdc06cdf80e5c9b814f0d",
+      "bitstream_sha256": "4e141f277080e27205e486bbd7eaf5e0b2050c73136d4f070804f0b2aab80c3b",
+      "raw_uart_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-03.uart.bin",
+      "text_uart_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-03.uart.log",
+      "transmitted_uart_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-03.uart.tx.bin",
+      "started_utc": "2026-10-06T13:28:46.669181+00:00",
+      "uart_input_buffer_cleared_before_programming": true,
+      "programmer_command": [
+        "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/bin/openFPGALoader",
+        "--board",
+        "tangprimer20k",
+        "--write-sram",
+        "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/peripherals/ddr3/lite/sd-none_eth-rmii/bitstream.fs"
+      ],
+      "programmer_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-03.programmer.log",
+      "programmer_log_sha256": "1608f40443e231c922c0bc9888cdf5c2b6146e873b89be6669a37309abae2ae1",
+      "training": {
+        "status": "passed",
+        "start_records": [
+          "SDRAM_TRAINING_START phy=GW2DDRPHY read_leveling=1 bitslips=4 delays=256"
+        ],
+        "result_records": [
+          "SDRAM_TRAINING_RESULT status=passed"
+        ],
+        "expected_lane_count": 2,
+        "lane_count": 2,
+        "phy_configuration": {
+          "SDRAM_PHY_MODULES": 2,
+          "SDRAM_PHY_DQ_DQS_RATIO": 8,
+          "SDRAM_PHY_DELAYS": 256,
+          "SDRAM_PHY_BITSLIPS": 4,
+          "SDRAM_DELAY_PER_DQ": false
+        },
+        "lanes": [
+          {
+            "module": 0,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 217,
+            "delay_center": 108,
+            "delay_half_window": 108,
+            "raw": "SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=217 delay_center=108 delay_half_window=108"
+          },
+          {
+            "module": 1,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 215,
+            "delay_center": 106,
+            "delay_half_window": 106,
+            "raw": "SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=0 window_length=215 delay_center=106 delay_half_window=106"
+          }
+        ],
+        "errors": []
+      },
+      "bios_memtest": {
+        "status": "passed",
+        "records": [
+          "Memtest OK"
+        ],
+        "errors": []
+      },
+      "smoke_test": {
+        "status": "passed",
+        "tested_bytes": "16384"
+      },
+      "application_end_seen": true,
+      "application_failure": null,
+      "bios_training_status_seen": true,
+      "raw_uart_sha256": "fd3e2667180274e30ebc4f01f2b94970544a199970055b7e438d8b83733a667c",
+      "raw_uart_bytes": 3830,
+      "transmitted_uart_sha256": "3daccc28ffe7d494d8be3107aa8ea68c42a8750820d06c900f3d0750152201d0",
+      "transmitted_uart_bytes": 6030,
+      "decode_errors_present": false,
+      "training_status_from_bios": true,
+      "finished_utc": "2026-10-06T13:28:55.545412+00:00"
+    },
+    {
+      "mode": "training",
+      "diagnostic_only": false,
+      "attempt": 4,
+      "status": "passed",
+      "programming_status": "completed",
+      "image_sha256": "aead9bd76608b38f4fa29e07d59b6efb16083e36e0fcdc06cdf80e5c9b814f0d",
+      "bitstream_sha256": "4e141f277080e27205e486bbd7eaf5e0b2050c73136d4f070804f0b2aab80c3b",
+      "raw_uart_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-04.uart.bin",
+      "text_uart_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-04.uart.log",
+      "transmitted_uart_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-04.uart.tx.bin",
+      "started_utc": "2026-10-06T13:28:55.562149+00:00",
+      "uart_input_buffer_cleared_before_programming": true,
+      "programmer_command": [
+        "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/bin/openFPGALoader",
+        "--board",
+        "tangprimer20k",
+        "--write-sram",
+        "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/peripherals/ddr3/lite/sd-none_eth-rmii/bitstream.fs"
+      ],
+      "programmer_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-04.programmer.log",
+      "programmer_log_sha256": "1608f40443e231c922c0bc9888cdf5c2b6146e873b89be6669a37309abae2ae1",
+      "training": {
+        "status": "passed",
+        "start_records": [
+          "SDRAM_TRAINING_START phy=GW2DDRPHY read_leveling=1 bitslips=4 delays=256"
+        ],
+        "result_records": [
+          "SDRAM_TRAINING_RESULT status=passed"
+        ],
+        "expected_lane_count": 2,
+        "lane_count": 2,
+        "phy_configuration": {
+          "SDRAM_PHY_MODULES": 2,
+          "SDRAM_PHY_DQ_DQS_RATIO": 8,
+          "SDRAM_PHY_DELAYS": 256,
+          "SDRAM_PHY_BITSLIPS": 4,
+          "SDRAM_DELAY_PER_DQ": false
+        },
+        "lanes": [
+          {
+            "module": 0,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 217,
+            "delay_center": 108,
+            "delay_half_window": 108,
+            "raw": "SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=217 delay_center=108 delay_half_window=108"
+          },
+          {
+            "module": 1,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 214,
+            "delay_center": 106,
+            "delay_half_window": 106,
+            "raw": "SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=0 window_length=214 delay_center=106 delay_half_window=106"
+          }
+        ],
+        "errors": []
+      },
+      "bios_memtest": {
+        "status": "passed",
+        "records": [
+          "Memtest OK"
+        ],
+        "errors": []
+      },
+      "smoke_test": {
+        "status": "passed",
+        "tested_bytes": "16384"
+      },
+      "application_end_seen": true,
+      "application_failure": null,
+      "bios_training_status_seen": true,
+      "raw_uart_sha256": "d6a3d2733dcdf9a032ef29ae9316e6e8ce268fd5bcac51a529c96fce486aa2b5",
+      "raw_uart_bytes": 3830,
+      "transmitted_uart_sha256": "3daccc28ffe7d494d8be3107aa8ea68c42a8750820d06c900f3d0750152201d0",
+      "transmitted_uart_bytes": 6030,
+      "decode_errors_present": false,
+      "training_status_from_bios": true,
+      "finished_utc": "2026-10-06T13:29:04.436802+00:00"
+    },
+    {
+      "mode": "training",
+      "diagnostic_only": false,
+      "attempt": 5,
+      "status": "passed",
+      "programming_status": "completed",
+      "image_sha256": "aead9bd76608b38f4fa29e07d59b6efb16083e36e0fcdc06cdf80e5c9b814f0d",
+      "bitstream_sha256": "4e141f277080e27205e486bbd7eaf5e0b2050c73136d4f070804f0b2aab80c3b",
+      "raw_uart_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-05.uart.bin",
+      "text_uart_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-05.uart.log",
+      "transmitted_uart_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-05.uart.tx.bin",
+      "started_utc": "2026-10-06T13:29:04.454902+00:00",
+      "uart_input_buffer_cleared_before_programming": true,
+      "programmer_command": [
+        "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/bin/openFPGALoader",
+        "--board",
+        "tangprimer20k",
+        "--write-sram",
+        "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/peripherals/ddr3/lite/sd-none_eth-rmii/bitstream.fs"
+      ],
+      "programmer_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-05.programmer.log",
+      "programmer_log_sha256": "1608f40443e231c922c0bc9888cdf5c2b6146e873b89be6669a37309abae2ae1",
+      "training": {
+        "status": "passed",
+        "start_records": [
+          "SDRAM_TRAINING_START phy=GW2DDRPHY read_leveling=1 bitslips=4 delays=256"
+        ],
+        "result_records": [
+          "SDRAM_TRAINING_RESULT status=passed"
+        ],
+        "expected_lane_count": 2,
+        "lane_count": 2,
+        "phy_configuration": {
+          "SDRAM_PHY_MODULES": 2,
+          "SDRAM_PHY_DQ_DQS_RATIO": 8,
+          "SDRAM_PHY_DELAYS": 256,
+          "SDRAM_PHY_BITSLIPS": 4,
+          "SDRAM_DELAY_PER_DQ": false
+        },
+        "lanes": [
+          {
+            "module": 0,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 217,
+            "delay_center": 108,
+            "delay_half_window": 108,
+            "raw": "SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=217 delay_center=108 delay_half_window=108"
+          },
+          {
+            "module": 1,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 214,
+            "delay_center": 106,
+            "delay_half_window": 106,
+            "raw": "SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=0 window_length=214 delay_center=106 delay_half_window=106"
+          }
+        ],
+        "errors": []
+      },
+      "bios_memtest": {
+        "status": "passed",
+        "records": [
+          "Memtest OK"
+        ],
+        "errors": []
+      },
+      "smoke_test": {
+        "status": "passed",
+        "tested_bytes": "16384"
+      },
+      "application_end_seen": true,
+      "application_failure": null,
+      "bios_training_status_seen": true,
+      "raw_uart_sha256": "b3d36ce64770bbf75e6048a1aadb3e3829bd4de2488aeedd702c1ca363243842",
+      "raw_uart_bytes": 3830,
+      "transmitted_uart_sha256": "3daccc28ffe7d494d8be3107aa8ea68c42a8750820d06c900f3d0750152201d0",
+      "transmitted_uart_bytes": 6030,
+      "decode_errors_present": true,
+      "training_status_from_bios": true,
+      "finished_utc": "2026-10-06T13:29:13.329395+00:00"
+    },
+    {
+      "mode": "training",
+      "diagnostic_only": false,
+      "attempt": 6,
+      "status": "passed",
+      "programming_status": "completed",
+      "image_sha256": "aead9bd76608b38f4fa29e07d59b6efb16083e36e0fcdc06cdf80e5c9b814f0d",
+      "bitstream_sha256": "4e141f277080e27205e486bbd7eaf5e0b2050c73136d4f070804f0b2aab80c3b",
+      "raw_uart_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-06.uart.bin",
+      "text_uart_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-06.uart.log",
+      "transmitted_uart_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-06.uart.tx.bin",
+      "started_utc": "2026-10-06T13:29:13.345177+00:00",
+      "uart_input_buffer_cleared_before_programming": true,
+      "programmer_command": [
+        "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/bin/openFPGALoader",
+        "--board",
+        "tangprimer20k",
+        "--write-sram",
+        "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/peripherals/ddr3/lite/sd-none_eth-rmii/bitstream.fs"
+      ],
+      "programmer_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-06.programmer.log",
+      "programmer_log_sha256": "1608f40443e231c922c0bc9888cdf5c2b6146e873b89be6669a37309abae2ae1",
+      "training": {
+        "status": "passed",
+        "start_records": [
+          "SDRAM_TRAINING_START phy=GW2DDRPHY read_leveling=1 bitslips=4 delays=256"
+        ],
+        "result_records": [
+          "SDRAM_TRAINING_RESULT status=passed"
+        ],
+        "expected_lane_count": 2,
+        "lane_count": 2,
+        "phy_configuration": {
+          "SDRAM_PHY_MODULES": 2,
+          "SDRAM_PHY_DQ_DQS_RATIO": 8,
+          "SDRAM_PHY_DELAYS": 256,
+          "SDRAM_PHY_BITSLIPS": 4,
+          "SDRAM_DELAY_PER_DQ": false
+        },
+        "lanes": [
+          {
+            "module": 0,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 216,
+            "delay_center": 108,
+            "delay_half_window": 108,
+            "raw": "SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=216 delay_center=108 delay_half_window=108"
+          },
+          {
+            "module": 1,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 214,
+            "delay_center": 106,
+            "delay_half_window": 106,
+            "raw": "SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=0 window_length=214 delay_center=106 delay_half_window=106"
+          }
+        ],
+        "errors": []
+      },
+      "bios_memtest": {
+        "status": "passed",
+        "records": [
+          "Memtest OK"
+        ],
+        "errors": []
+      },
+      "smoke_test": {
+        "status": "passed",
+        "tested_bytes": "16384"
+      },
+      "application_end_seen": true,
+      "application_failure": null,
+      "bios_training_status_seen": true,
+      "raw_uart_sha256": "f1c2ce195b931d5217cb2ca726ac363b16c17d65c8083ce29dcc3d2ffb8063e3",
+      "raw_uart_bytes": 3830,
+      "transmitted_uart_sha256": "3daccc28ffe7d494d8be3107aa8ea68c42a8750820d06c900f3d0750152201d0",
+      "transmitted_uart_bytes": 6030,
+      "decode_errors_present": true,
+      "training_status_from_bios": true,
+      "finished_utc": "2026-10-06T13:29:22.246279+00:00"
+    },
+    {
+      "mode": "training",
+      "diagnostic_only": false,
+      "attempt": 7,
+      "status": "passed",
+      "programming_status": "completed",
+      "image_sha256": "aead9bd76608b38f4fa29e07d59b6efb16083e36e0fcdc06cdf80e5c9b814f0d",
+      "bitstream_sha256": "4e141f277080e27205e486bbd7eaf5e0b2050c73136d4f070804f0b2aab80c3b",
+      "raw_uart_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-07.uart.bin",
+      "text_uart_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-07.uart.log",
+      "transmitted_uart_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-07.uart.tx.bin",
+      "started_utc": "2026-10-06T13:29:22.262456+00:00",
+      "uart_input_buffer_cleared_before_programming": true,
+      "programmer_command": [
+        "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/bin/openFPGALoader",
+        "--board",
+        "tangprimer20k",
+        "--write-sram",
+        "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/peripherals/ddr3/lite/sd-none_eth-rmii/bitstream.fs"
+      ],
+      "programmer_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-07.programmer.log",
+      "programmer_log_sha256": "1608f40443e231c922c0bc9888cdf5c2b6146e873b89be6669a37309abae2ae1",
+      "training": {
+        "status": "passed",
+        "start_records": [
+          "SDRAM_TRAINING_START phy=GW2DDRPHY read_leveling=1 bitslips=4 delays=256"
+        ],
+        "result_records": [
+          "SDRAM_TRAINING_RESULT status=passed"
+        ],
+        "expected_lane_count": 2,
+        "lane_count": 2,
+        "phy_configuration": {
+          "SDRAM_PHY_MODULES": 2,
+          "SDRAM_PHY_DQ_DQS_RATIO": 8,
+          "SDRAM_PHY_DELAYS": 256,
+          "SDRAM_PHY_BITSLIPS": 4,
+          "SDRAM_DELAY_PER_DQ": false
+        },
+        "lanes": [
+          {
+            "module": 0,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 217,
+            "delay_center": 108,
+            "delay_half_window": 108,
+            "raw": "SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=217 delay_center=108 delay_half_window=108"
+          },
+          {
+            "module": 1,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 214,
+            "delay_center": 106,
+            "delay_half_window": 106,
+            "raw": "SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=0 window_length=214 delay_center=106 delay_half_window=106"
+          }
+        ],
+        "errors": []
+      },
+      "bios_memtest": {
+        "status": "passed",
+        "records": [
+          "Memtest OK"
+        ],
+        "errors": []
+      },
+      "smoke_test": {
+        "status": "passed",
+        "tested_bytes": "16384"
+      },
+      "application_end_seen": true,
+      "application_failure": null,
+      "bios_training_status_seen": true,
+      "raw_uart_sha256": "3f022fbed61ba54b34f933fdad7d292e6c859487739ef47205a27cbd39b5b245",
+      "raw_uart_bytes": 3830,
+      "transmitted_uart_sha256": "3daccc28ffe7d494d8be3107aa8ea68c42a8750820d06c900f3d0750152201d0",
+      "transmitted_uart_bytes": 6030,
+      "decode_errors_present": true,
+      "training_status_from_bios": true,
+      "finished_utc": "2026-10-06T13:29:31.154458+00:00"
+    },
+    {
+      "mode": "training",
+      "diagnostic_only": false,
+      "attempt": 8,
+      "status": "passed",
+      "programming_status": "completed",
+      "image_sha256": "aead9bd76608b38f4fa29e07d59b6efb16083e36e0fcdc06cdf80e5c9b814f0d",
+      "bitstream_sha256": "4e141f277080e27205e486bbd7eaf5e0b2050c73136d4f070804f0b2aab80c3b",
+      "raw_uart_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-08.uart.bin",
+      "text_uart_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-08.uart.log",
+      "transmitted_uart_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-08.uart.tx.bin",
+      "started_utc": "2026-10-06T13:29:31.181040+00:00",
+      "uart_input_buffer_cleared_before_programming": true,
+      "programmer_command": [
+        "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/bin/openFPGALoader",
+        "--board",
+        "tangprimer20k",
+        "--write-sram",
+        "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/peripherals/ddr3/lite/sd-none_eth-rmii/bitstream.fs"
+      ],
+      "programmer_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-08.programmer.log",
+      "programmer_log_sha256": "1608f40443e231c922c0bc9888cdf5c2b6146e873b89be6669a37309abae2ae1",
+      "training": {
+        "status": "passed",
+        "start_records": [
+          "SDRAM_TRAINING_START phy=GW2DDRPHY read_leveling=1 bitslips=4 delays=256"
+        ],
+        "result_records": [
+          "SDRAM_TRAINING_RESULT status=passed"
+        ],
+        "expected_lane_count": 2,
+        "lane_count": 2,
+        "phy_configuration": {
+          "SDRAM_PHY_MODULES": 2,
+          "SDRAM_PHY_DQ_DQS_RATIO": 8,
+          "SDRAM_PHY_DELAYS": 256,
+          "SDRAM_PHY_BITSLIPS": 4,
+          "SDRAM_DELAY_PER_DQ": false
+        },
+        "lanes": [
+          {
+            "module": 0,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 217,
+            "delay_center": 107,
+            "delay_half_window": 107,
+            "raw": "SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=217 delay_center=107 delay_half_window=107"
+          },
+          {
+            "module": 1,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 214,
+            "delay_center": 106,
+            "delay_half_window": 106,
+            "raw": "SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=0 window_length=214 delay_center=106 delay_half_window=106"
+          }
+        ],
+        "errors": []
+      },
+      "bios_memtest": {
+        "status": "passed",
+        "records": [
+          "Memtest OK"
+        ],
+        "errors": []
+      },
+      "smoke_test": {
+        "status": "passed",
+        "tested_bytes": "16384"
+      },
+      "application_end_seen": true,
+      "application_failure": null,
+      "bios_training_status_seen": true,
+      "raw_uart_sha256": "22ff5a05b08a02797348122f341355517755a9838a6e25621920c97ddc613cde",
+      "raw_uart_bytes": 3830,
+      "transmitted_uart_sha256": "3daccc28ffe7d494d8be3107aa8ea68c42a8750820d06c900f3d0750152201d0",
+      "transmitted_uart_bytes": 6030,
+      "decode_errors_present": false,
+      "training_status_from_bios": true,
+      "finished_utc": "2026-10-06T13:29:40.059720+00:00"
+    },
+    {
+      "mode": "training",
+      "diagnostic_only": false,
+      "attempt": 9,
+      "status": "passed",
+      "programming_status": "completed",
+      "image_sha256": "aead9bd76608b38f4fa29e07d59b6efb16083e36e0fcdc06cdf80e5c9b814f0d",
+      "bitstream_sha256": "4e141f277080e27205e486bbd7eaf5e0b2050c73136d4f070804f0b2aab80c3b",
+      "raw_uart_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-09.uart.bin",
+      "text_uart_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-09.uart.log",
+      "transmitted_uart_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-09.uart.tx.bin",
+      "started_utc": "2026-10-06T13:29:40.076587+00:00",
+      "uart_input_buffer_cleared_before_programming": true,
+      "programmer_command": [
+        "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/bin/openFPGALoader",
+        "--board",
+        "tangprimer20k",
+        "--write-sram",
+        "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/peripherals/ddr3/lite/sd-none_eth-rmii/bitstream.fs"
+      ],
+      "programmer_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-09.programmer.log",
+      "programmer_log_sha256": "1608f40443e231c922c0bc9888cdf5c2b6146e873b89be6669a37309abae2ae1",
+      "training": {
+        "status": "passed",
+        "start_records": [
+          "SDRAM_TRAINING_START phy=GW2DDRPHY read_leveling=1 bitslips=4 delays=256"
+        ],
+        "result_records": [
+          "SDRAM_TRAINING_RESULT status=passed"
+        ],
+        "expected_lane_count": 2,
+        "lane_count": 2,
+        "phy_configuration": {
+          "SDRAM_PHY_MODULES": 2,
+          "SDRAM_PHY_DQ_DQS_RATIO": 8,
+          "SDRAM_PHY_DELAYS": 256,
+          "SDRAM_PHY_BITSLIPS": 4,
+          "SDRAM_DELAY_PER_DQ": false
+        },
+        "lanes": [
+          {
+            "module": 0,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 216,
+            "delay_center": 108,
+            "delay_half_window": 108,
+            "raw": "SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=216 delay_center=108 delay_half_window=108"
+          },
+          {
+            "module": 1,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 214,
+            "delay_center": 106,
+            "delay_half_window": 106,
+            "raw": "SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=0 window_length=214 delay_center=106 delay_half_window=106"
+          }
+        ],
+        "errors": []
+      },
+      "bios_memtest": {
+        "status": "passed",
+        "records": [
+          "Memtest OK"
+        ],
+        "errors": []
+      },
+      "smoke_test": {
+        "status": "passed",
+        "tested_bytes": "16384"
+      },
+      "application_end_seen": true,
+      "application_failure": null,
+      "bios_training_status_seen": true,
+      "raw_uart_sha256": "54ed02271fe42595522a71603b58d79ccf769378298c0bac0071c3691b8770d9",
+      "raw_uart_bytes": 3830,
+      "transmitted_uart_sha256": "3daccc28ffe7d494d8be3107aa8ea68c42a8750820d06c900f3d0750152201d0",
+      "transmitted_uart_bytes": 6030,
+      "decode_errors_present": true,
+      "training_status_from_bios": true,
+      "finished_utc": "2026-10-06T13:29:48.959219+00:00"
+    },
+    {
+      "mode": "training",
+      "diagnostic_only": false,
+      "attempt": 10,
+      "status": "passed",
+      "programming_status": "completed",
+      "image_sha256": "aead9bd76608b38f4fa29e07d59b6efb16083e36e0fcdc06cdf80e5c9b814f0d",
+      "bitstream_sha256": "4e141f277080e27205e486bbd7eaf5e0b2050c73136d4f070804f0b2aab80c3b",
+      "raw_uart_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-10.uart.bin",
+      "text_uart_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-10.uart.log",
+      "transmitted_uart_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-10.uart.tx.bin",
+      "started_utc": "2026-10-06T13:29:48.975796+00:00",
+      "uart_input_buffer_cleared_before_programming": true,
+      "programmer_command": [
+        "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/bin/openFPGALoader",
+        "--board",
+        "tangprimer20k",
+        "--write-sram",
+        "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/peripherals/ddr3/lite/sd-none_eth-rmii/bitstream.fs"
+      ],
+      "programmer_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/training-10.programmer.log",
+      "programmer_log_sha256": "1608f40443e231c922c0bc9888cdf5c2b6146e873b89be6669a37309abae2ae1",
+      "training": {
+        "status": "passed",
+        "start_records": [
+          "SDRAM_TRAINING_START phy=GW2DDRPHY read_leveling=1 bitslips=4 delays=256"
+        ],
+        "result_records": [
+          "SDRAM_TRAINING_RESULT status=passed"
+        ],
+        "expected_lane_count": 2,
+        "lane_count": 2,
+        "phy_configuration": {
+          "SDRAM_PHY_MODULES": 2,
+          "SDRAM_PHY_DQ_DQS_RATIO": 8,
+          "SDRAM_PHY_DELAYS": 256,
+          "SDRAM_PHY_BITSLIPS": 4,
+          "SDRAM_DELAY_PER_DQ": false
+        },
+        "lanes": [
+          {
+            "module": 0,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 216,
+            "delay_center": 107,
+            "delay_half_window": 107,
+            "raw": "SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=216 delay_center=107 delay_half_window=107"
+          },
+          {
+            "module": 1,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 214,
+            "delay_center": 106,
+            "delay_half_window": 106,
+            "raw": "SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=0 window_length=214 delay_center=106 delay_half_window=106"
+          }
+        ],
+        "errors": []
+      },
+      "bios_memtest": {
+        "status": "passed",
+        "records": [
+          "Memtest OK"
+        ],
+        "errors": []
+      },
+      "smoke_test": {
+        "status": "passed",
+        "tested_bytes": "16384"
+      },
+      "application_end_seen": true,
+      "application_failure": null,
+      "bios_training_status_seen": true,
+      "raw_uart_sha256": "5fbee6619c42dbeec26f1a2eb5442336e2a8b9a7cf8753ae7d0aca22eaac727a",
+      "raw_uart_bytes": 3830,
+      "transmitted_uart_sha256": "3daccc28ffe7d494d8be3107aa8ea68c42a8750820d06c900f3d0750152201d0",
+      "transmitted_uart_bytes": 6030,
+      "decode_errors_present": false,
+      "training_status_from_bios": true,
+      "finished_utc": "2026-10-06T13:29:57.853166+00:00"
+    },
+    {
+      "mode": "full",
+      "diagnostic_only": false,
+      "attempt": 1,
+      "status": "passed",
+      "programming_status": "completed",
+      "image_sha256": "a3eae84624ad932c65abd76f54e310c34ae4797b166a6e15eb6781f5efa4f3e7",
+      "bitstream_sha256": "4e141f277080e27205e486bbd7eaf5e0b2050c73136d4f070804f0b2aab80c3b",
+      "raw_uart_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/full-01.uart.bin",
+      "text_uart_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/full-01.uart.log",
+      "transmitted_uart_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/full-01.uart.tx.bin",
+      "started_utc": "2026-10-06T13:29:57.869798+00:00",
+      "uart_input_buffer_cleared_before_programming": true,
+      "programmer_command": [
+        "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/bin/openFPGALoader",
+        "--board",
+        "tangprimer20k",
+        "--write-sram",
+        "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/peripherals/ddr3/lite/sd-none_eth-rmii/bitstream.fs"
+      ],
+      "programmer_log": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/full-01.programmer.log",
+      "programmer_log_sha256": "1608f40443e231c922c0bc9888cdf5c2b6146e873b89be6669a37309abae2ae1",
+      "training": {
+        "status": "passed",
+        "start_records": [
+          "SDRAM_TRAINING_START phy=GW2DDRPHY read_leveling=1 bitslips=4 delays=256"
+        ],
+        "result_records": [
+          "SDRAM_TRAINING_RESULT status=passed"
+        ],
+        "expected_lane_count": 2,
+        "lane_count": 2,
+        "phy_configuration": {
+          "SDRAM_PHY_MODULES": 2,
+          "SDRAM_PHY_DQ_DQS_RATIO": 8,
+          "SDRAM_PHY_DELAYS": 256,
+          "SDRAM_PHY_BITSLIPS": 4,
+          "SDRAM_DELAY_PER_DQ": false
+        },
+        "lanes": [
+          {
+            "module": 0,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 216,
+            "delay_center": 107,
+            "delay_half_window": 107,
+            "raw": "SDRAM_READ_LEVELING_LANE module=0 dq=0 bitslip=2 status=passed window_start=0 window_length=216 delay_center=107 delay_half_window=107"
+          },
+          {
+            "module": 1,
+            "dq_line": 0,
+            "bitslip": 2,
+            "status": "passed",
+            "window_start": 0,
+            "window_length": 214,
+            "delay_center": 106,
+            "delay_half_window": 106,
+            "raw": "SDRAM_READ_LEVELING_LANE module=1 dq=0 bitslip=2 status=passed window_start=0 window_length=214 delay_center=106 delay_half_window=106"
+          }
+        ],
+        "errors": []
+      },
+      "bios_memtest": {
+        "status": "passed",
+        "records": [
+          "Memtest OK"
+        ],
+        "errors": []
+      },
+      "result": {
+        "status": "passed",
+        "profile": "lite",
+        "memory_mode": "ddr3",
+        "geometry_bytes": 134217728,
+        "clock_hz": 48000000,
+        "cache": {
+          "cpu_dcache": "profile-dependent",
+          "l2_bytes": 8192
+        },
+        "phases": {
+          "walking_ones": {
+            "range_start": 3221225472,
+            "range_end": 3355443200,
+            "coverage_bytes": 134217728,
+            "sample_stride_bytes": null,
+            "samples": null,
+            "samples_per_page": null,
+            "alias_offsets": null,
+            "cache_maintenance": null,
+            "bytes": 134217728,
+            "operations": 33554432,
+            "elapsed_ticks": 1971862972,
+            "errors": 0
+          },
+          "walking_zeros": {
+            "range_start": 3221225472,
+            "range_end": 3355443200,
+            "coverage_bytes": 134217728,
+            "sample_stride_bytes": null,
+            "samples": null,
+            "samples_per_page": null,
+            "alias_offsets": null,
+            "cache_maintenance": null,
+            "bytes": 134217728,
+            "operations": 33554432,
+            "elapsed_ticks": 2042265563,
+            "errors": 0
+          },
+          "fixed_pattern": {
+            "range_start": 3221225472,
+            "range_end": 3355443200,
+            "coverage_bytes": 134217728,
+            "sample_stride_bytes": null,
+            "samples": null,
+            "samples_per_page": null,
+            "alias_offsets": null,
+            "cache_maintenance": null,
+            "bytes": 134217728,
+            "operations": 33554432,
+            "elapsed_ticks": 1040865986,
+            "errors": 0
+          },
+          "inverted_pattern": {
+            "range_start": 3221225472,
+            "range_end": 3355443200,
+            "coverage_bytes": 134217728,
+            "sample_stride_bytes": null,
+            "samples": null,
+            "samples_per_page": null,
+            "alias_offsets": null,
+            "cache_maintenance": null,
+            "bytes": 134217728,
+            "operations": 33554432,
+            "elapsed_ticks": 1040865987,
+            "errors": 0
+          },
+          "address_pattern": {
+            "range_start": 3221225472,
+            "range_end": 3355443200,
+            "coverage_bytes": 134217728,
+            "sample_stride_bytes": null,
+            "samples": null,
+            "samples_per_page": null,
+            "alias_offsets": null,
+            "cache_maintenance": null,
+            "bytes": 134217728,
+            "operations": 33554432,
+            "elapsed_ticks": 3249274986,
+            "errors": 0
+          },
+          "deterministic_pseudorandom": {
+            "range_start": 3221225472,
+            "range_end": 3355443200,
+            "coverage_bytes": 134217728,
+            "sample_stride_bytes": null,
+            "samples": null,
+            "samples_per_page": null,
+            "alias_offsets": null,
+            "cache_maintenance": null,
+            "bytes": 134217728,
+            "operations": 33554432,
+            "elapsed_ticks": 3422627811,
+            "errors": 0
+          },
+          "address_bank_row_column_alias": {
+            "range_start": 3221225472,
+            "range_end": 3355443200,
+            "coverage_bytes": 100,
+            "sample_stride_bytes": null,
+            "samples": null,
+            "samples_per_page": null,
+            "alias_offsets": 25,
+            "cache_maintenance": null,
+            "bytes": 100,
+            "operations": 25,
+            "elapsed_ticks": 661326,
+            "errors": 0
+          },
+          "byte_halfword_neighbor_preservation": {
+            "range_start": 3221225472,
+            "range_end": 3355443200,
+            "coverage_bytes": 134217728,
+            "sample_stride_bytes": 4096,
+            "samples": null,
+            "samples_per_page": 5,
+            "alias_offsets": null,
+            "cache_maintenance": null,
+            "bytes": 134217728,
+            "operations": 163840,
+            "elapsed_ticks": 22685832,
+            "errors": 0
+          },
+          "cached_uncached_visibility": {
+            "range_start": 3222274048,
+            "range_end": 3355443200,
+            "coverage_bytes": 512,
+            "sample_stride_bytes": 2097152,
+            "samples": 64,
+            "samples_per_page": null,
+            "alias_offsets": null,
+            "cache_maintenance": "fence,dflush,l2flush",
+            "bytes": 512,
+            "operations": 128,
+            "elapsed_ticks": 5735490,
+            "errors": 0
+          },
+          "sustained_delayed_readback_stress": {
+            "range_start": 3221225472,
+            "range_end": 3355443200,
+            "coverage_bytes": 134217728,
+            "sample_stride_bytes": null,
+            "samples": null,
+            "samples_per_page": null,
+            "alias_offsets": null,
+            "cache_maintenance": null,
+            "bytes": 134217728,
+            "operations": 838598656,
+            "elapsed_ticks": 86412031681,
+            "errors": 0
+          }
+        },
+        "stress_seconds_requested": 1800,
+        "stress_elapsed_ticks": 86412031681,
+        "stress_seconds_actual": 1800.2506600208333,
+        "bandwidth": {
+          "path": "uncached_controller_alias",
+          "transfer_bytes": 1048576,
+          "clock_hz": 48000000,
+          "read_bytes": 3354394624,
+          "write_bytes": 3354394624,
+          "elapsed_ticks": 86412031681,
+          "read_bytes_per_second": 1863293,
+          "write_bytes_per_second": 1863293,
+          "sweeps": 25
+        }
+      },
+      "application_end_seen": true,
+      "application_failure": null,
+      "bios_training_status_seen": true,
+      "raw_uart_sha256": "2959cf82ee7b1bbe4d1e52d5d540a3ec8e3793bf45de5296852595cbff251ff7",
+      "raw_uart_bytes": 6860,
+      "transmitted_uart_sha256": "40a5947c1fb269bc793ee0c7fea26231e667d0f270b395111eb0bf714dab2d64",
+      "transmitted_uart_bytes": 11062,
+      "decode_errors_present": true,
+      "training_status_from_bios": true,
+      "finished_utc": "2026-10-06T14:04:34.290298+00:00"
+    }
+  ],
+  "acceptance": "thorough",
+  "stress_seconds": 1800.2506600208333,
+  "full_range_bytes": 134217728,
+  "error_count": 0,
+  "uncached_smoke_passed": true,
+  "finished_utc": "2026-10-06T14:04:34.291295+00:00",
+  "uart_evidence_directory": "docs/peripherals/evidence/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite",
+  "evidence": "build/peripherals/ddr3/lite/sd-none_eth-rmii/diagnostics/sessions/20261006T132828.289656Z-ddr3-sd-none_eth-rmii-lite/session.json"
+}

@@ -1,0 +1,494 @@
+{
+  "bios_audit_error": "ValueError: too many values to unpack (expected 2)",
+  "classification": "integration failure",
+  "config": {
+    "attempt_dir": "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T184931.666393Z/attribution/attribution-ddr-one-slot-ethernet/attempts/rom32k",
+    "candidate": {
+      "cpu_source": "pinned-linux-rtl",
+      "d_cache_bytes": 4096,
+      "ethernet_rx_slots": 1,
+      "ethernet_tx_slots": 1,
+      "i_cache_bytes": 4096,
+      "id": "candidate-2-compact-memory",
+      "l2_bytes": 2048,
+      "working_sram_bytes": 4096
+    },
+    "cpu": {
+      "cache_sizes": {
+        "d_cache_bytes": 4096,
+        "i_cache_bytes": 4096
+      },
+      "features": {
+        "interrupt_ports": true,
+        "lr_sc_and_amo": true,
+        "mmu": true,
+        "supervisor_csrs": true,
+        "wishbone_instruction_and_data": true
+      },
+      "generator_arguments": [
+        "Makefile target VexRiscv_Linux.v",
+        "--csrPluginConfig linux-minimal"
+      ],
+      "generator_revisions": {
+        "generator_commit": "642ecfed1c84460555d6d803d660cc60cfc1ecb6",
+        "sbt": "1.9.7",
+        "scala": "2.11.12",
+        "spinalhdl": "1.9.4",
+        "submodule_commit": "b6118e5cc2a33323425df6455697139021d50c72"
+      },
+      "generator_source_sha256": "6710fdcae5ba443ec48d0c0b9206f29e77af8a30bd4ffa2754dc8eb6ce4c13bb",
+      "linux_recipe_sha256": "b29974e961899fc38bae75c1750753739de8dbd2ee7d352ca9e0879176763fd6",
+      "module": "VexRiscv",
+      "ports": [
+        "clk",
+        "dBusWishbone_ACK",
+        "dBusWishbone_ADR",
+        "dBusWishbone_BTE",
+        "dBusWishbone_CTI",
+        "dBusWishbone_CYC",
+        "dBusWishbone_DAT_MISO",
+        "dBusWishbone_DAT_MOSI",
+        "dBusWishbone_ERR",
+        "dBusWishbone_SEL",
+        "dBusWishbone_STB",
+        "dBusWishbone_WE",
+        "externalInterruptArray",
+        "externalResetVector",
+        "iBusWishbone_ACK",
+        "iBusWishbone_ADR",
+        "iBusWishbone_BTE",
+        "iBusWishbone_CTI",
+        "iBusWishbone_CYC",
+        "iBusWishbone_DAT_MISO",
+        "iBusWishbone_DAT_MOSI",
+        "iBusWishbone_ERR",
+        "iBusWishbone_SEL",
+        "iBusWishbone_STB",
+        "iBusWishbone_WE",
+        "reset",
+        "softwareInterrupt",
+        "timerInterrupt"
+      ],
+      "rtl_path": "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.v",
+      "rtl_sha256": "c19a1b07f799100869dc49646c328e83d9970a2f81076824393a677a60f61240",
+      "source": "pinned VexRiscv_Linux.v from the locked pythondata-cpu-vexriscv checkout",
+      "yaml_path": "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.yaml",
+      "yaml_reported_cache_sizes": {
+        "d_cache_bytes": null,
+        "i_cache_bytes": 4096
+      },
+      "yaml_sha256": "583d95d18f997da1c4972315d01f6042a8cc8fe842d11f50f76f782dc045486e"
+    },
+    "created_utc": "2026-10-06T18:49:35.467958+00:00",
+    "dependency_revisions": {
+      "coremark": {
+        "present": true,
+        "requested_commit": "1f483d5b8316753a742cbf5590caf5bd0a4e4777",
+        "resolved_commit": "1f483d5b8316753a742cbf5590caf5bd0a4e4777"
+      },
+      "litedram": {
+        "present": true,
+        "requested_commit": "4c979d195aa0c60adcaf70374a52872028aaca63",
+        "resolved_commit": "4c979d195aa0c60adcaf70374a52872028aaca63"
+      },
+      "liteeth": {
+        "present": true,
+        "requested_commit": "013a6ad38c26317ac9588acd0660922981cc2a73",
+        "resolved_commit": "013a6ad38c26317ac9588acd0660922981cc2a73"
+      },
+      "liteiclink": {
+        "present": true,
+        "requested_commit": "ad793817302490b04b3abc5c4de669594d3958e8",
+        "resolved_commit": "ad793817302490b04b3abc5c4de669594d3958e8"
+      },
+      "litesdcard": {
+        "present": false,
+        "requested_commit": "227d61b",
+        "resolved_commit": null
+      },
+      "litex": {
+        "present": true,
+        "requested_commit": "58322a1d239a9eca8b93a8497f8945855d965f4f",
+        "resolved_commit": "58322a1d239a9eca8b93a8497f8945855d965f4f"
+      },
+      "litex-boards": {
+        "present": true,
+        "requested_commit": "c0d9cdf11e20c8b774f4ee1154fddac6e1dca03a",
+        "resolved_commit": "c0d9cdf11e20c8b774f4ee1154fddac6e1dca03a"
+      },
+      "lwip": {
+        "present": true,
+        "requested_commit": "77dcd25a72509eb83f72b033d219b1d40cd8eb95",
+        "resolved_commit": "77dcd25a72509eb83f72b033d219b1d40cd8eb95"
+      },
+      "migen": {
+        "present": true,
+        "requested_commit": "e19524c963a8342952840983047557707fbe0b6a",
+        "resolved_commit": "e19524c963a8342952840983047557707fbe0b6a"
+      },
+      "pythondata-cpu-vexriscv": {
+        "present": true,
+        "requested_commit": "642ecfed1c84460555d6d803d660cc60cfc1ecb6",
+        "resolved_commit": "642ecfed1c84460555d6d803d660cc60cfc1ecb6"
+      },
+      "pythondata-software-compiler_rt": {
+        "present": true,
+        "requested_commit": "6eb76609c9627bf26635e57c63fb22cda7115887",
+        "resolved_commit": "6eb76609c9627bf26635e57c63fb22cda7115887"
+      },
+      "pythondata-software-picolibc": {
+        "present": true,
+        "requested_commit": "6a13ccce7c575b32c102dd9dc52178505b81fe39",
+        "resolved_commit": "6a13ccce7c575b32c102dd9dc52178505b81fe39"
+      }
+    },
+    "ethernet": "rmii",
+    "ethernet_rx_slots": 1,
+    "ethernet_slot_bytes": 2048,
+    "ethernet_tx_slots": 1,
+    "l2_bytes": 2048,
+    "native_sd": false,
+    "requested_rom_bytes": 32768,
+    "source_fingerprints": {
+      "files": {
+        "Makefile": "183f1b17dd3f0ef4d571e1cba7a6b1feedc179c5880f7e5378a1591e29aa1a6d",
+        "cpu-generator.lock.json": "751d39859ca19a72e1126c8001586fdacc9724f4cd12437290524d73146103ff",
+        "dependencies.lock.json": "91474469eddf67a98350fada56282e76f52cdbb9f8034ed240f9ab39a75277c7",
+        "gateware/ddr3.py": "2133b4b308f3af3c7c8b95ecfc84a5ce6cec7b163b0bdac4d53db6fcbdcbbde2",
+        "gateware/ddr_geometry.py": "a560747cf2d231da7e4f4380e73510b604f5d7398fb3749def7765709c8833ec",
+        "gateware/peripherals.py": "3e4d0d3a7a896e413fa782e37969f8cebb2cbb270bb971f293b2b33a997e24b4",
+        "gateware/soc.py": "5f42d35c29d7e16661acb0aba0db20d0619325c7b315aeb003175bb425f19f87",
+        "gateware/system_fit.py": "b1bb7ce6b078dae96af2111ccb937e0a69e105ff9c33672ca15bd88a0c26ac45",
+        "scripts/build.py": "91da6d76f9543d16131dbde8f4485423ad7a8122d0cfeae3232a9e9e8999292f",
+        "scripts/cpu_candidates.py": "9d1603f8fed7e5d90de08ad3caded1660a52f8f77d3d5a31dad555e6b18d9ea9",
+        "scripts/setup.py": "18f70932654ce4bb7a0d36757014d2aa4cdb277636be4f04738872803cc64c28",
+        "scripts/system_fit.py": "a2484a7687252de94c40d5925d984be3ad316e8b2719aaf53b41c2f2336a41e8",
+        "scripts/system_fit_reports.py": "db0600fecd03cb986166908a43356560f1d30fef337a177ddf6cb83c3a79096f"
+      },
+      "repository_patches": {
+        "patches/litedram-gw2ddrphy-cdc.patch": "71229b174b5d5f637379c059b0dcf4d9643252341056c92c832faf99722bac92",
+        "patches/litedram-gw2ddrphy-dll-off-read.patch": "df5a3e3451bc43aae1910633a51c7ee38e37d6c7e8c8cb2bb00e4464e449efb1",
+        "patches/litex-bios-no-ethernet-autoinit.patch": "402a4e3af37553d904dd5ad8869274429d3494e10c62d86a602f72f2839b3ced",
+        "patches/litex-ddr-diagnostic-boot.patch": "5aaa1ff59cbe6d4cbbf8349c9c2f951f6fb01783ab0b34d5abd18f5ed2cfe0f1",
+        "patches/litex-gowin-extra-sdc.patch": "84e41d7d1b78d54e13a6e528d7b9600a95b9ffb75ec99b00e9bddaaf11ddfe85",
+        "patches/litex-memtest-read-only-diagnostic.patch": "cd5f38d8ffa19a9e3818df9e506b7085d0564b5767ff5bd60ff9f0ad991f3614",
+        "patches/litex-project-vexriscv-isa-variants.patch": "f8c86512ddf96a15de419a9a5f855e9a497533fe2aa2c7ff0cae3fdfb7917d36",
+        "patches/litex-sdram-read-capture-diagnostic.patch": "282232cc7d0c16f6fef14f9216cfb3e9803dad4eb265d25f3cfecf0c71716332",
+        "patches/litex-sdram-training-status.patch": "7cfc35b269fb7123dbedf32ca4a1ea3a6a59d809f1fd834ba0ac4399916d6635",
+        "patches/lwip-tcp-option-bounds.patch": "2aa7c59c5628771e1b08c80a5b39694d61541b1eb436e397d9436de4c584d9a4"
+      }
+    },
+    "working_sram_bytes": 4096
+  },
+  "error": "OSError: Unable to find any of the cross compilation toolchains:\n- riscv64-pc-linux-musl\n- riscv64-unknown-elf\n- riscv64-unknown-linux-gnu\n- riscv64-elf\n- riscv64-linux\n- riscv64-linux-gnu\n- riscv-sifive-elf\n- riscv64-none-elf\n- riscv32-pc-linux-musl\n- riscv32-unknown-elf\n- riscv32-unknown-linux-gnu\n- riscv32-elf\n- riscv32-linux\n- riscv32-linux-gnu\n- riscv32-none-elf\n- riscv-none-embed\n- riscv-none-elf\n",
+  "error_log_tail": "csrbank_1 (CSRBank) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstorage_0 (CSRStorage) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstorage_1 (CSRStorage) [Gen]\n\u2502    \u2502    \u2514\u2500\u2500 csrstatus_0 (CSRStatus) [Gen]\n\u2502    \u251c\u2500\u2500 csrbank_2 (CSRBank) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstorage_0 (CSRStorage) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstorage_1 (CSRStorage) [Gen]\n\u2502    \u2502    \u2514\u2500\u2500 csrstatus_0 (CSRStatus) [Gen]\n\u2502    \u251c\u2500\u2500 csrbank_3 (CSRBank) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstatus_0 (CSRStatus) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstatus_1 (CSRStatus) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstatus_2 (CSRStatus) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstatus_3 (CSRStatus) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstatus_4 (CSRStatus) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstorage_0 (CSRStorage) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstatus_5 (CSRStatus) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstatus_6 (CSRStatus) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstorage_1 (CSRStorage) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstorage_2 (CSRStorage) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstatus_7 (CSRStatus) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstatus_8 (CSRStatus) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstorage_3 (CSRStorage) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstatus_9 (CSRStatus) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstatus_10 (CSRStatus) [Gen]\n\u2502    \u2502    \u2514\u2500\u2500 csrstatus_11 (CSRStatus) [Gen]\n\u2502    \u251c\u2500\u2500 csrbank_4 (CSRBank) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstorage_0 (CSRStorage) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstorage_1 (CSRStorage) [Gen]\n\u2502    \u2502    \u2514\u2500\u2500 csrstatus_0 (CSRStatus) [Gen]\n\u2502    \u251c\u2500\u2500 sram_0 (SRAM) [Gen]\n\u2502    \u251c\u2500\u2500 csrbank_5 (CSRBank) [Gen]\n\u2502    \u2502    \u2514\u2500\u2500 csrstorage_0 (CSRStorage) [Gen]\n\u2502    \u251c\u2500\u2500 csrbank_6 (CSRBank) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstorage_0 (CSRStorage) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstorage_1 (CSRStorage) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstorage_2 (CSRStorage) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstorage_3 (CSRStorage) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstorage_4 (CSRStorage) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstatus_0 (CSRStatus) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstorage_5 (CSRStorage) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstorage_6 (CSRStorage) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstorage_7 (CSRStorage) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstorage_8 (CSRStorage) [Gen]\n\u2502    \u2502    \u2514\u2500\u2500 csrstatus_1 (CSRStatus) [Gen]\n\u2502    \u251c\u2500\u2500 csrbank_7 (CSRBank) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstorage_0 (CSRStorage) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstorage_1 (CSRStorage) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstorage_2 (CSRStorage) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstorage_3 (CSRStorage) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstatus_0 (CSRStatus) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstatus_1 (CSRStatus) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstatus_2 (CSRStatus) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstorage_4 (CSRStorage) [Gen]\n\u2502    \u2502    \u251c\u2500\u2500 csrstorage_5 (CSRStorage) [Gen]\n\u2502    \u2502    \u2514\u2500\u2500 csrstatus_3 (CSRStatus) [Gen]\n\u2502    \u2514\u2500\u2500 csrbank_8 (CSRBank) [Gen]\n\u2502         \u251c\u2500\u2500 csrstatus_0 (CSRStatus) [Gen]\n\u2502         \u251c\u2500\u2500 csrstatus_1 (CSRStatus) [Gen]\n\u2502         \u251c\u2500\u2500 csrstatus_2 (CSRStatus) [Gen]\n\u2502         \u251c\u2500\u2500 csrstatus_3 (CSRStatus) [Gen]\n\u2502         \u251c\u2500\u2500 csrstorage_0 (CSRStorage) [Gen]\n\u2502         \u251c\u2500\u2500 csrstatus_4 (CSRStatus) [Gen]\n\u2502         \u2514\u2500\u2500 csrstatus_5 (CSRStatus) [Gen]\n\u2514\u2500\u2500 csr_interconnect (InterconnectShared)\nLegend:\n  [Gen]: Auto-generated instance name.\n  [BB:NAME]: Blackbox instance (verilog Instance).\n\nINFO:SoC:--------------------------------------------------------------------------------\n\nTraceback (most recent call last):\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/system_fit.py\", line 785, in _construct_and_build\n    _capture_build(builder, f\"system_fit_{candidate['id']}\")\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/system_fit.py\", line 619, in _capture_build\n    builder.build(run=True, build_name=build_name, hierarchical=True)\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py\", line 521, in build\n    return self._build(**kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py\", line 567, in _build\n    self._generate_includes(with_bios=with_bios)\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py\", line 301, in _generate_includes\n    variables_contents = self._get_variables_contents()\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py\", line 256, in _get_variables_contents\n    for k, v in export.get_cpu_mak(self.soc.cpu, self.compile_software):\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/export.py\", line 98, in get_cpu_mak\n    selected_triple = select_triple(triple)\n                      ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/export.py\", line 96, in select_triple\n    raise OSError(msg)\nOSError: Unable to find any of the cross compilation toolchains:\n- riscv64-pc-linux-musl\n- riscv64-unknown-elf\n- riscv64-unknown-linux-gnu\n- riscv64-elf\n- riscv64-linux\n- riscv64-linux-gnu\n- riscv-sifive-elf\n- riscv64-none-elf\n- riscv32-pc-linux-musl\n- riscv32-unknown-elf\n- riscv32-unknown-linux-gnu\n- riscv32-elf\n- riscv32-linux\n- riscv32-linux-gnu\n- riscv32-none-elf\n- riscv-none-embed\n- riscv-none-elf\n\n",
+  "failure_log_paths": [
+    "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T184931.666393Z/attribution/attribution-ddr-one-slot-ethernet/attempts/rom32k/errors.log",
+    "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T184931.666393Z/attribution/attribution-ddr-one-slot-ethernet/attempts/rom32k/soc/console.log",
+    "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/system-fit/20261006T184931.666393Z/attribution/attribution-ddr-one-slot-ethernet/attempts/rom32k/soc/litex.log"
+  ],
+  "phases": {
+    "bios": "failed",
+    "cpu": "passed",
+    "pnr": "failed",
+    "soc": "passed",
+    "synthesis": "failed"
+  },
+  "soc": {
+    "active_pin_assignments": {
+      "collisions": [],
+      "native_sd_widths": {},
+      "resources": {
+        "btn_n[0]": [
+          "CARD1:15"
+        ],
+        "btn_n[1]": [
+          "CARD1:165"
+        ],
+        "btn_n[2]": [
+          "CARD1:163"
+        ],
+        "btn_n[3]": [
+          "CARD1:159"
+        ],
+        "clk27[0]": [
+          "H11"
+        ],
+        "ddram[0]": [
+          "F7",
+          "A4",
+          "D6",
+          "F8",
+          "C4",
+          "E6",
+          "B1",
+          "D8",
+          "A5",
+          "F9",
+          "K3",
+          "B7",
+          "A3",
+          "C8",
+          "H4",
+          "D3",
+          "H5",
+          "R4",
+          "R6",
+          "L2",
+          "P5",
+          "G1",
+          "K5",
+          "G5",
+          "F5",
+          "F4",
+          "F3",
+          "E2",
+          "C1",
+          "E1",
+          "B3",
+          "M3",
+          "K4",
+          "N2",
+          "L1",
+          "P4",
+          "H3",
+          "R1",
+          "M2",
+          "G2",
+          "J5",
+          "G3",
+          "K6",
+          "J1",
+          "J3",
+          "J2",
+          "R3",
+          "B9"
+        ],
+        "eth[0]": [
+          "CARD1:176",
+          "CARD1:132",
+          "CARD1:146",
+          "CARD1:198",
+          "CARD1:130",
+          "CARD1:140",
+          "CARD1:142",
+          "CARD1:95",
+          "CARD1:97",
+          "CARD1:200"
+        ],
+        "eth_clocks[0]": [
+          "CARD1:148"
+        ],
+        "led[0]": [
+          "CARD1:44"
+        ],
+        "led[1]": [
+          "CARD1:46"
+        ],
+        "led[2]": [
+          "CARD1:42"
+        ],
+        "led[3]": [
+          "CARD1:40"
+        ],
+        "led[4]": [
+          "CARD1:98"
+        ],
+        "led[5]": [
+          "CARD1:136"
+        ],
+        "serial[0]": [
+          "T13",
+          "M11"
+        ]
+      }
+    },
+    "bus_regions": {
+      "ethmac": {
+        "cached": false,
+        "mode": "rw",
+        "origin": 2147483648,
+        "size_bytes": 4096
+      },
+      "ethmac_rx": {
+        "cached": false,
+        "mode": "r",
+        "origin": 2147483648,
+        "size_bytes": 2048
+      },
+      "ethmac_tx": {
+        "cached": false,
+        "mode": "w",
+        "origin": 2147485696,
+        "size_bytes": 2048
+      },
+      "main_ram": {
+        "cached": true,
+        "mode": "rwx",
+        "origin": 1073741824,
+        "size_bytes": 134217728
+      },
+      "rom": {
+        "cached": true,
+        "mode": "rx",
+        "origin": 0,
+        "size_bytes": 32768
+      },
+      "sram": {
+        "cached": true,
+        "mode": "rwx",
+        "origin": 268435456,
+        "size_bytes": 4096
+      }
+    },
+    "candidate": {
+      "cpu_source": "pinned-linux-rtl",
+      "d_cache_bytes": 4096,
+      "ethernet_rx_slots": 1,
+      "ethernet_tx_slots": 1,
+      "i_cache_bytes": 4096,
+      "id": "candidate-2-compact-memory",
+      "l2_bytes": 2048,
+      "working_sram_bytes": 4096
+    },
+    "collision_checks": {
+      "bus_regions_checked": 5,
+      "irq_locations": {
+        "ethmac": 2,
+        "timer0": 1,
+        "uart": 0
+      }
+    },
+    "constants": [
+      "BIOS_NO_ETHERNET_INIT",
+      "CONFIG_BIOS_NO_BUILD_TIME",
+      "CONFIG_CLOCK_FREQUENCY",
+      "CONFIG_CPU_FAMILY",
+      "CONFIG_CPU_HAS_DCACHE",
+      "CONFIG_CPU_HAS_ICACHE",
+      "CONFIG_CPU_HAS_INTERRUPT",
+      "CONFIG_CPU_HUMAN_NAME",
+      "CONFIG_CPU_NAME",
+      "CONFIG_CPU_NOP",
+      "CONFIG_CPU_RESET_ADDR",
+      "CONFIG_CPU_TYPE_VEXRISCV",
+      "CONFIG_CPU_VARIANT_LINUX",
+      "CONFIG_IDENTIFIER",
+      "CONFIG_L2_SIZE",
+      "CONFIG_PLATFORM_NAME",
+      "NET_BOOT_DISABLE",
+      "PROJECT_DDR_ADDRESS_BITS",
+      "PROJECT_DDR_BYTES",
+      "PROJECT_DDR_L2_BYTES",
+      "PROJECT_DDR_PART",
+      "PROJECT_ETHERNET_RMII",
+      "PROJECT_GPIO_BUTTON_COUNT",
+      "PROJECT_GPIO_LED_COUNT",
+      "PROJECT_MEMORY_MODE",
+      "PROJECT_PROFILE",
+      "PROJECT_SDCARD_NATIVE",
+      "PROJECT_SDCARD_SPI",
+      "SDCARD_BOOT_DISABLE"
+    ],
+    "cpu": {
+      "cache_sizes": {
+        "d_cache_bytes": 4096,
+        "i_cache_bytes": 4096
+      },
+      "features": {
+        "interrupt_ports": true,
+        "lr_sc_and_amo": true,
+        "mmu": true,
+        "supervisor_csrs": true,
+        "wishbone_instruction_and_data": true
+      },
+      "generator_arguments": [
+        "Makefile target VexRiscv_Linux.v",
+        "--csrPluginConfig linux-minimal"
+      ],
+      "generator_revisions": {
+        "generator_commit": "642ecfed1c84460555d6d803d660cc60cfc1ecb6",
+        "sbt": "1.9.7",
+        "scala": "2.11.12",
+        "spinalhdl": "1.9.4",
+        "submodule_commit": "b6118e5cc2a33323425df6455697139021d50c72"
+      },
+      "generator_source_sha256": "6710fdcae5ba443ec48d0c0b9206f29e77af8a30bd4ffa2754dc8eb6ce4c13bb",
+      "linux_recipe_sha256": "b29974e961899fc38bae75c1750753739de8dbd2ee7d352ca9e0879176763fd6",
+      "module": "VexRiscv",
+      "ports": [
+        "clk",
+        "dBusWishbone_ACK",
+        "dBusWishbone_ADR",
+        "dBusWishbone_BTE",
+        "dBusWishbone_CTI",
+        "dBusWishbone_CYC",
+        "dBusWishbone_DAT_MISO",
+        "dBusWishbone_DAT_MOSI",
+        "dBusWishbone_ERR",
+        "dBusWishbone_SEL",
+        "dBusWishbone_STB",
+        "dBusWishbone_WE",
+        "externalInterruptArray",
+        "externalResetVector",
+        "iBusWishbone_ACK",
+        "iBusWishbone_ADR",
+        "iBusWishbone_BTE",
+        "iBusWishbone_CTI",
+        "iBusWishbone_CYC",
+        "iBusWishbone_DAT_MISO",
+        "iBusWishbone_DAT_MOSI",
+        "iBusWishbone_ERR",
+        "iBusWishbone_SEL",
+        "iBusWishbone_STB",
+        "iBusWishbone_WE",
+        "reset",
+        "softwareInterrupt",
+        "timerInterrupt"
+      ],
+      "rtl_path": "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.v",
+      "rtl_sha256": "c19a1b07f799100869dc49646c328e83d9970a2f81076824393a677a60f61240",
+      "source": "pinned VexRiscv_Linux.v from the locked pythondata-cpu-vexriscv checkout",
+      "yaml_path": "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Linux.yaml",
+      "yaml_reported_cache_sizes": {
+        "d_cache_bytes": null,
+        "i_cache_bytes": 4096
+      },
+      "yaml_sha256": "583d95d18f997da1c4972315d01f6042a8cc8fe842d11f50f76f782dc045486e"
+    },
+    "cpu_variant": "linux",
+    "ddr_geometry": {
+      "banks": 8,
+      "bytes": 134217728,
+      "cl": 6,
+      "columns": 1024,
+      "cwl": 6,
+      "data_bits": 16,
+      "l2_bytes": 2048,
+      "part": "H5TQ1G63EFR",
+      "phy_dll_off": true,
+      "rows": 8192
+    },
+    "diagnostic_memory_present": false,
+    "ethernet": {
+      "enabled": true,
+      "rmii_reference_hz": 50000000,
+      "rx_slots": 1,
+      "slot_bytes": 2048,
+      "tx_slots": 1
+    },
+    "profile": "linux",
+    "sdcard": {
+      "dma_masters": [],
+      "interrupt_allocated": false,
+      "mode": null,
+      "native": false
+    },
+    "system_clock_hz": 48000000,
+    "timer_present": true,
+    "uart_present": true,
+    "uncached_ddr_alias_present": false,
+    "working_sram_bytes": 4096
+  },
+  "status": "failed"
+}

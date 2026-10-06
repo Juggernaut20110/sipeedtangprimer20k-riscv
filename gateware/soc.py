@@ -50,6 +50,9 @@ class ProjectSoC(sipeed_tang_primer_20k.BaseSoC):
 
     def __init__(self, profile="minimal", memory="onchip", bios_size=None, cpu_rtl=None,
                  cpu_variant=None, ddr_module=H5TQ1G63EFR, sdcard="none", ethernet="none",
+                 l2_size=DDR_L2_SIZE, working_sram_size=None, ddr_diagnostics=True,
+                 ethernet_rx_slots=ETH_RX_SLOTS, ethernet_tx_slots=ETH_TX_SLOTS,
+                 ddr_constraint_scope="",
                  **kwargs):
         provisional_maxperf = (profile == "maxperf" and profile not in PROFILES
                                and cpu_rtl is not None
@@ -83,12 +86,25 @@ class ProjectSoC(sipeed_tang_primer_20k.BaseSoC):
         # An integrated main RAM size of zero is the upstream target's documented
         # switch for its board-specific GW2DDRPHY path. add_sdram below replaces
         # the upstream 256 MiB module with the fitted 128 MiB Hynix part.
-        # Performance's SD-only peripheral image fits with a 4 KiB BIOS working
-        # SRAM. Its BIOS data/bss and stack remain separate from the
-        # unchanged 16 KiB destructive DDR diagnostic RAM. Public disabled
-        # images and the other fitted peripheral layouts retain 8 KiB.
-        working_sram_size = (4 * 1024 if ddr3 and profile == "performance"
-                             and sdcard == "spi" and ethernet == "none" else 8 * 1024)
+        if working_sram_size is None:
+            # Performance's SD-only peripheral image fits with a 4 KiB BIOS
+            # working SRAM. Its data/bss and stack remain separate from the
+            # unchanged 16 KiB destructive DDR diagnostic RAM. Public disabled
+            # images and the other fitted peripheral layouts retain 8 KiB.
+            working_sram_size = (4 * 1024 if ddr3 and profile == "performance"
+                                 and sdcard == "spi" and ethernet == "none" else 8 * 1024)
+        if not isinstance(l2_size, int) or l2_size < 0:
+            raise ValueError("DDR L2 size must be a non-negative integer")
+        if not isinstance(working_sram_size, int) or working_sram_size <= 0:
+            raise ValueError("working SRAM size must be a positive integer")
+        if not isinstance(ethernet_rx_slots, int) or ethernet_rx_slots <= 0:
+            raise ValueError("Ethernet RX slot count must be a positive integer")
+        if not isinstance(ethernet_tx_slots, int) or ethernet_tx_slots <= 0:
+            raise ValueError("Ethernet TX slot count must be a positive integer")
+        self.ddr_l2_size = l2_size
+        self.working_sram_size = working_sram_size
+        self.ddr_diagnostics = ddr_diagnostics
+        self.ddr_constraint_scope = ddr_constraint_scope
         super().__init__(
             dock="standard",
             sys_clk_freq=SYS_CLK_FREQ,
@@ -97,7 +113,7 @@ class ProjectSoC(sipeed_tang_primer_20k.BaseSoC):
             integrated_rom_size=bios_size,
             integrated_sram_size=working_sram_size,
             integrated_main_ram_size=0 if ddr3 else 32 * 1024,
-            l2_size=DDR_L2_SIZE,
+            l2_size=l2_size,
             uart_name="serial",
             uart_baudrate=UART_BAUDRATE,
             with_uart=True,
@@ -127,7 +143,7 @@ class ProjectSoC(sipeed_tang_primer_20k.BaseSoC):
             self.project_cpu_rtl = None
 
         if ddr3:
-            self._add_ddr3_aliases()
+            self._add_ddr3_aliases(include_diagnostics=ddr_diagnostics)
             # The DDR CRG creates sys from CLKDIV and preserves the board-level
             # synchronizer on that derived clock. Its source is the 96 MHz PLL
             # output which also clocks the DDR PHY; init remains on clk27.
@@ -164,10 +180,18 @@ class ProjectSoC(sipeed_tang_primer_20k.BaseSoC):
             # GW2DDRPHYInit deasserts reset_sys2x while DHCEN is holding
             # sys2x stopped, then waits eight clk27 cycles before releasing
             # stop. This controlled reset release cannot race the gated PHY
-            # clocks. Limit the setup/recovery exception to the asynchronous
-            # RESET pins of the DDR DQS and OSER4 primitives.
+            # clocks. Preserve the current public-profile exception. The
+            # isolated fit target retains a named DDR PHY module and needs
+            # hierarchy-qualified reset pins for its mapped OSER4 primitives.
+            reset_pins = ["DQS/RESET", "DQS_1/RESET", "OSER4_MEM*/RESET"]
+            if ddr_constraint_scope:
+                reset_pins = [
+                    "DQS/RESET", "DQS_1/RESET", "OSER4/RESET", "OSER4_*/RESET",
+                    "OSER4_MEM/RESET", "OSER4_MEM_*/RESET",
+                ]
+                reset_pins = [f"{ddr_constraint_scope}{pin}" for pin in reset_pins]
             self.platform.toolchain.additional_sdc_commands.append(
-                "set_false_path -to [get_pins {DQS/RESET DQS_1/RESET OSER4/RESET OSER4_*/RESET}] -setup"
+                f"set_false_path -to [get_pins {{{' '.join(reset_pins)}}}] -setup"
             )
             if sdcard != "none" or ethernet != "none":
                 # The existing PHY register to DQS/HOLD paths can become
@@ -178,13 +202,13 @@ class ProjectSoC(sipeed_tang_primer_20k.BaseSoC):
                 # still gate every peripheral DDR image.
                 dqs_hold_prefix = "projectsoc_" if sdcard == "spi" else ""
                 self.platform.toolchain.additional_cst_commands.extend([
-                    f'INS_LOC "{dqs_hold_prefix}gw2ddrphy_dqs_hold_0_s0" R50C12;',
-                    f'INS_LOC "{dqs_hold_prefix}gw2ddrphy_dqs_hold_1_s0" R50C45;',
+                    f'INS_LOC "{ddr_constraint_scope}{dqs_hold_prefix}gw2ddrphy_dqs_hold_0_s0" R50C12;',
+                    f'INS_LOC "{ddr_constraint_scope}{dqs_hold_prefix}gw2ddrphy_dqs_hold_1_s0" R50C45;',
                     # The last stage of LiteDRAM's clock-stop synchronizer
                     # drives DHCEN/CE. It remains unconstrained here because
                     # the edge-adjacent site near DHCEN is not a legal logic
                     # location on this device. R27C16 is a legal nearby tile.
-                    'INS_LOC "multiregimpl11_s0" R27C16;',
+                    f'INS_LOC "{ddr_constraint_scope}multiregimpl11_s0" R27C16;',
                 ])
         else:
             # The on-chip CRG creates sys directly from the PLL and has a
@@ -228,8 +252,8 @@ class ProjectSoC(sipeed_tang_primer_20k.BaseSoC):
             )
             self.add_ethernet(
                 phy=self.ethphy,
-                nrxslots=ETH_RX_SLOTS,
-                ntxslots=ETH_TX_SLOTS,
+                nrxslots=ethernet_rx_slots,
+                ntxslots=ethernet_tx_slots,
                 rxslots_read_only=True,
                 txslots_write_only=True,
                 with_timing_constraints=False,
@@ -257,7 +281,7 @@ class ProjectSoC(sipeed_tang_primer_20k.BaseSoC):
         writable_rams = [self.sram]
         if not ddr3:
             writable_rams.append(self.main_ram)
-        else:
+        elif ddr_diagnostics:
             writable_rams.append(self.ddr_diagnostic_ram)
         for ram in writable_rams:
             ram_ports = ram.mem.ports
@@ -311,7 +335,7 @@ class ProjectSoC(sipeed_tang_primer_20k.BaseSoC):
             module = self._project_ddr_module_class(SYS_CLK_FREQ, "1:2")
         return super().add_sdram(name, phy=phy, module=module, **kwargs)
 
-    def _add_ddr3_aliases(self):
+    def _add_ddr3_aliases(self, include_diagnostics=True):
         from litedram.frontend.wishbone import LiteDRAMWishbone2Native
         from litex.soc.interconnect import wishbone
 
@@ -323,37 +347,39 @@ class ProjectSoC(sipeed_tang_primer_20k.BaseSoC):
         physical_size = banks * rows * columns * width_bytes
         if physical_size != DDR_SIZE_BYTES:
             raise RuntimeError(f"unexpected DDR3 geometry: {physical_size} bytes, expected {DDR_SIZE_BYTES}")
-        # Diagnostic code, data, and stack are loaded here before any destructive
-        # memory access. It remains available while the complete DDR range is tested.
-        self.add_ram(
-            name="ddr_diagnostic_ram",
-            origin=DDR_DIAGNOSTIC_BASE,
-            size=DDR_DIAGNOSTIC_SIZE,
-        )
+        if include_diagnostics:
+            # Diagnostic code, data, and stack are loaded here before any
+            # destructive memory access. It remains available while the full
+            # DDR range is tested.
+            self.add_ram(
+                name="ddr_diagnostic_ram",
+                origin=DDR_DIAGNOSTIC_BASE,
+                size=DDR_DIAGNOSTIC_SIZE,
+            )
 
-        # Normal CPU accesses at 0x40000000 pass through LiteDRAM's 8 KiB L2.
-        # This second Wishbone/native bridge has its own controller port and maps
-        # the same 128 MiB physical range into VexRiscv's uncached IO window.
-        alias_bus = wishbone.Interface(data_width=32, address_width=32, addressing="word")
-        alias_region = SoCRegion(
-            origin=DDR_UNCACHED_BASE,
-            size=DDR_SIZE_BYTES,
-            mode="rwx",
-            cached=False,
-        )
-        self.bus.add_slave("ddr_uncached", slave=alias_bus, region=alias_region)
-        alias_port = self.sdram.crossbar.get_port()
-        self.submodules.ddr_uncached_bridge = LiteDRAMWishbone2Native(
-            wishbone=alias_bus,
-            port=alias_port,
-            base_address=DDR_UNCACHED_BASE,
-        )
+            # This second bridge maps the same physical DDR range into the
+            # CPU's uncached IO window for destructive diagnostic access.
+            alias_bus = wishbone.Interface(data_width=32, address_width=32, addressing="word")
+            alias_region = SoCRegion(
+                origin=DDR_UNCACHED_BASE,
+                size=DDR_SIZE_BYTES,
+                mode="rwx",
+                cached=False,
+            )
+            self.bus.add_slave("ddr_uncached", slave=alias_bus, region=alias_region)
+            alias_port = self.sdram.crossbar.get_port()
+            self.submodules.ddr_uncached_bridge = LiteDRAMWishbone2Native(
+                wishbone=alias_bus,
+                port=alias_port,
+                base_address=DDR_UNCACHED_BASE,
+            )
         self.add_constant("PROJECT_DDR_BYTES", DDR_SIZE_BYTES)
         self.add_constant("PROJECT_DDR_PART", DDR_PART)
         self.add_constant("PROJECT_DDR_ADDRESS_BITS", DDR_ADDRESS_BITS)
-        self.add_constant("PROJECT_DDR_UNCACHED_BASE", DDR_UNCACHED_BASE)
-        self.add_constant("PROJECT_DDR_DIAGNOSTIC_BASE", DDR_DIAGNOSTIC_BASE)
-        self.add_constant("PROJECT_DDR_L2_BYTES", DDR_L2_SIZE)
+        if include_diagnostics:
+            self.add_constant("PROJECT_DDR_UNCACHED_BASE", DDR_UNCACHED_BASE)
+            self.add_constant("PROJECT_DDR_DIAGNOSTIC_BASE", DDR_DIAGNOSTIC_BASE)
+        self.add_constant("PROJECT_DDR_L2_BYTES", self.ddr_l2_size)
 
 
 def make_soc(profile="minimal", memory="onchip"):

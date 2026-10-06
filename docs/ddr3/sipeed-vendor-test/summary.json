@@ -1,0 +1,59 @@
+{
+  "status": "failed",
+  "successful_tests": 0,
+  "fresh_sram_loads": 3,
+  "failures": 3,
+  "chip_marking_user_reported": "SK Hynix H5TQ1G63EFR",
+  "detected_capacity_mib": 128,
+  "current_litex_configured_capacity_mib": 256,
+  "bitstream_sha256": "167d04a87c0e0084204a1863f8a999f7c696d0d25ca959a82228c203470b7f50",
+  "flash_programming": false,
+  "runs": [
+    {
+      "fresh_load": 1,
+      "evidence": "20261002T024119Z",
+      "run": 1,
+      "status": "failed",
+      "mismatch_time_seconds": 17.657
+    },
+    {
+      "fresh_load": 2,
+      "evidence": "20261002T024327Z",
+      "run": 1,
+      "status": "failed",
+      "mismatch_time_seconds": 17.584
+    },
+    {
+      "fresh_load": 3,
+      "evidence": "20261002T024327Z",
+      "run": 2,
+      "status": "failed",
+      "mismatch_time_seconds": 17.572
+    }
+  ],
+  "hardware_ruled_out": false,
+  "defective_chip_proven": false,
+  "final_recovery": {
+    "command": [
+      "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/bin/openFPGALoader",
+      "--board",
+      "tangprimer20k",
+      "--write-sram",
+      "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/sipeed-ddr-test/idle-build/impl/pnr/ddr_idle.fs"
+    ],
+    "exit_code": 0,
+    "flash_programming": false,
+    "bitstream_sha256": "a7a702e3ff9835ab3ee653f0f9ff7c90165808db514b3230dcc91d0314b93df3",
+    "ddr_state": {
+      "reset_n": 0,
+      "cke": 0,
+      "cs_n": 1,
+      "ck_p": 0,
+      "odt": 0
+    },
+    "uart_requested": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+    "uart_bytes": 0,
+    "observation_seconds": 5,
+    "status": "ddr_held_in_reset_uart_quiet"
+  }
+}

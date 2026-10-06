@@ -1,35 +1,35 @@
 # CoreMark and DDR3 handoff summary
 
-Updated 2026-10-02. The current-source `PROFILE=ALL MEMORY=onchip` batch passed validation plus three scored runs for all five public profiles. A false post-flush SRAM expectation for the no-D-cache `minimal` and `lite` profiles was corrected before this final batch. DDR3 board acceptance remains incomplete because diagnostic BIOS Memtest reproduces persistent data corruption.
+Updated 2026-10-06T01:23:01.772935+00:00. Replacement board: **replacement Tang Primer 20K Dock attached 2026-10-05**. DDR3 qualification status: **partial (4/5 profiles qualified)**. See the [replacement-board qualification report](ddr3/replacement-board-qualification-20261005.md) for profile outcomes and evidence IDs.
 
-All eight profile/memory builds passed Gowin synthesis, placement, routing, timing, and resource checks. The configured operating clocks are 48 MHz system and, for DDR3, 96 MHz CK. Estimated Fmax values below come from place-and-route and are not the operating clock.
+All five on-chip profiles and 4 of five DDR3 profiles meet the recorded routed timing gates. DDR3 `minimal` is blocked: Routed timing misses the 48 MHz sys_clk requirement: worst setup slack -0.911 ns, one violated endpoint, despite estimated Fmax 50.849 MHz. The path is gw2ddrphy_dqs_hold_1_s0/Q to DQS_1/HOLD from sys_clk rising to sys2x_clk falling. No DDR hardware run or DDR CoreMark was started for this profile. The configured operating clocks are 48 MHz system and, for DDR3, 96 MHz CK. Estimated Fmax values below come from place-and-route and are not the operating clock.
 
 ## CoreMark comparison
 
-Each score is a validated mean ± observed spread from three scored repetitions. DDR3 CoreMark remains unmeasured because DDR training did not pass.
+Each score is a validated mean ± observed spread from three scored repetitions. DDR3 CoreMark passed for 4 profiles that passed full DDR qualification; profiles without full DDR acceptance have no DDR score.
 
 | CPU profile | On-chip CoreMark mean ± spread (runs) | DDR3 CoreMark mean ± spread (runs) | DDR3 CoreMark status |
 |---|---:|---:|---|
 | `minimal` | 16.588341 ± 0.000000 (3) | — | not_measured |
-| `lite` | 50.427512 ± 0.000000 (3) | — | not_measured |
-| `standard` | 109.127482 ± 0.000000 (3) | — | not_measured |
-| `performance` | 119.323916 ± 0.000000 (3) | — | not_measured |
-| `linux` | 109.127481 ± 0.000000 (3) | — | not_measured |
+| `lite` | 50.427512 ± 0.000000 (3) | 49.757130 ± 0.000000 (3) | passed |
+| `standard` | 109.127482 ± 0.000000 (3) | 106.238365 ± 0.000000 (3) | passed |
+| `performance` | 119.323916 ± 0.000000 (3) | 115.798154 ± 0.000000 (3) | passed |
+| `linux` | 109.127481 ± 0.000000 (3) | 106.238341 ± 0.000000 (3) | passed |
 
 ## Build resources and timing
 
 | CPU profile | Memory | Build | LUT | ALU | Registers | BSRAM | Operating clock | Worst setup slack | Estimated Fmax |
 |---|---|---|---:|---:|---:|---:|---:|---:|---:|
 | `minimal` | onchip | passed | 2247 | 300 | 1382 | 38 / 46 | 48.000 MHz | 5.752 ns | 66.307 MHz |
-| `minimal` | ddr3 | passed | 5549 | 664 | 3241 | 46 / 46 | 48.000 MHz | 0.502 ns | 49.185 MHz |
+| `minimal` | ddr3 | unavailable / evidence mismatch | — | — | — | — / — | — MHz | — ns | — MHz |
 | `lite` | onchip | passed | 3127 | 443 | 1639 | 40 / 46 | 48.000 MHz | 2.920 ns | 55.823 MHz |
-| `lite` | ddr3 | passed | 6422 | 806 | 3520 | 46 / 46 | 48.000 MHz | 0.277 ns | 49.576 MHz |
+| `lite` | ddr3 | passed | 6366 | 789 | 3497 | 46 / 46 | 48.000 MHz | 0.183 ns | 48.424 MHz |
 | `standard` | onchip | passed | 3452 | 479 | 1889 | 46 / 46 | 48.000 MHz | 6.471 ns | 69.628 MHz |
-| `standard` | ddr3 | passed | 7891 | 843 | 3830 | 46 / 46 | 48.000 MHz | 0.548 ns | 50.573 MHz |
+| `standard` | ddr3 | passed | 7916 | 825 | 3807 | 46 / 46 | 48.000 MHz | 0.742 ns | 53.607 MHz |
 | `performance` | onchip | passed | 3656 | 521 | 2060 | 46 / 46 | 48.000 MHz | 5.325 ns | 64.482 MHz |
-| `performance` | ddr3 | passed | 9116 | 885 | 5300 | 46 / 46 | 48.000 MHz | 0.530 ns | 49.252 MHz |
+| `performance` | ddr3 | passed | 9094 | 867 | 5221 | 46 / 46 | 48.000 MHz | 0.006 ns | 55.148 MHz |
 | `linux` | onchip | passed | 4615 | 702 | 2709 | 46 / 46 | 48.000 MHz | 2.448 ns | 54.390 MHz |
-| `linux` | ddr3 | passed | 8860 | 1066 | 4650 | 46 / 46 | 48.000 MHz | 0.138 ns | 48.321 MHz |
+| `linux` | ddr3 | passed | 8805 | 1048 | 4627 | 46 / 46 | 48.000 MHz | 0.111 ns | 50.321 MHz |
 
 ## CPU candidate selection
 
@@ -40,26 +40,20 @@ At 48 MHz, `dynamic_target` is selected as the public `performance` profile. Its
 | `dynamic` | ready_for_board_measurement; 3540 LUT, 46 BSRAM, 5.245 ns slack | 111.487554 | 2.360072 (2.16%) | viable; lower measured score |
 | `dynamic_target` | ready_for_board_measurement; 3656 LUT, 46 BSRAM, 5.325 ns slack | 119.323913 | 10.196432 (9.34%) | selected as public `performance` |
 
-The selected public profile was subsequently checked as a public build: fresh validation and three Dock runs passed, with mean 119.323916 CoreMark and zero observed spread. Its capture and image identities are in [the detailed report](performance.md).
-
-## Bounded maxperf candidate matrix
-
-The on-chip matrix has outcomes for all eight candidates against the fresh 119.3239155434707 CoreMark `performance` baseline. Candidate 8 measured 119.798647 CoreMark (+0.398%); candidate 7 tied the baseline within 0.000002 CoreMark; candidate 6 timed out before application markers. The candidate captures predate the final no-D-cache SRAM-check correction, so they remain supplemental evidence against their original source identity. DDR3 kept all 18 build outcomes (4 routed, 2 timing failures, 6 placement failures, 6 logic-limit failures), with no scoring because reference integrity failed. No `maxperf` selection was published.
-
-See the [combined matrix record](performance/maxperf-evaluation/20261001-combined-matrix-summary.json) for candidate IDs, per-candidate results, and retained evidence paths.
+The public `performance` profile uses the previously selected `dynamic_target` CPU. Its earlier CPU-selection evaluation remains historical; the replacement-board on-chip and DDR3 scores above use fresh 48 MHz runs.
 
 ## DDR3 training, integrity, and stress
 
-DDR3 acceptance status: **failed**. The latest acceptance batch recorded `linux` at 0/10 accepted training/smoke runs and 0/1800 measured stress seconds. A separate diagnostic-only image did train both lanes but failed BIOS Memtest at `0x400b64f4`; six subsequent read-only checks reproduced the same bit-20 mismatch through cached and uncached aliases. Training alone therefore does not clear the integrity gate.
+DDR3 acceptance status: **partial (4/5 qualified)**. Training and stress by profile:
 
-- `linux`: 0/10 accepted training/smoke runs (1 attempted), stress 0/1800 s
+- `minimal`: not qualified — Routed timing misses the 48 MHz sys_clk requirement: worst setup slack -0.911 ns, one violated endpoint, despite estimated Fmax 50.849 MHz. The path is gw2ddrphy_dqs_hold_1_s0/Q to DQS_1/HOLD from sys_clk rising to sys2x_clk falling. No DDR hardware run or DDR CoreMark was started for this profile.
+- `lite`: 10/10 training/smoke runs, 128 MiB tested, stress 1800.250/1800 s, 0 errors, cached/uncached visibility passed
+- `standard`: 10/10 training/smoke runs, 128 MiB tested, stress 1800.052/1800 s, 0 errors, cached/uncached visibility passed
+- `performance`: 10/10 training/smoke runs, 128 MiB tested, stress 1800.059/1800 s, 0 errors, cached/uncached visibility passed
+- `linux`: 10/10 training/smoke runs, 128 MiB tested, stress 1800.052/1800 s, 0 errors, cached/uncached visibility passed
 
- Full-range coverage is not established (0 of 256 MiB accepted), cached/uncached visibility tests did not run, measured stress was 0/1800 seconds, and read/write bandwidth was not measured. Separate console probes are diagnostic evidence only and do not count as acceptance runs. [linux acceptance UART capture](<../docs/ddr3/evidence/20261001T201828.617667Z-ddr3-linux/training-01.uart.bin>)
+ Separate console probes from the previous board are diagnostic evidence only and do not count as replacement-board acceptance runs. [`lite` DDR session](../build/ddr3/ddr-test-sessions/20261005T215520.872922Z-ddr3-lite/session.json), [`standard` DDR session](../build/ddr3/ddr-test-sessions/20261005T223316.301737Z-ddr3-standard/session.json), [`performance` DDR session](../build/ddr3/ddr-test-sessions/20261005T231023.848982Z-ddr3-performance/session.json), [`linux` DDR session](../build/ddr3/ddr-test-sessions/20261005T234544.924815Z-ddr3-linux/session.json)
 
 ## Evidence
 
-[Detailed performance report](performance.md), [machine-readable benchmark results](performance/results.json), [DDR3 training and integrity report](ddr3/report.md), [CPU candidate selection](../cpu-profile-selection.json), [candidate build evidence](performance/cpu-evaluation/candidate-build.json), [candidate UART results](performance/cpu-evaluation/evaluations.json), [on-chip `minimal` timing](<../build/minimal/gateware/impl/pnr/project.tr>), [on-chip `lite` timing](<../build/lite/gateware/impl/pnr/project.tr>), [on-chip `standard` timing](<../build/standard/gateware/impl/pnr/project.tr>), [on-chip `performance` timing](<../build/performance/gateware/impl/pnr/project.tr>), [on-chip `linux` timing](<../build/linux/gateware/impl/pnr/project.tr>), [DDR3 `minimal` timing](<../build/ddr3/minimal/gateware/impl/pnr/project.tr>), [DDR3 `lite` timing](<../build/ddr3/lite/gateware/impl/pnr/project.tr>), [DDR3 `standard` timing](<../build/ddr3/standard/gateware/impl/pnr/project.tr>), [DDR3 `performance` timing](<../build/ddr3/performance/gateware/impl/pnr/project.tr>), [DDR3 `linux` timing](<../build/ddr3/linux/gateware/impl/pnr/project.tr>)
-
-The FPGA was left in safe idle after the final on-chip batch by explicit FPGA reset. Pre- and post-reset UART observations were empty, JTAG detection passed, and no flash programming occurred. [Final recovery evidence](performance/maxperf-evaluation/recovery/20261002T004311Z-final-onchip/recovery.json).
-
-Later [DDR write-disturbance probes](ddr3/write-disturbance.md) reproduced bit-20 and bit-31 errors at untouched victims after writes to another row. Conservative row timing and ODT-low did not fix them; public configurations and benchmark scores are unchanged. DDR remains unqualified. The board was reset to safe idle after the probes; [current recovery evidence](ddr3/diagnosis/20261002T020045.394626Z-integrity-recovery/recovery.json).
+[Detailed performance report](performance.md), [machine-readable benchmark results](performance/results.json), [DDR3 training and integrity report](ddr3/report.md), [replacement-board qualification](ddr3/replacement-board-qualification-20261005.md), [CPU candidate selection](../cpu-profile-selection.json), [candidate build evidence](performance/cpu-evaluation/candidate-build.json), [candidate UART results](performance/cpu-evaluation/evaluations.json), [on-chip `minimal` timing](<../build/minimal/gateware/impl/pnr/project.tr>), [on-chip `lite` timing](<../build/lite/gateware/impl/pnr/project.tr>), [on-chip `standard` timing](<../build/standard/gateware/impl/pnr/project.tr>), [on-chip `performance` timing](<../build/performance/gateware/impl/pnr/project.tr>), [on-chip `linux` timing](<../build/linux/gateware/impl/pnr/project.tr>), [DDR3 `minimal` timing](<../build/ddr3/minimal/gateware/impl/pnr/project.tr>), [DDR3 `lite` timing](<../build/ddr3/lite/gateware/impl/pnr/project.tr>), [DDR3 `standard` timing](<../build/ddr3/standard/gateware/impl/pnr/project.tr>), [DDR3 `performance` timing](<../build/ddr3/performance/gateware/impl/pnr/project.tr>), [DDR3 `linux` timing](<../build/ddr3/linux/gateware/impl/pnr/project.tr>)

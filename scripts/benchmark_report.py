@@ -1122,6 +1122,16 @@ def session_memory_mode(session):
 
 def memory_comparison_data(current_memory, current_batch, current_session, previous=None):
     previous = previous if isinstance(previous, dict) else {}
+    recorded_sessions = {
+        item.get("session_id"): item
+        for item in previous.get("sessions", [])
+        if isinstance(item, dict) and item.get("session_id")
+    }
+    for item in (current_batch or {}).get("sessions", {}).values():
+        if isinstance(item, dict) and item.get("session_id"):
+            recorded_sessions[item["session_id"]] = item
+    if current_session and current_session.get("session_id"):
+        recorded_sessions[current_session["session_id"]] = current_session
     previous_modes = (previous.get("memory_mode_comparison") or {}).get("memory_modes", {})
     if not previous_modes:
         # Bootstrap the mode matrix from the most recently report-validated
@@ -1180,9 +1190,25 @@ def memory_comparison_data(current_memory, current_batch, current_session, previ
             elif (memory == current_memory and current_session is not None
                   and current_session.get("profile") == profile):
                 checked = current_session
+            if checked is None:
+                candidates = [
+                    item for item in recorded_sessions.values()
+                    if item.get("profile") == profile and session_memory_mode(item) == memory
+                ]
+                candidates.sort(key=lambda item: item.get("created_utc", ""), reverse=True)
+                for candidate in candidates:
+                    try:
+                        revalidated = revalidate_session(candidate, rows_by_memory[memory])
+                    except (OSError, RuntimeError, ValueError, KeyError, TypeError):
+                        continue
+                    if revalidated.get("report_validation", {}).get("status") == "passed":
+                        checked = revalidated
+                        break
             if checked is None and old:
+                historical_session = recorded_sessions.get(old.get("session_id"), {})
                 latest[profile][memory] = {
                     **old,
+                    "board": historical_session.get("board") or old.get("board") or "board not recorded",
                     "build_status": rows_by_memory[memory][profile]["build_status"],
                     "resources": rows_by_memory[memory][profile].get("resources"),
                 }
@@ -1198,6 +1224,7 @@ def memory_comparison_data(current_memory, current_batch, current_session, previ
             latest[profile][memory] = {
                 "status": "passed" if valid else "failed_or_stale",
                 "session_id": checked.get("session_id"),
+                "board": checked.get("board", "board not recorded"),
                 "aggregate": checked.get("aggregate") if valid else None,
                 "errors": checked.get("report_validation", {}).get("errors", []),
                 "build_status": rows_by_memory[memory][profile]["build_status"],
@@ -1225,14 +1252,17 @@ def memory_comparison_data(current_memory, current_batch, current_session, previ
         },
         "cpu_winner": candidate_evaluation.get("winner"),
         "public_performance_profile_registered": "performance" in PROFILES,
-        "ddr3_test_status": (read_json(ROOT / "docs/ddr3/results.json", {}) or {}).get("latest_batch_status", "not_measured"),
+        "ddr3_test_status": (
+            (read_json(ROOT / "docs/ddr3/replacement-board-qualification-20261005.json", {}) or {}).get("status")
+            or (read_json(ROOT / "docs/ddr3/results.json", {}) or {}).get("latest_batch_status", "not_measured")
+        ),
     }
 
 
 def memory_comparison_table(comparison):
     rows = [
-        "| CPU profile | On-chip CoreMark mean | On-chip LUT / BSRAM | DDR3 CoreMark mean | DDR3 LUT / BSRAM | DDR3 status |",
-        "|---|---:|---:|---:|---:|---|",
+        "| CPU profile | On-chip CoreMark mean | On-chip LUT / BSRAM | DDR3 CoreMark mean | DDR3 LUT / BSRAM | Board pairing | DDR3 status |",
+        "|---|---:|---:|---:|---:|---|---|",
     ]
     modes = comparison["memory_modes"]
     for profile in PROFILES:
@@ -1245,9 +1275,15 @@ def memory_comparison_table(comparison):
             lut = resource.get("lut", {}).get("used")
             bsram = resource.get("bsram", {}).get("used")
             return "—" if lut is None or bsram is None else f"{lut} / {bsram}"
+        if ddr_score is None:
+            pairing = "no DDR run"
+        elif onchip.get("board") and onchip.get("board") == ddr3.get("board"):
+            pairing = "same board"
+        else:
+            pairing = f"{onchip.get('board', 'unknown')} / {ddr3.get('board', 'unknown')}"
         rows.append(
             f"| `{profile}` | {fmt_number(onchip_score, 6)} | {resource_text(onchip)} | "
-            f"{fmt_number(ddr_score, 6)} | {resource_text(ddr3)} | {ddr3['status']} |"
+            f"{fmt_number(ddr_score, 6)} | {resource_text(ddr3)} | {pairing} | {ddr3['status']} |"
         )
     return "\n".join(rows)
 
@@ -1333,37 +1369,60 @@ def coremark_summary_text(comparison, generated_utc):
         )
 
     ddr = read_json(ROOT / "docs/ddr3/results.json", {}) or {}
+    qualification = read_json(ROOT / "docs/ddr3/replacement-board-qualification-20261005.json", {}) or {}
     batches = ddr.get("batches", [])
     latest = batches[-1] if batches else {}
     requested_profiles = latest.get("requested_profiles", [])
     profiles = latest.get("profiles", {})
+    qualified_profiles = qualification.get("profiles", {})
     training_summary = []
     evidence_links = []
-    for profile in requested_profiles:
-        entry = profiles.get(profile, {})
-        session = entry.get("session") or {}
-        checked = entry.get("revalidation") or {}
-        successful = checked.get("training_runs_passed", 0)
-        requested = session.get("requested_training_runs", 10)
-        actual = session.get("actual_training_runs", 0)
-        stress_requested = session.get("requested_stress_seconds", 1800)
-        full = checked.get("full_result") or {}
-        stress_actual = full.get("stress_seconds", full.get("measured_stress_seconds", 0))
-        training_summary.append(
-            f"`{profile}`: {successful}/{requested} accepted training/smoke runs "
-            f"({actual} attempted), stress {stress_actual}/{stress_requested} s"
-        )
-        first_trial = next(iter(session.get("trials", [])), None)
-        if first_trial:
-            link = repo_link(first_trial.get("raw_uart_log"), f"{profile} acceptance UART capture")
-            if link:
-                evidence_links.append(link)
+    if qualified_profiles:
+        for profile in PROFILES:
+            entry = qualified_profiles.get(profile, {})
+            ddr_session = entry.get("ddr3", {})
+            if entry.get("qualification_status") == "passed":
+                training_summary.append(
+                    f"`{profile}`: {ddr_session.get('training_passes', 0)}/10 training/smoke runs, "
+                    f"128 MiB tested, stress {ddr_session.get('stress_seconds', 0):.3f}/1800 s, "
+                    f"{ddr_session.get('error_count', 0)} errors, cached/uncached visibility passed"
+                )
+                session_path = ddr_session.get("session_path")
+                if session_path:
+                    evidence_links.append(f"[`{profile}` DDR session](../{session_path})")
+            else:
+                training_summary.append(
+                    f"`{profile}`: not qualified — {entry.get('blocker', 'routed timing gate not met')}"
+                )
+    else:
+        for profile in requested_profiles:
+            entry = profiles.get(profile, {})
+            session = entry.get("session") or {}
+            checked = entry.get("revalidation") or {}
+            successful = checked.get("training_runs_passed", 0)
+            requested = session.get("requested_training_runs", 10)
+            actual = session.get("actual_training_runs", 0)
+            stress_requested = session.get("requested_stress_seconds", 1800)
+            full = checked.get("full_result") or {}
+            stress_actual = full.get("stress_seconds_actual", full.get("measured_stress_seconds", 0))
+            training_summary.append(
+                f"`{profile}`: {successful}/{requested} accepted training/smoke runs "
+                f"({actual} attempted), stress {stress_actual}/{stress_requested} s"
+            )
+            first_trial = next(iter(session.get("trials", [])), None)
+            if first_trial:
+                link = repo_link(first_trial.get("raw_uart_log"), f"{profile} acceptance UART capture")
+                if link:
+                    evidence_links.append(link)
     if not training_summary:
         training_summary.append("No DDR3 board acceptance session was recorded.")
     ddr_detail = "\n- ".join(training_summary)
     ddr_reason = ""
+    minimal_manifest = qualified_profiles.get("minimal", {})
     minimal_session = (profiles.get("minimal", {}).get("session") or {})
-    if minimal_session.get("status") == "failed":
+    if minimal_manifest.get("qualification_status") == "blocked":
+        ddr_reason = minimal_manifest.get("blocker", "The `minimal` routed build did not meet required timing.")
+    elif minimal_session.get("status") == "failed":
         trial = next(iter(minimal_session.get("trials", [])), {})
         trial_log = repo_file(trial.get("text_uart_log"))
         captured_failure = None
@@ -1400,6 +1459,7 @@ def coremark_summary_text(comparison, generated_utc):
         "[Detailed performance report](performance.md)",
         "[machine-readable benchmark results](performance/results.json)",
         "[DDR3 training and integrity report](ddr3/report.md)",
+        "[replacement-board qualification](ddr3/replacement-board-qualification-20261005.md)",
         "[CPU candidate selection](../cpu-profile-selection.json)",
         "[candidate build evidence](performance/cpu-evaluation/candidate-build.json)",
         "[candidate UART results](performance/cpu-evaluation/evaluations.json)",
@@ -1407,15 +1467,29 @@ def coremark_summary_text(comparison, generated_utc):
     links.extend(repo_link(f"build/{profile}/gateware/impl/pnr/project.tr", f"on-chip `{profile}` timing") for profile in PROFILES)
     links.extend(repo_link(f"build/ddr3/{profile}/gateware/impl/pnr/project.tr", f"DDR3 `{profile}` timing") for profile in PROFILES)
     links = [item for item in links if item]
+    qualified_count = sum(
+        item.get("qualification_status") == "passed"
+        for item in qualified_profiles.values()
+    )
+    qualification_status = qualification.get("status", "not_measured")
+    board = qualification.get("board", "replacement board not recorded")
+    minimal_blocker = qualified_profiles.get("minimal", {}).get("blocker")
+    build_summary_text = (
+        f"All five on-chip profiles and {qualified_count} of five DDR3 profiles meet the recorded routed timing gates. "
+        + (f"DDR3 `minimal` is blocked: {minimal_blocker} " if minimal_blocker else "")
+        + "The configured operating clocks are 48 MHz system and, for DDR3, 96 MHz CK. Estimated Fmax values below come from place-and-route and are not the operating clock."
+    )
+    if qualified_profiles:
+        ddr_reason = ""
     return f"""# CoreMark and DDR3 handoff summary
 
-Updated {generated_utc}. The CPU candidate selection and DDR3 acceptance are reported separately: on-chip CPU performance is measured and accepted, while DDR3 board acceptance is incomplete after read-leveling failure.
+Updated {generated_utc}. Replacement board: **{board}**. DDR3 qualification status: **{qualification_status} ({qualified_count}/5 profiles qualified)**. See the [replacement-board qualification report](ddr3/replacement-board-qualification-20261005.md) for profile outcomes and evidence IDs.
 
-All eight profile/memory builds passed Gowin synthesis, placement, routing, timing, and resource checks. The configured operating clocks are 48 MHz system and, for DDR3, 96 MHz CK. Estimated Fmax values below come from place-and-route and are not the operating clock.
+{build_summary_text}
 
 ## CoreMark comparison
 
-Each score is a validated mean ± observed spread from three scored repetitions. DDR3 CoreMark remains unmeasured because DDR training did not pass.
+Each score is a validated mean ± observed spread from three scored repetitions. DDR3 CoreMark passed for {qualified_count} profiles that passed full DDR qualification; profiles without full DDR acceptance have no DDR score.
 
 {chr(10).join(score_rows)}
 
@@ -1429,15 +1503,15 @@ At 48 MHz, `dynamic_target` is selected as the public `performance` profile. Its
 
 {chr(10).join(candidate_rows)}
 
-The selected public profile was subsequently checked as a public build: fresh validation and three Dock runs passed, with mean 119.323916 CoreMark and zero observed spread. Its capture and image identities are in [the detailed report](performance.md).
+The public `performance` profile uses the previously selected `dynamic_target` CPU. Its earlier CPU-selection evaluation remains historical; the replacement-board on-chip and DDR3 scores above use fresh 48 MHz runs.
 
 ## DDR3 training, integrity, and stress
 
-DDR3 acceptance status: **{latest.get('status', ddr.get('latest_batch_status', 'not_measured'))}**. Training reliability:
+DDR3 acceptance status: **{qualification_status} ({qualified_count}/5 qualified)**. Training and stress by profile:
 
 - {ddr_detail}
 
-{ddr_reason} Full-range coverage is not established (0 of 128 MiB accepted), cached/uncached visibility tests did not run, measured stress was 0/1800 seconds, and read/write bandwidth was not measured. Separate console probes are diagnostic evidence only and do not count as acceptance runs. {acceptance_evidence}
+{ddr_reason} Separate console probes from the previous board are diagnostic evidence only and do not count as replacement-board acceptance runs. {acceptance_evidence}
 
 ## Evidence
 
@@ -1591,6 +1665,7 @@ def create_report():
     benchmark = selected_row.get("benchmark_metadata") or {}
     build = selected_row.get("build_metadata") or {}
     identity = (session or {}).get("identity", {}) or {}
+    measurement_board = (session or {}).get("board") or "Sipeed Tang Primer 20K with standard Dock (board identity not recorded)"
     git = git_identity()
     session_date = (session or {}).get("created_utc", "not measured")
     uart_selected = identity.get("uart_device_selected") or "none selected"
@@ -1769,7 +1844,7 @@ def create_report():
 
 ## Measurement identity
 
-- Board: Sipeed Tang Primer 20K with standard Dock; device `GW2A-LV18PG256C8/I7`.
+- Board: {measurement_board}; device `GW2A-LV18PG256C8/I7`.
 - Measurement: {measurement_identity_label}.
 - SRAM programming status: **{programming_status}**; no flash programming is used.
 - Benchmark memory mode: **{memory}**.

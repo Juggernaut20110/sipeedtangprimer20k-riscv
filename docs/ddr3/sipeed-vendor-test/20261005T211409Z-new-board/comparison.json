@@ -1,0 +1,40 @@
+{
+  "board_identity": "Replacement Tang Primer 20K Dock attached by user 2026-10-05",
+  "chip_marking_user_reported": "H5TQ1G63ERF PBC",
+  "likely_normalized_chip_part": "H5TQ1G63EFR-PBC (inference from reported marking)",
+  "status": "passed",
+  "detected_capacity_mib": 128,
+  "fresh_sram_loads": 3,
+  "successful_complete_tests": 3,
+  "successful_check_stages": 6,
+  "reported_mismatches": 0,
+  "bitstream_sha256": "167d04a87c0e0084204a1863f8a999f7c696d0d25ca959a82228c203470b7f50",
+  "same_bitstream_as_previous_board": true,
+  "previous_board": {
+    "fresh_sram_loads": 3,
+    "successful_tests": 0,
+    "first_check_failures": 3
+  },
+  "flash_programming": false,
+  "runs": [
+    {
+      "run": 1,
+      "status": "passed",
+      "complete_test_time_seconds": 48.234
+    },
+    {
+      "run": 2,
+      "status": "passed",
+      "complete_test_time_seconds": 48.224
+    },
+    {
+      "run": 3,
+      "status": "passed",
+      "complete_test_time_seconds": 48.223
+    }
+  ],
+  "recovery_status": "ddr_held_in_reset_uart_quiet",
+  "recovery_bitstream_sha256": "a7a702e3ff9835ab3ee653f0f9ff7c90165808db514b3230dcc91d0314b93df3",
+  "evidence": "docs/ddr3/sipeed-vendor-test/20261005T211409Z-new-board",
+  "litex_on_new_board_tested": false
+}

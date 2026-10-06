@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "recovery_id": "20261006T010916Z-replacement-board-final-recovery",
+  "board": "replacement Tang Primer 20K Dock attached 2026-10-05",
+  "board_comparison": "docs/ddr3/sipeed-vendor-test/new-board-20261005.md",
+  "command": [
+    "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/bin/openFPGALoader",
+    "--board",
+    "tangprimer20k",
+    "--write-sram",
+    "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/sipeed-ddr-test/idle-build/impl/pnr/ddr_idle.fs"
+  ],
+  "programmer_exit_code": 0,
+  "flash_programming": false,
+  "bitstream": "build/sipeed-ddr-test/idle-build/impl/pnr/ddr_idle.fs",
+  "bitstream_sha256": "a7a702e3ff9835ab3ee653f0f9ff7c90165808db514b3230dcc91d0314b93df3",
+  "ddr_state": {
+    "reset_n": 0,
+    "cke": 0,
+    "cs_n": 1,
+    "ck_p": 0,
+    "odt": 0
+  },
+  "recovery_status": "ddr_held_in_reset_uart_quiet",
+  "uart_requested": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+  "uart_baud": 115200,
+  "uart_observation_seconds": 5,
+  "uart_bytes": 0
+}

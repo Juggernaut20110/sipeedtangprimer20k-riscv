@@ -1,0 +1,72 @@
+*** GOWIN Tcl Command Line Console  *** 
+Open project /home/user/git/fpga/sipeedtangprimer20k-riscv/build/sipeed-ddr-test/upstream/ddr3_ref_design.gprj finished
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/sipeed-ddr-test/upstream/src/ddr3_memory_interface/ddr3_memory_interface.v'
+Analyzing Verilog file '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/sipeed-ddr-test/upstream/src/ddr3_syn_top.v'
+Undeclared symbol 'ddr_cs1', assumed default net type 'wire'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/sipeed-ddr-test/upstream/src/ddr3_syn_top.v":143)
+Analyzing Verilog file '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/sipeed-ddr-test/upstream/src/gowin_rpll/gowin_rpll.v'
+Analyzing Verilog file '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/sipeed-ddr-test/upstream/src/tester.v'
+Analyzing included file '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/sipeed-ddr-test/upstream/src/print.v'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/sipeed-ddr-test/upstream/src/tester.v":559)
+Back to file '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/sipeed-ddr-test/upstream/src/tester.v'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/sipeed-ddr-test/upstream/src/tester.v":559)
+Analyzing Verilog file '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/sipeed-ddr-test/upstream/src/uart_tx_V2.v'
+Compiling module 'ddr3_syn_top'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/sipeed-ddr-test/upstream/src/ddr3_syn_top.v":3)
+Compiling module 'tester'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/sipeed-ddr-test/upstream/src/tester.v":1)
+Extracting RAM for identifier 'read_data'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/sipeed-ddr-test/upstream/src/tester.v":127)
+Extracting RAM for identifier 'print_seq'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/sipeed-ddr-test/upstream/src/print.v":6)
+Compiling module 'uart_tx_V2'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/sipeed-ddr-test/upstream/src/uart_tx_V2.v":1)
+WARN  (EX3791) : Expression size 11 truncated to fit in target size 10("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/sipeed-ddr-test/upstream/src/uart_tx_V2.v":49)
+WARN  (EX1998) : Net 'print_length[6]' does not have a driver("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/sipeed-ddr-test/upstream/src/print.v":15)
+Compiling module 'Gowin_rPLL'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/sipeed-ddr-test/upstream/src/gowin_rpll/gowin_rpll.v":9)
+Compiling module 'DDR3_Memory_Interface_Top'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/sipeed-ddr-test/upstream/src/ddr3_memory_interface/ddr3_memory_interface.v":11484)
+Compiling module '**'("/home/user/git/fpga/sipeedtangprimer20k-riscv/build/sipeed-ddr-test/upstream/src/ddr3_memory_interface/ddr3_memory_interface.v":11483)
+NOTE  (EX0101) : Current top module is "ddr3_syn_top"
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/sipeed-ddr-test/upstream/impl/gwsynthesis/sipeed_ddr_test.vg" completed
+[100%] Generate report file "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/sipeed-ddr-test/upstream/impl/gwsynthesis/sipeed_ddr_test_syn.rpt.html" completed
+GowinSynthesis finish
+Reading netlist file: "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/sipeed-ddr-test/upstream/impl/gwsynthesis/sipeed_ddr_test.vg"
+Parsing netlist file "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/sipeed-ddr-test/upstream/impl/gwsynthesis/sipeed_ddr_test.vg" completed
+Processing netlist completed
+Reading constraint file: "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/sipeed-ddr-test/upstream/src/ddr3.cst"
+Physical Constraint parsed completed
+Running placement......
+[10%] Placement Phase 0 completed
+[20%] Placement Phase 1 completed
+[30%] Placement Phase 2 completed
+[50%] Placement Phase 3 completed
+Running routing......
+[60%] Routing Phase 0 completed
+[70%] Routing Phase 1 completed
+[80%] Routing Phase 2 completed
+[90%] Routing Phase 3 completed
+Running timing analysis......
+[95%] Timing analysis completed
+Placement and routing completed
+Bitstream generation in progress......
+Bitstream generation completed
+Running power analysis......
+[100%] Power analysis completed
+Generate file "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/sipeed-ddr-test/upstream/impl/pnr/sipeed_ddr_test.power.html" completed
+Generate file "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/sipeed-ddr-test/upstream/impl/pnr/sipeed_ddr_test.pin.html" completed
+Generate file "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/sipeed-ddr-test/upstream/impl/pnr/sipeed_ddr_test.rpt.html" completed
+Generate file "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/sipeed-ddr-test/upstream/impl/pnr/sipeed_ddr_test.rpt.txt" completed
+Generate file "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/sipeed-ddr-test/upstream/impl/pnr/sipeed_ddr_test.tr.html" completed
+Generate file "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/sipeed-ddr-test/upstream/impl/pnr/sipeed_ddr_test.tr" completed
+Thu Oct  1 22:39:50 2026
+

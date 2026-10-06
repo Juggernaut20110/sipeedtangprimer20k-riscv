@@ -1,0 +1,54 @@
+[
+  {
+    "seconds": 4.137,
+    "line": "Perform Reset"
+  },
+  {
+    "seconds": 4.137,
+    "line": "Auto Reset Every 100s"
+  },
+  {
+    "seconds": 4.137,
+    "line": "Init Complete"
+  },
+  {
+    "seconds": 4.137,
+    "line": "DDR Size: 1G"
+  },
+  {
+    "seconds": 4.137,
+    "line": "Begin to Fill"
+  },
+  {
+    "seconds": 14.952,
+    "line": "Fill Stage 1 Finished"
+  },
+  {
+    "seconds": 14.952,
+    "line": "Begin to Check Stage 1"
+  },
+  {
+    "seconds": 17.657,
+    "line": "Check Failed. Mismatch Occured"
+  },
+  {
+    "seconds": 104.092,
+    "line": "Perform Reset"
+  },
+  {
+    "seconds": 104.092,
+    "line": "Auto Reset Every 100s"
+  },
+  {
+    "seconds": 104.092,
+    "line": "Init Complete"
+  },
+  {
+    "seconds": 104.092,
+    "line": "DDR Size: 1G"
+  },
+  {
+    "seconds": 104.092,
+    "line": "Begin to Fill"
+  }
+]

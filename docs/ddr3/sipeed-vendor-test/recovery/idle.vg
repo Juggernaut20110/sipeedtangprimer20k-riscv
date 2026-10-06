@@ -1,0 +1,57 @@
+//
+//Written by GowinSynthesis
+//Tool Version: V1.9.12.04(89079)
+//Device: GW2A-18
+//Device Version: C
+//Part Number: GW2A-LV18PG256C8/I7
+//Device-Package: GW2A-18C-PBGA256
+//Thu Oct  1 22:44:28 2026
+
+//Source file index table:
+//file0 "\/home/user/git/fpga/sipeedtangprimer20k-riscv/build/sipeed-ddr-test/idle-build/idle.v"
+`timescale 100 ps/100 ps
+module ddr_idle (
+  ddr_reset_n,
+  ddr_cke,
+  ddr_cs,
+  ddr_ck,
+  ddr_odt
+)
+;
+output ddr_reset_n;
+output ddr_cke;
+output ddr_cs;
+output ddr_ck;
+output ddr_odt;
+wire VCC;
+wire GND;
+  OBUF ddr_reset_n_obuf (
+    .O(ddr_reset_n),
+    .I(GND) 
+);
+  OBUF ddr_cke_obuf (
+    .O(ddr_cke),
+    .I(GND) 
+);
+  OBUF ddr_cs_obuf (
+    .O(ddr_cs),
+    .I(VCC) 
+);
+  OBUF ddr_ck_obuf (
+    .O(ddr_ck),
+    .I(GND) 
+);
+  OBUF ddr_odt_obuf (
+    .O(ddr_odt),
+    .I(GND) 
+);
+  VCC VCC_cZ (
+    .V(VCC)
+);
+  GND GND_cZ (
+    .G(GND)
+);
+  GSR GSR (
+    .GSRI(VCC) 
+);
+endmodule /* ddr_idle */

@@ -1,0 +1,60 @@
+{
+  "source_url": "https://github.com/sipeed/TangPrimer-20K-example/tree/main/DDR-test",
+  "source_commit": "e469df4c0c9c41824f405a8515decf24ef1e8e6f",
+  "source_modified": false,
+  "source_sha256": {
+    "src/ddr3_syn_top.v": "54b3430e71f31b0345213f38242f77f4ce230033206c74af268da44e6b6b4fe8",
+    "src/tester.v": "4c7f4794630aab01df6ba83f56bb7ae627fcbd6c326f7a4c33078e624ef78220",
+    "src/ddr3.sdc": "fd6ee4ee56b2e2a64cbb8cbf8972a547c5163daa08279f25eeafc228ff35bcea",
+    "src/uart_tx_V2.v": "ea1d28539e093c158ba4b2eaa545149057026479b0d2f30b44bb4c3391223f18",
+    "src/ddr3.cst": "2ee91cb3984fad3b352138ea9c65ce3f9e82a5be69bd7135168f09a617771cd6",
+    "src/print.v": "67fb49742a71b854da65d87f10c1c665a219cd443e9b8791efb2a47b902ac97e",
+    "src/gowin_rpll/gowin_rpll.ipc": "1621278131eb2e64bc4f44b5eb477baea975a917c3c9f279e943e4b5974ea85f",
+    "src/gowin_rpll/gowin_rpll.v": "60169a9c34825b6b9eb8a126479e4426f7678785195fbea277990b79fa3f0708",
+    "src/gowin_rpll/gowin_rpll.mod": "8118e6228b053bbe640a2740255d90636a772f15ab19922e065902037f771289",
+    "src/ddr3_memory_interface/ddr3_memory_interface.v": "04ef287b2caf7779b8464c28f4e2176b35f24b181aab9c7509d8b3d9f734bed2",
+    "src/ddr3_memory_interface/ddr3_memory_interface.ipc": "c7ff5814db2a5b472fd951c0f54345b20ca285ae00fddb2776b57c527eb7f353",
+    "src/ddr3_memory_interface/ddr3_memory_interface.vo": "569ee4f6946c7f7a7e3825140f06ff16986d4541500ecaa661bb58541e531ea7"
+  },
+  "gowin_version": "V1.9.12.04",
+  "bitstream": "build/sipeed-ddr-test/upstream/impl/pnr/sipeed_ddr_test.fs",
+  "bitstream_sha256": "167d04a87c0e0084204a1863f8a999f7c696d0d25ca959a82228c203470b7f50",
+  "uart_requested": "/dev/serial/by-id/usb-SIPEED_JTAG_Debugger_FactoryAIOT_Pro-if01-port0",
+  "uart_resolved": "/dev/ttyUSB1",
+  "baud": 115200,
+  "flash_programming": false,
+  "runs": [
+    {
+      "run": 1,
+      "programmer_command": [
+        "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/bin/openFPGALoader",
+        "--board",
+        "tangprimer20k",
+        "--write-sram",
+        "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/sipeed-ddr-test/upstream/impl/pnr/sipeed_ddr_test.fs"
+      ],
+      "programmer_exit_code": 0,
+      "capture_seconds": 110,
+      "elapsed_seconds": 114.109,
+      "uart_sha256": "fa3f168f13bb03c8d96535e8559c3d15f842cf860f892bd87de5220f05f9893e",
+      "uart_bytes": 230,
+      "completed_tests": 0,
+      "mismatch_reported": true,
+      "detected_2gbit": false,
+      "status": "failed"
+    }
+  ],
+  "uart_owner_check_exit_code": 1,
+  "uart_owner_check_output": "",
+  "recovery_command": [
+    "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/bin/openFPGALoader",
+    "--board",
+    "tangprimer20k",
+    "--detect",
+    "--reset"
+  ],
+  "recovery_exit_code": 0,
+  "recovery_uart_bytes": 45,
+  "recovery_status": "uart_activity_after_reset",
+  "status": "failed"
+}

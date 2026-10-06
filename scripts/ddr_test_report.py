@@ -276,10 +276,12 @@ def create_report():
 
     if latest_batch is not None:
         latest = next(item for item in checked_batches if item["batch_id"] == latest_batch)
-        if not any(item.get("batch_id") == latest_batch for item in historical):
-            historical.append(latest)
-        else:
-            historical = [latest if item.get("batch_id") == latest_batch else item for item in historical]
+        # A qualification can be split into one-profile batches after a failure.
+        # Keep every revalidated batch in machine-readable history, not just the
+        # chronologically latest one.
+        by_id = {item.get("batch_id"): item for item in historical if item.get("batch_id")}
+        by_id.update({item["batch_id"]: item for item in checked_batches})
+        historical = sorted(by_id.values(), key=lambda item: item.get("batch_id", ""))
     else:
         latest = None
 
@@ -291,6 +293,21 @@ def create_report():
         "batches": historical,
         "diagnostic_probes": diagnostic_probes(),
     }
+    qualification_path = ROOT / "docs/ddr3/replacement-board-qualification-20261005.json"
+    if qualification_path.is_file():
+        try:
+            qualification = json.loads(qualification_path.read_text())
+        except (OSError, json.JSONDecodeError) as error:
+            raise RuntimeError(f"cannot read replacement-board qualification manifest: {error}") from error
+        data["replacement_board_qualification"] = {
+            "board": qualification.get("board"),
+            "report": "docs/ddr3/replacement-board-qualification-20261005.md",
+            "manifest": str(qualification_path.relative_to(ROOT)),
+            "profiles": qualification.get("profiles", {}),
+            "recovery": qualification.get("recovery", {}),
+        }
+        if qualification.get("recovery"):
+            data["current_board_recovery"] = qualification["recovery"]
     investigation_section = ""
     investigations = sorted((ROOT / "docs/ddr3/diagnosis").glob("*-integrity-investigation.json"))
     if investigations:
@@ -323,7 +340,7 @@ def create_report():
             })
         recovery_path = ROOT / investigation["current_board_recovery"]
         recovery = json.loads(recovery_path.read_text())
-        data["current_board_recovery"] = {
+        data["previous_board_recovery"] = {
             "status": recovery["recovery_status"],
             "evidence": str(recovery_path.relative_to(ROOT)),
             "pre_reset_uart_rx_bytes": recovery["pre_reset_uart_rx_bytes"],
@@ -332,11 +349,11 @@ def create_report():
             "post_reset_jtag_detect_exit_code": recovery["post_reset_detect_exit_code"],
             "flash_programming": recovery["flash_programming"],
         }
-        investigation_section = f"""## Write-disturbance investigation
+        investigation_section = f"""## Previous-board write-disturbance investigation
 
-The [retained investigation](write-disturbance.md) captured correct digital write inputs for the original BIOS error and reproduced bit-20 and bit-31 corruption at untouched victims after writes to another row. Conservative controller row timing and ODT-low did not resolve those failures. These historical probes used the former 256 MiB configuration and remain diagnostic-only; see the geometry correction below for current hardware results.
+On the previous Tang Primer assembly, the [retained investigation](write-disturbance.md) captured correct digital write inputs for the original BIOS error and reproduced bit-20 and bit-31 corruption at untouched victims after writes to another row. Conservative controller row timing and ODT-low did not resolve those failures. These historical probes used the former 256 MiB configuration and remain diagnostic-only. The replacement board's current-source results are summarized in the [replacement-board qualification](replacement-board-qualification-20261005.md).
 
-An independent raw-UART and artifact audit verified {sum(item['trace_count'] for item in audited)} snapshots and {sum(item['decoded_frame_count'] for item in audited)} frames. The [machine-readable investigation](diagnosis/{investigation_path.name}) links the exact images, captures, attempted fixes, limitations and post-investigation board recovery. DDR integrity remains failed; pin-level observations and comparison on another board are the next hardware discriminators.
+An independent raw-UART and artifact audit verified {sum(item['trace_count'] for item in audited)} snapshots and {sum(item['decoded_frame_count'] for item in audited)} frames. The [machine-readable investigation](diagnosis/{investigation_path.name}) links the exact images, captures, attempted fixes, limitations and previous-board recovery. Those failures do not describe the replacement board.
 
 """
     corrections = sorted((ROOT / "docs/ddr3/diagnosis").glob("*-geometry-correction.json"))
@@ -352,10 +369,10 @@ An independent raw-UART and artifact audit verified {sum(item['trace_count'] for
         data["latest_diagnostic_id"] = Path(correction["audit"][-1]["evidence"]).name
         recovery_path = ROOT / correction["current_board_recovery"]
         recovery = json.loads(recovery_path.read_text())
-        data["current_board_recovery"] = dict(recovery, evidence=str(recovery_path.relative_to(ROOT)))
-        investigation_section += """## Fitted-part geometry correction
+        data["previous_board_recovery"] = dict(recovery, evidence=str(recovery_path.relative_to(ROOT)))
+        investigation_section += """## Previous-board fitted-part geometry correction
 
-The fitted H5TQ1G63EFR is 128 MiB (13 row bits). Current builds and acceptance bounds have been corrected. The fresh 128 MiB design still fails BIOS Memtest and reproduces the bit-20 and bit-31 neighboring-row write errors. The bounded address probe is diagnostic evidence only. See [the correction and retained hardware results](hynix-geometry-correction.md). The board was recovered using a dedicated SRAM idle image that holds DDR in reset; the earlier combined JTAG detect/reset command does not prove reset occurred.
+The fitted H5TQ1G63EFR is 128 MiB (13 row bits). Current builds and acceptance bounds have been corrected. On the previous board, a fresh 128 MiB design still failed BIOS Memtest and reproduced the bit-20 and bit-31 neighboring-row write errors. The bounded address probe is diagnostic evidence only. See [the correction and retained previous-board results](hynix-geometry-correction.md). That board was recovered using a dedicated SRAM idle image that holds DDR in reset; the earlier combined JTAG detect/reset command does not prove reset occurred.
 
 """
     results_path.write_text(json.dumps(data, indent=2) + "\n")
@@ -511,7 +528,7 @@ Run `make ddr-test-build PROFILE=ALL`, then `make ddr-test-run PROFILE=ALL PORT=
 
 **Latest batch status: {latest['status']}.**
 
-The receive patch and current integrity investigation are recorded in [DDR3 training handoff](training-handoff.md), with the original experiments retained in [DDR3 failure diagnosis](diagnosis.md). Diagnostic experiments do not count as acceptance passes.
+The current replacement-board profile matrix is in the [replacement-board qualification report](replacement-board-qualification-20261005.md), with its machine-readable record in [replacement-board qualification JSON](replacement-board-qualification-20261005.json). This run used separate profile batches after the `minimal` timing gate failed. The receive patch and previous-board integrity investigation are recorded in [DDR3 training handoff](training-handoff.md), with original experiments retained in [DDR3 failure diagnosis](diagnosis.md). Diagnostic experiments do not count as acceptance passes.
 
 Batch `{latest_batch}` records its original configured geometry; older 256 MiB captures cannot qualify the fitted 128 MiB part. Current builds use 128 MiB at a 48 MHz system clock and 96 MHz DDR CK. Training success is based on captured BIOS status and all lane bitslip/delay-window records. Each counted training pass required a fresh SRAM reconfiguration and an uncached diagnostic smoke test. The full test executes from the 16 KiB diagnostic RAM. DDR3 CoreMark placement, when run, keeps code/read-only data in DDR and algorithm data/BSS/stack in SRAM.
 
@@ -521,7 +538,7 @@ Batch `{latest_batch}` records its original configured geometry; older 256 MiB c
 {investigation_section}
 ## Standalone diagnostic probes
 
-These console probes were captured outside the acceptance runner and do not count as training or memory-test passes. They are retained to show the startup failure and subsequent read-only CSR observations.
+These console probes were captured on the previous board outside the acceptance runner and do not count as replacement-board training or memory-test passes. They are retained to show the previous-board startup failure and subsequent read-only CSR observations.
 
 {''.join(probe_sections) if probe_sections else 'No standalone diagnostic probes were recorded.'}
 

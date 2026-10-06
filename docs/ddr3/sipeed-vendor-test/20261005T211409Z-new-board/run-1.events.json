@@ -1,0 +1,78 @@
+[
+  {
+    "seconds": 4.069,
+    "line": "Perform Reset"
+  },
+  {
+    "seconds": 4.069,
+    "line": "Auto Reset Every 100s"
+  },
+  {
+    "seconds": 4.069,
+    "line": "Init Complete"
+  },
+  {
+    "seconds": 4.069,
+    "line": "DDR Size: 1G"
+  },
+  {
+    "seconds": 4.069,
+    "line": "Begin to Fill"
+  },
+  {
+    "seconds": 14.885,
+    "line": "Fill Stage 1 Finished"
+  },
+  {
+    "seconds": 14.885,
+    "line": "Begin to Check Stage 1"
+  },
+  {
+    "seconds": 26.101,
+    "line": "Check Stage 1 Finished without Mismatch"
+  },
+  {
+    "seconds": 26.101,
+    "line": "Begin to Fill Stage 2"
+  },
+  {
+    "seconds": 37.018,
+    "line": "Fill Stage 2 Finished"
+  },
+  {
+    "seconds": 37.018,
+    "line": "Begin to Check Stage 2"
+  },
+  {
+    "seconds": 48.234,
+    "line": "Check Stage 2 Finished without Mismatch"
+  },
+  {
+    "seconds": 48.234,
+    "line": "Test Finished"
+  },
+  {
+    "seconds": 48.234,
+    "line": ""
+  },
+  {
+    "seconds": 104.018,
+    "line": "Perform Reset"
+  },
+  {
+    "seconds": 104.019,
+    "line": "Auto Reset Every 100s"
+  },
+  {
+    "seconds": 104.019,
+    "line": "Init Complete"
+  },
+  {
+    "seconds": 104.019,
+    "line": "DDR Size: 1G"
+  },
+  {
+    "seconds": 104.019,
+    "line": "Begin to Fill"
+  }
+]

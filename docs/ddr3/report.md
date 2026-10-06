@@ -1,36 +1,36 @@
 # DDR3 training and integrity report
 
-**Latest batch status: failed.**
+**Latest batch status: passed.**
 
-The receive patch and current integrity investigation are recorded in [DDR3 training handoff](training-handoff.md), with the original experiments retained in [DDR3 failure diagnosis](diagnosis.md). Diagnostic experiments do not count as acceptance passes.
+The current replacement-board profile matrix is in the [replacement-board qualification report](replacement-board-qualification-20261005.md), with its machine-readable record in [replacement-board qualification JSON](replacement-board-qualification-20261005.json). This run used separate profile batches after the `minimal` timing gate failed. The receive patch and previous-board integrity investigation are recorded in [DDR3 training handoff](training-handoff.md), with original experiments retained in [DDR3 failure diagnosis](diagnosis.md). Diagnostic experiments do not count as acceptance passes.
 
-Batch `20261001T201828.617667Z-ddr3` records its original configured geometry; older 256 MiB captures cannot qualify the fitted 128 MiB part. Current builds use 128 MiB at a 48 MHz system clock and 96 MHz DDR CK. Training success is based on captured BIOS status and all lane bitslip/delay-window records. Each counted training pass required a fresh SRAM reconfiguration and an uncached diagnostic smoke test. The full test executes from the 16 KiB diagnostic RAM. DDR3 CoreMark placement, when run, keeps code/read-only data in DDR and algorithm data/BSS/stack in SRAM.
+Batch `20261005T234544.924815Z-ddr3` records its original configured geometry; older 256 MiB captures cannot qualify the fitted 128 MiB part. Current builds use 128 MiB at a 48 MHz system clock and 96 MHz DDR CK. Training success is based on captured BIOS status and all lane bitslip/delay-window records. Each counted training pass required a fresh SRAM reconfiguration and an uncached diagnostic smoke test. The full test executes from the 16 KiB diagnostic RAM. DDR3 CoreMark placement, when run, keeps code/read-only data in DDR and algorithm data/BSS/stack in SRAM.
 
 ## Per-profile evidence
 
 ### `linux`
 
-- Session status: **failed**; training/smoke runs passed 0/10.
-- Recorded DDR configuration: 268435456 bytes; 48 MHz system, 96 MHz DDR CK; 8 KiB L2; 2 trained read lanes per configuration (revalidated from generated PHY header).
-- Stress: requested 1800 s; measured not measured s. Uncached alias bandwidth: not measured B/s read and not measured B/s write, not measured-byte transfers, not measured Hz, not measured timer ticks.
-- Resources and timing: LUT 8860, ALU 1066, registers 4650, BSRAM 46; operating clock 48.0 MHz, estimated Fmax 48.321 MHz, worst setup slack 0.138 ns.
-- Evidence: [training 1 UART](evidence/20261001T201828.617667Z-ddr3-linux/training-01.uart.bin)
-- Revalidation errors: session geometry does not match the fitted 128 MiB part, recorded 1 training trials; requested 10, one or more fresh SRAM reconfiguration/training/smoke trials failed revalidation, full destructive memory and sustained stress evidence did not pass revalidation
+- Session status: **passed**; training/smoke runs passed 10/10.
+- Recorded DDR configuration: 134217728 bytes; 48 MHz system, 96 MHz DDR CK; 8 KiB L2; 2 trained read lanes per configuration (revalidated from generated PHY header).
+- Stress: requested 1800 s; measured 1800.0518331666667 s. Uncached alias bandwidth: 4165056 B/s read and 4165056 B/s write, 1048576-byte transfers, 48000000 Hz, 86402487992 timer ticks.
+- Resources and timing: LUT 8805, ALU 1048, registers 4627, BSRAM 46; operating clock 48.0 MHz, estimated Fmax 50.321 MHz, worst setup slack 0.111 ns.
+- Evidence: [training 1 UART](evidence/20261005T234544.924815Z-ddr3-linux/training-01.uart.bin), [training 2 UART](evidence/20261005T234544.924815Z-ddr3-linux/training-02.uart.bin), [training 3 UART](evidence/20261005T234544.924815Z-ddr3-linux/training-03.uart.bin), [training 4 UART](evidence/20261005T234544.924815Z-ddr3-linux/training-04.uart.bin), [training 5 UART](evidence/20261005T234544.924815Z-ddr3-linux/training-05.uart.bin), [training 6 UART](evidence/20261005T234544.924815Z-ddr3-linux/training-06.uart.bin), [training 7 UART](evidence/20261005T234544.924815Z-ddr3-linux/training-07.uart.bin), [training 8 UART](evidence/20261005T234544.924815Z-ddr3-linux/training-08.uart.bin), [training 9 UART](evidence/20261005T234544.924815Z-ddr3-linux/training-09.uart.bin), [training 10 UART](evidence/20261005T234544.924815Z-ddr3-linux/training-10.uart.bin), [full 1 UART](evidence/20261005T234544.924815Z-ddr3-linux/full-01.uart.bin)
+- Revalidation errors: none.
 
-## Write-disturbance investigation
+## Previous-board write-disturbance investigation
 
-The [retained investigation](write-disturbance.md) captured correct digital write inputs for the original BIOS error and reproduced bit-20 and bit-31 corruption at untouched victims after writes to another row. Conservative controller row timing and ODT-low did not resolve those failures. These historical probes used the former 256 MiB configuration and remain diagnostic-only; see the geometry correction below for current hardware results.
+On the previous Tang Primer assembly, the [retained investigation](write-disturbance.md) captured correct digital write inputs for the original BIOS error and reproduced bit-20 and bit-31 corruption at untouched victims after writes to another row. Conservative controller row timing and ODT-low did not resolve those failures. These historical probes used the former 256 MiB configuration and remain diagnostic-only. The replacement board's current-source results are summarized in the [replacement-board qualification](replacement-board-qualification-20261005.md).
 
-An independent raw-UART and artifact audit verified 71 snapshots and 136 frames. The [machine-readable investigation](diagnosis/20261002-integrity-investigation.json) links the exact images, captures, attempted fixes, limitations and post-investigation board recovery. DDR integrity remains failed; pin-level observations and comparison on another board are the next hardware discriminators.
+An independent raw-UART and artifact audit verified 71 snapshots and 136 frames. The [machine-readable investigation](diagnosis/20261002-integrity-investigation.json) links the exact images, captures, attempted fixes, limitations and previous-board recovery. Those failures do not describe the replacement board.
 
-## Fitted-part geometry correction
+## Previous-board fitted-part geometry correction
 
-The fitted H5TQ1G63EFR is 128 MiB (13 row bits). Current builds and acceptance bounds have been corrected. The fresh 128 MiB design still fails BIOS Memtest and reproduces the bit-20 and bit-31 neighboring-row write errors. The bounded address probe is diagnostic evidence only. See [the correction and retained hardware results](hynix-geometry-correction.md). The board was recovered using a dedicated SRAM idle image that holds DDR in reset; the earlier combined JTAG detect/reset command does not prove reset occurred.
+The fitted H5TQ1G63EFR is 128 MiB (13 row bits). Current builds and acceptance bounds have been corrected. On the previous board, a fresh 128 MiB design still failed BIOS Memtest and reproduced the bit-20 and bit-31 neighboring-row write errors. The bounded address probe is diagnostic evidence only. See [the correction and retained previous-board results](hynix-geometry-correction.md). That board was recovered using a dedicated SRAM idle image that holds DDR in reset; the earlier combined JTAG detect/reset command does not prove reset occurred.
 
 
 ## Standalone diagnostic probes
 
-These console probes were captured outside the acceptance runner and do not count as training or memory-test passes. They are retained to show the startup failure and subsequent read-only CSR observations.
+These console probes were captured on the previous board outside the acceptance runner and do not count as replacement-board training or memory-test passes. They are retained to show the previous-board startup failure and subsequent read-only CSR observations.
 
 - `diagnostic_only_not_acceptance_trial` for `minimal`; 1371 UART bytes; capture hash validation: **passed**; [raw UART capture](evidence/20261001T002530.237189Z-startup-probe-minimal/startup.uart.bin). Manifest: `docs/ddr3/evidence/20261001T002530.237189Z-startup-probe-minimal/startup-probe.json`.
 

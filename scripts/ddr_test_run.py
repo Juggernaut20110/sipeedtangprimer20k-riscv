@@ -17,6 +17,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 import benchmark_run as serial_runner  # noqa: E402
 import ddr_test_build as build_runner  # noqa: E402
+import compare as compare_module  # noqa: E402
 from gateware.soc import DDR_DIAGNOSTIC_BASE, DDR_L2_SIZE, DDR_SIZE_BYTES, MEMORY_MODES, PROFILES, ProjectSoC  # noqa: E402
 from gateware.ddr_geometry import DDR_ALIAS_OFFSETS, DDR_VISIBILITY_STRIDE, DDR_VISIBILITY_SAMPLES
 from memory import profile_build_dir, validate_memory  # noqa: E402
@@ -525,6 +526,12 @@ def run_profile(profile, port, run_id, training_runs, stress_seconds,
     if not build_path.is_file():
         raise RuntimeError(f"{profile}/ddr3 SoC build metadata is missing")
     build = json.loads(build_path.read_text())
+    try:
+        compare_module.parse_profile(profile, memory="ddr3", build_dir=memory_dir)
+    except (OSError, RuntimeError, ValueError, KeyError, AttributeError) as error:
+        raise RuntimeError(
+            f"{profile}/ddr3 routed timing gate failed; UART and SRAM programming were not started: {error}"
+        ) from error
     if candidate_id is not None:
         ddr_meta = build_runner.build_profile_diagnostics(
             profile, stress_seconds, candidate_id=candidate_id, build_dir=memory_dir,
@@ -533,12 +540,34 @@ def run_profile(profile, port, run_id, training_runs, stress_seconds,
         ddr_meta = json.loads(diag_path.read_text())
     else:
         raise RuntimeError(f"{profile}/ddr3 diagnostic images are missing; run make ddr-test-build first")
+    build_candidate_matches = build.get("cpu_candidate") == candidate_id
+    if candidate_id is None and profile == "performance":
+        # The public performance profile is built from its accepted generated
+        # CPU candidate, while its diagnostic image metadata is keyed to the
+        # public profile (and therefore has no candidate_id). Validate that
+        # registered selection and its exact RTL before accepting the build.
+        selection = build.get("cpu_profile_selection") or {}
+        cpu_configuration = build.get("cpu_configuration") or {}
+        rtl_path = ROOT / build.get("cpu_rtl", "")
+        rtl_sha256 = selection.get("rtl_sha256")
+        build_candidate_matches = (
+            selection.get("status") == "accepted"
+            and selection.get("candidate") == build.get("cpu_candidate")
+            and selection.get("clock_hz") == SYS_CLK_HZ
+            and cpu_configuration.get("clock_hz") == SYS_CLK_HZ
+            and rtl_sha256 is not None
+            and cpu_configuration.get("rtl_sha256") == rtl_sha256
+            and rtl_path.is_file()
+            and serial_runner.sha256(rtl_path) == rtl_sha256
+        )
     if (build.get("status") != "passed" or build.get("memory_mode") != "ddr3"
+            or build.get("profile") != profile
             or ddr_meta.get("status") != "passed" or ddr_meta.get("profile") != profile
             or ddr_meta.get("memory_mode") != "ddr3"
             or ddr_meta.get("cpu_candidate") != candidate_id
-            or build.get("cpu_candidate") != candidate_id):
+            or not build_candidate_matches):
         raise RuntimeError(f"{profile}/ddr3 build metadata failed identity/status checks")
+    recorded_cpu_candidate = build.get("cpu_candidate")
     if ddr_meta.get("stress_seconds") != stress_seconds:
         ddr_meta = build_runner.build_profile_diagnostics(
             profile, stress_seconds, candidate_id=candidate_id, build_dir=memory_dir,
@@ -562,7 +591,7 @@ def run_profile(profile, port, run_id, training_runs, stress_seconds,
         "session_id": session_id,
         "batch_id": run_id,
         "profile": profile,
-        "cpu_candidate": candidate_id,
+        "cpu_candidate": recorded_cpu_candidate,
         "requested_profiles": list(batch_profiles),
         "memory_mode": "ddr3",
         "status": "in_progress",
@@ -651,8 +680,6 @@ def run_profile(profile, port, run_id, training_runs, stress_seconds,
             session["full_range_bytes"] = DDR_SIZE_BYTES
             session["error_count"] = 0
             session["uncached_smoke_passed"] = True
-            if candidate_id is not None:
-                session["cpu_candidate"] = candidate_id
         failure_result = 0
     except BaseException as error:
         session["status"] = "failed"

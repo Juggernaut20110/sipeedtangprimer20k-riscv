@@ -1,0 +1,34 @@
+[
+  {
+    "seconds": 4.064,
+    "line": "Perform Reset"
+  },
+  {
+    "seconds": 4.064,
+    "line": "Auto Reset Every 100s"
+  },
+  {
+    "seconds": 4.064,
+    "line": "Init Complete"
+  },
+  {
+    "seconds": 4.064,
+    "line": "DDR Size: 1G"
+  },
+  {
+    "seconds": 4.064,
+    "line": "Begin to Fill"
+  },
+  {
+    "seconds": 14.88,
+    "line": "Fill Stage 1 Finished"
+  },
+  {
+    "seconds": 14.88,
+    "line": "Begin to Check Stage 1"
+  },
+  {
+    "seconds": 17.584,
+    "line": "Check Failed. Mismatch Occured"
+  }
+]

@@ -1,0 +1,13 @@
+Perform Reset
+Auto Reset Every 100s
+Init Complete
+DDR Size: 1G
+Begin to Fill
+Fill Stage 1 Finished
+Begin to Check Stage 1
+Check Failed. Mismatch Occured
+Perform Reset
+Auto Reset Every 100s
+Init Complete
+DDR Size: 1G
+Begin to Fill

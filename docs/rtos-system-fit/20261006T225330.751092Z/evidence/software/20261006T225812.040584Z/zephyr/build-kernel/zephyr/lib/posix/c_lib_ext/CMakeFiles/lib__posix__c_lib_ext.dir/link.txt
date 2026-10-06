@@ -1,0 +1,2 @@
+ccache /home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-ar qc liblib__posix__c_lib_ext.a CMakeFiles/lib__posix__c_lib_ext.dir/fnmatch.c.obj CMakeFiles/lib__posix__c_lib_ext.dir/getentropy.c.obj CMakeFiles/lib__posix__c_lib_ext.dir/getopt_shim.c.obj
+ccache /home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-ranlib liblib__posix__c_lib_ext.a

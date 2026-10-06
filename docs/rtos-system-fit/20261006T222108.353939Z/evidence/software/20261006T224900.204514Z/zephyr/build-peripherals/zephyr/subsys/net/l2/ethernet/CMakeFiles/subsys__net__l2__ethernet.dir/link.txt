@@ -1,0 +1,2 @@
+ccache /home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-ar qc libsubsys__net__l2__ethernet.a CMakeFiles/subsys__net__l2__ethernet.dir/ethernet.c.obj CMakeFiles/subsys__net__l2__ethernet.dir/arp.c.obj
+ccache /home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-ranlib libsubsys__net__l2__ethernet.a

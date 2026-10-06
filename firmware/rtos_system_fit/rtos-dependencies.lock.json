@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "zephyr": {
+    "name": "Zephyr RTOS",
+    "tag": "v4.4.1",
+    "url": "https://github.com/zephyrproject-rtos/zephyr.git",
+    "commit": "1f6485eca25431b5ff27ce9a754218c9e559bbbb",
+    "checkout": ".deps/rtos/zephyr",
+    "target_only_patch": "patches/zephyr-litex-riscv-dma-ordering.patch"
+  },
+  "freertos_kernel": {
+    "name": "FreeRTOS Kernel",
+    "tag": "V11.3.1",
+    "url": "https://github.com/FreeRTOS/FreeRTOS-Kernel.git",
+    "commit": "3a22924e0a9ddbbc8b0758881c33b3422a5cc20d",
+    "checkout": ".deps/rtos/FreeRTOS-Kernel",
+    "port": "portable/GCC/RISC-V/port.c + portASM.S",
+    "chip_extensions": "portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions"
+  },
+  "compiler": {
+    "name": "xPack GNU RISC-V Embedded GCC",
+    "version": "15.2.0",
+    "target": "riscv-none-elf",
+    "march": "rv32im",
+    "mabi": "ilp32",
+    "path": ".tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin"
+  }
+}

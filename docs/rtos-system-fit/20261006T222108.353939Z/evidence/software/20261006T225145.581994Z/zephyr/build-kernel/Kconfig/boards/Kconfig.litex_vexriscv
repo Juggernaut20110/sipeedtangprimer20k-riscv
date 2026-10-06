@@ -1,0 +1,2 @@
+# Load board Kconfig descriptions.
+osource "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/boards/enjoydigital/litex_vexriscv/Kconfig.litex_vexriscv"

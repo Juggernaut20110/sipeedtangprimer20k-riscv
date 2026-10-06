@@ -1,0 +1,2 @@
+ccache /home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-ar qc libdrivers__console.a CMakeFiles/drivers__console.dir/uart_console.c.obj
+ccache /home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-ranlib libdrivers__console.a

@@ -1,0 +1,381 @@
+
+---
+events:
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/cmake/modules/zephyr_default.cmake:28 (find_package)"
+      - "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:97 (include_boilerplate)"
+      - "CMakeLists.txt:2 (find_package)"
+    name: "ZephyrBuildConfiguration"
+    configs:
+      -
+        filename: "ZephyrBuildConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "zephyrbuild-config.cmake"
+        kind: "cmake"
+    version_request:
+      exact: false
+    settings:
+      required: "optional"
+      quiet: true
+      global: false
+      policy_scope: false
+      bypass_provider: false
+      names:
+        - "ZephyrBuild"
+      search_paths:
+        - "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/../*"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: false
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: false
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: false
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224342.836696Z/zephyr/build-peripherals/CMakeFiles/pkgRedirects/ZephyrBuildConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224342.836696Z/zephyr/build-peripherals/CMakeFiles/pkgRedirects/zephyrbuild-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/FreeRTOS-Kernel/ZephyrBuildConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/FreeRTOS-Kernel/zephyrbuild-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/ZephyrBuildConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/zephyrbuild-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/cmake/ZephyrBuildConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/cmake/zephyrbuild-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found: null
+    search_context:
+      ENV{PATH}:
+        - "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin"
+        - "/home/user/git/fpga/sipeedtangprimer20k-riscv/.venv/bin"
+        - "/home/user/.codex/packages/app-server-daemon/releases/0.160.1-x86_64-unknown-linux-musl/codex-path"
+        - "/home/user/.local/bin"
+        - "/home/user/.codex/tmp/arg0/codex-arg0H5b1Qa"
+        - "/home/user/.codex/packages/app-server-daemon/releases/0.160.1-x86_64-unknown-linux-musl/codex-path"
+        - "/home/user/.codex/tmp/arg0/codex-arg0jMY7Il"
+        - "/home/user/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/user/.codex/tmp/arg0/codex-arg03dSzeZ"
+        - "/home/user/.codex/packages/standalone/releases/0.160.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/user/.local/bin"
+        - "/home/user/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/cmake/modules/zephyr_default.cmake:41 (find_package)"
+      - "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:97 (include_boilerplate)"
+      - "CMakeLists.txt:2 (find_package)"
+    name: "ZephyrAppConfiguration"
+    configs:
+      -
+        filename: "ZephyrAppConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "zephyrapp-config.cmake"
+        kind: "cmake"
+    version_request:
+      exact: false
+    settings:
+      required: "optional"
+      quiet: true
+      global: false
+      policy_scope: false
+      bypass_provider: false
+      names:
+        - "ZephyrApp"
+      search_paths:
+        - "/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/rtos_system_fit/zephyr/app"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: false
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: false
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: false
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224342.836696Z/zephyr/build-peripherals/CMakeFiles/pkgRedirects/ZephyrAppConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224342.836696Z/zephyr/build-peripherals/CMakeFiles/pkgRedirects/zephyrapp-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/rtos_system_fit/zephyr/app/ZephyrAppConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/rtos_system_fit/zephyr/app/zephyrapp-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found: null
+    search_context:
+      ENV{PATH}:
+        - "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin"
+        - "/home/user/git/fpga/sipeedtangprimer20k-riscv/.venv/bin"
+        - "/home/user/.codex/packages/app-server-daemon/releases/0.160.1-x86_64-unknown-linux-musl/codex-path"
+        - "/home/user/.local/bin"
+        - "/home/user/.codex/tmp/arg0/codex-arg0H5b1Qa"
+        - "/home/user/.codex/packages/app-server-daemon/releases/0.160.1-x86_64-unknown-linux-musl/codex-path"
+        - "/home/user/.codex/tmp/arg0/codex-arg0jMY7Il"
+        - "/home/user/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/user/.codex/tmp/arg0/codex-arg03dSzeZ"
+        - "/home/user/.codex/packages/standalone/releases/0.160.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/user/.local/bin"
+        - "/home/user/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/cmake/modules/ccache.cmake:10 (find_program)"
+      - "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/cmake/modules/zephyr_default.cmake:129 (include)"
+      - "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:97 (include_boilerplate)"
+      - "CMakeLists.txt:2 (find_package)"
+    mode: "program"
+    variable: "CCACHE_FOUND"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ccache"
+    candidate_directories:
+      - "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/"
+      - "/home/user/git/fpga/sipeedtangprimer20k-riscv/.venv/bin/"
+      - "/home/user/.codex/packages/app-server-daemon/releases/0.160.1-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/user/.local/bin/"
+      - "/home/user/.codex/tmp/arg0/codex-arg0H5b1Qa/"
+      - "/home/user/.codex/tmp/arg0/codex-arg0jMY7Il/"
+      - "/home/user/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/user/.codex/tmp/arg0/codex-arg03dSzeZ/"
+      - "/home/user/.codex/packages/standalone/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/linuxbrew/.linuxbrew/bin/"
+      - "/home/linuxbrew/.linuxbrew/sbin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+    searched_directories:
+      - "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/ccache"
+      - "/home/user/git/fpga/sipeedtangprimer20k-riscv/.venv/bin/ccache"
+      - "/home/user/.codex/packages/app-server-daemon/releases/0.160.1-x86_64-unknown-linux-musl/codex-path/ccache"
+      - "/home/user/.local/bin/ccache"
+      - "/home/user/.codex/tmp/arg0/codex-arg0H5b1Qa/ccache"
+      - "/home/user/.codex/tmp/arg0/codex-arg0jMY7Il/ccache"
+      - "/home/user/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/ccache"
+      - "/home/user/.codex/tmp/arg0/codex-arg03dSzeZ/ccache"
+      - "/home/user/.codex/packages/standalone/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/ccache"
+      - "/home/linuxbrew/.linuxbrew/bin/ccache"
+      - "/home/linuxbrew/.linuxbrew/sbin/ccache"
+      - "/usr/local/sbin/ccache"
+      - "/usr/local/bin/ccache"
+      - "/usr/sbin/ccache"
+    found: "/usr/bin/ccache"
+    search_context:
+      ENV{PATH}:
+        - "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin"
+        - "/home/user/git/fpga/sipeedtangprimer20k-riscv/.venv/bin"
+        - "/home/user/.codex/packages/app-server-daemon/releases/0.160.1-x86_64-unknown-linux-musl/codex-path"
+        - "/home/user/.local/bin"
+        - "/home/user/.codex/tmp/arg0/codex-arg0H5b1Qa"
+        - "/home/user/.codex/packages/app-server-daemon/releases/0.160.1-x86_64-unknown-linux-musl/codex-path"
+        - "/home/user/.codex/tmp/arg0/codex-arg0jMY7Il"
+        - "/home/user/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/user/.codex/tmp/arg0/codex-arg03dSzeZ"
+        - "/home/user/.codex/packages/standalone/releases/0.160.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/user/.local/bin"
+        - "/home/user/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "CMakeLists.txt:2 (find_package)"
+    name: "Zephyr"
+    configs:
+      -
+        filename: "ZephyrConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "zephyr-config.cmake"
+        kind: "cmake"
+    version_request:
+      exact: false
+    settings:
+      required: "required_explicit"
+      quiet: false
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      hints:
+        - "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr"
+      names:
+        - "Zephyr"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224342.836696Z/zephyr/build-peripherals/CMakeFiles/pkgRedirects/ZephyrConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224342.836696Z/zephyr/build-peripherals/CMakeFiles/pkgRedirects/zephyr-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/ZephyrConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/zephyr-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/cmake/ZephyrConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/cmake/zephyr-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/share/zephyrunittest-package/ZephyrConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/share/zephyrunittest-package/zephyr-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/share/zephyr-package/ZephyrConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/share/zephyr-package/zephyr-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/share/zephyrunittest-package/cmake/ZephyrConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/share/zephyrunittest-package/cmake/zephyr-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found:
+      path: "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake"
+      mode: "config"
+      version: "4.4.1"
+    search_context:
+      ENV{PATH}:
+        - "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin"
+        - "/home/user/git/fpga/sipeedtangprimer20k-riscv/.venv/bin"
+        - "/home/user/.codex/packages/app-server-daemon/releases/0.160.1-x86_64-unknown-linux-musl/codex-path"
+        - "/home/user/.local/bin"
+        - "/home/user/.codex/tmp/arg0/codex-arg0H5b1Qa"
+        - "/home/user/.codex/packages/app-server-daemon/releases/0.160.1-x86_64-unknown-linux-musl/codex-path"
+        - "/home/user/.codex/tmp/arg0/codex-arg0jMY7Il"
+        - "/home/user/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/user/.codex/tmp/arg0/codex-arg03dSzeZ"
+        - "/home/user/.codex/packages/standalone/releases/0.160.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin"
+        - "/home/user/.local/bin"
+        - "/home/user/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+...

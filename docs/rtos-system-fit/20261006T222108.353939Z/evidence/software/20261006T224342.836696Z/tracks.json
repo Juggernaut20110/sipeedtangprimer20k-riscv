@@ -1,0 +1,225 @@
+{
+  "baremetal": {
+    "artifacts": {
+      "application.bin": {
+        "bytes": 10904,
+        "path": "build/rtos-system-fit/software/20261006T224342.836696Z/baremetal/application.bin",
+        "present": true,
+        "sha256": "44954b8c79ae1debce970f63c60c44423b7a519d427d4ce9eb8c7000eaa0cb2d"
+      },
+      "application.elf": {
+        "bytes": 262336,
+        "path": "build/rtos-system-fit/software/20261006T224342.836696Z/baremetal/application.elf",
+        "present": true,
+        "sha256": "4be02fe10ea5061f2be9a2dd513a16a89ce4a1b4773aa3e38238a62450800c79"
+      },
+      "application.elf.map": {
+        "bytes": 175207,
+        "path": "build/rtos-system-fit/software/20261006T224342.836696Z/baremetal/application.elf.map",
+        "present": true,
+        "sha256": "18450a029c8f51d34eba799fdddf3848432793f4d173782bc9a8f4f2ea099c32"
+      },
+      "compiler-flags.txt": {
+        "bytes": 986,
+        "path": "build/rtos-system-fit/software/20261006T224342.836696Z/baremetal/compiler-flags.txt",
+        "present": true,
+        "sha256": "e1133843f48e326348cae32568f894a8d523a8aecf8f5d8b3663a70ab974dc6f"
+      }
+    },
+    "entry_address": 1073741824,
+    "isa_audit": "RV32IM/ILP32; no A/C/F/D extensions declared",
+    "main_ram_bytes_used": 11848,
+    "peripheral_link_symbols": [
+      "sdcard_read",
+      "sdcard_write",
+      "udp_start",
+      "udp_service",
+      "udp_send"
+    ],
+    "probe_is_link_only": true,
+    "riscv_attributes": [
+      "Tag_RISCV_arch: \"rv32i2p0_m2p0_zicsr2p0_zifencei2p0_zmmul1p0\""
+    ],
+    "runtime_invocation": "none",
+    "sections": {
+      ".bss": {
+        "address": 1073752728,
+        "bytes": 944
+      },
+      ".data": {
+        "address": 1073752704,
+        "bytes": 24
+      },
+      ".debug_abbrev": {
+        "address": 0,
+        "bytes": 7769
+      },
+      ".debug_aranges": {
+        "address": 0,
+        "bytes": 728
+      },
+      ".debug_frame": {
+        "address": 0,
+        "bytes": 1524
+      },
+      ".debug_info": {
+        "address": 0,
+        "bytes": 35745
+      },
+      ".debug_line": {
+        "address": 0,
+        "bytes": 38563
+      },
+      ".debug_line_str": {
+        "address": 0,
+        "bytes": 6679
+      },
+      ".debug_loclists": {
+        "address": 0,
+        "bytes": 17468
+      },
+      ".debug_macro": {
+        "address": 0,
+        "bytes": 36752
+      },
+      ".debug_rnglists": {
+        "address": 0,
+        "bytes": 2566
+      },
+      ".debug_str": {
+        "address": 0,
+        "bytes": 89950
+      },
+      ".fini_array": {
+        "address": 1073752704,
+        "bytes": 0
+      },
+      ".init_array": {
+        "address": 1073752704,
+        "bytes": 0
+      },
+      ".preinit_array": {
+        "address": 1073752704,
+        "bytes": 0
+      },
+      ".riscv.attributes": {
+        "address": 0,
+        "bytes": 67
+      },
+      ".rodata": {
+        "address": 1073752300,
+        "bytes": 404
+      },
+      ".text": {
+        "address": 1073741824,
+        "bytes": 10476
+      }
+    },
+    "source_files": {
+      ".deps/litex/litex/soc/cores/cpu/vexriscv/crt0.S": "17905a8c510b8ee55786045f1d39a09beead6f10212dd6171eeaadbc63d5b865",
+      ".deps/litex/litex/soc/software/libliteeth/udp.c": "4f1276fae75a79908d034263310e187034119a27f36afd3e954c9e557b8ef9d3",
+      ".deps/litex/litex/soc/software/liblitesdcard/sdcard.c": "4a2e92c370d0891f86d2a610d926fbd525876f85c0fa8126342d84b854016cba",
+      "firmware/rtos_system_fit/baremetal/main.c": "7aec31ff6e4e15b72d66b736dbc90d3b7d7afbe5be864c5e2d1c30a2ce13e429",
+      "firmware/rtos_system_fit/baremetal/peripheral_link_probe.c": "bfe1344e743387a08356e946a0b61e5cc9698ee0cb6ea3dc5b13fa696927fcff"
+    },
+    "status": "passed",
+    "summary": "baremetal cross-compiled for the selected routed image.",
+    "symbol_count": 120,
+    "task_stack_budget_bytes": 0
+  },
+  "freertos": {
+    "output_dir": "build/rtos-system-fit/software/20261006T224342.836696Z/freertos",
+    "status": "compile_failed",
+    "summary": "command exited 1: /home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-gcc\n/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include/system.h:11:68: warning: unused parameter 'size' [-Wunused-parameter]\n   11 | static inline void clean_cpu_dcache_range(void *start_addr, size_t size)\n      |                                                             ~~~~~~~^~~~\n/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include/system.h: In function 'flush_cpu_dcache_range':\n/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include/system.h:18:49: warning: unused parameter 'start_addr' [-Wunused-parameter]\n   18 | static inline void flush_cpu_dcache_range(void *start_addr, size_t size)\n      |                                           ~~~~~~^~~~~~~~~~\n/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include/system.h:18:68: warning: unused parameter 'size' [-Wunused-parameter]\n   18 | static inline void flush_cpu_dcache_range(void *start_addr, size_t size)\n      |                                                             ~~~~~~~^~~~\n/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include/system.h: In function 'invd_cpu_dcache_range':\n/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include/system.h:25:48: warning: unused parameter 'start_addr' [-Wunused-parameter]\n   25 | static inline void invd_cpu_dcache_range(void *start_addr, size_t size)\n      |                                          ~~~~~~^~~~~~~~~~\n/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include/system.h:25:67: warning: unused parameter 'size' [-Wunused-parameter]\n   25 | static inline void invd_cpu_dcache_range(void *start_addr, size_t size)\n      |                                                            ~~~~~~~^~~~\n/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/rtos_system_fit/freertos/main.c: In function 'vPortSetupTimerInterrupt':\n/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/rtos_system_fit/freertos/main.c:55:9: error: implicit declaration of function 'irq_setmask' [-Wimplicit-function-declaration]\n   55 |         irq_setmask(1u << TIMER0_INTERRUPT);\n      |         ^~~~~~~~~~~\n/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/rtos_system_fit/freertos/main.c: In function 'freertos_risc_v_application_interrupt_handler':\n/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/rtos_system_fit/freertos/main.c:76:19: error: implicit declaration of function 'irq_pending' [-Wimplicit-function-declaration]\n   76 |         pending = irq_pending() & irq_getmask();\n      |                   ^~~~~~~~~~~\n/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/rtos_system_fit/freertos/main.c:76:35: error: implicit declaration of function 'irq_getmask' [-Wimplicit-function-declaration]\n   76 |         pending = irq_pending() & irq_getmask();\n      |                                   ^~~~~~~~~~~"
+  },
+  "zephyr_kernel": {
+    "design_audit": {
+      "cpu_dcache_bytes": 0,
+      "cpu_icache_bytes": 2048,
+      "dma_ordering_patch": {
+        "path": "patches/zephyr-litex-riscv-dma-ordering.patch",
+        "sha256": "d43f5f19ec87979c774d67108b568a4072016667859f8641090826bdc9446e57",
+        "source_tree_diff_sha256": null,
+        "state": "already_applied"
+      },
+      "ethernet": {
+        "interface": "RMII",
+        "phy_address": 0,
+        "rx_slots": 1,
+        "slot_bytes": 2048,
+        "tx_slots": 1
+      },
+      "interrupts": {
+        "ethmac": 2,
+        "sdcard": 3,
+        "timer0": 1,
+        "uart": 0
+      },
+      "isa": "rv32im/ILP32; DTS base advertises rv32i + m + zicsr + zifencei",
+      "l2_bytes": 0,
+      "main_ram": {
+        "base": 1073741824,
+        "bytes": 134217728
+      },
+      "optional_gpio_disabled": true,
+      "reference_entropy_node_removed": true,
+      "required_csr_registers_present": true,
+      "sd_bus_width": 4,
+      "sd_card_detect_register": "sdcard_phy_card_detect",
+      "sd_dma_directions": [
+        "card-to-memory",
+        "memory-to-card"
+      ]
+    },
+    "logs": [
+      "build/rtos-system-fit/software/20261006T224342.836696Z/zephyr/configure-kernel.log"
+    ],
+    "status": "compile_failed",
+    "summary": "command exited 1: cmake\n$ cmake -S /home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/rtos_system_fit/zephyr/app -B /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224342.836696Z/zephyr/build-kernel -G Unix Makefiles -DBOARD=litex_vexriscv -DCMAKE_MAKE_PROGRAM=/usr/bin/make -DZEPHYR_BASE=/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr -DZEPHYR_TOOLCHAIN_VARIANT=cross-compile -DCROSS_COMPILE=/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf- -DSYSROOT_DIR=/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../riscv-none-elf -DPython3_EXECUTABLE=/home/user/git/fpga/sipeedtangprimer20k-riscv/.venv/bin/python -DDTC_OVERLAY_FILE=/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224342.836696Z/zephyr/generated/csr.overlay.dts -DOVERLAY_CONFIG=/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224342.836696Z/zephyr/generated/csr.overlay.conf\nLoading Zephyr default modules (Zephyr base (cached)).\n-- Application: /home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/rtos_system_fit/zephyr/app\n-- CMake version: 4.2.3\n-- Found Python3: /home/user/git/fpga/sipeedtangprimer20k-riscv/.venv/bin/python (found suitable version \"3.12.14\", minimum required is \"3.12\") found components: Interpreter\n-- Cache files will be written to: /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/.cache\n-- Zephyr version: 4.4.1 (/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr)\nCMake Error at /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/cmake/modules/boards.cmake:191 (message):\n  Error finding board: litex_vexriscv\n\n  Error message: Traceback (most recent call last):\n\n    File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/scripts/list_boards.py\", line 13, in <module>\n      import jsonschema\n\n  ModuleNotFoundError: No module named 'jsonschema'\n\nCall Stack (most recent call first):\n  /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/cmake/modules/zephyr_default.cmake:129 (include)\n  /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)\n  /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:97 (include_boilerplate)\n  CMakeLists.txt:2 (find_package)\n\n\n-- Configuring incomplete, errors occurred!"
+  },
+  "zephyr_peripherals": {
+    "design_audit": {
+      "cpu_dcache_bytes": 0,
+      "cpu_icache_bytes": 2048,
+      "dma_ordering_patch": {
+        "path": "patches/zephyr-litex-riscv-dma-ordering.patch",
+        "sha256": "d43f5f19ec87979c774d67108b568a4072016667859f8641090826bdc9446e57",
+        "source_tree_diff_sha256": null,
+        "state": "already_applied"
+      },
+      "ethernet": {
+        "interface": "RMII",
+        "phy_address": 0,
+        "rx_slots": 1,
+        "slot_bytes": 2048,
+        "tx_slots": 1
+      },
+      "interrupts": {
+        "ethmac": 2,
+        "sdcard": 3,
+        "timer0": 1,
+        "uart": 0
+      },
+      "isa": "rv32im/ILP32; DTS base advertises rv32i + m + zicsr + zifencei",
+      "l2_bytes": 0,
+      "main_ram": {
+        "base": 1073741824,
+        "bytes": 134217728
+      },
+      "optional_gpio_disabled": true,
+      "reference_entropy_node_removed": true,
+      "required_csr_registers_present": true,
+      "sd_bus_width": 4,
+      "sd_card_detect_register": "sdcard_phy_card_detect",
+      "sd_dma_directions": [
+        "card-to-memory",
+        "memory-to-card"
+      ]
+    },
+    "logs": [
+      "build/rtos-system-fit/software/20261006T224342.836696Z/zephyr/configure-peripherals.log"
+    ],
+    "status": "compile_failed",
+    "summary": "command exited 1: cmake\n$ cmake -S /home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/rtos_system_fit/zephyr/app -B /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224342.836696Z/zephyr/build-peripherals -G Unix Makefiles -DBOARD=litex_vexriscv -DCMAKE_MAKE_PROGRAM=/usr/bin/make -DZEPHYR_BASE=/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr -DZEPHYR_TOOLCHAIN_VARIANT=cross-compile -DCROSS_COMPILE=/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf- -DSYSROOT_DIR=/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../riscv-none-elf -DPython3_EXECUTABLE=/home/user/git/fpga/sipeedtangprimer20k-riscv/.venv/bin/python -DDTC_OVERLAY_FILE=/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224342.836696Z/zephyr/generated/csr.overlay.dts -DOVERLAY_CONFIG=/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224342.836696Z/zephyr/generated/csr.overlay.conf;/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224342.836696Z/zephyr/generated/peripherals.conf\nLoading Zephyr default modules (Zephyr base (cached)).\n-- Application: /home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/rtos_system_fit/zephyr/app\n-- CMake version: 4.2.3\n-- Found Python3: /home/user/git/fpga/sipeedtangprimer20k-riscv/.venv/bin/python (found suitable version \"3.12.14\", minimum required is \"3.12\") found components: Interpreter\n-- Cache files will be written to: /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/.cache\n-- Zephyr version: 4.4.1 (/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr)\nCMake Error at /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/cmake/modules/boards.cmake:191 (message):\n  Error finding board: litex_vexriscv\n\n  Error message: Traceback (most recent call last):\n\n    File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/scripts/list_boards.py\", line 13, in <module>\n      import jsonschema\n\n  ModuleNotFoundError: No module named 'jsonschema'\n\nCall Stack (most recent call first):\n  /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/cmake/modules/zephyr_default.cmake:129 (include)\n  /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)\n  /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:97 (include_boilerplate)\n  CMakeLists.txt:2 (find_package)\n\n\n-- Configuring incomplete, errors occurred!"
+  }
+}

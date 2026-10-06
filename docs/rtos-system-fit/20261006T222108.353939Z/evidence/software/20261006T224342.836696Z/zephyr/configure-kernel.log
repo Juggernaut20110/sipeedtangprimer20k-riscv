@@ -1,0 +1,25 @@
+$ cmake -S /home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/rtos_system_fit/zephyr/app -B /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224342.836696Z/zephyr/build-kernel -G Unix Makefiles -DBOARD=litex_vexriscv -DCMAKE_MAKE_PROGRAM=/usr/bin/make -DZEPHYR_BASE=/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr -DZEPHYR_TOOLCHAIN_VARIANT=cross-compile -DCROSS_COMPILE=/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf- -DSYSROOT_DIR=/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../riscv-none-elf -DPython3_EXECUTABLE=/home/user/git/fpga/sipeedtangprimer20k-riscv/.venv/bin/python -DDTC_OVERLAY_FILE=/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224342.836696Z/zephyr/generated/csr.overlay.dts -DOVERLAY_CONFIG=/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224342.836696Z/zephyr/generated/csr.overlay.conf
+Loading Zephyr default modules (Zephyr base (cached)).
+-- Application: /home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/rtos_system_fit/zephyr/app
+-- CMake version: 4.2.3
+-- Found Python3: /home/user/git/fpga/sipeedtangprimer20k-riscv/.venv/bin/python (found suitable version "3.12.14", minimum required is "3.12") found components: Interpreter
+-- Cache files will be written to: /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/.cache
+-- Zephyr version: 4.4.1 (/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr)
+CMake Error at /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/cmake/modules/boards.cmake:191 (message):
+  Error finding board: litex_vexriscv
+
+  Error message: Traceback (most recent call last):
+
+    File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/scripts/list_boards.py", line 13, in <module>
+      import jsonschema
+
+  ModuleNotFoundError: No module named 'jsonschema'
+
+Call Stack (most recent call first):
+  /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/cmake/modules/zephyr_default.cmake:129 (include)
+  /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)
+  /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:97 (include_boilerplate)
+  CMakeLists.txt:2 (find_package)
+
+
+-- Configuring incomplete, errors occurred!

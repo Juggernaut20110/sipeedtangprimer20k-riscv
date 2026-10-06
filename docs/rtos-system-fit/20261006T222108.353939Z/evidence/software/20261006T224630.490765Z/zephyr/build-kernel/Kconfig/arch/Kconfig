@@ -1,0 +1,12 @@
+# Load Zephyr Arch Kconfig descriptions.
+osource "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/arch/rx/Kconfig"
+osource "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/arch/x86/Kconfig"
+osource "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/arch/xtensa/Kconfig"
+osource "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/arch/sparc/Kconfig"
+osource "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/arch/riscv/Kconfig"
+osource "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/arch/posix/Kconfig"
+osource "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/arch/openrisc/Kconfig"
+osource "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/arch/mips/Kconfig"
+osource "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/arch/arm64/Kconfig"
+osource "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/arch/arm/Kconfig"
+osource "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/arch/arc/Kconfig"

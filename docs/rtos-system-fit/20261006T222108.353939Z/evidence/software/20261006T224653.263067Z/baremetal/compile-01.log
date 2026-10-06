@@ -1,0 +1,24 @@
+$ /home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-gcc -Os -g3 -march=rv32i2p0_m -mabi=ilp32 -D__vexriscv__ -ffunction-sections -fdata-sections -fno-common -fno-pic -fno-builtin -fno-stack-protector -no-pie -Wall -Wextra -I /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data/libc/include -I /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libbase -I /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include -I /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software -I /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T222108.353939Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/include -I /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T222108.353939Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libc -I /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/cores/cpu/vexriscv -c /home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/rtos_system_fit/baremetal/main.c -o /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224653.263067Z/baremetal/main.o
+In file included from /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T222108.353939Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/include/generated/csr.h:13,
+                 from /home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/rtos_system_fit/baremetal/main.c:1:
+/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include/system.h: In function 'clean_cpu_dcache_range':
+/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include/system.h:11:49: warning: unused parameter 'start_addr' [-Wunused-parameter]
+   11 | static inline void clean_cpu_dcache_range(void *start_addr, size_t size)
+      |                                           ~~~~~~^~~~~~~~~~
+/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include/system.h:11:68: warning: unused parameter 'size' [-Wunused-parameter]
+   11 | static inline void clean_cpu_dcache_range(void *start_addr, size_t size)
+      |                                                             ~~~~~~~^~~~
+/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include/system.h: In function 'flush_cpu_dcache_range':
+/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include/system.h:18:49: warning: unused parameter 'start_addr' [-Wunused-parameter]
+   18 | static inline void flush_cpu_dcache_range(void *start_addr, size_t size)
+      |                                           ~~~~~~^~~~~~~~~~
+/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include/system.h:18:68: warning: unused parameter 'size' [-Wunused-parameter]
+   18 | static inline void flush_cpu_dcache_range(void *start_addr, size_t size)
+      |                                                             ~~~~~~~^~~~
+/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include/system.h: In function 'invd_cpu_dcache_range':
+/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include/system.h:25:48: warning: unused parameter 'start_addr' [-Wunused-parameter]
+   25 | static inline void invd_cpu_dcache_range(void *start_addr, size_t size)
+      |                                          ~~~~~~^~~~~~~~~~
+/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/include/system.h:25:67: warning: unused parameter 'size' [-Wunused-parameter]
+   25 | static inline void invd_cpu_dcache_range(void *start_addr, size_t size)
+      |                                                            ~~~~~~~^~~~

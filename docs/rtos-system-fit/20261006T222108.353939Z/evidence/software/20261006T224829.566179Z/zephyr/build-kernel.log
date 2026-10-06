@@ -1,0 +1,20 @@
+$ cmake --build /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224829.566179Z/zephyr/build-kernel --parallel 2
+[  1%] Generating misc/generated/syscalls.json, misc/generated/struct_tags.json
+[  2%] Generating misc/generated/syscalls.json, misc/generated/struct_tags.json
+[  2%] Generating include/generated/zephyr/syscall_dispatch.c, include/generated/zephyr/syscall_exports_llext.c, syscall_weakdefs_llext.c, include/generated/zephyr/syscall_list.h
+[  2%] Generating include/generated/device-api-sections.ld, include/generated/device-api-sections.cmake
+[  3%] Built target device_api_ld_target
+[  4%] Built target syscall_list_h_target
+[  5%] Generating include/generated/zephyr/driver-validation.h
+[  5%] Generating include/generated/zephyr/kobj-types-enum.h, include/generated/zephyr/otype-to-str.h, include/generated/zephyr/otype-to-size.h
+[  7%] Built target driver_validation_h_target
+[  8%] Generating include/generated/zephyr/version.h
+-- Zephyr version: 4.4.1 (/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr), build: v4.4.1
+[ 10%] Built target version_h
+[ 10%] Built target kobj_types_h_target
+[ 11%] Building C object zephyr/lib/heap/CMakeFiles/heap_constants.dir/heap_constants.c.obj
+[ 11%] Built target build_info_yaml_saved
+ccache: error: Read-only file system
+make[2]: *** [zephyr/lib/heap/CMakeFiles/heap_constants.dir/build.make:79: zephyr/lib/heap/CMakeFiles/heap_constants.dir/heap_constants.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:3178: zephyr/lib/heap/CMakeFiles/heap_constants.dir/all] Error 2
+make: *** [Makefile:91: all] Error 2

@@ -1,0 +1,65 @@
+$ cmake -S /home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/rtos_system_fit/zephyr/app -B /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/zephyr/build-peripherals -G Unix Makefiles -DBOARD=litex_vexriscv -DCMAKE_MAKE_PROGRAM=/usr/bin/make -DDTC=/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/tools/dtc-1.7.2/usr/bin/dtc -DZEPHYR_BASE=/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr -DZEPHYR_TOOLCHAIN_VARIANT=cross-compile -DCROSS_COMPILE=/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf- -DSYSROOT_DIR=/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../riscv-none-elf -DPython3_EXECUTABLE=/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/venv/bin/python -DDTC_OVERLAY_FILE=/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/zephyr/generated/csr.overlay.dts -DOVERLAY_CONFIG=/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/zephyr/generated/csr.overlay.conf;/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/zephyr/generated/peripherals.conf
+Loading Zephyr default modules (Zephyr base (cached)).
+-- Application: /home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/rtos_system_fit/zephyr/app
+-- CMake version: 4.2.3
+-- Found Python3: /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/venv/bin/python (found suitable version "3.12.14", minimum required is "3.12") found components: Interpreter
+-- Cache files will be written to: /home/user/.cache/zephyr
+-- Zephyr version: 4.4.1 (/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr)
+-- Found west (found suitable version "1.5.0", minimum required is "0.14.0")
+-- Board: litex_vexriscv, qualifiers: litex_vexriscv
+-- Found toolchain: cross-compile (/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-)
+-- Found Dtc: /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/tools/dtc-1.7.2/usr/bin/dtc (found suitable version "1.7.2", minimum required is "1.4.6")
+-- Found BOARD.dts: /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/boards/enjoydigital/litex_vexriscv/litex_vexriscv.dts
+-- Found devicetree overlay: /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/zephyr/generated/csr.overlay.dts
+unit address and first address in 'reg' (0xf0000000) don't match for /soc/soc_controller@e0000000
+unit address and first address in 'reg' (0xf0004000) don't match for /soc/serial@e0001800
+unit address and first address in 'reg' (0xf0003800) don't match for /soc/timer@e0002800
+unit address and first address in 'reg' (0xf0001804) don't match for /soc/mdio@e0008000
+unit address and first address in 'reg' (0x0) don't match for /soc/mdio@e0008000/ethernet-phy@1
+unit address and first address in 'reg' (0xf0001000) don't match for /soc/ethernet@e0009800
+unit address and first address in 'reg' (0xf0002800) don't match for /soc/sdhc@e000e800
+-- Generated zephyr.dts: /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/zephyr/build-peripherals/zephyr/zephyr.dts
+-- Generated pickled edt: /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/zephyr/build-peripherals/zephyr/edt.pickle
+-- Generated devicetree_generated.h: /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/zephyr/build-peripherals/zephyr/include/generated/zephyr/devicetree_generated.h
+Parsing /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/Kconfig
+Loaded configuration '/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/boards/enjoydigital/litex_vexriscv/litex_vexriscv_defconfig'
+Merged configuration '/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/rtos_system_fit/zephyr/app/prj.conf'
+Merged configuration '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/zephyr/generated/csr.overlay.conf'
+Merged configuration '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/zephyr/generated/peripherals.conf'
+Configuration saved to '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/zephyr/build-peripherals/zephyr/.config'
+Kconfig header saved to '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/zephyr/build-peripherals/zephyr/include/generated/zephyr/autoconf.h'
+-- Found GnuLd: /home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/riscv-none-elf/bin/ld.bfd (found version "2.45")
+-- The C compiler identification is GNU 15.2.0
+-- The CXX compiler identification is GNU 15.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: /home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-gcc
+CMake Warning at /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/subsys/random/CMakeLists.txt:12 (message):
+
+
+      Warning: CONFIG_TIMER_RANDOM_GENERATOR and CONFIG_TEST_CSPRNG_GENERATOR are
+      not truly random generators. This capability is not secure and it is
+      provided for testing purposes only. Use it carefully.
+
+
+-- Found gen_kobject_list: /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/scripts/build/gen_kobject_list.py
+CMake Warning at /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/CMakeLists.txt:1081 (message):
+  No SOURCES given to Zephyr library: drivers__clock_control
+
+  Excluding target from build.
+
+
+CMake Warning at /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/CMakeLists.txt:1081 (message):
+  No SOURCES given to Zephyr library: drivers__entropy
+
+  Excluding target from build.
+
+
+CMake Warning at /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/CMakeLists.txt:1081 (message):
+  No SOURCES given to Zephyr library: drivers__gpio
+
+  Excluding target from build.
+
+
+-- Configuring done (5.5s)
+-- Generating done (0.3s)
+-- Build files have been written to: /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/zephyr/build-peripherals

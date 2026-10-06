@@ -1,0 +1,2 @@
+ccache /home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-ar qc libdrivers__ethernet.a CMakeFiles/drivers__ethernet.dir/mdio/mdio_litex_liteeth.c.obj CMakeFiles/drivers__ethernet.dir/phy/phy_mii.c.obj CMakeFiles/drivers__ethernet.dir/eth_litex_liteeth.c.obj
+ccache /home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-ranlib libdrivers__ethernet.a

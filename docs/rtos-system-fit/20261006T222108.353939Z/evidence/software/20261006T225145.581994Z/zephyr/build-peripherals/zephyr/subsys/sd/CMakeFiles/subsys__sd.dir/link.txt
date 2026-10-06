@@ -1,0 +1,2 @@
+ccache /home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-ar qc libsubsys__sd.a CMakeFiles/subsys__sd.dir/sd.c.obj CMakeFiles/subsys__sd.dir/sd_ops.c.obj CMakeFiles/subsys__sd.dir/sdmmc.c.obj
+ccache /home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-ranlib libsubsys__sd.a

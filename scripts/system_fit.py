@@ -275,15 +275,16 @@ def audit_cpu_artifacts(rtl_path, yaml_path, expected_i_cache, expected_d_cache)
     }
 
 
-def board_pin_assignments(*, native_sd=True, ethernet="rmii"):
+def board_pin_assignments(*, native_sd=True, ethernet="rmii", include_gpio=True):
     """Return active board pin assignments and reject duplicate physical pins."""
     from litex.build.generic_platform import Pins
     from litex_boards.platforms.sipeed_tang_primer_20k import Platform
 
     platform = Platform("standard")
     active = {("clk27", 0), ("serial", 0), ("ddram", 0)}
-    active.update(("led", index) for index in range(6))
-    active.update(("btn_n", index) for index in range(4))
+    if include_gpio:
+        active.update(("led", index) for index in range(6))
+        active.update(("btn_n", index) for index in range(4))
     if native_sd:
         active.add(("sdcard", 0))
     if ethernet == "rmii":

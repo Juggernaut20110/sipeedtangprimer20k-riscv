@@ -1,0 +1,49 @@
+cmake:
+  application:
+    configuration-dir: '/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/rtos_system_fit/zephyr/app'
+    source-dir: '/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/rtos_system_fit/zephyr/app'
+  board:
+    name: 'litex_vexriscv'
+    path:
+     - '/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/boards/enjoydigital/litex_vexriscv'
+    qualifiers: 'litex_vexriscv'
+    revision: ''
+  devicetree:
+    bindings-dirs:
+     - '/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/dts/bindings'
+    files:
+     - '/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/boards/enjoydigital/litex_vexriscv/litex_vexriscv.dts'
+     - '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224900.204514Z/zephyr/generated/csr.overlay.dts'
+    include-dirs:
+     - '/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/include'
+     - '/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/include/zephyr'
+     - '/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/dts/common'
+     - '/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/dts/vendor'
+     - '/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/dts/rx'
+     - '/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/dts/x86'
+     - '/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/dts/xtensa'
+     - '/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/dts/sparc'
+     - '/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/dts/riscv'
+     - '/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/dts/posix'
+     - '/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/dts/arm64'
+     - '/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/dts/arm'
+     - '/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/dts/arc'
+     - '/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/dts'
+    user-files:
+     - '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224900.204514Z/zephyr/generated/csr.overlay.dts'
+  kconfig:
+    extra-user-files:
+     - '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224900.204514Z/zephyr/generated/csr.overlay.conf'
+    files:
+     - '/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/boards/enjoydigital/litex_vexriscv/litex_vexriscv_defconfig'
+     - '/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/rtos_system_fit/zephyr/app/prj.conf'
+     - '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224900.204514Z/zephyr/generated/csr.overlay.conf'
+    user-files:
+     - '/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/rtos_system_fit/zephyr/app/prj.conf'
+  toolchain:
+    name: 'cross-compile'
+    path: ''
+  zephyr:
+    version: '4.4.1'
+    zephyr-base: '/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr'
+version: '0.1.0'

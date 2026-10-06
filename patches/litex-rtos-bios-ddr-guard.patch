@@ -1,0 +1,23 @@
+--- a/boot.c
++++ b/boot.c
+@@ -49,2 +49,4 @@
+ extern void boot_helper(unsigned long r1, unsigned long r2, unsigned long r3, unsigned long addr);
+ 
++extern int rtos_bios_ddr_ready;
++
+@@ -51,3 +53,8 @@
+ void __attribute__((noreturn)) boot(unsigned long r1, unsigned long r2, unsigned long r3, unsigned long addr)
+ {
++	if (!rtos_bios_ddr_ready) {
++		printf("DDR is not ready; refusing application handoff\n");
++		for (;;)
++			(void)serialboot();
++	}
+ 	printf("Executing booted program at 0x%08lx\n\n", addr);
+@@ -142,2 +149,6 @@
+ #endif
++	if (!rtos_bios_ddr_ready) {
++		printf("DDR is not ready; refusing DDR load at 0x%08lx\n", addr);
++		return 0;
++	}
+ #ifdef MAIN_RAM_BASE

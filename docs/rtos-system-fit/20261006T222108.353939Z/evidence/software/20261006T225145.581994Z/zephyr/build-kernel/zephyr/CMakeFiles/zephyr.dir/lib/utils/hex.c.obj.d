@@ -1,0 +1,33 @@
+zephyr/CMakeFiles/zephyr.dir/lib/utils/hex.c.obj: \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/lib/utils/hex.c \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T225145.581994Z/zephyr/build-kernel/zephyr/include/generated/zephyr/autoconf.h \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/include/zephyr/toolchain/zephyr_stdint.h \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/lib/gcc/riscv-none-elf/15.2.0/include/stddef.h \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/include/zephyr/types.h \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/lib/libc/minimal/include/stdint.h \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/lib/libc/minimal/include/errno.h \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/include/zephyr/sys/errno_private.h \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/include/zephyr/toolchain.h \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/include/zephyr/toolchain/gcc.h \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/include/zephyr/toolchain/common.h \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/lib/libc/minimal/include/stdbool.h \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T225145.581994Z/zephyr/build-kernel/zephyr/include/generated/zephyr/syscalls/errno_private.h \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/lib/gcc/riscv-none-elf/15.2.0/include/stdarg.h \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T225145.581994Z/zephyr/build-kernel/zephyr/include/generated/zephyr/syscall_list.h \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/include/zephyr/syscall.h \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/include/zephyr/arch/syscall.h \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/include/zephyr/arch/riscv/syscall.h \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/include/zephyr/linker/sections.h \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/include/zephyr/linker/section_tags.h \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/include/zephyr/sys/util.h \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/include/zephyr/sys/util_macro.h \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/include/zephyr/sys/util_internal.h \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/include/zephyr/sys/util_loops.h \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/include/zephyr/sys/util_listify.h \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/include/zephyr/sys/util_internal_is_eq.h \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/include/zephyr/sys/util_internal_util_inc.h \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/include/zephyr/sys/util_internal_util_dec.h \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/include/zephyr/sys/util_internal_util_x2.h \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/include/zephyr/sys/__assert.h \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/lib/libc/minimal/include/string.h \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/include/zephyr/sys/time_units.h

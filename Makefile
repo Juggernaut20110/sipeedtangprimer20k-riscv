@@ -1,4 +1,4 @@
-.PHONY: setup doctor build load run compare test benchmark-build benchmark-run benchmark-report ddr-test-build ddr-test-run ddr-test-report cpu-candidate-build cpu-candidate-run maxperf-build maxperf-run peripheral-build peripheral-run peripheral-report system-fit system-fit-check clean
+.PHONY: setup doctor build load run compare test benchmark-build benchmark-run benchmark-report ddr-test-build ddr-test-run ddr-test-report cpu-candidate-build cpu-candidate-run maxperf-build maxperf-run peripheral-build peripheral-run peripheral-report system-fit system-fit-check rtos-system-fit rtos-system-fit-check rtos-system-fit-software rtos-system-fit-setup clean
 
 setup:
 	python3 scripts/setup.py
@@ -65,6 +65,18 @@ system-fit:
 
 system-fit-check:
 	.venv/bin/python scripts/system_fit.py check
+
+rtos-system-fit:
+	.venv/bin/python scripts/rtos_system_fit.py run
+
+rtos-system-fit-check:
+	.venv/bin/python scripts/rtos_system_fit.py check
+
+rtos-system-fit-software:
+	.venv/bin/python scripts/rtos_software.py
+
+rtos-system-fit-setup:
+	.venv/bin/python scripts/setup_rtos_zephyr.py
 
 clean:
 	rm -rf build

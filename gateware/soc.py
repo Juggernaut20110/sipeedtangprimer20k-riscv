@@ -52,7 +52,8 @@ class ProjectSoC(sipeed_tang_primer_20k.BaseSoC):
                  cpu_variant=None, ddr_module=H5TQ1G63EFR, sdcard="none", ethernet="none",
                  l2_size=DDR_L2_SIZE, working_sram_size=None, ddr_diagnostics=True,
                  ethernet_rx_slots=ETH_RX_SLOTS, ethernet_tx_slots=ETH_TX_SLOTS,
-                 ddr_constraint_scope="",
+                 ddr_constraint_scope="", include_project_gpio=True,
+                 allow_custom_ddr_bios_size=False,
                  **kwargs):
         provisional_maxperf = (profile == "maxperf" and profile not in PROFILES
                                and cpu_rtl is not None
@@ -72,8 +73,12 @@ class ProjectSoC(sipeed_tang_primer_20k.BaseSoC):
             raise ValueError("the performance profile requires its selected generated VexRiscv RTL")
         if bios_size is None:
             bios_size = 24 * 1024 if profile in ("performance", "linux") and not ddr3 else 32 * 1024
-        if ddr3 and bios_size not in DDR_BIOS_SIZES:
-            raise ValueError(f"DDR3 BIOS size must be one of {DDR_BIOS_SIZES}")
+        if ddr3:
+            allowed_ddr_bios_sizes = DDR_BIOS_SIZES
+            if allow_custom_ddr_bios_size:
+                allowed_ddr_bios_sizes = tuple(sorted(set(DDR_BIOS_SIZES) | {16 * 1024, 24 * 1024}))
+            if bios_size not in allowed_ddr_bios_sizes:
+                raise ValueError(f"DDR3 BIOS size must be one of {allowed_ddr_bios_sizes}")
         if not ddr3 and bios_size != 32 * 1024:
             is_standard_cpu_candidate = (
                 profile in ("standard", "maxperf") and cpu_rtl is not None and bios_size == 24 * 1024
@@ -292,30 +297,31 @@ class ProjectSoC(sipeed_tang_primer_20k.BaseSoC):
         self.profile = profile
         self.memory = memory
         self.bios_size = bios_size
-        self.project_led_resource_order = LED_RESOURCES
-        self.project_led_logical_resource_order = LED_LOGICAL_RESOURCE_ORDER
-        self.project_button_resource_order = BUTTON_RESOURCES
+        self.project_led_resource_order = LED_RESOURCES if include_project_gpio else ()
+        self.project_led_logical_resource_order = LED_LOGICAL_RESOURCE_ORDER if include_project_gpio else ()
+        self.project_button_resource_order = BUTTON_RESOURCES if include_project_gpio else ()
 
-        # Request each platform resource explicitly, then map the reversed upstream
-        # pin order onto the board's printed LED0..LED5 logical bit order. Dock LEDs
-        # sink current, so invert outputs while keeping the CSR active-high.
-        led_resources = {i: self.platform.request("led", i) for i in LED_RESOURCES}
-        led_pads = Cat(*(led_resources[i] for i in LED_LOGICAL_RESOURCE_ORDER))
-        led_logical = Signal(len(LED_RESOURCES))
-        self.leds = GPIOOut(pads=led_logical, reset=0)
-        self.comb += led_pads.eq(~led_logical)
+        if include_project_gpio:
+            # Request each platform resource explicitly, then map the reversed upstream
+            # pin order onto the board's printed LED0..LED5 logical bit order. Dock LEDs
+            # sink current, so invert outputs while keeping the CSR active-high.
+            led_resources = {i: self.platform.request("led", i) for i in LED_RESOURCES}
+            led_pads = Cat(*(led_resources[i] for i in LED_LOGICAL_RESOURCE_ORDER))
+            led_logical = Signal(len(LED_RESOURCES))
+            self.leds = GPIOOut(pads=led_logical, reset=0)
+            self.comb += led_pads.eq(~led_logical)
 
-        # btn_n is active-low on the Dock. Inversion normalizes pressed to logical 1;
-        # GPIOIn applies LiteX's two-stage MultiReg synchronizer before the CSR.
-        button_pads_n = Cat(*(self.platform.request("btn_n", i) for i in BUTTON_RESOURCES))
-        button_pressed = Signal(len(BUTTON_RESOURCES))
-        self.comb += button_pressed.eq(~button_pads_n)
-        self.buttons = GPIOIn(pads=button_pressed)
+            # btn_n is active-low on the Dock. Inversion normalizes pressed to logical 1;
+            # GPIOIn applies LiteX's two-stage MultiReg synchronizer before the CSR.
+            button_pads_n = Cat(*(self.platform.request("btn_n", i) for i in BUTTON_RESOURCES))
+            button_pressed = Signal(len(BUTTON_RESOURCES))
+            self.comb += button_pressed.eq(~button_pads_n)
+            self.buttons = GPIOIn(pads=button_pressed)
 
         self.add_constant("PROJECT_PROFILE", profile)
         self.add_constant("PROJECT_MEMORY_MODE", memory)
-        self.add_constant("PROJECT_GPIO_LED_COUNT", len(LED_RESOURCES))
-        self.add_constant("PROJECT_GPIO_BUTTON_COUNT", len(BUTTON_RESOURCES))
+        self.add_constant("PROJECT_GPIO_LED_COUNT", len(LED_RESOURCES) if include_project_gpio else 0)
+        self.add_constant("PROJECT_GPIO_BUTTON_COUNT", len(BUTTON_RESOURCES) if include_project_gpio else 0)
         self.add_constant("PROJECT_SDCARD_SPI", int(sdcard == "spi"))
         self.add_constant("PROJECT_ETHERNET_RMII", int(ethernet == "rmii"))
 

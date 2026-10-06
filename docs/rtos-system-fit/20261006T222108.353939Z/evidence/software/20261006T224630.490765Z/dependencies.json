@@ -1,0 +1,19 @@
+{
+  "compiler": {
+    "mabi": "ilp32",
+    "march": "rv32i2p0_m",
+    "path": ".tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-gcc",
+    "target": "riscv-none-elf",
+    "version": "riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0"
+  },
+  "freertos_kernel": {
+    "commit": "3a22924e0a9ddbbc8b0758881c33b3422a5cc20d",
+    "expected_commit": "3a22924e0a9ddbbc8b0758881c33b3422a5cc20d",
+    "path": ".deps/rtos/FreeRTOS-Kernel"
+  },
+  "zephyr": {
+    "commit": "1f6485eca25431b5ff27ce9a754218c9e559bbbb",
+    "expected_commit": "1f6485eca25431b5ff27ce9a754218c9e559bbbb",
+    "path": ".deps/rtos/zephyr"
+  }
+}

@@ -1,0 +1,615 @@
+{
+  "attempt_dir": "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T221650.486565Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k",
+  "bios": {
+    "binary": "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T221650.486565Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/bios/bios.bin",
+    "binary_sha256": "fbc46ef7eec1b2143cd69c0faba26674de861786f37ded2858cee5e8ba90f454",
+    "bios_bin_bytes": 13540,
+    "console": "lite",
+    "elf": "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T221650.486565Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/bios/bios.elf",
+    "elf_sha256": "9a2d2b33b4fc1d3972862b904dd3cd85122bed242d1062664fa536e42a5fb5c6",
+    "implemented_rom_bytes": 16384,
+    "real_bios_compiled": true,
+    "requested_rom_bytes": 16384,
+    "rom_region_bytes": 16384,
+    "rom_reserved_bytes": 16384,
+    "sections": {
+      ".boot_sram": {
+        "address": 268435456,
+        "size": 0,
+        "type": "PROGBITS"
+      },
+      ".bss": {
+        "address": 268435480,
+        "size": 312,
+        "type": "NOBITS"
+      },
+      ".data": {
+        "address": 268435456,
+        "size": 24,
+        "type": "PROGBITS"
+      },
+      ".debug_abbrev": {
+        "address": 0,
+        "size": 7450,
+        "type": "PROGBITS"
+      },
+      ".debug_aranges": {
+        "address": 0,
+        "size": 488,
+        "type": "PROGBITS"
+      },
+      ".debug_info": {
+        "address": 0,
+        "size": 38110,
+        "type": "PROGBITS"
+      },
+      ".debug_line": {
+        "address": 0,
+        "size": 26658,
+        "type": "PROGBITS"
+      },
+      ".debug_line_str": {
+        "address": 0,
+        "size": 7992,
+        "type": "PROGBITS"
+      },
+      ".debug_loclists": {
+        "address": 0,
+        "size": 16170,
+        "type": "PROGBITS"
+      },
+      ".debug_macro": {
+        "address": 0,
+        "size": 32989,
+        "type": "PROGBITS"
+      },
+      ".debug_rnglists": {
+        "address": 0,
+        "size": 2052,
+        "type": "PROGBITS"
+      },
+      ".debug_str": {
+        "address": 0,
+        "size": 95486,
+        "type": "PROGBITS"
+      },
+      ".fini_array": {
+        "address": 13512,
+        "size": 0,
+        "type": "FINI_ARRAY"
+      },
+      ".init_array": {
+        "address": 13512,
+        "size": 0,
+        "type": "INIT_ARRAY"
+      },
+      ".preinit_array": {
+        "address": 13512,
+        "size": 0,
+        "type": "PREINIT_ARRAY"
+      },
+      ".riscv.attributes": {
+        "address": 0,
+        "size": 67,
+        "type": "RISCV_ATTRIBUTES"
+      },
+      ".rodata": {
+        "address": 10612,
+        "size": 2900,
+        "type": "PROGBITS"
+      },
+      ".shstrtab": {
+        "address": 0,
+        "size": 245,
+        "type": "STRTAB"
+      },
+      ".strtab": {
+        "address": 0,
+        "size": 1812,
+        "type": "STRTAB"
+      },
+      ".symtab": {
+        "address": 0,
+        "size": 10160,
+        "type": "SYMTAB"
+      },
+      ".text": {
+        "address": 0,
+        "size": 10612,
+        "type": "PROGBITS"
+      },
+      "NULL": {
+        "address": 0,
+        "size": 0,
+        "type": "00000000"
+      }
+    },
+    "software_libraries": [
+      "libbase",
+      "libc",
+      "libcompiler_rt",
+      "liblitedram"
+    ],
+    "stack_margin_enforced_by_builder": true,
+    "stack_margin_passed": true,
+    "stack_margin_required_bytes": 2048,
+    "stack_peak_usage": "not measured; runtime boot is outside scope",
+    "static_bytes": 336,
+    "static_stack_headroom_bytes": 3760,
+    "working_sram_bytes": 4096
+  },
+  "bios_policy": {
+    "bios_lto": true,
+    "local_main_source": "/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/rtos_bios/rtos_main.c",
+    "optimization": "-Os from the pinned LiteX common.mak",
+    "repository_owned_recipe": "/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/rtos_bios/Makefile",
+    "requested_rom_bytes": 16384,
+    "section_gc": "-ffunction-sections/-fdata-sections and linker --gc-sections",
+    "selected_libraries": [
+      "libc",
+      "libcompiler_rt",
+      "libbase",
+      "liblitedram"
+    ],
+    "source_adaptation_patch": "/home/user/git/fpga/sipeedtangprimer20k-riscv/patches/litex-rtos-bios-ddr-guard.patch",
+    "source_adaptation_patch_sha256": "08b15e3a1f3c6d61ad4795742b962979554545eaa8f62e07b2e0b977cde33f9f",
+    "stack_headroom_required_bytes": 2048
+  },
+  "classification": "tool failure",
+  "config": {
+    "candidate": {
+      "cpu_source": "pinned-lite-vexriscv",
+      "cpu_variant": "lite",
+      "d_cache_bytes": 0,
+      "ethernet_rx_slots": 1,
+      "ethernet_tx_slots": 1,
+      "i_cache_bytes": 2048,
+      "id": "candidate-2-pinned-lite-no-l2",
+      "isa": "rv32im/ILP32",
+      "l2_bytes": 0,
+      "working_sram_bytes": 4096
+    },
+    "cpu": {
+      "cache_sizes": {
+        "d_cache_bytes": 0,
+        "i_cache_bytes": 2048
+      },
+      "declared_atomics": false,
+      "declared_compressed": false,
+      "declared_mmu": false,
+      "generator_command": [
+        "Makefile",
+        "sbt compile \"runMain vexriscv.GenCoreDefault --iCacheSize 2048 --dCacheSize 0 --mulDiv true --singleCycleShift false --singleCycleMulDiv false  --outputFile VexRiscv_Lite\""
+      ],
+      "generator_recipe": "sbt compile \"runMain vexriscv.GenCoreDefault --iCacheSize 2048 --dCacheSize 0 --mulDiv true --singleCycleShift false --singleCycleMulDiv false  --outputFile VexRiscv_Lite\"",
+      "generator_recipe_sha256": "b29974e961899fc38bae75c1750753739de8dbd2ee7d352ca9e0879176763fd6",
+      "generator_revisions": {
+        "generator_commit": "642ecfed1c84460555d6d803d660cc60cfc1ecb6",
+        "sbt": "1.9.7",
+        "scala": "2.11.12",
+        "spinalhdl": "1.9.4",
+        "submodule_commit": "b6118e5cc2a33323425df6455697139021d50c72"
+      },
+      "isa": "rv32im/ILP32",
+      "isa_compiler_flags": "rv32im",
+      "machine_trap_csrs_present": true,
+      "ports": [
+        "clk",
+        "dBusWishbone_ACK",
+        "dBusWishbone_ADR",
+        "dBusWishbone_BTE",
+        "dBusWishbone_CTI",
+        "dBusWishbone_CYC",
+        "dBusWishbone_DAT_MISO",
+        "dBusWishbone_DAT_MOSI",
+        "dBusWishbone_ERR",
+        "dBusWishbone_SEL",
+        "dBusWishbone_STB",
+        "dBusWishbone_WE",
+        "externalInterruptArray",
+        "externalResetVector",
+        "iBusWishbone_ACK",
+        "iBusWishbone_ADR",
+        "iBusWishbone_BTE",
+        "iBusWishbone_CTI",
+        "iBusWishbone_CYC",
+        "iBusWishbone_DAT_MISO",
+        "iBusWishbone_DAT_MOSI",
+        "iBusWishbone_ERR",
+        "iBusWishbone_SEL",
+        "iBusWishbone_STB",
+        "iBusWishbone_WE",
+        "reset",
+        "softwareInterrupt",
+        "timerInterrupt"
+      ],
+      "rtl_path": "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Lite.v",
+      "rtl_sha256": "90e0b8f5912df2532d12bc766b110a632c1b85dd82b8aecd431d715c25f4cbbe",
+      "source": "pinned VexRiscv_Lite.v in locked pythondata-cpu-vexriscv",
+      "yaml_path": "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Lite.yaml",
+      "yaml_sha256": "a5259d1e179a2e86dc102aba88ad6ea69b31af0b9cdc7515fafc9157bb6ee983"
+    },
+    "created_utc": "2026-10-06T22:17:44.531770+00:00",
+    "dependency_revisions": {
+      "coremark": {
+        "present": true,
+        "requested_commit": "1f483d5b8316753a742cbf5590caf5bd0a4e4777",
+        "resolved_commit": "1f483d5b8316753a742cbf5590caf5bd0a4e4777"
+      },
+      "litedram": {
+        "present": true,
+        "requested_commit": "4c979d195aa0c60adcaf70374a52872028aaca63",
+        "resolved_commit": "4c979d195aa0c60adcaf70374a52872028aaca63"
+      },
+      "liteeth": {
+        "present": true,
+        "requested_commit": "013a6ad38c26317ac9588acd0660922981cc2a73",
+        "resolved_commit": "013a6ad38c26317ac9588acd0660922981cc2a73"
+      },
+      "liteiclink": {
+        "present": true,
+        "requested_commit": "ad793817302490b04b3abc5c4de669594d3958e8",
+        "resolved_commit": "ad793817302490b04b3abc5c4de669594d3958e8"
+      },
+      "litesdcard": {
+        "present": true,
+        "requested_commit": "227d61bc2b92ca56cac78a539b98e378468b1ba1",
+        "resolved_commit": "227d61bc2b92ca56cac78a539b98e378468b1ba1"
+      },
+      "litex": {
+        "present": true,
+        "requested_commit": "58322a1d239a9eca8b93a8497f8945855d965f4f",
+        "resolved_commit": "58322a1d239a9eca8b93a8497f8945855d965f4f"
+      },
+      "litex-boards": {
+        "present": true,
+        "requested_commit": "c0d9cdf11e20c8b774f4ee1154fddac6e1dca03a",
+        "resolved_commit": "c0d9cdf11e20c8b774f4ee1154fddac6e1dca03a"
+      },
+      "lwip": {
+        "present": true,
+        "requested_commit": "77dcd25a72509eb83f72b033d219b1d40cd8eb95",
+        "resolved_commit": "77dcd25a72509eb83f72b033d219b1d40cd8eb95"
+      },
+      "migen": {
+        "present": true,
+        "requested_commit": "e19524c963a8342952840983047557707fbe0b6a",
+        "resolved_commit": "e19524c963a8342952840983047557707fbe0b6a"
+      },
+      "pythondata-cpu-vexriscv": {
+        "present": true,
+        "requested_commit": "642ecfed1c84460555d6d803d660cc60cfc1ecb6",
+        "resolved_commit": "642ecfed1c84460555d6d803d660cc60cfc1ecb6"
+      },
+      "pythondata-software-compiler_rt": {
+        "present": true,
+        "requested_commit": "6eb76609c9627bf26635e57c63fb22cda7115887",
+        "resolved_commit": "6eb76609c9627bf26635e57c63fb22cda7115887"
+      },
+      "pythondata-software-picolibc": {
+        "present": true,
+        "requested_commit": "6a13ccce7c575b32c102dd9dc52178505b81fe39",
+        "resolved_commit": "6a13ccce7c575b32c102dd9dc52178505b81fe39"
+      }
+    },
+    "ethernet": "rmii",
+    "ethernet_rx_slots": 1,
+    "ethernet_slot_bytes": 2048,
+    "ethernet_tx_slots": 1,
+    "l2_bytes": 0,
+    "native_sd": true,
+    "requested_rom_bytes": 16384,
+    "source_fingerprints": {
+      "files": {
+        "Makefile": "e2865ea7244139663916f6d19aee5d282ea9e8ec928d78d9da1b5ab339e05387",
+        "cpu-generator.lock.json": "751d39859ca19a72e1126c8001586fdacc9724f4cd12437290524d73146103ff",
+        "dependencies.lock.json": "793db68935b6971259b8f705a9dba57c3cd4dc8736f1258de23eeda715c511bf",
+        "firmware/rtos_bios/Makefile": "5270bb362dc44792b915f0673b94c05c58763337429c7b6764664cb26c5cd756",
+        "firmware/rtos_bios/rtos_main.c": "7c41b6d3df999aa5e2afe6430388d1190348199baeaa6908682b83ffc7cbbce9",
+        "gateware/ddr3.py": "2133b4b308f3af3c7c8b95ecfc84a5ce6cec7b163b0bdac4d53db6fcbdcbbde2",
+        "gateware/ddr_geometry.py": "a560747cf2d231da7e4f4380e73510b604f5d7398fb3749def7765709c8833ec",
+        "gateware/peripherals.py": "3e4d0d3a7a896e413fa782e37969f8cebb2cbb270bb971f293b2b33a997e24b4",
+        "gateware/rtos_system_fit.py": "97348da24cd162e370224964d88c07052551d2b29eaf76e9dc9f95d2905556bb",
+        "gateware/soc.py": "d92e10060c109919f8b96d6d041b8f3437fbae20c7b0bcd9e5ce1f6757c6a0d5",
+        "gateware/system_fit.py": "5e30cd96bf1e427c565406432944a035b3f214a83c691e095060d34e18dbd71c",
+        "patches/litex-rtos-bios-ddr-guard.patch": "08b15e3a1f3c6d61ad4795742b962979554545eaa8f62e07b2e0b977cde33f9f",
+        "scripts/cpu_candidates.py": "9d1603f8fed7e5d90de08ad3caded1660a52f8f77d3d5a31dad555e6b18d9ea9",
+        "scripts/rtos_system_fit.py": "9ab87f1bd3d43ef2b3806c11e01218fa06ec0fe50d2e94630ec77c5a256ac879",
+        "scripts/system_fit.py": "c84fc08547d4e84e9d4cd6e82b47e839165abf5589e4778ae7540ff50fea1353",
+        "scripts/system_fit_reports.py": "ea33054786a52ca7e04de6b9dba540b3e76172d4c7bbaa049c99e6768d45a1e4"
+      },
+      "repository_patches": {
+        "patches/litedram-gw2ddrphy-cdc.patch": "71229b174b5d5f637379c059b0dcf4d9643252341056c92c832faf99722bac92",
+        "patches/litedram-gw2ddrphy-dll-off-read.patch": "df5a3e3451bc43aae1910633a51c7ee38e37d6c7e8c8cb2bb00e4464e449efb1",
+        "patches/litex-bios-no-ethernet-autoinit.patch": "402a4e3af37553d904dd5ad8869274429d3494e10c62d86a602f72f2839b3ced",
+        "patches/litex-ddr-diagnostic-boot.patch": "5aaa1ff59cbe6d4cbbf8349c9c2f951f6fb01783ab0b34d5abd18f5ed2cfe0f1",
+        "patches/litex-gowin-extra-sdc.patch": "84e41d7d1b78d54e13a6e528d7b9600a95b9ffb75ec99b00e9bddaaf11ddfe85",
+        "patches/litex-memtest-read-only-diagnostic.patch": "cd5f38d8ffa19a9e3818df9e506b7085d0564b5767ff5bd60ff9f0ad991f3614",
+        "patches/litex-project-vexriscv-isa-variants.patch": "f8c86512ddf96a15de419a9a5f855e9a497533fe2aa2c7ff0cae3fdfb7917d36",
+        "patches/litex-rtos-bios-ddr-guard.patch": "08b15e3a1f3c6d61ad4795742b962979554545eaa8f62e07b2e0b977cde33f9f",
+        "patches/litex-sdram-read-capture-diagnostic.patch": "282232cc7d0c16f6fef14f9216cfb3e9803dad4eb265d25f3cfecf0c71716332",
+        "patches/litex-sdram-training-status.patch": "7cfc35b269fb7123dbedf32ca4a1ea3a6a59d809f1fd834ba0ac4399916d6635",
+        "patches/lwip-tcp-option-bounds.patch": "2aa7c59c5628771e1b08c80a5b39694d61541b1eb436e397d9436de4c584d9a4"
+      }
+    },
+    "working_sram_bytes": 4096
+  },
+  "error": "OSError: Error occured during Gowin's script execution.",
+  "error_log_tail": ".py\", line 646, in _capture_build\n    builder.build(run=True, build_name=build_name, hierarchical=True)\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py\", line 521, in build\n    return self._build(**kwargs)\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py\", line 604, in _build\n    self._initialize_rom_software()\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py\", line 440, in _initialize_rom_software\n    self.soc.init_rom(\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py\", line 1600, in init_rom\n    self.init_ram(name, contents, auto_size)\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py\", line 1579, in init_ram\n    self.logger.info(\"Initializing {} {} with contents (Size: {}).\".format(\nMessage: 'Initializing ROM \\x1b[1mrom\\x1b[0m with contents (Size: \\x1b[1m0x34e4\\x1b[0m).'\nArguments: ()\n--- Logging error ---\nTraceback (most recent call last):\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/python-3.12/python/lib/python3.12/logging/__init__.py\", line 1163, in emit\n    stream.write(msg + self.terminator)\nValueError: I/O operation on closed file.\nCall stack:\nINFO:SoC:Auto-Resizing ROM rom from 0x4000 to 0x34e4.\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py\", line 870, in <module>\n    raise SystemExit(main())\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py\", line 860, in main\n    report = run_study()\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py\", line 791, in run_study\n    selected, attempts = try_candidate(candidate, cpu, candidate_dir / \"attempts\")\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py\", line 603, in try_candidate\n    attempt = build_attempt(\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py\", line 532, in build_attempt\n    common._capture_build(builder, build_name)\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/system_fit.py\", line 646, in _capture_build\n    builder.build(run=True, build_name=build_name, hierarchical=True)\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py\", line 521, in build\n    return self._build(**kwargs)\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py\", line 604, in _build\n    self._initialize_rom_software()\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py\", line 440, in _initialize_rom_software\n    self.soc.init_rom(\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py\", line 1600, in init_rom\n    self.init_ram(name, contents, auto_size)\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py\", line 1588, in init_ram\n    self.logger.info(\"Auto-Resizing {} {} from {} to {}.\".format(\nMessage: 'Auto-Resizing ROM \\x1b[1mrom\\x1b[0m from \\x1b[1m0x4000\\x1b[0m to \\x1b[1m0x34e4\\x1b[0m.'\nArguments: ()\nCould not create AF_NETLINK socket (Operation not permitted)\nLicense verification failed  License hostid not match.\n\nTraceback (most recent call last):\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py\", line 532, in build_attempt\n    common._capture_build(builder, build_name)\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/system_fit.py\", line 646, in _capture_build\n    builder.build(run=True, build_name=build_name, hierarchical=True)\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py\", line 521, in build\n    return self._build(**kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py\", line 616, in _build\n    vns = self.soc.build(build_dir=self.gateware_dir, **kwargs)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py\", line 2199, in build\n    return self.platform.build(self, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/build/gowin/platform.py\", line 48, in build\n    return self.toolchain.build(self, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/build/generic_toolchain.py\", line 126, in build\n    self.run_script(script)\n  File \"/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/build/gowin/gowin.py\", line 318, in run_script\n    raise OSError(\"Error occured during Gowin's script execution.\")\nOSError: Error occured during Gowin's script execution.\n",
+  "error_summary": "Gowin license validation failed",
+  "failure_log_paths": [
+    "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T221650.486565Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/errors.log",
+    "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T221650.486565Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/bios-patch.log",
+    "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T221650.486565Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc-construction.log",
+    "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T221650.486565Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/console.log",
+    "/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T221650.486565Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/litex.log"
+  ],
+  "phases": {
+    "bios": "passed",
+    "cpu": "passed",
+    "pnr": "pending",
+    "soc": "passed",
+    "synthesis": "pending"
+  },
+  "soc": {
+    "active_pin_assignments": {
+      "collisions": [],
+      "native_sd_widths": {
+        "cd": 1,
+        "clk": 1,
+        "cmd": 1,
+        "data": 4
+      },
+      "resources": {
+        "clk27[0]": [
+          "H11"
+        ],
+        "ddram[0]": [
+          "F7",
+          "A4",
+          "D6",
+          "F8",
+          "C4",
+          "E6",
+          "B1",
+          "D8",
+          "A5",
+          "F9",
+          "K3",
+          "B7",
+          "A3",
+          "C8",
+          "H4",
+          "D3",
+          "H5",
+          "R4",
+          "R6",
+          "L2",
+          "P5",
+          "G1",
+          "K5",
+          "G5",
+          "F5",
+          "F4",
+          "F3",
+          "E2",
+          "C1",
+          "E1",
+          "B3",
+          "M3",
+          "K4",
+          "N2",
+          "L1",
+          "P4",
+          "H3",
+          "R1",
+          "M2",
+          "G2",
+          "J5",
+          "G3",
+          "K6",
+          "J1",
+          "J3",
+          "J2",
+          "R3",
+          "B9"
+        ],
+        "eth[0]": [
+          "CARD1:176",
+          "CARD1:132",
+          "CARD1:146",
+          "CARD1:198",
+          "CARD1:130",
+          "CARD1:140",
+          "CARD1:142",
+          "CARD1:95",
+          "CARD1:97",
+          "CARD1:200"
+        ],
+        "eth_clocks[0]": [
+          "CARD1:148"
+        ],
+        "sdcard[0]": [
+          "M8",
+          "M7",
+          "M10",
+          "N11",
+          "R14",
+          "N10",
+          "D15"
+        ],
+        "serial[0]": [
+          "T13",
+          "M11"
+        ]
+      }
+    },
+    "bus_regions": {
+      "ethmac": {
+        "cached": false,
+        "mode": "rw",
+        "origin": 2147483648,
+        "size_bytes": 4096
+      },
+      "ethmac_rx": {
+        "cached": false,
+        "mode": "r",
+        "origin": 2147483648,
+        "size_bytes": 2048
+      },
+      "ethmac_tx": {
+        "cached": false,
+        "mode": "w",
+        "origin": 2147485696,
+        "size_bytes": 2048
+      },
+      "main_ram": {
+        "cached": true,
+        "mode": "rwx",
+        "origin": 1073741824,
+        "size_bytes": 134217728
+      },
+      "rom": {
+        "cached": true,
+        "mode": "rx",
+        "origin": 0,
+        "size_bytes": 16384
+      },
+      "sram": {
+        "cached": true,
+        "mode": "rwx",
+        "origin": 268435456,
+        "size_bytes": 4096
+      }
+    },
+    "candidate": {
+      "cpu_source": "pinned-lite-vexriscv",
+      "cpu_variant": "lite",
+      "d_cache_bytes": 0,
+      "ethernet_rx_slots": 1,
+      "ethernet_tx_slots": 1,
+      "i_cache_bytes": 2048,
+      "id": "candidate-2-pinned-lite-no-l2",
+      "isa": "rv32im/ILP32",
+      "l2_bytes": 0,
+      "working_sram_bytes": 4096
+    },
+    "collision_checks": {
+      "bus_regions_checked": 5,
+      "irq_locations": {
+        "ethmac": 2,
+        "sdcard": 3,
+        "timer0": 1,
+        "uart": 0
+      }
+    },
+    "cpu": {
+      "cache_sizes": {
+        "d_cache_bytes": 0,
+        "i_cache_bytes": 2048
+      },
+      "declared_atomics": false,
+      "declared_compressed": false,
+      "declared_mmu": false,
+      "generator_command": [
+        "Makefile",
+        "sbt compile \"runMain vexriscv.GenCoreDefault --iCacheSize 2048 --dCacheSize 0 --mulDiv true --singleCycleShift false --singleCycleMulDiv false  --outputFile VexRiscv_Lite\""
+      ],
+      "generator_recipe": "sbt compile \"runMain vexriscv.GenCoreDefault --iCacheSize 2048 --dCacheSize 0 --mulDiv true --singleCycleShift false --singleCycleMulDiv false  --outputFile VexRiscv_Lite\"",
+      "generator_recipe_sha256": "b29974e961899fc38bae75c1750753739de8dbd2ee7d352ca9e0879176763fd6",
+      "generator_revisions": {
+        "generator_commit": "642ecfed1c84460555d6d803d660cc60cfc1ecb6",
+        "sbt": "1.9.7",
+        "scala": "2.11.12",
+        "spinalhdl": "1.9.4",
+        "submodule_commit": "b6118e5cc2a33323425df6455697139021d50c72"
+      },
+      "isa": "rv32im/ILP32",
+      "isa_compiler_flags": "rv32im",
+      "machine_trap_csrs_present": true,
+      "ports": [
+        "clk",
+        "dBusWishbone_ACK",
+        "dBusWishbone_ADR",
+        "dBusWishbone_BTE",
+        "dBusWishbone_CTI",
+        "dBusWishbone_CYC",
+        "dBusWishbone_DAT_MISO",
+        "dBusWishbone_DAT_MOSI",
+        "dBusWishbone_ERR",
+        "dBusWishbone_SEL",
+        "dBusWishbone_STB",
+        "dBusWishbone_WE",
+        "externalInterruptArray",
+        "externalResetVector",
+        "iBusWishbone_ACK",
+        "iBusWishbone_ADR",
+        "iBusWishbone_BTE",
+        "iBusWishbone_CTI",
+        "iBusWishbone_CYC",
+        "iBusWishbone_DAT_MISO",
+        "iBusWishbone_DAT_MOSI",
+        "iBusWishbone_ERR",
+        "iBusWishbone_SEL",
+        "iBusWishbone_STB",
+        "iBusWishbone_WE",
+        "reset",
+        "softwareInterrupt",
+        "timerInterrupt"
+      ],
+      "rtl_path": "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Lite.v",
+      "rtl_sha256": "90e0b8f5912df2532d12bc766b110a632c1b85dd82b8aecd431d715c25f4cbbe",
+      "source": "pinned VexRiscv_Lite.v in locked pythondata-cpu-vexriscv",
+      "yaml_path": "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv_Lite.yaml",
+      "yaml_sha256": "a5259d1e179a2e86dc102aba88ad6ea69b31af0b9cdc7515fafc9157bb6ee983"
+    },
+    "cpu_gcc_flags": "-march=rv32i2p0_m     -mabi=ilp32 -D__vexriscv__",
+    "cpu_variant": "lite",
+    "csr_regions": [],
+    "ddr_geometry": {
+      "banks": 8,
+      "bytes": 134217728,
+      "cl": 6,
+      "columns": 1024,
+      "cwl": 6,
+      "data_bits": 16,
+      "ddr_clock_hz": 96000000,
+      "l2_bytes": 0,
+      "part": "H5TQ1G63EFR",
+      "phy_dll_off": true,
+      "rows": 8192
+    },
+    "diagnostic_memory_present": false,
+    "ethernet": {
+      "enabled": true,
+      "irq": 2,
+      "rmii_reference_hz": 50000000,
+      "rx_slots": 1,
+      "slot_bytes": 2048,
+      "tx_slots": 1
+    },
+    "irq_locations": {
+      "ethmac": 2,
+      "sdcard": 3,
+      "timer0": 1,
+      "uart": 0
+    },
+    "sdcard": {
+      "dma_masters": [
+        "sdcard_block2mem",
+        "sdcard_mem2block"
+      ],
+      "irq": 3,
+      "mode": "read+write",
+      "native": true
+    },
+    "system_clock_hz": 48000000,
+    "timer_irq": 1,
+    "timer_present": true,
+    "uart_present": true,
+    "uncached_ddr_alias_present": false,
+    "unused_gpio_present": false,
+    "working_sram_bytes": 4096
+  },
+  "status": "failed"
+}

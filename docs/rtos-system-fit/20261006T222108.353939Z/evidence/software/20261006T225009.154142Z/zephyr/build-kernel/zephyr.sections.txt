@@ -1,0 +1,53 @@
+
+/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T225009.154142Z/zephyr/build-kernel/zephyr/zephyr.elf:     file format elf32-littleriscv
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 rom_start     00000010  40000000  40000000  000000a0  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 reset         00000004  40000010  40000010  000000b0  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 exceptions    00000220  40000014  40000014  000000b4  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  3 text          00003d6c  40000234  40000234  000002d4  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  4 initlevel     00000028  40003fa0  40003fa0  00004040  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  5 device_area   00000038  40003fc8  40003fc8  00004068  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  6 sw_isr_table  00000060  40004000  40004000  000040a0  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  7 uart_driver_api_area 00000014  40004060  40004060  00004100  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  8 rodata        0000066c  40004074  40004074  00004114  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  9 datas         00000014  400046e0  400046e0  00004780  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+ 10 device_states 00000004  400046f4  400046f4  00004794  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+ 11 k_heap_area   00000014  400046f8  400046f8  00004798  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+ 12 bss           000002d0  40004710  40004710  000047ac  2**3
+                  ALLOC
+ 13 noinit        00002a44  400049e0  400049e0  000047ac  2**4
+                  ALLOC
+ 14 .comment      00000033  00000000  00000000  000047ac  2**0
+                  CONTENTS, READONLY
+ 15 .debug_aranges 00000b38  00000000  00000000  000047e0  2**3
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 16 .debug_info   0001b0d6  00000000  00000000  00005318  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 17 .debug_abbrev 0000612b  00000000  00000000  000203ee  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 18 .debug_line   00017dac  00000000  00000000  00026519  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 19 .debug_frame  00001ccc  00000000  00000000  0003e2c8  2**2
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 20 .debug_str    00004acb  00000000  00000000  0003ff94  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 21 .debug_loc    0000f51e  00000000  00000000  00044a5f  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 22 .debug_ranges 000029d0  00000000  00000000  00053f80  2**3
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 23 .riscv.attributes 00000043  00000000  00000000  00056950  2**0
+                  CONTENTS, READONLY

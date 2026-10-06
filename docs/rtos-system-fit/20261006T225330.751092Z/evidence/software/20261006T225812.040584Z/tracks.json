@@ -1,0 +1,664 @@
+{
+  "baremetal": {
+    "artifacts": {
+      "application.bin": {
+        "bytes": 10904,
+        "path": "build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/application.bin",
+        "present": true,
+        "sha256": "44954b8c79ae1debce970f63c60c44423b7a519d427d4ce9eb8c7000eaa0cb2d"
+      },
+      "application.elf": {
+        "bytes": 262360,
+        "path": "build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/application.elf",
+        "present": true,
+        "sha256": "42e43c4b9c09775e866c542e8464e7834b4f58c5b7025d3949f1fcfab5397389"
+      },
+      "application.elf.map": {
+        "bytes": 184279,
+        "path": "build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/application.elf.map",
+        "present": true,
+        "sha256": "431a86e9c73c74f93427bf8a7c7ce829890d9147e3a079e2ee93229749a45e6f"
+      },
+      "compiler-flags.txt": {
+        "bytes": 986,
+        "path": "build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/compiler-flags.txt",
+        "present": true,
+        "sha256": "c36bc2286513150c913cd09c23e2ffc3b944dcde4c23904de15e2a95bf60c7af"
+      }
+    },
+    "entry_address": 1073741824,
+    "isa_audit": "RV32IM/ILP32; no A/C/F/D extensions declared",
+    "main_ram_bytes_used": 11848,
+    "peripheral_link_symbols": [
+      "sdcard_read",
+      "sdcard_write",
+      "udp_start",
+      "udp_service",
+      "udp_send"
+    ],
+    "probe_is_link_only": true,
+    "riscv_attributes": [
+      "Tag_RISCV_arch: \"rv32i2p0_m2p0_zicsr2p0_zifencei2p0_zmmul1p0\""
+    ],
+    "runtime_invocation": "none",
+    "sections": {
+      ".bss": {
+        "address": 1073752728,
+        "bytes": 944
+      },
+      ".data": {
+        "address": 1073752704,
+        "bytes": 24
+      },
+      ".debug_abbrev": {
+        "address": 0,
+        "bytes": 7769
+      },
+      ".debug_aranges": {
+        "address": 0,
+        "bytes": 728
+      },
+      ".debug_frame": {
+        "address": 0,
+        "bytes": 1524
+      },
+      ".debug_info": {
+        "address": 0,
+        "bytes": 35745
+      },
+      ".debug_line": {
+        "address": 0,
+        "bytes": 38563
+      },
+      ".debug_line_str": {
+        "address": 0,
+        "bytes": 6703
+      },
+      ".debug_loclists": {
+        "address": 0,
+        "bytes": 17468
+      },
+      ".debug_macro": {
+        "address": 0,
+        "bytes": 36752
+      },
+      ".debug_rnglists": {
+        "address": 0,
+        "bytes": 2566
+      },
+      ".debug_str": {
+        "address": 0,
+        "bytes": 89950
+      },
+      ".fini_array": {
+        "address": 1073752704,
+        "bytes": 0
+      },
+      ".init_array": {
+        "address": 1073752704,
+        "bytes": 0
+      },
+      ".preinit_array": {
+        "address": 1073752704,
+        "bytes": 0
+      },
+      ".riscv.attributes": {
+        "address": 0,
+        "bytes": 67
+      },
+      ".rodata": {
+        "address": 1073752300,
+        "bytes": 404
+      },
+      ".text": {
+        "address": 1073741824,
+        "bytes": 10476
+      }
+    },
+    "source_files": {
+      ".deps/litex/litex/soc/cores/cpu/vexriscv/crt0.S": "17905a8c510b8ee55786045f1d39a09beead6f10212dd6171eeaadbc63d5b865",
+      ".deps/litex/litex/soc/software/libliteeth/udp.c": "4f1276fae75a79908d034263310e187034119a27f36afd3e954c9e557b8ef9d3",
+      ".deps/litex/litex/soc/software/liblitesdcard/sdcard.c": "4a2e92c370d0891f86d2a610d926fbd525876f85c0fa8126342d84b854016cba",
+      "firmware/rtos_system_fit/baremetal/main.c": "7aec31ff6e4e15b72d66b736dbc90d3b7d7afbe5be864c5e2d1c30a2ce13e429",
+      "firmware/rtos_system_fit/baremetal/peripheral_link_probe.c": "bfe1344e743387a08356e946a0b61e5cc9698ee0cb6ea3dc5b13fa696927fcff"
+    },
+    "status": "passed",
+    "summary": "baremetal cross-compiled for the selected routed image.",
+    "symbol_count": 120,
+    "task_stack_budget_bytes": 0
+  },
+  "freertos": {
+    "artifacts": {
+      "bin": {
+        "bytes": 8504,
+        "path": "build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/freertos/freertos.bin",
+        "present": true,
+        "sha256": "14f307edf142d1dc753953217e87f929e9269643d1530c3b8377e573d5a4162d"
+      },
+      "elf": {
+        "bytes": 205432,
+        "path": "build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/freertos/freertos.elf",
+        "present": true,
+        "sha256": "6c95a7c91ad964060c0ff0a11757201ac8456ff05aa18d3045fd6a33100049a5"
+      },
+      "flags": {
+        "bytes": 1400,
+        "path": "build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/freertos/compiler-flags.txt",
+        "present": true,
+        "sha256": "29f8f8b9b7d9f9e62fb58665aaae1c7cc75fad2c5f9f67fdc6bbba79e640a308"
+      },
+      "map": {
+        "bytes": 130650,
+        "path": "build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/freertos/freertos.elf.map",
+        "present": true,
+        "sha256": "e4f8221d83f9db470c46c3536d1800ed3383d88bf4edadff256e79ac10fa5432"
+      }
+    },
+    "entry_address": 1073741824,
+    "isa_audit": "RV32IM/ILP32; no A/C/F/D extensions declared",
+    "kernel_revision": "3a22924e0a9ddbbc8b0758881c33b3422a5cc20d",
+    "kernel_tag": "V11.3.1",
+    "port": "GCC RISC-V RV32IM, no extensions, no MTIME/CLINT; LiteX timer0 external IRQ 1 -> MEIE trap -> xTaskIncrementTick/vTaskSwitchContext; ecall yield from upstream port",
+    "riscv_attributes": [
+      "Tag_RISCV_arch: \"rv32i2p0_m2p0_zicsr2p0_zifencei2p0_zmmul1p0\""
+    ],
+    "runtime_invocation": "none",
+    "sections": {
+      ".bss": {
+        "address": 1073750336,
+        "bytes": 9440
+      },
+      ".data": {
+        "address": 1073750304,
+        "bytes": 24
+      },
+      ".debug_abbrev": {
+        "address": 0,
+        "bytes": 5450
+      },
+      ".debug_aranges": {
+        "address": 0,
+        "bytes": 784
+      },
+      ".debug_frame": {
+        "address": 0,
+        "bytes": 1892
+      },
+      ".debug_info": {
+        "address": 0,
+        "bytes": 20951
+      },
+      ".debug_line": {
+        "address": 0,
+        "bytes": 28391
+      },
+      ".debug_line_str": {
+        "address": 0,
+        "bytes": 6172
+      },
+      ".debug_loclists": {
+        "address": 0,
+        "bytes": 10621
+      },
+      ".debug_macro": {
+        "address": 0,
+        "bytes": 27066
+      },
+      ".debug_rnglists": {
+        "address": 0,
+        "bytes": 1349
+      },
+      ".debug_str": {
+        "address": 0,
+        "bytes": 81578
+      },
+      ".fini_array": {
+        "address": 1073750304,
+        "bytes": 0
+      },
+      ".init_array": {
+        "address": 1073750304,
+        "bytes": 0
+      },
+      ".preinit_array": {
+        "address": 1073750304,
+        "bytes": 0
+      },
+      ".riscv.attributes": {
+        "address": 0,
+        "bytes": 67
+      },
+      ".rodata": {
+        "address": 1073749648,
+        "bytes": 656
+      },
+      ".text": {
+        "address": 1073741824,
+        "bytes": 7824
+      }
+    },
+    "source_files": {
+      ".deps/litex/litex/soc/cores/cpu/vexriscv/crt0.S": "17905a8c510b8ee55786045f1d39a09beead6f10212dd6171eeaadbc63d5b865",
+      ".deps/rtos/FreeRTOS-Kernel/list.c": "182fefbf019d8d804ba287dc6a2ee4755b9895898ea7aae7fa41f0154c83c677",
+      ".deps/rtos/FreeRTOS-Kernel/portable/GCC/RISC-V/port.c": "62ff10ecc84d271e98fa6c65c54c80d420c19a9106cb891b0f5346392d63b051",
+      ".deps/rtos/FreeRTOS-Kernel/portable/GCC/RISC-V/portASM.S": "ea119b1a7f5bfbc96fc7490212896be26f90e2ad1a695c22d04145bf6231d367",
+      ".deps/rtos/FreeRTOS-Kernel/queue.c": "31e5ce0890906b7eaac466007c8810fbfe248d22f667a3c620c3f18e9fc0fcc3",
+      ".deps/rtos/FreeRTOS-Kernel/tasks.c": "ae8bcc9dd0b30d39bf37eb36f1ef3067d086906b2f92ca2aea1acc0f0ad31645",
+      "firmware/rtos_system_fit/freertos/main.c": "3e660031150d06743a4522fb049c8f29e5d75064c6ed4bd9463c88dd1fa5c17f"
+    },
+    "stack_overflow_check": 2,
+    "static_stack_budget_bytes": {
+      "counter": 3072,
+      "idle": 512,
+      "isr": 2048,
+      "status": 3072
+    },
+    "static_stack_total_bytes": 8704,
+    "status": "passed",
+    "summary": "freertos cross-compiled for the selected routed image.",
+    "symbol_count": 116,
+    "tick_hz": 1000
+  },
+  "zephyr_kernel": {
+    "artifacts": {
+      "bin": {
+        "bytes": 18188,
+        "path": "build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/zephyr/build-kernel/zephyr/zephyr.bin",
+        "present": true,
+        "sha256": "cb3dbb938bbb67f31256533d5c86ed5db897ad021a40df8f54cabf3e89905bcb"
+      },
+      "config": {
+        "bytes": 25409,
+        "path": "build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/zephyr/build-kernel/zephyr/.config",
+        "present": true,
+        "sha256": "06d13b9e9e93106dc5e3e152b4d7ac5f6363cdcb43b8cd381defbd761b231ce0"
+      },
+      "dts": {
+        "bytes": 36714,
+        "path": "build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/zephyr/build-kernel/zephyr/zephyr.dts",
+        "present": true,
+        "sha256": "ab4ed38f8f381f1921cf6de3b73e42f8f310559681421b5d641e43c6d4fbdd76"
+      },
+      "elf": {
+        "bytes": 390464,
+        "path": "build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/zephyr/build-kernel/zephyr/zephyr.elf",
+        "present": true,
+        "sha256": "7c1303e0ac393c560802054b8d2076d8d772a4fff872daced64886746d318be7"
+      },
+      "map": {
+        "bytes": 273793,
+        "path": "build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/zephyr/build-kernel/zephyr/zephyr.map",
+        "present": true,
+        "sha256": "f920ee0b6cb52fe83f75ed9cb4220050bfc1bf43302dcc084cbbe9dfe3f51110"
+      }
+    },
+    "design_audit": {
+      "cpu_dcache_bytes": 0,
+      "cpu_icache_bytes": 2048,
+      "dma_ordering_patch": {
+        "path": "patches/zephyr-litex-riscv-dma-ordering.patch",
+        "sha256": "d43f5f19ec87979c774d67108b568a4072016667859f8641090826bdc9446e57",
+        "source_tree_diff_sha256": "d624c7034db731121e7aeea56adfcdc670a530df2dd51bb453b9fbda5057b766",
+        "state": "already_applied"
+      },
+      "ethernet": {
+        "interface": "RMII",
+        "phy_address": 0,
+        "rx_slots": 1,
+        "slot_bytes": 2048,
+        "tx_slots": 1
+      },
+      "interrupts": {
+        "ethmac": 2,
+        "sdcard": 3,
+        "timer0": 1,
+        "uart": 0
+      },
+      "isa": "rv32im/ILP32; DTS base advertises rv32i + m + zicsr + zifencei",
+      "l2_bytes": 0,
+      "main_ram": {
+        "base": 1073741824,
+        "bytes": 134217728
+      },
+      "optional_gpio_disabled": true,
+      "random_provider": "CONFIG_TEST_RANDOM_GENERATOR supplies the pinned LiteEth driver's linked fallback; the overlay sets a static locally administered MAC, runtime is not performed",
+      "reference_entropy_node_removed": true,
+      "required_csr_registers_present": true,
+      "sd_bus_width": 4,
+      "sd_card_detect_register": "sdcard_phy_card_detect",
+      "sd_dma_directions": [
+        "card-to-memory",
+        "memory-to-card"
+      ]
+    },
+    "entry_address": 1073741824,
+    "isa_audit": "RV32IM/ILP32; no A/C/F/D extensions declared",
+    "profile": "kernel",
+    "riscv_attributes": [
+      "Tag_RISCV_arch: \"rv32i2p1_m2p0_zicsr2p0_zifencei2p0_zmmul1p0\""
+    ],
+    "runtime_invocation": "none",
+    "sections": {
+      ".comment": {
+        "address": 0,
+        "bytes": 51
+      },
+      ".debug_abbrev": {
+        "address": 0,
+        "bytes": 24875
+      },
+      ".debug_aranges": {
+        "address": 0,
+        "bytes": 2872
+      },
+      ".debug_frame": {
+        "address": 0,
+        "bytes": 7372
+      },
+      ".debug_info": {
+        "address": 0,
+        "bytes": 110806
+      },
+      ".debug_line": {
+        "address": 0,
+        "bytes": 97996
+      },
+      ".debug_loc": {
+        "address": 0,
+        "bytes": 62750
+      },
+      ".debug_ranges": {
+        "address": 0,
+        "bytes": 10704
+      },
+      ".debug_str": {
+        "address": 0,
+        "bytes": 19459
+      },
+      ".riscv.attributes": {
+        "address": 0,
+        "bytes": 67
+      },
+      "bss": {
+        "address": 1073760016,
+        "bytes": 720
+      },
+      "datas": {
+        "address": 1073759968,
+        "bytes": 20
+      },
+      "device_area": {
+        "address": 1073758152,
+        "bytes": 56
+      },
+      "device_states": {
+        "address": 1073759988,
+        "bytes": 4
+      },
+      "exceptions": {
+        "address": 1073741844,
+        "bytes": 544
+      },
+      "initlevel": {
+        "address": 1073758112,
+        "bytes": 40
+      },
+      "k_heap_area": {
+        "address": 1073759992,
+        "bytes": 20
+      },
+      "noinit": {
+        "address": 1073760736,
+        "bytes": 10820
+      },
+      "reset": {
+        "address": 1073741840,
+        "bytes": 4
+      },
+      "rodata": {
+        "address": 1073758324,
+        "bytes": 1644
+      },
+      "rom_start": {
+        "address": 1073741824,
+        "bytes": 16
+      },
+      "sw_isr_table": {
+        "address": 1073758208,
+        "bytes": 96
+      },
+      "text": {
+        "address": 1073742388,
+        "bytes": 15724
+      },
+      "uart_driver_api_area": {
+        "address": 1073758304,
+        "bytes": 20
+      }
+    },
+    "status": "passed",
+    "summary": "Zephyr kernel ELF cross-compiled for the routed CSR map.",
+    "symbol_count": 754
+  },
+  "zephyr_peripherals": {
+    "artifacts": {
+      "bin": {
+        "bytes": 70004,
+        "path": "build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/zephyr/build-peripherals/zephyr/zephyr.bin",
+        "present": true,
+        "sha256": "200371e5a9617ab0372941cb77a97cef3cbd94e1caf55f33b53475ec65fd6f6a"
+      },
+      "config": {
+        "bytes": 33243,
+        "path": "build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/zephyr/build-peripherals/zephyr/.config",
+        "present": true,
+        "sha256": "6c1671823fb9bac12303db09737c6cb7b12f2017c96ff6ca89f20fb553ca0d4d"
+      },
+      "dts": {
+        "bytes": 36714,
+        "path": "build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/zephyr/build-peripherals/zephyr/zephyr.dts",
+        "present": true,
+        "sha256": "ab4ed38f8f381f1921cf6de3b73e42f8f310559681421b5d641e43c6d4fbdd76"
+      },
+      "elf": {
+        "bytes": 1552440,
+        "path": "build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/zephyr/build-peripherals/zephyr/zephyr.elf",
+        "present": true,
+        "sha256": "0eb9efc696046b510b33caba42f320fb5d33d860532096b7756963ffdd931a96"
+      },
+      "map": {
+        "bytes": 433496,
+        "path": "build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/zephyr/build-peripherals/zephyr/zephyr.map",
+        "present": true,
+        "sha256": "9213796dfe07ae5ac94ae71282a89451c31f1f466a857089f5498d8a81799348"
+      }
+    },
+    "design_audit": {
+      "cpu_dcache_bytes": 0,
+      "cpu_icache_bytes": 2048,
+      "dma_ordering_patch": {
+        "path": "patches/zephyr-litex-riscv-dma-ordering.patch",
+        "sha256": "d43f5f19ec87979c774d67108b568a4072016667859f8641090826bdc9446e57",
+        "source_tree_diff_sha256": "d624c7034db731121e7aeea56adfcdc670a530df2dd51bb453b9fbda5057b766",
+        "state": "already_applied"
+      },
+      "ethernet": {
+        "interface": "RMII",
+        "phy_address": 0,
+        "rx_slots": 1,
+        "slot_bytes": 2048,
+        "tx_slots": 1
+      },
+      "interrupts": {
+        "ethmac": 2,
+        "sdcard": 3,
+        "timer0": 1,
+        "uart": 0
+      },
+      "isa": "rv32im/ILP32; DTS base advertises rv32i + m + zicsr + zifencei",
+      "l2_bytes": 0,
+      "main_ram": {
+        "base": 1073741824,
+        "bytes": 134217728
+      },
+      "optional_gpio_disabled": true,
+      "random_provider": "CONFIG_TEST_RANDOM_GENERATOR supplies the pinned LiteEth driver's linked fallback; the overlay sets a static locally administered MAC, runtime is not performed",
+      "reference_entropy_node_removed": true,
+      "required_csr_registers_present": true,
+      "sd_bus_width": 4,
+      "sd_card_detect_register": "sdcard_phy_card_detect",
+      "sd_dma_directions": [
+        "card-to-memory",
+        "memory-to-card"
+      ]
+    },
+    "entry_address": 1073741824,
+    "isa_audit": "RV32IM/ILP32; no A/C/F/D extensions declared",
+    "profile": "peripherals",
+    "riscv_attributes": [
+      "Tag_RISCV_arch: \"rv32i2p1_m2p0_zicsr2p0_zifencei2p0_zmmul1p0\""
+    ],
+    "runtime_invocation": "none",
+    "sections": {
+      ".comment": {
+        "address": 0,
+        "bytes": 51
+      },
+      ".debug_abbrev": {
+        "address": 0,
+        "bytes": 74567
+      },
+      ".debug_aranges": {
+        "address": 0,
+        "bytes": 8904
+      },
+      ".debug_frame": {
+        "address": 0,
+        "bytes": 28228
+      },
+      ".debug_info": {
+        "address": 0,
+        "bytes": 555058
+      },
+      ".debug_line": {
+        "address": 0,
+        "bytes": 362278
+      },
+      ".debug_loc": {
+        "address": 0,
+        "bytes": 277133
+      },
+      ".debug_ranges": {
+        "address": 0,
+        "bytes": 41880
+      },
+      ".debug_str": {
+        "address": 0,
+        "bytes": 70764
+      },
+      ".riscv.attributes": {
+        "address": 0,
+        "bytes": 67
+      },
+      "bss": {
+        "address": 1073811832,
+        "bytes": 2616
+      },
+      "datas": {
+        "address": 1073811304,
+        "bytes": 156
+      },
+      "device_area": {
+        "address": 1073808664,
+        "bytes": 196
+      },
+      "device_states": {
+        "address": 1073811460,
+        "bytes": 16
+      },
+      "ethphy_driver_api_area": {
+        "address": 1073809028,
+        "bytes": 40
+      },
+      "exceptions": {
+        "address": 1073741844,
+        "bytes": 544
+      },
+      "initlevel": {
+        "address": 1073808560,
+        "bytes": 104
+      },
+      "k_heap_area": {
+        "address": 1073811532,
+        "bytes": 20
+      },
+      "k_mem_slab_area": {
+        "address": 1073811476,
+        "bytes": 56
+      },
+      "k_mutex_area": {
+        "address": 1073811552,
+        "bytes": 60
+      },
+      "mdio_driver_api_area": {
+        "address": 1073808956,
+        "bytes": 16
+      },
+      "net_buf_pool_area": {
+        "address": 1073811612,
+        "bytes": 88
+      },
+      "net_if_area": {
+        "address": 1073811700,
+        "bytes": 64
+      },
+      "net_if_dev_area": {
+        "address": 1073811768,
+        "bytes": 40
+      },
+      "net_l2_area": {
+        "address": 1073811808,
+        "bytes": 20
+      },
+      "net_l3_register_area": {
+        "address": 1073809068,
+        "bytes": 32
+      },
+      "noinit": {
+        "address": 1073814448,
+        "bytes": 14836
+      },
+      "reset": {
+        "address": 1073741840,
+        "bytes": 4
+      },
+      "rodata": {
+        "address": 1073809100,
+        "bytes": 2200
+      },
+      "rom_start": {
+        "address": 1073741824,
+        "bytes": 16
+      },
+      "sdhc_driver_api_area": {
+        "address": 1073808972,
+        "bytes": 36
+      },
+      "sw_isr_table": {
+        "address": 1073808860,
+        "bytes": 96
+      },
+      "text": {
+        "address": 1073742388,
+        "bytes": 66172
+      },
+      "uart_driver_api_area": {
+        "address": 1073809008,
+        "bytes": 20
+      }
+    },
+    "status": "passed",
+    "summary": "Zephyr peripherals ELF cross-compiled for the routed CSR map.",
+    "symbol_count": 1345
+  }
+}

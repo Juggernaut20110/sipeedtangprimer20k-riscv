@@ -1,0 +1,41 @@
+
+/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/freertos/freertos.elf:     file format elf32-littleriscv
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00001e90  40000000  40000000  00001000  2**8
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .rodata       00000290  40001e90  40001e90  00002e90  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  2 .preinit_array 00000000  40002120  40002138  00003138  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  3 .init_array   00000000  40002120  40002138  00003138  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  4 .fini_array   00000000  40002120  40002138  00003138  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  5 .data         00000018  40002120  40002120  00003120  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+  6 .bss          000024e0  40002140  40002140  00003138  2**4
+                  ALLOC
+  7 .debug_info   000051d7  00000000  00000000  00003138  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+  8 .debug_abbrev 0000154a  00000000  00000000  0000830f  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+  9 .debug_loclists 0000297d  00000000  00000000  00009859  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 10 .debug_aranges 00000310  00000000  00000000  0000c1d8  2**3
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 11 .debug_rnglists 00000545  00000000  00000000  0000c4e8  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 12 .debug_line   00006ee7  00000000  00000000  0000ca2d  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 13 .debug_str    00013eaa  00000000  00000000  00013914  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 14 .debug_line_str 0000181c  00000000  00000000  000277be  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 15 .riscv.attributes 00000043  00000000  00000000  00028fda  2**0
+                  CONTENTS, READONLY
+ 16 .debug_frame  00000764  00000000  00000000  00029020  2**2
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 17 .debug_macro  000069ba  00000000  00000000  00029784  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS

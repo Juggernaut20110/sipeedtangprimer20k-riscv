@@ -1,0 +1,68 @@
+ELF Header:
+  Magic:   7f 45 4c 46 01 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF32
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              EXEC (Executable file)
+  Machine:                           RISC-V
+  Version:                           0x1
+  Entry point address:               0x40000000
+  Start of program headers:          52 (bytes into file)
+  Start of section headers:          389344 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               52 (bytes)
+  Size of program headers:           32 (bytes)
+  Number of program headers:         3
+  Size of section headers:           40 (bytes)
+  Number of section headers:         28
+  Section header string table index: 27
+
+Section Headers:
+  [Nr] Name              Type            Addr     Off    Size   ES Flg Lk Inf Al
+  [ 0]                   NULL            00000000 000000 000000 00      0   0  0
+  [ 1] rom_start         PROGBITS        40000000 0000a0 000010 00  AX  0   0  4
+  [ 2] reset             PROGBITS        40000010 0000b0 000004 00  AX  0   0  4
+  [ 3] exceptions        PROGBITS        40000014 0000b4 000220 00  AX  0   0  4
+  [ 4] text              PROGBITS        40000234 0002d4 003d6c 00  AX  0   0  4
+  [ 5] initlevel         PROGBITS        40003fa0 004040 000028 00   A  0   0  4
+  [ 6] device_area       PROGBITS        40003fc8 004068 000038 00   A  0   0  4
+  [ 7] sw_isr_table      PROGBITS        40004000 0040a0 000060 00   A  0   0  4
+  [ 8] uart_driver_[...] PROGBITS        40004060 004100 000014 00   A  0   0  4
+  [ 9] rodata            PROGBITS        40004074 004114 00066c 00   A  0   0  4
+  [10] datas             PROGBITS        400046e0 004780 000014 00  WA  0   0  4
+  [11] device_states     PROGBITS        400046f4 004794 000004 00  WA  0   0  1
+  [12] k_heap_area       PROGBITS        400046f8 004798 000014 00  WA  0   0  4
+  [13] bss               NOBITS          40004710 0047ac 0002d0 00  WA  0   0  8
+  [14] noinit            NOBITS          400049e0 0047ac 002a44 00  WA  0   0 16
+  [15] .comment          PROGBITS        00000000 0047ac 000033 01  MS  0   0  1
+  [16] .debug_aranges    PROGBITS        00000000 0047e0 000b38 00      0   0  8
+  [17] .debug_info       PROGBITS        00000000 005318 01b0d6 00      0   0  1
+  [18] .debug_abbrev     PROGBITS        00000000 0203ee 00612b 00      0   0  1
+  [19] .debug_line       PROGBITS        00000000 026519 017ecc 00      0   0  1
+  [20] .debug_frame      PROGBITS        00000000 03e3e8 001ccc 00      0   0  4
+  [21] .debug_str        PROGBITS        00000000 0400b4 004c03 01  MS  0   0  1
+  [22] .debug_loc        PROGBITS        00000000 044cb7 00f51e 00      0   0  1
+  [23] .debug_ranges     PROGBITS        00000000 0541d8 0029d0 00      0   0  8
+  [24] .riscv.attributes RISCV_ATTRIBUTE 00000000 056ba8 000043 00      0   0  1
+  [25] .symtab           SYMTAB          00000000 056bec 003ae0 10     26 268  4
+  [26] .strtab           STRTAB          00000000 05a6cc 0048ed 00      0   0  1
+  [27] .shstrtab         STRTAB          00000000 05efb9 000126 00      0   0  1
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings), I (info),
+  L (link order), O (extra OS processing required), G (group), T (TLS),
+  C (compressed), x (unknown), o (OS specific), E (exclude),
+  D (mbind), p (processor specific)
+
+Program Headers:
+  Type           Offset   VirtAddr   PhysAddr   FileSiz MemSiz  Flg Align
+  RISCV_ATTRIBUT 0x056ba8 0x00000000 0x00000000 0x00043 0x00000 R   0x1
+  LOAD           0x0000a0 0x40000000 0x40000000 0x0470c 0x07424 RWE 0x10
+  GNU_STACK      0x000000 0x00000000 0x00000000 0x00000 0x00000 RW  0x10
+
+ Section to Segment mapping:
+  Segment Sections...
+   00     .riscv.attributes 
+   01     rom_start reset exceptions text initlevel device_area sw_isr_table uart_driver_api_area rodata datas device_states k_heap_area bss noinit 
+   02     

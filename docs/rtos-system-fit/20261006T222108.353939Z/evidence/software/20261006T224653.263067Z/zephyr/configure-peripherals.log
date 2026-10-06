@@ -1,0 +1,54 @@
+$ cmake -S /home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/rtos_system_fit/zephyr/app -B /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224653.263067Z/zephyr/build-peripherals -G Unix Makefiles -DBOARD=litex_vexriscv -DCMAKE_MAKE_PROGRAM=/usr/bin/make -DDTC=/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/tools/dtc-1.7.2/usr/bin/dtc -DZEPHYR_BASE=/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr -DZEPHYR_TOOLCHAIN_VARIANT=cross-compile -DCROSS_COMPILE=/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf- -DSYSROOT_DIR=/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../riscv-none-elf -DPython3_EXECUTABLE=/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/venv/bin/python -DDTC_OVERLAY_FILE=/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224653.263067Z/zephyr/generated/csr.overlay.dts -DOVERLAY_CONFIG=/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224653.263067Z/zephyr/generated/csr.overlay.conf;/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224653.263067Z/zephyr/generated/peripherals.conf
+Loading Zephyr default modules (Zephyr base (cached)).
+-- Application: /home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/rtos_system_fit/zephyr/app
+-- CMake version: 4.2.3
+-- Found Python3: /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/venv/bin/python (found suitable version "3.12.14", minimum required is "3.12") found components: Interpreter
+-- Cache files will be written to: /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/.cache
+-- Zephyr version: 4.4.1 (/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr)
+-- Found west (found suitable version "1.5.0", minimum required is "0.14.0")
+-- Board: litex_vexriscv, qualifiers: litex_vexriscv
+-- Found toolchain: cross-compile (/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-)
+-- Found Dtc: /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/tools/dtc-1.7.2/usr/bin/dtc (found suitable version "1.7.2", minimum required is "1.4.6")
+-- Found BOARD.dts: /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/boards/enjoydigital/litex_vexriscv/litex_vexriscv.dts
+-- Found devicetree overlay: /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224653.263067Z/zephyr/generated/csr.overlay.dts
+unit address and first address in 'reg' (0xf0000000) don't match for /soc/soc_controller@e0000000
+unit address and first address in 'reg' (0xf0004000) don't match for /soc/serial@e0001800
+unit address and first address in 'reg' (0xf0003800) don't match for /soc/timer@e0002800
+unit address and first address in 'reg' (0xf0001804) don't match for /soc/mdio@e0008000
+unit address and first address in 'reg' (0x0) don't match for /soc/mdio@e0008000/ethernet-phy@1
+unit address and first address in 'reg' (0xf0001000) don't match for /soc/ethernet@e0009800
+unit address and first address in 'reg' (0xf0002800) don't match for /soc/sdhc@e000e800
+-- Generated zephyr.dts: /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224653.263067Z/zephyr/build-peripherals/zephyr/zephyr.dts
+-- Generated pickled edt: /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224653.263067Z/zephyr/build-peripherals/zephyr/edt.pickle
+-- Generated devicetree_generated.h: /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224653.263067Z/zephyr/build-peripherals/zephyr/include/generated/zephyr/devicetree_generated.h
+CMake Error at /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/cmake/modules/kconfig.cmake:150 (include):
+  include could not find requested file:
+
+    /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224653.263067Z/zephyr/build-peripherals/Kconfig/kconfig_module_dirs.cmake
+Call Stack (most recent call first):
+  /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/cmake/modules/zephyr_default.cmake:129 (include)
+  /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)
+  /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:97 (include_boilerplate)
+  CMakeLists.txt:2 (find_package)
+
+
+
+/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224653.263067Z/zephyr/generated/peripherals.conf:2: warning: attempt to assign the value 'y' to the undefined symbol ETHERNET
+
+error: Aborting due to Kconfig warnings
+
+Parsing /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/Kconfig
+Loaded configuration '/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/boards/enjoydigital/litex_vexriscv/litex_vexriscv_defconfig'
+Merged configuration '/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/rtos_system_fit/zephyr/app/prj.conf'
+Merged configuration '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224653.263067Z/zephyr/generated/csr.overlay.conf'
+Merged configuration '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224653.263067Z/zephyr/generated/peripherals.conf'
+CMake Error at /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/cmake/modules/kconfig.cmake:423 (message):
+  command failed with return code: 1
+Call Stack (most recent call first):
+  /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/cmake/modules/zephyr_default.cmake:129 (include)
+  /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)
+  /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:97 (include_boilerplate)
+  CMakeLists.txt:2 (find_package)
+
+
+-- Configuring incomplete, errors occurred!

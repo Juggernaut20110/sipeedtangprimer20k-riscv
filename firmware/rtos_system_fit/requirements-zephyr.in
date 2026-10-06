@@ -1,0 +1,8 @@
+# Host tools for the pinned Zephyr v4.4.1 compile-only study.
+# Versions align with the pinned Zephyr requirements-actions lock where available.
+jsonschema==4.26.0
+packaging==26.0
+pyelftools==0.32
+pykwalify==1.8.0
+PyYAML==6.0.2
+west==1.5.0

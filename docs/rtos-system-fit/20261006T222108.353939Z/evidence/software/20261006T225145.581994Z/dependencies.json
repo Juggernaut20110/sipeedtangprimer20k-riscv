@@ -1,0 +1,45 @@
+{
+  "compiler": {
+    "mabi": "ilp32",
+    "march": "rv32i2p0_m",
+    "path": ".tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-gcc",
+    "target": "riscv-none-elf",
+    "version": "riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 15.2.0"
+  },
+  "dtc": {
+    "path": ".deps/rtos/tools/dtc-1.7.2/usr/bin/dtc",
+    "version": "Version: DTC 1.7.2"
+  },
+  "freertos_kernel": {
+    "commit": "3a22924e0a9ddbbc8b0758881c33b3422a5cc20d",
+    "expected_commit": "3a22924e0a9ddbbc8b0758881c33b3422a5cc20d",
+    "path": ".deps/rtos/FreeRTOS-Kernel"
+  },
+  "zephyr": {
+    "commit": "1f6485eca25431b5ff27ce9a754218c9e559bbbb",
+    "expected_commit": "1f6485eca25431b5ff27ce9a754218c9e559bbbb",
+    "path": ".deps/rtos/zephyr"
+  },
+  "zephyr_host_python": {
+    "packages": [
+      "attrs==26.1.0",
+      "colorama==0.4.6",
+      "docopt==0.6.2",
+      "jsonschema==4.26.0",
+      "jsonschema-specifications==2025.9.1",
+      "packaging==26.0",
+      "pyelftools==0.32",
+      "pykwalify==1.8.0",
+      "python-dateutil==2.9.0.post0",
+      "PyYAML==6.0.2",
+      "referencing==0.37.0",
+      "rpds-py==2026.9.1",
+      "ruamel.yaml==0.19.1",
+      "six==1.17.0",
+      "typing_extensions==4.16.0",
+      "west==1.5.0"
+    ],
+    "path": ".tools/python-3.12/python/bin/python3.12",
+    "version": "Python 3.12.14"
+  }
+}

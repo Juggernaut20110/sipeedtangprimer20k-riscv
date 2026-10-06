@@ -1,0 +1,29 @@
+$ /home/user/git/fpga/sipeedtangprimer20k-riscv/.venv/bin/litex_json2dts_zephyr --dts /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224653.263067Z/zephyr/generated/csr.overlay.dts --config /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224653.263067Z/zephyr/generated/csr.overlay.conf /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T222108.353939Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/csr.json
+Generating overlay for: cpu
+Generating overlay for: ctrl
+Generating overlay for: uart
+Generating overlay for: timer0
+Generating overlay for: ethmac
+Generating overlay for: ethphy
+Generating overlay for: spimaster
+  dtsi key  not found, disable spimaster
+Generating overlay for: spiflash
+  dtsi key  not found, disable spiflash
+Generating overlay for: sdcard
+Generating overlay for: i2c0
+  dtsi key  not found, disable i2c0
+Generating overlay for: i2s_rx
+  dtsi key  not found, disable i2s_rx
+Generating overlay for: i2s_tx
+  dtsi key  not found, disable i2s_tx
+Generating overlay for: watchdog0
+  dtsi key  not found, disable watchdog0
+Generating overlay for: mmcm
+  dtsi key  not found, disable mmcm
+Generating overlay for: main_ram
+Generating overlay for: identifier_mem
+  dtsi key  not found, disable identifier_mem
+Generating overlay for: prbs0
+  dtsi key  not found, disable prbs0
+No overlay handler for: ddrphy at 0xf0000800
+No overlay handler for: sdram at 0xf0003000

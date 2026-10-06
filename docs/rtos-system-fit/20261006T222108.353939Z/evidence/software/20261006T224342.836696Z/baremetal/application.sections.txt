@@ -1,0 +1,41 @@
+
+/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224342.836696Z/baremetal/application.elf:     file format elf32-littleriscv
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000028ec  40000000  40000000  00001000  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .rodata       00000194  400028ec  400028ec  000038ec  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  2 .preinit_array 00000000  40002a80  40002a98  00003a98  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  3 .init_array   00000000  40002a80  40002a98  00003a98  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  4 .fini_array   00000000  40002a80  40002a98  00003a98  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  5 .data         00000018  40002a80  40002a80  00003a80  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+  6 .bss          000003b0  40002a98  40002a98  00003a98  2**3
+                  ALLOC
+  7 .debug_info   00008ba1  00000000  00000000  00003a98  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+  8 .debug_abbrev 00001e59  00000000  00000000  0000c639  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+  9 .debug_loclists 0000443c  00000000  00000000  0000e492  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 10 .debug_aranges 000002d8  00000000  00000000  000128d0  2**3
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 11 .debug_rnglists 00000a06  00000000  00000000  00012ba8  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 12 .debug_macro  00008f90  00000000  00000000  000135ae  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 13 .debug_line   000096a3  00000000  00000000  0001c53e  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 14 .debug_str    00015f5e  00000000  00000000  00025be1  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 15 .debug_line_str 00001a17  00000000  00000000  0003bb3f  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 16 .riscv.attributes 00000043  00000000  00000000  0003d556  2**0
+                  CONTENTS, READONLY
+ 17 .debug_frame  000005f4  00000000  00000000  0003d59c  2**2
+                  CONTENTS, READONLY, DEBUGGING, OCTETS

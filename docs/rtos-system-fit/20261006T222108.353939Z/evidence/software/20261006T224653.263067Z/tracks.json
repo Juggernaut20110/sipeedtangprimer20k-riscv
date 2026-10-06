@@ -1,0 +1,352 @@
+{
+  "baremetal": {
+    "artifacts": {
+      "application.bin": {
+        "bytes": 10904,
+        "path": "build/rtos-system-fit/software/20261006T224653.263067Z/baremetal/application.bin",
+        "present": true,
+        "sha256": "44954b8c79ae1debce970f63c60c44423b7a519d427d4ce9eb8c7000eaa0cb2d"
+      },
+      "application.elf": {
+        "bytes": 262336,
+        "path": "build/rtos-system-fit/software/20261006T224653.263067Z/baremetal/application.elf",
+        "present": true,
+        "sha256": "f25f9322f19731ebd4e144c35ac695c5cd909b1332f76730038fb253d7f5affd"
+      },
+      "application.elf.map": {
+        "bytes": 175207,
+        "path": "build/rtos-system-fit/software/20261006T224653.263067Z/baremetal/application.elf.map",
+        "present": true,
+        "sha256": "b86ecfa6ffcd25550c9bdc123212c6b25d76286938479d94c26f9dde90bac3bd"
+      },
+      "compiler-flags.txt": {
+        "bytes": 986,
+        "path": "build/rtos-system-fit/software/20261006T224653.263067Z/baremetal/compiler-flags.txt",
+        "present": true,
+        "sha256": "e1133843f48e326348cae32568f894a8d523a8aecf8f5d8b3663a70ab974dc6f"
+      }
+    },
+    "entry_address": 1073741824,
+    "isa_audit": "RV32IM/ILP32; no A/C/F/D extensions declared",
+    "main_ram_bytes_used": 11848,
+    "peripheral_link_symbols": [
+      "sdcard_read",
+      "sdcard_write",
+      "udp_start",
+      "udp_service",
+      "udp_send"
+    ],
+    "probe_is_link_only": true,
+    "riscv_attributes": [
+      "Tag_RISCV_arch: \"rv32i2p0_m2p0_zicsr2p0_zifencei2p0_zmmul1p0\""
+    ],
+    "runtime_invocation": "none",
+    "sections": {
+      ".bss": {
+        "address": 1073752728,
+        "bytes": 944
+      },
+      ".data": {
+        "address": 1073752704,
+        "bytes": 24
+      },
+      ".debug_abbrev": {
+        "address": 0,
+        "bytes": 7769
+      },
+      ".debug_aranges": {
+        "address": 0,
+        "bytes": 728
+      },
+      ".debug_frame": {
+        "address": 0,
+        "bytes": 1524
+      },
+      ".debug_info": {
+        "address": 0,
+        "bytes": 35745
+      },
+      ".debug_line": {
+        "address": 0,
+        "bytes": 38563
+      },
+      ".debug_line_str": {
+        "address": 0,
+        "bytes": 6679
+      },
+      ".debug_loclists": {
+        "address": 0,
+        "bytes": 17468
+      },
+      ".debug_macro": {
+        "address": 0,
+        "bytes": 36752
+      },
+      ".debug_rnglists": {
+        "address": 0,
+        "bytes": 2566
+      },
+      ".debug_str": {
+        "address": 0,
+        "bytes": 89950
+      },
+      ".fini_array": {
+        "address": 1073752704,
+        "bytes": 0
+      },
+      ".init_array": {
+        "address": 1073752704,
+        "bytes": 0
+      },
+      ".preinit_array": {
+        "address": 1073752704,
+        "bytes": 0
+      },
+      ".riscv.attributes": {
+        "address": 0,
+        "bytes": 67
+      },
+      ".rodata": {
+        "address": 1073752300,
+        "bytes": 404
+      },
+      ".text": {
+        "address": 1073741824,
+        "bytes": 10476
+      }
+    },
+    "source_files": {
+      ".deps/litex/litex/soc/cores/cpu/vexriscv/crt0.S": "17905a8c510b8ee55786045f1d39a09beead6f10212dd6171eeaadbc63d5b865",
+      ".deps/litex/litex/soc/software/libliteeth/udp.c": "4f1276fae75a79908d034263310e187034119a27f36afd3e954c9e557b8ef9d3",
+      ".deps/litex/litex/soc/software/liblitesdcard/sdcard.c": "4a2e92c370d0891f86d2a610d926fbd525876f85c0fa8126342d84b854016cba",
+      "firmware/rtos_system_fit/baremetal/main.c": "7aec31ff6e4e15b72d66b736dbc90d3b7d7afbe5be864c5e2d1c30a2ce13e429",
+      "firmware/rtos_system_fit/baremetal/peripheral_link_probe.c": "bfe1344e743387a08356e946a0b61e5cc9698ee0cb6ea3dc5b13fa696927fcff"
+    },
+    "status": "passed",
+    "summary": "baremetal cross-compiled for the selected routed image.",
+    "symbol_count": 120,
+    "task_stack_budget_bytes": 0
+  },
+  "freertos": {
+    "artifacts": {
+      "bin": {
+        "bytes": 8504,
+        "path": "build/rtos-system-fit/software/20261006T224653.263067Z/freertos/freertos.bin",
+        "present": true,
+        "sha256": "14f307edf142d1dc753953217e87f929e9269643d1530c3b8377e573d5a4162d"
+      },
+      "elf": {
+        "bytes": 205408,
+        "path": "build/rtos-system-fit/software/20261006T224653.263067Z/freertos/freertos.elf",
+        "present": true,
+        "sha256": "d21ed6ceafa75acabfc586fa6defe3219a114156411decb4f0fc84255f5e5b59"
+      },
+      "flags": {
+        "bytes": 1400,
+        "path": "build/rtos-system-fit/software/20261006T224653.263067Z/freertos/compiler-flags.txt",
+        "present": true,
+        "sha256": "7cc2fab35e390442f0be3fe50b622fb534f57eb32e71907ce51fbc3919a407b3"
+      },
+      "map": {
+        "bytes": 124890,
+        "path": "build/rtos-system-fit/software/20261006T224653.263067Z/freertos/freertos.elf.map",
+        "present": true,
+        "sha256": "7f51217dbf090c1245a8f5eaef09ebb393514d11626e3bdc58025b21ed1b4b8e"
+      }
+    },
+    "entry_address": 1073741824,
+    "isa_audit": "RV32IM/ILP32; no A/C/F/D extensions declared",
+    "kernel_revision": "3a22924e0a9ddbbc8b0758881c33b3422a5cc20d",
+    "kernel_tag": "V11.3.1",
+    "port": "GCC RISC-V RV32IM, no extensions, no MTIME/CLINT; LiteX timer0 external IRQ 1 -> MEIE trap -> xTaskIncrementTick/vTaskSwitchContext; ecall yield from upstream port",
+    "riscv_attributes": [
+      "Tag_RISCV_arch: \"rv32i2p0_m2p0_zicsr2p0_zifencei2p0_zmmul1p0\""
+    ],
+    "runtime_invocation": "none",
+    "sections": {
+      ".bss": {
+        "address": 1073750336,
+        "bytes": 9440
+      },
+      ".data": {
+        "address": 1073750304,
+        "bytes": 24
+      },
+      ".debug_abbrev": {
+        "address": 0,
+        "bytes": 5450
+      },
+      ".debug_aranges": {
+        "address": 0,
+        "bytes": 784
+      },
+      ".debug_frame": {
+        "address": 0,
+        "bytes": 1892
+      },
+      ".debug_info": {
+        "address": 0,
+        "bytes": 20951
+      },
+      ".debug_line": {
+        "address": 0,
+        "bytes": 28391
+      },
+      ".debug_line_str": {
+        "address": 0,
+        "bytes": 6148
+      },
+      ".debug_loclists": {
+        "address": 0,
+        "bytes": 10621
+      },
+      ".debug_macro": {
+        "address": 0,
+        "bytes": 27066
+      },
+      ".debug_rnglists": {
+        "address": 0,
+        "bytes": 1349
+      },
+      ".debug_str": {
+        "address": 0,
+        "bytes": 81578
+      },
+      ".fini_array": {
+        "address": 1073750304,
+        "bytes": 0
+      },
+      ".init_array": {
+        "address": 1073750304,
+        "bytes": 0
+      },
+      ".preinit_array": {
+        "address": 1073750304,
+        "bytes": 0
+      },
+      ".riscv.attributes": {
+        "address": 0,
+        "bytes": 67
+      },
+      ".rodata": {
+        "address": 1073749648,
+        "bytes": 656
+      },
+      ".text": {
+        "address": 1073741824,
+        "bytes": 7824
+      }
+    },
+    "source_files": {
+      ".deps/litex/litex/soc/cores/cpu/vexriscv/crt0.S": "17905a8c510b8ee55786045f1d39a09beead6f10212dd6171eeaadbc63d5b865",
+      ".deps/rtos/FreeRTOS-Kernel/list.c": "182fefbf019d8d804ba287dc6a2ee4755b9895898ea7aae7fa41f0154c83c677",
+      ".deps/rtos/FreeRTOS-Kernel/portable/GCC/RISC-V/port.c": "62ff10ecc84d271e98fa6c65c54c80d420c19a9106cb891b0f5346392d63b051",
+      ".deps/rtos/FreeRTOS-Kernel/portable/GCC/RISC-V/portASM.S": "ea119b1a7f5bfbc96fc7490212896be26f90e2ad1a695c22d04145bf6231d367",
+      ".deps/rtos/FreeRTOS-Kernel/queue.c": "31e5ce0890906b7eaac466007c8810fbfe248d22f667a3c620c3f18e9fc0fcc3",
+      ".deps/rtos/FreeRTOS-Kernel/tasks.c": "ae8bcc9dd0b30d39bf37eb36f1ef3067d086906b2f92ca2aea1acc0f0ad31645",
+      "firmware/rtos_system_fit/freertos/main.c": "3e660031150d06743a4522fb049c8f29e5d75064c6ed4bd9463c88dd1fa5c17f"
+    },
+    "stack_overflow_check": 2,
+    "static_stack_budget_bytes": {
+      "counter": 3072,
+      "idle": 512,
+      "isr": 2048,
+      "status": 3072
+    },
+    "static_stack_total_bytes": 8704,
+    "status": "passed",
+    "summary": "freertos cross-compiled for the selected routed image.",
+    "symbol_count": 116,
+    "tick_hz": 1000
+  },
+  "zephyr_kernel": {
+    "design_audit": {
+      "cpu_dcache_bytes": 0,
+      "cpu_icache_bytes": 2048,
+      "dma_ordering_patch": {
+        "path": "patches/zephyr-litex-riscv-dma-ordering.patch",
+        "sha256": "d43f5f19ec87979c774d67108b568a4072016667859f8641090826bdc9446e57",
+        "source_tree_diff_sha256": null,
+        "state": "already_applied"
+      },
+      "ethernet": {
+        "interface": "RMII",
+        "phy_address": 0,
+        "rx_slots": 1,
+        "slot_bytes": 2048,
+        "tx_slots": 1
+      },
+      "interrupts": {
+        "ethmac": 2,
+        "sdcard": 3,
+        "timer0": 1,
+        "uart": 0
+      },
+      "isa": "rv32im/ILP32; DTS base advertises rv32i + m + zicsr + zifencei",
+      "l2_bytes": 0,
+      "main_ram": {
+        "base": 1073741824,
+        "bytes": 134217728
+      },
+      "optional_gpio_disabled": true,
+      "reference_entropy_node_removed": true,
+      "required_csr_registers_present": true,
+      "sd_bus_width": 4,
+      "sd_card_detect_register": "sdcard_phy_card_detect",
+      "sd_dma_directions": [
+        "card-to-memory",
+        "memory-to-card"
+      ]
+    },
+    "logs": [
+      "build/rtos-system-fit/software/20261006T224653.263067Z/zephyr/configure-kernel.log"
+    ],
+    "status": "compile_failed",
+    "summary": "command exited 1: cmake\n  CMakeLists.txt:2 (find_package)\n\n\nParsing /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/Kconfig\nLoaded configuration '/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/boards/enjoydigital/litex_vexriscv/litex_vexriscv_defconfig'\nMerged configuration '/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/rtos_system_fit/zephyr/app/prj.conf'\nMerged configuration '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224653.263067Z/zephyr/generated/csr.overlay.conf'\nConfiguration saved to '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224653.263067Z/zephyr/build-kernel/zephyr/.config'\nKconfig header saved to '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224653.263067Z/zephyr/build-kernel/zephyr/include/generated/zephyr/autoconf.h'\n-- Found GnuLd: /home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/riscv-none-elf/bin/ld.bfd (found version \"2.45\")\n-- The C compiler identification is GNU 15.2.0\n-- The CXX compiler identification is GNU 15.2.0\n-- The ASM compiler identification is GNU\n-- Found assembler: /home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/riscv-none-elf-gcc\n-- Found gen_kobject_list: /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/scripts/build/gen_kobject_list.py\nCMake Warning at /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/CMakeLists.txt:1081 (message):\n  No SOURCES given to Zephyr library: drivers__clock_control\n\n  Excluding target from build.\n\n\nCMake Warning at /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/CMakeLists.txt:1081 (message):\n  No SOURCES given to Zephyr library: drivers__gpio\n\n  Excluding target from build.\n\n\n-- Configuring incomplete, errors occurred!"
+  },
+  "zephyr_peripherals": {
+    "design_audit": {
+      "cpu_dcache_bytes": 0,
+      "cpu_icache_bytes": 2048,
+      "dma_ordering_patch": {
+        "path": "patches/zephyr-litex-riscv-dma-ordering.patch",
+        "sha256": "d43f5f19ec87979c774d67108b568a4072016667859f8641090826bdc9446e57",
+        "source_tree_diff_sha256": null,
+        "state": "already_applied"
+      },
+      "ethernet": {
+        "interface": "RMII",
+        "phy_address": 0,
+        "rx_slots": 1,
+        "slot_bytes": 2048,
+        "tx_slots": 1
+      },
+      "interrupts": {
+        "ethmac": 2,
+        "sdcard": 3,
+        "timer0": 1,
+        "uart": 0
+      },
+      "isa": "rv32im/ILP32; DTS base advertises rv32i + m + zicsr + zifencei",
+      "l2_bytes": 0,
+      "main_ram": {
+        "base": 1073741824,
+        "bytes": 134217728
+      },
+      "optional_gpio_disabled": true,
+      "reference_entropy_node_removed": true,
+      "required_csr_registers_present": true,
+      "sd_bus_width": 4,
+      "sd_card_detect_register": "sdcard_phy_card_detect",
+      "sd_dma_directions": [
+        "card-to-memory",
+        "memory-to-card"
+      ]
+    },
+    "logs": [
+      "build/rtos-system-fit/software/20261006T224653.263067Z/zephyr/configure-peripherals.log"
+    ],
+    "status": "compile_failed",
+    "summary": "command exited 1: cmake\n    /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224653.263067Z/zephyr/build-peripherals/Kconfig/kconfig_module_dirs.cmake\nCall Stack (most recent call first):\n  /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/cmake/modules/zephyr_default.cmake:129 (include)\n  /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)\n  /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:97 (include_boilerplate)\n  CMakeLists.txt:2 (find_package)\n\n\n\n/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224653.263067Z/zephyr/generated/peripherals.conf:2: warning: attempt to assign the value 'y' to the undefined symbol ETHERNET\n\nerror: Aborting due to Kconfig warnings\n\nParsing /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/Kconfig\nLoaded configuration '/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/boards/enjoydigital/litex_vexriscv/litex_vexriscv_defconfig'\nMerged configuration '/home/user/git/fpga/sipeedtangprimer20k-riscv/firmware/rtos_system_fit/zephyr/app/prj.conf'\nMerged configuration '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224653.263067Z/zephyr/generated/csr.overlay.conf'\nMerged configuration '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T224653.263067Z/zephyr/generated/peripherals.conf'\nCMake Error at /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/cmake/modules/kconfig.cmake:423 (message):\n  command failed with return code: 1\nCall Stack (most recent call first):\n  /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/cmake/modules/zephyr_default.cmake:129 (include)\n  /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)\n  /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:97 (include_boilerplate)\n  CMakeLists.txt:2 (find_package)\n\n\n-- Configuring incomplete, errors occurred!"
+  }
+}

@@ -1,0 +1,8 @@
+zephyr/kernel/CMakeFiles/kernel.dir/version.c.obj: \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/kernel/version.c \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/zephyr/build-kernel/zephyr/include/generated/zephyr/autoconf.h \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/include/zephyr/toolchain/zephyr_stdint.h \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/include/zephyr/types.h \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/lib/gcc/riscv-none-elf/15.2.0/include/stddef.h \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/rtos/zephyr/lib/libc/minimal/include/stdint.h \
+ /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/zephyr/build-kernel/zephyr/include/generated/zephyr/version.h

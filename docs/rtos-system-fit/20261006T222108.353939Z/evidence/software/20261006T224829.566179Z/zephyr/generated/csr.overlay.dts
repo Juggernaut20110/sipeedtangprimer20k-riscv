@@ -1,0 +1,200 @@
+&cpu0 {
+    clock-frequency = <48000000>;
+};
+&ctrl0 {
+    reg = <0xf0000000 0x4>,
+        <0xf0000004 0x4>,
+        <0xf0000008 0x4>;
+    reg-names = "reset",
+        "scratch",
+        "bus_errors";
+    };
+&uart0 {
+    reg = <0xf0004000 0x4>,
+        <0xf0004004 0x4>,
+        <0xf0004008 0x4>,
+        <0xf000400c 0x4>,
+        <0xf0004010 0x4>,
+        <0xf0004014 0x4>,
+        <0xf0004018 0x4>,
+        <0xf000401c 0x4>;
+    reg-names = "rxtx",
+        "txfull",
+        "rxempty",
+        "ev_status",
+        "ev_pending",
+        "ev_enable",
+        "txempty",
+        "rxfull";
+    interrupts = <0 1>;
+};
+&timer0 {
+    reg = <0xf0003800 0x4>,
+        <0xf0003804 0x4>,
+        <0xf0003808 0x4>,
+        <0xf000380c 0x4>,
+        <0xf0003810 0x4>,
+        <0xf0003814 0x4>,
+        <0xf0003818 0x4>,
+        <0xf000381c 0x4>,
+        <0xf0003820 0x4>,
+        <0xf0003824 0x8>;
+    reg-names = "load",
+        "reload",
+        "en",
+        "update_value",
+        "value",
+        "ev_status",
+        "ev_pending",
+        "ev_enable",
+        "uptime_latch",
+        "uptime_cycles";
+    interrupts = <1 1>;
+};
+&eth0 {
+    reg = <0xf0001000 0x4>,
+        <0xf0001004 0x4>,
+        <0xf0001008 0x4>,
+        <0xf000100c 0x4>,
+        <0xf0001010 0x4>,
+        <0xf0001014 0x4>,
+        <0xf0001018 0x4>,
+        <0xf000101c 0x4>,
+        <0xf0001020 0x4>,
+        <0xf0001024 0x4>,
+        <0xf0001028 0x4>,
+        <0xf000102c 0x4>,
+        <0xf0001030 0x4>,
+        <0xf0001034 0x4>,
+        <0x80000000 0x800>,
+        <0x80000800 0x800>;
+    reg-names = "rx_slot",
+        "rx_length",
+        "rx_errors",
+        "rx_ev_status",
+        "rx_ev_pending",
+        "rx_ev_enable",
+        "tx_start",
+        "tx_ready",
+        "tx_level",
+        "tx_slot",
+        "tx_length",
+        "tx_ev_status",
+        "tx_ev_pending",
+        "tx_ev_enable",
+        "rx_buffers",
+        "tx_buffers";
+    interrupts = <2 1>;
+};
+&mdio0 {
+    reg = <0xf0001804 0x4>,
+        <0xf0001808 0x4>;
+    reg-names = "mdio_w",
+        "mdio_r";
+};
+&spi0 {
+    status = "disabled";
+};
+&spi1 {
+    status = "disabled";
+};
+&sdhc0 {
+    reg = <0xf0002800 0x4>,
+        <0xf0002804 0x4>,
+        <0xf0002808 0x4>,
+        <0xf000280c 0x4>,
+        <0xf0002810 0x4>,
+        <0xf0002814 0x4>,
+        <0xf0002818 0x4>,
+        <0xf000281c 0x4>,
+        <0xf0002820 0x4>,
+        <0xf0002824 0x4>,
+        <0xf0002828 0x10>,
+        <0xf0002838 0x4>,
+        <0xf000283c 0x4>,
+        <0xf0002840 0x4>,
+        <0xf0002844 0x4>,
+        <0xf0002848 0x8>,
+        <0xf0002850 0x4>,
+        <0xf0002854 0x4>,
+        <0xf0002858 0x4>,
+        <0xf000285c 0x4>,
+        <0xf0002860 0x4>,
+        <0xf0002864 0x4>,
+        <0xf0002868 0x8>,
+        <0xf0002870 0x4>,
+        <0xf0002874 0x4>,
+        <0xf0002878 0x4>,
+        <0xf000287c 0x4>,
+        <0xf0002880 0x4>,
+        <0xf0002884 0x4>,
+        <0xf0002888 0x4>,
+        <0xf000288c 0x4>,
+        <0xf0002890 0x4>;
+    reg-names = "phy_card_detect",
+        "phy_clocker_divider",
+        "phy_init_initialize",
+        "phy_cmdr_timeout",
+        "phy_dataw_status",
+        "phy_datar_timeout",
+        "phy_settings",
+        "core_cmd_argument",
+        "core_cmd_command",
+        "core_cmd_send",
+        "core_cmd_response",
+        "core_cmd_event",
+        "core_data_event",
+        "core_block_length",
+        "core_block_count",
+        "block2mem_dma_base",
+        "block2mem_dma_length",
+        "block2mem_dma_enable",
+        "block2mem_dma_done",
+        "block2mem_dma_loop",
+        "block2mem_dma_offset",
+        "block2mem_dma_error",
+        "mem2block_dma_base",
+        "mem2block_dma_length",
+        "mem2block_dma_enable",
+        "mem2block_dma_done",
+        "mem2block_dma_loop",
+        "mem2block_dma_offset",
+        "mem2block_dma_error",
+        "ev_status",
+        "ev_pending",
+        "ev_enable";
+    interrupts = <3 1>;
+};
+&i2c0 {
+    status = "disabled";
+};
+&i2s_rx {
+    status = "disabled";
+};
+&i2s_tx {
+    status = "disabled";
+};
+&wdt0 {
+    status = "disabled";
+};
+&clock0 {
+    status = "disabled";
+};
+&ram0 {
+    reg = <0x40000000 0x8000000>;
+};
+&dna0 {
+    status = "disabled";
+};
+&prbs0 {
+    status = "disabled";
+};
+
+/* Tang Primer 20K routed image compatibility overlay. */
+&cpu0 { i-cache-line-size = <32>; };
+&sdhc0 { bus-width = <4>; };
+&eth0 { phy-connection-type = "rmii"; };
+&phy0 { reg = <0>; default-speeds = "10BASE Half-Duplex", "10BASE Full-Duplex", "100BASE Half-Duplex", "100BASE Full-Duplex"; };
+&gpio_out { status = "disabled"; };
+&gpio_in { status = "disabled"; };
+/ { chosen { /delete-property/ zephyr,entropy; }; };

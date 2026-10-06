@@ -1,0 +1,488 @@
+{
+  "baremetal": {
+    "artifacts": {
+      "application.bin": {
+        "bytes": 10904,
+        "path": "build/rtos-system-fit/software/20261006T225009.154142Z/baremetal/application.bin",
+        "present": true,
+        "sha256": "44954b8c79ae1debce970f63c60c44423b7a519d427d4ce9eb8c7000eaa0cb2d"
+      },
+      "application.elf": {
+        "bytes": 262336,
+        "path": "build/rtos-system-fit/software/20261006T225009.154142Z/baremetal/application.elf",
+        "present": true,
+        "sha256": "a389043980b50202418ea845e88a46c7084bf35f3e2c8d9ee315855edcbdb60a"
+      },
+      "application.elf.map": {
+        "bytes": 175207,
+        "path": "build/rtos-system-fit/software/20261006T225009.154142Z/baremetal/application.elf.map",
+        "present": true,
+        "sha256": "7bacc788be3107edd68c21db4971be3a6031b3f1da3bc23e72916ddd2c1cee7b"
+      },
+      "compiler-flags.txt": {
+        "bytes": 986,
+        "path": "build/rtos-system-fit/software/20261006T225009.154142Z/baremetal/compiler-flags.txt",
+        "present": true,
+        "sha256": "e1133843f48e326348cae32568f894a8d523a8aecf8f5d8b3663a70ab974dc6f"
+      }
+    },
+    "entry_address": 1073741824,
+    "isa_audit": "RV32IM/ILP32; no A/C/F/D extensions declared",
+    "main_ram_bytes_used": 11848,
+    "peripheral_link_symbols": [
+      "sdcard_read",
+      "sdcard_write",
+      "udp_start",
+      "udp_service",
+      "udp_send"
+    ],
+    "probe_is_link_only": true,
+    "riscv_attributes": [
+      "Tag_RISCV_arch: \"rv32i2p0_m2p0_zicsr2p0_zifencei2p0_zmmul1p0\""
+    ],
+    "runtime_invocation": "none",
+    "sections": {
+      ".bss": {
+        "address": 1073752728,
+        "bytes": 944
+      },
+      ".data": {
+        "address": 1073752704,
+        "bytes": 24
+      },
+      ".debug_abbrev": {
+        "address": 0,
+        "bytes": 7769
+      },
+      ".debug_aranges": {
+        "address": 0,
+        "bytes": 728
+      },
+      ".debug_frame": {
+        "address": 0,
+        "bytes": 1524
+      },
+      ".debug_info": {
+        "address": 0,
+        "bytes": 35745
+      },
+      ".debug_line": {
+        "address": 0,
+        "bytes": 38563
+      },
+      ".debug_line_str": {
+        "address": 0,
+        "bytes": 6679
+      },
+      ".debug_loclists": {
+        "address": 0,
+        "bytes": 17468
+      },
+      ".debug_macro": {
+        "address": 0,
+        "bytes": 36752
+      },
+      ".debug_rnglists": {
+        "address": 0,
+        "bytes": 2566
+      },
+      ".debug_str": {
+        "address": 0,
+        "bytes": 89950
+      },
+      ".fini_array": {
+        "address": 1073752704,
+        "bytes": 0
+      },
+      ".init_array": {
+        "address": 1073752704,
+        "bytes": 0
+      },
+      ".preinit_array": {
+        "address": 1073752704,
+        "bytes": 0
+      },
+      ".riscv.attributes": {
+        "address": 0,
+        "bytes": 67
+      },
+      ".rodata": {
+        "address": 1073752300,
+        "bytes": 404
+      },
+      ".text": {
+        "address": 1073741824,
+        "bytes": 10476
+      }
+    },
+    "source_files": {
+      ".deps/litex/litex/soc/cores/cpu/vexriscv/crt0.S": "17905a8c510b8ee55786045f1d39a09beead6f10212dd6171eeaadbc63d5b865",
+      ".deps/litex/litex/soc/software/libliteeth/udp.c": "4f1276fae75a79908d034263310e187034119a27f36afd3e954c9e557b8ef9d3",
+      ".deps/litex/litex/soc/software/liblitesdcard/sdcard.c": "4a2e92c370d0891f86d2a610d926fbd525876f85c0fa8126342d84b854016cba",
+      "firmware/rtos_system_fit/baremetal/main.c": "7aec31ff6e4e15b72d66b736dbc90d3b7d7afbe5be864c5e2d1c30a2ce13e429",
+      "firmware/rtos_system_fit/baremetal/peripheral_link_probe.c": "bfe1344e743387a08356e946a0b61e5cc9698ee0cb6ea3dc5b13fa696927fcff"
+    },
+    "status": "passed",
+    "summary": "baremetal cross-compiled for the selected routed image.",
+    "symbol_count": 120,
+    "task_stack_budget_bytes": 0
+  },
+  "freertos": {
+    "artifacts": {
+      "bin": {
+        "bytes": 8504,
+        "path": "build/rtos-system-fit/software/20261006T225009.154142Z/freertos/freertos.bin",
+        "present": true,
+        "sha256": "14f307edf142d1dc753953217e87f929e9269643d1530c3b8377e573d5a4162d"
+      },
+      "elf": {
+        "bytes": 205408,
+        "path": "build/rtos-system-fit/software/20261006T225009.154142Z/freertos/freertos.elf",
+        "present": true,
+        "sha256": "34f346a7bd1857199864b63ca62380a86e8ee9cd3338f840679001fa6fe5fa27"
+      },
+      "flags": {
+        "bytes": 1400,
+        "path": "build/rtos-system-fit/software/20261006T225009.154142Z/freertos/compiler-flags.txt",
+        "present": true,
+        "sha256": "7cc2fab35e390442f0be3fe50b622fb534f57eb32e71907ce51fbc3919a407b3"
+      },
+      "map": {
+        "bytes": 124890,
+        "path": "build/rtos-system-fit/software/20261006T225009.154142Z/freertos/freertos.elf.map",
+        "present": true,
+        "sha256": "2707f1c75fa9cf0bbced80563a6d5103c26313c7121f94a7e6d503dca12e2d96"
+      }
+    },
+    "entry_address": 1073741824,
+    "isa_audit": "RV32IM/ILP32; no A/C/F/D extensions declared",
+    "kernel_revision": "3a22924e0a9ddbbc8b0758881c33b3422a5cc20d",
+    "kernel_tag": "V11.3.1",
+    "port": "GCC RISC-V RV32IM, no extensions, no MTIME/CLINT; LiteX timer0 external IRQ 1 -> MEIE trap -> xTaskIncrementTick/vTaskSwitchContext; ecall yield from upstream port",
+    "riscv_attributes": [
+      "Tag_RISCV_arch: \"rv32i2p0_m2p0_zicsr2p0_zifencei2p0_zmmul1p0\""
+    ],
+    "runtime_invocation": "none",
+    "sections": {
+      ".bss": {
+        "address": 1073750336,
+        "bytes": 9440
+      },
+      ".data": {
+        "address": 1073750304,
+        "bytes": 24
+      },
+      ".debug_abbrev": {
+        "address": 0,
+        "bytes": 5450
+      },
+      ".debug_aranges": {
+        "address": 0,
+        "bytes": 784
+      },
+      ".debug_frame": {
+        "address": 0,
+        "bytes": 1892
+      },
+      ".debug_info": {
+        "address": 0,
+        "bytes": 20951
+      },
+      ".debug_line": {
+        "address": 0,
+        "bytes": 28391
+      },
+      ".debug_line_str": {
+        "address": 0,
+        "bytes": 6148
+      },
+      ".debug_loclists": {
+        "address": 0,
+        "bytes": 10621
+      },
+      ".debug_macro": {
+        "address": 0,
+        "bytes": 27066
+      },
+      ".debug_rnglists": {
+        "address": 0,
+        "bytes": 1349
+      },
+      ".debug_str": {
+        "address": 0,
+        "bytes": 81578
+      },
+      ".fini_array": {
+        "address": 1073750304,
+        "bytes": 0
+      },
+      ".init_array": {
+        "address": 1073750304,
+        "bytes": 0
+      },
+      ".preinit_array": {
+        "address": 1073750304,
+        "bytes": 0
+      },
+      ".riscv.attributes": {
+        "address": 0,
+        "bytes": 67
+      },
+      ".rodata": {
+        "address": 1073749648,
+        "bytes": 656
+      },
+      ".text": {
+        "address": 1073741824,
+        "bytes": 7824
+      }
+    },
+    "source_files": {
+      ".deps/litex/litex/soc/cores/cpu/vexriscv/crt0.S": "17905a8c510b8ee55786045f1d39a09beead6f10212dd6171eeaadbc63d5b865",
+      ".deps/rtos/FreeRTOS-Kernel/list.c": "182fefbf019d8d804ba287dc6a2ee4755b9895898ea7aae7fa41f0154c83c677",
+      ".deps/rtos/FreeRTOS-Kernel/portable/GCC/RISC-V/port.c": "62ff10ecc84d271e98fa6c65c54c80d420c19a9106cb891b0f5346392d63b051",
+      ".deps/rtos/FreeRTOS-Kernel/portable/GCC/RISC-V/portASM.S": "ea119b1a7f5bfbc96fc7490212896be26f90e2ad1a695c22d04145bf6231d367",
+      ".deps/rtos/FreeRTOS-Kernel/queue.c": "31e5ce0890906b7eaac466007c8810fbfe248d22f667a3c620c3f18e9fc0fcc3",
+      ".deps/rtos/FreeRTOS-Kernel/tasks.c": "ae8bcc9dd0b30d39bf37eb36f1ef3067d086906b2f92ca2aea1acc0f0ad31645",
+      "firmware/rtos_system_fit/freertos/main.c": "3e660031150d06743a4522fb049c8f29e5d75064c6ed4bd9463c88dd1fa5c17f"
+    },
+    "stack_overflow_check": 2,
+    "static_stack_budget_bytes": {
+      "counter": 3072,
+      "idle": 512,
+      "isr": 2048,
+      "status": 3072
+    },
+    "static_stack_total_bytes": 8704,
+    "status": "passed",
+    "summary": "freertos cross-compiled for the selected routed image.",
+    "symbol_count": 116,
+    "tick_hz": 1000
+  },
+  "zephyr_kernel": {
+    "artifacts": {
+      "bin": {
+        "bytes": 18188,
+        "path": "build/rtos-system-fit/software/20261006T225009.154142Z/zephyr/build-kernel/zephyr/zephyr.bin",
+        "present": true,
+        "sha256": "cb3dbb938bbb67f31256533d5c86ed5db897ad021a40df8f54cabf3e89905bcb"
+      },
+      "config": {
+        "bytes": 25409,
+        "path": "build/rtos-system-fit/software/20261006T225009.154142Z/zephyr/build-kernel/zephyr/.config",
+        "present": true,
+        "sha256": "06d13b9e9e93106dc5e3e152b4d7ac5f6363cdcb43b8cd381defbd761b231ce0"
+      },
+      "dts": {
+        "bytes": 35874,
+        "path": "build/rtos-system-fit/software/20261006T225009.154142Z/zephyr/build-kernel/zephyr/zephyr.dts",
+        "present": true,
+        "sha256": "46ec8f48f1c5ae49066ef762a5c2054579b1c83d15be46d9914a40545bf60cdc"
+      },
+      "elf": {
+        "bytes": 389864,
+        "path": "build/rtos-system-fit/software/20261006T225009.154142Z/zephyr/build-kernel/zephyr/zephyr.elf",
+        "present": true,
+        "sha256": "74892de41c8a2dea8fa56b47d94712acad76742d6e495ff149562402265d525c"
+      },
+      "map": {
+        "bytes": 273793,
+        "path": "build/rtos-system-fit/software/20261006T225009.154142Z/zephyr/build-kernel/zephyr/zephyr.map",
+        "present": true,
+        "sha256": "9c10fad58a1864368f795217d3737f51d3e3d776916dd8371f3d9ff78d7b5503"
+      }
+    },
+    "design_audit": {
+      "cpu_dcache_bytes": 0,
+      "cpu_icache_bytes": 2048,
+      "dma_ordering_patch": {
+        "path": "patches/zephyr-litex-riscv-dma-ordering.patch",
+        "sha256": "d43f5f19ec87979c774d67108b568a4072016667859f8641090826bdc9446e57",
+        "source_tree_diff_sha256": "d624c7034db731121e7aeea56adfcdc670a530df2dd51bb453b9fbda5057b766",
+        "state": "already_applied"
+      },
+      "ethernet": {
+        "interface": "RMII",
+        "phy_address": 0,
+        "rx_slots": 1,
+        "slot_bytes": 2048,
+        "tx_slots": 1
+      },
+      "interrupts": {
+        "ethmac": 2,
+        "sdcard": 3,
+        "timer0": 1,
+        "uart": 0
+      },
+      "isa": "rv32im/ILP32; DTS base advertises rv32i + m + zicsr + zifencei",
+      "l2_bytes": 0,
+      "main_ram": {
+        "base": 1073741824,
+        "bytes": 134217728
+      },
+      "optional_gpio_disabled": true,
+      "reference_entropy_node_removed": true,
+      "required_csr_registers_present": true,
+      "sd_bus_width": 4,
+      "sd_card_detect_register": "sdcard_phy_card_detect",
+      "sd_dma_directions": [
+        "card-to-memory",
+        "memory-to-card"
+      ]
+    },
+    "entry_address": 1073741824,
+    "isa_audit": "RV32IM/ILP32; no A/C/F/D extensions declared",
+    "profile": "kernel",
+    "riscv_attributes": [
+      "Tag_RISCV_arch: \"rv32i2p1_m2p0_zicsr2p0_zifencei2p0_zmmul1p0\""
+    ],
+    "runtime_invocation": "none",
+    "sections": {
+      ".comment": {
+        "address": 0,
+        "bytes": 51
+      },
+      ".debug_abbrev": {
+        "address": 0,
+        "bytes": 24875
+      },
+      ".debug_aranges": {
+        "address": 0,
+        "bytes": 2872
+      },
+      ".debug_frame": {
+        "address": 0,
+        "bytes": 7372
+      },
+      ".debug_info": {
+        "address": 0,
+        "bytes": 110806
+      },
+      ".debug_line": {
+        "address": 0,
+        "bytes": 97708
+      },
+      ".debug_loc": {
+        "address": 0,
+        "bytes": 62750
+      },
+      ".debug_ranges": {
+        "address": 0,
+        "bytes": 10704
+      },
+      ".debug_str": {
+        "address": 0,
+        "bytes": 19147
+      },
+      ".riscv.attributes": {
+        "address": 0,
+        "bytes": 67
+      },
+      "bss": {
+        "address": 1073760016,
+        "bytes": 720
+      },
+      "datas": {
+        "address": 1073759968,
+        "bytes": 20
+      },
+      "device_area": {
+        "address": 1073758152,
+        "bytes": 56
+      },
+      "device_states": {
+        "address": 1073759988,
+        "bytes": 4
+      },
+      "exceptions": {
+        "address": 1073741844,
+        "bytes": 544
+      },
+      "initlevel": {
+        "address": 1073758112,
+        "bytes": 40
+      },
+      "k_heap_area": {
+        "address": 1073759992,
+        "bytes": 20
+      },
+      "noinit": {
+        "address": 1073760736,
+        "bytes": 10820
+      },
+      "reset": {
+        "address": 1073741840,
+        "bytes": 4
+      },
+      "rodata": {
+        "address": 1073758324,
+        "bytes": 1644
+      },
+      "rom_start": {
+        "address": 1073741824,
+        "bytes": 16
+      },
+      "sw_isr_table": {
+        "address": 1073758208,
+        "bytes": 96
+      },
+      "text": {
+        "address": 1073742388,
+        "bytes": 15724
+      },
+      "uart_driver_api_area": {
+        "address": 1073758304,
+        "bytes": 20
+      }
+    },
+    "status": "passed",
+    "summary": "Zephyr kernel ELF cross-compiled for the routed CSR map.",
+    "symbol_count": 754
+  },
+  "zephyr_peripherals": {
+    "design_audit": {
+      "cpu_dcache_bytes": 0,
+      "cpu_icache_bytes": 2048,
+      "dma_ordering_patch": {
+        "path": "patches/zephyr-litex-riscv-dma-ordering.patch",
+        "sha256": "d43f5f19ec87979c774d67108b568a4072016667859f8641090826bdc9446e57",
+        "source_tree_diff_sha256": "d624c7034db731121e7aeea56adfcdc670a530df2dd51bb453b9fbda5057b766",
+        "state": "already_applied"
+      },
+      "ethernet": {
+        "interface": "RMII",
+        "phy_address": 0,
+        "rx_slots": 1,
+        "slot_bytes": 2048,
+        "tx_slots": 1
+      },
+      "interrupts": {
+        "ethmac": 2,
+        "sdcard": 3,
+        "timer0": 1,
+        "uart": 0
+      },
+      "isa": "rv32im/ILP32; DTS base advertises rv32i + m + zicsr + zifencei",
+      "l2_bytes": 0,
+      "main_ram": {
+        "base": 1073741824,
+        "bytes": 134217728
+      },
+      "optional_gpio_disabled": true,
+      "reference_entropy_node_removed": true,
+      "required_csr_registers_present": true,
+      "sd_bus_width": 4,
+      "sd_card_detect_register": "sdcard_phy_card_detect",
+      "sd_dma_directions": [
+        "card-to-memory",
+        "memory-to-card"
+      ]
+    },
+    "logs": [
+      "build/rtos-system-fit/software/20261006T225009.154142Z/zephyr/configure-peripherals.log",
+      "build/rtos-system-fit/software/20261006T225009.154142Z/zephyr/build-peripherals.log"
+    ],
+    "status": "compile_failed",
+    "summary": "command exited 2: cmake\n[ 89%] Built target drivers__console\n[ 90%] Building C object zephyr/drivers/sdhc/CMakeFiles/drivers__sdhc.dir/sdhc_litex_litesdcard.c.obj\n[ 90%] Building C object zephyr/drivers/ethernet/CMakeFiles/drivers__ethernet.dir/phy/phy_mii.c.obj\n[ 90%] Linking C static library libdrivers__sdhc.a\n[ 90%] Built target drivers__sdhc\n[ 91%] Building C object zephyr/drivers/serial/CMakeFiles/drivers__serial.dir/uart_litex.c.obj\n[ 92%] Building C object zephyr/drivers/ethernet/CMakeFiles/drivers__ethernet.dir/eth_litex_liteeth.c.obj\n[ 92%] Linking C static library libdrivers__serial.a\n[ 92%] Built target drivers__serial\n[ 93%] Building C object zephyr/drivers/timer/CMakeFiles/drivers__timer.dir/sys_clock_init.c.obj\n[ 93%] Linking C static library libdrivers__ethernet.a\n[ 93%] Building C object zephyr/drivers/timer/CMakeFiles/drivers__timer.dir/litex_timer.c.obj\n[ 93%] Built target drivers__ethernet\n[ 93%] Building C object zephyr/arch/common/CMakeFiles/arch__common.dir/sw_isr_common.c.obj\n[ 94%] Building C object zephyr/arch/common/CMakeFiles/arch__common.dir/init.c.obj\n[ 95%] Linking C static library libdrivers__timer.a\n[ 95%] Built target drivers__timer\n[ 95%] Linking C static library libarch__common.a\n[ 95%] Built target arch__common\n[ 95%] Building C object zephyr/CMakeFiles/zephyr_pre0.dir/misc/empty_file.c.obj\n[ 96%] Linking C executable zephyr_pre0.elf\n/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/bin/ld.bfd: warning: zephyr_pre0.elf has a LOAD segment with RWX permissions\n/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/bin/ld.bfd: drivers/ethernet/libdrivers__ethernet.a(eth_litex_liteeth.c.obj): in function `sys_rand_get':\n/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/software/20261006T225009.154142Z/zephyr/build-peripherals/zephyr/include/generated/zephyr/syscalls/random.h:37:(.text.eth_initialize+0x74): undefined reference to `z_impl_sys_rand_get'\ncollect2: error: ld returned 1 exit status\nmake[2]: *** [zephyr/CMakeFiles/zephyr_pre0.dir/build.make:123: zephyr/zephyr_pre0.elf] Error 1\nmake[1]: *** [CMakeFiles/Makefile2:3186: zephyr/CMakeFiles/zephyr_pre0.dir/all] Error 2\nmake: *** [Makefile:91: all] Error 2"
+  }
+}

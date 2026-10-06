@@ -1,0 +1,1610 @@
+# LiteX build log
+# Started: 2026-10-06T18:15:04
+# Command: scripts/rtos_system_fit.py run
+# Working directory: /home/user/git/fpga/sipeedtangprimer20k-riscv
+
+INFO:SoC:        __   _ __      _  __  
+INFO:SoC:       / /  (_) /____ | |/_/  
+INFO:SoC:      / /__/ / __/ -_)>  <    
+INFO:SoC:     /____/_/\__/\__/_/|_|  
+INFO:SoC:  Build your hardware, easily!
+INFO:SoC:--------------------------------------------------------------------------------
+INFO:SoC:Creating SoC... (2026-10-06 18:15:03)
+INFO:SoC:--------------------------------------------------------------------------------
+INFO:SoC:FPGA device : GW2A-LV18PG256C8/I7.
+INFO:SoC:System clock: 48.000MHz.
+INFO:SoCBusHandler:Creating Bus Handler...
+INFO:SoCBusHandler:32-bit wishbone Bus, 4.0GiB Address Space.
+INFO:SoCBusHandler:Adding reserved Bus Regions...
+INFO:SoCBusHandler:Bus Handler created.
+INFO:SoCCSRHandler:Creating CSR Handler...
+INFO:SoCCSRHandler:32-bit CSR Bus, 32-bit Aligned, 16.0KiB Address Space, 2048B Paging, big Ordering (Up to 32 Locations).
+INFO:SoCCSRHandler:Adding reserved CSRs...
+INFO:SoCCSRHandler:CSR Handler created.
+INFO:SoCIRQHandler:Creating IRQ Handler...
+INFO:SoCIRQHandler:IRQ Handler (up to 32 Locations).
+INFO:SoCIRQHandler:Adding reserved IRQs...
+INFO:SoCIRQHandler:IRQ Handler created.
+INFO:SoC:--------------------------------------------------------------------------------
+INFO:SoC:Initial SoC:
+INFO:SoC:--------------------------------------------------------------------------------
+INFO:SoC:32-bit wishbone Bus, 4.0GiB Address Space.
+INFO:SoC:32-bit CSR Bus, 32-bit Aligned, 16.0KiB Address Space, 2048B Paging, big Ordering (Up to 32 Locations).
+INFO:SoC:IRQ Handler (up to 32 Locations).
+INFO:SoC:--------------------------------------------------------------------------------
+INFO:SoC:Controller ctrl added.
+INFO:SoC:CPU vexriscv added.
+INFO:SoC:CPU vexriscv adding IO Region 0 at 0x80000000 (Size: 0x80000000).
+INFO:SoCBusHandler:io0 Region added at Origin: 0x80000000, Size: 0x80000000, Mode:  RW, Cached: False, Linker: False.
+INFO:SoC:CPU vexriscv overriding sram mapping from 0x01000000 to 0x10000000.
+INFO:SoC:CPU vexriscv setting reset address to 0x00000000.
+INFO:SoC:CPU vexriscv adding Bus Master(s).
+INFO:SoCBusHandler:cpu_bus0 added as Bus Master.
+INFO:SoCBusHandler:cpu_bus1 added as Bus Master.
+INFO:SoC:CPU vexriscv adding Interrupt(s).
+INFO:SoC:CPU vexriscv adding SoC components.
+INFO:SoCBusHandler:rom Region added at Origin: 0x00000000, Size: 0x00004000, Mode:  RX, Cached:  True, Linker: False.
+INFO:SoCBusHandler:rom added as Bus Slave.
+INFO:SoC:RAM rom added Origin: 0x00000000, Size: 0x00004000, Mode:  RX, Cached:  True, Linker: False.
+INFO:SoCBusHandler:sram Region added at Origin: 0x10000000, Size: 0x00001000, Mode: RWX, Cached:  True, Linker: False.
+INFO:SoCBusHandler:sram added as Bus Slave.
+INFO:SoC:RAM sram added Origin: 0x10000000, Size: 0x00001000, Mode: RWX, Cached:  True, Linker: False.
+INFO:SoCIRQHandler:uart IRQ allocated at Location 0.
+INFO:SoCIRQHandler:timer0 IRQ allocated at Location 1.
+INFO:SoCBusHandler:main_ram Region added at Origin: 0x40000000, Size: 0x08000000, Mode: RWX, Cached:  True, Linker: False.
+INFO:SoCBusHandler:main_ram added as Bus Slave.
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/python-3.12/python/lib/python3.12/logging/__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+ValueError: I/O operation on closed file.
+Call stack:
+INFO:SoC:CSR Bridge csr added.
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 870, in <module>
+    raise SystemExit(main())
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 860, in main
+    report = run_study()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 823, in run_study
+    selected, attempts = try_candidate(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 603, in try_candidate
+    attempt = build_attempt(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 532, in build_attempt
+    common._capture_build(builder, build_name)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/system_fit.py", line 646, in _capture_build
+    builder.build(run=True, build_name=build_name, hierarchical=True)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 521, in build
+    return self._build(**kwargs)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 558, in _build
+    self.soc.finalize()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2177, in finalize
+    self._finalize_bus()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2025, in _finalize_bus
+    self.add_csr_bridge(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 1705, in add_csr_bridge
+    self.logger.info("CSR Bridge {} {}.".format(
+Message: 'CSR Bridge \x1b[4mcsr\x1b[0m \x1b[32madded\x1b[0m.'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/python-3.12/python/lib/python3.12/logging/__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+ValueError: I/O operation on closed file.
+Call stack:
+INFO:SoCBusHandler:csr Region added at Origin: 0xf0000000, Size: 0x00010000, Mode:  RW, Cached: False, Linker: False.
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 870, in <module>
+    raise SystemExit(main())
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 860, in main
+    report = run_study()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 823, in run_study
+    selected, attempts = try_candidate(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 603, in try_candidate
+    attempt = build_attempt(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 532, in build_attempt
+    common._capture_build(builder, build_name)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/system_fit.py", line 646, in _capture_build
+    builder.build(run=True, build_name=build_name, hierarchical=True)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 521, in build
+    return self._build(**kwargs)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 558, in _build
+    self.soc.finalize()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2177, in finalize
+    self._finalize_bus()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2025, in _finalize_bus
+    self.add_csr_bridge(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 1718, in add_csr_bridge
+    self.bus.add_slave(name=name, slave=bus, region=csr_region)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 871, in add_slave
+    self.add_region(name, region)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 402, in add_region
+    self.logger.info("{} Region {} at {}.".format(
+Message: '\x1b[4mcsr\x1b[0m Region \x1b[32madded\x1b[0m at Origin: \x1b[1m0xf0000000\x1b[0m, Size: \x1b[1m0x00010000\x1b[0m, Mode:  \x1b[1mRW\x1b[0m, Cached: \x1b[1mFalse\x1b[0m, Linker: \x1b[1mFalse\x1b[0m.'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/python-3.12/python/lib/python3.12/logging/__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+ValueError: I/O operation on closed file.
+Call stack:
+INFO:SoCBusHandler:csr added as Bus Slave.
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 870, in <module>
+    raise SystemExit(main())
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 860, in main
+    report = run_study()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 823, in run_study
+    selected, attempts = try_candidate(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 603, in try_candidate
+    attempt = build_attempt(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 532, in build_attempt
+    common._capture_build(builder, build_name)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/system_fit.py", line 646, in _capture_build
+    builder.build(run=True, build_name=build_name, hierarchical=True)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 521, in build
+    return self._build(**kwargs)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 558, in _build
+    self.soc.finalize()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2177, in finalize
+    self._finalize_bus()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2025, in _finalize_bus
+    self.add_csr_bridge(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 1718, in add_csr_bridge
+    self.bus.add_slave(name=name, slave=bus, region=csr_region)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 940, in add_slave
+    self.logger.info("{} {} as Bus Slave.".format(
+Message: '\x1b[4mcsr\x1b[0m \x1b[32madded\x1b[0m as Bus Slave.'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/python-3.12/python/lib/python3.12/logging/__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+ValueError: I/O operation on closed file.
+Call stack:
+INFO:SoCCSRHandler:csr added as CSR Master.
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 870, in <module>
+    raise SystemExit(main())
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 860, in main
+    report = run_study()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 823, in run_study
+    selected, attempts = try_candidate(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 603, in try_candidate
+    attempt = build_attempt(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 532, in build_attempt
+    common._capture_build(builder, build_name)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/system_fit.py", line 646, in _capture_build
+    builder.build(run=True, build_name=build_name, hierarchical=True)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 521, in build
+    return self._build(**kwargs)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 558, in _build
+    self.soc.finalize()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2177, in finalize
+    self._finalize_bus()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2025, in _finalize_bus
+    self.add_csr_bridge(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 1719, in add_csr_bridge
+    self.csr.add_master(name=name, master=csr_bridge.csr)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 1222, in add_master
+    self.logger.info("{} {} as CSR Master.".format(
+Message: '\x1b[4mcsr\x1b[0m \x1b[32madded\x1b[0m as CSR Master.'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/python-3.12/python/lib/python3.12/logging/__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+ValueError: I/O operation on closed file.
+Call stack:
+INFO:SoCBusHandler:Interconnect: InterconnectShared (2 <-> 4).
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 870, in <module>
+    raise SystemExit(main())
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 860, in main
+    report = run_study()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 823, in run_study
+    selected, attempts = try_candidate(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 603, in try_candidate
+    attempt = build_attempt(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 532, in build_attempt
+    common._capture_build(builder, build_name)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/system_fit.py", line 646, in _capture_build
+    builder.build(run=True, build_name=build_name, hierarchical=True)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 521, in build
+    return self._build(**kwargs)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 558, in _build
+    self.soc.finalize()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2177, in finalize
+    self._finalize_bus()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2031, in _finalize_bus
+    self.bus.finalize()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/migen/migen/fhdl/module.py", line 157, in finalize
+    self.do_finalize(*args, **kwargs)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 1023, in do_finalize
+    self.logger.info("Interconnect: {} ({} <-> {}).".format(
+Message: 'Interconnect: \x1b[1mInterconnectShared\x1b[0m (\x1b[1m2\x1b[0m <-> \x1b[1m4\x1b[0m).'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/python-3.12/python/lib/python3.12/logging/__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+ValueError: I/O operation on closed file.
+Call stack:
+INFO:SoCCSRHandler:ctrl CSR allocated at Location 0.
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 870, in <module>
+    raise SystemExit(main())
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 860, in main
+    report = run_study()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 823, in run_study
+    selected, attempts = try_candidate(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 603, in try_candidate
+    attempt = build_attempt(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 532, in build_attempt
+    common._capture_build(builder, build_name)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/system_fit.py", line 646, in _capture_build
+    builder.build(run=True, build_name=build_name, hierarchical=True)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 521, in build
+    return self._build(**kwargs)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 558, in _build
+    self.soc.finalize()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2179, in finalize
+    self._finalize_csr()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2061, in _finalize_csr
+    self.csr_bankarray = csr_bus.CSRBankArray(self,
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/interconnect/csr_bus.py", line 241, in __init__
+    self.scan(ifargs, ifkwargs)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/interconnect/csr_bus.py", line 295, in scan
+    mapaddr = self.address_map(name, None)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 1258, in address_map
+    self.add(name, use_loc_if_exists=True)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 1092, in add
+    self.logger.info("{} {} {} at Location {}.".format(
+Message: '\x1b[4mctrl\x1b[0m CSR \x1b[36mallocated\x1b[0m at Location \x1b[1m0\x1b[0m.'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/python-3.12/python/lib/python3.12/logging/__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+ValueError: I/O operation on closed file.
+Call stack:
+INFO:SoCCSRHandler:ddrphy CSR allocated at Location 1.
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 870, in <module>
+    raise SystemExit(main())
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 860, in main
+    report = run_study()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 823, in run_study
+    selected, attempts = try_candidate(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 603, in try_candidate
+    attempt = build_attempt(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 532, in build_attempt
+    common._capture_build(builder, build_name)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/system_fit.py", line 646, in _capture_build
+    builder.build(run=True, build_name=build_name, hierarchical=True)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 521, in build
+    return self._build(**kwargs)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 558, in _build
+    self.soc.finalize()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2179, in finalize
+    self._finalize_csr()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2061, in _finalize_csr
+    self.csr_bankarray = csr_bus.CSRBankArray(self,
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/interconnect/csr_bus.py", line 241, in __init__
+    self.scan(ifargs, ifkwargs)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/interconnect/csr_bus.py", line 295, in scan
+    mapaddr = self.address_map(name, None)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 1258, in address_map
+    self.add(name, use_loc_if_exists=True)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 1092, in add
+    self.logger.info("{} {} {} at Location {}.".format(
+Message: '\x1b[4mddrphy\x1b[0m CSR \x1b[36mallocated\x1b[0m at Location \x1b[1m1\x1b[0m.'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/python-3.12/python/lib/python3.12/logging/__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+ValueError: I/O operation on closed file.
+Call stack:
+INFO:SoCCSRHandler:identifier_mem CSR allocated at Location 2.
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 870, in <module>
+    raise SystemExit(main())
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 860, in main
+    report = run_study()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 823, in run_study
+    selected, attempts = try_candidate(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 603, in try_candidate
+    attempt = build_attempt(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 532, in build_attempt
+    common._capture_build(builder, build_name)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/system_fit.py", line 646, in _capture_build
+    builder.build(run=True, build_name=build_name, hierarchical=True)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 521, in build
+    return self._build(**kwargs)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 558, in _build
+    self.soc.finalize()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2179, in finalize
+    self._finalize_csr()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2061, in _finalize_csr
+    self.csr_bankarray = csr_bus.CSRBankArray(self,
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/interconnect/csr_bus.py", line 241, in __init__
+    self.scan(ifargs, ifkwargs)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/interconnect/csr_bus.py", line 269, in scan
+    mapaddr = self.address_map(name, memory)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 1258, in address_map
+    self.add(name, use_loc_if_exists=True)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 1092, in add
+    self.logger.info("{} {} {} at Location {}.".format(
+Message: '\x1b[4midentifier_mem\x1b[0m CSR \x1b[36mallocated\x1b[0m at Location \x1b[1m2\x1b[0m.'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/python-3.12/python/lib/python3.12/logging/__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+ValueError: I/O operation on closed file.
+Call stack:
+INFO:SoCCSRHandler:sdram CSR allocated at Location 3.
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 870, in <module>
+    raise SystemExit(main())
+INFO:SoCCSRHandler:timer0 CSR allocated at Location 4.
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 860, in main
+    report = run_study()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 823, in run_study
+    selected, attempts = try_candidate(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 603, in try_candidate
+    attempt = build_attempt(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 532, in build_attempt
+    common._capture_build(builder, build_name)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/system_fit.py", line 646, in _capture_build
+    builder.build(run=True, build_name=build_name, hierarchical=True)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 521, in build
+    return self._build(**kwargs)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 558, in _build
+    self.soc.finalize()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2179, in finalize
+    self._finalize_csr()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2061, in _finalize_csr
+    self.csr_bankarray = csr_bus.CSRBankArray(self,
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/interconnect/csr_bus.py", line 241, in __init__
+    self.scan(ifargs, ifkwargs)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/interconnect/csr_bus.py", line 295, in scan
+    mapaddr = self.address_map(name, None)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 1258, in address_map
+    self.add(name, use_loc_if_exists=True)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 1092, in add
+    self.logger.info("{} {} {} at Location {}.".format(
+Message: '\x1b[4msdram\x1b[0m CSR \x1b[36mallocated\x1b[0m at Location \x1b[1m3\x1b[0m.'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/python-3.12/python/lib/python3.12/logging/__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+ValueError: I/O operation on closed file.
+Call stack:
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 870, in <module>
+    raise SystemExit(main())
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 860, in main
+    report = run_study()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 823, in run_study
+    selected, attempts = try_candidate(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 603, in try_candidate
+    attempt = build_attempt(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 532, in build_attempt
+    common._capture_build(builder, build_name)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/system_fit.py", line 646, in _capture_build
+    builder.build(run=True, build_name=build_name, hierarchical=True)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 521, in build
+    return self._build(**kwargs)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 558, in _build
+    self.soc.finalize()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2179, in finalize
+    self._finalize_csr()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2061, in _finalize_csr
+    self.csr_bankarray = csr_bus.CSRBankArray(self,
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/interconnect/csr_bus.py", line 241, in __init__
+    self.scan(ifargs, ifkwargs)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/interconnect/csr_bus.py", line 295, in scan
+    mapaddr = self.address_map(name, None)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 1258, in address_map
+    self.add(name, use_loc_if_exists=True)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 1092, in add
+    self.logger.info("{} {} {} at Location {}.".format(
+Message: '\x1b[4mtimer0\x1b[0m CSR \x1b[36mallocated\x1b[0m at Location \x1b[1m4\x1b[0m.'
+Arguments: ()
+INFO:SoCCSRHandler:uart CSR allocated at Location 5.
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/python-3.12/python/lib/python3.12/logging/__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+ValueError: I/O operation on closed file.
+Call stack:
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 870, in <module>
+    raise SystemExit(main())
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 860, in main
+    report = run_study()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 823, in run_study
+    selected, attempts = try_candidate(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 603, in try_candidate
+    attempt = build_attempt(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 532, in build_attempt
+    common._capture_build(builder, build_name)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/system_fit.py", line 646, in _capture_build
+    builder.build(run=True, build_name=build_name, hierarchical=True)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 521, in build
+    return self._build(**kwargs)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 558, in _build
+    self.soc.finalize()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2179, in finalize
+    self._finalize_csr()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2061, in _finalize_csr
+    self.csr_bankarray = csr_bus.CSRBankArray(self,
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/interconnect/csr_bus.py", line 241, in __init__
+    self.scan(ifargs, ifkwargs)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/interconnect/csr_bus.py", line 295, in scan
+    mapaddr = self.address_map(name, None)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 1258, in address_map
+    self.add(name, use_loc_if_exists=True)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 1092, in add
+    self.logger.info("{} {} {} at Location {}.".format(
+Message: '\x1b[4muart\x1b[0m CSR \x1b[36mallocated\x1b[0m at Location \x1b[1m5\x1b[0m.'
+Arguments: ()
+INFO:SoC:--------------------------------------------------------------------------------
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/python-3.12/python/lib/python3.12/logging/__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+ValueError: I/O operation on closed file.
+Call stack:
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 870, in <module>
+    raise SystemExit(main())
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 860, in main
+    report = run_study()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 823, in run_study
+    selected, attempts = try_candidate(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 603, in try_candidate
+    attempt = build_attempt(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 532, in build_attempt
+    common._capture_build(builder, build_name)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/system_fit.py", line 646, in _capture_build
+    builder.build(run=True, build_name=build_name, hierarchical=True)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 521, in build
+    return self._build(**kwargs)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 558, in _build
+    self.soc.finalize()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2182, in finalize
+    self._log_finalized()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2146, in _log_finalized
+    self.logger.info(colorer("-"*80, color="bright"))
+Message: '\x1b[1m--------------------------------------------------------------------------------\x1b[0m'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/python-3.12/python/lib/python3.12/logging/__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+ValueError: I/O operation on closed file.
+Call stack:
+INFO:SoC:Finalized SoC:
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 870, in <module>
+    raise SystemExit(main())
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 860, in main
+    report = run_study()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 823, in run_study
+    selected, attempts = try_candidate(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 603, in try_candidate
+    attempt = build_attempt(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 532, in build_attempt
+    common._capture_build(builder, build_name)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/system_fit.py", line 646, in _capture_build
+    builder.build(run=True, build_name=build_name, hierarchical=True)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 521, in build
+    return self._build(**kwargs)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 558, in _build
+    self.soc.finalize()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2182, in finalize
+    self._log_finalized()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2147, in _log_finalized
+    self.logger.info(colorer("Finalized SoC:"))
+Message: '\x1b[1mFinalized SoC:\x1b[0m'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/python-3.12/python/lib/python3.12/logging/__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+ValueError: I/O operation on closed file.
+Call stack:
+INFO:SoC:--------------------------------------------------------------------------------
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 870, in <module>
+    raise SystemExit(main())
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 860, in main
+    report = run_study()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 823, in run_study
+    selected, attempts = try_candidate(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 603, in try_candidate
+    attempt = build_attempt(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 532, in build_attempt
+    common._capture_build(builder, build_name)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/system_fit.py", line 646, in _capture_build
+    builder.build(run=True, build_name=build_name, hierarchical=True)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 521, in build
+    return self._build(**kwargs)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 558, in _build
+    self.soc.finalize()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2182, in finalize
+    self._log_finalized()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2148, in _log_finalized
+    self.logger.info(colorer("-"*80, color="bright"))
+Message: '\x1b[1m--------------------------------------------------------------------------------\x1b[0m'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/python-3.12/python/lib/python3.12/logging/__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+ValueError: I/O operation on closed file.
+Call stack:
+INFO:SoC:32-bit wishbone Bus, 4.0GiB Address Space.
+IO Regions: (1)
+io0                 : Origin: 0x80000000, Size: 0x80000000, Mode:  RW, Cached: False, Linker: False
+Bus Regions: (4)
+rom                 : Origin: 0x00000000, Size: 0x00004000, Mode:  RX, Cached:  True, Linker: False
+sram                : Origin: 0x10000000, Size: 0x00001000, Mode: RWX, Cached:  True, Linker: False
+main_ram            : Origin: 0x40000000, Size: 0x08000000, Mode: RWX, Cached:  True, Linker: False
+csr                 : Origin: 0xf0000000, Size: 0x00010000, Mode:  RW, Cached: False, Linker: False
+Bus Masters: (2)
+- cpu_bus0          : rw
+- cpu_bus1          : rw
+Bus Slaves: (4)
+- rom               : r
+- sram              : rw
+- main_ram          : rw
+- csr               : rw
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 870, in <module>
+    raise SystemExit(main())
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 860, in main
+    report = run_study()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 823, in run_study
+    selected, attempts = try_candidate(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 603, in try_candidate
+    attempt = build_attempt(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 532, in build_attempt
+    common._capture_build(builder, build_name)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/system_fit.py", line 646, in _capture_build
+    builder.build(run=True, build_name=build_name, hierarchical=True)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 521, in build
+    return self._build(**kwargs)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 558, in _build
+    self.soc.finalize()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2182, in finalize
+    self._log_finalized()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2149, in _log_finalized
+    self.logger.info(self.bus)
+Message: <litex.soc.integration.soc.SoCBusHandler object at 0x7d6e51ef2b10>
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/python-3.12/python/lib/python3.12/logging/__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+ValueError: I/O operation on closed file.
+Call stack:
+INFO:SoC:32-bit CSR Bus, 32-bit Aligned, 16.0KiB Address Space, 2048B Paging, big Ordering (Up to 32 Locations).
+CSR Locations: (6)
+- ctrl           : 0
+- ddrphy         : 1
+- identifier_mem : 2
+- sdram          : 3
+- timer0         : 4
+- uart           : 5
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 870, in <module>
+    raise SystemExit(main())
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 860, in main
+    report = run_study()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 823, in run_study
+    selected, attempts = try_candidate(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 603, in try_candidate
+    attempt = build_attempt(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 532, in build_attempt
+    common._capture_build(builder, build_name)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/system_fit.py", line 646, in _capture_build
+    builder.build(run=True, build_name=build_name, hierarchical=True)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 521, in build
+    return self._build(**kwargs)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 558, in _build
+    self.soc.finalize()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2182, in finalize
+    self._log_finalized()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2152, in _log_finalized
+    self.logger.info(self.csr)
+Message: <litex.soc.integration.soc.SoCCSRHandler object at 0x7d6e51ef2ae0>
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/python-3.12/python/lib/python3.12/logging/__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+ValueError: I/O operation on closed file.
+Call stack:
+INFO:SoC:IRQ Handler (up to 32 Locations).
+IRQ Locations: (2)
+- uart   : 0
+- timer0 : 1
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 870, in <module>
+    raise SystemExit(main())
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 860, in main
+    report = run_study()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 823, in run_study
+    selected, attempts = try_candidate(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 603, in try_candidate
+    attempt = build_attempt(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 532, in build_attempt
+    common._capture_build(builder, build_name)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/system_fit.py", line 646, in _capture_build
+    builder.build(run=True, build_name=build_name, hierarchical=True)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 521, in build
+    return self._build(**kwargs)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 558, in _build
+    self.soc.finalize()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2182, in finalize
+    self._log_finalized()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2153, in _log_finalized
+    self.logger.info(self.irq)
+Message: <litex.soc.integration.soc.SoCIRQHandler object at 0x7d6e51ef2b70>
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/python-3.12/python/lib/python3.12/logging/__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+ValueError: I/O operation on closed file.
+Call stack:
+INFO:SoC:--------------------------------------------------------------------------------
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 870, in <module>
+    raise SystemExit(main())
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 860, in main
+    report = run_study()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 823, in run_study
+    selected, attempts = try_candidate(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 603, in try_candidate
+    attempt = build_attempt(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 532, in build_attempt
+    common._capture_build(builder, build_name)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/system_fit.py", line 646, in _capture_build
+    builder.build(run=True, build_name=build_name, hierarchical=True)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 521, in build
+    return self._build(**kwargs)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 558, in _build
+    self.soc.finalize()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2182, in finalize
+    self._log_finalized()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2154, in _log_finalized
+    self.logger.info(colorer("-"*80, color="bright"))
+Message: '\x1b[1m--------------------------------------------------------------------------------\x1b[0m'
+Arguments: ()
+INFO:SoC:--------------------------------------------------------------------------------
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/python-3.12/python/lib/python3.12/logging/__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+ValueError: I/O operation on closed file.
+Call stack:
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 870, in <module>
+    raise SystemExit(main())
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 860, in main
+    report = run_study()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 823, in run_study
+    selected, attempts = try_candidate(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 603, in try_candidate
+    attempt = build_attempt(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 532, in build_attempt
+    common._capture_build(builder, build_name)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/system_fit.py", line 646, in _capture_build
+    builder.build(run=True, build_name=build_name, hierarchical=True)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 521, in build
+    return self._build(**kwargs)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 558, in _build
+    self.soc.finalize()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2188, in finalize
+    self._log_hierarchy()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2167, in _log_hierarchy
+    self.logger.info(colorer("-"*80, color="bright"))
+Message: '\x1b[1m--------------------------------------------------------------------------------\x1b[0m'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/python-3.12/python/lib/python3.12/logging/__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+ValueError: I/O operation on closed file.
+Call stack:
+INFO:SoC:SoC Hierarchy:
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 870, in <module>
+    raise SystemExit(main())
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 860, in main
+    report = run_study()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 823, in run_study
+    selected, attempts = try_candidate(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 603, in try_candidate
+    attempt = build_attempt(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 532, in build_attempt
+    common._capture_build(builder, build_name)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/system_fit.py", line 646, in _capture_build
+    builder.build(run=True, build_name=build_name, hierarchical=True)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 521, in build
+    return self._build(**kwargs)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 558, in _build
+    self.soc.finalize()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2188, in finalize
+    self._log_hierarchy()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2168, in _log_hierarchy
+    self.logger.info(colorer("SoC Hierarchy:"))
+Message: '\x1b[1mSoC Hierarchy:\x1b[0m'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/python-3.12/python/lib/python3.12/logging/__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+ValueError: I/O operation on closed file.
+Call stack:
+INFO:SoC:--------------------------------------------------------------------------------
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 870, in <module>
+    raise SystemExit(main())
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 860, in main
+    report = run_study()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 823, in run_study
+    selected, attempts = try_candidate(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 603, in try_candidate
+    attempt = build_attempt(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 532, in build_attempt
+    common._capture_build(builder, build_name)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/system_fit.py", line 646, in _capture_build
+    builder.build(run=True, build_name=build_name, hierarchical=True)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 521, in build
+    return self._build(**kwargs)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 558, in _build
+    self.soc.finalize()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2188, in finalize
+    self._log_hierarchy()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2169, in _log_hierarchy
+    self.logger.info(colorer("-"*80, color="bright"))
+Message: '\x1b[1m--------------------------------------------------------------------------------\x1b[0m'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/python-3.12/python/lib/python3.12/logging/__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+ValueError: I/O operation on closed file.
+Call stack:
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 870, in <module>
+    raise SystemExit(main())
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 860, in main
+    report = run_study()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 823, in run_study
+    selected, attempts = try_candidate(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 603, in try_candidate
+    attempt = build_attempt(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 532, in build_attempt
+    common._capture_build(builder, build_name)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/system_fit.py", line 646, in _capture_build
+    builder.build(run=True, build_name=build_name, hierarchical=True)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 521, in build
+    return self._build(**kwargs)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 558, in _build
+    self.soc.finalize()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2188, in finalize
+    self._log_hierarchy()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2170, in _log_hierarchy
+    self.logger.info(LiteXHierarchyExplorer(top=self, depth=None))
+Message: 
+RtosSystemFitSoC
+├── crg (_CRG)
+│    ├── pll (GW2APLL)
+│    │    └── [BB:rPLL]
+│    ├── [BB:DHCEN]
+│    └── [BB:CLKDIV]
+├── bus (SoCBusHandler)
+│    └── _interconnect (InterconnectShared)
+│         ├── arbiter (Arbiter)
+│         │    └── rr (RoundRobin)
+│         ├── decoder (Decoder)
+│         └── timeout (Timeout)
+│              └── waittimer_0 (WaitTimer) [Gen]
+├── csr (SoCCSRHandler)
+├── irq (SoCIRQHandler)
+├── ctrl (SoCController)
+├── cpu (VexRiscv)
+│    └── [BB:VexRiscv]
+├── rom (SRAM)
+├── sram (SRAM)
+├── identifier (Identifier)
+├── uart (UART)
+│    ├── ev (EventManager)
+│    │    ├── eventsourcelevel_0 (EventSourceLevel) [Gen]
+│    │    └── eventsourcelevel_1 (EventSourceLevel) [Gen]
+│    ├── phy (RS232PHY)
+│    │    ├── tx (RS232PHYTX)
+│    │    │    ├── clk_phase_accum (RS232ClkPhaseAccum)
+│    │    │    └── fsm (FSM)
+│    │    └── rx (RS232PHYRX)
+│    │         ├── clk_phase_accum (RS232ClkPhaseAccum)
+│    │         └── fsm (FSM)
+│    ├── tx_fifo (SyncFIFO)
+│    │    └── fifo (SyncFIFOBuffered)
+│    │         └── fifo (SyncFIFO)
+│    └── rx_fifo (SyncFIFO)
+│         └── fifo (SyncFIFOBuffered)
+│              └── fifo (SyncFIFO)
+├── timer0 (Timer)
+│    └── ev (EventManager)
+│         └── eventsourceprocess_0 (EventSourceProcess) [Gen]
+├── ddrphy (GW2DDRPHY)
+│    ├── init (GW2DDRPHYInit)
+│    │    └── [BB:DLL]
+│    ├── bitslip_0 (BitSlip) [Gen]
+│    ├── bitslip_1 (BitSlip) [Gen]
+│    ├── bitslip_2 (BitSlip) [Gen]
+│    ├── bitslip_3 (BitSlip) [Gen]
+│    ├── bitslip_4 (BitSlip) [Gen]
+│    ├── bitslip_5 (BitSlip) [Gen]
+│    ├── bitslip_6 (BitSlip) [Gen]
+│    ├── bitslip_7 (BitSlip) [Gen]
+│    ├── bitslip_8 (BitSlip) [Gen]
+│    ├── bitslip_9 (BitSlip) [Gen]
+│    ├── bitslip_10 (BitSlip) [Gen]
+│    ├── bitslip_11 (BitSlip) [Gen]
+│    ├── bitslip_12 (BitSlip) [Gen]
+│    ├── bitslip_13 (BitSlip) [Gen]
+│    ├── bitslip_14 (BitSlip) [Gen]
+│    ├── bitslip_15 (BitSlip) [Gen]
+│    ├── tappeddelayline_0 (TappedDelayLine) [Gen]
+│    ├── tappeddelayline_1 (TappedDelayLine) [Gen]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:ELVDS_OBUF]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:DQS]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:ELVDS_IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:DQS]
+│    ├── [BB:OSER4_MEM]
+│    └── [BB:ELVDS_IOBUF]
+├── sdram (LiteDRAMCore)
+│    ├── dfii (DFIInjector)
+│    │    ├── pi0 (PhaseInjector)
+│    │    └── pi1 (PhaseInjector)
+│    ├── controller (LiteDRAMController)
+│    │    ├── refresher (Refresher)
+│    │    │    ├── timer (RefreshTimer)
+│    │    │    ├── postponer (RefreshPostponer)
+│    │    │    ├── sequencer (RefreshSequencer)
+│    │    │    │    └── refreshexecuter_0 (RefreshExecuter) [Gen]
+│    │    │    ├── zqcs_timer (RefreshTimer)
+│    │    │    ├── zqs_executer (ZQCSExecuter)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_0 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_1 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_2 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_3 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_4 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_5 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_6 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_7 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    └── multiplexer (Multiplexer)
+│    │         ├── choose_cmd (_CommandChooser)
+│    │         │    └── roundrobin_0 (RoundRobin) [Gen]
+│    │         ├── choose_req (_CommandChooser)
+│    │         │    └── roundrobin_0 (RoundRobin) [Gen]
+│    │         ├── _steerer_0 (_Steerer) [Gen]
+│    │         ├── trrdcon (tXXDController)
+│    │         ├── tfawcon (tFAWController)
+│    │         ├── tccdcon (tXXDController)
+│    │         ├── twtrcon (tXXDController)
+│    │         └── fsm (FSM)
+│    └── crossbar (LiteDRAMCrossbar)
+│         ├── roundrobin_0 (RoundRobin) [Gen]
+│         ├── roundrobin_1 (RoundRobin) [Gen]
+│         ├── roundrobin_2 (RoundRobin) [Gen]
+│         ├── roundrobin_3 (RoundRobin) [Gen]
+│         ├── roundrobin_4 (RoundRobin) [Gen]
+│         ├── roundrobin_5 (RoundRobin) [Gen]
+│         ├── roundrobin_6 (RoundRobin) [Gen]
+│         └── roundrobin_7 (RoundRobin) [Gen]
+├── converter_0 (Converter) [Gen]
+│    └── upconverter_0 (UpConverter) [Gen]
+├── wishbone_bridge (LiteDRAMWishbone2Native)
+│    └── fsm (FSM)
+├── csr_bridge (Wishbone2CSR)
+│    └── fsm (FSM)
+├── csr_bankarray (CSRBankArray)
+│    ├── csrbank_0 (CSRBank) [Gen]
+│    │    ├── csrstorage_0 (CSRStorage) [Gen]
+│    │    ├── csrstorage_1 (CSRStorage) [Gen]
+│    │    └── csrstatus_0 (CSRStatus) [Gen]
+│    ├── csrbank_1 (CSRBank) [Gen]
+│    │    ├── csrstorage_0 (CSRStorage) [Gen]
+│    │    ├── csrstorage_1 (CSRStorage) [Gen]
+│    │    └── csrstatus_0 (CSRStatus) [Gen]
+│    ├── sram_0 (SRAM) [Gen]
+│    ├── csrbank_2 (CSRBank) [Gen]
+│    │    ├── csrstorage_0 (CSRStorage) [Gen]
+│    │    ├── csrstorage_1 (CSRStorage) [Gen]
+│    │    ├── csrstorage_2 (CSRStorage) [Gen]
+│    │    ├── csrstorage_3 (CSRStorage) [Gen]
+│    │    ├── csrstorage_4 (CSRStorage) [Gen]
+│    │    ├── csrstatus_0 (CSRStatus) [Gen]
+│    │    ├── csrstorage_5 (CSRStorage) [Gen]
+│    │    ├── csrstorage_6 (CSRStorage) [Gen]
+│    │    ├── csrstorage_7 (CSRStorage) [Gen]
+│    │    ├── csrstorage_8 (CSRStorage) [Gen]
+│    │    └── csrstatus_1 (CSRStatus) [Gen]
+│    ├── csrbank_3 (CSRBank) [Gen]
+│    │    ├── csrstorage_0 (CSRStorage) [Gen]
+│    │    ├── csrstorage_1 (CSRStorage) [Gen]
+│    │    ├── csrstorage_2 (CSRStorage) [Gen]
+│    │    ├── csrstorage_3 (CSRStorage) [Gen]
+│    │    ├── csrstatus_0 (CSRStatus) [Gen]
+│    │    ├── csrstatus_1 (CSRStatus) [Gen]
+│    │    ├── csrstatus_2 (CSRStatus) [Gen]
+│    │    ├── csrstorage_4 (CSRStorage) [Gen]
+│    │    ├── csrstorage_5 (CSRStorage) [Gen]
+│    │    └── csrstatus_3 (CSRStatus) [Gen]
+│    └── csrbank_4 (CSRBank) [Gen]
+│         ├── csrstatus_0 (CSRStatus) [Gen]
+│         ├── csrstatus_1 (CSRStatus) [Gen]
+│         ├── csrstatus_2 (CSRStatus) [Gen]
+│         ├── INFO:SoC:
+RtosSystemFitSoC
+├── crg (_CRG)
+│    ├── pll (GW2APLL)
+│    │    └── [BB:rPLL]
+│    ├── [BB:DHCEN]
+│    └── [BB:CLKDIV]
+├── bus (SoCBusHandler)
+│    └── _interconnect (InterconnectShared)
+│         ├── arbiter (Arbiter)
+│         │    └── rr (RoundRobin)
+│         ├── decoder (Decoder)
+│         └── timeout (Timeout)
+│              └── waittimer_0 (WaitTimer) [Gen]
+├── csr (SoCCSRHandler)
+├── irq (SoCIRQHandler)
+├── ctrl (SoCController)
+├── cpu (VexRiscv)
+│    └── [BB:VexRiscv]
+├── rom (SRAM)
+├── sram (SRAM)
+├── identifier (Identifier)
+├── uart (UART)
+│    ├── ev (EventManager)
+│    │    ├── eventsourcelevel_0 (EventSourceLevel) [Gen]
+│    │    └── eventsourcelevel_1 (EventSourceLevel) [Gen]
+│    ├── phy (RS232PHY)
+│    │    ├── tx (RS232PHYTX)
+│    │    │    ├── clk_phase_accum (RS232ClkPhaseAccum)
+│    │    │    └── fsm (FSM)
+│    │    └── rx (RS232PHYRX)
+│    │         ├── clk_phase_accum (RS232ClkPhaseAccum)
+│    │         └── fsm (FSM)
+│    ├── tx_fifo (SyncFIFO)
+│    │    └── fifo (SyncFIFOBuffered)
+│    │         └── fifo (SyncFIFO)
+│    └── rx_fifo (SyncFIFO)
+│         └── fifo (SyncFIFOBuffered)
+│              └── fifo (SyncFIFO)
+├── timer0 (Timer)
+│    └── ev (EventManager)
+│         └── eventsourceprocess_0 (EventSourceProcess) [Gen]
+├── ddrphy (GW2DDRPHY)
+│    ├── init (GW2DDRPHYInit)
+│    │    └── [BB:DLL]
+│    ├── bitslip_0 (BitSlip) [Gen]
+│    ├── bitslip_1 (BitSlip) [Gen]
+│    ├── bitslip_2 (BitSlip) [Gen]
+│    ├── bitslip_3 (BitSlip) [Gen]
+│    ├── bitslip_4 (BitSlip) [Gen]
+│    ├── bitslip_5 (BitSlip) [Gen]
+│    ├── bitslip_6 (BitSlip) [Gen]
+│    ├── bitslip_7 (BitSlip) [Gen]
+│    ├── bitslip_8 (BitSlip) [Gen]
+│    ├── bitslip_9 (BitSlip) [Gen]
+│    ├── bitslip_10 (BitSlip) [Gen]
+│    ├── bitslip_11 (BitSlip) [Gen]
+│    ├── bitslip_12 (BitSlip) [Gen]
+│    ├── bitslip_13 (BitSlip) [Gen]
+│    ├── bitslip_14 (BitSlip) [Gen]
+│    ├── bitslip_15 (BitSlip) [Gen]
+│    ├── tappeddelayline_0 (TappedDelayLine) [Gen]
+│    ├── tappeddelayline_1 (TappedDelayLine) [Gen]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:ELVDS_OBUF]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:IODELAY]
+│    ├── [BB:OSER4]
+│    ├── [BB:DQS]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:ELVDS_IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:OSER4_MEM]
+│    ├── [BB:IDES4_MEM]
+│    ├── [BB:IOBUF]
+│    ├── [BB:DQS]
+│    ├── [BB:OSER4_MEM]
+│    └── [BB:ELVDS_IOBUF]
+├── sdram (LiteDRAMCore)
+│    ├── dfii (DFIInjector)
+│    │    ├── pi0 (PhaseInjector)
+│    │    └── pi1 (PhaseInjector)
+│    ├── controller (LiteDRAMController)
+│    │    ├── refresher (Refresher)
+│    │    │    ├── timer (RefreshTimer)
+│    │    │    ├── postponer (RefreshPostponer)
+│    │    │    ├── sequencer (RefreshSequencer)
+│    │    │    │    └── refreshexecuter_0 (RefreshExecuter) [Gen]
+│    │    │    ├── zqcs_timer (RefreshTimer)
+│    │    │    ├── zqs_executer (ZQCSExecuter)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_0 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_1 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_2 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_3 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_4 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_5 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_6 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    ├── bankmachine_7 (BankMachine) [Gen]
+│    │    │    ├── syncfifo_0 (SyncFIFO) [Gen]
+│    │    │    │    └── fifo (SyncFIFO)
+│    │    │    ├── buffer_0 (Buffer) [Gen]
+│    │    │    │    ├── pipe_valid (PipeValid)
+│    │    │    │    └── pipeline (Pipeline)
+│    │    │    ├── twtpcon (tXXDController)
+│    │    │    ├── trccon (tXXDController)
+│    │    │    ├── trascon (tXXDController)
+│    │    │    └── fsm (FSM)
+│    │    └── multiplexer (Multiplexer)
+│    │         ├── choose_cmd (_CommandChooser)
+│    │         │    └── roundrobin_0 (RoundRobin) [Gen]
+│    │         ├── choose_req (_CommandChooser)
+│    │         │    └── roundrobin_0 (RoundRobin) [Gen]
+│    │         ├── _steerer_0 (_Steerer) [Gen]
+│    │         ├── trrdcon (tXXDController)
+│    │         ├── tfawcon (tFAWController)
+│    │         ├── tccdcon (tXXDController)
+│    │         ├── twtrcon (tXXDController)
+│    │         └── fsm (FSM)
+│    └── crossbar (LiteDRAMCrossbar)
+│         ├── roundrobin_0 (RoundRobin) [Gen]
+│         ├── roundrobin_1 (RoundRobin) [Gen]
+│         ├── roundrobin_2 (RoundRobin) [Gen]
+│         ├── roundrobin_3 (RoundRobin) [Gen]
+│         ├── roundrobin_4 (RoundRobin) [Gen]
+│         ├── roundrobin_5 (RoundRobin) [Gen]
+│         ├── roundrobin_6 (RoundRobin) [Gen]
+│         └── roundrobin_7 (RoundRobin) [Gen]
+├── converter_0 (Converter) [Gen]
+│    └── upconverter_0 (UpConverter) [Gen]
+├── wishbone_bridge (LiteDRAMWishbone2Native)
+│    └── fsm (FSM)
+├── csr_bridge (Wishbone2CSR)
+│    └── fsm (FSM)
+├── csr_bankarray (CSRBankArray)
+│    ├── csrbank_0 (CSRBank) [Gen]
+│    │    ├── csrstorage_0 (CSRStorage) [Gen]
+│    │    ├── csrstorage_1 (CSRStorage) [Gen]
+│    │    └── csrstatus_0 (CSRStatus) [Gen]
+│    ├── csrbank_1 (CSRBank) [Gen]
+│    │    ├── csrstorage_0 (CSRStorage) [Gen]
+│    │    ├── csrstorage_1 (CSRStorage) [Gen]
+│    │    └── csrstatus_0 (CSRStatus) [Gen]
+│    ├── sram_0 (SRAM) [Gen]
+│    ├── csrbank_2 (CSRBank) [Gen]
+│    │    ├── csrstorage_0 (CSRStorage) [Gen]
+│    │    ├── csrstorage_1 (CSRStorage) [Gen]
+│    │    ├── csrstorage_2 (CSRStorage) [Gen]
+│    │    ├── csrstorage_3 (CSRStorage) [Gen]
+│    │    ├── csrstorage_4 (CSRStorage) [Gen]
+│    │    ├── csrstatus_0 (CSRStatus) [Gen]
+│    │    ├── csrstorage_5 (CSRStorage) [Gen]
+│    │    ├── csrstorage_6 (CSRStorage) [Gen]
+│    │    ├── csrstorage_7 (CSRStorage) [Gen]
+│    │    ├── csrstorage_8 (CSRStorage) [Gen]
+│    │    └── csrstatus_1 (CSRStatus) [Gen]
+│    ├── csrbank_3 (CSRBank) [Gen]
+│    │    ├── csrstorage_0 (CSRStorage) [Gen]
+│    │    ├── csrstorage_1 (CSRStorage) [Gen]
+│    │    ├── csrstorage_2 (CSRStorage) [Gen]
+│    │    ├── csrstorage_3 (CSRStorage) [Gen]
+│    │    ├── csrstatus_0 (CSRStatus) [Gen]
+│    │    ├── csrstatus_1 (CSRStatus) [Gen]
+│    │    ├── csrstatus_2 (CSRStatus) [Gen]
+│    │    ├── csrstorage_4 (CSRStorage) [Gen]
+│    │    ├── csrstorage_5 (CSRStorage) [Gen]
+│    │    └── csrstatus_3 (CSRStatus) [Gen]
+│    └── csrbank_4 (CSRBank) [Gen]
+│         ├── csrstatus_0 (CSRStatus) [Gen]
+│         ├── csrstatus_1 (CSRStatus) [Gen]
+│         ├── csrstatus_2 (CSRStatus) [Gen]
+│         ├── csrstatus_3 (CSRStatus) [Gen]
+│         ├── csrstorage_0 (CSRStorage) [Gen]
+│         ├── csrstatus_4 (CSRStatus) [Gen]
+│         └── csrstatus_5 (CSRStatus) [Gen]
+└── csr_interconnect (InterconnectShared)
+Legend:
+  [Gen]: Auto-generated instance name.
+  [BB:NAME]: Blackbox instance (verilog Instance).
+
+csrstatus_3 (CSRStatus) [Gen]
+│         ├── csrstorage_0 (CSRStorage) [Gen]
+│         ├── csrstatus_4 (CSRStatus) [Gen]
+│         └── csrstatus_5 (CSRStatus) [Gen]
+└── csr_interconnect (InterconnectShared)
+Legend:INFO:SoC:--------------------------------------------------------------------------------
+
+  [Gen]: Auto-generated instance name.
+  [BB:NAME]: Blackbox instance (verilog Instance).
+
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/python-3.12/python/lib/python3.12/logging/__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+ValueError: I/O operation on closed file.
+Call stack:
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 870, in <module>
+    raise SystemExit(main())
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 860, in main
+    report = run_study()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 823, in run_study
+    selected, attempts = try_candidate(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 603, in try_candidate
+    attempt = build_attempt(
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/rtos_system_fit.py", line 532, in build_attempt
+    common._capture_build(builder, build_name)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/scripts/system_fit.py", line 646, in _capture_build
+    builder.build(run=True, build_name=build_name, hierarchical=True)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 521, in build
+    return self._build(**kwargs)
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/builder.py", line 558, in _build
+    self.soc.finalize()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2188, in finalize
+    self._log_hierarchy()
+  File "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/integration/soc.py", line 2171, in _log_hierarchy
+    self.logger.info(colorer("-"*80, color="bright"))
+Message: '\x1b[1m--------------------------------------------------------------------------------\x1b[0m'
+Arguments: ()
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T221455.040572Z/attribution/attribution-ddr-only/rom16k/soc/software/libc'
+cp /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libc/picolibc-minimal.h /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T221455.040572Z/attribution/attribution-ddr-only/rom16k/soc/software/libc/picolibc.h
+printf "#define FORMAT_DEFAULT_%s\n" "INTEGER" >> /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T221455.040572Z/attribution/attribution-ddr-only/rom16k/soc/software/libc/picolibc.h
+rm -f -r /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T221455.040572Z/attribution/attribution-ddr-only/rom16k/soc/software/include/../picolibc_src
+printf "#define __IO_DEFAULT '%s'\n" "i" >> /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T221455.040572Z/attribution/attribution-ddr-only/rom16k/soc/software/libc/picolibc.h
+cp -a /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-picolibc/pythondata_software_picolibc/data /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T221455.040572Z/attribution/attribution-ddr-only/rom16k/soc/software/include/../picolibc_src
+if [ -d "/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libc/riscv" ]; then \
+	cp /home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/litex/litex/soc/software/libc/riscv/* /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T221455.040572Z/attribution/attribution-ddr-only/rom16k/soc/software/include/../picolibc_src/libc/machine/riscv/ ;\
+fi
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221455.040572Z_attribution_attribution-ddr-only_rom16k_soc_software_include_.._picolibc_src_libc_ctype_ctype_.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221455.040572Z_attribution_attribution-ddr-only_rom16k_soc_software_include_.._picolibc_src_libc_errno_errno.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221455.040572Z_attribution_attribution-ddr-only_rom16k_soc_software_include_.._picolibc_src_libc_string_strchr.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221455.040572Z_attribution_attribution-ddr-only_rom16k_soc_software_include_.._picolibc_src_libc_string_strncpy.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221455.040572Z_attribution_attribution-ddr-only_rom16k_soc_software_include_.._picolibc_src_libc_string_strncmp.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221455.040572Z_attribution_attribution-ddr-only_rom16k_soc_software_include_.._picolibc_src_libc_string_strnlen.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221455.040572Z_attribution_attribution-ddr-only_rom16k_soc_software_include_.._picolibc_src_libc_stdio_fgetc.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221455.040572Z_attribution_attribution-ddr-only_rom16k_soc_software_include_.._picolibc_src_libc_stdio_fputc.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221455.040572Z_attribution_attribution-ddr-only_rom16k_soc_software_include_.._picolibc_src_libc_stdio_fputs.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221455.040572Z_attribution_attribution-ddr-only_rom16k_soc_software_include_.._picolibc_src_libc_stdio_printf.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221455.040572Z_attribution_attribution-ddr-only_rom16k_soc_software_include_.._picolibc_src_libc_stdio_puts.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221455.040572Z_attribution_attribution-ddr-only_rom16k_soc_software_include_.._picolibc_src_libc_stdio_strtoul.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221455.040572Z_attribution_attribution-ddr-only_rom16k_soc_software_include_.._picolibc_src_libc_stdio_strtoull.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221455.040572Z_attribution_attribution-ddr-only_rom16k_soc_software_include_.._picolibc_src_libc_stdlib_lldiv.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221455.040572Z_attribution_attribution-ddr-only_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memcpy-asm.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221455.040572Z_attribution_attribution-ddr-only_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memmove.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221455.040572Z_attribution_attribution-ddr-only_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memset.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221455.040572Z_attribution_attribution-ddr-only_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_strcmp.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221455.040572Z_attribution_attribution-ddr-only_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_strcpy.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221455.040572Z_attribution_attribution-ddr-only_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_strlen.o
+ CC       minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221455.040572Z_attribution_attribution-ddr-only_rom16k_soc_software_include_.._picolibc_src_libc_stdio_vfiprintf.o
+ AR       __libc_minimal.a
+ CC       _libc_minimal.a
+ AR       _libc_minimal.a
+cp __libc_minimal.a _libc_minimal.a
+ CC       libc-minimal.a
+ AR       libc-minimal.a
+cp _libc_minimal.a libc-minimal.a
+cp libc-minimal.a libc.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T221455.040572Z/attribution/attribution-ddr-only/rom16k/soc/software/libc'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T221455.040572Z/attribution/attribution-ddr-only/rom16k/soc/software/libcompiler_rt'
+ CC       umodsi3.o
+ CC       udivsi3.o
+ CC       divsi3.o
+ CC       modsi3.o
+ CC       comparedf2.o
+ CC       comparesf2.o
+ CC       negsf2.o
+ CC       negdf2.o
+/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-compiler_rt/pythondata_software_compiler_rt/data/lib/builtins/comparesf2.c:85:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+   85 | FNALIAS(__cmpsf2, __lesf2);
+      | ^~~~~~~
+/home/user/git/fpga/sipeedtangprimer20k-riscv/.deps/pythondata-software-compiler_rt/pythondata_software_compiler_rt/data/lib/builtins/comparedf2.c:85:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+   85 | FNALIAS(__cmpdf2, __ledf2);
+      | ^~~~~~~
+ CC       addsf3.o
+ CC       subsf3.o
+ CC       mulsf3.o
+ CC       divsf3.o
+ CC       extendsfdf2.o
+ CC       truncdfsf2.o
+ CC       lshrdi3.o
+ CC       muldi3.o
+ CC       divdi3.o
+ CC       ashldi3.o
+ CC       ashrdi3.o
+ CC       udivmoddi4.o
+ CC       floatsisf.o
+ CC       floatunsisf.o
+ CC       fixsfsi.o
+ CC       fixdfdi.o
+ CC       fixunssfsi.o
+ CC       fixunsdfdi.o
+ CC       adddf3.o
+ CC       subdf3.o
+ CC       muldf3.o
+ CC       divdf3.o
+ CC       floatsidf.o
+ CC       floatunsidf.o
+ CC       floatdidf.o
+ CC       fixdfsi.o
+ CC       fixunsdfsi.o
+ CC       clzsi2.o
+ CC       ctzsi2.o
+ CC       clzdi2.o
+ CC       ctzdi2.o
+ CC       udivdi3.o
+ CC       umoddi3.o
+ CC       moddi3.o
+ CC       ucmpdi2.o
+ CC       mulsi3.o
+ AR       libcompiler_rt.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T221455.040572Z/attribution/attribution-ddr-only/rom16k/soc/software/libcompiler_rt'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T221455.040572Z/attribution/attribution-ddr-only/rom16k/soc/software/libbase'
+ CC       crc16.o
+ CC       crc32.o
+ CC       format.o
+ CC       console.o
+ CC       parse.o
+ CC       timeout.o
+ CC       system.o
+ CC       progress.o
+ CC       memtest.o
+ CC       uart.o
+ CC       startup.o
+ CC       i2c.o
+ CC       spiflash.o
+ CC       isr.o
+ CC       hyperram.o
+ AR       libbase.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T221455.040572Z/attribution/attribution-ddr-only/rom16k/soc/software/libbase'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T221455.040572Z/attribution/attribution-ddr-only/rom16k/soc/software/liblitedram'
+ CC       sdram.o
+ CC       bist.o
+ CC       sdram_dbg.o
+ CC       sdram_spd.o
+ CC       utils.o
+ CC       accessors.o
+ AR       liblitedram.a
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T221455.040572Z/attribution/attribution-ddr-only/rom16k/soc/software/liblitedram'
+make[1]: Entering directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T221455.040572Z/attribution/attribution-ddr-only/rom16k/soc/software/bios'
+ CC       crt0.o
+ CC       boot-helper.o
+ CC       boot.o
+make[1]: *** No rule to make target 'libc.a', needed by 'bios.elf'.  Stop.
+make[1]: *** Waiting for unfinished jobs....
+ CC       rtos_main.o
+make[1]: Leaving directory '/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T221455.040572Z/attribution/attribution-ddr-only/rom16k/soc/software/bios'

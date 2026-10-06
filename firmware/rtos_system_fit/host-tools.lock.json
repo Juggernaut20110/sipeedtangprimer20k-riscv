@@ -1,0 +1,10 @@
+{
+  "device_tree_compiler": {
+    "distribution": "Ubuntu resolute amd64 package",
+    "package": "device-tree-compiler",
+    "version": "1.7.2-2ubuntu1",
+    "archive": "device-tree-compiler_1.7.2-2ubuntu1_amd64.deb",
+    "sha256": "c4764deaa478840695d08d86c61bf8b8e946b042a63912e6a685224845f21579",
+    "download_url": "http://us.archive.ubuntu.com/ubuntu/pool/main/d/device-tree-compiler/device-tree-compiler_1.7.2-2ubuntu1_amd64.deb"
+  }
+}

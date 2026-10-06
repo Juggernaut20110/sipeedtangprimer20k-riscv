@@ -1,0 +1,2262 @@
+Archive member included to satisfy reference by file (symbol)
+
+../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_string_strncmp.o)
+                              boot.o (symbol from plugin) (strncmp)
+../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_stdio_fputc.o)
+                              helpers.o (symbol from plugin) (fputc)
+../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_stdio_fputs.o)
+                              helpers.o (symbol from plugin) (fputs)
+../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_stdio_printf.o)
+                              helpers.o (symbol from plugin) (printf)
+../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memcpy-asm.o)
+                              boot.o (symbol from plugin) (memcpy)
+../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memmove.o)
+                              boot.o (symbol from plugin) (memmove)
+../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_strcmp.o)
+                              helpers.o (symbol from plugin) (strcmp)
+../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_strlen.o)
+                              helpers.o (symbol from plugin) (strlen)
+../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_stdio_vfiprintf.o)
+                              minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_stdio_printf.o (symbol from plugin) (vfprintf)
+../libc/libc.a(_libc_minimal.a)
+                              helpers.o (symbol from plugin) (stdout)
+../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_string_strnlen.o)
+                              minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_stdio_vfiprintf.o (symbol from plugin) (strnlen)
+../libbase/libbase.a(crc16.o)
+                              boot.o (symbol from plugin) (crc16)
+../libbase/libbase.a(crc32.o)
+                              helpers.o (symbol from plugin) (crc32)
+../libbase/libbase.a(parse.o)
+                              boot.o (symbol from plugin) (parse_ulong)
+../libbase/libbase.a(system.o)
+                              boot.o (symbol from plugin) (flush_l2_cache)
+../libbase/libbase.a(progress.o)
+                              boot.o (symbol from plugin) (show_progress)
+../libbase/libbase.a(uart.o)  boot.o (symbol from plugin) (uart_read)
+../libbase/libbase.a(startup.o)
+                              crt0.o (litex_startup_init)
+../libbase/libbase.a(isr.o)   startup.o (symbol from plugin) (irq_init)
+../liblitedram/liblitedram.a(sdram.o)
+                              rtos_main.o (symbol from plugin) (sdram_init)
+../liblitedram/liblitedram.a(accessors.o)
+                              sdram.o (symbol from plugin) (read_inc_dq_delay)
+../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_stdlib_lldiv.o)
+                              progress.o (symbol from plugin) (lldiv)
+../libbase/libbase.a(memtest.o)
+                              sdram.o (symbol from plugin) (memspeed)
+../libbase/libbase.a(format.o)
+                              memtest.o (symbol from plugin) (litex_print_size)
+../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+                              /tmp/cc8meLfe.ltrans0.ltrans.o (__ctzsi2)
+../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+                              /tmp/cc8meLfe.ltrans0.ltrans.o (__udivdi3)
+../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+                              ../libcompiler_rt/libcompiler_rt.a(udivdi3.o) (__udivmoddi4)
+../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+                              ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o) (__clzsi2)
+
+Discarded input sections
+
+ .data          0x00000000        0x0 crt0.o
+ .bss           0x00000000        0x0 crt0.o
+ .data          0x00000000        0x0 boot-helper.o
+ .bss           0x00000000        0x0 boot-helper.o
+ .text          0x00000000        0x0 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .data          0x00000000        0x0 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .bss           0x00000000        0x0 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .comment       0x00000000       0x34 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .eh_frame      0x00000000      0x484 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .group         0x00000000        0xc /tmp/ccv8gqVP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccv8gqVP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccv8gqVP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccv8gqVP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccv8gqVP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccv8gqVP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccv8gqVP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccv8gqVP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccv8gqVP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccv8gqVP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccv8gqVP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccv8gqVP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccv8gqVP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccv8gqVP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccv8gqVP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccv8gqVP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccv8gqVP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccv8gqVP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccv8gqVP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccv8gqVP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccv8gqVP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccv8gqVP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccv8gqVP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccv8gqVP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccv8gqVP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccv8gqVP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccv8gqVP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccv8gqVP.debug.temp.o
+ .comment       0x00000000       0x34 /tmp/ccv8gqVP.debug.temp.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccv8gqVP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x00000000      0x838 /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x00000000      0x220 /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x00000000       0x9c /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x00000000       0x5b /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x00000000      0x24d /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x00000000       0x10 /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x00000000       0x9e /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x00000000       0x10 /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x00000000       0x20 /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x00000000       0x35 /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x00000000      0x1f0 /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x00000000       0x6a /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x00000000      0x103 /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x00000000      0x1df /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x00000000       0x9e /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x00000000       0x3a /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x00000000       0x29 /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccWSnNRb.debug.temp.o
+ .comment       0x00000000       0x34 /tmp/ccWSnNRb.debug.temp.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccWSnNRb.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc8aeQOn.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc8aeQOn.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc8aeQOn.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc8aeQOn.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc8aeQOn.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc8aeQOn.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc8aeQOn.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc8aeQOn.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc8aeQOn.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc8aeQOn.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc8aeQOn.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc8aeQOn.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc8aeQOn.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc8aeQOn.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc8aeQOn.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc8aeQOn.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc8aeQOn.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc8aeQOn.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc8aeQOn.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc8aeQOn.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc8aeQOn.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc8aeQOn.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc8aeQOn.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc8aeQOn.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc8aeQOn.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc8aeQOn.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc8aeQOn.debug.temp.o
+ .debug_macro   0x00000000      0x838 /tmp/cc8aeQOn.debug.temp.o
+ .debug_macro   0x00000000      0x220 /tmp/cc8aeQOn.debug.temp.o
+ .debug_macro   0x00000000       0x9c /tmp/cc8aeQOn.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/cc8aeQOn.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/cc8aeQOn.debug.temp.o
+ .debug_macro   0x00000000       0x5b /tmp/cc8aeQOn.debug.temp.o
+ .debug_macro   0x00000000      0x24d /tmp/cc8aeQOn.debug.temp.o
+ .debug_macro   0x00000000       0x6a /tmp/cc8aeQOn.debug.temp.o
+ .debug_macro   0x00000000      0x103 /tmp/cc8aeQOn.debug.temp.o
+ .debug_macro   0x00000000      0x1df /tmp/cc8aeQOn.debug.temp.o
+ .debug_macro   0x00000000       0x9e /tmp/cc8aeQOn.debug.temp.o
+ .debug_macro   0x00000000       0x10 /tmp/cc8aeQOn.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/cc8aeQOn.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/cc8aeQOn.debug.temp.o
+ .debug_macro   0x00000000       0x20 /tmp/cc8aeQOn.debug.temp.o
+ .debug_macro   0x00000000       0x35 /tmp/cc8aeQOn.debug.temp.o
+ .debug_macro   0x00000000      0x1f0 /tmp/cc8aeQOn.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/cc8aeQOn.debug.temp.o
+ .debug_macro   0x00000000       0xf4 /tmp/cc8aeQOn.debug.temp.o
+ .debug_macro   0x00000000       0x22 /tmp/cc8aeQOn.debug.temp.o
+ .debug_macro   0x00000000       0x1c /tmp/cc8aeQOn.debug.temp.o
+ .debug_macro   0x00000000       0x50 /tmp/cc8aeQOn.debug.temp.o
+ .debug_macro   0x00000000       0x10 /tmp/cc8aeQOn.debug.temp.o
+ .comment       0x00000000       0x34 /tmp/cc8aeQOn.debug.temp.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/cc8aeQOn.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccSMQUnT.debug.temp.o
+ .debug_info    0x00000000       0xae /tmp/ccSMQUnT.debug.temp.o
+ .debug_abbrev  0x00000000       0x6b /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000      0x1c8 /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000      0x850 /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000      0x220 /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000       0xa2 /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000       0x5b /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000      0x24d /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000       0x10 /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000       0x9e /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000       0x20 /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000       0x35 /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000      0x184 /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000      0x11e /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000       0x6a /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000      0x103 /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000      0x1df /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000       0x10 /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000       0x12 /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000       0x22 /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000       0xa5 /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000       0x10 /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000       0x10 /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000       0x19 /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000       0x6a /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000       0x22 /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000      0x35e /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000       0x27 /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000       0x3a /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000       0x29 /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000      0x19d /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000       0x6a /tmp/ccSMQUnT.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/ccSMQUnT.debug.temp.o
+ .debug_line    0x00000000      0x109 /tmp/ccSMQUnT.debug.temp.o
+ .debug_str     0x00000000     0x72d2 /tmp/ccSMQUnT.debug.temp.o
+ .debug_line_str
+                0x00000000      0x780 /tmp/ccSMQUnT.debug.temp.o
+ .comment       0x00000000       0x34 /tmp/ccSMQUnT.debug.temp.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccSMQUnT.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00000000      0x850 /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00000000      0x220 /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00000000       0x5b /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00000000      0x24d /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00000000       0x3a /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00000000       0x29 /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00000000       0x94 /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00000000       0x22 /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00000000       0x3c /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00000000       0x35 /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00000000      0x35e /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00000000       0x22 /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00000000      0x11e /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00000000      0x103 /tmp/ccIMZhXY.debug.temp.o
+ .comment       0x00000000       0x34 /tmp/ccIMZhXY.debug.temp.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccIMZhXY.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccsyrMrv.debug.temp.o
+ .debug_info    0x00000000      0x1c4 /tmp/ccsyrMrv.debug.temp.o
+ .debug_abbrev  0x00000000      0x100 /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000      0x241 /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000      0x850 /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000      0x220 /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000       0x10 /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000      0x11e /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000       0x5b /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000      0x24d /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000      0x11c /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000       0x3a /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000       0x29 /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000       0x94 /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000       0x22 /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000       0x3c /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000       0x4a /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000       0x35 /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000       0x17 /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000      0x35e /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000      0x25c /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000       0x1c /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000      0x554 /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000       0x22 /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000       0x43 /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000      0x183 /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000      0x241 /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000      0x196 /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000      0x11e /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000      0x1b1 /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000       0x10 /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000       0x64 /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000       0x1c /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000       0x82 /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000       0xa2 /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000      0x103 /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000      0x2b0 /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000       0x12 /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000       0x2e /tmp/ccsyrMrv.debug.temp.o
+ .debug_macro   0x00000000       0xad /tmp/ccsyrMrv.debug.temp.o
+ .debug_line    0x00000000      0x138 /tmp/ccsyrMrv.debug.temp.o
+ .debug_str     0x00000000     0xb385 /tmp/ccsyrMrv.debug.temp.o
+ .debug_line_str
+                0x00000000      0x64b /tmp/ccsyrMrv.debug.temp.o
+ .comment       0x00000000       0x34 /tmp/ccsyrMrv.debug.temp.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccsyrMrv.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000      0x850 /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000      0x220 /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000       0x10 /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000      0x11e /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000       0x5b /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000      0x24d /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000      0x11c /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000       0x3a /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000       0x29 /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000       0x94 /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000       0x22 /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000       0x3c /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000       0x4a /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000       0x35 /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000       0x17 /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000      0x35e /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000      0x25c /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000       0x1c /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000      0x554 /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000       0x22 /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000       0x43 /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000      0x183 /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000      0x241 /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000      0x196 /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000      0x11e /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000      0x1b1 /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000       0x10 /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000       0x64 /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000       0x1c /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000       0x82 /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000       0xa2 /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000      0x103 /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000      0x2b0 /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000       0x12 /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000       0x2e /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00000000       0xad /tmp/ccpGbvvd.debug.temp.o
+ .comment       0x00000000       0x34 /tmp/ccpGbvvd.debug.temp.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccpGbvvd.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccPwCU5e.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccPwCU5e.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccPwCU5e.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccPwCU5e.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccPwCU5e.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccPwCU5e.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccPwCU5e.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccPwCU5e.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccPwCU5e.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccPwCU5e.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccPwCU5e.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccPwCU5e.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccPwCU5e.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccPwCU5e.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccPwCU5e.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccPwCU5e.debug.temp.o
+ .debug_info    0x00000000       0xb0 /tmp/ccPwCU5e.debug.temp.o
+ .debug_abbrev  0x00000000       0x7a /tmp/ccPwCU5e.debug.temp.o
+ .debug_macro   0x00000000       0xe3 /tmp/ccPwCU5e.debug.temp.o
+ .debug_macro   0x00000000      0x850 /tmp/ccPwCU5e.debug.temp.o
+ .debug_macro   0x00000000      0x220 /tmp/ccPwCU5e.debug.temp.o
+ .debug_macro   0x00000000       0xa2 /tmp/ccPwCU5e.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/ccPwCU5e.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/ccPwCU5e.debug.temp.o
+ .debug_macro   0x00000000       0x5b /tmp/ccPwCU5e.debug.temp.o
+ .debug_macro   0x00000000      0x24d /tmp/ccPwCU5e.debug.temp.o
+ .debug_macro   0x00000000       0x10 /tmp/ccPwCU5e.debug.temp.o
+ .debug_macro   0x00000000       0x9e /tmp/ccPwCU5e.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccPwCU5e.debug.temp.o
+ .debug_macro   0x00000000       0x20 /tmp/ccPwCU5e.debug.temp.o
+ .debug_macro   0x00000000       0x35 /tmp/ccPwCU5e.debug.temp.o
+ .debug_macro   0x00000000       0x6a /tmp/ccPwCU5e.debug.temp.o
+ .debug_macro   0x00000000      0x103 /tmp/ccPwCU5e.debug.temp.o
+ .debug_macro   0x00000000      0x1df /tmp/ccPwCU5e.debug.temp.o
+ .debug_macro   0x00000000       0x22 /tmp/ccPwCU5e.debug.temp.o
+ .debug_line    0x00000000       0xad /tmp/ccPwCU5e.debug.temp.o
+ .debug_str     0x00000000     0x53d1 /tmp/ccPwCU5e.debug.temp.o
+ .debug_line_str
+                0x00000000      0x4ef /tmp/ccPwCU5e.debug.temp.o
+ .comment       0x00000000       0x34 /tmp/ccPwCU5e.debug.temp.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccPwCU5e.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000      0x850 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000      0x220 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000       0x10 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000      0x11e /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000       0x5b /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000      0x24d /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000      0x11c /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000       0x3a /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000       0x29 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000       0x94 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000       0x22 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000       0x3c /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000       0x4a /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000       0x35 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000       0x17 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000      0x35e /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000      0x25c /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000       0x1c /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000      0x554 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000       0x22 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000       0x43 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000      0x183 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000      0x241 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000      0x196 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000      0x11e /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000      0x1b1 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000       0x10 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000       0x64 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000       0x1c /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000       0x82 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000       0xa2 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000      0x103 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000      0x2b0 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000       0x12 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000       0x2e /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000       0xad /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000       0x10 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000       0x6a /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00000000      0x19d /tmp/ccfQhuqR.debug.temp.o
+ .comment       0x00000000       0x34 /tmp/ccfQhuqR.debug.temp.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccfQhuqR.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccx4BRu3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccx4BRu3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccx4BRu3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccx4BRu3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccx4BRu3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccx4BRu3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccx4BRu3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccx4BRu3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccx4BRu3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccx4BRu3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccx4BRu3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccx4BRu3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccx4BRu3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccx4BRu3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccx4BRu3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccx4BRu3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccx4BRu3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccx4BRu3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccx4BRu3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccx4BRu3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccx4BRu3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccx4BRu3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccx4BRu3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccx4BRu3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccx4BRu3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccx4BRu3.debug.temp.o
+ .debug_macro   0x00000000      0x838 /tmp/ccx4BRu3.debug.temp.o
+ .debug_macro   0x00000000      0x220 /tmp/ccx4BRu3.debug.temp.o
+ .debug_macro   0x00000000       0x9c /tmp/ccx4BRu3.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/ccx4BRu3.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/ccx4BRu3.debug.temp.o
+ .debug_macro   0x00000000       0x5b /tmp/ccx4BRu3.debug.temp.o
+ .debug_macro   0x00000000      0x24d /tmp/ccx4BRu3.debug.temp.o
+ .debug_macro   0x00000000       0x10 /tmp/ccx4BRu3.debug.temp.o
+ .debug_macro   0x00000000       0x9e /tmp/ccx4BRu3.debug.temp.o
+ .debug_macro   0x00000000       0x10 /tmp/ccx4BRu3.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/ccx4BRu3.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccx4BRu3.debug.temp.o
+ .debug_macro   0x00000000       0x20 /tmp/ccx4BRu3.debug.temp.o
+ .debug_macro   0x00000000       0x35 /tmp/ccx4BRu3.debug.temp.o
+ .debug_macro   0x00000000      0x1f0 /tmp/ccx4BRu3.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccx4BRu3.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccx4BRu3.debug.temp.o
+ .debug_macro   0x00000000       0x6a /tmp/ccx4BRu3.debug.temp.o
+ .debug_macro   0x00000000      0x103 /tmp/ccx4BRu3.debug.temp.o
+ .debug_macro   0x00000000      0x1df /tmp/ccx4BRu3.debug.temp.o
+ .debug_macro   0x00000000      0x10b /tmp/ccx4BRu3.debug.temp.o
+ .debug_macro   0x00000000       0x22 /tmp/ccx4BRu3.debug.temp.o
+ .debug_macro   0x00000000       0x1c /tmp/ccx4BRu3.debug.temp.o
+ .debug_macro   0x00000000       0x50 /tmp/ccx4BRu3.debug.temp.o
+ .debug_macro   0x00000000      0x759 /tmp/ccx4BRu3.debug.temp.o
+ .comment       0x00000000       0x34 /tmp/ccx4BRu3.debug.temp.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccx4BRu3.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc3ZQVLz.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc3ZQVLz.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc3ZQVLz.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc3ZQVLz.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc3ZQVLz.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc3ZQVLz.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc3ZQVLz.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc3ZQVLz.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc3ZQVLz.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc3ZQVLz.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc3ZQVLz.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc3ZQVLz.debug.temp.o
+ .debug_macro   0x00000000      0x850 /tmp/cc3ZQVLz.debug.temp.o
+ .debug_macro   0x00000000      0x220 /tmp/cc3ZQVLz.debug.temp.o
+ .debug_macro   0x00000000       0xa2 /tmp/cc3ZQVLz.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/cc3ZQVLz.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/cc3ZQVLz.debug.temp.o
+ .debug_macro   0x00000000       0x5b /tmp/cc3ZQVLz.debug.temp.o
+ .debug_macro   0x00000000      0x24d /tmp/cc3ZQVLz.debug.temp.o
+ .debug_macro   0x00000000       0x10 /tmp/cc3ZQVLz.debug.temp.o
+ .debug_macro   0x00000000       0x9e /tmp/cc3ZQVLz.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/cc3ZQVLz.debug.temp.o
+ .debug_macro   0x00000000       0x20 /tmp/cc3ZQVLz.debug.temp.o
+ .debug_macro   0x00000000       0x35 /tmp/cc3ZQVLz.debug.temp.o
+ .comment       0x00000000       0x34 /tmp/cc3ZQVLz.debug.temp.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/cc3ZQVLz.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccAyY91R.debug.temp.o
+ .debug_macro   0x00000000      0x838 /tmp/ccAyY91R.debug.temp.o
+ .comment       0x00000000       0x34 /tmp/ccAyY91R.debug.temp.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccAyY91R.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccKTcBat.debug.temp.o
+ .debug_info    0x00000000       0x97 /tmp/ccKTcBat.debug.temp.o
+ .debug_abbrev  0x00000000       0x90 /tmp/ccKTcBat.debug.temp.o
+ .debug_macro   0x00000000       0x33 /tmp/ccKTcBat.debug.temp.o
+ .debug_macro   0x00000000      0x838 /tmp/ccKTcBat.debug.temp.o
+ .debug_line    0x00000000       0x3f /tmp/ccKTcBat.debug.temp.o
+ .debug_str     0x00000000     0x2b44 /tmp/ccKTcBat.debug.temp.o
+ .debug_line_str
+                0x00000000      0x15e /tmp/ccKTcBat.debug.temp.o
+ .comment       0x00000000       0x34 /tmp/ccKTcBat.debug.temp.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccKTcBat.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc7gdJlm.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc7gdJlm.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc7gdJlm.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc7gdJlm.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc7gdJlm.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc7gdJlm.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc7gdJlm.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc7gdJlm.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc7gdJlm.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc7gdJlm.debug.temp.o
+ .debug_info    0x00000000      0x111 /tmp/cc7gdJlm.debug.temp.o
+ .debug_abbrev  0x00000000       0x84 /tmp/cc7gdJlm.debug.temp.o
+ .debug_macro   0x00000000       0x85 /tmp/cc7gdJlm.debug.temp.o
+ .debug_macro   0x00000000      0x838 /tmp/cc7gdJlm.debug.temp.o
+ .debug_macro   0x00000000      0x220 /tmp/cc7gdJlm.debug.temp.o
+ .debug_macro   0x00000000       0x9c /tmp/cc7gdJlm.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/cc7gdJlm.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/cc7gdJlm.debug.temp.o
+ .debug_macro   0x00000000       0x5b /tmp/cc7gdJlm.debug.temp.o
+ .debug_macro   0x00000000      0x24d /tmp/cc7gdJlm.debug.temp.o
+ .debug_macro   0x00000000      0x184 /tmp/cc7gdJlm.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/cc7gdJlm.debug.temp.o
+ .debug_macro   0x00000000      0x11e /tmp/cc7gdJlm.debug.temp.o
+ .debug_line    0x00000000       0x80 /tmp/cc7gdJlm.debug.temp.o
+ .debug_str     0x00000000     0x4e82 /tmp/cc7gdJlm.debug.temp.o
+ .debug_line_str
+                0x00000000      0x46f /tmp/cc7gdJlm.debug.temp.o
+ .comment       0x00000000       0x34 /tmp/cc7gdJlm.debug.temp.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/cc7gdJlm.debug.temp.o
+ .group         0x00000000        0xc /tmp/cchr1HuW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cchr1HuW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cchr1HuW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cchr1HuW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cchr1HuW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cchr1HuW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cchr1HuW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cchr1HuW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cchr1HuW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cchr1HuW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cchr1HuW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cchr1HuW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cchr1HuW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cchr1HuW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cchr1HuW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cchr1HuW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cchr1HuW.debug.temp.o
+ .debug_macro   0x00000000      0x838 /tmp/cchr1HuW.debug.temp.o
+ .debug_macro   0x00000000       0x22 /tmp/cchr1HuW.debug.temp.o
+ .debug_macro   0x00000000      0x220 /tmp/cchr1HuW.debug.temp.o
+ .debug_macro   0x00000000       0x9c /tmp/cchr1HuW.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/cchr1HuW.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/cchr1HuW.debug.temp.o
+ .debug_macro   0x00000000       0x5b /tmp/cchr1HuW.debug.temp.o
+ .debug_macro   0x00000000      0x24d /tmp/cchr1HuW.debug.temp.o
+ .debug_macro   0x00000000       0x6a /tmp/cchr1HuW.debug.temp.o
+ .debug_macro   0x00000000      0x103 /tmp/cchr1HuW.debug.temp.o
+ .debug_macro   0x00000000      0x1df /tmp/cchr1HuW.debug.temp.o
+ .debug_macro   0x00000000       0xee /tmp/cchr1HuW.debug.temp.o
+ .debug_macro   0x00000000       0x1c /tmp/cchr1HuW.debug.temp.o
+ .debug_macro   0x00000000       0x50 /tmp/cchr1HuW.debug.temp.o
+ .debug_macro   0x00000000      0x759 /tmp/cchr1HuW.debug.temp.o
+ .debug_macro   0x00000000       0x4c /tmp/cchr1HuW.debug.temp.o
+ .comment       0x00000000       0x34 /tmp/cchr1HuW.debug.temp.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/cchr1HuW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cco6kKGS.debug.temp.o
+ .group         0x00000000        0xc /tmp/cco6kKGS.debug.temp.o
+ .group         0x00000000        0xc /tmp/cco6kKGS.debug.temp.o
+ .group         0x00000000        0xc /tmp/cco6kKGS.debug.temp.o
+ .group         0x00000000        0xc /tmp/cco6kKGS.debug.temp.o
+ .group         0x00000000        0xc /tmp/cco6kKGS.debug.temp.o
+ .group         0x00000000        0xc /tmp/cco6kKGS.debug.temp.o
+ .group         0x00000000        0xc /tmp/cco6kKGS.debug.temp.o
+ .group         0x00000000        0xc /tmp/cco6kKGS.debug.temp.o
+ .group         0x00000000        0xc /tmp/cco6kKGS.debug.temp.o
+ .group         0x00000000        0xc /tmp/cco6kKGS.debug.temp.o
+ .group         0x00000000        0xc /tmp/cco6kKGS.debug.temp.o
+ .group         0x00000000        0xc /tmp/cco6kKGS.debug.temp.o
+ .group         0x00000000        0xc /tmp/cco6kKGS.debug.temp.o
+ .group         0x00000000        0xc /tmp/cco6kKGS.debug.temp.o
+ .group         0x00000000        0xc /tmp/cco6kKGS.debug.temp.o
+ .group         0x00000000        0xc /tmp/cco6kKGS.debug.temp.o
+ .group         0x00000000        0xc /tmp/cco6kKGS.debug.temp.o
+ .group         0x00000000        0xc /tmp/cco6kKGS.debug.temp.o
+ .group         0x00000000        0xc /tmp/cco6kKGS.debug.temp.o
+ .group         0x00000000        0xc /tmp/cco6kKGS.debug.temp.o
+ .group         0x00000000        0xc /tmp/cco6kKGS.debug.temp.o
+ .group         0x00000000        0xc /tmp/cco6kKGS.debug.temp.o
+ .debug_info    0x00000000      0x180 /tmp/cco6kKGS.debug.temp.o
+ .debug_abbrev  0x00000000      0x10b /tmp/cco6kKGS.debug.temp.o
+ .debug_macro   0x00000000      0x123 /tmp/cco6kKGS.debug.temp.o
+ .debug_macro   0x00000000      0x838 /tmp/cco6kKGS.debug.temp.o
+ .debug_macro   0x00000000      0x220 /tmp/cco6kKGS.debug.temp.o
+ .debug_macro   0x00000000       0x9c /tmp/cco6kKGS.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/cco6kKGS.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/cco6kKGS.debug.temp.o
+ .debug_macro   0x00000000       0x5b /tmp/cco6kKGS.debug.temp.o
+ .debug_macro   0x00000000      0x24d /tmp/cco6kKGS.debug.temp.o
+ .debug_macro   0x00000000       0x10 /tmp/cco6kKGS.debug.temp.o
+ .debug_macro   0x00000000       0x9e /tmp/cco6kKGS.debug.temp.o
+ .debug_macro   0x00000000       0x10 /tmp/cco6kKGS.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/cco6kKGS.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/cco6kKGS.debug.temp.o
+ .debug_macro   0x00000000       0x20 /tmp/cco6kKGS.debug.temp.o
+ .debug_macro   0x00000000       0x35 /tmp/cco6kKGS.debug.temp.o
+ .debug_macro   0x00000000      0x1f0 /tmp/cco6kKGS.debug.temp.o
+ .debug_macro   0x00000000       0x6a /tmp/cco6kKGS.debug.temp.o
+ .debug_macro   0x00000000      0x103 /tmp/cco6kKGS.debug.temp.o
+ .debug_macro   0x00000000      0x1df /tmp/cco6kKGS.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/cco6kKGS.debug.temp.o
+ .debug_macro   0x00000000       0x9e /tmp/cco6kKGS.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/cco6kKGS.debug.temp.o
+ .debug_macro   0x00000000       0x3a /tmp/cco6kKGS.debug.temp.o
+ .debug_macro   0x00000000       0x29 /tmp/cco6kKGS.debug.temp.o
+ .debug_line    0x00000000       0xb2 /tmp/cco6kKGS.debug.temp.o
+ .debug_str     0x00000000     0x622c /tmp/cco6kKGS.debug.temp.o
+ .debug_line_str
+                0x00000000      0x4c4 /tmp/cco6kKGS.debug.temp.o
+ .comment       0x00000000       0x34 /tmp/cco6kKGS.debug.temp.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/cco6kKGS.debug.temp.o
+ .group         0x00000000        0xc /tmp/cck6ofrb.debug.temp.o
+ .group         0x00000000        0xc /tmp/cck6ofrb.debug.temp.o
+ .group         0x00000000        0xc /tmp/cck6ofrb.debug.temp.o
+ .group         0x00000000        0xc /tmp/cck6ofrb.debug.temp.o
+ .group         0x00000000        0xc /tmp/cck6ofrb.debug.temp.o
+ .group         0x00000000        0xc /tmp/cck6ofrb.debug.temp.o
+ .group         0x00000000        0xc /tmp/cck6ofrb.debug.temp.o
+ .group         0x00000000        0xc /tmp/cck6ofrb.debug.temp.o
+ .group         0x00000000        0xc /tmp/cck6ofrb.debug.temp.o
+ .group         0x00000000        0xc /tmp/cck6ofrb.debug.temp.o
+ .group         0x00000000        0xc /tmp/cck6ofrb.debug.temp.o
+ .group         0x00000000        0xc /tmp/cck6ofrb.debug.temp.o
+ .group         0x00000000        0xc /tmp/cck6ofrb.debug.temp.o
+ .group         0x00000000        0xc /tmp/cck6ofrb.debug.temp.o
+ .group         0x00000000        0xc /tmp/cck6ofrb.debug.temp.o
+ .group         0x00000000        0xc /tmp/cck6ofrb.debug.temp.o
+ .group         0x00000000        0xc /tmp/cck6ofrb.debug.temp.o
+ .debug_macro   0x00000000      0x838 /tmp/cck6ofrb.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/cck6ofrb.debug.temp.o
+ .debug_macro   0x00000000      0x189 /tmp/cck6ofrb.debug.temp.o
+ .debug_macro   0x00000000       0x22 /tmp/cck6ofrb.debug.temp.o
+ .debug_macro   0x00000000      0x220 /tmp/cck6ofrb.debug.temp.o
+ .debug_macro   0x00000000       0x9c /tmp/cck6ofrb.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/cck6ofrb.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/cck6ofrb.debug.temp.o
+ .debug_macro   0x00000000       0x5b /tmp/cck6ofrb.debug.temp.o
+ .debug_macro   0x00000000      0x24d /tmp/cck6ofrb.debug.temp.o
+ .debug_macro   0x00000000       0x6a /tmp/cck6ofrb.debug.temp.o
+ .debug_macro   0x00000000      0x103 /tmp/cck6ofrb.debug.temp.o
+ .debug_macro   0x00000000      0x1df /tmp/cck6ofrb.debug.temp.o
+ .debug_macro   0x00000000       0xee /tmp/cck6ofrb.debug.temp.o
+ .debug_macro   0x00000000       0x1c /tmp/cck6ofrb.debug.temp.o
+ .debug_macro   0x00000000       0x50 /tmp/cck6ofrb.debug.temp.o
+ .debug_macro   0x00000000      0x759 /tmp/cck6ofrb.debug.temp.o
+ .comment       0x00000000       0x34 /tmp/cck6ofrb.debug.temp.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/cck6ofrb.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccTPWQPz.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccTPWQPz.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccTPWQPz.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccTPWQPz.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccTPWQPz.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccTPWQPz.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccTPWQPz.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccTPWQPz.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccTPWQPz.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccTPWQPz.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccTPWQPz.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccTPWQPz.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccTPWQPz.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccTPWQPz.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccTPWQPz.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccTPWQPz.debug.temp.o
+ .debug_macro   0x00000000      0x838 /tmp/ccTPWQPz.debug.temp.o
+ .debug_macro   0x00000000      0x189 /tmp/ccTPWQPz.debug.temp.o
+ .debug_macro   0x00000000       0x22 /tmp/ccTPWQPz.debug.temp.o
+ .debug_macro   0x00000000      0x220 /tmp/ccTPWQPz.debug.temp.o
+ .debug_macro   0x00000000       0x9c /tmp/ccTPWQPz.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/ccTPWQPz.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/ccTPWQPz.debug.temp.o
+ .debug_macro   0x00000000       0x5b /tmp/ccTPWQPz.debug.temp.o
+ .debug_macro   0x00000000      0x24d /tmp/ccTPWQPz.debug.temp.o
+ .debug_macro   0x00000000       0x6a /tmp/ccTPWQPz.debug.temp.o
+ .debug_macro   0x00000000      0x103 /tmp/ccTPWQPz.debug.temp.o
+ .debug_macro   0x00000000      0x1df /tmp/ccTPWQPz.debug.temp.o
+ .debug_macro   0x00000000       0xee /tmp/ccTPWQPz.debug.temp.o
+ .debug_macro   0x00000000       0x1c /tmp/ccTPWQPz.debug.temp.o
+ .debug_macro   0x00000000       0x50 /tmp/ccTPWQPz.debug.temp.o
+ .debug_macro   0x00000000      0x759 /tmp/ccTPWQPz.debug.temp.o
+ .comment       0x00000000       0x34 /tmp/ccTPWQPz.debug.temp.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccTPWQPz.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccaXf66g.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccaXf66g.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccaXf66g.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccaXf66g.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccaXf66g.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccaXf66g.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccaXf66g.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccaXf66g.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccaXf66g.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccaXf66g.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccaXf66g.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccaXf66g.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccaXf66g.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccaXf66g.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccaXf66g.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccaXf66g.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccaXf66g.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccaXf66g.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccaXf66g.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccaXf66g.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccaXf66g.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccaXf66g.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccaXf66g.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccaXf66g.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccaXf66g.debug.temp.o
+ .debug_macro   0x00000000      0x838 /tmp/ccaXf66g.debug.temp.o
+ .debug_macro   0x00000000      0x220 /tmp/ccaXf66g.debug.temp.o
+ .debug_macro   0x00000000       0x9c /tmp/ccaXf66g.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/ccaXf66g.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/ccaXf66g.debug.temp.o
+ .debug_macro   0x00000000       0x5b /tmp/ccaXf66g.debug.temp.o
+ .debug_macro   0x00000000      0x24d /tmp/ccaXf66g.debug.temp.o
+ .debug_macro   0x00000000       0x6a /tmp/ccaXf66g.debug.temp.o
+ .debug_macro   0x00000000      0x103 /tmp/ccaXf66g.debug.temp.o
+ .debug_macro   0x00000000      0x1df /tmp/ccaXf66g.debug.temp.o
+ .debug_macro   0x00000000       0xee /tmp/ccaXf66g.debug.temp.o
+ .debug_macro   0x00000000      0x189 /tmp/ccaXf66g.debug.temp.o
+ .debug_macro   0x00000000       0x22 /tmp/ccaXf66g.debug.temp.o
+ .debug_macro   0x00000000       0x1c /tmp/ccaXf66g.debug.temp.o
+ .debug_macro   0x00000000       0x50 /tmp/ccaXf66g.debug.temp.o
+ .debug_macro   0x00000000      0x759 /tmp/ccaXf66g.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccaXf66g.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccaXf66g.debug.temp.o
+ .debug_macro   0x00000000       0x3c /tmp/ccaXf66g.debug.temp.o
+ .debug_macro   0x00000000       0x10 /tmp/ccaXf66g.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/ccaXf66g.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccaXf66g.debug.temp.o
+ .debug_macro   0x00000000       0x4a /tmp/ccaXf66g.debug.temp.o
+ .debug_macro   0x00000000       0x35 /tmp/ccaXf66g.debug.temp.o
+ .debug_macro   0x00000000      0x1f0 /tmp/ccaXf66g.debug.temp.o
+ .comment       0x00000000       0x34 /tmp/ccaXf66g.debug.temp.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccaXf66g.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccq4xuL3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccq4xuL3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccq4xuL3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccq4xuL3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccq4xuL3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccq4xuL3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccq4xuL3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccq4xuL3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccq4xuL3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccq4xuL3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccq4xuL3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccq4xuL3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccq4xuL3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccq4xuL3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccq4xuL3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccq4xuL3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccq4xuL3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccq4xuL3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccq4xuL3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccq4xuL3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccq4xuL3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccq4xuL3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccq4xuL3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccq4xuL3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccq4xuL3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccq4xuL3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccq4xuL3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccq4xuL3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccq4xuL3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccq4xuL3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccq4xuL3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccq4xuL3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccq4xuL3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccq4xuL3.debug.temp.o
+ .debug_macro   0x00000000      0x838 /tmp/ccq4xuL3.debug.temp.o
+ .debug_macro   0x00000000      0x220 /tmp/ccq4xuL3.debug.temp.o
+ .debug_macro   0x00000000       0x9c /tmp/ccq4xuL3.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/ccq4xuL3.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/ccq4xuL3.debug.temp.o
+ .debug_macro   0x00000000       0x5b /tmp/ccq4xuL3.debug.temp.o
+ .debug_macro   0x00000000      0x24d /tmp/ccq4xuL3.debug.temp.o
+ .debug_macro   0x00000000       0x6a /tmp/ccq4xuL3.debug.temp.o
+ .debug_macro   0x00000000      0x103 /tmp/ccq4xuL3.debug.temp.o
+ .debug_macro   0x00000000      0x1df /tmp/ccq4xuL3.debug.temp.o
+ .debug_macro   0x00000000       0xee /tmp/ccq4xuL3.debug.temp.o
+ .debug_macro   0x00000000      0x189 /tmp/ccq4xuL3.debug.temp.o
+ .debug_macro   0x00000000       0x22 /tmp/ccq4xuL3.debug.temp.o
+ .debug_macro   0x00000000       0x1c /tmp/ccq4xuL3.debug.temp.o
+ .debug_macro   0x00000000       0x50 /tmp/ccq4xuL3.debug.temp.o
+ .debug_macro   0x00000000      0x759 /tmp/ccq4xuL3.debug.temp.o
+ .debug_macro   0x00000000       0x4c /tmp/ccq4xuL3.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccq4xuL3.debug.temp.o
+ .debug_macro   0x00000000       0x3c /tmp/ccq4xuL3.debug.temp.o
+ .debug_macro   0x00000000       0x10 /tmp/ccq4xuL3.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/ccq4xuL3.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccq4xuL3.debug.temp.o
+ .debug_macro   0x00000000       0x4a /tmp/ccq4xuL3.debug.temp.o
+ .debug_macro   0x00000000       0x35 /tmp/ccq4xuL3.debug.temp.o
+ .debug_macro   0x00000000      0x1f0 /tmp/ccq4xuL3.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccq4xuL3.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccq4xuL3.debug.temp.o
+ .debug_macro   0x00000000       0x3a /tmp/ccq4xuL3.debug.temp.o
+ .debug_macro   0x00000000       0x29 /tmp/ccq4xuL3.debug.temp.o
+ .debug_macro   0x00000000       0x22 /tmp/ccq4xuL3.debug.temp.o
+ .debug_macro   0x00000000      0x184 /tmp/ccq4xuL3.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccq4xuL3.debug.temp.o
+ .debug_macro   0x00000000      0x11e /tmp/ccq4xuL3.debug.temp.o
+ .comment       0x00000000       0x34 /tmp/ccq4xuL3.debug.temp.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccq4xuL3.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccduDoVa.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccduDoVa.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccduDoVa.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccduDoVa.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccduDoVa.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccduDoVa.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccduDoVa.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccduDoVa.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccduDoVa.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccduDoVa.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccduDoVa.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccduDoVa.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccduDoVa.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccduDoVa.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccduDoVa.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccduDoVa.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccduDoVa.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccduDoVa.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccduDoVa.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccduDoVa.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccduDoVa.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccduDoVa.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccduDoVa.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccduDoVa.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccduDoVa.debug.temp.o
+ .debug_macro   0x00000000      0x838 /tmp/ccduDoVa.debug.temp.o
+ .debug_macro   0x00000000      0x220 /tmp/ccduDoVa.debug.temp.o
+ .debug_macro   0x00000000       0x9c /tmp/ccduDoVa.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/ccduDoVa.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/ccduDoVa.debug.temp.o
+ .debug_macro   0x00000000       0x5b /tmp/ccduDoVa.debug.temp.o
+ .debug_macro   0x00000000      0x24d /tmp/ccduDoVa.debug.temp.o
+ .debug_macro   0x00000000       0x10 /tmp/ccduDoVa.debug.temp.o
+ .debug_macro   0x00000000       0x9e /tmp/ccduDoVa.debug.temp.o
+ .debug_macro   0x00000000       0x10 /tmp/ccduDoVa.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/ccduDoVa.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccduDoVa.debug.temp.o
+ .debug_macro   0x00000000       0x20 /tmp/ccduDoVa.debug.temp.o
+ .debug_macro   0x00000000       0x35 /tmp/ccduDoVa.debug.temp.o
+ .debug_macro   0x00000000      0x1f0 /tmp/ccduDoVa.debug.temp.o
+ .debug_macro   0x00000000       0x6a /tmp/ccduDoVa.debug.temp.o
+ .debug_macro   0x00000000      0x103 /tmp/ccduDoVa.debug.temp.o
+ .debug_macro   0x00000000      0x1df /tmp/ccduDoVa.debug.temp.o
+ .debug_macro   0x00000000       0xee /tmp/ccduDoVa.debug.temp.o
+ .debug_macro   0x00000000      0x10b /tmp/ccduDoVa.debug.temp.o
+ .debug_macro   0x00000000       0x22 /tmp/ccduDoVa.debug.temp.o
+ .debug_macro   0x00000000       0x1c /tmp/ccduDoVa.debug.temp.o
+ .debug_macro   0x00000000       0x50 /tmp/ccduDoVa.debug.temp.o
+ .debug_macro   0x00000000      0x759 /tmp/ccduDoVa.debug.temp.o
+ .debug_macro   0x00000000       0xb8 /tmp/ccduDoVa.debug.temp.o
+ .comment       0x00000000       0x34 /tmp/ccduDoVa.debug.temp.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccduDoVa.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc6IFZuW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc6IFZuW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc6IFZuW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc6IFZuW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc6IFZuW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc6IFZuW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc6IFZuW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc6IFZuW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc6IFZuW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc6IFZuW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc6IFZuW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc6IFZuW.debug.temp.o
+ .debug_info    0x00000000       0xcf /tmp/cc6IFZuW.debug.temp.o
+ .debug_abbrev  0x00000000       0x9a /tmp/cc6IFZuW.debug.temp.o
+ .debug_macro   0x00000000       0x90 /tmp/cc6IFZuW.debug.temp.o
+ .debug_macro   0x00000000      0x850 /tmp/cc6IFZuW.debug.temp.o
+ .debug_macro   0x00000000      0x220 /tmp/cc6IFZuW.debug.temp.o
+ .debug_macro   0x00000000       0xa2 /tmp/cc6IFZuW.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/cc6IFZuW.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/cc6IFZuW.debug.temp.o
+ .debug_macro   0x00000000       0x5b /tmp/cc6IFZuW.debug.temp.o
+ .debug_macro   0x00000000      0x24d /tmp/cc6IFZuW.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/cc6IFZuW.debug.temp.o
+ .debug_macro   0x00000000      0x11c /tmp/cc6IFZuW.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/cc6IFZuW.debug.temp.o
+ .debug_macro   0x00000000       0x3a /tmp/cc6IFZuW.debug.temp.o
+ .debug_macro   0x00000000       0x29 /tmp/cc6IFZuW.debug.temp.o
+ .debug_line    0x00000000       0x85 /tmp/cc6IFZuW.debug.temp.o
+ .debug_str     0x00000000     0x4a4b /tmp/cc6IFZuW.debug.temp.o
+ .debug_line_str
+                0x00000000      0x496 /tmp/cc6IFZuW.debug.temp.o
+ .comment       0x00000000       0x34 /tmp/cc6IFZuW.debug.temp.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/cc6IFZuW.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccBc1mDm.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccBc1mDm.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccBc1mDm.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccBc1mDm.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccBc1mDm.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccBc1mDm.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccBc1mDm.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccBc1mDm.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccBc1mDm.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccBc1mDm.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccBc1mDm.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccBc1mDm.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccBc1mDm.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccBc1mDm.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccBc1mDm.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccBc1mDm.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccBc1mDm.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccBc1mDm.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccBc1mDm.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccBc1mDm.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccBc1mDm.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccBc1mDm.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccBc1mDm.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccBc1mDm.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccBc1mDm.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccBc1mDm.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccBc1mDm.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccBc1mDm.debug.temp.o
+ .debug_macro   0x00000000      0x838 /tmp/ccBc1mDm.debug.temp.o
+ .debug_macro   0x00000000       0x22 /tmp/ccBc1mDm.debug.temp.o
+ .debug_macro   0x00000000      0x220 /tmp/ccBc1mDm.debug.temp.o
+ .debug_macro   0x00000000       0x9c /tmp/ccBc1mDm.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/ccBc1mDm.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/ccBc1mDm.debug.temp.o
+ .debug_macro   0x00000000       0x5b /tmp/ccBc1mDm.debug.temp.o
+ .debug_macro   0x00000000      0x24d /tmp/ccBc1mDm.debug.temp.o
+ .debug_macro   0x00000000       0x6a /tmp/ccBc1mDm.debug.temp.o
+ .debug_macro   0x00000000      0x103 /tmp/ccBc1mDm.debug.temp.o
+ .debug_macro   0x00000000      0x1df /tmp/ccBc1mDm.debug.temp.o
+ .debug_macro   0x00000000       0xee /tmp/ccBc1mDm.debug.temp.o
+ .debug_macro   0x00000000      0x189 /tmp/ccBc1mDm.debug.temp.o
+ .debug_macro   0x00000000       0x22 /tmp/ccBc1mDm.debug.temp.o
+ .debug_macro   0x00000000       0x1c /tmp/ccBc1mDm.debug.temp.o
+ .debug_macro   0x00000000       0x50 /tmp/ccBc1mDm.debug.temp.o
+ .debug_macro   0x00000000      0x759 /tmp/ccBc1mDm.debug.temp.o
+ .debug_macro   0x00000000      0x184 /tmp/ccBc1mDm.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccBc1mDm.debug.temp.o
+ .debug_macro   0x00000000      0x11e /tmp/ccBc1mDm.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccBc1mDm.debug.temp.o
+ .debug_macro   0x00000000       0x3c /tmp/ccBc1mDm.debug.temp.o
+ .debug_macro   0x00000000       0x10 /tmp/ccBc1mDm.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/ccBc1mDm.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccBc1mDm.debug.temp.o
+ .debug_macro   0x00000000       0x4a /tmp/ccBc1mDm.debug.temp.o
+ .debug_macro   0x00000000       0x35 /tmp/ccBc1mDm.debug.temp.o
+ .debug_macro   0x00000000      0x1f0 /tmp/ccBc1mDm.debug.temp.o
+ .comment       0x00000000       0x34 /tmp/ccBc1mDm.debug.temp.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccBc1mDm.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccEl7pXQ.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccEl7pXQ.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccEl7pXQ.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccEl7pXQ.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccEl7pXQ.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccEl7pXQ.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccEl7pXQ.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccEl7pXQ.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccEl7pXQ.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccEl7pXQ.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccEl7pXQ.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccEl7pXQ.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccEl7pXQ.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccEl7pXQ.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccEl7pXQ.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccEl7pXQ.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccEl7pXQ.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccEl7pXQ.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccEl7pXQ.debug.temp.o
+ .debug_macro   0x00000000      0x838 /tmp/ccEl7pXQ.debug.temp.o
+ .debug_macro   0x00000000      0x220 /tmp/ccEl7pXQ.debug.temp.o
+ .debug_macro   0x00000000       0x9c /tmp/ccEl7pXQ.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/ccEl7pXQ.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/ccEl7pXQ.debug.temp.o
+ .debug_macro   0x00000000       0x5b /tmp/ccEl7pXQ.debug.temp.o
+ .debug_macro   0x00000000      0x24d /tmp/ccEl7pXQ.debug.temp.o
+ .debug_macro   0x00000000       0x6a /tmp/ccEl7pXQ.debug.temp.o
+ .debug_macro   0x00000000      0x103 /tmp/ccEl7pXQ.debug.temp.o
+ .debug_macro   0x00000000      0x1df /tmp/ccEl7pXQ.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccEl7pXQ.debug.temp.o
+ .debug_macro   0x00000000       0x9e /tmp/ccEl7pXQ.debug.temp.o
+ .debug_macro   0x00000000       0x10 /tmp/ccEl7pXQ.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/ccEl7pXQ.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccEl7pXQ.debug.temp.o
+ .debug_macro   0x00000000       0x20 /tmp/ccEl7pXQ.debug.temp.o
+ .debug_macro   0x00000000       0x35 /tmp/ccEl7pXQ.debug.temp.o
+ .debug_macro   0x00000000      0x1f0 /tmp/ccEl7pXQ.debug.temp.o
+ .comment       0x00000000       0x34 /tmp/ccEl7pXQ.debug.temp.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccEl7pXQ.debug.temp.o
+ .text          0x00000000        0x0 ../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memcpy-asm.o)
+ .data          0x00000000        0x0 ../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memcpy-asm.o)
+ .bss           0x00000000        0x0 ../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memcpy-asm.o)
+ .text          0x00000000        0x0 ../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memmove.o)
+ .data          0x00000000        0x0 ../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memmove.o)
+ .bss           0x00000000        0x0 ../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memmove.o)
+ .text.memmove  0x00000000       0x38 ../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memmove.o)
+ .debug_line    0x00000000       0x98 ../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memmove.o)
+ .debug_line_str
+                0x00000000      0x166 ../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memmove.o)
+ .debug_info    0x00000000       0x31 ../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memmove.o)
+ .debug_abbrev  0x00000000       0x28 ../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memmove.o)
+ .debug_aranges
+                0x00000000       0x20 ../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memmove.o)
+ .debug_str     0x00000000      0x17a ../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memmove.o)
+ .riscv.attributes
+                0x00000000       0x3d ../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memmove.o)
+ .text          0x00000000        0x0 ../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_strcmp.o)
+ .data          0x00000000        0x0 ../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_strcmp.o)
+ .bss           0x00000000        0x0 ../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_strcmp.o)
+ .text.strcmp   0x00000000       0x20 ../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_strcmp.o)
+ .debug_line    0x00000000       0x74 ../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_strcmp.o)
+ .debug_line_str
+                0x00000000      0x165 ../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_strcmp.o)
+ .debug_info    0x00000000       0x31 ../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_strcmp.o)
+ .debug_abbrev  0x00000000       0x28 ../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_strcmp.o)
+ .debug_aranges
+                0x00000000       0x20 ../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_strcmp.o)
+ .debug_str     0x00000000      0x178 ../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_strcmp.o)
+ .riscv.attributes
+                0x00000000       0x3d ../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_strcmp.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .text          0x00000000        0x0 ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .data          0x00000000        0x0 ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .bss           0x00000000        0x0 ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x00000000      0x220 ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x00000000       0x9c ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x00000000       0x34 ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x00000000       0x58 ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x00000000       0x5b ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x00000000      0x24d ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x00000000      0x184 ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x00000000       0x16 ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x00000000      0x11e ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x00000000       0x6a ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x00000000      0x103 ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x00000000      0x1df ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x00000000       0x22 ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x00000000      0x183 ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .comment       0x00000000       0x34 ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .eh_frame      0x00000000       0x28 ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .text          0x00000000        0x0 ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .data          0x00000000        0x0 ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .bss           0x00000000        0x0 ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00000000      0x844 ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00000000       0x34 ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00000000      0x220 ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00000000       0x9c ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00000000       0x34 ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00000000       0x58 ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00000000       0x5b ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00000000      0x24d ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00000000      0x184 ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00000000       0x16 ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00000000      0x11e ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00000000       0x6a ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00000000      0x103 ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00000000      0x1df ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00000000       0x22 ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00000000      0x183 ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00000000       0x16 ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00000000       0x12 ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00000000       0x22 ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .comment       0x00000000       0x34 ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .eh_frame      0x00000000       0x28 ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .text          0x00000000        0x0 ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .data          0x00000000        0x0 ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .bss           0x00000000        0x0 ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00000000      0x844 ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00000000       0x34 ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00000000      0x220 ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00000000       0x9c ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00000000       0x34 ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00000000       0x58 ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00000000       0x5b ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00000000      0x24d ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00000000      0x184 ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00000000       0x16 ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00000000      0x11e ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00000000       0x6a ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00000000      0x103 ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00000000      0x1df ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00000000       0x22 ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00000000      0x183 ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00000000       0x16 ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00000000       0x12 ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00000000       0x22 ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .comment       0x00000000       0x34 ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .eh_frame      0x00000000       0x54 ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .group         0x00000000        0xc ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .text          0x00000000        0x0 ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .data          0x00000000        0x0 ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .bss           0x00000000        0x0 ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .debug_macro   0x00000000      0x844 ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .debug_macro   0x00000000       0x34 ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .debug_macro   0x00000000      0x220 ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .debug_macro   0x00000000       0x9c ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .debug_macro   0x00000000       0x34 ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .debug_macro   0x00000000       0x58 ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .debug_macro   0x00000000       0x5b ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .debug_macro   0x00000000      0x24d ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .debug_macro   0x00000000      0x184 ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .debug_macro   0x00000000       0x16 ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .debug_macro   0x00000000      0x11e ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .debug_macro   0x00000000       0x6a ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .debug_macro   0x00000000      0x103 ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .debug_macro   0x00000000      0x1df ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .debug_macro   0x00000000       0x22 ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .debug_macro   0x00000000      0x183 ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .debug_macro   0x00000000       0x16 ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .debug_macro   0x00000000       0x12 ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .debug_macro   0x00000000       0x22 ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .comment       0x00000000       0x34 ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .eh_frame      0x00000000       0x28 ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+rom              0x00000000         0x00004000
+sram             0x10000000         0x00001000
+main_ram         0x40000000         0x08000000
+csr              0xf0000000         0x00010000
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD crt0.o
+LOAD boot-helper.o
+LOAD helpers.o
+LOAD /tmp/cc8meLfe.ltrans0.ltrans.o
+LOAD /tmp/ccv8gqVP.debug.temp.o
+LOAD /tmp/ccWSnNRb.debug.temp.o
+LOAD /tmp/cc8aeQOn.debug.temp.o
+LOAD /tmp/ccSMQUnT.debug.temp.o
+LOAD /tmp/ccIMZhXY.debug.temp.o
+LOAD /tmp/ccsyrMrv.debug.temp.o
+LOAD /tmp/ccpGbvvd.debug.temp.o
+LOAD /tmp/ccPwCU5e.debug.temp.o
+LOAD /tmp/ccfQhuqR.debug.temp.o
+LOAD /tmp/ccx4BRu3.debug.temp.o
+LOAD /tmp/cc3ZQVLz.debug.temp.o
+LOAD /tmp/ccAyY91R.debug.temp.o
+LOAD /tmp/ccKTcBat.debug.temp.o
+LOAD /tmp/cc7gdJlm.debug.temp.o
+LOAD /tmp/cchr1HuW.debug.temp.o
+LOAD /tmp/cco6kKGS.debug.temp.o
+LOAD /tmp/cck6ofrb.debug.temp.o
+LOAD /tmp/ccTPWQPz.debug.temp.o
+LOAD /tmp/ccaXf66g.debug.temp.o
+LOAD /tmp/ccq4xuL3.debug.temp.o
+LOAD /tmp/ccduDoVa.debug.temp.o
+LOAD /tmp/cc6IFZuW.debug.temp.o
+LOAD /tmp/ccBc1mDm.debug.temp.o
+LOAD /tmp/ccEl7pXQ.debug.temp.o
+LOAD boot.o
+LOAD rtos_main.o
+START GROUP
+LOAD ../libc/libc.a
+LOAD ../libcompiler_rt/libcompiler_rt.a
+LOAD ../libbase/libbase.a
+LOAD ../liblitedram/liblitedram.a
+END GROUP
+
+.text           0x00000000     0x2974
+                0x00000000                        _ftext = .
+ *(.isr_vector)
+ *crt0*(.text)
+ .text          0x00000000      0x12c crt0.o
+                0x00000000                _start
+                0x00000020                trap_entry
+ *crt0*(.text)
+ *(.text.isr)
+ .text.isr      0x0000012c       0xb4 /tmp/cc8meLfe.ltrans0.ltrans.o
+                0x0000012c                isr
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text          0x000001e0        0x4 boot-helper.o
+                0x000001e0                boot_helper
+ .text.print_repeat.constprop.0
+                0x000001e4       0x70 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .text.timer0_load.constprop.0
+                0x00000254       0x28 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .text.read_rst_dq_delay
+                0x0000027c       0x48 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .text.read_rst_dq_bitslip
+                0x000002c4       0x24 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .text.read_inc_dq_bitslip
+                0x000002e8       0x30 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .text.read_inc_dq_delay
+                0x00000318       0x30 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .text.uart_isr
+                0x00000348       0xe4 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .text.__ultoa_invert
+                0x0000042c       0x40 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .text.uart_read
+                0x0000046c       0x78 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .text.uart_read_nonblock
+                0x000004e4       0x54 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .text.litex_getc
+                0x00000538       0x20 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .text.uart_write
+                0x00000558       0xc4 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .text.litex_putc
+                0x0000061c       0x3c /tmp/cc8meLfe.ltrans0.ltrans.o
+ .text.cdelay   0x00000658       0x10 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .text.popcount
+                0x00000668       0x58 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .text.run_test_pattern_seeds.constprop.0
+                0x000006c0      0x264 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .text.sdram_leveling_action.constprop.0
+                0x00000924       0x40 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .text.printf   0x00000964      0x710 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .text.serialboot_fail
+                0x00001074       0x40 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .text.serialboot.isra.0
+                0x000010b4      0x474 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .text.irq_attach
+                0x00001528       0x64 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .text.sdram_software_control_on
+                0x0000158c       0x24 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .text.sdram_software_control_off
+                0x000015b0       0x24 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .text.sdram_read_leveling_scan_window.constprop.0
+                0x000015d4      0x178 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .text.litex_print_size.part.0
+                0x0000174c       0xf0 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .text.litex_print_size
+                0x0000183c       0x7c /tmp/cc8meLfe.ltrans0.ltrans.o
+ .text.print_progress
+                0x000018b8       0x4c /tmp/cc8meLfe.ltrans0.ltrans.o
+ .text.startup.main
+                0x00001904      0xbc8 /tmp/cc8meLfe.ltrans0.ltrans.o
+                0x00001904                main
+ .text.litex_startup_init
+                0x000024cc       0x6c /tmp/cc8meLfe.ltrans0.ltrans.o
+                0x000024cc                litex_startup_init
+ .text.memcpy   0x00002538       0x24 ../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memcpy-asm.o)
+                0x00002538                memcpy
+ .text.__ctzsi2
+                0x0000255c       0x74 ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+                0x0000255c                __ctzsi2
+ .text.__udivdi3
+                0x000025d0        0x8 ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+                0x000025d0                __udivdi3
+ .text.__udivmoddi4
+                0x000025d8      0x30c ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+                0x000025d8                __udivmoddi4
+ .text.__clzsi2
+                0x000028e4       0x90 ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+                0x000028e4                __clzsi2
+                0x00002974                        _etext = .
+
+.rodata         0x00002974      0xb54
+                0x00002978                        . = ALIGN (0x8)
+ *fill*         0x00002974        0x4 
+                0x00002978                        _frodata = .
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata.printf.str1.4
+                0x00002978      0x693 /tmp/cc8meLfe.ltrans0.ltrans.o
+                                 0x10 (size before relaxing)
+ *fill*         0x0000300b        0x1 
+ .rodata.printf
+                0x0000300c       0x90 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .rodata.serialboot_fail.str1.4
+                0x0000309c        0x0 /tmp/cc8meLfe.ltrans0.ltrans.o
+                                 0x27 (size before relaxing)
+ .rodata.serialboot.isra.0.str1.4
+                0x0000309c        0x0 /tmp/cc8meLfe.ltrans0.ltrans.o
+                                0x17f (size before relaxing)
+ .rodata.irq_attach.str1.4
+                0x0000309c        0x0 /tmp/cc8meLfe.ltrans0.ltrans.o
+                                  0xc (size before relaxing)
+ .rodata.sdram_software_control_on.str1.4
+                0x0000309c        0x0 /tmp/cc8meLfe.ltrans0.ltrans.o
+                                 0x26 (size before relaxing)
+ .rodata.sdram_software_control_off.str1.4
+                0x0000309c        0x0 /tmp/cc8meLfe.ltrans0.ltrans.o
+                                 0x26 (size before relaxing)
+ .rodata.sdram_read_leveling_scan_window.constprop.0.str1.4
+                0x0000309c        0x0 /tmp/cc8meLfe.ltrans0.ltrans.o
+                                 0x17 (size before relaxing)
+ .rodata.litex_print_size.part.0.str1.4
+                0x0000309c        0x0 /tmp/cc8meLfe.ltrans0.ltrans.o
+                                 0x1d (size before relaxing)
+ .rodata.litex_print_size.str1.4
+                0x0000309c        0x0 /tmp/cc8meLfe.ltrans0.ltrans.o
+                                 0x15 (size before relaxing)
+ .rodata.print_progress.str1.4
+                0x0000309c        0x0 /tmp/cc8meLfe.ltrans0.ltrans.o
+                                 0x15 (size before relaxing)
+ .rodata.main.str1.4
+                0x0000309c        0x0 /tmp/cc8meLfe.ltrans0.ltrans.o
+                                0x3f4 (size before relaxing)
+ .rodata.isr.str1.4
+                0x0000309c        0x0 /tmp/cc8meLfe.ltrans0.ltrans.o
+                                 0x23 (size before relaxing)
+ .rodata._seed_array
+                0x0000309c        0xc /tmp/cc8meLfe.ltrans0.ltrans.o
+ .rodata.crc16_table
+                0x000030a8      0x400 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .rodata.str.1  0x000034a8        0xe /tmp/cc8meLfe.ltrans0.ltrans.o
+ *fill*         0x000034b6        0x2 
+ .rodata.str.2  0x000034b8        0xf /tmp/cc8meLfe.ltrans0.ltrans.o
+ *(.rodata1)
+ *(.srodata .srodata.*)
+ *(.got .got.*)
+ *(.toc .toc.*)
+ FILL mask 0x00000000
+                0x000034c8                        . = ALIGN (0x8)
+ *fill*         0x000034c7        0x1 00000000
+                0x000034c8                        _erodata = .
+
+.rela.dyn       0x000034c8        0x0
+ .rela.text     0x000034c8        0x0 crt0.o
+ .rela.text.serialboot.isra.0
+                0x000034c8        0x0 crt0.o
+ .rela.text.litex_startup_init
+                0x000034c8        0x0 crt0.o
+
+.commands       0x000034c8        0x0
+                0x000034c8                        PROVIDE (__bios_cmd_start = .)
+ *(.bios_cmd)
+                0x000034c8                        PROVIDE (__bios_cmd_end = .)
+
+.init           0x000034c8        0x0
+                0x000034c8                        PROVIDE (__bios_init_start = .)
+ *(.bios_init)
+                0x000034c8                        PROVIDE (__bios_init_end = .)
+
+.boot_methods   0x000034c8        0x0
+                [!provide]                        PROVIDE (__bios_boot_start = .)
+ *(.bios_boot)
+                [!provide]                        PROVIDE (__bios_boot_end = .)
+
+.preinit_array  0x000034c8        0x0
+                0x000034c8                        . = ALIGN (0x8)
+                0x000034c8                        PROVIDE (__preinit_array_start = .)
+ *(SORT_BY_NAME(.preinit_array.*))
+ *(.preinit_array)
+                0x000034c8                        PROVIDE (__preinit_array_end = .)
+
+.init_array     0x000034c8        0x0
+                0x000034c8                        . = ALIGN (0x8)
+                0x000034c8                        PROVIDE (__init_array_start = .)
+ *(SORT_BY_NAME(.init_array.*))
+ *(.init_array)
+ *(SORT_BY_NAME(.ctors.*))
+ *(.ctors)
+                0x000034c8                        PROVIDE (__init_array_end = .)
+
+.fini_array     0x000034c8        0x0
+                0x000034c8                        . = ALIGN (0x8)
+                [!provide]                        PROVIDE (__fini_array_start = .)
+ *(SORT_BY_NAME(.fini_array.*))
+ *(.fini_array)
+ *(SORT_BY_NAME(.dtors.*))
+ *(.dtors)
+                [!provide]                        PROVIDE (__fini_array_end = .)
+
+.boot_sram      0x10000000        0x0
+                0x10000000                        __bios_boot_sram_start = .
+                0x10000000                        . = (. + DEFINED (__bios_boot_sram_size)?__bios_boot_sram_size:0x0)
+                0x10000000                        . = ALIGN (0x8)
+                0x10000000                        __bios_boot_sram_end = .
+
+.data           0x10000000       0x18 load address 0x000034c8
+                0x10000000                        . = ALIGN (0x8)
+                0x10000000                        _fdata = .
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data.__stdio  0x10000000       0x10 /tmp/cc8meLfe.ltrans0.ltrans.o
+ *(.data1)
+ *(.sdata .sdata.* .gnu.linkonce.s.*)
+ .sdata.sdram_read_delay_half_window
+                0x10000010        0x4 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .sdata.sdram_read_delay_center
+                0x10000014        0x4 /tmp/cc8meLfe.ltrans0.ltrans.o
+ FILL mask 0x00000000
+                0x10000018                        . = ALIGN (0x8)
+                0x10000018                        _edata = .
+
+.bss            0x10000018      0x130 load address 0x000034e0
+                0x10000018                        . = ALIGN (0x8)
+                0x10000018                        _fbss = .
+ *(.dynsbss)
+ *(.sbss .sbss.* .gnu.linkonce.sb.*)
+ .sbss.read_dq_bitslip
+                0x10000018        0x8 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .sbss.read_dq_delay
+                0x10000020        0x8 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .sbss.rx_consume
+                0x10000028        0x4 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .sbss.rx_produce
+                0x1000002c        0x4 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .sbss.tx_produce
+                0x10000030        0x4 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .sbss.tx_consume
+                0x10000034        0x4 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .sbss.rtos_bios_ddr_ready
+                0x10000038        0x4 /tmp/cc8meLfe.ltrans0.ltrans.o
+ *(.scommon)
+ *(.dynbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss.irq_table
+                0x1000003c        0xc /tmp/cc8meLfe.ltrans0.ltrans.o
+ .bss.tx_buf    0x10000048       0x80 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .bss.rx_buf    0x100000c8       0x80 /tmp/cc8meLfe.ltrans0.ltrans.o
+ *(COMMON)
+                0x10000148                        . = ALIGN (0x8)
+                0x10000148                        _ebss = .
+                0x10000148                        _end = .
+
+/DISCARD/
+ *(.eh_frame)
+ *(.comment)
+                0x10001000                        PROVIDE (_fstack = (ORIGIN (sram) + LENGTH (sram)))
+                0x000034c8                        PROVIDE (_fdata_rom = LOADADDR (.data))
+                0x000034e0                        PROVIDE (_edata_rom = (LOADADDR (.data) + SIZEOF (.data)))
+OUTPUT(bios.elf elf32-littleriscv)
+
+.riscv.attributes
+                0x00000000       0x43
+ .riscv.attributes
+                0x00000000       0x41 crt0.o
+ .riscv.attributes
+                0x00000041       0x3d boot-helper.o
+ .riscv.attributes
+                0x0000007e       0x43 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .riscv.attributes
+                0x000000c1       0x3d ../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memcpy-asm.o)
+ .riscv.attributes
+                0x000000fe       0x3f ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .riscv.attributes
+                0x0000013d       0x3f ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .riscv.attributes
+                0x0000017c       0x3f ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .riscv.attributes
+                0x000001bb       0x3f ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+
+.note.GNU-stack
+                0x00000000        0x0
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .note.GNU-stack
+                0x00000000        0x0 ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .note.GNU-stack
+                0x00000000        0x0 ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .note.GNU-stack
+                0x00000000        0x0 ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .note.GNU-stack
+                0x00000000        0x0 ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+
+.debug_line     0x00000000     0x6822
+ .debug_line    0x00000000      0x1d4 crt0.o
+ .debug_line    0x000001d4       0x48 boot-helper.o
+ .debug_line    0x0000021c     0x4b9e /tmp/cc8meLfe.ltrans0.ltrans.o
+ .debug_line    0x00004dba       0xe3 /tmp/ccv8gqVP.debug.temp.o
+ .debug_line    0x00004e9d      0x171 /tmp/ccWSnNRb.debug.temp.o
+ .debug_line    0x0000500e       0xe3 /tmp/cc8aeQOn.debug.temp.o
+ .debug_line    0x000050f1      0x138 /tmp/ccIMZhXY.debug.temp.o
+ .debug_line    0x00005229      0x138 /tmp/ccpGbvvd.debug.temp.o
+ .debug_line    0x00005361      0x180 /tmp/ccfQhuqR.debug.temp.o
+ .debug_line    0x000054e1       0xd5 /tmp/ccx4BRu3.debug.temp.o
+ .debug_line    0x000055b6       0x8f /tmp/cc3ZQVLz.debug.temp.o
+ .debug_line    0x00005645       0x3f /tmp/ccAyY91R.debug.temp.o
+ .debug_line    0x00005684       0xbd /tmp/cchr1HuW.debug.temp.o
+ .debug_line    0x00005741       0xbd /tmp/cck6ofrb.debug.temp.o
+ .debug_line    0x000057fe       0xbd /tmp/ccTPWQPz.debug.temp.o
+ .debug_line    0x000058bb       0xd6 /tmp/ccaXf66g.debug.temp.o
+ .debug_line    0x00005991      0x116 /tmp/ccq4xuL3.debug.temp.o
+ .debug_line    0x00005aa7       0xd1 /tmp/ccduDoVa.debug.temp.o
+ .debug_line    0x00005b78       0xea /tmp/ccBc1mDm.debug.temp.o
+ .debug_line    0x00005c62       0xa8 /tmp/ccEl7pXQ.debug.temp.o
+ .debug_line    0x00005d0a       0x7a ../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memcpy-asm.o)
+ .debug_line    0x00005d84      0x1b3 ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_line    0x00005f37       0xcf ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_line    0x00006006      0x65f ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_line    0x00006665      0x1bd ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+
+.debug_line_str
+                0x00000000     0x1e30
+ .debug_line_str
+                0x00000000     0x1e30 crt0.o
+                                 0xf9 (size before relaxing)
+ .debug_line_str
+                0x00001e30        0x0 boot-helper.o
+                                0x100 (size before relaxing)
+ .debug_line_str
+                0x00001e30        0x0 /tmp/cc8meLfe.ltrans0.ltrans.o
+                                0x60f (size before relaxing)
+ .debug_line_str
+                0x00001e30        0x0 /tmp/ccv8gqVP.debug.temp.o
+                                0x5dc (size before relaxing)
+ .debug_line_str
+                0x00001e30        0x0 /tmp/ccWSnNRb.debug.temp.o
+                                0x977 (size before relaxing)
+ .debug_line_str
+                0x00001e30        0x0 /tmp/cc8aeQOn.debug.temp.o
+                                0x7bd (size before relaxing)
+ .debug_line_str
+                0x00001e30        0x0 /tmp/ccIMZhXY.debug.temp.o
+                                0x64b (size before relaxing)
+ .debug_line_str
+                0x00001e30        0x0 /tmp/ccpGbvvd.debug.temp.o
+                                0x64d (size before relaxing)
+ .debug_line_str
+                0x00001e30        0x0 /tmp/ccfQhuqR.debug.temp.o
+                                0x92b (size before relaxing)
+ .debug_line_str
+                0x00001e30        0x0 /tmp/ccx4BRu3.debug.temp.o
+                                0x6cb (size before relaxing)
+ .debug_line_str
+                0x00001e30        0x0 /tmp/cc3ZQVLz.debug.temp.o
+                                0x4a6 (size before relaxing)
+ .debug_line_str
+                0x00001e30        0x0 /tmp/ccAyY91R.debug.temp.o
+                                0x15e (size before relaxing)
+ .debug_line_str
+                0x00001e30        0x0 /tmp/cchr1HuW.debug.temp.o
+                                0x65b (size before relaxing)
+ .debug_line_str
+                0x00001e30        0x0 /tmp/cck6ofrb.debug.temp.o
+                                0x658 (size before relaxing)
+ .debug_line_str
+                0x00001e30        0x0 /tmp/ccTPWQPz.debug.temp.o
+                                0x661 (size before relaxing)
+ .debug_line_str
+                0x00001e30        0x0 /tmp/ccaXf66g.debug.temp.o
+                                0x677 (size before relaxing)
+ .debug_line_str
+                0x00001e30        0x0 /tmp/ccq4xuL3.debug.temp.o
+                                0x74b (size before relaxing)
+ .debug_line_str
+                0x00001e30        0x0 /tmp/ccduDoVa.debug.temp.o
+                                0x69a (size before relaxing)
+ .debug_line_str
+                0x00001e30        0x0 /tmp/ccBc1mDm.debug.temp.o
+                                0x6ab (size before relaxing)
+ .debug_line_str
+                0x00001e30        0x0 /tmp/ccEl7pXQ.debug.temp.o
+                                0x4b9 (size before relaxing)
+ .debug_line_str
+                0x00001e30        0x0 ../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memcpy-asm.o)
+                                0x169 (size before relaxing)
+ .debug_line_str
+                0x00001e30        0x0 ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+                                0x533 (size before relaxing)
+ .debug_line_str
+                0x00001e30        0x0 ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+                                0x535 (size before relaxing)
+ .debug_line_str
+                0x00001e30        0x0 ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+                                0x53b (size before relaxing)
+ .debug_line_str
+                0x00001e30        0x0 ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+                                0x533 (size before relaxing)
+
+.debug_info     0x00000000     0x926f
+ .debug_info    0x00000000       0x25 crt0.o
+ .debug_info    0x00000025       0x24 boot-helper.o
+ .debug_info    0x00000049     0x4c0e /tmp/cc8meLfe.ltrans0.ltrans.o
+ .debug_info    0x00004c57      0x4d5 /tmp/ccv8gqVP.debug.temp.o
+                0x00004c57                helpers.c.8fe51c2f
+ .debug_info    0x0000512c     0x126d /tmp/ccWSnNRb.debug.temp.o
+                0x0000512c                boot.c.70f8ec18
+ .debug_info    0x00006399      0x145 /tmp/cc8aeQOn.debug.temp.o
+                0x00006399                rtos_main.c.619b27e6
+ .debug_info    0x000064de      0x163 /tmp/ccIMZhXY.debug.temp.o
+                0x000064de                fputc.c.c903975e
+ .debug_info    0x00006641      0x1c5 /tmp/ccpGbvvd.debug.temp.o
+                0x00006641                printf.c.788d8e70
+ .debug_info    0x00006806      0x37d /tmp/ccfQhuqR.debug.temp.o
+                0x00006806                vfiprintf.c.e593f791
+ .debug_info    0x00006b83      0x1d2 /tmp/ccx4BRu3.debug.temp.o
+                0x00006b83                stdio.c.c1e41724
+ .debug_info    0x00006d55       0xb6 /tmp/cc3ZQVLz.debug.temp.o
+                0x00006d55                strnlen.c.cdf091e1
+ .debug_info    0x00006e0b       0xa5 /tmp/ccAyY91R.debug.temp.o
+                0x00006e0b                crc16.c.46b24964
+ .debug_info    0x00006eb0      0x168 /tmp/cchr1HuW.debug.temp.o
+                0x00006eb0                system.c.a72fc13a
+ .debug_info    0x00007018      0x2ba /tmp/cck6ofrb.debug.temp.o
+                0x00007018                uart.c.d2a3a4e8
+ .debug_info    0x000072d2      0x100 /tmp/ccTPWQPz.debug.temp.o
+                0x000072d2                startup.c.01eb43f1
+ .debug_info    0x000073d2      0x1da /tmp/ccaXf66g.debug.temp.o
+                0x000073d2                isr.c.972683dd
+ .debug_info    0x000075ac      0xd61 /tmp/ccq4xuL3.debug.temp.o
+                0x000075ac                sdram.c.78bb06f0
+ .debug_info    0x0000830d      0x252 /tmp/ccduDoVa.debug.temp.o
+                0x0000830d                accessors.c.481f50f8
+ .debug_info    0x0000855f      0x6a0 /tmp/ccBc1mDm.debug.temp.o
+                0x0000855f                memtest.c.bf368815
+ .debug_info    0x00008bff       0xc0 /tmp/ccEl7pXQ.debug.temp.o
+                0x00008bff                format.c.094ba22d
+ .debug_info    0x00008cbf       0x31 ../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memcpy-asm.o)
+ .debug_info    0x00008cf0      0x108 ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_info    0x00008df8      0x12f ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_info    0x00008f27      0x240 ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_info    0x00009167      0x108 ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+
+.debug_abbrev   0x00000000     0x1cd6
+ .debug_abbrev  0x00000000       0x14 crt0.o
+ .debug_abbrev  0x00000014       0x14 boot-helper.o
+ .debug_abbrev  0x00000028      0x359 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .debug_abbrev  0x00000381      0x17d /tmp/ccv8gqVP.debug.temp.o
+ .debug_abbrev  0x000004fe      0x356 /tmp/ccWSnNRb.debug.temp.o
+ .debug_abbrev  0x00000854      0x105 /tmp/cc8aeQOn.debug.temp.o
+ .debug_abbrev  0x00000959       0xba /tmp/ccIMZhXY.debug.temp.o
+ .debug_abbrev  0x00000a13       0xfb /tmp/ccpGbvvd.debug.temp.o
+ .debug_abbrev  0x00000b0e      0x1d8 /tmp/ccfQhuqR.debug.temp.o
+ .debug_abbrev  0x00000ce6      0x131 /tmp/ccx4BRu3.debug.temp.o
+ .debug_abbrev  0x00000e17       0x7c /tmp/cc3ZQVLz.debug.temp.o
+ .debug_abbrev  0x00000e93       0x9b /tmp/ccAyY91R.debug.temp.o
+ .debug_abbrev  0x00000f2e       0xe2 /tmp/cchr1HuW.debug.temp.o
+ .debug_abbrev  0x00001010      0x179 /tmp/cck6ofrb.debug.temp.o
+ .debug_abbrev  0x00001189       0xd9 /tmp/ccTPWQPz.debug.temp.o
+ .debug_abbrev  0x00001262      0x18b /tmp/ccaXf66g.debug.temp.o
+ .debug_abbrev  0x000013ed      0x22b /tmp/ccq4xuL3.debug.temp.o
+ .debug_abbrev  0x00001618      0x112 /tmp/ccduDoVa.debug.temp.o
+ .debug_abbrev  0x0000172a      0x213 /tmp/ccBc1mDm.debug.temp.o
+ .debug_abbrev  0x0000193d       0x8a /tmp/ccEl7pXQ.debug.temp.o
+ .debug_abbrev  0x000019c7       0x28 ../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memcpy-asm.o)
+ .debug_abbrev  0x000019ef       0x82 ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_abbrev  0x00001a71       0xa8 ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_abbrev  0x00001b19      0x13b ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_abbrev  0x00001c54       0x82 ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+
+.debug_aranges  0x00000000      0x1e8
+ .debug_aranges
+                0x00000000       0x20 crt0.o
+ .debug_aranges
+                0x00000020       0x20 boot-helper.o
+ .debug_aranges
+                0x00000040      0x108 /tmp/cc8meLfe.ltrans0.ltrans.o
+ .debug_aranges
+                0x00000148       0x20 ../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memcpy-asm.o)
+ .debug_aranges
+                0x00000168       0x20 ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_aranges
+                0x00000188       0x20 ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_aranges
+                0x000001a8       0x20 ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_aranges
+                0x000001c8       0x20 ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+
+.debug_str      0x00000000    0x16746
+ .debug_str     0x00000000    0x16746 crt0.o
+                                0x105 (size before relaxing)
+ .debug_str     0x00016746        0x0 boot-helper.o
+                                0x10c (size before relaxing)
+ .debug_str     0x00016746        0x0 /tmp/cc8meLfe.ltrans0.ltrans.o
+                                0x158 (size before relaxing)
+ .debug_str     0x00016746        0x0 /tmp/ccv8gqVP.debug.temp.o
+                               0x6b8e (size before relaxing)
+ .debug_str     0x00016746        0x0 /tmp/ccWSnNRb.debug.temp.o
+                               0xbd3c (size before relaxing)
+ .debug_str     0x00016746        0x0 /tmp/cc8aeQOn.debug.temp.o
+                               0x9e34 (size before relaxing)
+ .debug_str     0x00016746        0x0 /tmp/ccIMZhXY.debug.temp.o
+                               0xb373 (size before relaxing)
+ .debug_str     0x00016746        0x0 /tmp/ccpGbvvd.debug.temp.o
+                               0xb399 (size before relaxing)
+ .debug_str     0x00016746        0x0 /tmp/ccfQhuqR.debug.temp.o
+                               0xe3c3 (size before relaxing)
+ .debug_str     0x00016746        0x0 /tmp/ccx4BRu3.debug.temp.o
+                               0x9aa5 (size before relaxing)
+ .debug_str     0x00016746        0x0 /tmp/cc3ZQVLz.debug.temp.o
+                               0x4865 (size before relaxing)
+ .debug_str     0x00016746        0x0 /tmp/ccAyY91R.debug.temp.o
+                               0x2abd (size before relaxing)
+ .debug_str     0x00016746        0x0 /tmp/cchr1HuW.debug.temp.o
+                               0x8ffa (size before relaxing)
+ .debug_str     0x00016746        0x0 /tmp/cck6ofrb.debug.temp.o
+                               0x8f6a (size before relaxing)
+ .debug_str     0x00016746        0x0 /tmp/ccTPWQPz.debug.temp.o
+                               0x8d6f (size before relaxing)
+ .debug_str     0x00016746        0x0 /tmp/ccaXf66g.debug.temp.o
+                               0x9a55 (size before relaxing)
+ .debug_str     0x00016746        0x0 /tmp/ccq4xuL3.debug.temp.o
+                               0xb6f8 (size before relaxing)
+ .debug_str     0x00016746        0x0 /tmp/ccduDoVa.debug.temp.o
+                               0x9e18 (size before relaxing)
+ .debug_str     0x00016746        0x0 /tmp/ccBc1mDm.debug.temp.o
+                               0xa6ad (size before relaxing)
+ .debug_str     0x00016746        0x0 /tmp/ccEl7pXQ.debug.temp.o
+                               0x6f4b (size before relaxing)
+ .debug_str     0x00016746        0x0 ../libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T221650.486565Z_attribution_attribution-ddr-native-sd_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memcpy-asm.o)
+                                0x17c (size before relaxing)
+ .debug_str     0x00016746        0x0 ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+                               0x61a7 (size before relaxing)
+ .debug_str     0x00016746        0x0 ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+                               0x61ae (size before relaxing)
+ .debug_str     0x00016746        0x0 ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+                               0x61f2 (size before relaxing)
+ .debug_str     0x00016746        0x0 ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+                               0x61a7 (size before relaxing)
+
+.debug_loclists
+                0x00000000     0x3f2a
+ .debug_loclists
+                0x00000000     0x358e /tmp/cc8meLfe.ltrans0.ltrans.o
+ .debug_loclists
+                0x0000358e      0x371 ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_loclists
+                0x000038ff       0x48 ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_loclists
+                0x00003947      0x2df ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_loclists
+                0x00003c26      0x304 ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+
+.debug_rnglists
+                0x00000000      0x804
+ .debug_rnglists
+                0x00000000      0x7aa /tmp/cc8meLfe.ltrans0.ltrans.o
+ .debug_rnglists
+                0x000007aa       0x13 ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_rnglists
+                0x000007bd       0x13 ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_rnglists
+                0x000007d0       0x20 ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_rnglists
+                0x000007f0       0x14 ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+
+.debug_macro    0x00000000     0x7cd2
+ .debug_macro   0x00000000      0x183 /tmp/ccv8gqVP.debug.temp.o
+ .debug_macro   0x00000183      0x838 /tmp/ccv8gqVP.debug.temp.o
+ .debug_macro   0x000009bb      0x220 /tmp/ccv8gqVP.debug.temp.o
+ .debug_macro   0x00000bdb       0x9c /tmp/ccv8gqVP.debug.temp.o
+ .debug_macro   0x00000c77       0x34 /tmp/ccv8gqVP.debug.temp.o
+ .debug_macro   0x00000cab       0x58 /tmp/ccv8gqVP.debug.temp.o
+ .debug_macro   0x00000d03       0x5b /tmp/ccv8gqVP.debug.temp.o
+ .debug_macro   0x00000d5e      0x24d /tmp/ccv8gqVP.debug.temp.o
+ .debug_macro   0x00000fab       0x10 /tmp/ccv8gqVP.debug.temp.o
+ .debug_macro   0x00000fbb       0x9e /tmp/ccv8gqVP.debug.temp.o
+ .debug_macro   0x00001059       0x10 /tmp/ccv8gqVP.debug.temp.o
+ .debug_macro   0x00001069       0x58 /tmp/ccv8gqVP.debug.temp.o
+ .debug_macro   0x000010c1       0x16 /tmp/ccv8gqVP.debug.temp.o
+ .debug_macro   0x000010d7       0x20 /tmp/ccv8gqVP.debug.temp.o
+ .debug_macro   0x000010f7       0x35 /tmp/ccv8gqVP.debug.temp.o
+ .debug_macro   0x0000112c      0x1f0 /tmp/ccv8gqVP.debug.temp.o
+ .debug_macro   0x0000131c       0x16 /tmp/ccv8gqVP.debug.temp.o
+ .debug_macro   0x00001332       0x20 /tmp/ccv8gqVP.debug.temp.o
+ .debug_macro   0x00001352       0x6a /tmp/ccv8gqVP.debug.temp.o
+ .debug_macro   0x000013bc      0x103 /tmp/ccv8gqVP.debug.temp.o
+ .debug_macro   0x000014bf      0x1df /tmp/ccv8gqVP.debug.temp.o
+ .debug_macro   0x0000169e       0x16 /tmp/ccv8gqVP.debug.temp.o
+ .debug_macro   0x000016b4       0x16 /tmp/ccv8gqVP.debug.temp.o
+ .debug_macro   0x000016ca       0x9e /tmp/ccv8gqVP.debug.temp.o
+ .debug_macro   0x00001768       0x16 /tmp/ccv8gqVP.debug.temp.o
+ .debug_macro   0x0000177e       0x3a /tmp/ccv8gqVP.debug.temp.o
+ .debug_macro   0x000017b8       0x29 /tmp/ccv8gqVP.debug.temp.o
+ .debug_macro   0x000017e1       0xca /tmp/ccv8gqVP.debug.temp.o
+ .debug_macro   0x000018ab       0x58 /tmp/ccv8gqVP.debug.temp.o
+ .debug_macro   0x00001903      0x2a1 /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x00001ba4      0x184 /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x00001d28       0x16 /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x00001d3e      0x11e /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x00001e5c       0x94 /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x00001ef0       0x22 /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x00001f12       0xf4 /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x00002006       0x1c /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x00002022       0x3c /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x0000205e       0x50 /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x000020ae      0x759 /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x00002807       0x4c /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x00002853       0x46 /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x00002899       0x10 /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x000028a9       0x16 /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x000028bf       0x22 /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x000028e1       0xf4 /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x000029d5      0x106 /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x00002adb       0xee /tmp/ccWSnNRb.debug.temp.o
+ .debug_macro   0x00002bc9      0x135 /tmp/cc8aeQOn.debug.temp.o
+ .debug_macro   0x00002cfe       0x16 /tmp/cc8aeQOn.debug.temp.o
+ .debug_macro   0x00002d14       0x5e /tmp/cc8aeQOn.debug.temp.o
+ .debug_macro   0x00002d72      0x10b /tmp/cc8aeQOn.debug.temp.o
+ .debug_macro   0x00002e7d      0x753 /tmp/cc8aeQOn.debug.temp.o
+ .debug_macro   0x000035d0      0x24d /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x0000381d       0x10 /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x0000382d      0x11e /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x0000394b      0x11c /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00003a67       0x58 /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00003abf       0x4a /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00003b09       0x17 /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00003b20      0x25c /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00003d7c       0x1c /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00003d98      0x554 /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x000042ec       0x43 /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x0000432f       0x34 /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00004363      0x183 /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x000044e6      0x241 /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00004727      0x196 /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x000048bd      0x1b1 /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00004a6e       0x10 /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00004a7e       0x64 /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00004ae2       0x1c /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00004afe       0x82 /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00004b80       0xa2 /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00004c22      0x2b0 /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00004ed2       0x12 /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00004ee4       0x2e /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00004f12       0xad /tmp/ccIMZhXY.debug.temp.o
+ .debug_macro   0x00004fbf      0x241 /tmp/ccpGbvvd.debug.temp.o
+ .debug_macro   0x00005200      0x2d3 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x000054d3       0x16 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x000054e9       0x10 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x000054f9      0x73e /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00005c37       0x41 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00005c78       0x82 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00005cfa       0x18 /tmp/ccfQhuqR.debug.temp.o
+ .debug_macro   0x00005d12      0x12e /tmp/ccx4BRu3.debug.temp.o
+ .debug_macro   0x00005e40       0xee /tmp/ccx4BRu3.debug.temp.o
+ .debug_macro   0x00005f2e       0xab /tmp/cc3ZQVLz.debug.temp.o
+ .debug_macro   0x00005fd9       0x1b /tmp/ccAyY91R.debug.temp.o
+ .debug_macro   0x00005ff4       0xe1 /tmp/cchr1HuW.debug.temp.o
+ .debug_macro   0x000060d5      0x189 /tmp/cchr1HuW.debug.temp.o
+ .debug_macro   0x0000625e       0xf9 /tmp/cck6ofrb.debug.temp.o
+ .debug_macro   0x00006357       0xd8 /tmp/ccTPWQPz.debug.temp.o
+ .debug_macro   0x0000642f      0x131 /tmp/ccaXf66g.debug.temp.o
+ .debug_macro   0x00006560      0x262 /tmp/ccq4xuL3.debug.temp.o
+ .debug_macro   0x000067c2       0xb8 /tmp/ccq4xuL3.debug.temp.o
+ .debug_macro   0x0000687a      0x139 /tmp/ccduDoVa.debug.temp.o
+ .debug_macro   0x000069b3      0x193 /tmp/ccBc1mDm.debug.temp.o
+ .debug_macro   0x00006b46       0xff /tmp/ccEl7pXQ.debug.temp.o
+ .debug_macro   0x00006c45      0x46b /tmp/ccEl7pXQ.debug.temp.o
+ .debug_macro   0x000070b0       0xd8 ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x00007188      0x844 ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x000079cc       0x34 ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x00007a00       0x16 ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x00007a16       0x12 ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x00007a28       0x22 ../libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x00007a4a       0xd8 ../libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00007b22       0xd8 ../libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00007bfa       0xd8 ../libcompiler_rt/libcompiler_rt.a(clzsi2.o)

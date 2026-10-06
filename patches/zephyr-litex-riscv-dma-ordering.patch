@@ -1,0 +1,47 @@
+diff --git a/drivers/ethernet/eth_litex_liteeth.c b/drivers/ethernet/eth_litex_liteeth.c
+index 0000000..0000000 100644
+--- a/drivers/ethernet/eth_litex_liteeth.c
++++ b/drivers/ethernet/eth_litex_liteeth.c
+@@ -94,6 +94,8 @@ static int eth_tx(const struct device *dev, struct net_pkt *pkt)
+ 		return -EIO;
+ 	};
+ 	/* start transmitting */
++	/* Publish frame-buffer writes before the LiteEth DMA start MMIO write. */
++	__asm__ volatile ("fence w,o" ::: "memory");
+ 	litex_write8(1, config->tx_start_addr);
+ 
+ 	/* change slot */
+@@ -162,5 +164,7 @@ static void eth_irq_handler(const struct device *port)
+ 	/* check sram writer events (rx) */
+ 	if (litex_read8(config->rx_ev_pending_addr) & BIT(0)) {
++		/* The completion event orders LiteEth DMA writes before CPU reads. */
++		__asm__ volatile ("fence i,r" ::: "memory");
+ 		eth_rx(port);
+ 
+ 		/* ack writer irq */
+diff --git a/drivers/sdhc/sdhc_litex_litesdcard.c b/drivers/sdhc/sdhc_litex_litesdcard.c
+index 0000000..0000000 100644
+--- a/drivers/sdhc/sdhc_litex_litesdcard.c
++++ b/drivers/sdhc/sdhc_litex_litesdcard.c
+@@ -176,6 +176,8 @@ static int sdhc_litex_wait_for_dma(const struct device *dev, struct sdhc_command
+ 	k_event_wait(&dev_data->irq_event, SDCARD_EV_BLOCK2MEM_DMA | SDCARD_EV_MEM2BLOCK_DMA, false,
+ 		     K_FOREVER);
+ 
++	/* DMA completion must be visible before a read buffer is consumed. */
++	__asm__ volatile ("fence i,r" ::: "memory");
+ 	if (IS_BIT_SET(data_event, SDCARD_CORE_EVENT_ERROR_BIT)) {
+ 		LOG_WRN("Data error");
+ 		return -EIO;
+@@ -250,9 +252,12 @@ static void sdhc_litex_do_dma(const struct device *dev, struct sdhc_command *cmd,
+ 	k_event_clear(&dev_data->irq_event, SDCARD_EV_BLOCK2MEM_DMA | SDCARD_EV_MEM2BLOCK_DMA);
+ 
+ 	if (*transfer == SDCARD_CTRL_DATA_TRANSFER_WRITE) {
++		/* Publish the CPU buffer before the LiteSDCard DMA start MMIO write. */
++		__asm__ volatile ("fence w,o" ::: "memory");
+ 		litex_write8(0, dev_config->mem2block_dma_enable_addr);
+ 		litex_write8(1, dev_config->mem2block_dma_enable_addr);
+ 	} else {
++		__asm__ volatile ("fence w,o" ::: "memory");
+ 		litex_write8(0, dev_config->block2mem_dma_enable_addr);
+ 		litex_write8(1, dev_config->block2mem_dma_enable_addr);
+ 	}

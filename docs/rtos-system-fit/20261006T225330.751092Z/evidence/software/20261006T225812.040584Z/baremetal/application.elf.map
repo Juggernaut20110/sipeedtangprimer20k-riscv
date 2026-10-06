@@ -1,0 +1,1601 @@
+Archive member included to satisfy reference by file (symbol)
+
+/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libbase/libbase.a(timeout.o)
+                              /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o (timeout_start)
+/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libbase/libbase.a(system.o)
+                              /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o (flush_l2_cache)
+/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libbase/libbase.a(startup.o)
+                              /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/crt0.o (litex_startup_init)
+/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libbase/libbase.a(isr.o)
+                              startup.o (symbol from plugin) (irq_init)
+/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T225330.751092Z_candidates_candidate-2-pinned-lite-no-l2_attempts_rom16k_soc_software_include_.._picolibc_src_libc_stdio_printf.o)
+                              /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o (printf)
+/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T225330.751092Z_candidates_candidate-2-pinned-lite-no-l2_attempts_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memset.o)
+                              /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o (memset)
+/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T225330.751092Z_candidates_candidate-2-pinned-lite-no-l2_attempts_rom16k_soc_software_include_.._picolibc_src_libc_stdio_vfiprintf.o)
+                              minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T225330.751092Z_candidates_candidate-2-pinned-lite-no-l2_attempts_rom16k_soc_software_include_.._picolibc_src_libc_stdio_printf.o (symbol from plugin) (vfprintf)
+/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libc/libc.a(_libc_minimal.a)
+                              minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T225330.751092Z_candidates_candidate-2-pinned-lite-no-l2_attempts_rom16k_soc_software_include_.._picolibc_src_libc_stdio_printf.o (symbol from plugin) (stdout)
+/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T225330.751092Z_candidates_candidate-2-pinned-lite-no-l2_attempts_rom16k_soc_software_include_.._picolibc_src_libc_string_strnlen.o)
+                              minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T225330.751092Z_candidates_candidate-2-pinned-lite-no-l2_attempts_rom16k_soc_software_include_.._picolibc_src_libc_stdio_vfiprintf.o (symbol from plugin) (strnlen)
+/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libbase/libbase.a(uart.o)
+                              _libc_minimal.a (symbol from plugin) (uart_read)
+/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+                              /tmp/ccOi2a5M.ltrans0.ltrans.o (__ctzsi2)
+/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+                              /tmp/ccOi2a5M.ltrans0.ltrans.o (__udivdi3)
+/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+                              /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o) (__udivmoddi4)
+/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+                              /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o) (__clzsi2)
+
+Discarded input sections
+
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .text          0x00000000        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .data          0x00000000        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .bss           0x00000000        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .comment       0x00000000       0x34 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .text          0x00000000        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .data          0x00000000        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .bss           0x00000000        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .debug_macro   0x00000000      0x832 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .debug_macro   0x00000000      0x220 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .debug_macro   0x00000000       0x9c /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .debug_macro   0x00000000       0x34 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .debug_macro   0x00000000       0x58 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .debug_macro   0x00000000       0x5b /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .debug_macro   0x00000000      0x23f /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .debug_macro   0x00000000       0x6a /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .debug_macro   0x00000000      0x103 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .debug_macro   0x00000000      0x2be /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .debug_macro   0x00000000      0x106 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .debug_macro   0x00000000      0x1a5 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .debug_macro   0x00000000       0x22 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .debug_macro   0x00000000       0x1c /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .debug_macro   0x00000000       0x50 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .debug_macro   0x00000000      0x90d /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .comment       0x00000000       0x34 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .text          0x00000000        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .data          0x00000000        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .bss           0x00000000        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .text.sd_disk_status
+                0x00000000       0x18 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .rodata.sdcard_set_clk_freq.str1.4
+                0x00000000       0x31 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .text.sdcard_set_clk_freq
+                0x00000000       0xb8 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .text.sdcard_send_status
+                0x00000000       0x30 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .text.sd_disk_initialize
+                0x00000000       0x48 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .text.sd_disk_read
+                0x00000000       0x2c /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .text.fatfs_set_ops_sdcard
+                0x00000000       0x14 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .data.SdCardDiskOps
+                0x00000000       0x14 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .sdata.sdcardstatus
+                0x00000000        0x1 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x00000000      0x832 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x00000000      0x220 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x00000000       0x9c /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x00000000       0x34 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x00000000       0x58 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x00000000       0x5b /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x00000000      0x23f /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x00000000       0x10 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x00000000       0x58 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x00000000       0x16 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x00000000       0x35 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x00000000      0x1ea /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x00000000       0x6a /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x00000000      0x103 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x00000000      0x2be /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x00000000       0x22 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x00000000       0x1c /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x00000000       0x50 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x00000000      0x90d /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x00000000       0xf4 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .comment       0x00000000       0x34 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .text          0x00000000        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .data          0x00000000        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .bss           0x00000000        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .text.udp_set_ip
+                0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .text.udp_get_ip
+                0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .text.udp_set_callback
+                0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .text.udp_arp_resolve
+                0x00000000      0x234 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .rodata.send_ping.str1.4
+                0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .text.send_ping
+                0x00000000      0x258 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .rodata.eth_init.str1.4
+                0x00000000       0x12 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .text.eth_init
+                0x00000000       0x50 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .srodata.broadcast
+                0x00000000        0x6 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .debug_macro   0x00000000      0x832 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .debug_macro   0x00000000      0x220 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .debug_macro   0x00000000       0x9c /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .debug_macro   0x00000000       0x34 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .debug_macro   0x00000000       0x58 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .debug_macro   0x00000000       0x5b /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .debug_macro   0x00000000      0x23f /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .debug_macro   0x00000000       0x6a /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .debug_macro   0x00000000      0x103 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .debug_macro   0x00000000      0x2be /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .debug_macro   0x00000000      0x106 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .debug_macro   0x00000000      0x1a5 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .debug_macro   0x00000000       0x22 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .debug_macro   0x00000000       0x1c /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .debug_macro   0x00000000       0x50 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .debug_macro   0x00000000      0x90d /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .debug_macro   0x00000000       0x82 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .debug_macro   0x00000000       0x16 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .debug_macro   0x00000000       0x3c /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .debug_macro   0x00000000       0x10 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .debug_macro   0x00000000       0x58 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .debug_macro   0x00000000       0x16 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .debug_macro   0x00000000       0x4a /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .debug_macro   0x00000000       0x35 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .debug_macro   0x00000000      0x1ea /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .debug_macro   0x00000000       0x22 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .comment       0x00000000       0x34 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .data          0x00000000        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/crt0.o
+ .bss           0x00000000        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/crt0.o
+ .comment       0x00000000       0x34 /tmp/ccOi2a5M.ltrans0.ltrans.o
+ .eh_frame      0x00000000      0x1e0 /tmp/ccOi2a5M.ltrans0.ltrans.o
+ .group         0x00000000        0xc /tmp/cc2jWHXW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc2jWHXW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc2jWHXW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc2jWHXW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc2jWHXW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc2jWHXW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc2jWHXW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc2jWHXW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc2jWHXW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc2jWHXW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc2jWHXW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc2jWHXW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc2jWHXW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc2jWHXW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc2jWHXW.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc2jWHXW.debug.temp.o
+ .debug_macro   0x00000000      0x220 /tmp/cc2jWHXW.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/cc2jWHXW.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/cc2jWHXW.debug.temp.o
+ .debug_macro   0x00000000       0x5b /tmp/cc2jWHXW.debug.temp.o
+ .debug_macro   0x00000000       0x6a /tmp/cc2jWHXW.debug.temp.o
+ .debug_macro   0x00000000      0x103 /tmp/cc2jWHXW.debug.temp.o
+ .debug_macro   0x00000000      0x106 /tmp/cc2jWHXW.debug.temp.o
+ .debug_macro   0x00000000       0x22 /tmp/cc2jWHXW.debug.temp.o
+ .debug_macro   0x00000000       0x1c /tmp/cc2jWHXW.debug.temp.o
+ .debug_macro   0x00000000       0x50 /tmp/cc2jWHXW.debug.temp.o
+ .debug_macro   0x00000000      0x90d /tmp/cc2jWHXW.debug.temp.o
+ .comment       0x00000000       0x34 /tmp/cc2jWHXW.debug.temp.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/cc2jWHXW.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccdVJsPF.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccdVJsPF.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccdVJsPF.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccdVJsPF.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccdVJsPF.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccdVJsPF.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccdVJsPF.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccdVJsPF.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccdVJsPF.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccdVJsPF.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccdVJsPF.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccdVJsPF.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccdVJsPF.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccdVJsPF.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccdVJsPF.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccdVJsPF.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccdVJsPF.debug.temp.o
+ .debug_macro   0x00000000      0x838 /tmp/ccdVJsPF.debug.temp.o
+ .debug_macro   0x00000000      0x189 /tmp/ccdVJsPF.debug.temp.o
+ .debug_macro   0x00000000       0x22 /tmp/ccdVJsPF.debug.temp.o
+ .debug_macro   0x00000000      0x220 /tmp/ccdVJsPF.debug.temp.o
+ .debug_macro   0x00000000       0x9c /tmp/ccdVJsPF.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/ccdVJsPF.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/ccdVJsPF.debug.temp.o
+ .debug_macro   0x00000000       0x5b /tmp/ccdVJsPF.debug.temp.o
+ .debug_macro   0x00000000      0x24d /tmp/ccdVJsPF.debug.temp.o
+ .debug_macro   0x00000000       0x6a /tmp/ccdVJsPF.debug.temp.o
+ .debug_macro   0x00000000      0x103 /tmp/ccdVJsPF.debug.temp.o
+ .debug_macro   0x00000000      0x1df /tmp/ccdVJsPF.debug.temp.o
+ .debug_macro   0x00000000      0x106 /tmp/ccdVJsPF.debug.temp.o
+ .debug_macro   0x00000000       0x1c /tmp/ccdVJsPF.debug.temp.o
+ .debug_macro   0x00000000       0x50 /tmp/ccdVJsPF.debug.temp.o
+ .debug_macro   0x00000000      0x90d /tmp/ccdVJsPF.debug.temp.o
+ .debug_macro   0x00000000       0x82 /tmp/ccdVJsPF.debug.temp.o
+ .comment       0x00000000       0x34 /tmp/ccdVJsPF.debug.temp.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccdVJsPF.debug.temp.o
+ .group         0x00000000        0xc /tmp/cccZ17bG.debug.temp.o
+ .group         0x00000000        0xc /tmp/cccZ17bG.debug.temp.o
+ .group         0x00000000        0xc /tmp/cccZ17bG.debug.temp.o
+ .group         0x00000000        0xc /tmp/cccZ17bG.debug.temp.o
+ .group         0x00000000        0xc /tmp/cccZ17bG.debug.temp.o
+ .group         0x00000000        0xc /tmp/cccZ17bG.debug.temp.o
+ .group         0x00000000        0xc /tmp/cccZ17bG.debug.temp.o
+ .group         0x00000000        0xc /tmp/cccZ17bG.debug.temp.o
+ .group         0x00000000        0xc /tmp/cccZ17bG.debug.temp.o
+ .group         0x00000000        0xc /tmp/cccZ17bG.debug.temp.o
+ .group         0x00000000        0xc /tmp/cccZ17bG.debug.temp.o
+ .group         0x00000000        0xc /tmp/cccZ17bG.debug.temp.o
+ .group         0x00000000        0xc /tmp/cccZ17bG.debug.temp.o
+ .group         0x00000000        0xc /tmp/cccZ17bG.debug.temp.o
+ .group         0x00000000        0xc /tmp/cccZ17bG.debug.temp.o
+ .group         0x00000000        0xc /tmp/cccZ17bG.debug.temp.o
+ .debug_macro   0x00000000      0x838 /tmp/cccZ17bG.debug.temp.o
+ .debug_macro   0x00000000      0x189 /tmp/cccZ17bG.debug.temp.o
+ .debug_macro   0x00000000       0x22 /tmp/cccZ17bG.debug.temp.o
+ .debug_macro   0x00000000      0x220 /tmp/cccZ17bG.debug.temp.o
+ .debug_macro   0x00000000       0x9c /tmp/cccZ17bG.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/cccZ17bG.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/cccZ17bG.debug.temp.o
+ .debug_macro   0x00000000       0x5b /tmp/cccZ17bG.debug.temp.o
+ .debug_macro   0x00000000      0x24d /tmp/cccZ17bG.debug.temp.o
+ .debug_macro   0x00000000       0x6a /tmp/cccZ17bG.debug.temp.o
+ .debug_macro   0x00000000      0x103 /tmp/cccZ17bG.debug.temp.o
+ .debug_macro   0x00000000      0x1df /tmp/cccZ17bG.debug.temp.o
+ .debug_macro   0x00000000      0x106 /tmp/cccZ17bG.debug.temp.o
+ .debug_macro   0x00000000       0x1c /tmp/cccZ17bG.debug.temp.o
+ .debug_macro   0x00000000       0x50 /tmp/cccZ17bG.debug.temp.o
+ .debug_macro   0x00000000      0x90d /tmp/cccZ17bG.debug.temp.o
+ .comment       0x00000000       0x34 /tmp/cccZ17bG.debug.temp.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/cccZ17bG.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccVuFWFq.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccVuFWFq.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccVuFWFq.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccVuFWFq.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccVuFWFq.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccVuFWFq.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccVuFWFq.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccVuFWFq.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccVuFWFq.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccVuFWFq.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccVuFWFq.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccVuFWFq.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccVuFWFq.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccVuFWFq.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccVuFWFq.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccVuFWFq.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccVuFWFq.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccVuFWFq.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccVuFWFq.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccVuFWFq.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccVuFWFq.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccVuFWFq.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccVuFWFq.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccVuFWFq.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccVuFWFq.debug.temp.o
+ .debug_macro   0x00000000      0x838 /tmp/ccVuFWFq.debug.temp.o
+ .debug_macro   0x00000000      0x220 /tmp/ccVuFWFq.debug.temp.o
+ .debug_macro   0x00000000       0x9c /tmp/ccVuFWFq.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/ccVuFWFq.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/ccVuFWFq.debug.temp.o
+ .debug_macro   0x00000000       0x5b /tmp/ccVuFWFq.debug.temp.o
+ .debug_macro   0x00000000      0x24d /tmp/ccVuFWFq.debug.temp.o
+ .debug_macro   0x00000000       0x6a /tmp/ccVuFWFq.debug.temp.o
+ .debug_macro   0x00000000      0x103 /tmp/ccVuFWFq.debug.temp.o
+ .debug_macro   0x00000000      0x1df /tmp/ccVuFWFq.debug.temp.o
+ .debug_macro   0x00000000      0x106 /tmp/ccVuFWFq.debug.temp.o
+ .debug_macro   0x00000000      0x189 /tmp/ccVuFWFq.debug.temp.o
+ .debug_macro   0x00000000       0x22 /tmp/ccVuFWFq.debug.temp.o
+ .debug_macro   0x00000000       0x1c /tmp/ccVuFWFq.debug.temp.o
+ .debug_macro   0x00000000       0x50 /tmp/ccVuFWFq.debug.temp.o
+ .debug_macro   0x00000000      0x90d /tmp/ccVuFWFq.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccVuFWFq.debug.temp.o
+ .debug_macro   0x00000000       0x3c /tmp/ccVuFWFq.debug.temp.o
+ .debug_macro   0x00000000       0x10 /tmp/ccVuFWFq.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/ccVuFWFq.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccVuFWFq.debug.temp.o
+ .debug_macro   0x00000000       0x4a /tmp/ccVuFWFq.debug.temp.o
+ .debug_macro   0x00000000       0x35 /tmp/ccVuFWFq.debug.temp.o
+ .comment       0x00000000       0x34 /tmp/ccVuFWFq.debug.temp.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccVuFWFq.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x00000000      0x220 /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x00000000       0x5b /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x00000000      0x24d /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x00000000       0x3a /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x00000000       0x29 /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x00000000       0x3c /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x00000000       0x4a /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x00000000       0x35 /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x00000000      0x103 /tmp/ccpFBCmf.debug.temp.o
+ .comment       0x00000000       0x34 /tmp/ccpFBCmf.debug.temp.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccpFBCmf.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000      0x850 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000      0x220 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000       0x10 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000      0x11e /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000       0x5b /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000      0x24d /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000      0x11c /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000       0x3a /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000       0x29 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000       0x94 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000       0x22 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000       0x3c /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000       0x4a /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000       0x35 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000       0x17 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000      0x35e /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000      0x25c /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000       0x1c /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000      0x554 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000       0x22 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000       0x43 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000      0x183 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000      0x241 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000      0x196 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000      0x11e /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000      0x1b1 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000       0x10 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000       0x64 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000       0x1c /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000       0x82 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000       0xa2 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000      0x103 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000      0x2b0 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000       0x12 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000       0x2e /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00000000       0xad /tmp/ccura3eC.debug.temp.o
+ .comment       0x00000000       0x34 /tmp/ccura3eC.debug.temp.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccura3eC.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc7FOw50.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc7FOw50.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc7FOw50.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc7FOw50.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc7FOw50.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc7FOw50.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc7FOw50.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc7FOw50.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc7FOw50.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc7FOw50.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc7FOw50.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc7FOw50.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc7FOw50.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc7FOw50.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc7FOw50.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc7FOw50.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc7FOw50.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc7FOw50.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc7FOw50.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc7FOw50.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc7FOw50.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc7FOw50.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc7FOw50.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc7FOw50.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc7FOw50.debug.temp.o
+ .group         0x00000000        0xc /tmp/cc7FOw50.debug.temp.o
+ .debug_macro   0x00000000      0x838 /tmp/cc7FOw50.debug.temp.o
+ .debug_macro   0x00000000      0x220 /tmp/cc7FOw50.debug.temp.o
+ .debug_macro   0x00000000       0x9c /tmp/cc7FOw50.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/cc7FOw50.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/cc7FOw50.debug.temp.o
+ .debug_macro   0x00000000       0x5b /tmp/cc7FOw50.debug.temp.o
+ .debug_macro   0x00000000      0x24d /tmp/cc7FOw50.debug.temp.o
+ .debug_macro   0x00000000       0x10 /tmp/cc7FOw50.debug.temp.o
+ .debug_macro   0x00000000       0x9e /tmp/cc7FOw50.debug.temp.o
+ .debug_macro   0x00000000       0x10 /tmp/cc7FOw50.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/cc7FOw50.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/cc7FOw50.debug.temp.o
+ .debug_macro   0x00000000       0x20 /tmp/cc7FOw50.debug.temp.o
+ .debug_macro   0x00000000       0x35 /tmp/cc7FOw50.debug.temp.o
+ .debug_macro   0x00000000      0x1f0 /tmp/cc7FOw50.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/cc7FOw50.debug.temp.o
+ .debug_macro   0x00000000       0x6a /tmp/cc7FOw50.debug.temp.o
+ .debug_macro   0x00000000      0x103 /tmp/cc7FOw50.debug.temp.o
+ .debug_macro   0x00000000      0x1df /tmp/cc7FOw50.debug.temp.o
+ .debug_macro   0x00000000      0x106 /tmp/cc7FOw50.debug.temp.o
+ .debug_macro   0x00000000       0x22 /tmp/cc7FOw50.debug.temp.o
+ .debug_macro   0x00000000       0x1c /tmp/cc7FOw50.debug.temp.o
+ .debug_macro   0x00000000       0x50 /tmp/cc7FOw50.debug.temp.o
+ .debug_macro   0x00000000      0x90d /tmp/cc7FOw50.debug.temp.o
+ .comment       0x00000000       0x34 /tmp/cc7FOw50.debug.temp.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/cc7FOw50.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccs5zAcC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccs5zAcC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccs5zAcC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccs5zAcC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccs5zAcC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccs5zAcC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccs5zAcC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccs5zAcC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccs5zAcC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccs5zAcC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccs5zAcC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccs5zAcC.debug.temp.o
+ .debug_macro   0x00000000      0x850 /tmp/ccs5zAcC.debug.temp.o
+ .debug_macro   0x00000000      0x220 /tmp/ccs5zAcC.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/ccs5zAcC.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/ccs5zAcC.debug.temp.o
+ .debug_macro   0x00000000       0x5b /tmp/ccs5zAcC.debug.temp.o
+ .debug_macro   0x00000000      0x24d /tmp/ccs5zAcC.debug.temp.o
+ .debug_macro   0x00000000       0x9e /tmp/ccs5zAcC.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccs5zAcC.debug.temp.o
+ .debug_macro   0x00000000       0x20 /tmp/ccs5zAcC.debug.temp.o
+ .debug_macro   0x00000000       0x35 /tmp/ccs5zAcC.debug.temp.o
+ .comment       0x00000000       0x34 /tmp/ccs5zAcC.debug.temp.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccs5zAcC.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccLIrnlP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccLIrnlP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccLIrnlP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccLIrnlP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccLIrnlP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccLIrnlP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccLIrnlP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccLIrnlP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccLIrnlP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccLIrnlP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccLIrnlP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccLIrnlP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccLIrnlP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccLIrnlP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccLIrnlP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccLIrnlP.debug.temp.o
+ .group         0x00000000        0xc /tmp/ccLIrnlP.debug.temp.o
+ .debug_macro   0x00000000      0x838 /tmp/ccLIrnlP.debug.temp.o
+ .debug_macro   0x00000000       0x16 /tmp/ccLIrnlP.debug.temp.o
+ .debug_macro   0x00000000      0x189 /tmp/ccLIrnlP.debug.temp.o
+ .debug_macro   0x00000000       0x22 /tmp/ccLIrnlP.debug.temp.o
+ .debug_macro   0x00000000      0x220 /tmp/ccLIrnlP.debug.temp.o
+ .debug_macro   0x00000000       0x9c /tmp/ccLIrnlP.debug.temp.o
+ .debug_macro   0x00000000       0x34 /tmp/ccLIrnlP.debug.temp.o
+ .debug_macro   0x00000000       0x58 /tmp/ccLIrnlP.debug.temp.o
+ .debug_macro   0x00000000       0x5b /tmp/ccLIrnlP.debug.temp.o
+ .debug_macro   0x00000000      0x24d /tmp/ccLIrnlP.debug.temp.o
+ .debug_macro   0x00000000       0x6a /tmp/ccLIrnlP.debug.temp.o
+ .debug_macro   0x00000000      0x103 /tmp/ccLIrnlP.debug.temp.o
+ .debug_macro   0x00000000      0x1df /tmp/ccLIrnlP.debug.temp.o
+ .debug_macro   0x00000000      0x106 /tmp/ccLIrnlP.debug.temp.o
+ .debug_macro   0x00000000       0x1c /tmp/ccLIrnlP.debug.temp.o
+ .debug_macro   0x00000000       0x50 /tmp/ccLIrnlP.debug.temp.o
+ .debug_macro   0x00000000      0x90d /tmp/ccLIrnlP.debug.temp.o
+ .comment       0x00000000       0x34 /tmp/ccLIrnlP.debug.temp.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccLIrnlP.debug.temp.o
+ .text          0x00000000        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T225330.751092Z_candidates_candidate-2-pinned-lite-no-l2_attempts_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memset.o)
+ .data          0x00000000        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T225330.751092Z_candidates_candidate-2-pinned-lite-no-l2_attempts_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memset.o)
+ .bss           0x00000000        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T225330.751092Z_candidates_candidate-2-pinned-lite-no-l2_attempts_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memset.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .text          0x00000000        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .data          0x00000000        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .bss           0x00000000        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x00000000      0x220 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x00000000       0x9c /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x00000000       0x34 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x00000000       0x58 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x00000000       0x5b /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x00000000      0x24d /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x00000000       0x16 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x00000000      0x11e /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x00000000       0x6a /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x00000000      0x103 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x00000000      0x1df /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x00000000       0x22 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x00000000      0x183 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .comment       0x00000000       0x34 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .eh_frame      0x00000000       0x28 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .text          0x00000000        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .data          0x00000000        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .bss           0x00000000        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00000000      0x844 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00000000       0x34 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00000000      0x220 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00000000       0x9c /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00000000       0x34 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00000000       0x58 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00000000       0x5b /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00000000      0x24d /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00000000      0x184 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00000000       0x16 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00000000      0x11e /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00000000       0x6a /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00000000      0x103 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00000000      0x1df /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00000000       0x22 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00000000      0x183 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00000000       0x16 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00000000       0x12 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00000000       0x22 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .comment       0x00000000       0x34 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .eh_frame      0x00000000       0x28 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .text          0x00000000        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .data          0x00000000        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .bss           0x00000000        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00000000      0x844 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00000000       0x34 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00000000      0x220 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00000000       0x9c /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00000000       0x34 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00000000       0x58 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00000000       0x5b /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00000000      0x24d /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00000000      0x184 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00000000       0x16 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00000000      0x11e /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00000000       0x6a /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00000000      0x103 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00000000      0x1df /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00000000       0x22 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00000000      0x183 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00000000       0x16 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00000000       0x12 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00000000       0x22 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .comment       0x00000000       0x34 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .eh_frame      0x00000000       0x54 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .group         0x00000000        0xc /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .text          0x00000000        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .data          0x00000000        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .bss           0x00000000        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .debug_macro   0x00000000      0x844 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .debug_macro   0x00000000       0x34 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .debug_macro   0x00000000      0x220 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .debug_macro   0x00000000       0x9c /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .debug_macro   0x00000000       0x34 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .debug_macro   0x00000000       0x58 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .debug_macro   0x00000000       0x5b /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .debug_macro   0x00000000      0x24d /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .debug_macro   0x00000000      0x184 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .debug_macro   0x00000000       0x16 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .debug_macro   0x00000000      0x11e /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .debug_macro   0x00000000       0x6a /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .debug_macro   0x00000000      0x103 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .debug_macro   0x00000000      0x1df /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .debug_macro   0x00000000       0x22 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .debug_macro   0x00000000      0x183 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .debug_macro   0x00000000       0x16 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .debug_macro   0x00000000       0x12 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .debug_macro   0x00000000       0x22 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .comment       0x00000000       0x34 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+ .eh_frame      0x00000000       0x28 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+rom              0x00000000         0x00004000
+sram             0x10000000         0x00001000
+main_ram         0x40000000         0x08000000
+ethmac           0x80000000         0x00001000
+ethmac_rx        0x80000000         0x00000800
+ethmac_tx        0x80000800         0x00000800
+csr              0xf0000000         0x00010000
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+START GROUP
+LOAD /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+LOAD /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+LOAD /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+LOAD /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+LOAD /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/crt0.o
+LOAD /tmp/ccOi2a5M.ltrans0.ltrans.o
+LOAD /tmp/cc2jWHXW.debug.temp.o
+LOAD /tmp/ccdVJsPF.debug.temp.o
+LOAD /tmp/cccZ17bG.debug.temp.o
+LOAD /tmp/ccVuFWFq.debug.temp.o
+LOAD /tmp/ccpFBCmf.debug.temp.o
+LOAD /tmp/ccura3eC.debug.temp.o
+LOAD /tmp/cc7FOw50.debug.temp.o
+LOAD /tmp/ccs5zAcC.debug.temp.o
+LOAD /tmp/ccLIrnlP.debug.temp.o
+LOAD /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libbase/libbase.a
+LOAD /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libc/libc.a
+LOAD /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a
+LOAD /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/liblitedram/liblitedram.a
+END GROUP
+LOAD /home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32/libgcc.a
+START GROUP
+LOAD /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libc/libc.a
+LOAD /home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32/libgloss.a
+END GROUP
+LOAD /home/user/git/fpga/sipeedtangprimer20k-riscv/.tools/riscv-gcc/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32/libgcc.a
+                0x00000000                        __DYNAMIC = 0x0
+
+.text           0x40000000     0x28ec
+                0x40000000                        _ftext = .
+ *crt0*(.text)
+ .text          0x40000000      0x12c /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/crt0.o
+                0x40000000                _start
+                0x40000020                trap_entry
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text.timer0_isr
+                0x4000012c       0x20 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .text.startup.main
+                0x4000014c       0xac /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+                0x4000014c                main
+ .text.rtos_fit_peripheral_link_probe
+                0x400001f8       0x88 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+                0x400001f8                rtos_fit_peripheral_link_probe
+ .text.csr_rd_buf_uint32.constprop.0
+                0x40000280       0x34 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .text.sdcard_wait_cmd_done
+                0x400002b4       0x54 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+                0x400002b4                sdcard_wait_cmd_done
+ .text.sdcard_send_command_retry
+                0x40000308       0x94 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .text.sdcard_wait_data_done
+                0x4000039c       0x50 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+                0x4000039c                sdcard_wait_data_done
+ .text.sdcard_go_idle
+                0x400003ec       0x18 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+                0x400003ec                sdcard_go_idle
+ .text.sdcard_send_ext_csd
+                0x40000404       0x2c /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+                0x40000404                sdcard_send_ext_csd
+ .text.sdcard_app_cmd
+                0x40000430       0x2c /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+                0x40000430                sdcard_app_cmd
+ .text.sdcard_app_send_op_cond
+                0x4000045c       0x30 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+                0x4000045c                sdcard_app_send_op_cond
+ .text.sdcard_all_send_cid
+                0x4000048c       0x1c /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+                0x4000048c                sdcard_all_send_cid
+ .text.sdcard_set_relative_address
+                0x400004a8       0x1c /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+                0x400004a8                sdcard_set_relative_address
+ .text.sdcard_send_cid
+                0x400004c4       0x2c /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+                0x400004c4                sdcard_send_cid
+ .text.sdcard_send_csd
+                0x400004f0       0x2c /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+                0x400004f0                sdcard_send_csd
+ .text.sdcard_select_card
+                0x4000051c       0x20 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+                0x4000051c                sdcard_select_card
+ .text.sdcard_app_set_bus_width
+                0x4000053c       0x20 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+                0x4000053c                sdcard_app_set_bus_width
+ .text.sdcard_switch
+                0x4000055c      0x18c /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+                0x4000055c                sdcard_switch
+ .text.sdcard_app_send_scr
+                0x400006e8       0x4c /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+                0x400006e8                sdcard_app_send_scr
+ .text.sdcard_app_set_blocklen
+                0x40000734       0x28 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+                0x40000734                sdcard_app_set_blocklen
+ .text.sdcard_write_single_block
+                0x4000075c       0x48 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+                0x4000075c                sdcard_write_single_block
+ .text.sdcard_write_multiple_block
+                0x400007a4       0x44 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+                0x400007a4                sdcard_write_multiple_block
+ .text.sdcard_read_single_block
+                0x400007e8       0x48 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+                0x400007e8                sdcard_read_single_block
+ .text.sdcard_read_multiple_block
+                0x40000830       0x44 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+                0x40000830                sdcard_read_multiple_block
+ .text.sdcard_stop_transmission
+                0x40000874       0x28 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+                0x40000874                sdcard_stop_transmission
+ .text.sdcard_set_block_count
+                0x4000089c       0x28 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+                0x4000089c                sdcard_set_block_count
+ .text.sdcard_decode_rca
+                0x400008c4       0x20 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+                0x400008c4                sdcard_decode_rca
+ .text.sdcard_init
+                0x400008e4      0x22c /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+                0x400008e4                sdcard_init
+ .text.sdcard_read
+                0x40000b10      0x128 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+                0x40000b10                sdcard_read
+ .text.sdcard_write
+                0x40000c38      0x12c /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+                0x40000c38                sdcard_write
+ .text.__bswap_32
+                0x40000d64       0x34 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .text.ip_checksum
+                0x40000d98       0x78 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .text.send_packet
+                0x40000e10       0x8c /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .text.fill_eth_header.constprop.0
+                0x40000e9c       0x60 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .text.udp_set_mac
+                0x40000efc       0x2c /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+                0x40000efc                udp_set_mac
+ .text.udp_get_tx_buffer
+                0x40000f28       0x10 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+                0x40000f28                udp_get_tx_buffer
+ .text.udp_send
+                0x40000f38      0x22c /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+                0x40000f38                udp_send
+ .text.udp_start
+                0x40001164       0x90 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+                0x40001164                udp_start
+ .text.udp_service
+                0x400011f4      0x618 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+                0x400011f4                udp_service
+ .text          0x4000180c      0xcac /tmp/ccOi2a5M.ltrans0.ltrans.o
+                0x40001aa8                timeout_start
+                0x40001b24                timeout_expired
+                0x40001bb0                flush_l2_cache
+                0x40001bb4                busy_wait
+                0x40001bfc                busy_wait_us
+                0x40001c40                litex_startup_init
+                0x40001cac                printf
+                0x400023a0                irq_attach
+                0x40002404                isr
+ .text.memset   0x400024b8       0x1c /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T225330.751092Z_candidates_candidate-2-pinned-lite-no-l2_attempts_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memset.o)
+                0x400024b8                memset
+ .text.__ctzsi2
+                0x400024d4       0x74 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+                0x400024d4                __ctzsi2
+ .text.__udivdi3
+                0x40002548        0x8 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+                0x40002548                __udivdi3
+ .text.__udivmoddi4
+                0x40002550      0x30c /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+                0x40002550                __udivmoddi4
+ .text.__clzsi2
+                0x4000285c       0x90 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+                0x4000285c                __clzsi2
+ *(.text.isr)
+                0x400028ec                        _etext = .
+
+.rodata         0x400028ec      0x194
+                0x400028f0                        . = ALIGN (0x8)
+ *fill*         0x400028ec        0x4 
+                0x400028f0                        _frodata = .
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata.main.str1.4
+                0x400028f0       0xf7 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+                                 0x3f (size before relaxing)
+ .rodata.udp_service.str1.4
+                0x400029e7        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+                                 0x76 (size before relaxing)
+ .rodata.str1.4
+                0x400029e7        0x0 /tmp/ccOi2a5M.ltrans0.ltrans.o
+                                 0x3f (size before relaxing)
+ *fill*         0x400029e7        0x1 
+ .rodata        0x400029e8       0x90 /tmp/ccOi2a5M.ltrans0.ltrans.o
+ *(.srodata .srodata.*)
+ .srodata.local_mac.0
+                0x40002a78        0x6 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ *(.got .got.*)
+ *(.toc .toc.*)
+ FILL mask 0x00000000
+                0x40002a80                        . = ALIGN (0x8)
+ *fill*         0x40002a7e        0x2 00000000
+                0x40002a80                        _erodata = .
+
+.rela.dyn       0x40002a80        0x0
+ .rela.text     0x40002a80        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+
+.preinit_array  0x40002a80        0x0
+                0x40002a80                        . = ALIGN (0x8)
+                0x40002a80                        PROVIDE (__preinit_array_start = .)
+ *(SORT_BY_NAME(.preinit_array.*))
+ *(.preinit_array)
+                0x40002a80                        PROVIDE (__preinit_array_end = .)
+
+.init_array     0x40002a80        0x0
+                0x40002a80                        . = ALIGN (0x8)
+                0x40002a80                        PROVIDE (__init_array_start = .)
+ *(SORT_BY_NAME(.init_array.*))
+ *(.init_array)
+ *(SORT_BY_NAME(.ctors.*))
+ *(.ctors)
+                0x40002a80                        PROVIDE (__init_array_end = .)
+
+.fini_array     0x40002a80        0x0
+                0x40002a80                        . = ALIGN (0x8)
+                [!provide]                        PROVIDE (__fini_array_start = .)
+ *(SORT_BY_NAME(.fini_array.*))
+ *(.fini_array)
+ *(SORT_BY_NAME(.dtors.*))
+ *(.dtors)
+                [!provide]                        PROVIDE (__fini_array_end = .)
+
+.data           0x40002a80       0x18
+                0x40002a80                        . = ALIGN (0x8)
+                0x40002a80                        _fdata = .
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x40002a80       0x10 /tmp/ccOi2a5M.ltrans0.ltrans.o
+ *(.data1)
+                0x40002a90                        _gp = ALIGN (0x10)
+ *(.sdata .sdata.* .gnu.linkonce.s.*)
+ .sdata.sdcard_ccs
+                0x40002a90        0x4 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+                0x40002a98                        . = ALIGN (0x8)
+ *fill*         0x40002a94        0x4 
+                0x40002a98                        _edata = .
+
+.bss            0x40002a98      0x3b0
+                0x40002a98                        . = ALIGN (0x8)
+                0x40002a98                        _fbss = .
+ *(.dynsbss)
+ *(.sbss .sbss.* .gnu.linkonce.sb.*)
+ .sbss.system_ticks
+                0x40002a98        0x4 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .sbss.support_cmd23
+                0x40002a9c        0x4 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .sbss.rx_callback
+                0x40002aa0        0x4 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ *fill*         0x40002aa4        0x4 
+ .sbss.ping_ts_send
+                0x40002aa8        0x8 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .sbss.ping_seq_number
+                0x40002ab0        0x4 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .sbss.arp_pending
+                0x40002ab4        0x4 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .sbss.cached_ip
+                0x40002ab8        0x4 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .sbss.cached_mac
+                0x40002abc        0x6 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ *fill*         0x40002ac2        0x2 
+ .sbss.my_ip    0x40002ac4        0x4 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .sbss.my_mac   0x40002ac8        0x6 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ *fill*         0x40002ace        0x2 
+ .sbss.txbuffer
+                0x40002ad0        0x4 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .sbss.txlen    0x40002ad4        0x4 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .sbss.txslot   0x40002ad8        0x4 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .sbss.rxbuffer
+                0x40002adc        0x4 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .sbss.rxlen    0x40002ae0        0x4 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .sbss          0x40002ae4       0x10 /tmp/ccOi2a5M.ltrans0.ltrans.o
+ *(.scommon)
+ *(.dynbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss.dma_buffer.1
+                0x40002af4      0x200 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .bss.sdcard_switch_status
+                0x40002cf4       0x40 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .bss           0x40002d34      0x110 /tmp/ccOi2a5M.ltrans0.ltrans.o
+ *(COMMON)
+                0x40002e48                        . = ALIGN (0x8)
+ *fill*         0x40002e44        0x4 
+                0x40002e48                        _ebss = .
+                0x40002e48                        _end = .
+
+/DISCARD/
+ *(.eh_frame)
+ *(.comment)
+                0x48000000                        PROVIDE (_fstack = (ORIGIN (main_ram) + LENGTH (main_ram)))
+                0x40002a80                        PROVIDE (_fdata_rom = LOADADDR (.data))
+                [!provide]                        PROVIDE (_edata_rom = (LOADADDR (.data) + SIZEOF (.data)))
+OUTPUT(/home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/application.elf elf32-littleriscv)
+
+.debug_info     0x00000000     0x8ba1
+ .debug_info    0x00000000      0x524 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .debug_info    0x00000524      0x279 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .debug_info    0x0000079d     0x378f /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_info    0x00003f2c     0x245a /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .debug_info    0x00006386       0x25 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/crt0.o
+ .debug_info    0x000063ab     0x11d6 /tmp/ccOi2a5M.ltrans0.ltrans.o
+ .debug_info    0x00007581      0x1aa /tmp/cc2jWHXW.debug.temp.o
+                0x00007581                timeout.c.30b2b501
+ .debug_info    0x0000772b      0x168 /tmp/ccdVJsPF.debug.temp.o
+                0x0000772b                system.c.80870261
+ .debug_info    0x00007893      0x100 /tmp/cccZ17bG.debug.temp.o
+                0x00007893                startup.c.136b01e6
+ .debug_info    0x00007993      0x1da /tmp/ccVuFWFq.debug.temp.o
+                0x00007993                isr.c.6834ff7c
+ .debug_info    0x00007b6d      0x1c5 /tmp/ccpFBCmf.debug.temp.o
+                0x00007b6d                printf.c.4f1ceda1
+ .debug_info    0x00007d32      0x37d /tmp/ccura3eC.debug.temp.o
+                0x00007d32                vfiprintf.c.7ebd3ae6
+ .debug_info    0x000080af      0x1d2 /tmp/cc7FOw50.debug.temp.o
+                0x000080af                stdio.c.fc9a7eaa
+ .debug_info    0x00008281       0xb6 /tmp/ccs5zAcC.debug.temp.o
+                0x00008281                strnlen.c.72f93f8f
+ .debug_info    0x00008337      0x2ba /tmp/ccLIrnlP.debug.temp.o
+                0x00008337                uart.c.501f43b6
+ .debug_info    0x000085f1       0x31 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T225330.751092Z_candidates_candidate-2-pinned-lite-no-l2_attempts_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memset.o)
+ .debug_info    0x00008622      0x108 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_info    0x0000872a      0x12f /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_info    0x00008859      0x240 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_info    0x00008a99      0x108 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+
+.debug_abbrev   0x00000000     0x1e59
+ .debug_abbrev  0x00000000      0x210 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .debug_abbrev  0x00000210      0x153 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .debug_abbrev  0x00000363      0x55f /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_abbrev  0x000008c2      0x639 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .debug_abbrev  0x00000efb       0x14 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/crt0.o
+ .debug_abbrev  0x00000f0f      0x1ad /tmp/ccOi2a5M.ltrans0.ltrans.o
+ .debug_abbrev  0x000010bc      0x14f /tmp/cc2jWHXW.debug.temp.o
+ .debug_abbrev  0x0000120b       0xe2 /tmp/ccdVJsPF.debug.temp.o
+ .debug_abbrev  0x000012ed       0xd9 /tmp/cccZ17bG.debug.temp.o
+ .debug_abbrev  0x000013c6      0x18b /tmp/ccVuFWFq.debug.temp.o
+ .debug_abbrev  0x00001551       0xfb /tmp/ccpFBCmf.debug.temp.o
+ .debug_abbrev  0x0000164c      0x1d8 /tmp/ccura3eC.debug.temp.o
+ .debug_abbrev  0x00001824      0x131 /tmp/cc7FOw50.debug.temp.o
+ .debug_abbrev  0x00001955       0x7c /tmp/ccs5zAcC.debug.temp.o
+ .debug_abbrev  0x000019d1      0x179 /tmp/ccLIrnlP.debug.temp.o
+ .debug_abbrev  0x00001b4a       0x28 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T225330.751092Z_candidates_candidate-2-pinned-lite-no-l2_attempts_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memset.o)
+ .debug_abbrev  0x00001b72       0x82 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_abbrev  0x00001bf4       0xa8 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_abbrev  0x00001c9c      0x13b /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_abbrev  0x00001dd7       0x82 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+
+.debug_loclists
+                0x00000000     0x443c
+ .debug_loclists
+                0x00000000      0x167 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .debug_loclists
+                0x00000167       0x2d /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .debug_loclists
+                0x00000194     0x1d98 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_loclists
+                0x00001f2c      0xd39 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .debug_loclists
+                0x00002c65      0xe3b /tmp/ccOi2a5M.ltrans0.ltrans.o
+ .debug_loclists
+                0x00003aa0      0x371 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_loclists
+                0x00003e11       0x48 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_loclists
+                0x00003e59      0x2df /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_loclists
+                0x00004138      0x304 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+
+.debug_aranges  0x00000000      0x2d8
+ .debug_aranges
+                0x00000000       0x28 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .debug_aranges
+                0x00000028       0x20 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .debug_aranges
+                0x00000048      0x120 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_aranges
+                0x00000168       0x90 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .debug_aranges
+                0x000001f8       0x20 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/crt0.o
+ .debug_aranges
+                0x00000218       0x20 /tmp/ccOi2a5M.ltrans0.ltrans.o
+ .debug_aranges
+                0x00000238       0x20 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T225330.751092Z_candidates_candidate-2-pinned-lite-no-l2_attempts_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memset.o)
+ .debug_aranges
+                0x00000258       0x20 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_aranges
+                0x00000278       0x20 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_aranges
+                0x00000298       0x20 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_aranges
+                0x000002b8       0x20 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+
+.debug_rnglists
+                0x00000000      0xa06
+ .debug_rnglists
+                0x00000000       0x41 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .debug_rnglists
+                0x00000041       0x14 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .debug_rnglists
+                0x00000055      0x429 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_rnglists
+                0x0000047e      0x2fd /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .debug_rnglists
+                0x0000077b      0x231 /tmp/ccOi2a5M.ltrans0.ltrans.o
+ .debug_rnglists
+                0x000009ac       0x13 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_rnglists
+                0x000009bf       0x13 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_rnglists
+                0x000009d2       0x20 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_rnglists
+                0x000009f2       0x14 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+
+.debug_macro    0x00000000     0x8f90
+ .debug_macro   0x00000000      0x128 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .debug_macro   0x00000128      0x832 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .debug_macro   0x0000095a      0x220 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .debug_macro   0x00000b7a       0x9c /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .debug_macro   0x00000c16       0x34 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .debug_macro   0x00000c4a       0x58 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .debug_macro   0x00000ca2       0x5b /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .debug_macro   0x00000cfd      0x23f /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .debug_macro   0x00000f3c       0x6a /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .debug_macro   0x00000fa6      0x103 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .debug_macro   0x000010a9      0x2be /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .debug_macro   0x00001367      0x106 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .debug_macro   0x0000146d      0x1a5 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .debug_macro   0x00001612       0x22 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .debug_macro   0x00001634       0x1c /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .debug_macro   0x00001650       0x50 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .debug_macro   0x000016a0      0x90d /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .debug_macro   0x00001fad       0x16 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .debug_macro   0x00001fc3       0x3c /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .debug_macro   0x00001fff       0x10 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .debug_macro   0x0000200f       0x58 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .debug_macro   0x00002067       0x16 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .debug_macro   0x0000207d       0x4a /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .debug_macro   0x000020c7       0x35 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .debug_macro   0x000020fc      0x1ea /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .debug_macro   0x000022e6       0xde /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .debug_macro   0x000023c4       0x22 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .debug_macro   0x000023e6       0xf4 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .debug_macro   0x000024da      0x20f /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x000026e9       0x10 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x000026f9       0x9e /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x00002797       0x20 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x000027b7       0x16 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x000027cd       0x9e /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x0000286b       0x16 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x00002881       0x3a /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x000028bb       0x29 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x000028e4       0x16 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x000028fa       0x20 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x0000291a      0x46b /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x00002d85       0x10 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x00002d95      0x10c /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x00002ea1       0xb0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x00002f51       0x82 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x00002fd3      0x106 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x000030d9       0xee /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x000031c7       0xc4 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_macro   0x0000328b      0x1a5 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .debug_macro   0x00003430       0x1c /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .debug_macro   0x0000344c       0xd0 /tmp/cc2jWHXW.debug.temp.o
+ .debug_macro   0x0000351c      0x838 /tmp/cc2jWHXW.debug.temp.o
+ .debug_macro   0x00003d54       0x9c /tmp/cc2jWHXW.debug.temp.o
+ .debug_macro   0x00003df0      0x24d /tmp/cc2jWHXW.debug.temp.o
+ .debug_macro   0x0000403d      0x1df /tmp/cc2jWHXW.debug.temp.o
+ .debug_macro   0x0000421c      0x189 /tmp/cc2jWHXW.debug.temp.o
+ .debug_macro   0x000043a5       0xe1 /tmp/ccdVJsPF.debug.temp.o
+ .debug_macro   0x00004486       0xd8 /tmp/cccZ17bG.debug.temp.o
+ .debug_macro   0x0000455e      0x131 /tmp/ccVuFWFq.debug.temp.o
+ .debug_macro   0x0000468f       0x16 /tmp/ccVuFWFq.debug.temp.o
+ .debug_macro   0x000046a5      0x1f0 /tmp/ccVuFWFq.debug.temp.o
+ .debug_macro   0x00004895      0x241 /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x00004ad6      0x850 /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x00005326       0x10 /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x00005336      0x11e /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x00005454      0x11c /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x00005570       0x58 /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x000055c8       0x94 /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x0000565c       0x22 /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x0000567e       0x17 /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x00005695       0x34 /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x000056c9      0x35e /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x00005a27      0x25c /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x00005c83       0x1c /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x00005c9f      0x554 /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x000061f3       0x22 /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x00006215       0x43 /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x00006258       0x34 /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x0000628c      0x183 /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x0000640f      0x241 /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x00006650      0x196 /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x000067e6       0x16 /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x000067fc      0x11e /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x0000691a      0x1b1 /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x00006acb       0x10 /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x00006adb       0x64 /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x00006b3f       0x1c /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x00006b5b       0x82 /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x00006bdd       0xa2 /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x00006c7f      0x2b0 /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x00006f2f       0x12 /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x00006f41       0x2e /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x00006f6f       0xad /tmp/ccpFBCmf.debug.temp.o
+ .debug_macro   0x0000701c      0x2d3 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x000072ef       0x16 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00007305       0x10 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00007315      0x73e /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00007a53       0x10 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00007a63       0x6a /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00007acd      0x19d /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00007c6a       0x41 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00007cab       0x82 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00007d2d       0x18 /tmp/ccura3eC.debug.temp.o
+ .debug_macro   0x00007d45      0x12e /tmp/cc7FOw50.debug.temp.o
+ .debug_macro   0x00007e73       0x16 /tmp/cc7FOw50.debug.temp.o
+ .debug_macro   0x00007e89      0x10b /tmp/cc7FOw50.debug.temp.o
+ .debug_macro   0x00007f94       0xab /tmp/ccs5zAcC.debug.temp.o
+ .debug_macro   0x0000803f       0xa2 /tmp/ccs5zAcC.debug.temp.o
+ .debug_macro   0x000080e1       0x10 /tmp/ccs5zAcC.debug.temp.o
+ .debug_macro   0x000080f1       0xf9 /tmp/ccLIrnlP.debug.temp.o
+ .debug_macro   0x000081ea       0xd8 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x000082c2      0x844 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x00008b06       0x34 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x00008b3a      0x184 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x00008cbe       0x16 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x00008cd4       0x12 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x00008ce6       0x22 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_macro   0x00008d08       0xd8 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_macro   0x00008de0       0xd8 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_macro   0x00008eb8       0xd8 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+
+.debug_line     0x00000000     0x96a3
+ .debug_line    0x00000000      0x3d1 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .debug_line    0x000003d1      0x179 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .debug_line    0x0000054a     0x30cf /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_line    0x00003619     0x2958 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .debug_line    0x00005f71      0x1d4 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/crt0.o
+ .debug_line    0x00006145     0x2276 /tmp/ccOi2a5M.ltrans0.ltrans.o
+ .debug_line    0x000083bb       0xb3 /tmp/cc2jWHXW.debug.temp.o
+ .debug_line    0x0000846e       0xbd /tmp/ccdVJsPF.debug.temp.o
+ .debug_line    0x0000852b       0xbd /tmp/cccZ17bG.debug.temp.o
+ .debug_line    0x000085e8       0xd6 /tmp/ccVuFWFq.debug.temp.o
+ .debug_line    0x000086be      0x138 /tmp/ccpFBCmf.debug.temp.o
+ .debug_line    0x000087f6      0x180 /tmp/ccura3eC.debug.temp.o
+ .debug_line    0x00008976       0xd5 /tmp/cc7FOw50.debug.temp.o
+ .debug_line    0x00008a4b       0x8f /tmp/ccs5zAcC.debug.temp.o
+ .debug_line    0x00008ada       0xbd /tmp/ccLIrnlP.debug.temp.o
+ .debug_line    0x00008b97       0x6e /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T225330.751092Z_candidates_candidate-2-pinned-lite-no-l2_attempts_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memset.o)
+ .debug_line    0x00008c05      0x1b3 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .debug_line    0x00008db8       0xcf /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .debug_line    0x00008e87      0x65f /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .debug_line    0x000094e6      0x1bd /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+
+.debug_str      0x00000000    0x15f5e
+ .debug_str     0x00000000    0x15f5e /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+                               0xa94d (size before relaxing)
+ .debug_str     0x00015f5e        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+                               0xa0bc (size before relaxing)
+ .debug_str     0x00015f5e        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+                               0xd2a9 (size before relaxing)
+ .debug_str     0x00015f5e        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+                               0xb4c7 (size before relaxing)
+ .debug_str     0x00015f5e        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/crt0.o
+                                 0x98 (size before relaxing)
+ .debug_str     0x00015f5e        0x0 /tmp/ccOi2a5M.ltrans0.ltrans.o
+                                 0xe7 (size before relaxing)
+ .debug_str     0x00015f5e        0x0 /tmp/cc2jWHXW.debug.temp.o
+                               0x98c0 (size before relaxing)
+ .debug_str     0x00015f5e        0x0 /tmp/ccdVJsPF.debug.temp.o
+                               0x9cc5 (size before relaxing)
+ .debug_str     0x00015f5e        0x0 /tmp/cccZ17bG.debug.temp.o
+                               0x986d (size before relaxing)
+ .debug_str     0x00015f5e        0x0 /tmp/ccVuFWFq.debug.temp.o
+                               0xa553 (size before relaxing)
+ .debug_str     0x00015f5e        0x0 /tmp/ccpFBCmf.debug.temp.o
+                               0xb399 (size before relaxing)
+ .debug_str     0x00015f5e        0x0 /tmp/ccura3eC.debug.temp.o
+                               0xe3c3 (size before relaxing)
+ .debug_str     0x00015f5e        0x0 /tmp/cc7FOw50.debug.temp.o
+                               0xa5a3 (size before relaxing)
+ .debug_str     0x00015f5e        0x0 /tmp/ccs5zAcC.debug.temp.o
+                               0x4865 (size before relaxing)
+ .debug_str     0x00015f5e        0x0 /tmp/ccLIrnlP.debug.temp.o
+                               0x9a68 (size before relaxing)
+ .debug_str     0x00015f5e        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T225330.751092Z_candidates_candidate-2-pinned-lite-no-l2_attempts_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memset.o)
+                                0x190 (size before relaxing)
+ .debug_str     0x00015f5e        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+                               0x61a7 (size before relaxing)
+ .debug_str     0x00015f5e        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+                               0x61ae (size before relaxing)
+ .debug_str     0x00015f5e        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+                               0x61f2 (size before relaxing)
+ .debug_str     0x00015f5e        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+                               0x61a7 (size before relaxing)
+
+.debug_line_str
+                0x00000000     0x1a2f
+ .debug_line_str
+                0x00000000     0x1a2f /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+                                0x607 (size before relaxing)
+ .debug_line_str
+                0x00001a2f        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+                                0x6c4 (size before relaxing)
+ .debug_line_str
+                0x00001a2f        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+                                0x6e1 (size before relaxing)
+ .debug_line_str
+                0x00001a2f        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+                                0x685 (size before relaxing)
+ .debug_line_str
+                0x00001a2f        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/crt0.o
+                                 0x8c (size before relaxing)
+ .debug_line_str
+                0x00001a2f        0x0 /tmp/ccOi2a5M.ltrans0.ltrans.o
+                                0x4cb (size before relaxing)
+ .debug_line_str
+                0x00001a2f        0x0 /tmp/cc2jWHXW.debug.temp.o
+                                0x67f (size before relaxing)
+ .debug_line_str
+                0x00001a2f        0x0 /tmp/ccdVJsPF.debug.temp.o
+                                0x67f (size before relaxing)
+ .debug_line_str
+                0x00001a2f        0x0 /tmp/cccZ17bG.debug.temp.o
+                                0x685 (size before relaxing)
+ .debug_line_str
+                0x00001a2f        0x0 /tmp/ccVuFWFq.debug.temp.o
+                                0x69b (size before relaxing)
+ .debug_line_str
+                0x00001a2f        0x0 /tmp/ccpFBCmf.debug.temp.o
+                                0x67d (size before relaxing)
+ .debug_line_str
+                0x00001a2f        0x0 /tmp/ccura3eC.debug.temp.o
+                                0x97f (size before relaxing)
+ .debug_line_str
+                0x00001a2f        0x0 /tmp/cc7FOw50.debug.temp.o
+                                0x6ef (size before relaxing)
+ .debug_line_str
+                0x00001a2f        0x0 /tmp/ccs5zAcC.debug.temp.o
+                                0x4ca (size before relaxing)
+ .debug_line_str
+                0x00001a2f        0x0 /tmp/ccLIrnlP.debug.temp.o
+                                0x67c (size before relaxing)
+ .debug_line_str
+                0x00001a2f        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T225330.751092Z_candidates_candidate-2-pinned-lite-no-l2_attempts_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memset.o)
+                                0x17d (size before relaxing)
+ .debug_line_str
+                0x00001a2f        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+                                0x54b (size before relaxing)
+ .debug_line_str
+                0x00001a2f        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+                                0x54d (size before relaxing)
+ .debug_line_str
+                0x00001a2f        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+                                0x553 (size before relaxing)
+ .debug_line_str
+                0x00001a2f        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+                                0x54b (size before relaxing)
+
+.note.GNU-stack
+                0x00000000        0x0
+ .note.GNU-stack
+                0x00000000        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccOi2a5M.ltrans0.ltrans.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+
+.riscv.attributes
+                0x00000000       0x43
+ .riscv.attributes
+                0x00000000       0x43 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .riscv.attributes
+                0x00000043       0x3f /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .riscv.attributes
+                0x00000082       0x3f /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .riscv.attributes
+                0x000000c1       0x3f /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
+ .riscv.attributes
+                0x00000100       0x41 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/crt0.o
+ .riscv.attributes
+                0x00000141       0x43 /tmp/ccOi2a5M.ltrans0.ltrans.o
+ .riscv.attributes
+                0x00000184       0x3d /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libc/libc.a(minimal__home_user_git_fpga_sipeedtangprimer20k-riscv_build_rtos-system-fit_20261006T225330.751092Z_candidates_candidate-2-pinned-lite-no-l2_attempts_rom16k_soc_software_include_.._picolibc_src_libc_machine_riscv_memset.o)
+ .riscv.attributes
+                0x000001c1       0x3f /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(ctzsi2.o)
+ .riscv.attributes
+                0x00000200       0x3f /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivdi3.o)
+ .riscv.attributes
+                0x0000023f       0x3f /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(udivmoddi4.o)
+ .riscv.attributes
+                0x0000027e       0x3f /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/candidates/candidate-2-pinned-lite-no-l2/attempts/rom16k/soc/software/libcompiler_rt/libcompiler_rt.a(clzsi2.o)
+
+.debug_frame    0x00000000      0x5f4
+ .debug_frame   0x00000000       0x40 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/main.o
+ .debug_frame   0x00000040       0x34 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/peripheral_link_probe.o
+ .debug_frame   0x00000074      0x398 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/sdcard.o
+ .debug_frame   0x0000040c      0x1e8 /home/user/git/fpga/sipeedtangprimer20k-riscv/build/rtos-system-fit/20261006T225330.751092Z/software/20261006T225812.040584Z/baremetal/udp.o
